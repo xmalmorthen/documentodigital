@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="thumbnail.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ThumbNailColorDepth" Type="System.Windows.Forms.ColorDepth" Scope="User">
+      <Value Profile="(Default)">Depth32Bit</Value>
+    </Setting>
+    <Setting Name="ThumbNailSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">108, 108</Value>
+    </Setting>
+    <Setting Name="PathRepoImgs" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SwapGallery</Value>
+    </Setting>
+    <Setting Name="ScannFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ScannFile_</Value>
+    </Setting>
+    <Setting Name="KDImageLicenseName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Quantum Productora de Software (273064285)</Value>
+    </Setting>
+    <Setting Name="KDImageLicenseKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">6360-8836-5591-7141-5489</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
