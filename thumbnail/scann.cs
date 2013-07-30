@@ -10,11 +10,31 @@ using System.IO;
 using thumbnail.forms;
 using thumbnail.Properties;
 using System.Configuration;
+using thumbnail.data_members;
+using DevExpress.XtraEditors;
+using thumbnail.models;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace thumbnail
 {
     public partial class scann : Form
     {
+        Bd_Exp_TransportesDataContext bd = new Bd_Exp_TransportesDataContext();
+
+        expediente_model expediente = new expediente_model();
+
+        public enum __formmode
+        {
+            Add,
+            Edit,
+            Delete
+        }
+
+        private __formmode _formmode;
+        public __formmode formmode { get { return _formmode; } set { _formmode = value; } }
+
+        private int idcampotrazableselected { get; set; }
+
         private ImageList thumbnainlist = new ImageList();
         
         private ImageList thumbnainlistusuario = new ImageList();
@@ -49,7 +69,24 @@ namespace thumbnail
         {
             InitializeComponent();
 
-//lista de imagenes usuario
+//populate combo de tramites
+            lookUpEditTramites.Properties.DataSource = bd.vw_Tramites_Activos;
+            lookUpEditTramites.ItemIndex = 0; //seleccionar el primero por defecto            
+//binding datagridview
+
+            bindingSource3.DataSource = expediente.expedientetrazable;
+
+            dataGridViewcampostrazables.AutoGenerateColumns = false;
+            dataGridViewcampostrazables.DataSource = bindingSource3;
+            dataGridViewcampostrazables.AllowUserToAddRows = false;
+            dataGridViewcampostrazables.AllowUserToDeleteRows = false;
+            dataGridViewcampostrazables.AllowUserToOrderColumns = false;
+            dataGridViewcampostrazables.AllowUserToResizeColumns = true;
+            dataGridViewcampostrazables.ShowCellErrors = false;
+            dataGridViewcampostrazables.ShowEditingIcon = false;
+            dataGridViewcampostrazables.ShowRowErrors = false;
+
+            //lista de imagenes usuario
             this.thumbnainlistusuario.ImageSize = Settings.Default.ThumbNailSize;
             this.thumbnainlistusuario.ColorDepth = Settings.Default.ThumbNailColorDepth;
 //lista de imagenes interno
@@ -529,6 +566,180 @@ namespace thumbnail
                 MessageBox.Show("Error: " + KDImage.GetErrorMsg(lvRet));
             }
             generatethumbnailimage(pathfilename); 
+        }
+
+
+        private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            vw_Tramites_Activos row = ((LookUpEdit)sender).Properties.GetDataSourceRowByKeyValue(((LookUpEdit)sender).EditValue) as vw_Tramites_Activos;
+
+            campostrazables qwe = new campostrazables();
+            
+
+
+        }
+
+        private void populatelookUpEditCamposTrazables(){
+            List<vw_Campos_Trazables> data = new List <vw_Campos_Trazables>();
+            data = bd.vw_Campos_Trazables.ToList();
+
+            foreach (models.de_expedientestrazables item in expediente.expedientetrazable)
+            {
+                data.RemoveAll(x => x.id == item.id_campotrazable);
+            }
+
+            lookUpEditCamposTrazables.Properties.DataSource = data;
+        }
+
+        private void clearfrmcampostrazables(){
+            formmode = __formmode.Add;
+
+            lookUpEditCamposTrazables.Visible = true;
+            lookUpEditCamposTrazables.Properties.DataSource = null;
+            textEditcampotrazable.Visible = false;
+            lblmascampotrazable.Text = "";
+            txtvalortrazable.Text = "";
+            txtvalortrazable.Enabled = false;
+            txtvalortrazable.Properties.Mask.EditMask = "";
+            checkEditcampoprincipal.Checked = false;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (formmode == __formmode.Add)
+            {
+                if (!validatealldatascampostrazables()) return;
+
+                thumbnail.models.de_expedientestrazables detalle = new thumbnail.models.de_expedientestrazables();
+                detalle.es_principal = checkEditcampoprincipal.Checked;
+                detalle.fecha_creacion = DateTime.Now;
+                vw_Campos_Trazables row = lookUpEditCamposTrazables.Properties.GetDataSourceRowByKeyValue(lookUpEditCamposTrazables.EditValue) as vw_Campos_Trazables;
+                detalle.id_campotrazable = row.id;
+                detalle.campotrazable = row.Nombre;
+                detalle.mask = txtvalortrazable.Properties.Mask.EditMask;
+                detalle.numcaracteres = txtvalortrazable.Properties.MaxLength;
+                detalle.valor_trazable = txtvalortrazable.Text;
+
+                if (detalle.es_principal)
+                {
+                    validatecampoprincipal();
+                }
+
+                bindingSource3.Add(detalle);
+
+                clearfrmcampostrazables();
+            }
+            else if (formmode == __formmode.Edit) {
+
+                foreach (thumbnail.models.de_expedientestrazables item in expediente.expedientetrazable)
+	            {
+                    if (item.id_campotrazable == idcampotrazableselected) {
+                        if (checkEditcampoprincipal.Checked) validatecampoprincipal();
+                        item.valor_trazable = txtvalortrazable.Text;
+                        item.es_principal = checkEditcampoprincipal.Checked;
+                        break;
+                    }
+	            }
+
+                bindingSource3.DataSource = expediente.expedientetrazable;
+                dataGridViewcampostrazables.DataSource = bindingSource3;
+                dataGridViewcampostrazables.Refresh();
+            }
+        }
+
+        private Boolean validatealldatascampostrazables()
+        {
+            dxValidationProvider1.Validate();
+
+            if (dxValidationProvider1.GetInvalidControls().Count() != 0) return false;
+
+            return true;
+        }
+
+        private void validatecampoprincipal()
+        {
+            foreach (models.de_expedientestrazables item in expediente.expedientetrazable)
+            {
+                item.es_principal = false;
+            }
+        }
+
+        private void lookUpEditCamposTrazables_EditValueChanged(object sender, EventArgs e)
+        {
+            vw_Campos_Trazables row = ((LookUpEdit)sender).Properties.GetDataSourceRowByKeyValue(((LookUpEdit)sender).EditValue) as vw_Campos_Trazables;
+            actualizainfomascara(row.Mascara.ToString(), (int)row.Tamanio_Caracteres);
+        }
+
+        private void actualizainfomascara(string mascara, int numcaracteres)
+        {
+            lblmascampotrazable.Text = mascara;
+            txtvalortrazable.Text = "";
+            txtvalortrazable.Enabled = true;
+            txtvalortrazable.Properties.Mask.EditMask = mascara;
+            txtvalortrazable.Properties.MaxLength = numcaracteres;
+        }
+
+        private void lookUpEditCamposTrazables_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            //populate combo de campos trazables
+            populatelookUpEditCamposTrazables();
+        }
+
+        private void dataGridViewcampostrazables_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            //string cellValue = dataGridViewcampostrazables["columnName", rowindex].Value.ToString();
+
+            
+        }
+
+        private void dataGridViewcampostrazables_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+        /*    int data = (int)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["campotext"].Value;
+            lookUpEditCamposTrazables.EditValue = lookUpEditCamposTrazables.Properties.GetKeyValueByDisplayValue(data);*/
+
+            formmode = __formmode.Edit;
+
+            idcampotrazableselected = (int)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colcampo"].Value;
+
+
+            lookUpEditCamposTrazables.Visible = false;
+            textEditcampotrazable.Visible = true;
+            textEditcampotrazable.Text = dataGridViewcampostrazables.Rows[e.RowIndex].Cells["campotext"].Value.ToString();
+
+            actualizainfomascara(dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colmask"].Value.ToString(), (int)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["collong"].Value);
+            txtvalortrazable.Text = dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colValor"].Value.ToString();
+            txtvalortrazable.Focus();
+
+            checkEditcampoprincipal.Checked = (Boolean)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colCampoPrincipal"].Value;
+        }
+
+        private void scann_Load(object sender, EventArgs e)
+        {
+            lookUpEditTramites.Focus();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            clearfrmcampostrazables();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma borrar el campo trazable seleccionado", "Borrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+            {
+                bindingSource3.RemoveAt(dataGridViewcampostrazables.SelectedRows[0].Index);
+                clearfrmcampostrazables();
+            }
+        }
+
+        private void txtvalortrazable_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtvalortrazable_Click(object sender, EventArgs e)
+        {
+            txtvalortrazable.SelectAll();
         }
 
     }

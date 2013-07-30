@@ -16,6 +16,8 @@ namespace thumbnail
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new scann());
+            //Application.Run(new thumbnail.forms.sample());
+            
         }
     }
 }

@@ -50,6 +50,7 @@
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,12 +62,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\thumbnail.cs" />
+    <Compile Include="data_members\Bd_Exp_Transportes.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bd_Exp_Transportes.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_de_expedientestrazables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_de_expedientestrazables.Designer.cs">
+      <DependentUpon>frm_de_expedientestrazables.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\imgViewer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\imgViewer.Designer.cs">
       <DependentUpon>imgViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="models\campostrazables.cs" />
+    <Compile Include="models\expediente.cs" />
     <Compile Include="scann.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +89,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="data_members\Bd_Exp_Transportes.dbml.layout">
+      <DependentUpon>Bd_Exp_Transportes.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="forms\frm_de_expedientestrazables.resx">
+      <DependentUpon>frm_de_expedientestrazables.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\imgViewer.resx">
       <DependentUpon>imgViewer.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +116,13 @@
     <None Include="assets\imgs\16x16\trash.png" />
     <None Include="assets\imgs\16x16\view.png" />
     <None Include="assets\imgs\48x48\clear_get.png" />
+    <None Include="data_members\Bd_Exp_Transportes.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Bd_Exp_Transportes.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\thumbnail.data_members.vw_Campos_Trazables.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.vw_Tramites_Activos.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -154,6 +181,10 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

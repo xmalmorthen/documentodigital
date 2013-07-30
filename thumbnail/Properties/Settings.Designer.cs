@@ -94,5 +94,16 @@ namespace thumbnail.Properties {
                 this["KDImageLicenseKey"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=XMALMORTHEN-SRV;Initial Catalog=Bd_Exp_Transportes;Persist Security I" +
+            "nfo=True;User ID=sa;Password=malditamater")]
+        public string Bd_Exp_TransportesConnectionString {
+            get {
+                return ((string)(this["Bd_Exp_TransportesConnectionString"]));
+            }
+        }
     }
 }

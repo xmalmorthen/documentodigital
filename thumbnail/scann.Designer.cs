@@ -29,25 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(scann));
             this.sptcntrMain = new System.Windows.Forms.SplitContainer();
-            this.tbllytpnlcampostrazables = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpder = new System.Windows.Forms.TableLayoutPanel();
-            this.lblcampotrazables = new System.Windows.Forms.Label();
-            this.dgvcampostrazables = new System.Windows.Forms.DataGridView();
-            this.dgdvwtxtcolcampo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgdvwtxtcolmascara = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgdvwtxtcoldato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tlpizq = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlcampoprincipal = new System.Windows.Forms.Panel();
-            this.lblcampoprincipal = new System.Windows.Forms.Label();
-            this.lblmascaracampoprincipal = new System.Windows.Forms.Label();
-            this.txtcampoprincipal = new System.Windows.Forms.TextBox();
-            this.cmbtramites = new System.Windows.Forms.ComboBox();
-            this.lbltramite = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewcampostrazables = new System.Windows.Forms.DataGridView();
+            this.colCampoPrincipal = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colcampo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colmask = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.collong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.campotext = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.lblmascampotrazable = new DevExpress.XtraEditors.LabelControl();
+            this.txtvalortrazable = new DevExpress.XtraEditors.TextEdit();
+            this.checkEditcampoprincipal = new DevExpress.XtraEditors.CheckEdit();
+            this.lookUpEditCamposTrazables = new DevExpress.XtraEditors.LookUpEdit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.textEditcampotrazable = new DevExpress.XtraEditors.TextEdit();
             this.tbctrl = new System.Windows.Forms.TabControl();
             this.tabpgeUsuario = new System.Windows.Forms.TabPage();
             this.tab0_tbllytpnlmnutbusuario = new System.Windows.Forms.TableLayoutPanel();
@@ -147,16 +150,23 @@
             this.tbllytpnlinfo = new System.Windows.Forms.TableLayoutPanel();
             this.tbllytpnlinfolbl = new System.Windows.Forms.Label();
             this.tbllytpnlinfopbimage = new System.Windows.Forms.PictureBox();
-            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lookUpEditTramites = new DevExpress.XtraEditors.LookUpEdit();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.sptcntrMain.Panel1.SuspendLayout();
             this.sptcntrMain.Panel2.SuspendLayout();
             this.sptcntrMain.SuspendLayout();
-            this.tbllytpnlcampostrazables.SuspendLayout();
-            this.tlpder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvcampostrazables)).BeginInit();
-            this.tlpizq.SuspendLayout();
-            this.pnlcampoprincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewcampostrazables)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtvalortrazable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditcampoprincipal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditCamposTrazables.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditcampotrazable.Properties)).BeginInit();
             this.tbctrl.SuspendLayout();
             this.tabpgeUsuario.SuspendLayout();
             this.tab0_tbllytpnlmnutbusuario.SuspendLayout();
@@ -212,8 +222,10 @@
             this.panel7.SuspendLayout();
             this.tbllytpnlinfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbllytpnlinfopbimage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditTramites.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // sptcntrMain
@@ -224,14 +236,26 @@
             this.sptcntrMain.BackColor = System.Drawing.Color.Transparent;
             this.sptcntrMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sptcntrMain.Cursor = System.Windows.Forms.Cursors.Default;
-            this.sptcntrMain.Location = new System.Drawing.Point(4, 83);
+            this.sptcntrMain.Location = new System.Drawing.Point(4, 93);
             this.sptcntrMain.Margin = new System.Windows.Forms.Padding(10);
             this.sptcntrMain.Name = "sptcntrMain";
             this.sptcntrMain.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // sptcntrMain.Panel1
             // 
-            this.sptcntrMain.Panel1.Controls.Add(this.tbllytpnlcampostrazables);
+            this.sptcntrMain.Panel1.AutoScroll = true;
+            this.sptcntrMain.Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.sptcntrMain.Panel1.Controls.Add(this.pictureBox7);
+            this.sptcntrMain.Panel1.Controls.Add(this.pictureBox4);
+            this.sptcntrMain.Panel1.Controls.Add(this.pictureBox2);
+            this.sptcntrMain.Panel1.Controls.Add(this.dataGridViewcampostrazables);
+            this.sptcntrMain.Panel1.Controls.Add(this.labelControl3);
+            this.sptcntrMain.Panel1.Controls.Add(this.labelControl2);
+            this.sptcntrMain.Panel1.Controls.Add(this.lblmascampotrazable);
+            this.sptcntrMain.Panel1.Controls.Add(this.txtvalortrazable);
+            this.sptcntrMain.Panel1.Controls.Add(this.checkEditcampoprincipal);
+            this.sptcntrMain.Panel1.Controls.Add(this.lookUpEditCamposTrazables);
+            this.sptcntrMain.Panel1.Controls.Add(this.textEditcampotrazable);
             this.sptcntrMain.Panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sptcntrMain.Panel1MinSize = 100;
             // 
@@ -239,211 +263,237 @@
             // 
             this.sptcntrMain.Panel2.Controls.Add(this.tbctrl);
             this.sptcntrMain.Panel2MinSize = 100;
-            this.sptcntrMain.Size = new System.Drawing.Size(999, 643);
-            this.sptcntrMain.SplitterDistance = 183;
+            this.sptcntrMain.Size = new System.Drawing.Size(999, 633);
+            this.sptcntrMain.SplitterDistance = 166;
             this.sptcntrMain.SplitterWidth = 10;
             this.sptcntrMain.TabIndex = 5;
             // 
-            // tbllytpnlcampostrazables
+            // pictureBox7
             // 
-            this.tbllytpnlcampostrazables.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbllytpnlcampostrazables.ColumnCount = 2;
-            this.tbllytpnlcampostrazables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.48374F));
-            this.tbllytpnlcampostrazables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.51626F));
-            this.tbllytpnlcampostrazables.Controls.Add(this.tlpder, 1, 0);
-            this.tbllytpnlcampostrazables.Controls.Add(this.tlpizq, 0, 0);
-            this.tbllytpnlcampostrazables.Location = new System.Drawing.Point(8, 8);
-            this.tbllytpnlcampostrazables.Name = "tbllytpnlcampostrazables";
-            this.tbllytpnlcampostrazables.RowCount = 1;
-            this.tbllytpnlcampostrazables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tbllytpnlcampostrazables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tbllytpnlcampostrazables.Size = new System.Drawing.Size(982, 170);
-            this.tbllytpnlcampostrazables.TabIndex = 8;
+            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = global::thumbnail.Properties.Resources.gestion;
+            this.pictureBox7.Location = new System.Drawing.Point(425, 125);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 22;
+            this.pictureBox7.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.pictureBox7, "Configuraciones");
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
-            // tlpder
+            // pictureBox4
             // 
-            this.tlpder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpder.ColumnCount = 1;
-            this.tlpder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpder.Controls.Add(this.lblcampotrazables, 0, 0);
-            this.tlpder.Controls.Add(this.dgvcampostrazables, 0, 1);
-            this.tlpder.Location = new System.Drawing.Point(361, 3);
-            this.tlpder.Name = "tlpder";
-            this.tlpder.RowCount = 2;
-            this.tlpder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpder.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpder.Size = new System.Drawing.Size(618, 164);
-            this.tlpder.TabIndex = 7;
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = global::thumbnail.Properties.Resources.gestion;
+            this.pictureBox4.Location = new System.Drawing.Point(386, 125);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 21;
+            this.pictureBox4.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.pictureBox4, "Configuraciones");
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // lblcampotrazables
+            // pictureBox2
             // 
-            this.lblcampotrazables.AutoSize = true;
-            this.lblcampotrazables.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcampotrazables.Location = new System.Drawing.Point(3, 3);
-            this.lblcampotrazables.Margin = new System.Windows.Forms.Padding(3);
-            this.lblcampotrazables.Name = "lblcampotrazables";
-            this.lblcampotrazables.Size = new System.Drawing.Size(176, 22);
-            this.lblcampotrazables.TabIndex = 7;
-            this.lblcampotrazables.Text = "Campos Trazables";
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::thumbnail.Properties.Resources.gestion;
+            this.pictureBox2.Location = new System.Drawing.Point(347, 125);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.pictureBox2, "Configuraciones");
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // dgvcampostrazables
+            // dataGridViewcampostrazables
             // 
-            this.dgvcampostrazables.AllowUserToDeleteRows = false;
-            this.dgvcampostrazables.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvcampostrazables.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvcampostrazables.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvcampostrazables.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvcampostrazables.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcampostrazables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvcampostrazables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvcampostrazables.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgdvwtxtcolcampo,
-            this.dgdvwtxtcolmascara,
-            this.dgdvwtxtcoldato});
-            this.dgvcampostrazables.Location = new System.Drawing.Point(3, 31);
-            this.dgvcampostrazables.Name = "dgvcampostrazables";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvcampostrazables.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvcampostrazables.Size = new System.Drawing.Size(612, 130);
-            this.dgvcampostrazables.TabIndex = 8;
+            this.dataGridViewcampostrazables.AllowUserToAddRows = false;
+            this.dataGridViewcampostrazables.AllowUserToDeleteRows = false;
+            this.dataGridViewcampostrazables.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridViewcampostrazables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewcampostrazables.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCampoPrincipal,
+            this.colcampo,
+            this.colmask,
+            this.collong,
+            this.campotext,
+            this.colValor});
+            this.dataGridViewcampostrazables.Location = new System.Drawing.Point(473, 4);
+            this.dataGridViewcampostrazables.MultiSelect = false;
+            this.dataGridViewcampostrazables.Name = "dataGridViewcampostrazables";
+            this.dataGridViewcampostrazables.ReadOnly = true;
+            this.dataGridViewcampostrazables.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewcampostrazables.Size = new System.Drawing.Size(517, 154);
+            this.dataGridViewcampostrazables.TabIndex = 4;
+            this.dataGridViewcampostrazables.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewcampostrazables_CellClick);
+            this.dataGridViewcampostrazables.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewcampostrazables_RowEnter);
             // 
-            // dgdvwtxtcolcampo
+            // colCampoPrincipal
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgdvwtxtcolcampo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgdvwtxtcolcampo.Frozen = true;
-            this.dgdvwtxtcolcampo.HeaderText = "CAMPO";
-            this.dgdvwtxtcolcampo.Name = "dgdvwtxtcolcampo";
-            this.dgdvwtxtcolcampo.ReadOnly = true;
-            this.dgdvwtxtcolcampo.Width = 75;
+            this.colCampoPrincipal.DataPropertyName = "es_principal";
+            this.colCampoPrincipal.Frozen = true;
+            this.colCampoPrincipal.HeaderText = "Es campo principal";
+            this.colCampoPrincipal.Name = "colCampoPrincipal";
+            this.colCampoPrincipal.ReadOnly = true;
+            this.colCampoPrincipal.Width = 140;
             // 
-            // dgdvwtxtcolmascara
+            // colcampo
             // 
-            this.dgdvwtxtcolmascara.Frozen = true;
-            this.dgdvwtxtcolmascara.HeaderText = "MASCARA";
-            this.dgdvwtxtcolmascara.Name = "dgdvwtxtcolmascara";
-            this.dgdvwtxtcolmascara.ReadOnly = true;
-            this.dgdvwtxtcolmascara.Width = 91;
+            this.colcampo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colcampo.DataPropertyName = "id_campotrazable";
+            this.colcampo.Frozen = true;
+            this.colcampo.HeaderText = "";
+            this.colcampo.Name = "colcampo";
+            this.colcampo.ReadOnly = true;
+            this.colcampo.Visible = false;
             // 
-            // dgdvwtxtcoldato
+            // colmask
             // 
-            this.dgdvwtxtcoldato.Frozen = true;
-            this.dgdvwtxtcoldato.HeaderText = "DATO";
-            this.dgdvwtxtcoldato.Name = "dgdvwtxtcoldato";
-            this.dgdvwtxtcoldato.Width = 66;
+            this.colmask.DataPropertyName = "mask";
+            this.colmask.Frozen = true;
+            this.colmask.HeaderText = "";
+            this.colmask.Name = "colmask";
+            this.colmask.ReadOnly = true;
+            this.colmask.Visible = false;
             // 
-            // tlpizq
+            // collong
             // 
-            this.tlpizq.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpizq.ColumnCount = 1;
-            this.tlpizq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpizq.Controls.Add(this.pnlcampoprincipal, 0, 2);
-            this.tlpizq.Controls.Add(this.cmbtramites, 0, 1);
-            this.tlpizq.Controls.Add(this.lbltramite, 0, 0);
-            this.tlpizq.Location = new System.Drawing.Point(3, 3);
-            this.tlpizq.Name = "tlpizq";
-            this.tlpizq.RowCount = 3;
-            this.tlpizq.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpizq.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpizq.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpizq.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpizq.Size = new System.Drawing.Size(352, 164);
-            this.tlpizq.TabIndex = 6;
+            this.collong.DataPropertyName = "numcaracteres";
+            this.collong.Frozen = true;
+            this.collong.HeaderText = "";
+            this.collong.Name = "collong";
+            this.collong.ReadOnly = true;
+            this.collong.Visible = false;
             // 
-            // pnlcampoprincipal
+            // campotext
             // 
-            this.pnlcampoprincipal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlcampoprincipal.Controls.Add(this.lblcampoprincipal);
-            this.pnlcampoprincipal.Controls.Add(this.lblmascaracampoprincipal);
-            this.pnlcampoprincipal.Controls.Add(this.txtcampoprincipal);
-            this.pnlcampoprincipal.Location = new System.Drawing.Point(3, 61);
-            this.pnlcampoprincipal.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.pnlcampoprincipal.Name = "pnlcampoprincipal";
-            this.pnlcampoprincipal.Size = new System.Drawing.Size(346, 109);
-            this.pnlcampoprincipal.TabIndex = 11;
+            this.campotext.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.campotext.DataPropertyName = "campotrazable";
+            this.campotext.HeaderText = "Campo";
+            this.campotext.Name = "campotext";
+            this.campotext.ReadOnly = true;
             // 
-            // lblcampoprincipal
+            // colValor
             // 
-            this.lblcampoprincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblcampoprincipal.AutoSize = true;
-            this.lblcampoprincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcampoprincipal.Location = new System.Drawing.Point(0, 10);
-            this.lblcampoprincipal.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.lblcampoprincipal.Name = "lblcampoprincipal";
-            this.lblcampoprincipal.Size = new System.Drawing.Size(163, 24);
-            this.lblcampoprincipal.TabIndex = 9;
-            this.lblcampoprincipal.Text = "Campo Principal";
+            this.colValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colValor.DataPropertyName = "valor_trazable";
+            this.colValor.HeaderText = "Valor";
+            this.colValor.Name = "colValor";
+            this.colValor.ReadOnly = true;
             // 
-            // lblmascaracampoprincipal
+            // labelControl3
             // 
-            this.lblmascaracampoprincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblmascaracampoprincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmascaracampoprincipal.ForeColor = System.Drawing.Color.Crimson;
-            this.lblmascaracampoprincipal.Location = new System.Drawing.Point(186, 19);
-            this.lblmascaracampoprincipal.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
-            this.lblmascaracampoprincipal.Name = "lblmascaracampoprincipal";
-            this.lblmascaracampoprincipal.Size = new System.Drawing.Size(163, 24);
-            this.lblmascaracampoprincipal.TabIndex = 8;
-            this.lblmascaracampoprincipal.Text = "[ XXX-99999 ]";
-            this.lblmascaracampoprincipal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.labelControl3.Location = new System.Drawing.Point(7, 65);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(42, 23);
+            this.labelControl3.TabIndex = 18;
+            this.labelControl3.Text = "Valor";
             // 
-            // txtcampoprincipal
+            // labelControl2
             // 
-            this.txtcampoprincipal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtcampoprincipal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtcampoprincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcampoprincipal.Location = new System.Drawing.Point(4, 45);
-            this.txtcampoprincipal.Name = "txtcampoprincipal";
-            this.txtcampoprincipal.Size = new System.Drawing.Size(338, 56);
-            this.txtcampoprincipal.TabIndex = 0;
-            this.txtcampoprincipal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.labelControl2.Location = new System.Drawing.Point(7, 6);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(135, 23);
+            this.labelControl2.TabIndex = 17;
+            this.labelControl2.Text = "Campo Trazable";
             // 
-            // cmbtramites
+            // lblmascampotrazable
             // 
-            this.cmbtramites.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbtramites.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-            this.cmbtramites.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbtramites.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbtramites.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbtramites.FormattingEnabled = true;
-            this.cmbtramites.Items.AddRange(new object[] {
-            "tramite 1",
-            "tramite 2",
-            "tramite 2"});
-            this.cmbtramites.Location = new System.Drawing.Point(3, 30);
-            this.cmbtramites.Name = "cmbtramites";
-            this.cmbtramites.Size = new System.Drawing.Size(346, 28);
-            this.cmbtramites.TabIndex = 6;
+            this.lblmascampotrazable.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblmascampotrazable.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lblmascampotrazable.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.lblmascampotrazable.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblmascampotrazable.Location = new System.Drawing.Point(304, 76);
+            this.lblmascampotrazable.Name = "lblmascampotrazable";
+            this.lblmascampotrazable.Size = new System.Drawing.Size(154, 13);
+            this.lblmascampotrazable.TabIndex = 16;
             // 
-            // lbltramite
+            // txtvalortrazable
             // 
-            this.lbltramite.AutoSize = true;
-            this.lbltramite.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltramite.Location = new System.Drawing.Point(3, 3);
-            this.lbltramite.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.lbltramite.Name = "lbltramite";
-            this.lbltramite.Size = new System.Drawing.Size(80, 24);
-            this.lbltramite.TabIndex = 5;
-            this.lbltramite.Text = "Trámite";
+            this.txtvalortrazable.Enabled = false;
+            this.txtvalortrazable.Location = new System.Drawing.Point(7, 91);
+            this.txtvalortrazable.Name = "txtvalortrazable";
+            this.txtvalortrazable.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.txtvalortrazable.Properties.Appearance.Options.UseFont = true;
+            this.txtvalortrazable.Properties.Mask.BeepOnError = true;
+            this.txtvalortrazable.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            this.txtvalortrazable.Size = new System.Drawing.Size(452, 26);
+            this.txtvalortrazable.TabIndex = 2;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Campo requerido";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtvalortrazable, conditionValidationRule1);
+            this.txtvalortrazable.Click += new System.EventHandler(this.txtvalortrazable_Click);
+            this.txtvalortrazable.Enter += new System.EventHandler(this.txtvalortrazable_Enter);
+            // 
+            // checkEditcampoprincipal
+            // 
+            this.checkEditcampoprincipal.Location = new System.Drawing.Point(5, 123);
+            this.checkEditcampoprincipal.Name = "checkEditcampoprincipal";
+            this.checkEditcampoprincipal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.checkEditcampoprincipal.Properties.Appearance.Options.UseFont = true;
+            this.checkEditcampoprincipal.Properties.Caption = "Es campo principal";
+            this.checkEditcampoprincipal.Size = new System.Drawing.Size(183, 28);
+            this.checkEditcampoprincipal.TabIndex = 3;
+            // 
+            // lookUpEditCamposTrazables
+            // 
+            this.lookUpEditCamposTrazables.Location = new System.Drawing.Point(7, 33);
+            this.lookUpEditCamposTrazables.Name = "lookUpEditCamposTrazables";
+            this.lookUpEditCamposTrazables.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lookUpEditCamposTrazables.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditCamposTrazables.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lookUpEditCamposTrazables.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lookUpEditCamposTrazables.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditCamposTrazables.Properties.AppearanceDropDownHeader.Options.UseFont = true;
+            this.lookUpEditCamposTrazables.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.lookUpEditCamposTrazables.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lookUpEditCamposTrazables.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditCamposTrazables.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 41, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nombre", "Nombre", 86, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Tamanio_Caracteres", "Tamanio_Caracteres", 205, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Center),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Mascara", "Mascara", 88, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.lookUpEditCamposTrazables.Properties.DataSource = this.bindingSource1;
+            this.lookUpEditCamposTrazables.Properties.DisplayMember = "Nombre";
+            this.lookUpEditCamposTrazables.Properties.ImmediatePopup = true;
+            this.lookUpEditCamposTrazables.Properties.LookAndFeel.SkinName = "VS2010";
+            this.lookUpEditCamposTrazables.Properties.NullText = "";
+            this.lookUpEditCamposTrazables.Properties.ValueMember = "id";
+            this.lookUpEditCamposTrazables.Size = new System.Drawing.Size(451, 26);
+            this.lookUpEditCamposTrazables.TabIndex = 1;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Campo requerido";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.lookUpEditCamposTrazables, conditionValidationRule2);
+            this.lookUpEditCamposTrazables.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.lookUpEditCamposTrazables_QueryPopUp);
+            this.lookUpEditCamposTrazables.EditValueChanged += new System.EventHandler(this.lookUpEditCamposTrazables_EditValueChanged);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(thumbnail.data_members.vw_Campos_Trazables);
+            // 
+            // textEditcampotrazable
+            // 
+            this.textEditcampotrazable.Enabled = false;
+            this.textEditcampotrazable.Location = new System.Drawing.Point(7, 33);
+            this.textEditcampotrazable.Name = "textEditcampotrazable";
+            this.textEditcampotrazable.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.textEditcampotrazable.Properties.Appearance.Options.UseFont = true;
+            this.textEditcampotrazable.Properties.Mask.BeepOnError = true;
+            this.textEditcampotrazable.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            this.textEditcampotrazable.Properties.ReadOnly = true;
+            this.textEditcampotrazable.Size = new System.Drawing.Size(451, 26);
+            this.textEditcampotrazable.TabIndex = 23;
+            this.textEditcampotrazable.Visible = false;
             // 
             // tbctrl
             // 
@@ -459,7 +509,7 @@
             this.tbctrl.Location = new System.Drawing.Point(3, 3);
             this.tbctrl.Name = "tbctrl";
             this.tbctrl.SelectedIndex = 0;
-            this.tbctrl.Size = new System.Drawing.Size(991, 442);
+            this.tbctrl.Size = new System.Drawing.Size(991, 449);
             this.tbctrl.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tbctrl.TabIndex = 0;
             this.tbctrl.Tag = "";
@@ -467,14 +517,14 @@
             // 
             // tabpgeUsuario
             // 
-            this.tabpgeUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabpgeUsuario.BackColor = System.Drawing.Color.Transparent;
             this.tabpgeUsuario.Controls.Add(this.tab0_tbllytpnlmnutbusuario);
             this.tabpgeUsuario.Controls.Add(this.tab0_tbllytpnldocumentos);
             this.tabpgeUsuario.ImageIndex = 0;
             this.tabpgeUsuario.Location = new System.Drawing.Point(4, 39);
             this.tabpgeUsuario.Name = "tabpgeUsuario";
             this.tabpgeUsuario.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpgeUsuario.Size = new System.Drawing.Size(983, 399);
+            this.tabpgeUsuario.Size = new System.Drawing.Size(983, 406);
             this.tabpgeUsuario.TabIndex = 0;
             this.tabpgeUsuario.Tag = "Documentos de usuario";
             this.tabpgeUsuario.Text = "Usuario";
@@ -486,7 +536,7 @@
             this.tab0_tbllytpnlmnutbusuario.ColumnCount = 3;
             this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 755F));
+            this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 791F));
             this.tab0_tbllytpnlmnutbusuario.Controls.Add(this.tab0_pbmnuscann, 0, 0);
             this.tab0_tbllytpnlmnutbusuario.Controls.Add(this.tab0_pbmnulimpiar, 2, 0);
             this.tab0_tbllytpnlmnutbusuario.Controls.Add(this.tab0_pbopenfile, 1, 0);
@@ -559,7 +609,7 @@
             this.tab0_tbllytpnldocumentos.RowCount = 2;
             this.tab0_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tab0_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tab0_tbllytpnldocumentos.Size = new System.Drawing.Size(972, 331);
+            this.tab0_tbllytpnldocumentos.Size = new System.Drawing.Size(972, 338);
             this.tab0_tbllytpnldocumentos.TabIndex = 12;
             // 
             // pnllblsder
@@ -643,7 +693,7 @@
             this.tab0_lstvwdocumentosenlazados.Location = new System.Drawing.Point(491, 27);
             this.tab0_lstvwdocumentosenlazados.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.tab0_lstvwdocumentosenlazados.Name = "tab0_lstvwdocumentosenlazados";
-            this.tab0_lstvwdocumentosenlazados.Size = new System.Drawing.Size(476, 299);
+            this.tab0_lstvwdocumentosenlazados.Size = new System.Drawing.Size(476, 306);
             this.tab0_lstvwdocumentosenlazados.TabIndex = 5;
             this.tab0_lstvwdocumentosenlazados.Tag = "0";
             this.tab0_lstvwdocumentosenlazados.UseCompatibleStateImageBehavior = false;
@@ -746,7 +796,7 @@
             this.tab0_lstvwdocumentosescaneados.Location = new System.Drawing.Point(5, 27);
             this.tab0_lstvwdocumentosescaneados.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.tab0_lstvwdocumentosescaneados.Name = "tab0_lstvwdocumentosescaneados";
-            this.tab0_lstvwdocumentosescaneados.Size = new System.Drawing.Size(476, 299);
+            this.tab0_lstvwdocumentosescaneados.Size = new System.Drawing.Size(476, 306);
             this.tab0_lstvwdocumentosescaneados.TabIndex = 4;
             this.tab0_lstvwdocumentosescaneados.Tag = "0";
             this.tab0_lstvwdocumentosescaneados.UseCompatibleStateImageBehavior = false;
@@ -873,7 +923,7 @@
             this.tabpgeInterno.Location = new System.Drawing.Point(4, 39);
             this.tabpgeInterno.Name = "tabpgeInterno";
             this.tabpgeInterno.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpgeInterno.Size = new System.Drawing.Size(983, 399);
+            this.tabpgeInterno.Size = new System.Drawing.Size(983, 406);
             this.tabpgeInterno.TabIndex = 1;
             this.tabpgeInterno.Tag = "Documentos internos";
             this.tabpgeInterno.Text = "Interno";
@@ -1081,7 +1131,7 @@
             this.tabPgeExterno.Location = new System.Drawing.Point(4, 39);
             this.tabPgeExterno.Name = "tabPgeExterno";
             this.tabPgeExterno.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPgeExterno.Size = new System.Drawing.Size(983, 399);
+            this.tabPgeExterno.Size = new System.Drawing.Size(983, 406);
             this.tabPgeExterno.TabIndex = 2;
             this.tabPgeExterno.Tag = "Documentos externos";
             this.tabPgeExterno.Text = "Externo";
@@ -1095,7 +1145,7 @@
             this.tab2_tbllytpnlmnutbexterno.ColumnCount = 3;
             this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 755F));
+            this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 791F));
             this.tab2_tbllytpnlmnutbexterno.Controls.Add(this.tab2_pbmnuscann, 0, 0);
             this.tab2_tbllytpnlmnutbexterno.Controls.Add(this.tab2_pbmnulimpiar, 2, 0);
             this.tab2_tbllytpnlmnutbexterno.Controls.Add(this.tab2_pbopenfile, 1, 0);
@@ -1288,7 +1338,7 @@
             this.tabpgeProveedor.Location = new System.Drawing.Point(4, 39);
             this.tabpgeProveedor.Name = "tabpgeProveedor";
             this.tabpgeProveedor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpgeProveedor.Size = new System.Drawing.Size(983, 399);
+            this.tabpgeProveedor.Size = new System.Drawing.Size(983, 406);
             this.tabpgeProveedor.TabIndex = 3;
             this.tabpgeProveedor.Tag = "Documentos de proveedor";
             this.tabpgeProveedor.Text = "Proveedor";
@@ -1302,7 +1352,7 @@
             this.tab3_tbllytpnlmnutbproveedor.ColumnCount = 3;
             this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 755F));
+            this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 791F));
             this.tab3_tbllytpnlmnutbproveedor.Controls.Add(this.tab3_pbmnuscann, 0, 0);
             this.tab3_tbllytpnlmnutbproveedor.Controls.Add(this.tab3_pbmnulimpiar, 2, 0);
             this.tab3_tbllytpnlmnutbproveedor.Controls.Add(this.tab3_pbopenfile, 1, 0);
@@ -1614,7 +1664,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.KDImage.Enabled = true;
-            this.KDImage.Location = new System.Drawing.Point(428, 10);
+            this.KDImage.Location = new System.Drawing.Point(268, 13);
             this.KDImage.Name = "KDImage";
             this.KDImage.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("KDImage.OcxState")));
             this.KDImage.Size = new System.Drawing.Size(16, 15);
@@ -1630,15 +1680,15 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 755F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 791F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(478, 4);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 15, 5, 15);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 76);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(442, 76);
             this.tableLayoutPanel1.TabIndex = 35;
             // 
             // panel7
@@ -1696,29 +1746,67 @@
             this.tbllytpnlinfopbimage.TabIndex = 11;
             this.tbllytpnlinfopbimage.TabStop = false;
             // 
-            // searchLookUpEdit1
+            // label1
             // 
-            this.searchLookUpEdit1.Location = new System.Drawing.Point(508, 17);
-            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
-            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 29);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Trámite";
+            // 
+            // lookUpEditTramites
+            // 
+            this.lookUpEditTramites.Location = new System.Drawing.Point(12, 34);
+            this.lookUpEditTramites.Name = "lookUpEditTramites";
+            this.lookUpEditTramites.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
+            this.lookUpEditTramites.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditTramites.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lookUpEditTramites.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lookUpEditTramites.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditTramites.Properties.AppearanceDropDownHeader.Options.UseFont = true;
+            this.lookUpEditTramites.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.lookUpEditTramites.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lookUpEditTramites.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit1.Properties.View = this.searchLookUpEdit1View;
-            this.searchLookUpEdit1.Size = new System.Drawing.Size(100, 20);
-            this.searchLookUpEdit1.TabIndex = 40;
+            this.lookUpEditTramites.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_Tramite", "id_Tramite", 73, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nombre_Tramite", "Trámite", 200, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id_Estatus", "Id_Estatus", 62, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Descripcion_Estatus", "Descripcion_Estatus", 106, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Id_ClasificacionTramite", "Id_Clasificacion Tramite", 123, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Descripcion_ClasificacionTramite", "Clasificación", 200, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.lookUpEditTramites.Properties.DataSource = this.bindingSource2;
+            this.lookUpEditTramites.Properties.DisplayMember = "Nombre_Tramite";
+            this.lookUpEditTramites.Properties.ImmediatePopup = true;
+            this.lookUpEditTramites.Properties.LookAndFeel.SkinName = "VS2010";
+            this.lookUpEditTramites.Properties.NullText = "";
+            this.lookUpEditTramites.Properties.ValueMember = "id_Tramite";
+            this.lookUpEditTramites.Size = new System.Drawing.Size(452, 46);
+            this.lookUpEditTramites.TabIndex = 0;
+            this.lookUpEditTramites.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
             // 
-            // searchLookUpEdit1View
+            // bindingSource2
             // 
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.bindingSource2.DataSource = typeof(thumbnail.data_members.vw_Tramites_Activos);
+            // 
+            // bindingSource3
+            // 
+            this.bindingSource3.DataSource = typeof(thumbnail.data_members.vw_Tramites_Activos);
+            // 
+            // dxValidationProvider1
+            // 
+            this.dxValidationProvider1.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
             // 
             // scann
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 730);
-            this.Controls.Add(this.searchLookUpEdit1);
+            this.Controls.Add(this.lookUpEditTramites);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbllytpnlinfo);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -1729,17 +1817,20 @@
             this.Name = "scann";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Escaneo de Documentos";
+            this.Load += new System.EventHandler(this.scann_Load);
             this.sptcntrMain.Panel1.ResumeLayout(false);
+            this.sptcntrMain.Panel1.PerformLayout();
             this.sptcntrMain.Panel2.ResumeLayout(false);
             this.sptcntrMain.ResumeLayout(false);
-            this.tbllytpnlcampostrazables.ResumeLayout(false);
-            this.tlpder.ResumeLayout(false);
-            this.tlpder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvcampostrazables)).EndInit();
-            this.tlpizq.ResumeLayout(false);
-            this.tlpizq.PerformLayout();
-            this.pnlcampoprincipal.ResumeLayout(false);
-            this.pnlcampoprincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewcampostrazables)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtvalortrazable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditcampoprincipal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditCamposTrazables.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditcampotrazable.Properties)).EndInit();
             this.tbctrl.ResumeLayout(false);
             this.tabpgeUsuario.ResumeLayout(false);
             this.tab0_tbllytpnlmnutbusuario.ResumeLayout(false);
@@ -1803,9 +1894,12 @@
             this.panel7.ResumeLayout(false);
             this.tbllytpnlinfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tbllytpnlinfopbimage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditTramites.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1827,14 +1921,6 @@
         private System.Windows.Forms.ToolTip tooltipBtnMnuOptions;
         private System.Windows.Forms.TabPage tabpgeProveedor;
         private System.Windows.Forms.ImageList imglsttabs;
-        private System.Windows.Forms.TableLayoutPanel tlpizq;
-        private System.Windows.Forms.ComboBox cmbtramites;
-        private System.Windows.Forms.Label lbltramite;
-        private System.Windows.Forms.TableLayoutPanel tlpder;
-        private System.Windows.Forms.TableLayoutPanel tbllytpnlcampostrazables;
-        private System.Windows.Forms.Panel pnlcampoprincipal;
-        private System.Windows.Forms.TextBox txtcampoprincipal;
-        private System.Windows.Forms.Label lblmascaracampoprincipal;
         private System.Windows.Forms.ContextMenuStrip cntmnuListViewEnlace;
         private System.Windows.Forms.ToolStripMenuItem tsmnuitemlstvwenlaceabrir;
         private System.Windows.Forms.ToolStripMenuItem tsmnuitemlstvwenlaceeliminar;
@@ -1916,17 +2002,34 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pbbtnconfiguraciones;
         private System.Windows.Forms.PictureBox pbbtnscannerselector;
-        private System.Windows.Forms.Label lblcampotrazables;
-        private System.Windows.Forms.DataGridView dgvcampostrazables;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgdvwtxtcolcampo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgdvwtxtcolmascara;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgdvwtxtcoldato;
-        private System.Windows.Forms.Label lblcampoprincipal;
         private System.Windows.Forms.TableLayoutPanel tbllytpnlinfo;
         private System.Windows.Forms.Label tbllytpnlinfolbl;
         private System.Windows.Forms.PictureBox tbllytpnlinfopbimage;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditTramites;
+        private System.Windows.Forms.DataGridView dataGridViewcampostrazables;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl lblmascampotrazable;
+        private DevExpress.XtraEditors.TextEdit txtvalortrazable;
+        private DevExpress.XtraEditors.CheckEdit checkEditcampoprincipal;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditCamposTrazables;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.BindingSource vwTramitesActivosBindingSource;
+        private System.Windows.Forms.BindingSource vwCamposTrazablesBindingSource;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.BindingSource bindingSource2;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.BindingSource bindingSource3;
+        private DevExpress.XtraEditors.TextEdit textEditcampotrazable;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colCampoPrincipal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colcampo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colmask;
+        private System.Windows.Forms.DataGridViewTextBoxColumn collong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn campotext;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
 
 
 
