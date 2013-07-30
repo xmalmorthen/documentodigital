@@ -72,8 +72,9 @@ namespace thumbnail
 //populate combo de tramites
             lookUpEditTramites.Properties.DataSource = bd.vw_Tramites_Activos;
             lookUpEditTramites.ItemIndex = 0; //seleccionar el primero por defecto            
+//populate combo de campos trazables
+            populatelookUpEditCamposTrazables();
 //binding datagridview
-
             bindingSource3.DataSource = expediente.expedientetrazable;
 
             dataGridViewcampostrazables.AutoGenerateColumns = false;
@@ -602,14 +603,18 @@ namespace thumbnail
             txtvalortrazable.Enabled = false;
             txtvalortrazable.Properties.Mask.EditMask = "";
             checkEditcampoprincipal.Checked = false;
+
+            dxValidationProvider1.RemoveControlError(lookUpEditCamposTrazables);
+            dxValidationProvider1.RemoveControlError(txtvalortrazable);
+            dxValidationProvider2.RemoveControlError(txtvalortrazable);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            if (!validatealldatascampostrazables()) return;
+
             if (formmode == __formmode.Add)
             {
-                if (!validatealldatascampostrazables()) return;
-
                 thumbnail.models.de_expedientestrazables detalle = new thumbnail.models.de_expedientestrazables();
                 detalle.es_principal = checkEditcampoprincipal.Checked;
                 detalle.fecha_creacion = DateTime.Now;
@@ -649,9 +654,16 @@ namespace thumbnail
 
         private Boolean validatealldatascampostrazables()
         {
-            dxValidationProvider1.Validate();
-
-            if (dxValidationProvider1.GetInvalidControls().Count() != 0) return false;
+            if (formmode == __formmode.Add)
+            {
+                dxValidationProvider1.Validate();
+                if (dxValidationProvider1.GetInvalidControls().Count() != 0) return false;
+            }
+            else 
+            {
+                dxValidationProvider2.Validate();
+                if (dxValidationProvider2.GetInvalidControls().Count() != 0) return false;
+            }
 
             return true;
         }
