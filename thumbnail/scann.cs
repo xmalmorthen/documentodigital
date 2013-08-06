@@ -596,6 +596,8 @@ namespace thumbnail
             formmode = __formmode.Add;
 
             lookUpEditCamposTrazables.Visible = true;
+            lookUpEditCamposTrazables.Properties.ForceInitialize();
+            lookUpEditCamposTrazables.EditValue = null;
             lookUpEditCamposTrazables.Properties.DataSource = null;
             textEditcampotrazable.Visible = false;
             lblmascampotrazable.Text = "";
@@ -678,8 +680,15 @@ namespace thumbnail
 
         private void lookUpEditCamposTrazables_EditValueChanged(object sender, EventArgs e)
         {
-            vw_Campos_Trazables row = ((LookUpEdit)sender).Properties.GetDataSourceRowByKeyValue(((LookUpEdit)sender).EditValue) as vw_Campos_Trazables;
-            actualizainfomascara(row.Mascara.ToString(), (int)row.Tamanio_Caracteres);
+            try
+            {
+                vw_Campos_Trazables row = ((LookUpEdit)sender).Properties.GetDataSourceRowByKeyValue(((LookUpEdit)sender).EditValue) as vw_Campos_Trazables;
+                actualizainfomascara(row.Mascara.ToString(), (int)row.Tamanio_Caracteres);
+            }
+            catch (Exception)
+            {
+            }
+            
         }
 
         private void actualizainfomascara(string mascara, int numcaracteres)
@@ -708,21 +717,26 @@ namespace thumbnail
         {
         /*    int data = (int)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["campotext"].Value;
             lookUpEditCamposTrazables.EditValue = lookUpEditCamposTrazables.Properties.GetKeyValueByDisplayValue(data);*/
+            try
+            {
+                formmode = __formmode.Edit;
 
-            formmode = __formmode.Edit;
-
-            idcampotrazableselected = (int)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colcampo"].Value;
+                idcampotrazableselected = (int)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colcampo"].Value;
 
 
-            lookUpEditCamposTrazables.Visible = false;
-            textEditcampotrazable.Visible = true;
-            textEditcampotrazable.Text = dataGridViewcampostrazables.Rows[e.RowIndex].Cells["campotext"].Value.ToString();
+                lookUpEditCamposTrazables.Visible = false;
+                textEditcampotrazable.Visible = true;
+                textEditcampotrazable.Text = dataGridViewcampostrazables.Rows[e.RowIndex].Cells["campotext"].Value.ToString();
 
-            actualizainfomascara(dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colmask"].Value.ToString(), (int)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["collong"].Value);
-            txtvalortrazable.Text = dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colValor"].Value.ToString();
-            txtvalortrazable.Focus();
+                actualizainfomascara(dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colmask"].Value.ToString(), (int)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["collong"].Value);
+                txtvalortrazable.Text = dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colValor"].Value.ToString();
+                txtvalortrazable.Focus();
 
-            checkEditcampoprincipal.Checked = (Boolean)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colCampoPrincipal"].Value;
+                checkEditcampoprincipal.Checked = (Boolean)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colCampoPrincipal"].Value;
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void scann_Load(object sender, EventArgs e)

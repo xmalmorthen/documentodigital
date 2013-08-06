@@ -156,6 +156,8 @@
     <None Include="assets\imgs\48x48\delete.png" />
     <None Include="assets\imgs\48x48\close.png" />
     <None Include="assets\imgs\48x48\fit.png" />
+    <None Include="assets\imgs\48x48\clear.png" />
+    <None Include="assets\imgs\48x48\checkbox_checked.png" />
     <Content Include="assets\imgs\48x48\folder_open.png" />
     <None Include="assets\imgs\48x48\gestion.png" />
     <Content Include="assets\imgs\48x48\get.png" />
