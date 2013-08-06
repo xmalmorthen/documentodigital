@@ -14,12 +14,14 @@
   <Table Name="dbo.re_tramitesdocumentos" Member="re_tramitesdocumentos">
     <Type Name="re_tramitesdocumentos">
       <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="id_documento" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_clasificaciondocumento" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_origen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Orden" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="Obligatorio" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="f_act" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="u_act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ca_documentos_re_tramitesdocumentos" Member="ca_documentos" ThisKey="id_documento" OtherKey="id" Type="ca_documentos" IsForeignKey="true" />
+      <Association Name="ca_clasificaciondocumentos_re_tramitesdocumentos" Member="ca_clasificaciondocumentos" ThisKey="id_clasificaciondocumento" OtherKey="id" Type="ca_clasificaciondocumentos" IsForeignKey="true" />
+      <Association Name="ca_origenes_re_tramitesdocumentos" Member="ca_origenes" ThisKey="id_origen" OtherKey="id" Type="ca_origenes" IsForeignKey="true" />
       <Association Name="ca_tramites_re_tramitesdocumentos" Member="ca_tramites" ThisKey="id_tramite" OtherKey="id" Type="ca_tramites" IsForeignKey="true" />
     </Type>
   </Table>
@@ -29,6 +31,7 @@
       <Column Name="Descripcion" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="f_act" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="u_act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ca_clasificaciondocumentos_re_tramitesdocumentos" Member="re_tramitesdocumentos" ThisKey="id" OtherKey="id_clasificaciondocumento" Type="re_tramitesdocumentos" />
       <Association Name="ca_clasificaciondocumentos_ca_documentos" Member="ca_documentos" ThisKey="id" OtherKey="id_ClasificacionDocumento" Type="ca_documentos" />
     </Type>
   </Table>
@@ -49,7 +52,6 @@
       <Column Name="No_Hojas" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="No_Caras" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="Estado" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="id_Origen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Resguardo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="Tiempo_Resguardo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="Trazabilidad" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
@@ -60,11 +62,9 @@
       <Column Name="id_status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="f_act" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="u_act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ca_documentos_re_tramitesdocumentos" Member="re_tramitesdocumentos" ThisKey="id" OtherKey="id_documento" Type="re_tramitesdocumentos" />
       <Association Name="ca_clasificaciondocumentos_ca_documentos" Member="ca_clasificaciondocumentos" ThisKey="id_ClasificacionDocumento" OtherKey="id" Type="ca_clasificaciondocumentos" IsForeignKey="true" />
       <Association Name="ca_estatus_ca_documentos" Member="ca_estatus" ThisKey="id_status" OtherKey="id" Type="ca_estatus" IsForeignKey="true" />
       <Association Name="ca_formatos_ca_documentos" Member="ca_formatos" ThisKey="id_Formato" OtherKey="id" Type="ca_formatos" IsForeignKey="true" />
-      <Association Name="ca_origenes_ca_documentos" Member="ca_origenes" ThisKey="id_Origen" OtherKey="id" Type="ca_origenes" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ca_estatus" Member="ca_estatus">
@@ -92,7 +92,7 @@
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="f_act" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="u_act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ca_origenes_ca_documentos" Member="ca_documentos" ThisKey="id" OtherKey="id_Origen" Type="ca_documentos" />
+      <Association Name="ca_origenes_re_tramitesdocumentos" Member="re_tramitesdocumentos" ThisKey="id" OtherKey="id_origen" Type="re_tramitesdocumentos" />
     </Type>
   </Table>
   <Table Name="dbo.ca_resguardos" Member="ca_resguardos">
@@ -162,6 +162,14 @@
       <Association Name="ca_tramites_ma_expedientes" Member="ca_tramites" ThisKey="id_tramite" OtherKey="id" Type="ca_tramites" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.vw_Campos_Trazables" Member="vw_Campos_Trazables">
+    <Type Name="vw_Campos_Trazables">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Tamanio_Caracteres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mascara" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.vw_Tramites_Activos" Member="vw_Tramites_Activos">
     <Type Name="vw_Tramites_Activos">
       <Column Name="id_Tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -172,12 +180,25 @@
       <Column Name="Descripcion_ClasificacionTramite" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
     </Type>
   </Table>
-  <Table Name="dbo.vw_Campos_Trazables" Member="vw_Campos_Trazables">
-    <Type Name="vw_Campos_Trazables">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="Tamanio_Caracteres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Mascara" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
+  <Function Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen" Method="pa_ObtenerDocumentosporTramiteyOrigen">
+    <Parameter Name="id_tramite" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_origen" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_ObtenerDocumentosporTramiteyOrigenResult">
+      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_clasificaciondocumento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="clasificaciondocumento" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="id_origen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Orden" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Obligatorio" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="id_documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="documento" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="formato" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="nohojas" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="nocaras" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Trazabilidad" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tamanio_Caracteres_Trazables" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Mascara_Trazable" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

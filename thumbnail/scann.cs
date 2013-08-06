@@ -227,6 +227,8 @@ namespace thumbnail
 
             if (e.Data.GetDataPresent(typeof(ListView.SelectedListViewItemCollection)))
             {
+                if (!hocking()) return;
+
                 if (e.Effect == DragDropEffects.Move)
                 {
                     foreach (ListViewItem current in (ListView.SelectedListViewItemCollection)e.Data.GetData(typeof(ListView.SelectedListViewItemCollection)))
@@ -250,6 +252,29 @@ namespace thumbnail
                     }
                 }
             }
+        }
+
+        private bool hocking()
+        {
+            vw_Tramites_Activos row = lookUpEditTramites.Properties.GetDataSourceRowByKeyValue(lookUpEditTramites.EditValue) as vw_Tramites_Activos;
+            int tramite = row.id_Tramite;
+            int origen = tbctrl.SelectedIndex + 1;
+
+            frmhook frm = new frmhook(tramite,origen);
+
+            DialogResult result = frm.ShowDialog(this);
+
+            //int idx = lstvwdocumentosescaneados.SelectedItems[0].ImageIndex;
+            if (result == DialogResult.OK)
+            {
+                return true;
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                frm.Dispose();
+                return false;
+            }
+            return false;
         }
 #endregion lstvwdocumentosenlazados drag and drop
 
@@ -756,11 +781,6 @@ namespace thumbnail
                 bindingSource3.RemoveAt(dataGridViewcampostrazables.SelectedRows[0].Index);
                 clearfrmcampostrazables();
             }
-        }
-
-        private void txtvalortrazable_Enter(object sender, EventArgs e)
-        {
-            
         }
 
         private void txtvalortrazable_Click(object sender, EventArgs e)
