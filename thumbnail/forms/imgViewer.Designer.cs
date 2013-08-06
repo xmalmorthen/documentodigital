@@ -36,6 +36,7 @@
             this.pbreset = new System.Windows.Forms.PictureBox();
             this.pbeliminar = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.zoomSlider = new DevExpress.XtraEditors.ZoomTrackBarControl();
             this.pboriginsize = new System.Windows.Forms.PictureBox();
             this.pbzoomout = new System.Windows.Forms.PictureBox();
             this.pbfit = new System.Windows.Forms.PictureBox();
@@ -44,13 +45,14 @@
             this.pbcerrar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.KDImage = new AxKDImageEditor.AxKDImage();
-            this.zoomSlider = new DevExpress.XtraEditors.ZoomTrackBarControl();
             this.tbllytpnlmnutbusuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbrotarizquierda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbrotarderecha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbreset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbeliminar)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.zoomSlider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zoomSlider.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboriginsize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbzoomout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfit)).BeginInit();
@@ -58,8 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbcerrar)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.KDImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zoomSlider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zoomSlider.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tbllytpnlmnutbusuario
@@ -164,6 +164,22 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(85, 341);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
+            // zoomSlider
+            // 
+            this.zoomSlider.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zoomSlider.EditValue = null;
+            this.zoomSlider.Location = new System.Drawing.Point(4, 4);
+            this.zoomSlider.Name = "zoomSlider";
+            this.zoomSlider.Properties.LargeChange = 20;
+            this.zoomSlider.Properties.Maximum = 100;
+            this.zoomSlider.Properties.Middle = 5;
+            this.zoomSlider.Properties.ScrollThumbStyle = DevExpress.XtraEditors.Repository.ScrollThumbStyle.ArrowDownRight;
+            this.zoomSlider.Properties.ShowValueToolTip = true;
+            this.zoomSlider.Properties.SmallChange = 10;
+            this.zoomSlider.Size = new System.Drawing.Size(78, 23);
+            this.zoomSlider.TabIndex = 33;
+            this.zoomSlider.ValueChanged += new System.EventHandler(this.zoomSlider_ValueChanged);
+            // 
             // pboriginsize
             // 
             this.pboriginsize.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -254,23 +270,7 @@
             this.KDImage.Name = "KDImage";
             this.KDImage.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("KDImage.OcxState")));
             this.KDImage.Size = new System.Drawing.Size(675, 469);
-            this.KDImage.TabIndex = 32;
-            this.KDImage.Tag = "0";
-            // 
-            // zoomSlider
-            // 
-            this.zoomSlider.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zoomSlider.Location = new System.Drawing.Point(4, 4);
-            this.zoomSlider.Name = "zoomSlider";
-            this.zoomSlider.Properties.LargeChange = 20;
-            this.zoomSlider.Properties.Maximum = 100;
-            this.zoomSlider.Properties.Middle = 5;
-            this.zoomSlider.Properties.ScrollThumbStyle = DevExpress.XtraEditors.Repository.ScrollThumbStyle.ArrowDownRight;
-            this.zoomSlider.Properties.ShowValueToolTip = true;
-            this.zoomSlider.Properties.SmallChange = 10;
-            this.zoomSlider.Size = new System.Drawing.Size(78, 23);
-            this.zoomSlider.TabIndex = 33;
-            this.zoomSlider.ValueChanged += new System.EventHandler(this.zoomSlider_ValueChanged);
+            this.KDImage.TabIndex = 0;
             // 
             // frmimgViewer
             // 
@@ -298,6 +298,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbeliminar)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.zoomSlider.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zoomSlider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboriginsize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbzoomout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfit)).EndInit();
@@ -305,8 +307,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbcerrar)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.KDImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zoomSlider.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zoomSlider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,8 +326,8 @@
         private System.Windows.Forms.ToolTip ttimageviewer;
         private System.Windows.Forms.PictureBox pbeliminar;
         private System.Windows.Forms.Panel panel1;
-        internal AxKDImageEditor.AxKDImage KDImage;
         private DevExpress.XtraEditors.ZoomTrackBarControl zoomSlider;
+        private AxKDImageEditor.AxKDImage KDImage;
 
     }
 }

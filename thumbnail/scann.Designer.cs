@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(scann));
             this.sptcntrMain = new System.Windows.Forms.SplitContainer();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -145,7 +145,6 @@
             this.asASToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.ofdabrirarchivo = new System.Windows.Forms.OpenFileDialog();
-            this.KDImage = new AxKDImageEditor.AxKDImage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -157,6 +156,7 @@
             this.tbllytpnlinfo = new System.Windows.Forms.TableLayoutPanel();
             this.tbllytpnlinfolbl = new System.Windows.Forms.Label();
             this.tbllytpnlinfopbimage = new System.Windows.Forms.PictureBox();
+            this.KDImage = new AxKDImageEditor.AxKDImage();
             this.sptcntrMain.Panel1.SuspendLayout();
             this.sptcntrMain.Panel2.SuspendLayout();
             this.sptcntrMain.SuspendLayout();
@@ -219,7 +219,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.KDImage)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditTramites.Properties)).BeginInit();
@@ -229,6 +228,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).BeginInit();
             this.tbllytpnlinfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbllytpnlinfopbimage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KDImage)).BeginInit();
             this.SuspendLayout();
             // 
             // sptcntrMain
@@ -435,10 +435,10 @@
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Campo requerido";
             this.dxValidationProvider2.SetValidationRule(this.txtvalortrazable, conditionValidationRule1);
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Campo requerido";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtvalortrazable, conditionValidationRule2);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Campo requerido";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtvalortrazable, conditionValidationRule5);
             this.txtvalortrazable.Click += new System.EventHandler(this.txtvalortrazable_Click);
             // 
             // checkEditcampoprincipal
@@ -478,10 +478,10 @@
             this.lookUpEditCamposTrazables.Properties.ValueMember = "id";
             this.lookUpEditCamposTrazables.Size = new System.Drawing.Size(451, 26);
             this.lookUpEditCamposTrazables.TabIndex = 1;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Campo requerido";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.lookUpEditCamposTrazables, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Campo requerido";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.lookUpEditCamposTrazables, conditionValidationRule2);
             this.lookUpEditCamposTrazables.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.lookUpEditCamposTrazables_QueryPopUp);
             this.lookUpEditCamposTrazables.EditValueChanged += new System.EventHandler(this.lookUpEditCamposTrazables_EditValueChanged);
             // 
@@ -544,7 +544,7 @@
             this.tab0_tbllytpnlmnutbusuario.ColumnCount = 3;
             this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 796F));
+            this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 797F));
             this.tab0_tbllytpnlmnutbusuario.Controls.Add(this.tab0_pbmnuscann, 0, 0);
             this.tab0_tbllytpnlmnutbusuario.Controls.Add(this.tab0_pbmnulimpiar, 2, 0);
             this.tab0_tbllytpnlmnutbusuario.Controls.Add(this.tab0_pbopenfile, 1, 0);
@@ -1153,7 +1153,7 @@
             this.tab2_tbllytpnlmnutbexterno.ColumnCount = 3;
             this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 796F));
+            this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 797F));
             this.tab2_tbllytpnlmnutbexterno.Controls.Add(this.tab2_pbmnuscann, 0, 0);
             this.tab2_tbllytpnlmnutbexterno.Controls.Add(this.tab2_pbmnulimpiar, 2, 0);
             this.tab2_tbllytpnlmnutbexterno.Controls.Add(this.tab2_pbopenfile, 1, 0);
@@ -1360,7 +1360,7 @@
             this.tab3_tbllytpnlmnutbproveedor.ColumnCount = 3;
             this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 796F));
+            this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 797F));
             this.tab3_tbllytpnlmnutbproveedor.Controls.Add(this.tab3_pbmnuscann, 0, 0);
             this.tab3_tbllytpnlmnutbproveedor.Controls.Add(this.tab3_pbmnulimpiar, 2, 0);
             this.tab3_tbllytpnlmnutbproveedor.Controls.Add(this.tab3_pbopenfile, 1, 0);
@@ -1666,21 +1666,6 @@
             this.ofdabrirarchivo.Multiselect = true;
             this.ofdabrirarchivo.SupportMultiDottedExtensions = true;
             // 
-            // KDImage
-            // 
-            this.KDImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.KDImage.Enabled = true;
-            this.KDImage.Location = new System.Drawing.Point(306, 231);
-            this.KDImage.Name = "KDImage";
-            this.KDImage.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("KDImage.OcxState")));
-            this.KDImage.Size = new System.Drawing.Size(16, 15);
-            this.KDImage.TabIndex = 34;
-            this.KDImage.Tag = "0";
-            this.KDImage.Visible = false;
-            this.KDImage.OnScannerPageAcquired += new AxKDImageEditor.IKDImageEvents_OnScannerPageAcquiredEventHandler(this.KDImage_OnScannerPageAcquired);
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Silver;
@@ -1688,7 +1673,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 796F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 797F));
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(478, 4);
@@ -1813,6 +1798,17 @@
             this.tbllytpnlinfopbimage.TabIndex = 11;
             this.tbllytpnlinfopbimage.TabStop = false;
             // 
+            // KDImage
+            // 
+            this.KDImage.Enabled = true;
+            this.KDImage.Location = new System.Drawing.Point(280, 5);
+            this.KDImage.Name = "KDImage";
+            this.KDImage.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("KDImage.OcxState")));
+            this.KDImage.Size = new System.Drawing.Size(75, 23);
+            this.KDImage.TabIndex = 43;
+            this.KDImage.Visible = false;
+            this.KDImage.OnScannerPageAcquired += new AxKDImageEditor.IKDImageEvents_OnScannerPageAcquiredEventHandler(this.KDImage_OnScannerPageAcquired);
+            // 
             // scann
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1822,9 +1818,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.KDImage);
             this.Controls.Add(this.sptcntrMain);
             this.Controls.Add(this.tbllytpnlinfo);
+            this.Controls.Add(this.KDImage);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "scann";
@@ -1902,7 +1898,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.KDImage)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditTramites.Properties)).EndInit();
@@ -1912,6 +1907,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).EndInit();
             this.tbllytpnlinfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tbllytpnlinfopbimage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KDImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1951,7 +1947,6 @@
         private System.Windows.Forms.OpenFileDialog ofdabrirarchivo;
         private System.Windows.Forms.ToolStripMenuItem tsmnuitemlstvwenlacedesenlazarseleccionado;
         private System.Windows.Forms.ToolStripMenuItem tsmnuitemlstvwenlacedesenlazartodo;
-        internal AxKDImageEditor.AxKDImage KDImage;
         private System.Windows.Forms.TableLayoutPanel tab0_tbllytpnlmnutbusuario;
         private System.Windows.Forms.PictureBox tab0_pbmnuscann;
         private System.Windows.Forms.PictureBox tab0_pbmnulimpiar;
@@ -2045,6 +2040,7 @@
         private System.Windows.Forms.TableLayoutPanel tbllytpnlinfo;
         private System.Windows.Forms.Label tbllytpnlinfolbl;
         private System.Windows.Forms.PictureBox tbllytpnlinfopbimage;
+        private AxKDImageEditor.AxKDImage KDImage;
 
 
 
