@@ -29,18 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.txtvalortrazable = new DevExpress.XtraEditors.TextEdit();
             this.lblmascampotrazable = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.lookUpEditClasificacionDocumento = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.pbcancelar = new System.Windows.Forms.PictureBox();
-            this.pbaceptar = new System.Windows.Forms.PictureBox();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.lookUpEditClasificacionDocumentoView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.paObtenerDocumentosporTramiteyOrigenResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lookUpEditClasificacionDocumentoView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_tramite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_clasificaciondocumento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colclasificaciondocumento = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,13 +53,16 @@
             this.colTrazabilidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTamanio_Caracteres_Trazables = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMascara_Trazable = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.pbcancelar = new System.Windows.Forms.PictureBox();
+            this.pbaceptar = new System.Windows.Forms.PictureBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtvalortrazable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditClasificacionDocumento.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paObtenerDocumentosporTramiteyOrigenResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditClasificacionDocumentoView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbaceptar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditClasificacionDocumentoView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paObtenerDocumentosporTramiteyOrigenResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,11 +79,11 @@
             this.txtvalortrazable.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.txtvalortrazable.Size = new System.Drawing.Size(576, 30);
             this.txtvalortrazable.TabIndex = 3;
-            conditionValidationRule3.CaseSensitive = true;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Valor requerido";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.txtvalortrazable, conditionValidationRule3);
+            conditionValidationRule1.CaseSensitive = true;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Valor requerido";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.txtvalortrazable, conditionValidationRule1);
             this.txtvalortrazable.Click += new System.EventHandler(this.txtvalortrazable_Click);
             // 
             // lblmascampotrazable
@@ -139,41 +139,15 @@
             this.lookUpEditClasificacionDocumento.Properties.View = this.lookUpEditClasificacionDocumentoView;
             this.lookUpEditClasificacionDocumento.Size = new System.Drawing.Size(576, 30);
             this.lookUpEditClasificacionDocumento.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Debe indicar el tipo de documento a enlazar";
-            this.dxValidationProvider.SetValidationRule(this.lookUpEditClasificacionDocumento, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Debe indicar el tipo de documento a enlazar";
+            this.dxValidationProvider.SetValidationRule(this.lookUpEditClasificacionDocumento, conditionValidationRule2);
             this.lookUpEditClasificacionDocumento.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.lookUpEditCamposTrazables_QueryPopUp);
             this.lookUpEditClasificacionDocumento.EditValueChanged += new System.EventHandler(this.lookUpEditCamposTrazables_EditValueChanged);
             // 
-            // pbcancelar
+            // paObtenerDocumentosporTramiteyOrigenResultBindingSource
             // 
-            this.pbcancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbcancelar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbcancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbcancelar.Image = global::thumbnail.Properties.Resources.close;
-            this.pbcancelar.Location = new System.Drawing.Point(554, 133);
-            this.pbcancelar.Name = "pbcancelar";
-            this.pbcancelar.Size = new System.Drawing.Size(33, 33);
-            this.pbcancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbcancelar.TabIndex = 23;
-            this.pbcancelar.TabStop = false;
-            this.toolTip.SetToolTip(this.pbcancelar, "Cancelar vinculación");
-            this.pbcancelar.Click += new System.EventHandler(this.pbcancelar_Click);
-            // 
-            // pbaceptar
-            // 
-            this.pbaceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbaceptar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbaceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbaceptar.Image = global::thumbnail.Properties.Resources.checkmark;
-            this.pbaceptar.Location = new System.Drawing.Point(515, 133);
-            this.pbaceptar.Name = "pbaceptar";
-            this.pbaceptar.Size = new System.Drawing.Size(33, 33);
-            this.pbaceptar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbaceptar.TabIndex = 22;
-            this.pbaceptar.TabStop = false;
-            this.toolTip.SetToolTip(this.pbaceptar, "Vincular imagenes");
-            this.pbaceptar.Click += new System.EventHandler(this.pbaceptar_Click);
+            this.paObtenerDocumentosporTramiteyOrigenResultBindingSource.DataSource = typeof(thumbnail.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult);
             // 
             // lookUpEditClasificacionDocumentoView
             // 
@@ -206,10 +180,6 @@
             this.lookUpEditClasificacionDocumentoView.OptionsView.ShowGroupPanel = false;
             this.lookUpEditClasificacionDocumentoView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colclasificaciondocumento, DevExpress.Data.ColumnSortOrder.Ascending)});
-            // 
-            // paObtenerDocumentosporTramiteyOrigenResultBindingSource
-            // 
-            this.paObtenerDocumentosporTramiteyOrigenResultBindingSource.DataSource = typeof(thumbnail.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult);
             // 
             // colid_tramite
             // 
@@ -332,6 +302,36 @@
             this.colMascara_Trazable.Visible = true;
             this.colMascara_Trazable.VisibleIndex = 4;
             // 
+            // pbcancelar
+            // 
+            this.pbcancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbcancelar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbcancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbcancelar.Image = global::thumbnail.Properties.Resources.close;
+            this.pbcancelar.Location = new System.Drawing.Point(554, 133);
+            this.pbcancelar.Name = "pbcancelar";
+            this.pbcancelar.Size = new System.Drawing.Size(33, 33);
+            this.pbcancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbcancelar.TabIndex = 23;
+            this.pbcancelar.TabStop = false;
+            this.toolTip.SetToolTip(this.pbcancelar, "Cancelar vinculación");
+            this.pbcancelar.Click += new System.EventHandler(this.pbcancelar_Click);
+            // 
+            // pbaceptar
+            // 
+            this.pbaceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbaceptar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbaceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbaceptar.Image = global::thumbnail.Properties.Resources.checkmark;
+            this.pbaceptar.Location = new System.Drawing.Point(515, 133);
+            this.pbaceptar.Name = "pbaceptar";
+            this.pbaceptar.Size = new System.Drawing.Size(33, 33);
+            this.pbaceptar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbaceptar.TabIndex = 22;
+            this.pbaceptar.TabStop = false;
+            this.toolTip.SetToolTip(this.pbaceptar, "Vincular imagenes");
+            this.pbaceptar.Click += new System.EventHandler(this.pbaceptar_Click);
+            // 
             // dxValidationProvider
             // 
             this.dxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
@@ -352,12 +352,13 @@
             this.Name = "frmhook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Vinculación de imagenes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmhook_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.txtvalortrazable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditClasificacionDocumento.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paObtenerDocumentosporTramiteyOrigenResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditClasificacionDocumentoView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbaceptar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditClasificacionDocumentoView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paObtenerDocumentosporTramiteyOrigenResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

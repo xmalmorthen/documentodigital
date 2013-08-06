@@ -1,5 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Bd_Exp_Transportes" Class="Bd_Exp_TransportesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=XMALMORTHEN-SRV;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User ID=sa" SettingsObjectName="thumbnail.Properties.Settings" SettingsPropertyName="Bd_Exp_TransportesConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User ID=sa" SettingsObjectName="thumbnail.Properties.Settings" SettingsPropertyName="Bd_Exp_TransportesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.vw_Campos_Trazables" Member="vw_Campos_Trazables">
+    <Type Name="vw_Campos_Trazables">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Tamanio_Caracteres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mascara" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_Tramites_Activos" Member="vw_Tramites_Activos">
+    <Type Name="vw_Tramites_Activos">
+      <Column Name="id_Tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre_Tramite" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion_Estatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Id_ClasificacionTramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion_ClasificacionTramite" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
   <Table Name="dbo.ca_campostrazables" Member="ca_campostrazables">
     <Type Name="ca_campostrazables">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -62,6 +80,7 @@
       <Column Name="id_status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="f_act" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="u_act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ca_documentos_de_expedientedocumentodigital" Member="de_expedientedocumentodigital" ThisKey="id" OtherKey="id_documento" Type="de_expedientedocumentodigital" />
       <Association Name="ca_clasificaciondocumentos_ca_documentos" Member="ca_clasificaciondocumentos" ThisKey="id_ClasificacionDocumento" OtherKey="id" Type="ca_clasificaciondocumentos" IsForeignKey="true" />
       <Association Name="ca_estatus_ca_documentos" Member="ca_estatus" ThisKey="id_status" OtherKey="id" Type="ca_estatus" IsForeignKey="true" />
       <Association Name="ca_formatos_ca_documentos" Member="ca_formatos" ThisKey="id_Formato" OtherKey="id" Type="ca_formatos" IsForeignKey="true" />
@@ -128,9 +147,10 @@
       <Column Name="id_expediente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="valor_trazable" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="ruta_archivo_digital" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="imagen" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="f_act" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="u_act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ca_documentos_de_expedientedocumentodigital" Member="ca_documentos" ThisKey="id_documento" OtherKey="id" Type="ca_documentos" IsForeignKey="true" />
       <Association Name="ma_expedientes_de_expedientedocumentodigital" Member="ma_expedientes" ThisKey="id_expediente" OtherKey="id" Type="ma_expedientes" IsForeignKey="true" />
     </Type>
   </Table>
@@ -160,24 +180,6 @@
       <Association Name="ma_expedientes_de_expedientestrazables" Member="de_expedientestrazables" ThisKey="id" OtherKey="id_expediente" Type="de_expedientestrazables" />
       <Association Name="ca_resguardos_ma_expedientes" Member="ca_resguardos" ThisKey="id_resguardo" OtherKey="id" Type="ca_resguardos" IsForeignKey="true" />
       <Association Name="ca_tramites_ma_expedientes" Member="ca_tramites" ThisKey="id_tramite" OtherKey="id" Type="ca_tramites" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.vw_Campos_Trazables" Member="vw_Campos_Trazables">
-    <Type Name="vw_Campos_Trazables">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="Tamanio_Caracteres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Mascara" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.vw_Tramites_Activos" Member="vw_Tramites_Activos">
-    <Type Name="vw_Tramites_Activos">
-      <Column Name="id_Tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre_Tramite" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Id_Estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion_Estatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Id_ClasificacionTramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion_ClasificacionTramite" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
     </Type>
   </Table>
   <Function Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen" Method="pa_ObtenerDocumentosporTramiteyOrigen">

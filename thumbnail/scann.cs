@@ -64,17 +64,24 @@ namespace thumbnail
                                           return swapdirectory + @"\" + Settings.Default.ScannFileName + Guid.NewGuid().ToString();
                                           }
                                     }
-        
+
+        public thumbnail.models.de_expedientedocumentodigital expedientedocumentodigital = new thumbnail.models.de_expedientedocumentodigital();
+
         public scann()
         {
             InitializeComponent();
 
-//populate combo de tramites
+            Inicializa();
+        }
+
+        private void Inicializa()
+        {
+            //populate combo de tramites
             lookUpEditTramites.Properties.DataSource = bd.vw_Tramites_Activos;
             lookUpEditTramites.ItemIndex = 0; //seleccionar el primero por defecto            
-//populate combo de campos trazables
+            //populate combo de campos trazables
             populatelookUpEditCamposTrazables();
-//binding datagridview
+            //binding datagridview
             bindingSource3.DataSource = expediente.expedientetrazable;
 
             dataGridViewcampostrazables.AutoGenerateColumns = false;
@@ -90,16 +97,16 @@ namespace thumbnail
             //lista de imagenes usuario
             this.thumbnainlistusuario.ImageSize = Settings.Default.ThumbNailSize;
             this.thumbnainlistusuario.ColorDepth = Settings.Default.ThumbNailColorDepth;
-//lista de imagenes interno
+            //lista de imagenes interno
             this.thumbnainlistinterno.ImageSize = Settings.Default.ThumbNailSize;
             this.thumbnainlistinterno.ColorDepth = Settings.Default.ThumbNailColorDepth;
-//lista de imagenes externo
+            //lista de imagenes externo
             this.thumbnainlistexterno.ImageSize = Settings.Default.ThumbNailSize;
             this.thumbnainlistexterno.ColorDepth = Settings.Default.ThumbNailColorDepth;
-//lista de imagenes proveedor
+            //lista de imagenes proveedor
             this.thumbnainlistproveedor.ImageSize = Settings.Default.ThumbNailSize;
             this.thumbnainlistproveedor.ColorDepth = Settings.Default.ThumbNailColorDepth;
-//lista de imagen generic
+            //lista de imagen generic
             this.thumbnainlist.ImageSize = Settings.Default.ThumbNailSize;
             this.thumbnainlist.ColorDepth = Settings.Default.ThumbNailColorDepth;
 
@@ -233,6 +240,10 @@ namespace thumbnail
                 {
                     foreach (ListViewItem current in (ListView.SelectedListViewItemCollection)e.Data.GetData(typeof(ListView.SelectedListViewItemCollection)))
                     {
+                        Image img = Image.FromFile(current.Tag.ToString());
+                        expedientedocumentodigital.imagen.Add(img);
+                        img.Dispose();
+
                         try
                         {
                             lstvwdocumentosescaneados.Items.Remove(lstvwdocumentosescaneados.SelectedItems[0]);
@@ -240,7 +251,17 @@ namespace thumbnail
                         catch (Exception) { }
                         
                         lstvwdocumentosenlazados.Items.Add((ListViewItem)current.Clone());
-                       // lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count-1].Group = lstvwdocumentosenlazados.Groups[0];                                             
+
+                        int idxgroup = 0;
+                        foreach (ListViewGroup grupo in lstvwdocumentosenlazados.Groups)
+                        {
+                            if (grupo.Name == expedientedocumentodigital.clasificaciondocumento) {
+                                break;
+                            }
+                            idxgroup++;
+                        }
+
+                        lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];                                             
                     }
                 }
                 else
@@ -267,6 +288,15 @@ namespace thumbnail
             //int idx = lstvwdocumentosescaneados.SelectedItems[0].ImageIndex;
             if (result == DialogResult.OK)
             {
+                expedientedocumentodigital.id_documento = frm.expedientedocumentodigital.id_documento;
+                expedientedocumentodigital.valor_trazable = frm.expedientedocumentodigital.valor_trazable;
+                expedientedocumentodigital.clasificaciondocumento = frm.expedientedocumentodigital.clasificaciondocumento;
+                expedientedocumentodigital.documento = frm.expedientedocumentodigital.documento;
+
+                addlistviewgroup();
+
+                //expediente.expedientedocumentodigital.Add(frm.expedientedocumentodigital);
+                frm.Dispose();
                 return true;
             }
             else if (result == DialogResult.Cancel)
@@ -275,6 +305,15 @@ namespace thumbnail
                 return false;
             }
             return false;
+        }
+
+        private void addlistviewgroup()
+        {
+            ListViewGroup grupo = new ListViewGroup();
+            grupo.Name = expedientedocumentodigital.clasificaciondocumento;
+            grupo.Header = expedientedocumentodigital.clasificaciondocumento + " [ " + expedientedocumentodigital.documento + " ]";
+            grupo.HeaderAlignment = HorizontalAlignment.Left;
+            lstvwdocumentosenlazados.Groups.Add(grupo);
         }
 #endregion lstvwdocumentosenlazados drag and drop
 
@@ -597,12 +636,8 @@ namespace thumbnail
 
         private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
-            vw_Tramites_Activos row = ((LookUpEdit)sender).Properties.GetDataSourceRowByKeyValue(((LookUpEdit)sender).EditValue) as vw_Tramites_Activos;
-
-            campostrazables qwe = new campostrazables();
-            
-
-
+            //vw_Tramites_Activos row = ((LookUpEdit)sender).Properties.GetDataSourceRowByKeyValue(((LookUpEdit)sender).EditValue) as vw_Tramites_Activos;
+            //campostrazables qwe = new campostrazables();
         }
 
         private void populatelookUpEditCamposTrazables(){
@@ -786,6 +821,22 @@ namespace thumbnail
         private void txtvalortrazable_Click(object sender, EventArgs e)
         {
             txtvalortrazable.SelectAll();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma limpiar el formato", "Limpiar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+            {
+                bindingSource3.Clear();
+                lstvwdocumentosescaneados.Items.Clear();
+                lstvwdocumentosenlazados.Items.Clear();
+                thumbnainlist.Images.Clear();
+
+                expediente.expedientedocumentodigital.Clear();
+                expediente.expedientetrazable.Clear();
+
+                Inicializa();
+            }
         }
 
     }

@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(scann));
             this.sptcntrMain = new System.Windows.Forms.SplitContainer();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -138,12 +138,13 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pbbtnconfiguraciones = new System.Windows.Forms.PictureBox();
             this.pbbtnscannerselector = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbgardarexpediente = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.asASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asASToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pblimpiarforma = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ofdabrirarchivo = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -216,9 +217,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbbtnconfiguraciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbbtnscannerselector)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbgardarexpediente)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pblimpiarforma)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditTramites.Properties)).BeginInit();
@@ -435,10 +437,10 @@
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Campo requerido";
             this.dxValidationProvider2.SetValidationRule(this.txtvalortrazable, conditionValidationRule1);
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Campo requerido";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtvalortrazable, conditionValidationRule5);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Campo requerido";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtvalortrazable, conditionValidationRule2);
             this.txtvalortrazable.Click += new System.EventHandler(this.txtvalortrazable_Click);
             // 
             // checkEditcampoprincipal
@@ -478,10 +480,10 @@
             this.lookUpEditCamposTrazables.Properties.ValueMember = "id";
             this.lookUpEditCamposTrazables.Size = new System.Drawing.Size(451, 26);
             this.lookUpEditCamposTrazables.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Campo requerido";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.lookUpEditCamposTrazables, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Campo requerido";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.lookUpEditCamposTrazables, conditionValidationRule3);
             this.lookUpEditCamposTrazables.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.lookUpEditCamposTrazables_QueryPopUp);
             this.lookUpEditCamposTrazables.EditValueChanged += new System.EventHandler(this.lookUpEditCamposTrazables_EditValueChanged);
             // 
@@ -544,7 +546,7 @@
             this.tab0_tbllytpnlmnutbusuario.ColumnCount = 3;
             this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 797F));
+            this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 799F));
             this.tab0_tbllytpnlmnutbusuario.Controls.Add(this.tab0_pbmnuscann, 0, 0);
             this.tab0_tbllytpnlmnutbusuario.Controls.Add(this.tab0_pbmnulimpiar, 2, 0);
             this.tab0_tbllytpnlmnutbusuario.Controls.Add(this.tab0_pbopenfile, 1, 0);
@@ -1153,7 +1155,7 @@
             this.tab2_tbllytpnlmnutbexterno.ColumnCount = 3;
             this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 797F));
+            this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 799F));
             this.tab2_tbllytpnlmnutbexterno.Controls.Add(this.tab2_pbmnuscann, 0, 0);
             this.tab2_tbllytpnlmnutbexterno.Controls.Add(this.tab2_pbmnulimpiar, 2, 0);
             this.tab2_tbllytpnlmnutbexterno.Controls.Add(this.tab2_pbopenfile, 1, 0);
@@ -1360,7 +1362,7 @@
             this.tab3_tbllytpnlmnutbproveedor.ColumnCount = 3;
             this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 797F));
+            this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 799F));
             this.tab3_tbllytpnlmnutbproveedor.Controls.Add(this.tab3_pbmnuscann, 0, 0);
             this.tab3_tbllytpnlmnutbproveedor.Controls.Add(this.tab3_pbmnulimpiar, 2, 0);
             this.tab3_tbllytpnlmnutbproveedor.Controls.Add(this.tab3_pbopenfile, 1, 0);
@@ -1605,19 +1607,19 @@
             this.tooltipBtnMnuOptions.SetToolTip(this.pbbtnscannerselector, "Seleccionar scanner");
             this.pbbtnscannerselector.Click += new System.EventHandler(this.pbbtnscannerselector_Click);
             // 
-            // pictureBox1
+            // pbgardarexpediente
             // 
-            this.pictureBox1.ContextMenuStrip = this.contextMenuStrip1;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::thumbnail.Properties.Resources.get;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(25, 5, 25, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.pictureBox1, "Escanear documentos");
+            this.pbgardarexpediente.ContextMenuStrip = this.contextMenuStrip1;
+            this.pbgardarexpediente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbgardarexpediente.Image = global::thumbnail.Properties.Resources.save;
+            this.pbgardarexpediente.Location = new System.Drawing.Point(26, 6);
+            this.pbgardarexpediente.Margin = new System.Windows.Forms.Padding(25, 5, 25, 5);
+            this.pbgardarexpediente.Name = "pbgardarexpediente";
+            this.pbgardarexpediente.Size = new System.Drawing.Size(64, 64);
+            this.pbgardarexpediente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbgardarexpediente.TabIndex = 9;
+            this.pbgardarexpediente.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.pbgardarexpediente, "Guardar expediente");
             // 
             // contextMenuStrip1
             // 
@@ -1646,18 +1648,32 @@
             this.asASToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
             this.asASToolStripMenuItem1.Text = "asAS";
             // 
-            // pictureBox3
+            // pblimpiarforma
             // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::thumbnail.Properties.Resources.folder_open;
-            this.pictureBox3.Location = new System.Drawing.Point(141, 6);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(25, 5, 25, 5);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.pictureBox3, "Cargar imagenes");
+            this.pblimpiarforma.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pblimpiarforma.Image = global::thumbnail.Properties.Resources.close;
+            this.pblimpiarforma.Location = new System.Drawing.Point(361, 6);
+            this.pblimpiarforma.Margin = new System.Windows.Forms.Padding(130, 5, 25, 5);
+            this.pblimpiarforma.Name = "pblimpiarforma";
+            this.pblimpiarforma.Size = new System.Drawing.Size(64, 64);
+            this.pblimpiarforma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pblimpiarforma.TabIndex = 12;
+            this.pblimpiarforma.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.pblimpiarforma, "Cerrar ventana");
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::thumbnail.Properties.Resources.clear;
+            this.pictureBox1.Location = new System.Drawing.Point(141, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(25, 5, 25, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.pictureBox1, "Limpiar formato");
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ofdabrirarchivo
             // 
@@ -1673,9 +1689,10 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 797F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pbgardarexpediente, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pblimpiarforma, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(478, 4);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 15, 5, 15);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -1895,9 +1912,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbbtnconfiguraciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbbtnscannerselector)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbgardarexpediente)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pblimpiarforma)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditTramites.Properties)).EndInit();
@@ -2000,8 +2018,8 @@
         private System.Windows.Forms.ListView tab3_lstvwdocumentosenlazados;
         private System.Windows.Forms.ListView tab3_lstvwdocumentosescaneados;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pbgardarexpediente;
+        private System.Windows.Forms.PictureBox pblimpiarforma;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem asASToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asSToolStripMenuItem;
@@ -2041,6 +2059,7 @@
         private System.Windows.Forms.Label tbllytpnlinfolbl;
         private System.Windows.Forms.PictureBox tbllytpnlinfopbimage;
         private AxKDImageEditor.AxKDImage KDImage;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
 
 

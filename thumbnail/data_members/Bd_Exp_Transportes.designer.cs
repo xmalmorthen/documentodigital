@@ -101,6 +101,22 @@ namespace thumbnail.data_members
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<vw_Campos_Trazables> vw_Campos_Trazables
+		{
+			get
+			{
+				return this.GetTable<vw_Campos_Trazables>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vw_Tramites_Activos> vw_Tramites_Activos
+		{
+			get
+			{
+				return this.GetTable<vw_Tramites_Activos>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ca_campostrazables> ca_campostrazables
 		{
 			get
@@ -205,27 +221,209 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		public System.Data.Linq.Table<vw_Campos_Trazables> vw_Campos_Trazables
-		{
-			get
-			{
-				return this.GetTable<vw_Campos_Trazables>();
-			}
-		}
-		
-		public System.Data.Linq.Table<vw_Tramites_Activos> vw_Tramites_Activos
-		{
-			get
-			{
-				return this.GetTable<vw_Tramites_Activos>();
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen")]
 		public ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult> pa_ObtenerDocumentosporTramiteyOrigen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tramite, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_origen)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_tramite, id_origen);
 			return ((ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult>)(result.ReturnValue));
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_Campos_Trazables")]
+	public partial class vw_Campos_Trazables
+	{
+		
+		private int _id;
+		
+		private string _Nombre;
+		
+		private int _Tamanio_Caracteres;
+		
+		private string _Mascara;
+		
+		public vw_Campos_Trazables()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tamanio_Caracteres", DbType="Int NOT NULL")]
+		public int Tamanio_Caracteres
+		{
+			get
+			{
+				return this._Tamanio_Caracteres;
+			}
+			set
+			{
+				if ((this._Tamanio_Caracteres != value))
+				{
+					this._Tamanio_Caracteres = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mascara", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Mascara
+		{
+			get
+			{
+				return this._Mascara;
+			}
+			set
+			{
+				if ((this._Mascara != value))
+				{
+					this._Mascara = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_Tramites_Activos")]
+	public partial class vw_Tramites_Activos
+	{
+		
+		private int _id_Tramite;
+		
+		private string _Nombre_Tramite;
+		
+		private int _Id_Estatus;
+		
+		private string _Descripcion_Estatus;
+		
+		private int _Id_ClasificacionTramite;
+		
+		private string _Descripcion_ClasificacionTramite;
+		
+		public vw_Tramites_Activos()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Tramite", DbType="Int NOT NULL")]
+		public int id_Tramite
+		{
+			get
+			{
+				return this._id_Tramite;
+			}
+			set
+			{
+				if ((this._id_Tramite != value))
+				{
+					this._id_Tramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre_Tramite", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Nombre_Tramite
+		{
+			get
+			{
+				return this._Nombre_Tramite;
+			}
+			set
+			{
+				if ((this._Nombre_Tramite != value))
+				{
+					this._Nombre_Tramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Estatus", DbType="Int NOT NULL")]
+		public int Id_Estatus
+		{
+			get
+			{
+				return this._Id_Estatus;
+			}
+			set
+			{
+				if ((this._Id_Estatus != value))
+				{
+					this._Id_Estatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_Estatus", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Descripcion_Estatus
+		{
+			get
+			{
+				return this._Descripcion_Estatus;
+			}
+			set
+			{
+				if ((this._Descripcion_Estatus != value))
+				{
+					this._Descripcion_Estatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_ClasificacionTramite", DbType="Int NOT NULL")]
+		public int Id_ClasificacionTramite
+		{
+			get
+			{
+				return this._Id_ClasificacionTramite;
+			}
+			set
+			{
+				if ((this._Id_ClasificacionTramite != value))
+				{
+					this._Id_ClasificacionTramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_ClasificacionTramite", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Descripcion_ClasificacionTramite
+		{
+			get
+			{
+				return this._Descripcion_ClasificacionTramite;
+			}
+			set
+			{
+				if ((this._Descripcion_ClasificacionTramite != value))
+				{
+					this._Descripcion_ClasificacionTramite = value;
+				}
+			}
 		}
 	}
 	
@@ -1158,6 +1356,8 @@ namespace thumbnail.data_members
 		
 		private int _u_act;
 		
+		private EntitySet<de_expedientedocumentodigital> _de_expedientedocumentodigital;
+		
 		private EntityRef<ca_clasificaciondocumentos> _ca_clasificaciondocumentos;
 		
 		private EntityRef<ca_estatus> _ca_estatus;
@@ -1204,6 +1404,7 @@ namespace thumbnail.data_members
 		
 		public ca_documentos()
 		{
+			this._de_expedientedocumentodigital = new EntitySet<de_expedientedocumentodigital>(new Action<de_expedientedocumentodigital>(this.attach_de_expedientedocumentodigital), new Action<de_expedientedocumentodigital>(this.detach_de_expedientedocumentodigital));
 			this._ca_clasificaciondocumentos = default(EntityRef<ca_clasificaciondocumentos>);
 			this._ca_estatus = default(EntityRef<ca_estatus>);
 			this._ca_formatos = default(EntityRef<ca_formatos>);
@@ -1542,6 +1743,19 @@ namespace thumbnail.data_members
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_documentos_de_expedientedocumentodigital", Storage="_de_expedientedocumentodigital", ThisKey="id", OtherKey="id_documento")]
+		public EntitySet<de_expedientedocumentodigital> de_expedientedocumentodigital
+		{
+			get
+			{
+				return this._de_expedientedocumentodigital;
+			}
+			set
+			{
+				this._de_expedientedocumentodigital.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_clasificaciondocumentos_ca_documentos", Storage="_ca_clasificaciondocumentos", ThisKey="id_ClasificacionDocumento", OtherKey="id", IsForeignKey=true)]
 		public ca_clasificaciondocumentos ca_clasificaciondocumentos
 		{
@@ -1662,6 +1876,18 @@ namespace thumbnail.data_members
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_de_expedientedocumentodigital(de_expedientedocumentodigital entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_documentos = this;
+		}
+		
+		private void detach_de_expedientedocumentodigital(de_expedientedocumentodigital entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_documentos = null;
 		}
 	}
 	
@@ -2771,11 +2997,13 @@ namespace thumbnail.data_members
 		
 		private string _valor_trazable;
 		
-		private string _ruta_archivo_digital;
+		private System.Data.Linq.Binary _imagen;
 		
 		private System.DateTime _f_act;
 		
 		private int _u_act;
+		
+		private EntityRef<ca_documentos> _ca_documentos;
 		
 		private EntityRef<ma_expedientes> _ma_expedientes;
 		
@@ -2791,8 +3019,8 @@ namespace thumbnail.data_members
     partial void Onid_documentoChanged();
     partial void Onvalor_trazableChanging(string value);
     partial void Onvalor_trazableChanged();
-    partial void Onruta_archivo_digitalChanging(string value);
-    partial void Onruta_archivo_digitalChanged();
+    partial void OnimagenChanging(System.Data.Linq.Binary value);
+    partial void OnimagenChanged();
     partial void Onf_actChanging(System.DateTime value);
     partial void Onf_actChanged();
     partial void Onu_actChanging(int value);
@@ -2801,6 +3029,7 @@ namespace thumbnail.data_members
 		
 		public de_expedientedocumentodigital()
 		{
+			this._ca_documentos = default(EntityRef<ca_documentos>);
 			this._ma_expedientes = default(EntityRef<ma_expedientes>);
 			OnCreated();
 		}
@@ -2860,6 +3089,10 @@ namespace thumbnail.data_members
 			{
 				if ((this._id_documento != value))
 				{
+					if (this._ca_documentos.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.Onid_documentoChanging(value);
 					this.SendPropertyChanging();
 					this._id_documento = value;
@@ -2889,22 +3122,22 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ruta_archivo_digital", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string ruta_archivo_digital
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imagen", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary imagen
 		{
 			get
 			{
-				return this._ruta_archivo_digital;
+				return this._imagen;
 			}
 			set
 			{
-				if ((this._ruta_archivo_digital != value))
+				if ((this._imagen != value))
 				{
-					this.Onruta_archivo_digitalChanging(value);
+					this.OnimagenChanging(value);
 					this.SendPropertyChanging();
-					this._ruta_archivo_digital = value;
-					this.SendPropertyChanged("ruta_archivo_digital");
-					this.Onruta_archivo_digitalChanged();
+					this._imagen = value;
+					this.SendPropertyChanged("imagen");
+					this.OnimagenChanged();
 				}
 			}
 		}
@@ -2945,6 +3178,40 @@ namespace thumbnail.data_members
 					this._u_act = value;
 					this.SendPropertyChanged("u_act");
 					this.Onu_actChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_documentos_de_expedientedocumentodigital", Storage="_ca_documentos", ThisKey="id_documento", OtherKey="id", IsForeignKey=true)]
+		public ca_documentos ca_documentos
+		{
+			get
+			{
+				return this._ca_documentos.Entity;
+			}
+			set
+			{
+				ca_documentos previousValue = this._ca_documentos.Entity;
+				if (((previousValue != value) 
+							|| (this._ca_documentos.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ca_documentos.Entity = null;
+						previousValue.de_expedientedocumentodigital.Remove(this);
+					}
+					this._ca_documentos.Entity = value;
+					if ((value != null))
+					{
+						value.de_expedientedocumentodigital.Add(this);
+						this._id_documento = value.id;
+					}
+					else
+					{
+						this._id_documento = default(int);
+					}
+					this.SendPropertyChanged("ca_documentos");
 				}
 			}
 		}
@@ -3633,204 +3900,6 @@ namespace thumbnail.data_members
 		{
 			this.SendPropertyChanging();
 			entity.ma_expedientes = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_Campos_Trazables")]
-	public partial class vw_Campos_Trazables
-	{
-		
-		private int _id;
-		
-		private string _Nombre;
-		
-		private int _Tamanio_Caracteres;
-		
-		private string _Mascara;
-		
-		public vw_Campos_Trazables()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Nombre
-		{
-			get
-			{
-				return this._Nombre;
-			}
-			set
-			{
-				if ((this._Nombre != value))
-				{
-					this._Nombre = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tamanio_Caracteres", DbType="Int NOT NULL")]
-		public int Tamanio_Caracteres
-		{
-			get
-			{
-				return this._Tamanio_Caracteres;
-			}
-			set
-			{
-				if ((this._Tamanio_Caracteres != value))
-				{
-					this._Tamanio_Caracteres = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mascara", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string Mascara
-		{
-			get
-			{
-				return this._Mascara;
-			}
-			set
-			{
-				if ((this._Mascara != value))
-				{
-					this._Mascara = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_Tramites_Activos")]
-	public partial class vw_Tramites_Activos
-	{
-		
-		private int _id_Tramite;
-		
-		private string _Nombre_Tramite;
-		
-		private int _Id_Estatus;
-		
-		private string _Descripcion_Estatus;
-		
-		private int _Id_ClasificacionTramite;
-		
-		private string _Descripcion_ClasificacionTramite;
-		
-		public vw_Tramites_Activos()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Tramite", DbType="Int NOT NULL")]
-		public int id_Tramite
-		{
-			get
-			{
-				return this._id_Tramite;
-			}
-			set
-			{
-				if ((this._id_Tramite != value))
-				{
-					this._id_Tramite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre_Tramite", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Nombre_Tramite
-		{
-			get
-			{
-				return this._Nombre_Tramite;
-			}
-			set
-			{
-				if ((this._Nombre_Tramite != value))
-				{
-					this._Nombre_Tramite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Estatus", DbType="Int NOT NULL")]
-		public int Id_Estatus
-		{
-			get
-			{
-				return this._Id_Estatus;
-			}
-			set
-			{
-				if ((this._Id_Estatus != value))
-				{
-					this._Id_Estatus = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_Estatus", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Descripcion_Estatus
-		{
-			get
-			{
-				return this._Descripcion_Estatus;
-			}
-			set
-			{
-				if ((this._Descripcion_Estatus != value))
-				{
-					this._Descripcion_Estatus = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_ClasificacionTramite", DbType="Int NOT NULL")]
-		public int Id_ClasificacionTramite
-		{
-			get
-			{
-				return this._Id_ClasificacionTramite;
-			}
-			set
-			{
-				if ((this._Id_ClasificacionTramite != value))
-				{
-					this._Id_ClasificacionTramite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_ClasificacionTramite", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Descripcion_ClasificacionTramite
-		{
-			get
-			{
-				return this._Descripcion_ClasificacionTramite;
-			}
-			set
-			{
-				if ((this._Descripcion_ClasificacionTramite != value))
-				{
-					this._Descripcion_ClasificacionTramite = value;
-				}
-			}
 		}
 	}
 	
