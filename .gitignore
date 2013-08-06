@@ -51,7 +51,7 @@ _ReSharper*/
 ~$*
 
 #config file
-app.config
+#app.config
 
 #database_migrations
 !db_migrations/*.bak
