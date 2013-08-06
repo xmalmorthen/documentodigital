@@ -33,6 +33,7 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(scann));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.sptcntrMain = new System.Windows.Forms.SplitContainer();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -134,10 +135,6 @@
             this.tab3_lstvwdocumentosescaneados = new System.Windows.Forms.ListView();
             this.imglsttabs = new System.Windows.Forms.ImageList(this.components);
             this.tooltipBtnMnuOptions = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pbbtnconfiguraciones = new System.Windows.Forms.PictureBox();
-            this.pbbtnscannerselector = new System.Windows.Forms.PictureBox();
             this.pbgardarexpediente = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.asASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -147,7 +144,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ofdabrirarchivo = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lookUpEditTramites = new DevExpress.XtraEditors.LookUpEdit();
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
@@ -158,6 +154,14 @@
             this.tbllytpnlinfolbl = new System.Windows.Forms.Label();
             this.tbllytpnlinfopbimage = new System.Windows.Forms.PictureBox();
             this.KDImage = new AxKDImageEditor.AxKDImage();
+            this.pbabrirexpediente = new System.Windows.Forms.PictureBox();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pbbtnconfiguraciones = new System.Windows.Forms.PictureBox();
+            this.pbbtnscannerselector = new System.Windows.Forms.PictureBox();
             this.sptcntrMain.Panel1.SuspendLayout();
             this.sptcntrMain.Panel2.SuspendLayout();
             this.sptcntrMain.SuspendLayout();
@@ -213,16 +217,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosescaneados)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosenlazados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbbtnconfiguraciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbbtnscannerselector)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbgardarexpediente)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pblimpiarforma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditTramites.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
@@ -231,6 +230,13 @@
             this.tbllytpnlinfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbllytpnlinfopbimage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KDImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbabrirexpediente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbbtnconfiguraciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbbtnscannerselector)).BeginInit();
             this.SuspendLayout();
             // 
             // sptcntrMain
@@ -241,7 +247,7 @@
             this.sptcntrMain.BackColor = System.Drawing.Color.Transparent;
             this.sptcntrMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sptcntrMain.Cursor = System.Windows.Forms.Cursors.Default;
-            this.sptcntrMain.Location = new System.Drawing.Point(4, 93);
+            this.sptcntrMain.Location = new System.Drawing.Point(4, 134);
             this.sptcntrMain.Margin = new System.Windows.Forms.Padding(10);
             this.sptcntrMain.Name = "sptcntrMain";
             this.sptcntrMain.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -268,8 +274,8 @@
             // 
             this.sptcntrMain.Panel2.Controls.Add(this.tbctrl);
             this.sptcntrMain.Panel2MinSize = 100;
-            this.sptcntrMain.Size = new System.Drawing.Size(999, 633);
-            this.sptcntrMain.SplitterDistance = 166;
+            this.sptcntrMain.Size = new System.Drawing.Size(999, 592);
+            this.sptcntrMain.SplitterDistance = 155;
             this.sptcntrMain.SplitterWidth = 10;
             this.sptcntrMain.TabIndex = 5;
             // 
@@ -278,7 +284,7 @@
             this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Image = global::thumbnail.Properties.Resources.delete;
-            this.pictureBox7.Location = new System.Drawing.Point(425, 125);
+            this.pictureBox7.Location = new System.Drawing.Point(425, 116);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(33, 33);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -292,7 +298,7 @@
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::thumbnail.Properties.Resources.clear;
-            this.pictureBox4.Location = new System.Drawing.Point(386, 125);
+            this.pictureBox4.Location = new System.Drawing.Point(386, 116);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(33, 33);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -306,7 +312,7 @@
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::thumbnail.Properties.Resources.checkbox_checked;
-            this.pictureBox2.Location = new System.Drawing.Point(347, 125);
+            this.pictureBox2.Location = new System.Drawing.Point(347, 116);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(33, 33);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -336,7 +342,7 @@
             this.dataGridViewcampostrazables.Name = "dataGridViewcampostrazables";
             this.dataGridViewcampostrazables.ReadOnly = true;
             this.dataGridViewcampostrazables.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewcampostrazables.Size = new System.Drawing.Size(517, 154);
+            this.dataGridViewcampostrazables.Size = new System.Drawing.Size(534, 145);
             this.dataGridViewcampostrazables.TabIndex = 4;
             this.dataGridViewcampostrazables.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewcampostrazables_CellClick);
             this.dataGridViewcampostrazables.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewcampostrazables_RowEnter);
@@ -397,7 +403,7 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.labelControl3.Location = new System.Drawing.Point(7, 65);
+            this.labelControl3.Location = new System.Drawing.Point(7, 61);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(42, 23);
             this.labelControl3.TabIndex = 18;
@@ -418,7 +424,7 @@
             this.lblmascampotrazable.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblmascampotrazable.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblmascampotrazable.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblmascampotrazable.Location = new System.Drawing.Point(304, 76);
+            this.lblmascampotrazable.Location = new System.Drawing.Point(304, 69);
             this.lblmascampotrazable.Name = "lblmascampotrazable";
             this.lblmascampotrazable.Size = new System.Drawing.Size(154, 13);
             this.lblmascampotrazable.TabIndex = 16;
@@ -426,7 +432,7 @@
             // txtvalortrazable
             // 
             this.txtvalortrazable.Enabled = false;
-            this.txtvalortrazable.Location = new System.Drawing.Point(7, 91);
+            this.txtvalortrazable.Location = new System.Drawing.Point(7, 84);
             this.txtvalortrazable.Name = "txtvalortrazable";
             this.txtvalortrazable.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtvalortrazable.Properties.Appearance.Options.UseFont = true;
@@ -445,7 +451,7 @@
             // 
             // checkEditcampoprincipal
             // 
-            this.checkEditcampoprincipal.Location = new System.Drawing.Point(5, 123);
+            this.checkEditcampoprincipal.Location = new System.Drawing.Point(5, 113);
             this.checkEditcampoprincipal.Name = "checkEditcampoprincipal";
             this.checkEditcampoprincipal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
             this.checkEditcampoprincipal.Properties.Appearance.Options.UseFont = true;
@@ -455,7 +461,7 @@
             // 
             // lookUpEditCamposTrazables
             // 
-            this.lookUpEditCamposTrazables.Location = new System.Drawing.Point(7, 33);
+            this.lookUpEditCamposTrazables.Location = new System.Drawing.Point(7, 31);
             this.lookUpEditCamposTrazables.Name = "lookUpEditCamposTrazables";
             this.lookUpEditCamposTrazables.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.lookUpEditCamposTrazables.Properties.Appearance.Options.UseFont = true;
@@ -519,7 +525,7 @@
             this.tbctrl.Location = new System.Drawing.Point(3, 3);
             this.tbctrl.Name = "tbctrl";
             this.tbctrl.SelectedIndex = 0;
-            this.tbctrl.Size = new System.Drawing.Size(991, 449);
+            this.tbctrl.Size = new System.Drawing.Size(991, 416);
             this.tbctrl.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tbctrl.TabIndex = 0;
             this.tbctrl.Tag = "";
@@ -534,7 +540,7 @@
             this.tabpgeUsuario.Location = new System.Drawing.Point(4, 39);
             this.tabpgeUsuario.Name = "tabpgeUsuario";
             this.tabpgeUsuario.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpgeUsuario.Size = new System.Drawing.Size(983, 406);
+            this.tabpgeUsuario.Size = new System.Drawing.Size(983, 373);
             this.tabpgeUsuario.TabIndex = 0;
             this.tabpgeUsuario.Tag = "Documentos de usuario";
             this.tabpgeUsuario.Text = "Usuario";
@@ -619,7 +625,7 @@
             this.tab0_tbllytpnldocumentos.RowCount = 2;
             this.tab0_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tab0_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tab0_tbllytpnldocumentos.Size = new System.Drawing.Size(972, 338);
+            this.tab0_tbllytpnldocumentos.Size = new System.Drawing.Size(972, 308);
             this.tab0_tbllytpnldocumentos.TabIndex = 12;
             // 
             // pnllblsder
@@ -703,7 +709,7 @@
             this.tab0_lstvwdocumentosenlazados.Location = new System.Drawing.Point(491, 27);
             this.tab0_lstvwdocumentosenlazados.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.tab0_lstvwdocumentosenlazados.Name = "tab0_lstvwdocumentosenlazados";
-            this.tab0_lstvwdocumentosenlazados.Size = new System.Drawing.Size(476, 306);
+            this.tab0_lstvwdocumentosenlazados.Size = new System.Drawing.Size(476, 276);
             this.tab0_lstvwdocumentosenlazados.TabIndex = 5;
             this.tab0_lstvwdocumentosenlazados.Tag = "0";
             this.tab0_lstvwdocumentosenlazados.UseCompatibleStateImageBehavior = false;
@@ -806,7 +812,7 @@
             this.tab0_lstvwdocumentosescaneados.Location = new System.Drawing.Point(5, 27);
             this.tab0_lstvwdocumentosescaneados.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.tab0_lstvwdocumentosescaneados.Name = "tab0_lstvwdocumentosescaneados";
-            this.tab0_lstvwdocumentosescaneados.Size = new System.Drawing.Size(476, 306);
+            this.tab0_lstvwdocumentosescaneados.Size = new System.Drawing.Size(476, 276);
             this.tab0_lstvwdocumentosescaneados.TabIndex = 4;
             this.tab0_lstvwdocumentosescaneados.Tag = "0";
             this.tab0_lstvwdocumentosescaneados.UseCompatibleStateImageBehavior = false;
@@ -1554,72 +1560,20 @@
             this.imglsttabs.Images.SetKeyName(2, "externo.png");
             this.imglsttabs.Images.SetKeyName(3, "proveedor.png");
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Image = global::thumbnail.Properties.Resources.folder_open;
-            this.pictureBox6.Location = new System.Drawing.Point(42, 39);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(33, 33);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 40;
-            this.pictureBox6.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.pictureBox6, "Cargar imagenes");
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = global::thumbnail.Properties.Resources.folder_open;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 39);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(33, 33);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 39;
-            this.pictureBox5.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.pictureBox5, "Cargar imagenes");
-            // 
-            // pbbtnconfiguraciones
-            // 
-            this.pbbtnconfiguraciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbbtnconfiguraciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbbtnconfiguraciones.Image = global::thumbnail.Properties.Resources.gestion;
-            this.pbbtnconfiguraciones.Location = new System.Drawing.Point(42, 0);
-            this.pbbtnconfiguraciones.Name = "pbbtnconfiguraciones";
-            this.pbbtnconfiguraciones.Size = new System.Drawing.Size(33, 33);
-            this.pbbtnconfiguraciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbbtnconfiguraciones.TabIndex = 14;
-            this.pbbtnconfiguraciones.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.pbbtnconfiguraciones, "Configuraciones");
-            // 
-            // pbbtnscannerselector
-            // 
-            this.pbbtnscannerselector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbbtnscannerselector.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbbtnscannerselector.Image = global::thumbnail.Properties.Resources.scanner;
-            this.pbbtnscannerselector.Location = new System.Drawing.Point(3, 0);
-            this.pbbtnscannerselector.Name = "pbbtnscannerselector";
-            this.pbbtnscannerselector.Size = new System.Drawing.Size(33, 33);
-            this.pbbtnscannerselector.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbbtnscannerselector.TabIndex = 13;
-            this.pbbtnscannerselector.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.pbbtnscannerselector, "Seleccionar scanner");
-            this.pbbtnscannerselector.Click += new System.EventHandler(this.pbbtnscannerselector_Click);
-            // 
             // pbgardarexpediente
             // 
             this.pbgardarexpediente.ContextMenuStrip = this.contextMenuStrip1;
             this.pbgardarexpediente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbgardarexpediente.Image = global::thumbnail.Properties.Resources.save;
-            this.pbgardarexpediente.Location = new System.Drawing.Point(26, 6);
-            this.pbgardarexpediente.Margin = new System.Windows.Forms.Padding(25, 5, 25, 5);
+            this.pbgardarexpediente.Location = new System.Drawing.Point(111, 6);
+            this.pbgardarexpediente.Margin = new System.Windows.Forms.Padding(15, 5, 15, 5);
             this.pbgardarexpediente.Name = "pbgardarexpediente";
             this.pbgardarexpediente.Size = new System.Drawing.Size(64, 64);
             this.pbgardarexpediente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbgardarexpediente.TabIndex = 9;
             this.pbgardarexpediente.TabStop = false;
             this.tooltipBtnMnuOptions.SetToolTip(this.pbgardarexpediente, "Guardar expediente");
+            this.pbgardarexpediente.Click += new System.EventHandler(this.pbgardarexpediente_Click);
             // 
             // contextMenuStrip1
             // 
@@ -1652,21 +1606,22 @@
             // 
             this.pblimpiarforma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pblimpiarforma.Image = global::thumbnail.Properties.Resources.close;
-            this.pblimpiarforma.Location = new System.Drawing.Point(361, 6);
-            this.pblimpiarforma.Margin = new System.Windows.Forms.Padding(130, 5, 25, 5);
+            this.pblimpiarforma.Location = new System.Drawing.Point(301, 6);
+            this.pblimpiarforma.Margin = new System.Windows.Forms.Padding(15, 5, 15, 5);
             this.pblimpiarforma.Name = "pblimpiarforma";
             this.pblimpiarforma.Size = new System.Drawing.Size(64, 64);
             this.pblimpiarforma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pblimpiarforma.TabIndex = 12;
             this.pblimpiarforma.TabStop = false;
             this.tooltipBtnMnuOptions.SetToolTip(this.pblimpiarforma, "Cerrar ventana");
+            this.pblimpiarforma.Click += new System.EventHandler(this.pblimpiarforma_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::thumbnail.Properties.Resources.clear;
-            this.pictureBox1.Location = new System.Drawing.Point(141, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(25, 5, 25, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(206, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(15, 5, 15, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1686,38 +1641,30 @@
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Silver;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pbgardarexpediente, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pblimpiarforma, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(478, 4);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pblimpiarforma, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pbgardarexpediente, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pbabrirexpediente, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel7, 4, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(530, 3);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5, 15, 5, 15);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(442, 76);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(473, 76);
             this.tableLayoutPanel1.TabIndex = 35;
-            // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.Controls.Add(this.pictureBox6);
-            this.panel7.Controls.Add(this.pictureBox5);
-            this.panel7.Controls.Add(this.pbbtnconfiguraciones);
-            this.panel7.Controls.Add(this.pbbtnscannerselector);
-            this.panel7.Location = new System.Drawing.Point(928, 4);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(80, 76);
-            this.panel7.TabIndex = 37;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 4);
+            this.label1.Location = new System.Drawing.Point(8, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 29);
@@ -1726,7 +1673,7 @@
             // 
             // lookUpEditTramites
             // 
-            this.lookUpEditTramites.Location = new System.Drawing.Point(12, 34);
+            this.lookUpEditTramites.Location = new System.Drawing.Point(12, 33);
             this.lookUpEditTramites.Name = "lookUpEditTramites";
             this.lookUpEditTramites.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.lookUpEditTramites.Properties.Appearance.Options.UseFont = true;
@@ -1751,7 +1698,7 @@
             this.lookUpEditTramites.Properties.LookAndFeel.SkinName = "VS2010";
             this.lookUpEditTramites.Properties.NullText = "";
             this.lookUpEditTramites.Properties.ValueMember = "id_Tramite";
-            this.lookUpEditTramites.Size = new System.Drawing.Size(452, 46);
+            this.lookUpEditTramites.Size = new System.Drawing.Size(451, 46);
             this.lookUpEditTramites.TabIndex = 0;
             this.lookUpEditTramites.EditValueChanged += new System.EventHandler(this.lookUpEdit1_EditValueChanged);
             // 
@@ -1826,14 +1773,135 @@
             this.KDImage.Visible = false;
             this.KDImage.OnScannerPageAcquired += new AxKDImageEditor.IKDImageEvents_OnScannerPageAcquiredEventHandler(this.KDImage_OnScannerPageAcquired);
             // 
+            // pbabrirexpediente
+            // 
+            this.pbabrirexpediente.ContextMenuStrip = this.contextMenuStrip1;
+            this.pbabrirexpediente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbabrirexpediente.Image = global::thumbnail.Properties.Resources.folder_open;
+            this.pbabrirexpediente.Location = new System.Drawing.Point(16, 6);
+            this.pbabrirexpediente.Margin = new System.Windows.Forms.Padding(15, 5, 15, 5);
+            this.pbabrirexpediente.Name = "pbabrirexpediente";
+            this.pbabrirexpediente.Size = new System.Drawing.Size(64, 64);
+            this.pbabrirexpediente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbabrirexpediente.TabIndex = 14;
+            this.pbabrirexpediente.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.pbabrirexpediente, "Abrir expediente");
+            this.pbabrirexpediente.Click += new System.EventHandler(this.pbabrirexpediente_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.labelControl1.Location = new System.Drawing.Point(13, 80);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(90, 23);
+            this.labelControl1.TabIndex = 45;
+            this.labelControl1.Text = "Resguardo";
+            // 
+            // lookUpEdit1
+            // 
+            this.lookUpEdit1.Location = new System.Drawing.Point(13, 104);
+            this.lookUpEdit1.Name = "lookUpEdit1";
+            this.lookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit1.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.lookUpEdit1.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lookUpEdit1.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEdit1.Properties.AppearanceDropDownHeader.Options.UseFont = true;
+            this.lookUpEdit1.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.lookUpEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit1.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 41, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nombre", "Nombre", 86, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Tamanio_Caracteres", "Tamanio_Caracteres", 205, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Center),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Mascara", "Mascara", 88, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            this.lookUpEdit1.Properties.DataSource = this.bindingSource1;
+            this.lookUpEdit1.Properties.DisplayMember = "Nombre";
+            this.lookUpEdit1.Properties.ImmediatePopup = true;
+            this.lookUpEdit1.Properties.LookAndFeel.SkinName = "VS2010";
+            this.lookUpEdit1.Properties.NullText = "";
+            this.lookUpEdit1.Properties.ValueMember = "id";
+            this.lookUpEdit1.Size = new System.Drawing.Size(451, 26);
+            this.lookUpEdit1.TabIndex = 44;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Campo requerido";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.lookUpEdit1, conditionValidationRule4);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.pictureBox6);
+            this.panel7.Controls.Add(this.pictureBox5);
+            this.panel7.Controls.Add(this.pbbtnconfiguraciones);
+            this.panel7.Controls.Add(this.pbbtnscannerselector);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(384, 4);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(85, 76);
+            this.panel7.TabIndex = 38;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = global::thumbnail.Properties.Resources.folder_open;
+            this.pictureBox6.Location = new System.Drawing.Point(45, 36);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 40;
+            this.pictureBox6.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.pictureBox6, "Cargar imagenes");
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::thumbnail.Properties.Resources.folder_open;
+            this.pictureBox5.Location = new System.Drawing.Point(6, 36);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(33, 33);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 39;
+            this.pictureBox5.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.pictureBox5, "Cargar imagenes");
+            // 
+            // pbbtnconfiguraciones
+            // 
+            this.pbbtnconfiguraciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbbtnconfiguraciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbbtnconfiguraciones.Image = global::thumbnail.Properties.Resources.gestion;
+            this.pbbtnconfiguraciones.Location = new System.Drawing.Point(45, 0);
+            this.pbbtnconfiguraciones.Name = "pbbtnconfiguraciones";
+            this.pbbtnconfiguraciones.Size = new System.Drawing.Size(33, 33);
+            this.pbbtnconfiguraciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbbtnconfiguraciones.TabIndex = 14;
+            this.pbbtnconfiguraciones.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.pbbtnconfiguraciones, "Configuraciones");
+            // 
+            // pbbtnscannerselector
+            // 
+            this.pbbtnscannerselector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbbtnscannerselector.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbbtnscannerselector.Image = global::thumbnail.Properties.Resources.scanner;
+            this.pbbtnscannerselector.Location = new System.Drawing.Point(6, 0);
+            this.pbbtnscannerselector.Name = "pbbtnscannerselector";
+            this.pbbtnscannerselector.Size = new System.Drawing.Size(33, 33);
+            this.pbbtnscannerselector.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbbtnscannerselector.TabIndex = 13;
+            this.pbbtnscannerselector.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.pbbtnscannerselector, "Seleccionar scanner");
+            // 
             // scann
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.lookUpEdit1);
             this.Controls.Add(this.lookUpEditTramites);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel7);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.sptcntrMain);
             this.Controls.Add(this.tbllytpnlinfo);
@@ -1908,16 +1976,11 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosenlazados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbbtnconfiguraciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbbtnscannerselector)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbgardarexpediente)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pblimpiarforma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditTramites.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
@@ -1926,6 +1989,13 @@
             this.tbllytpnlinfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tbllytpnlinfopbimage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KDImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbabrirexpediente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbbtnconfiguraciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbbtnscannerselector)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2024,11 +2094,6 @@
         private System.Windows.Forms.ToolStripMenuItem asASToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asASToolStripMenuItem1;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pbbtnconfiguraciones;
-        private System.Windows.Forms.PictureBox pbbtnscannerselector;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.LookUpEdit lookUpEditTramites;
         private System.Windows.Forms.DataGridView dataGridViewcampostrazables;
@@ -2060,6 +2125,14 @@
         private System.Windows.Forms.PictureBox tbllytpnlinfopbimage;
         private AxKDImageEditor.AxKDImage KDImage;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbabrirexpediente;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pbbtnconfiguraciones;
+        private System.Windows.Forms.PictureBox pbbtnscannerselector;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
 
 
 

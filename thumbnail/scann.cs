@@ -33,6 +33,9 @@ namespace thumbnail
         private __formmode _formmode;
         public __formmode formmode { get { return _formmode; } set { _formmode = value; } }
 
+        private __formmode _expedientemode;
+        public __formmode expedientemode { get { return _expedientemode; } set { _expedientemode = value; } }
+
         private int idcampotrazableselected { get; set; }
 
         private ImageList thumbnainlist = new ImageList();
@@ -76,6 +79,8 @@ namespace thumbnail
 
         private void Inicializa()
         {
+            expedientemode = __formmode.Add;
+
             //populate combo de tramites
             lookUpEditTramites.Properties.DataSource = bd.vw_Tramites_Activos;
             lookUpEditTramites.ItemIndex = 0; //seleccionar el primero por defecto            
@@ -837,6 +842,34 @@ namespace thumbnail
 
                 Inicializa();
             }
+        }
+
+        private void pbgardarexpediente_Click(object sender, EventArgs e)
+        {
+            if (expedientemode == __formmode.Add) crearexpediente();
+            else editarexpediente();
+        }
+
+        private void editarexpediente()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void crearexpediente()
+        {
+            vw_Tramites_Activos row = lookUpEditTramites.Properties.GetDataSourceRowByKeyValue(lookUpEditTramites.EditValue) as vw_Tramites_Activos;
+            expediente.idtramite = row.id_Tramite;
+            expediente.id_resguardo = 666;
+        }
+
+        private void pbabrirexpediente_Click(object sender, EventArgs e)
+        {
+            expedientemode = __formmode.Edit;
+        }
+
+        private void pblimpiarforma_Click(object sender, EventArgs e)
+        {
+
         }
 
     }
