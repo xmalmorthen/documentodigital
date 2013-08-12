@@ -136,7 +136,7 @@
       <Column Name="f_act" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="u_act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="ca_tramites_re_tramitesdocumentos" Member="re_tramitesdocumentos" ThisKey="id" OtherKey="id_tramite" Type="re_tramitesdocumentos" />
-      <Association Name="ca_tramites_ma_expedientes" Member="ma_expedientes" ThisKey="id" OtherKey="id_tramite" Type="ma_expedientes" />
+      <Association Name="ca_tramites_re_expedientes_tramites" Member="re_expedientes_tramites" ThisKey="id" OtherKey="id_tramite" Type="re_expedientes_tramites" />
       <Association Name="ca_clasificaciontramites_ca_tramites" Member="ca_clasificaciontramites" ThisKey="id_ClasificacionTramite" OtherKey="id" Type="ca_clasificaciontramites" IsForeignKey="true" />
       <Association Name="ca_estatus_ca_tramites" Member="ca_estatus" ThisKey="id_estatus" OtherKey="id" Type="ca_estatus" IsForeignKey="true" />
     </Type>
@@ -172,14 +172,24 @@
     <Type Name="ma_expedientes">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="id_resguardo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="fecha_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="f_act" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="u_act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="ma_expedientes_de_expedientedocumentodigital" Member="de_expedientedocumentodigital" ThisKey="id" OtherKey="id_expediente" Type="de_expedientedocumentodigital" />
       <Association Name="ma_expedientes_de_expedientestrazables" Member="de_expedientestrazables" ThisKey="id" OtherKey="id_expediente" Type="de_expedientestrazables" />
+      <Association Name="ma_expedientes_re_expedientes_tramites" Member="re_expedientes_tramites" ThisKey="id" OtherKey="id_expediente" Type="re_expedientes_tramites" />
       <Association Name="ca_resguardos_ma_expedientes" Member="ca_resguardos" ThisKey="id_resguardo" OtherKey="id" Type="ca_resguardos" IsForeignKey="true" />
-      <Association Name="ca_tramites_ma_expedientes" Member="ca_tramites" ThisKey="id_tramite" OtherKey="id" Type="ca_tramites" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.re_expedientes_tramites" Member="re_expedientes_tramites">
+    <Type Name="re_expedientes_tramites">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_expediente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="f_act" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="u_act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ca_tramites_re_expedientes_tramites" Member="ca_tramites" ThisKey="id_tramite" OtherKey="id" Type="ca_tramites" IsForeignKey="true" />
+      <Association Name="ma_expedientes_re_expedientes_tramites" Member="ma_expedientes" ThisKey="id_expediente" OtherKey="id" Type="ma_expedientes" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen" Method="pa_ObtenerDocumentosporTramiteyOrigen">

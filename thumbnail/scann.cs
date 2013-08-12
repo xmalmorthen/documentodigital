@@ -869,7 +869,7 @@ namespace thumbnail
 
         private void pblimpiarforma_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
     }

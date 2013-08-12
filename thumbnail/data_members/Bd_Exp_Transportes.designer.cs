@@ -69,6 +69,9 @@ namespace thumbnail.data_members
     partial void Insertma_expedientes(ma_expedientes instance);
     partial void Updatema_expedientes(ma_expedientes instance);
     partial void Deletema_expedientes(ma_expedientes instance);
+    partial void Insertre_expedientes_tramites(re_expedientes_tramites instance);
+    partial void Updatere_expedientes_tramites(re_expedientes_tramites instance);
+    partial void Deletere_expedientes_tramites(re_expedientes_tramites instance);
     #endregion
 		
 		public Bd_Exp_TransportesDataContext() : 
@@ -218,6 +221,14 @@ namespace thumbnail.data_members
 			get
 			{
 				return this.GetTable<ma_expedientes>();
+			}
+		}
+		
+		public System.Data.Linq.Table<re_expedientes_tramites> re_expedientes_tramites
+		{
+			get
+			{
+				return this.GetTable<re_expedientes_tramites>();
 			}
 		}
 		
@@ -2595,7 +2606,7 @@ namespace thumbnail.data_members
 		
 		private EntitySet<re_tramitesdocumentos> _re_tramitesdocumentos;
 		
-		private EntitySet<ma_expedientes> _ma_expedientes;
+		private EntitySet<re_expedientes_tramites> _re_expedientes_tramites;
 		
 		private EntityRef<ca_clasificaciontramites> _ca_clasificaciontramites;
 		
@@ -2630,7 +2641,7 @@ namespace thumbnail.data_members
 		public ca_tramites()
 		{
 			this._re_tramitesdocumentos = new EntitySet<re_tramitesdocumentos>(new Action<re_tramitesdocumentos>(this.attach_re_tramitesdocumentos), new Action<re_tramitesdocumentos>(this.detach_re_tramitesdocumentos));
-			this._ma_expedientes = new EntitySet<ma_expedientes>(new Action<ma_expedientes>(this.attach_ma_expedientes), new Action<ma_expedientes>(this.detach_ma_expedientes));
+			this._re_expedientes_tramites = new EntitySet<re_expedientes_tramites>(new Action<re_expedientes_tramites>(this.attach_re_expedientes_tramites), new Action<re_expedientes_tramites>(this.detach_re_expedientes_tramites));
 			this._ca_clasificaciontramites = default(EntityRef<ca_clasificaciontramites>);
 			this._ca_estatus = default(EntityRef<ca_estatus>);
 			OnCreated();
@@ -2857,16 +2868,16 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tramites_ma_expedientes", Storage="_ma_expedientes", ThisKey="id", OtherKey="id_tramite")]
-		public EntitySet<ma_expedientes> ma_expedientes
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tramites_re_expedientes_tramites", Storage="_re_expedientes_tramites", ThisKey="id", OtherKey="id_tramite")]
+		public EntitySet<re_expedientes_tramites> re_expedientes_tramites
 		{
 			get
 			{
-				return this._ma_expedientes;
+				return this._re_expedientes_tramites;
 			}
 			set
 			{
-				this._ma_expedientes.Assign(value);
+				this._re_expedientes_tramites.Assign(value);
 			}
 		}
 		
@@ -2970,13 +2981,13 @@ namespace thumbnail.data_members
 			entity.ca_tramites = null;
 		}
 		
-		private void attach_ma_expedientes(ma_expedientes entity)
+		private void attach_re_expedientes_tramites(re_expedientes_tramites entity)
 		{
 			this.SendPropertyChanging();
 			entity.ca_tramites = this;
 		}
 		
-		private void detach_ma_expedientes(ma_expedientes entity)
+		private void detach_re_expedientes_tramites(re_expedientes_tramites entity)
 		{
 			this.SendPropertyChanging();
 			entity.ca_tramites = null;
@@ -3593,8 +3604,6 @@ namespace thumbnail.data_members
 		
 		private int _id_resguardo;
 		
-		private int _id_tramite;
-		
 		private System.DateTime _fecha_creacion;
 		
 		private System.DateTime _f_act;
@@ -3605,9 +3614,9 @@ namespace thumbnail.data_members
 		
 		private EntitySet<de_expedientestrazables> _de_expedientestrazables;
 		
-		private EntityRef<ca_resguardos> _ca_resguardos;
+		private EntitySet<re_expedientes_tramites> _re_expedientes_tramites;
 		
-		private EntityRef<ca_tramites> _ca_tramites;
+		private EntityRef<ca_resguardos> _ca_resguardos;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -3617,8 +3626,6 @@ namespace thumbnail.data_members
     partial void OnidChanged();
     partial void Onid_resguardoChanging(int value);
     partial void Onid_resguardoChanged();
-    partial void Onid_tramiteChanging(int value);
-    partial void Onid_tramiteChanged();
     partial void Onfecha_creacionChanging(System.DateTime value);
     partial void Onfecha_creacionChanged();
     partial void Onf_actChanging(System.DateTime value);
@@ -3631,8 +3638,8 @@ namespace thumbnail.data_members
 		{
 			this._de_expedientedocumentodigital = new EntitySet<de_expedientedocumentodigital>(new Action<de_expedientedocumentodigital>(this.attach_de_expedientedocumentodigital), new Action<de_expedientedocumentodigital>(this.detach_de_expedientedocumentodigital));
 			this._de_expedientestrazables = new EntitySet<de_expedientestrazables>(new Action<de_expedientestrazables>(this.attach_de_expedientestrazables), new Action<de_expedientestrazables>(this.detach_de_expedientestrazables));
+			this._re_expedientes_tramites = new EntitySet<re_expedientes_tramites>(new Action<re_expedientes_tramites>(this.attach_re_expedientes_tramites), new Action<re_expedientes_tramites>(this.detach_re_expedientes_tramites));
 			this._ca_resguardos = default(EntityRef<ca_resguardos>);
-			this._ca_tramites = default(EntityRef<ca_tramites>);
 			OnCreated();
 		}
 		
@@ -3676,30 +3683,6 @@ namespace thumbnail.data_members
 					this._id_resguardo = value;
 					this.SendPropertyChanged("id_resguardo");
 					this.Onid_resguardoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tramite", DbType="Int NOT NULL")]
-		public int id_tramite
-		{
-			get
-			{
-				return this._id_tramite;
-			}
-			set
-			{
-				if ((this._id_tramite != value))
-				{
-					if (this._ca_tramites.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_tramiteChanging(value);
-					this.SendPropertyChanging();
-					this._id_tramite = value;
-					this.SendPropertyChanged("id_tramite");
-					this.Onid_tramiteChanged();
 				}
 			}
 		}
@@ -3790,6 +3773,19 @@ namespace thumbnail.data_members
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ma_expedientes_re_expedientes_tramites", Storage="_re_expedientes_tramites", ThisKey="id", OtherKey="id_expediente")]
+		public EntitySet<re_expedientes_tramites> re_expedientes_tramites
+		{
+			get
+			{
+				return this._re_expedientes_tramites;
+			}
+			set
+			{
+				this._re_expedientes_tramites.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_resguardos_ma_expedientes", Storage="_ca_resguardos", ThisKey="id_resguardo", OtherKey="id", IsForeignKey=true)]
 		public ca_resguardos ca_resguardos
 		{
@@ -3820,40 +3816,6 @@ namespace thumbnail.data_members
 						this._id_resguardo = default(int);
 					}
 					this.SendPropertyChanged("ca_resguardos");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tramites_ma_expedientes", Storage="_ca_tramites", ThisKey="id_tramite", OtherKey="id", IsForeignKey=true)]
-		public ca_tramites ca_tramites
-		{
-			get
-			{
-				return this._ca_tramites.Entity;
-			}
-			set
-			{
-				ca_tramites previousValue = this._ca_tramites.Entity;
-				if (((previousValue != value) 
-							|| (this._ca_tramites.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ca_tramites.Entity = null;
-						previousValue.ma_expedientes.Remove(this);
-					}
-					this._ca_tramites.Entity = value;
-					if ((value != null))
-					{
-						value.ma_expedientes.Add(this);
-						this._id_tramite = value.id;
-					}
-					else
-					{
-						this._id_tramite = default(int);
-					}
-					this.SendPropertyChanged("ca_tramites");
 				}
 			}
 		}
@@ -3900,6 +3862,258 @@ namespace thumbnail.data_members
 		{
 			this.SendPropertyChanging();
 			entity.ma_expedientes = null;
+		}
+		
+		private void attach_re_expedientes_tramites(re_expedientes_tramites entity)
+		{
+			this.SendPropertyChanging();
+			entity.ma_expedientes = this;
+		}
+		
+		private void detach_re_expedientes_tramites(re_expedientes_tramites entity)
+		{
+			this.SendPropertyChanging();
+			entity.ma_expedientes = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.re_expedientes_tramites")]
+	public partial class re_expedientes_tramites : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _id_expediente;
+		
+		private int _id_tramite;
+		
+		private System.DateTime _f_act;
+		
+		private int _u_act;
+		
+		private EntityRef<ca_tramites> _ca_tramites;
+		
+		private EntityRef<ma_expedientes> _ma_expedientes;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onid_expedienteChanging(int value);
+    partial void Onid_expedienteChanged();
+    partial void Onid_tramiteChanging(int value);
+    partial void Onid_tramiteChanged();
+    partial void Onf_actChanging(System.DateTime value);
+    partial void Onf_actChanged();
+    partial void Onu_actChanging(int value);
+    partial void Onu_actChanged();
+    #endregion
+		
+		public re_expedientes_tramites()
+		{
+			this._ca_tramites = default(EntityRef<ca_tramites>);
+			this._ma_expedientes = default(EntityRef<ma_expedientes>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_expediente", DbType="Int NOT NULL")]
+		public int id_expediente
+		{
+			get
+			{
+				return this._id_expediente;
+			}
+			set
+			{
+				if ((this._id_expediente != value))
+				{
+					if (this._ma_expedientes.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_expedienteChanging(value);
+					this.SendPropertyChanging();
+					this._id_expediente = value;
+					this.SendPropertyChanged("id_expediente");
+					this.Onid_expedienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tramite", DbType="Int NOT NULL")]
+		public int id_tramite
+		{
+			get
+			{
+				return this._id_tramite;
+			}
+			set
+			{
+				if ((this._id_tramite != value))
+				{
+					if (this._ca_tramites.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_tramiteChanging(value);
+					this.SendPropertyChanging();
+					this._id_tramite = value;
+					this.SendPropertyChanged("id_tramite");
+					this.Onid_tramiteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
+		public System.DateTime f_act
+		{
+			get
+			{
+				return this._f_act;
+			}
+			set
+			{
+				if ((this._f_act != value))
+				{
+					this.Onf_actChanging(value);
+					this.SendPropertyChanging();
+					this._f_act = value;
+					this.SendPropertyChanged("f_act");
+					this.Onf_actChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
+		public int u_act
+		{
+			get
+			{
+				return this._u_act;
+			}
+			set
+			{
+				if ((this._u_act != value))
+				{
+					this.Onu_actChanging(value);
+					this.SendPropertyChanging();
+					this._u_act = value;
+					this.SendPropertyChanged("u_act");
+					this.Onu_actChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tramites_re_expedientes_tramites", Storage="_ca_tramites", ThisKey="id_tramite", OtherKey="id", IsForeignKey=true)]
+		public ca_tramites ca_tramites
+		{
+			get
+			{
+				return this._ca_tramites.Entity;
+			}
+			set
+			{
+				ca_tramites previousValue = this._ca_tramites.Entity;
+				if (((previousValue != value) 
+							|| (this._ca_tramites.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ca_tramites.Entity = null;
+						previousValue.re_expedientes_tramites.Remove(this);
+					}
+					this._ca_tramites.Entity = value;
+					if ((value != null))
+					{
+						value.re_expedientes_tramites.Add(this);
+						this._id_tramite = value.id;
+					}
+					else
+					{
+						this._id_tramite = default(int);
+					}
+					this.SendPropertyChanged("ca_tramites");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ma_expedientes_re_expedientes_tramites", Storage="_ma_expedientes", ThisKey="id_expediente", OtherKey="id", IsForeignKey=true)]
+		public ma_expedientes ma_expedientes
+		{
+			get
+			{
+				return this._ma_expedientes.Entity;
+			}
+			set
+			{
+				ma_expedientes previousValue = this._ma_expedientes.Entity;
+				if (((previousValue != value) 
+							|| (this._ma_expedientes.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ma_expedientes.Entity = null;
+						previousValue.re_expedientes_tramites.Remove(this);
+					}
+					this._ma_expedientes.Entity = value;
+					if ((value != null))
+					{
+						value.re_expedientes_tramites.Add(this);
+						this._id_expediente = value.id;
+					}
+					else
+					{
+						this._id_expediente = default(int);
+					}
+					this.SendPropertyChanged("ma_expedientes");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
