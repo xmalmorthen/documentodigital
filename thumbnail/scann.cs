@@ -99,6 +99,8 @@ namespace thumbnail
             dataGridViewcampostrazables.ShowEditingIcon = false;
             dataGridViewcampostrazables.ShowRowErrors = false;
 
+            clearfrmcampostrazables();
+
             //lista de imagenes usuario
             this.thumbnainlistusuario.ImageSize = Settings.Default.ThumbNailSize;
             this.thumbnainlistusuario.ColorDepth = Settings.Default.ThumbNailColorDepth;
