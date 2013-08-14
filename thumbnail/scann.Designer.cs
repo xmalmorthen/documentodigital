@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(scann));
             this.sptcntrMain = new System.Windows.Forms.SplitContainer();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -436,13 +436,13 @@
             this.txtvalortrazable.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.txtvalortrazable.Size = new System.Drawing.Size(452, 26);
             this.txtvalortrazable.TabIndex = 2;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Campo requerido";
-            this.dxValidationProvider2.SetValidationRule(this.txtvalortrazable, conditionValidationRule4);
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Campo requerido";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtvalortrazable, conditionValidationRule5);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Campo requerido";
+            this.dxValidationProvider2.SetValidationRule(this.txtvalortrazable, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Campo requerido";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtvalortrazable, conditionValidationRule2);
             this.txtvalortrazable.Click += new System.EventHandler(this.txtvalortrazable_Click);
             // 
             // checkEditcampoprincipal
@@ -482,9 +482,9 @@
             this.lookUpEditCamposTrazables.Properties.ValueMember = "id";
             this.lookUpEditCamposTrazables.Size = new System.Drawing.Size(451, 26);
             this.lookUpEditCamposTrazables.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Campo requerido";
-            this.dxValidationProvider1.SetValidationRule(this.lookUpEditCamposTrazables, conditionValidationRule1);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Campo requerido";
+            this.dxValidationProvider1.SetValidationRule(this.lookUpEditCamposTrazables, conditionValidationRule3);
             this.lookUpEditCamposTrazables.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.lookUpEditCamposTrazables_QueryPopUp);
             this.lookUpEditCamposTrazables.EditValueChanged += new System.EventHandler(this.lookUpEditCamposTrazables_EditValueChanged);
             // 
@@ -547,7 +547,7 @@
             this.tab0_tbllytpnlmnutbusuario.ColumnCount = 3;
             this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 800F));
+            this.tab0_tbllytpnlmnutbusuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 801F));
             this.tab0_tbllytpnlmnutbusuario.Controls.Add(this.tab0_pbmnuscann, 0, 0);
             this.tab0_tbllytpnlmnutbusuario.Controls.Add(this.tab0_pbmnulimpiar, 2, 0);
             this.tab0_tbllytpnlmnutbusuario.Controls.Add(this.tab0_pbopenfile, 1, 0);
@@ -934,7 +934,7 @@
             this.tabpgeInterno.Location = new System.Drawing.Point(4, 39);
             this.tabpgeInterno.Name = "tabpgeInterno";
             this.tabpgeInterno.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpgeInterno.Size = new System.Drawing.Size(983, 373);
+            this.tabpgeInterno.Size = new System.Drawing.Size(983, 407);
             this.tabpgeInterno.TabIndex = 1;
             this.tabpgeInterno.Tag = "Documentos internos";
             this.tabpgeInterno.Text = "Interno";
@@ -1142,7 +1142,7 @@
             this.tabPgeExterno.Location = new System.Drawing.Point(4, 39);
             this.tabPgeExterno.Name = "tabPgeExterno";
             this.tabPgeExterno.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPgeExterno.Size = new System.Drawing.Size(983, 373);
+            this.tabPgeExterno.Size = new System.Drawing.Size(983, 407);
             this.tabPgeExterno.TabIndex = 2;
             this.tabPgeExterno.Tag = "Documentos externos";
             this.tabPgeExterno.Text = "Externo";
@@ -1156,7 +1156,7 @@
             this.tab2_tbllytpnlmnutbexterno.ColumnCount = 3;
             this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 800F));
+            this.tab2_tbllytpnlmnutbexterno.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 801F));
             this.tab2_tbllytpnlmnutbexterno.Controls.Add(this.tab2_pbmnuscann, 0, 0);
             this.tab2_tbllytpnlmnutbexterno.Controls.Add(this.tab2_pbmnulimpiar, 2, 0);
             this.tab2_tbllytpnlmnutbexterno.Controls.Add(this.tab2_pbopenfile, 1, 0);
@@ -1349,7 +1349,7 @@
             this.tabpgeProveedor.Location = new System.Drawing.Point(4, 39);
             this.tabpgeProveedor.Name = "tabpgeProveedor";
             this.tabpgeProveedor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpgeProveedor.Size = new System.Drawing.Size(983, 373);
+            this.tabpgeProveedor.Size = new System.Drawing.Size(983, 407);
             this.tabpgeProveedor.TabIndex = 3;
             this.tabpgeProveedor.Tag = "Documentos de proveedor";
             this.tabpgeProveedor.Text = "Proveedor";
@@ -1363,7 +1363,7 @@
             this.tab3_tbllytpnlmnutbproveedor.ColumnCount = 3;
             this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 800F));
+            this.tab3_tbllytpnlmnutbproveedor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 801F));
             this.tab3_tbllytpnlmnutbproveedor.Controls.Add(this.tab3_pbmnuscann, 0, 0);
             this.tab3_tbllytpnlmnutbproveedor.Controls.Add(this.tab3_pbmnulimpiar, 2, 0);
             this.tab3_tbllytpnlmnutbproveedor.Controls.Add(this.tab3_pbopenfile, 1, 0);
@@ -1701,6 +1701,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Silver;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 5;
