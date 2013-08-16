@@ -82,8 +82,8 @@ namespace thumbnail
             expedientemode = __formmode.Add;
 
             //populate combo de tramites
-            lookUpEditTramites.Properties.DataSource = bd.vw_Tramites_Activos;
-            lookUpEditTramites.ItemIndex = 0; //seleccionar el primero por defecto            
+            /*lookUpEditTramites.Properties.DataSource = bd.vw_Tramites_Activos;
+            lookUpEditTramites.ItemIndex = 0; //seleccionar el primero por defecto            */
             //populate combo de campos trazables
             populatelookUpEditCamposTrazables();
             //binding datagridview
@@ -284,8 +284,8 @@ namespace thumbnail
 
         private bool hocking()
         {
-            vw_Tramites_Activos row = lookUpEditTramites.Properties.GetDataSourceRowByKeyValue(lookUpEditTramites.EditValue) as vw_Tramites_Activos;
-            int tramite = row.id_Tramite;
+            vw_ListaTramitesActivos row = lookUpEditTramites.Properties.GetDataSourceRowByKeyValue(lookUpEditTramites.EditValue) as vw_ListaTramitesActivos;
+            int tramite = row.id_tramite;
             int origen = tbctrl.SelectedIndex + 1;
 
             frmhook frm = new frmhook(tramite,origen);
@@ -648,7 +648,7 @@ namespace thumbnail
         }
 
         private void populatelookUpEditCamposTrazables(){
-            List<vw_Campos_Trazables> data = new List <vw_Campos_Trazables>();
+           /* List<vw_Campos_Trazables> data = new List <vw_Campos_Trazables>();
             data = bd.vw_Campos_Trazables.ToList();
 
             foreach (models.de_expedientestrazables item in expediente.expedientetrazable)
@@ -656,7 +656,7 @@ namespace thumbnail
                 data.RemoveAll(x => x.id == item.id_campotrazable);
             }
 
-            lookUpEditCamposTrazables.Properties.DataSource = data;
+            lookUpEditCamposTrazables.Properties.DataSource = data;*/
         }
 
         private void clearfrmcampostrazables(){
@@ -680,6 +680,7 @@ namespace thumbnail
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            /*
             if (!validatealldatascampostrazables()) return;
 
             if (formmode == __formmode.Add)
@@ -718,7 +719,7 @@ namespace thumbnail
                 bindingSource3.DataSource = expediente.expedientetrazable;
                 dataGridViewcampostrazables.DataSource = bindingSource3;
                 dataGridViewcampostrazables.Refresh();
-            }
+            }*/
         }
 
         private Boolean validatealldatascampostrazables()
@@ -749,8 +750,8 @@ namespace thumbnail
         {
             try
             {
-                vw_Campos_Trazables row = ((LookUpEdit)sender).Properties.GetDataSourceRowByKeyValue(((LookUpEdit)sender).EditValue) as vw_Campos_Trazables;
-                actualizainfomascara(row.Mascara.ToString(), (int)row.Tamanio_Caracteres);
+              /*  vw_Campos_Trazables row = ((LookUpEdit)sender).Properties.GetDataSourceRowByKeyValue(((LookUpEdit)sender).EditValue) as vw_Campos_Trazables;
+                actualizainfomascara(row.Mascara.ToString(), (int)row.Tamanio_Caracteres);*/
             }
             catch (Exception)
             {
@@ -859,8 +860,8 @@ namespace thumbnail
 
         private void crearexpediente()
         {
-            vw_Tramites_Activos row = lookUpEditTramites.Properties.GetDataSourceRowByKeyValue(lookUpEditTramites.EditValue) as vw_Tramites_Activos;
-            expediente.idtramite = row.id_Tramite;
+            vw_ListaTramitesActivos row = lookUpEditTramites.Properties.GetDataSourceRowByKeyValue(lookUpEditTramites.EditValue) as vw_ListaTramitesActivos;
+            expediente.idtramite = row.id_tramite;
             expediente.id_resguardo = 666;
         }
 

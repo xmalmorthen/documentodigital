@@ -490,7 +490,7 @@
             // 
             // bindingSource1
             // 
-            this.bindingSource1.DataSource = typeof(thumbnail.data_members.vw_Campos_Trazables);
+            /*this.bindingSource1.DataSource = typeof(thumbnail.data_members.vw_Campos_Trazables);*/
             // 
             // textEditcampotrazable
             // 
@@ -1779,7 +1779,7 @@
             // 
             // bindingSource2
             // 
-            this.bindingSource2.DataSource = typeof(thumbnail.data_members.vw_Tramites_Activos);
+           /* this.bindingSource2.DataSource = typeof(thumbnail.data_members.vw_Tramites_Activos);*/
             // 
             // dxValidationProvider1
             // 
@@ -1791,7 +1791,7 @@
             // 
             // bindingSource3
             // 
-            this.bindingSource3.DataSource = typeof(thumbnail.data_members.vw_Tramites_Activos);
+           /* this.bindingSource3.DataSource = typeof(thumbnail.data_members.vw_Tramites_Activos);*/
             // 
             // tbllytpnlinfo
             // 

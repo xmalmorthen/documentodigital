@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>thumbnail.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -54,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\convert_md5.cs" />
     <Compile Include="classes\thumbnail.cs" />
     <Compile Include="data_members\Bd_Exp_Transportes.designer.cs">
       <AutoGen>True</AutoGen>
@@ -66,6 +70,12 @@
     <Compile Include="forms\frmhook.Designer.cs">
       <DependentUpon>frmhook.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_login.Designer.cs">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\imgViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,11 +84,11 @@
     </Compile>
     <Compile Include="models\campostrazables.cs" />
     <Compile Include="models\expediente.cs" />
-    <Compile Include="scann.cs">
+    <Compile Include="forms\frm_scann.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="scann.Designer.cs">
-      <DependentUpon>scann.cs</DependentUpon>
+    <Compile Include="forms\frm_scann.Designer.cs">
+      <DependentUpon>frm_scann.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,12 +98,15 @@
     <EmbeddedResource Include="forms\frmhook.resx">
       <DependentUpon>frmhook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_login.resx">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\imgViewer.resx">
       <DependentUpon>imgViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
-    <EmbeddedResource Include="scann.resx">
-      <DependentUpon>scann.cs</DependentUpon>
+    <EmbeddedResource Include="forms\frm_scann.resx">
+      <DependentUpon>frm_scann.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

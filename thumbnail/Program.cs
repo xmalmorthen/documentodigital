@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using thumbnail.forms;
 
 namespace thumbnail
 {
@@ -15,9 +16,15 @@ namespace thumbnail
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new scann());
-            //Application.Run(new thumbnail.forms.sample());
-            
+
+            frm_login login = new frm_login();
+            scann frmscann = new scann();
+
+            DialogResult loginresult = login.ShowDialog();
+            if (loginresult == DialogResult.OK)
+            {                
+                frmscann.ShowDialog();
+            }
         }
     }
 }
