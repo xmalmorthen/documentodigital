@@ -1,30 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
-    <configSections>
-        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
-            <section name="thumbnail.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
-        </sectionGroup>
-    </configSections>
-    <userSettings>
-        <thumbnail.Properties.Settings>
-            <setting name="ThumbNailColorDepth" serializeAs="String">
-                <value>Depth32Bit</value>
-            </setting>
-            <setting name="ThumbNailSize" serializeAs="String">
-                <value>108, 108</value>
-            </setting>
-            <setting name="PathRepoImgs" serializeAs="String">
-                <value>SwapGallery</value>
-            </setting>
-            <setting name="ScannFileName" serializeAs="String">
-                <value>ScannFile_</value>
-            </setting>
-            <setting name="KDImageLicenseName" serializeAs="String">
-                <value>Quantum Productora de Software (273064285)</value>
-            </setting>
-            <setting name="KDImageLicenseKey" serializeAs="String">
-                <value>6360-8836-5591-7141-5489</value>
-            </setting>
-        </thumbnail.Properties.Settings>
-    </userSettings>
+  <configSections>
+    <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+      <section name="thumbnail.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <connectionStrings>
+    <add name="thumbnail.Properties.Settings.Bd_Exp_TransportesConnectionString"
+        connectionString="Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User ID=digitaldocs;Password=..121212qw"
+        providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  <userSettings>
+    <thumbnail.Properties.Settings>
+      <setting name="ThumbNailColorDepth" serializeAs="String">
+        <value>Depth32Bit</value>
+      </setting>
+      <setting name="ThumbNailSize" serializeAs="String">
+        <value>108, 108</value>
+      </setting>
+      <setting name="PathRepoImgs" serializeAs="String">
+        <value>SwapGallery</value>
+      </setting>
+      <setting name="ScannFileName" serializeAs="String">
+        <value>ScannFile_</value>
+      </setting>
+      <setting name="KDImageLicenseName" serializeAs="String">
+        <value>Quantum Productora de Software (273064285)</value>
+      </setting>
+      <setting name="KDImageLicenseKey" serializeAs="String">
+        <value>6360-8836-5591-7141-5489</value>
+      </setting>
+      <setting name="Config_IdTramiteporDefault" serializeAs="String">
+        <value>1</value>
+      </setting>
+      <setting name="CampoPrincipal_RowColorGrid" serializeAs="String">
+        <value>NavajoWhite</value>
+      </setting>
+    </thumbnail.Properties.Settings>
+  </userSettings>
 </configuration>
