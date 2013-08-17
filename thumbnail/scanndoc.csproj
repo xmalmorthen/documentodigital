@@ -82,6 +82,11 @@
     <Compile Include="forms\imgViewer.Designer.cs">
       <DependentUpon>imgViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Icons48x48.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Icons48x48.resx</DependentUpon>
+    </Compile>
     <Compile Include="models\campostrazables.cs" />
     <Compile Include="models\expediente.cs" />
     <Compile Include="forms\frm_scann.cs">
@@ -103,6 +108,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\imgViewer.resx">
       <DependentUpon>imgViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons48x48.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Icons48x48.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="forms\frm_scann.resx">

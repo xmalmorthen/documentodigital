@@ -105,7 +105,7 @@ namespace thumbnail.data_members
     #endregion
 		
 		public Bd_Exp_TransportesDataContext() : 
-				base(global::thumbnail.Properties.Settings.Default.Bd_Exp_TransportesConnectionString1, mappingSource)
+				base(global::thumbnail.Properties.Settings.Default.Bd_Exp_TransportesConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
