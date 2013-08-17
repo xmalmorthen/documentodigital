@@ -471,7 +471,7 @@ namespace thumbnail
             int tramite = lookUpEdit_Tramites_selected.id_tramite; //obtener el id del tramite a partir del combo de tramites
             int origen = tbctrl.SelectedIndex + 1; //obtener el origen a partir del tab seleccionado
 
-            frmhook frm = new frmhook(tramite,origen); //inicializar formulario
+            frmhook frm = new frmhook(tramite,origen,sources); //inicializar formulario
 
             DialogResult result = frm.ShowDialog(this); //mostrar forlulario
 

@@ -20,15 +20,17 @@ namespace thumbnail.forms
         int Origen { get; set; }
 
         public thumbnail.models.digital source = new thumbnail.models.digital(); //instancia a modelo principal para el guardado de la información
+        public List<thumbnail.models.digital> sources = new List<thumbnail.models.digital>();
 
         BindingSource BindingSource_ClasificacionDocumento; //variable binding para lista de clasificacion de documentos
 
         //constructor
-        public frmhook(int tramite, int origen)
+        public frmhook(int tramite, int origen, List<thumbnail.models.digital> _sources)
         {
             InitializeComponent();
             Tramite = tramite; //inicializar property tramite a partir de parametro
             Origen = origen; //inicializar property origen a partir de parametro
+            sources = _sources;
 
             Bd_Exp_Transportes = new thumbnail.data_members.Bd_Exp_TransportesDataContext(); //instancia de base de datos
         }
@@ -67,10 +69,18 @@ namespace thumbnail.forms
         }
 
         //acualizar datos para la introducción de mascaras
-        private void actualizainfomascara(string mascara, int numcaracteres)
+        private void actualizainfomascara(string mascara, int numcaracteres, string clasificaciondocumento)
         {
             lblmascampotrazable.Text = mascara;
+
             txtvalortrazable.Text = "";
+            foreach (thumbnail.models.digital _source in sources)
+            {
+                if (_source.clasificaciondocumento == clasificaciondocumento) {
+                    txtvalortrazable.Text = _source.valor_trazable;
+                }
+            }
+            
             txtvalortrazable.Enabled = true;
             txtvalortrazable.Properties.Mask.EditMask = mascara;
             txtvalortrazable.Properties.MaxLength = numcaracteres;
@@ -111,7 +121,7 @@ namespace thumbnail.forms
                 string Mascara_Trazable = (string)_Mascara_Trazable;
                 int Tamanio_Caracteres_Trazables = int.Parse(string.Format("{0}", _Tamanio_Caracteres_Trazables));
 
-                actualizainfomascara(Mascara_Trazable, Tamanio_Caracteres_Trazables);
+                actualizainfomascara(Mascara_Trazable, Tamanio_Caracteres_Trazables, clasificaciondocumento);
                 
                 txtvalortrazable.Focus();
             }
