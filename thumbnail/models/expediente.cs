@@ -7,57 +7,17 @@ using System.Text;
 namespace thumbnail.models
 {
 
-    public class de_expedientestrazables {
-        private int _id_campotrazable;
-        public int id_campotrazable
+    public class trazabilidad_tramite {
+        private int _id_re_expediente_campotrazable;
+        public int id_re_expediente_campotrazable
         {
             get
             {
-                return _id_campotrazable;
+                return _id_re_expediente_campotrazable;
             }
             set
             {
-                _id_campotrazable = value;
-            }
-        }
-
-        private string _campotrazable;
-        public string campotrazable
-        {
-            get
-            {
-                return _campotrazable;
-            }
-            set
-            {
-                _campotrazable = value;
-            }
-        }
-
-        private string _mask;
-        public string mask
-        {
-            get
-            {
-                return _mask;
-            }
-            set
-            {
-                _mask = value;
-            }
-        }
-
-
-        private int _numcaracteres;
-        public int numcaracteres
-        {
-            get
-            {
-                return _numcaracteres;
-            }
-            set
-            {
-                _numcaracteres = value;
+                _id_re_expediente_campotrazable = value;
             }
         }
 
@@ -74,35 +34,46 @@ namespace thumbnail.models
             }
         }
 
-        private DateTime _fecha_creacion;
-        public DateTime fecha_creacion
+        private string _fecha;
+        public string fecha
         {
             get
             {
-                return _fecha_creacion;
+                return _fecha;
             }
             set
             {
-                _fecha_creacion = value;
+                _fecha = value;
             }
         }
 
-        private Boolean _es_principal;
-        public Boolean es_principal
+        private string _hora;
+        public string hora
         {
             get
             {
-                return _es_principal;
+                return _hora;
             }
             set
             {
-                _es_principal = value;
+                _hora = value;
             }
         }
+       
     }
 
-    public class de_expedientedocumentodigital
+    public class digital
     {
+        private int _id_tramite;
+        public int idtramite {
+            get {
+                return _id_tramite;
+            }
+            set {
+                _id_tramite = value;
+            }
+        }
+
         private int _id_documento;
         public int id_documento
         {
@@ -116,6 +87,73 @@ namespace thumbnail.models
             }
         }
 
+        private Image _imagen;
+        public Image imagen
+        {
+            get
+            {
+                return _imagen;
+            }
+            set
+            {
+                _imagen = value;
+            }
+        }
+
+        private string _fecha;
+        public string fecha
+        {
+            get
+            {
+                return _fecha;
+            }
+            set
+            {
+                _fecha = value;
+            }
+        }
+
+        private string _hora;
+        public string hora
+        {
+            get
+            {
+                return _hora;
+            }
+            set
+            {
+                _hora = value;
+            }
+        }
+
+        private string _valor_trazable;
+        public string valor_trazable
+        {
+            get
+            {
+                return _valor_trazable;
+            }
+            set
+            {
+                _valor_trazable = value;
+            }
+        }
+
+        private List<trazabilidad_tramite> _trazabilidad_tramite = new List<trazabilidad_tramite>();
+        public List<trazabilidad_tramite> trazabilidad_tramite
+        {
+            get
+            {
+                return _trazabilidad_tramite;
+            }
+            set
+            {
+                _trazabilidad_tramite = value;
+            }
+        }
+
+
+        //otras propertys necesarias para el flujo de representacion de informacion
         private string _clasificaciondocumento;
         public string clasificaciondocumento
         {
@@ -141,97 +179,6 @@ namespace thumbnail.models
                 _documento = value;
             }
         }
-
-        private string _valor_trazable;
-        public string valor_trazable
-        {
-            get
-            {
-                return _valor_trazable;
-            }
-            set
-            {
-                _valor_trazable = value;
-            }
-        }
-
-        private List<Image> _imagen = new List<Image>();
-        public List<Image> imagen
-        {
-            get
-            {
-                return _imagen;
-            }
-            set
-            {
-                _imagen = value;
-            }
-        }
-    } 
-
-    public class expediente_model
-    {
-        private int _id_tramite;
-        public int idtramite {
-            get {
-                return _id_tramite;
-            }
-            set {
-                _id_tramite = value;
-            }
-        }
-
-        private int _id_resguardo;
-        public int id_resguardo
-        {
-            get
-            {
-                return _id_resguardo;
-            }
-            set
-            {
-                _id_resguardo = value;
-            }
-        }
-
-        private DateTime _fecha_creacion;
-        public DateTime fecha_creacion
-        {
-            get
-            {
-                return _fecha_creacion;
-            }
-            set
-            {
-                _fecha_creacion = value;
-            }
-        }
-
-        private List<de_expedientestrazables> _expedientetrazable = new List<de_expedientestrazables>();
-        public List<de_expedientestrazables> expedientetrazable
-        {
-            get
-            {
-                return _expedientetrazable;
-            }
-            set
-            {
-                _expedientetrazable = value;
-            }
-        }
-
-        private List<de_expedientedocumentodigital> _expedientedocumentodigital = new List<de_expedientedocumentodigital>();
-        public List<de_expedientedocumentodigital> expedientedocumentodigital
-        {
-            get
-            {
-                return _expedientedocumentodigital;
-            }
-            set 
-            {
-                _expedientedocumentodigital = value;
-            }
-        }
-
+        
     }
 }

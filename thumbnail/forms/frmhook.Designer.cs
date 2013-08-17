@@ -29,40 +29,49 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.txtvalortrazable = new DevExpress.XtraEditors.TextEdit();
             this.lblmascampotrazable = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.lookUpEditClasificacionDocumento = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.paObtenerDocumentosporTramiteyOrigenResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lookUpEdit_ClasificacionDocumento = new DevExpress.XtraEditors.GridLookUpEdit();
             this.lookUpEditClasificacionDocumentoView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.colid_re_tramites_re_clasificaciondocumentos_documentos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_tramite = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colid_clasificaciondocumento = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colclasificaciondocumento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTramite = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_ClasificacionTramite = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colclasificaciontramite = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colre_clasificaciondocumento_documento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_origen = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrigen = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrden = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colObligatorio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_clasificaciondocumento = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescripcion_clasificaciondocumento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_documento = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldocumento = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colformato = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnohojas = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colnocaras = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colestado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_Formato = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescripcion_formato = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNo_Hojas = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNo_Caras = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEstado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescripcion_Estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colResguardo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTiempo_Resguardo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTrazabilidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTamanio_Caracteres_Trazables = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMascara_Trazable = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.pbcancelar = new System.Windows.Forms.PictureBox();
-            this.pbaceptar = new System.Windows.Forms.PictureBox();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.colPolitica = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colid_estatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescripcion_estatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_aceptar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtvalortrazable.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditClasificacionDocumento.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paObtenerDocumentosporTramiteyOrigenResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_ClasificacionDocumento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditClasificacionDocumentoView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbcancelar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbaceptar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,11 +88,11 @@
             this.txtvalortrazable.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.txtvalortrazable.Size = new System.Drawing.Size(576, 30);
             this.txtvalortrazable.TabIndex = 3;
-            conditionValidationRule1.CaseSensitive = true;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Valor requerido";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.txtvalortrazable, conditionValidationRule1);
+            conditionValidationRule2.CaseSensitive = true;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Valor requerido";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.txtvalortrazable, conditionValidationRule2);
             this.txtvalortrazable.Click += new System.EventHandler(this.txtvalortrazable_Click);
             // 
             // lblmascampotrazable
@@ -116,61 +125,69 @@
             this.labelControl3.TabIndex = 6;
             this.labelControl3.Text = "Valor";
             // 
-            // lookUpEditClasificacionDocumento
+            // lookUpEdit_ClasificacionDocumento
             // 
-            this.lookUpEditClasificacionDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lookUpEdit_ClasificacionDocumento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lookUpEditClasificacionDocumento.Location = new System.Drawing.Point(12, 36);
-            this.lookUpEditClasificacionDocumento.Name = "lookUpEditClasificacionDocumento";
-            this.lookUpEditClasificacionDocumento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.lookUpEditClasificacionDocumento.Properties.Appearance.Options.UseFont = true;
-            this.lookUpEditClasificacionDocumento.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lookUpEditClasificacionDocumento.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.lookUpEditClasificacionDocumento.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-            this.lookUpEditClasificacionDocumento.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lookUpEditClasificacionDocumento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lookUpEdit_ClasificacionDocumento.Location = new System.Drawing.Point(12, 36);
+            this.lookUpEdit_ClasificacionDocumento.Name = "lookUpEdit_ClasificacionDocumento";
+            this.lookUpEdit_ClasificacionDocumento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.lookUpEdit_ClasificacionDocumento.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit_ClasificacionDocumento.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lookUpEdit_ClasificacionDocumento.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lookUpEdit_ClasificacionDocumento.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.lookUpEdit_ClasificacionDocumento.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lookUpEdit_ClasificacionDocumento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEditClasificacionDocumento.Properties.DataSource = this.paObtenerDocumentosporTramiteyOrigenResultBindingSource;
-            this.lookUpEditClasificacionDocumento.Properties.DisplayMember = "documento";
-            this.lookUpEditClasificacionDocumento.Properties.ImmediatePopup = true;
-            this.lookUpEditClasificacionDocumento.Properties.LookAndFeel.SkinName = "VS2010";
-            this.lookUpEditClasificacionDocumento.Properties.NullText = "";
-            this.lookUpEditClasificacionDocumento.Properties.ValueMember = "id_documento";
-            this.lookUpEditClasificacionDocumento.Properties.View = this.lookUpEditClasificacionDocumentoView;
-            this.lookUpEditClasificacionDocumento.Size = new System.Drawing.Size(576, 30);
-            this.lookUpEditClasificacionDocumento.TabIndex = 1;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Debe indicar el tipo de documento a enlazar";
-            this.dxValidationProvider.SetValidationRule(this.lookUpEditClasificacionDocumento, conditionValidationRule2);
-            this.lookUpEditClasificacionDocumento.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.lookUpEditCamposTrazables_QueryPopUp);
-            this.lookUpEditClasificacionDocumento.EditValueChanged += new System.EventHandler(this.lookUpEditCamposTrazables_EditValueChanged);
-            // 
-            // paObtenerDocumentosporTramiteyOrigenResultBindingSource
-            // 
-            this.paObtenerDocumentosporTramiteyOrigenResultBindingSource.DataSource = typeof(thumbnail.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult);
+            this.lookUpEdit_ClasificacionDocumento.Properties.DisplayMember = "Nombre";
+            this.lookUpEdit_ClasificacionDocumento.Properties.ImmediatePopup = true;
+            this.lookUpEdit_ClasificacionDocumento.Properties.LookAndFeel.SkinName = "VS2010";
+            this.lookUpEdit_ClasificacionDocumento.Properties.NullText = "";
+            this.lookUpEdit_ClasificacionDocumento.Properties.ValueMember = "id_documento";
+            this.lookUpEdit_ClasificacionDocumento.Properties.View = this.lookUpEditClasificacionDocumentoView;
+            this.lookUpEdit_ClasificacionDocumento.Size = new System.Drawing.Size(576, 30);
+            this.lookUpEdit_ClasificacionDocumento.TabIndex = 1;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Debe indicar el tipo de documento a enlazar";
+            this.dxValidationProvider.SetValidationRule(this.lookUpEdit_ClasificacionDocumento, conditionValidationRule3);
+            this.lookUpEdit_ClasificacionDocumento.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.lookUpEditCamposTrazables_QueryPopUp);
+            this.lookUpEdit_ClasificacionDocumento.EditValueChanged += new System.EventHandler(this.lookUpEditCamposTrazables_EditValueChanged);
             // 
             // lookUpEditClasificacionDocumentoView
             // 
-            this.lookUpEditClasificacionDocumentoView.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditClasificacionDocumentoView.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.lookUpEditClasificacionDocumentoView.Appearance.HeaderPanel.Options.UseFont = true;
-            this.lookUpEditClasificacionDocumentoView.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditClasificacionDocumentoView.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.lookUpEditClasificacionDocumentoView.Appearance.Row.Options.UseFont = true;
             this.lookUpEditClasificacionDocumentoView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colid_tramite,
-            this.colid_clasificaciondocumento,
-            this.colclasificaciondocumento,
-            this.colid_origen,
-            this.colOrden,
-            this.colObligatorio,
             this.colid_documento,
-            this.coldocumento,
-            this.colformato,
-            this.colnohojas,
-            this.colnocaras,
-            this.colestado,
+            this.colNombre,
+            this.colObligatorio,
+            this.colDescripcion_clasificaciondocumento,
             this.colTrazabilidad,
             this.colTamanio_Caracteres_Trazables,
-            this.colMascara_Trazable});
+            this.colMascara_Trazable,
+            this.colid_re_tramites_re_clasificaciondocumentos_documentos,
+            this.colid_tramite,
+            this.colTramite,
+            this.colid_ClasificacionTramite,
+            this.colclasificaciontramite,
+            this.colre_clasificaciondocumento_documento,
+            this.colid_origen,
+            this.colOrigen,
+            this.colOrden,
+            this.colid_clasificaciondocumento,
+            this.colid_Formato,
+            this.colDescripcion_formato,
+            this.colNo_Hojas,
+            this.colNo_Caras,
+            this.colEstado,
+            this.colDescripcion_Estado,
+            this.colResguardo,
+            this.colTiempo_Resguardo,
+            this.colPolitica,
+            this.colid_estatus,
+            this.colDescripcion_estatus});
             this.lookUpEditClasificacionDocumentoView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.lookUpEditClasificacionDocumentoView.GroupCount = 1;
             this.lookUpEditClasificacionDocumentoView.GroupFormat = "[#image]{1} {2}";
@@ -179,186 +196,231 @@
             this.lookUpEditClasificacionDocumentoView.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.lookUpEditClasificacionDocumentoView.OptionsView.ShowGroupPanel = false;
             this.lookUpEditClasificacionDocumentoView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colclasificaciondocumento, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDescripcion_clasificaciondocumento, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // dxValidationProvider
+            // 
+            this.dxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
+            // 
+            // colid_re_tramites_re_clasificaciondocumentos_documentos
+            // 
+            this.colid_re_tramites_re_clasificaciondocumentos_documentos.FieldName = "id_re_tramites_re_clasificaciondocumentos_documentos";
+            this.colid_re_tramites_re_clasificaciondocumentos_documentos.Name = "colid_re_tramites_re_clasificaciondocumentos_documentos";
             // 
             // colid_tramite
             // 
             this.colid_tramite.FieldName = "id_tramite";
             this.colid_tramite.Name = "colid_tramite";
-            this.colid_tramite.OptionsColumn.AllowEdit = false;
             // 
-            // colid_clasificaciondocumento
+            // colTramite
             // 
-            this.colid_clasificaciondocumento.FieldName = "id_clasificaciondocumento";
-            this.colid_clasificaciondocumento.Name = "colid_clasificaciondocumento";
-            this.colid_clasificaciondocumento.OptionsColumn.AllowEdit = false;
+            this.colTramite.FieldName = "Tramite";
+            this.colTramite.Name = "colTramite";
             // 
-            // colclasificaciondocumento
+            // colid_ClasificacionTramite
             // 
-            this.colclasificaciondocumento.Caption = "Clasificacion de documento";
-            this.colclasificaciondocumento.FieldName = "clasificaciondocumento";
-            this.colclasificaciondocumento.Name = "colclasificaciondocumento";
-            this.colclasificaciondocumento.OptionsColumn.AllowEdit = false;
-            this.colclasificaciondocumento.Visible = true;
-            this.colclasificaciondocumento.VisibleIndex = 2;
+            this.colid_ClasificacionTramite.FieldName = "id_ClasificacionTramite";
+            this.colid_ClasificacionTramite.Name = "colid_ClasificacionTramite";
+            // 
+            // colclasificaciontramite
+            // 
+            this.colclasificaciontramite.FieldName = "clasificaciontramite";
+            this.colclasificaciontramite.Name = "colclasificaciontramite";
+            // 
+            // colre_clasificaciondocumento_documento
+            // 
+            this.colre_clasificaciondocumento_documento.FieldName = "re_clasificaciondocumento_documento";
+            this.colre_clasificaciondocumento_documento.Name = "colre_clasificaciondocumento_documento";
             // 
             // colid_origen
             // 
             this.colid_origen.FieldName = "id_origen";
             this.colid_origen.Name = "colid_origen";
-            this.colid_origen.OptionsColumn.AllowEdit = false;
+            // 
+            // colOrigen
+            // 
+            this.colOrigen.FieldName = "Origen";
+            this.colOrigen.Name = "colOrigen";
             // 
             // colOrden
             // 
             this.colOrden.FieldName = "Orden";
             this.colOrden.Name = "colOrden";
-            this.colOrden.OptionsColumn.AllowEdit = false;
             // 
             // colObligatorio
             // 
             this.colObligatorio.Caption = "Es obligatorio";
             this.colObligatorio.FieldName = "Obligatorio";
             this.colObligatorio.Name = "colObligatorio";
-            this.colObligatorio.OptionsColumn.AllowEdit = false;
             this.colObligatorio.Visible = true;
-            this.colObligatorio.VisibleIndex = 1;
+            this.colObligatorio.VisibleIndex = 4;
+            // 
+            // colid_clasificaciondocumento
+            // 
+            this.colid_clasificaciondocumento.FieldName = "id_clasificaciondocumento";
+            this.colid_clasificaciondocumento.Name = "colid_clasificaciondocumento";
+            // 
+            // colDescripcion_clasificaciondocumento
+            // 
+            this.colDescripcion_clasificaciondocumento.Caption = "Clasificación de documento";
+            this.colDescripcion_clasificaciondocumento.FieldName = "Descripcion_clasificaciondocumento";
+            this.colDescripcion_clasificaciondocumento.Name = "colDescripcion_clasificaciondocumento";
+            this.colDescripcion_clasificaciondocumento.Visible = true;
+            this.colDescripcion_clasificaciondocumento.VisibleIndex = 1;
             // 
             // colid_documento
             // 
             this.colid_documento.FieldName = "id_documento";
             this.colid_documento.Name = "colid_documento";
-            this.colid_documento.OptionsColumn.AllowEdit = false;
             // 
-            // coldocumento
+            // colNombre
             // 
-            this.coldocumento.Caption = "Documento";
-            this.coldocumento.FieldName = "documento";
-            this.coldocumento.Name = "coldocumento";
-            this.coldocumento.OptionsColumn.AllowEdit = false;
-            this.coldocumento.Visible = true;
-            this.coldocumento.VisibleIndex = 0;
+            this.colNombre.Caption = "Documento";
+            this.colNombre.FieldName = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.Visible = true;
+            this.colNombre.VisibleIndex = 0;
             // 
-            // colformato
+            // colid_Formato
             // 
-            this.colformato.Caption = "Formato";
-            this.colformato.FieldName = "formato";
-            this.colformato.Name = "colformato";
-            this.colformato.OptionsColumn.AllowEdit = false;
-            this.colformato.Visible = true;
-            this.colformato.VisibleIndex = 5;
+            this.colid_Formato.FieldName = "id_Formato";
+            this.colid_Formato.Name = "colid_Formato";
             // 
-            // colnohojas
+            // colDescripcion_formato
             // 
-            this.colnohojas.Caption = "No. hojas";
-            this.colnohojas.FieldName = "nohojas";
-            this.colnohojas.Name = "colnohojas";
-            this.colnohojas.OptionsColumn.AllowEdit = false;
-            this.colnohojas.Visible = true;
-            this.colnohojas.VisibleIndex = 6;
+            this.colDescripcion_formato.FieldName = "Descripcion_formato";
+            this.colDescripcion_formato.Name = "colDescripcion_formato";
             // 
-            // colnocaras
+            // colNo_Hojas
             // 
-            this.colnocaras.Caption = "No. caras";
-            this.colnocaras.FieldName = "nocaras";
-            this.colnocaras.Name = "colnocaras";
-            this.colnocaras.OptionsColumn.AllowEdit = false;
-            this.colnocaras.Visible = true;
-            this.colnocaras.VisibleIndex = 7;
+            this.colNo_Hojas.FieldName = "No_Hojas";
+            this.colNo_Hojas.Name = "colNo_Hojas";
             // 
-            // colestado
+            // colNo_Caras
             // 
-            this.colestado.Caption = "Estado del documento";
-            this.colestado.FieldName = "estado";
-            this.colestado.Name = "colestado";
-            this.colestado.OptionsColumn.AllowEdit = false;
-            this.colestado.Visible = true;
-            this.colestado.VisibleIndex = 8;
+            this.colNo_Caras.FieldName = "No_Caras";
+            this.colNo_Caras.Name = "colNo_Caras";
+            // 
+            // colEstado
+            // 
+            this.colEstado.FieldName = "Estado";
+            this.colEstado.Name = "colEstado";
+            // 
+            // colDescripcion_Estado
+            // 
+            this.colDescripcion_Estado.FieldName = "Descripcion_Estado";
+            this.colDescripcion_Estado.Name = "colDescripcion_Estado";
+            // 
+            // colResguardo
+            // 
+            this.colResguardo.FieldName = "Resguardo";
+            this.colResguardo.Name = "colResguardo";
+            // 
+            // colTiempo_Resguardo
+            // 
+            this.colTiempo_Resguardo.FieldName = "Tiempo_Resguardo";
+            this.colTiempo_Resguardo.Name = "colTiempo_Resguardo";
             // 
             // colTrazabilidad
             // 
             this.colTrazabilidad.Caption = "Requiere trazabilidad";
             this.colTrazabilidad.FieldName = "Trazabilidad";
             this.colTrazabilidad.Name = "colTrazabilidad";
-            this.colTrazabilidad.OptionsColumn.AllowEdit = false;
             this.colTrazabilidad.Visible = true;
-            this.colTrazabilidad.VisibleIndex = 2;
+            this.colTrazabilidad.VisibleIndex = 1;
             // 
             // colTamanio_Caracteres_Trazables
             // 
-            this.colTamanio_Caracteres_Trazables.Caption = "Tamaño de caracteres trazables";
-            this.colTamanio_Caracteres_Trazables.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTamanio_Caracteres_Trazables.Caption = "Tamaño de caractéres trazables";
             this.colTamanio_Caracteres_Trazables.FieldName = "Tamanio_Caracteres_Trazables";
             this.colTamanio_Caracteres_Trazables.Name = "colTamanio_Caracteres_Trazables";
-            this.colTamanio_Caracteres_Trazables.OptionsColumn.AllowEdit = false;
             this.colTamanio_Caracteres_Trazables.Visible = true;
-            this.colTamanio_Caracteres_Trazables.VisibleIndex = 3;
+            this.colTamanio_Caracteres_Trazables.VisibleIndex = 2;
             // 
             // colMascara_Trazable
             // 
             this.colMascara_Trazable.Caption = "Mascara trazable";
             this.colMascara_Trazable.FieldName = "Mascara_Trazable";
             this.colMascara_Trazable.Name = "colMascara_Trazable";
-            this.colMascara_Trazable.OptionsColumn.AllowEdit = false;
             this.colMascara_Trazable.Visible = true;
-            this.colMascara_Trazable.VisibleIndex = 4;
+            this.colMascara_Trazable.VisibleIndex = 3;
             // 
-            // pbcancelar
+            // colPolitica
             // 
-            this.pbcancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbcancelar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbcancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbcancelar.Image = global::thumbnail.Properties.Resources.close;
-            this.pbcancelar.Location = new System.Drawing.Point(554, 133);
-            this.pbcancelar.Name = "pbcancelar";
-            this.pbcancelar.Size = new System.Drawing.Size(33, 33);
-            this.pbcancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbcancelar.TabIndex = 23;
-            this.pbcancelar.TabStop = false;
-            this.toolTip.SetToolTip(this.pbcancelar, "Cancelar vinculación");
-            this.pbcancelar.Click += new System.EventHandler(this.pbcancelar_Click);
+            this.colPolitica.FieldName = "Politica";
+            this.colPolitica.Name = "colPolitica";
             // 
-            // pbaceptar
+            // colid_estatus
             // 
-            this.pbaceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbaceptar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbaceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbaceptar.Image = global::thumbnail.Properties.Resources.checkmark;
-            this.pbaceptar.Location = new System.Drawing.Point(515, 133);
-            this.pbaceptar.Name = "pbaceptar";
-            this.pbaceptar.Size = new System.Drawing.Size(33, 33);
-            this.pbaceptar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbaceptar.TabIndex = 22;
-            this.pbaceptar.TabStop = false;
-            this.toolTip.SetToolTip(this.pbaceptar, "Vincular imagenes");
-            this.pbaceptar.Click += new System.EventHandler(this.pbaceptar_Click);
+            this.colid_estatus.FieldName = "id_estatus";
+            this.colid_estatus.Name = "colid_estatus";
             // 
-            // dxValidationProvider
+            // colDescripcion_estatus
             // 
-            this.dxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
+            this.colDescripcion_estatus.FieldName = "Descripcion_estatus";
+            this.colDescripcion_estatus.Name = "colDescripcion_estatus";
+            // 
+            // btn_aceptar
+            // 
+            this.btn_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_aceptar.AutoSize = true;
+            this.btn_aceptar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_aceptar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_aceptar.FlatAppearance.BorderSize = 0;
+            this.btn_aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_aceptar.Image = global::thumbnail.Icons48x48.checkbox_checked;
+            this.btn_aceptar.Location = new System.Drawing.Point(464, 139);
+            this.btn_aceptar.Name = "btn_aceptar";
+            this.btn_aceptar.Size = new System.Drawing.Size(54, 54);
+            this.btn_aceptar.TabIndex = 45;
+            this.toolTip.SetToolTip(this.btn_aceptar, "Vincular documento");
+            this.btn_aceptar.UseVisualStyleBackColor = false;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cancelar.AutoSize = true;
+            this.btn_cancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_cancelar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cancelar.Location = new System.Drawing.Point(533, 139);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(54, 54);
+            this.btn_cancelar.TabIndex = 46;
+            this.toolTip.SetToolTip(this.btn_cancelar, "Cancelar vinculación de documento");
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // frmhook
             // 
+            this.AcceptButton = this.btn_aceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 172);
-            this.Controls.Add(this.pbcancelar);
-            this.Controls.Add(this.pbaceptar);
+            this.CancelButton = this.btn_cancelar;
+            this.ClientSize = new System.Drawing.Size(600, 202);
+            this.Controls.Add(this.btn_cancelar);
+            this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.lblmascampotrazable);
             this.Controls.Add(this.txtvalortrazable);
-            this.Controls.Add(this.lookUpEditClasificacionDocumento);
+            this.Controls.Add(this.lookUpEdit_ClasificacionDocumento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmhook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Vinculación de imagenes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmhook_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.txtvalortrazable.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditClasificacionDocumento.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paObtenerDocumentosporTramiteyOrigenResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_ClasificacionDocumento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditClasificacionDocumentoView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbcancelar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbaceptar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -371,27 +433,39 @@
         private DevExpress.XtraEditors.LabelControl lblmascampotrazable;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.GridLookUpEdit lookUpEditClasificacionDocumento;
-        private System.Windows.Forms.PictureBox pbcancelar;
-        private System.Windows.Forms.PictureBox pbaceptar;
+        private DevExpress.XtraEditors.GridLookUpEdit lookUpEdit_ClasificacionDocumento;
         private System.Windows.Forms.ToolTip toolTip;
         private DevExpress.XtraGrid.Views.Grid.GridView lookUpEditClasificacionDocumentoView;
-        private System.Windows.Forms.BindingSource paObtenerDocumentosporTramiteyOrigenResultBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_tramite;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_clasificaciondocumento;
-        private DevExpress.XtraGrid.Columns.GridColumn colclasificaciondocumento;
-        private DevExpress.XtraGrid.Columns.GridColumn colid_origen;
-        private DevExpress.XtraGrid.Columns.GridColumn colOrden;
-        private DevExpress.XtraGrid.Columns.GridColumn colObligatorio;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
         private DevExpress.XtraGrid.Columns.GridColumn colid_documento;
-        private DevExpress.XtraGrid.Columns.GridColumn coldocumento;
-        private DevExpress.XtraGrid.Columns.GridColumn colformato;
-        private DevExpress.XtraGrid.Columns.GridColumn colnohojas;
-        private DevExpress.XtraGrid.Columns.GridColumn colnocaras;
-        private DevExpress.XtraGrid.Columns.GridColumn colestado;
+        private DevExpress.XtraGrid.Columns.GridColumn colNombre;
+        private DevExpress.XtraGrid.Columns.GridColumn colObligatorio;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescripcion_clasificaciondocumento;
         private DevExpress.XtraGrid.Columns.GridColumn colTrazabilidad;
         private DevExpress.XtraGrid.Columns.GridColumn colTamanio_Caracteres_Trazables;
         private DevExpress.XtraGrid.Columns.GridColumn colMascara_Trazable;
-        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_re_tramites_re_clasificaciondocumentos_documentos;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_tramite;
+        private DevExpress.XtraGrid.Columns.GridColumn colTramite;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_ClasificacionTramite;
+        private DevExpress.XtraGrid.Columns.GridColumn colclasificaciontramite;
+        private DevExpress.XtraGrid.Columns.GridColumn colre_clasificaciondocumento_documento;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_origen;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrigen;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrden;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_clasificaciondocumento;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_Formato;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescripcion_formato;
+        private DevExpress.XtraGrid.Columns.GridColumn colNo_Hojas;
+        private DevExpress.XtraGrid.Columns.GridColumn colNo_Caras;
+        private DevExpress.XtraGrid.Columns.GridColumn colEstado;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescripcion_Estado;
+        private DevExpress.XtraGrid.Columns.GridColumn colResguardo;
+        private DevExpress.XtraGrid.Columns.GridColumn colTiempo_Resguardo;
+        private DevExpress.XtraGrid.Columns.GridColumn colPolitica;
+        private DevExpress.XtraGrid.Columns.GridColumn colid_estatus;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescripcion_estatus;
+        private System.Windows.Forms.Button btn_aceptar;
+        private System.Windows.Forms.Button btn_cancelar;
     }
 }

@@ -31,9 +31,10 @@ namespace thumbnail
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(scann));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cntmnuListViewEnlace = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmnuitemlstvwenlaceabrir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwenlaceeliminar = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,10 +63,6 @@ namespace thumbnail
             this.btn_limpiarcontroles = new System.Windows.Forms.Button();
             this.btn_abririmagen = new System.Windows.Forms.Button();
             this.btn_scanear = new System.Windows.Forms.Button();
-            this.tab0_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
-            this.tab0_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
-            this.tab1_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
-            this.tab1_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
             this.tab2_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
             this.tab2_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
             this.tab3_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
@@ -82,24 +79,9 @@ namespace thumbnail
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.dataGridView_CamposTrazables = new System.Windows.Forms.DataGridView();
-            this.idcampotrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tamanioCaracteresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mascaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.esprincipalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.col_valor_trazable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbctrl = new System.Windows.Forms.TabControl();
             this.tabpgeUsuario = new System.Windows.Forms.TabPage();
-            this.tab0_lstvwdocumentosenlazados = new System.Windows.Forms.ListView();
-            this.tab0_lstvwdocumentosescaneados = new System.Windows.Forms.ListView();
-            this.tab0_lbldocumentosescaneados = new System.Windows.Forms.Label();
-            this.tab0_lbldocumentosenlazados = new System.Windows.Forms.Label();
             this.tabpgeInterno = new System.Windows.Forms.TabPage();
-            this.tab1_lstvwdocumentosenlazados = new System.Windows.Forms.ListView();
-            this.tab1_lstvwdocumentosescaneados = new System.Windows.Forms.ListView();
-            this.tab1_lbldocumentosescaneados = new System.Windows.Forms.Label();
-            this.tab1_lbldocumentosenlazados = new System.Windows.Forms.Label();
             this.tabPgeExterno = new System.Windows.Forms.TabPage();
             this.tab2_tbllytpnldocumentos = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -120,12 +102,34 @@ namespace thumbnail
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.paCampostrazablesActivosporExpedienteResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idcampotrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tamanioCaracteresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mascaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.esprincipalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.col_valor_trazable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tab0_tbllytpnldocumentos = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tab0_lstvwdocumentosescaneados = new System.Windows.Forms.ListView();
+            this.tab0_lstvwdocumentosenlazados = new System.Windows.Forms.ListView();
+            this.tab0_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
+            this.tab0_lbldocumentosescaneados = new System.Windows.Forms.Label();
+            this.tab0_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
+            this.tab0_lbldocumentosenlazados = new System.Windows.Forms.Label();
+            this.tab1_tbllytpnldocumentos = new System.Windows.Forms.TableLayoutPanel();
+            this.tab1_lstvwdocumentosenlazados = new System.Windows.Forms.ListView();
+            this.tab1_lstvwdocumentosescaneados = new System.Windows.Forms.ListView();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.tab1_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
+            this.tab1_lbldocumentosenlazados = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.tab1_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
+            this.tab1_lbldocumentosescaneados = new System.Windows.Forms.Label();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.cntmnuListViewEnlace.SuspendLayout();
             this.cntmnuListViewScann.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosenlazados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosescaneados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosenlazados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosescaneados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab2_pblbldocumentosescaneados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab2_pblbldocumentosenlazados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosescaneados)).BeginInit();
@@ -145,6 +149,16 @@ namespace thumbnail
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paCampostrazablesActivosporExpedienteResultBindingSource)).BeginInit();
+            this.tab0_tbllytpnldocumentos.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosescaneados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosenlazados)).BeginInit();
+            this.tab1_tbllytpnldocumentos.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosenlazados)).BeginInit();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosescaneados)).BeginInit();
             this.SuspendLayout();
             // 
             // cntmnuListViewEnlace
@@ -407,63 +421,11 @@ namespace thumbnail
             this.btn_scanear.UseVisualStyleBackColor = false;
             this.btn_scanear.Click += new System.EventHandler(this.btn_scanear_Click);
             // 
-            // tab0_pblbldocumentosenlazados
-            // 
-            this.tab0_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tab0_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab0_pblbldocumentosenlazados.Image")));
-            this.tab0_pblbldocumentosenlazados.Location = new System.Drawing.Point(495, 10);
-            this.tab0_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab0_pblbldocumentosenlazados.Name = "tab0_pblbldocumentosenlazados";
-            this.tab0_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
-            this.tab0_pblbldocumentosenlazados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab0_pblbldocumentosenlazados.TabIndex = 17;
-            this.tab0_pblbldocumentosenlazados.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.tab0_pblbldocumentosenlazados, "Escanear documentos");
-            // 
-            // tab0_pblbldocumentosescaneados
-            // 
-            this.tab0_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tab0_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab0_pblbldocumentosescaneados.Image")));
-            this.tab0_pblbldocumentosescaneados.Location = new System.Drawing.Point(12, 10);
-            this.tab0_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab0_pblbldocumentosescaneados.Name = "tab0_pblbldocumentosescaneados";
-            this.tab0_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
-            this.tab0_pblbldocumentosescaneados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab0_pblbldocumentosescaneados.TabIndex = 14;
-            this.tab0_pblbldocumentosescaneados.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.tab0_pblbldocumentosescaneados, "Escanear documentos");
-            // 
-            // tab1_pblbldocumentosenlazados
-            // 
-            this.tab1_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tab1_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab1_pblbldocumentosenlazados.Image")));
-            this.tab1_pblbldocumentosenlazados.Location = new System.Drawing.Point(495, 10);
-            this.tab1_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab1_pblbldocumentosenlazados.Name = "tab1_pblbldocumentosenlazados";
-            this.tab1_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
-            this.tab1_pblbldocumentosenlazados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab1_pblbldocumentosenlazados.TabIndex = 18;
-            this.tab1_pblbldocumentosenlazados.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.tab1_pblbldocumentosenlazados, "Escanear documentos");
-            // 
-            // tab1_pblbldocumentosescaneados
-            // 
-            this.tab1_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tab1_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab1_pblbldocumentosescaneados.Image")));
-            this.tab1_pblbldocumentosescaneados.Location = new System.Drawing.Point(12, 10);
-            this.tab1_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab1_pblbldocumentosescaneados.Name = "tab1_pblbldocumentosescaneados";
-            this.tab1_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
-            this.tab1_pblbldocumentosescaneados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab1_pblbldocumentosescaneados.TabIndex = 16;
-            this.tab1_pblbldocumentosescaneados.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.tab1_pblbldocumentosescaneados, "Escanear documentos");
-            // 
             // tab2_pblbldocumentosescaneados
             // 
             this.tab2_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tab2_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab2_pblbldocumentosescaneados.Image")));
-            this.tab2_pblbldocumentosescaneados.Location = new System.Drawing.Point(5, 1);
+            this.tab2_pblbldocumentosescaneados.Location = new System.Drawing.Point(0, 0);
             this.tab2_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
             this.tab2_pblbldocumentosescaneados.Name = "tab2_pblbldocumentosescaneados";
             this.tab2_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
@@ -476,7 +438,7 @@ namespace thumbnail
             // 
             this.tab2_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tab2_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab2_pblbldocumentosenlazados.Image")));
-            this.tab2_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 1);
+            this.tab2_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 0);
             this.tab2_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
             this.tab2_pblbldocumentosenlazados.Name = "tab2_pblbldocumentosenlazados";
             this.tab2_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
@@ -489,7 +451,7 @@ namespace thumbnail
             // 
             this.tab3_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tab3_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab3_pblbldocumentosescaneados.Image")));
-            this.tab3_pblbldocumentosescaneados.Location = new System.Drawing.Point(5, 1);
+            this.tab3_pblbldocumentosescaneados.Location = new System.Drawing.Point(0, 0);
             this.tab3_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
             this.tab3_pblbldocumentosescaneados.Name = "tab3_pblbldocumentosescaneados";
             this.tab3_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
@@ -502,7 +464,7 @@ namespace thumbnail
             // 
             this.tab3_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tab3_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab3_pblbldocumentosenlazados.Image")));
-            this.tab3_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 1);
+            this.tab3_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 0);
             this.tab3_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
             this.tab3_pblbldocumentosenlazados.Name = "tab3_pblbldocumentosenlazados";
             this.tab3_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
@@ -670,6 +632,7 @@ namespace thumbnail
             this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape2,
             this.lineShape1});
             this.shapeContainer1.Size = new System.Drawing.Size(1008, 730);
             this.shapeContainer1.TabIndex = 51;
@@ -694,14 +657,14 @@ namespace thumbnail
             this.dataGridView_CamposTrazables.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_CamposTrazables.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView_CamposTrazables.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CamposTrazables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CamposTrazables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
             this.dataGridView_CamposTrazables.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idcampotrazableDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
@@ -710,83 +673,33 @@ namespace thumbnail
             this.mascaraDataGridViewTextBoxColumn,
             this.esprincipalDataGridViewCheckBoxColumn,
             this.col_valor_trazable});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_CamposTrazables.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_CamposTrazables.DefaultCellStyle = dataGridViewCellStyle35;
             this.dataGridView_CamposTrazables.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView_CamposTrazables.EnableHeadersVisualStyles = false;
             this.dataGridView_CamposTrazables.Location = new System.Drawing.Point(12, 101);
             this.dataGridView_CamposTrazables.MultiSelect = false;
             this.dataGridView_CamposTrazables.Name = "dataGridView_CamposTrazables";
             this.dataGridView_CamposTrazables.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CamposTrazables.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CamposTrazables.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
             this.dataGridView_CamposTrazables.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView_CamposTrazables.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView_CamposTrazables.Size = new System.Drawing.Size(988, 164);
             this.dataGridView_CamposTrazables.TabIndex = 1;
             this.dataGridView_CamposTrazables.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CamposTrazables_RowEnter);
-            // 
-            // idcampotrazableDataGridViewTextBoxColumn
-            // 
-            this.idcampotrazableDataGridViewTextBoxColumn.DataPropertyName = "id_campotrazable";
-            this.idcampotrazableDataGridViewTextBoxColumn.HeaderText = "id_campotrazable";
-            this.idcampotrazableDataGridViewTextBoxColumn.Name = "idcampotrazableDataGridViewTextBoxColumn";
-            this.idcampotrazableDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Campo";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tamanioCaracteresDataGridViewTextBoxColumn
-            // 
-            this.tamanioCaracteresDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres";
-            this.tamanioCaracteresDataGridViewTextBoxColumn.HeaderText = "Tamaño de caracteres";
-            this.tamanioCaracteresDataGridViewTextBoxColumn.Name = "tamanioCaracteresDataGridViewTextBoxColumn";
-            this.tamanioCaracteresDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idestatusDataGridViewTextBoxColumn
-            // 
-            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
-            this.idestatusDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // mascaraDataGridViewTextBoxColumn
-            // 
-            this.mascaraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mascaraDataGridViewTextBoxColumn.DataPropertyName = "Mascara";
-            this.mascaraDataGridViewTextBoxColumn.HeaderText = "Mascara";
-            this.mascaraDataGridViewTextBoxColumn.Name = "mascaraDataGridViewTextBoxColumn";
-            this.mascaraDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // esprincipalDataGridViewCheckBoxColumn
-            // 
-            this.esprincipalDataGridViewCheckBoxColumn.DataPropertyName = "es_principal";
-            this.esprincipalDataGridViewCheckBoxColumn.HeaderText = "Es principal";
-            this.esprincipalDataGridViewCheckBoxColumn.Name = "esprincipalDataGridViewCheckBoxColumn";
-            this.esprincipalDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // col_valor_trazable
-            // 
-            this.col_valor_trazable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_valor_trazable.HeaderText = "Valor Trazable";
-            this.col_valor_trazable.Name = "col_valor_trazable";
-            this.col_valor_trazable.ToolTipText = "Introdúzca el valor de la trazabilidad";
             // 
             // tbctrl
             // 
@@ -799,11 +712,11 @@ namespace thumbnail
             this.tbctrl.Controls.Add(this.tabpgeProveedor);
             this.tbctrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbctrl.ImageList = this.imglsttabs;
-            this.tbctrl.Location = new System.Drawing.Point(12, 296);
+            this.tbctrl.Location = new System.Drawing.Point(12, 293);
             this.tbctrl.Multiline = true;
             this.tbctrl.Name = "tbctrl";
             this.tbctrl.SelectedIndex = 0;
-            this.tbctrl.Size = new System.Drawing.Size(988, 431);
+            this.tbctrl.Size = new System.Drawing.Size(988, 434);
             this.tbctrl.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tbctrl.TabIndex = 53;
             this.tbctrl.Tag = "";
@@ -811,152 +724,28 @@ namespace thumbnail
             // tabpgeUsuario
             // 
             this.tabpgeUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.tabpgeUsuario.Controls.Add(this.tab0_lstvwdocumentosenlazados);
-            this.tabpgeUsuario.Controls.Add(this.tab0_pblbldocumentosenlazados);
-            this.tabpgeUsuario.Controls.Add(this.tab0_lstvwdocumentosescaneados);
-            this.tabpgeUsuario.Controls.Add(this.tab0_pblbldocumentosescaneados);
-            this.tabpgeUsuario.Controls.Add(this.tab0_lbldocumentosescaneados);
-            this.tabpgeUsuario.Controls.Add(this.tab0_lbldocumentosenlazados);
+            this.tabpgeUsuario.Controls.Add(this.tab0_tbllytpnldocumentos);
             this.tabpgeUsuario.ImageIndex = 0;
             this.tabpgeUsuario.Location = new System.Drawing.Point(4, 39);
             this.tabpgeUsuario.Name = "tabpgeUsuario";
             this.tabpgeUsuario.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpgeUsuario.Size = new System.Drawing.Size(980, 388);
+            this.tabpgeUsuario.Size = new System.Drawing.Size(980, 391);
             this.tabpgeUsuario.TabIndex = 0;
             this.tabpgeUsuario.Tag = "Documentos de usuario";
             this.tabpgeUsuario.Text = "Usuario";
             // 
-            // tab0_lstvwdocumentosenlazados
-            // 
-            this.tab0_lstvwdocumentosenlazados.AllowDrop = true;
-            this.tab0_lstvwdocumentosenlazados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tab0_lstvwdocumentosenlazados.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tab0_lstvwdocumentosenlazados.BackgroundImageTiled = true;
-            this.tab0_lstvwdocumentosenlazados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tab0_lstvwdocumentosenlazados.ContextMenuStrip = this.cntmnuListViewEnlace;
-            this.tab0_lstvwdocumentosenlazados.Location = new System.Drawing.Point(495, 37);
-            this.tab0_lstvwdocumentosenlazados.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.tab0_lstvwdocumentosenlazados.Name = "tab0_lstvwdocumentosenlazados";
-            this.tab0_lstvwdocumentosenlazados.Size = new System.Drawing.Size(473, 343);
-            this.tab0_lstvwdocumentosenlazados.TabIndex = 18;
-            this.tab0_lstvwdocumentosenlazados.Tag = "0";
-            this.tab0_lstvwdocumentosenlazados.UseCompatibleStateImageBehavior = false;
-            // 
-            // tab0_lstvwdocumentosescaneados
-            // 
-            this.tab0_lstvwdocumentosescaneados.AllowDrop = true;
-            this.tab0_lstvwdocumentosescaneados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tab0_lstvwdocumentosescaneados.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tab0_lstvwdocumentosescaneados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tab0_lstvwdocumentosescaneados.ContextMenuStrip = this.cntmnuListViewScann;
-            this.tab0_lstvwdocumentosescaneados.Location = new System.Drawing.Point(12, 37);
-            this.tab0_lstvwdocumentosescaneados.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.tab0_lstvwdocumentosescaneados.Name = "tab0_lstvwdocumentosescaneados";
-            this.tab0_lstvwdocumentosescaneados.Size = new System.Drawing.Size(473, 343);
-            this.tab0_lstvwdocumentosescaneados.TabIndex = 15;
-            this.tab0_lstvwdocumentosescaneados.Tag = "0";
-            this.tab0_lstvwdocumentosescaneados.UseCompatibleStateImageBehavior = false;
-            // 
-            // tab0_lbldocumentosescaneados
-            // 
-            this.tab0_lbldocumentosescaneados.AutoSize = true;
-            this.tab0_lbldocumentosescaneados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab0_lbldocumentosescaneados.Location = new System.Drawing.Point(32, 17);
-            this.tab0_lbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab0_lbldocumentosescaneados.Name = "tab0_lbldocumentosescaneados";
-            this.tab0_lbldocumentosescaneados.Size = new System.Drawing.Size(193, 20);
-            this.tab0_lbldocumentosescaneados.TabIndex = 13;
-            this.tab0_lbldocumentosescaneados.Text = "Documentos Escaneados";
-            // 
-            // tab0_lbldocumentosenlazados
-            // 
-            this.tab0_lbldocumentosenlazados.AutoSize = true;
-            this.tab0_lbldocumentosenlazados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab0_lbldocumentosenlazados.Location = new System.Drawing.Point(517, 17);
-            this.tab0_lbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab0_lbldocumentosenlazados.Name = "tab0_lbldocumentosenlazados";
-            this.tab0_lbldocumentosenlazados.Size = new System.Drawing.Size(179, 20);
-            this.tab0_lbldocumentosenlazados.TabIndex = 16;
-            this.tab0_lbldocumentosenlazados.Text = "Documentos Enlazados";
-            // 
             // tabpgeInterno
             // 
             this.tabpgeInterno.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabpgeInterno.Controls.Add(this.tab1_lstvwdocumentosenlazados);
-            this.tabpgeInterno.Controls.Add(this.tab1_lstvwdocumentosescaneados);
-            this.tabpgeInterno.Controls.Add(this.tab1_lbldocumentosescaneados);
-            this.tabpgeInterno.Controls.Add(this.tab1_lbldocumentosenlazados);
-            this.tabpgeInterno.Controls.Add(this.tab1_pblbldocumentosenlazados);
-            this.tabpgeInterno.Controls.Add(this.tab1_pblbldocumentosescaneados);
+            this.tabpgeInterno.Controls.Add(this.tab1_tbllytpnldocumentos);
             this.tabpgeInterno.ImageIndex = 1;
             this.tabpgeInterno.Location = new System.Drawing.Point(4, 39);
             this.tabpgeInterno.Name = "tabpgeInterno";
             this.tabpgeInterno.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpgeInterno.Size = new System.Drawing.Size(980, 388);
+            this.tabpgeInterno.Size = new System.Drawing.Size(980, 391);
             this.tabpgeInterno.TabIndex = 1;
             this.tabpgeInterno.Tag = "Documentos internos";
             this.tabpgeInterno.Text = "Interno";
-            // 
-            // tab1_lstvwdocumentosenlazados
-            // 
-            this.tab1_lstvwdocumentosenlazados.AllowDrop = true;
-            this.tab1_lstvwdocumentosenlazados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tab1_lstvwdocumentosenlazados.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tab1_lstvwdocumentosenlazados.BackgroundImageTiled = true;
-            this.tab1_lstvwdocumentosenlazados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tab1_lstvwdocumentosenlazados.ContextMenuStrip = this.cntmnuListViewEnlace;
-            this.tab1_lstvwdocumentosenlazados.Location = new System.Drawing.Point(495, 37);
-            this.tab1_lstvwdocumentosenlazados.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.tab1_lstvwdocumentosenlazados.Name = "tab1_lstvwdocumentosenlazados";
-            this.tab1_lstvwdocumentosenlazados.Size = new System.Drawing.Size(473, 343);
-            this.tab1_lstvwdocumentosenlazados.TabIndex = 20;
-            this.tab1_lstvwdocumentosenlazados.Tag = "1";
-            this.tab1_lstvwdocumentosenlazados.UseCompatibleStateImageBehavior = false;
-            // 
-            // tab1_lstvwdocumentosescaneados
-            // 
-            this.tab1_lstvwdocumentosescaneados.AllowDrop = true;
-            this.tab1_lstvwdocumentosescaneados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tab1_lstvwdocumentosescaneados.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tab1_lstvwdocumentosescaneados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tab1_lstvwdocumentosescaneados.ContextMenuStrip = this.cntmnuListViewScann;
-            this.tab1_lstvwdocumentosescaneados.Location = new System.Drawing.Point(12, 37);
-            this.tab1_lstvwdocumentosescaneados.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.tab1_lstvwdocumentosescaneados.Name = "tab1_lstvwdocumentosescaneados";
-            this.tab1_lstvwdocumentosescaneados.Size = new System.Drawing.Size(473, 343);
-            this.tab1_lstvwdocumentosescaneados.TabIndex = 19;
-            this.tab1_lstvwdocumentosescaneados.Tag = "1";
-            this.tab1_lstvwdocumentosescaneados.UseCompatibleStateImageBehavior = false;
-            // 
-            // tab1_lbldocumentosescaneados
-            // 
-            this.tab1_lbldocumentosescaneados.AutoSize = true;
-            this.tab1_lbldocumentosescaneados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab1_lbldocumentosescaneados.Location = new System.Drawing.Point(32, 17);
-            this.tab1_lbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab1_lbldocumentosescaneados.Name = "tab1_lbldocumentosescaneados";
-            this.tab1_lbldocumentosescaneados.Size = new System.Drawing.Size(193, 20);
-            this.tab1_lbldocumentosescaneados.TabIndex = 15;
-            this.tab1_lbldocumentosescaneados.Text = "Documentos Escaneados";
-            // 
-            // tab1_lbldocumentosenlazados
-            // 
-            this.tab1_lbldocumentosenlazados.AutoSize = true;
-            this.tab1_lbldocumentosenlazados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab1_lbldocumentosenlazados.Location = new System.Drawing.Point(517, 17);
-            this.tab1_lbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab1_lbldocumentosenlazados.Name = "tab1_lbldocumentosenlazados";
-            this.tab1_lbldocumentosenlazados.Size = new System.Drawing.Size(179, 20);
-            this.tab1_lbldocumentosenlazados.TabIndex = 17;
-            this.tab1_lbldocumentosenlazados.Text = "Documentos Enlazados";
             // 
             // tabPgeExterno
             // 
@@ -966,7 +755,7 @@ namespace thumbnail
             this.tabPgeExterno.Location = new System.Drawing.Point(4, 39);
             this.tabPgeExterno.Name = "tabPgeExterno";
             this.tabPgeExterno.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPgeExterno.Size = new System.Drawing.Size(980, 388);
+            this.tabPgeExterno.Size = new System.Drawing.Size(980, 391);
             this.tabPgeExterno.TabIndex = 2;
             this.tabPgeExterno.Tag = "Documentos externos";
             this.tabPgeExterno.Text = "Externo";
@@ -984,30 +773,30 @@ namespace thumbnail
             this.tab2_tbllytpnldocumentos.Controls.Add(this.panel4, 1, 0);
             this.tab2_tbllytpnldocumentos.Controls.Add(this.tab2_lstvwdocumentosenlazados, 1, 1);
             this.tab2_tbllytpnldocumentos.Controls.Add(this.tab2_lstvwdocumentosescaneados, 0, 1);
-            this.tab2_tbllytpnldocumentos.Location = new System.Drawing.Point(5, 66);
+            this.tab2_tbllytpnldocumentos.Location = new System.Drawing.Point(6, 6);
             this.tab2_tbllytpnldocumentos.Margin = new System.Windows.Forms.Padding(5);
             this.tab2_tbllytpnldocumentos.Name = "tab2_tbllytpnldocumentos";
             this.tab2_tbllytpnldocumentos.RowCount = 2;
-            this.tab2_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tab2_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tab2_tbllytpnldocumentos.Size = new System.Drawing.Size(969, 667);
+            this.tab2_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tab2_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tab2_tbllytpnldocumentos.Size = new System.Drawing.Size(967, 382);
             this.tab2_tbllytpnldocumentos.TabIndex = 14;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.tab2_lbldocumentosescaneados);
             this.panel3.Controls.Add(this.tab2_pblbldocumentosescaneados);
+            this.panel3.Controls.Add(this.tab2_lbldocumentosescaneados);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(236, 27);
+            this.panel3.Size = new System.Drawing.Size(236, 25);
             this.panel3.TabIndex = 6;
             // 
             // tab2_lbldocumentosescaneados
             // 
             this.tab2_lbldocumentosescaneados.AutoSize = true;
             this.tab2_lbldocumentosescaneados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab2_lbldocumentosescaneados.Location = new System.Drawing.Point(28, 5);
+            this.tab2_lbldocumentosescaneados.Location = new System.Drawing.Point(20, 7);
             this.tab2_lbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
             this.tab2_lbldocumentosescaneados.Name = "tab2_lbldocumentosescaneados";
             this.tab2_lbldocumentosescaneados.Size = new System.Drawing.Size(193, 20);
@@ -1016,19 +805,19 @@ namespace thumbnail
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.tab2_lbldocumentosenlazados);
             this.panel4.Controls.Add(this.tab2_pblbldocumentosenlazados);
-            this.panel4.Location = new System.Drawing.Point(484, 0);
+            this.panel4.Controls.Add(this.tab2_lbldocumentosenlazados);
+            this.panel4.Location = new System.Drawing.Point(483, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(236, 27);
+            this.panel4.Size = new System.Drawing.Size(236, 25);
             this.panel4.TabIndex = 0;
             // 
             // tab2_lbldocumentosenlazados
             // 
             this.tab2_lbldocumentosenlazados.AutoSize = true;
             this.tab2_lbldocumentosenlazados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab2_lbldocumentosenlazados.Location = new System.Drawing.Point(28, 5);
+            this.tab2_lbldocumentosenlazados.Location = new System.Drawing.Point(27, 7);
             this.tab2_lbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
             this.tab2_lbldocumentosenlazados.Name = "tab2_lbldocumentosenlazados";
             this.tab2_lbldocumentosenlazados.Size = new System.Drawing.Size(179, 20);
@@ -1038,35 +827,37 @@ namespace thumbnail
             // tab2_lstvwdocumentosenlazados
             // 
             this.tab2_lstvwdocumentosenlazados.AllowDrop = true;
-            this.tab2_lstvwdocumentosenlazados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tab2_lstvwdocumentosenlazados.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tab2_lstvwdocumentosenlazados.BackgroundImageTiled = true;
             this.tab2_lstvwdocumentosenlazados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tab2_lstvwdocumentosenlazados.ContextMenuStrip = this.cntmnuListViewEnlace;
-            this.tab2_lstvwdocumentosenlazados.Location = new System.Drawing.Point(489, 27);
-            this.tab2_lstvwdocumentosenlazados.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
+            this.tab2_lstvwdocumentosenlazados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab2_lstvwdocumentosenlazados.Location = new System.Drawing.Point(486, 25);
+            this.tab2_lstvwdocumentosenlazados.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.tab2_lstvwdocumentosenlazados.Name = "tab2_lstvwdocumentosenlazados";
-            this.tab2_lstvwdocumentosenlazados.Size = new System.Drawing.Size(475, 635);
+            this.tab2_lstvwdocumentosenlazados.Size = new System.Drawing.Size(481, 357);
             this.tab2_lstvwdocumentosenlazados.TabIndex = 5;
             this.tab2_lstvwdocumentosenlazados.UseCompatibleStateImageBehavior = false;
+            this.tab2_lstvwdocumentosenlazados.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lstvwdocumentosenlazados_ItemDrag);
+            this.tab2_lstvwdocumentosenlazados.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosenlazados_DragDrop);
+            this.tab2_lstvwdocumentosenlazados.DragOver += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosenlazados_DragOver);
             // 
             // tab2_lstvwdocumentosescaneados
             // 
             this.tab2_lstvwdocumentosescaneados.AllowDrop = true;
-            this.tab2_lstvwdocumentosescaneados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tab2_lstvwdocumentosescaneados.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tab2_lstvwdocumentosescaneados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tab2_lstvwdocumentosescaneados.ContextMenuStrip = this.cntmnuListViewScann;
-            this.tab2_lstvwdocumentosescaneados.Location = new System.Drawing.Point(5, 27);
-            this.tab2_lstvwdocumentosescaneados.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
+            this.tab2_lstvwdocumentosescaneados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab2_lstvwdocumentosescaneados.Location = new System.Drawing.Point(0, 25);
+            this.tab2_lstvwdocumentosescaneados.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.tab2_lstvwdocumentosescaneados.Name = "tab2_lstvwdocumentosescaneados";
-            this.tab2_lstvwdocumentosescaneados.Size = new System.Drawing.Size(474, 635);
+            this.tab2_lstvwdocumentosescaneados.Size = new System.Drawing.Size(480, 357);
             this.tab2_lstvwdocumentosescaneados.TabIndex = 4;
             this.tab2_lstvwdocumentosescaneados.UseCompatibleStateImageBehavior = false;
+            this.tab2_lstvwdocumentosescaneados.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lstvwdocumentosescaneados_ItemDrag);
+            this.tab2_lstvwdocumentosescaneados.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosescaneados_DragDrop);
+            this.tab2_lstvwdocumentosescaneados.DragOver += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosescaneados_DragOver);
             // 
             // tabpgeProveedor
             // 
@@ -1077,7 +868,7 @@ namespace thumbnail
             this.tabpgeProveedor.Location = new System.Drawing.Point(4, 39);
             this.tabpgeProveedor.Name = "tabpgeProveedor";
             this.tabpgeProveedor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpgeProveedor.Size = new System.Drawing.Size(980, 388);
+            this.tabpgeProveedor.Size = new System.Drawing.Size(980, 391);
             this.tabpgeProveedor.TabIndex = 3;
             this.tabpgeProveedor.Tag = "Documentos de proveedor";
             this.tabpgeProveedor.Text = "Proveedor";
@@ -1095,30 +886,30 @@ namespace thumbnail
             this.tab3_tbllytpnldocumentos.Controls.Add(this.panel6, 1, 0);
             this.tab3_tbllytpnldocumentos.Controls.Add(this.tab3_lstvwdocumentosenlazados, 1, 1);
             this.tab3_tbllytpnldocumentos.Controls.Add(this.tab3_lstvwdocumentosescaneados, 0, 1);
-            this.tab3_tbllytpnldocumentos.Location = new System.Drawing.Point(5, 66);
+            this.tab3_tbllytpnldocumentos.Location = new System.Drawing.Point(6, 6);
             this.tab3_tbllytpnldocumentos.Margin = new System.Windows.Forms.Padding(5);
             this.tab3_tbllytpnldocumentos.Name = "tab3_tbllytpnldocumentos";
             this.tab3_tbllytpnldocumentos.RowCount = 2;
-            this.tab3_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tab3_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tab3_tbllytpnldocumentos.Size = new System.Drawing.Size(969, 667);
+            this.tab3_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tab3_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tab3_tbllytpnldocumentos.Size = new System.Drawing.Size(967, 382);
             this.tab3_tbllytpnldocumentos.TabIndex = 14;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.tab3_lbldocumentosescaneados);
             this.panel5.Controls.Add(this.tab3_pblbldocumentosescaneados);
+            this.panel5.Controls.Add(this.tab3_lbldocumentosescaneados);
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(236, 27);
+            this.panel5.Size = new System.Drawing.Size(236, 25);
             this.panel5.TabIndex = 6;
             // 
             // tab3_lbldocumentosescaneados
             // 
             this.tab3_lbldocumentosescaneados.AutoSize = true;
             this.tab3_lbldocumentosescaneados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab3_lbldocumentosescaneados.Location = new System.Drawing.Point(28, 5);
+            this.tab3_lbldocumentosescaneados.Location = new System.Drawing.Point(20, 7);
             this.tab3_lbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
             this.tab3_lbldocumentosescaneados.Name = "tab3_lbldocumentosescaneados";
             this.tab3_lbldocumentosescaneados.Size = new System.Drawing.Size(193, 20);
@@ -1127,19 +918,19 @@ namespace thumbnail
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.tab3_lbldocumentosenlazados);
             this.panel6.Controls.Add(this.tab3_pblbldocumentosenlazados);
-            this.panel6.Location = new System.Drawing.Point(484, 0);
+            this.panel6.Controls.Add(this.tab3_lbldocumentosenlazados);
+            this.panel6.Location = new System.Drawing.Point(483, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(236, 27);
+            this.panel6.Size = new System.Drawing.Size(236, 25);
             this.panel6.TabIndex = 0;
             // 
             // tab3_lbldocumentosenlazados
             // 
             this.tab3_lbldocumentosenlazados.AutoSize = true;
             this.tab3_lbldocumentosenlazados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tab3_lbldocumentosenlazados.Location = new System.Drawing.Point(28, 5);
+            this.tab3_lbldocumentosenlazados.Location = new System.Drawing.Point(27, 7);
             this.tab3_lbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
             this.tab3_lbldocumentosenlazados.Name = "tab3_lbldocumentosenlazados";
             this.tab3_lbldocumentosenlazados.Size = new System.Drawing.Size(179, 20);
@@ -1149,35 +940,37 @@ namespace thumbnail
             // tab3_lstvwdocumentosenlazados
             // 
             this.tab3_lstvwdocumentosenlazados.AllowDrop = true;
-            this.tab3_lstvwdocumentosenlazados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tab3_lstvwdocumentosenlazados.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tab3_lstvwdocumentosenlazados.BackgroundImageTiled = true;
             this.tab3_lstvwdocumentosenlazados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tab3_lstvwdocumentosenlazados.ContextMenuStrip = this.cntmnuListViewEnlace;
-            this.tab3_lstvwdocumentosenlazados.Location = new System.Drawing.Point(489, 27);
-            this.tab3_lstvwdocumentosenlazados.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
+            this.tab3_lstvwdocumentosenlazados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab3_lstvwdocumentosenlazados.Location = new System.Drawing.Point(486, 25);
+            this.tab3_lstvwdocumentosenlazados.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.tab3_lstvwdocumentosenlazados.Name = "tab3_lstvwdocumentosenlazados";
-            this.tab3_lstvwdocumentosenlazados.Size = new System.Drawing.Size(475, 635);
+            this.tab3_lstvwdocumentosenlazados.Size = new System.Drawing.Size(481, 357);
             this.tab3_lstvwdocumentosenlazados.TabIndex = 5;
             this.tab3_lstvwdocumentosenlazados.UseCompatibleStateImageBehavior = false;
+            this.tab3_lstvwdocumentosenlazados.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lstvwdocumentosenlazados_ItemDrag);
+            this.tab3_lstvwdocumentosenlazados.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosenlazados_DragDrop);
+            this.tab3_lstvwdocumentosenlazados.DragOver += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosenlazados_DragOver);
             // 
             // tab3_lstvwdocumentosescaneados
             // 
             this.tab3_lstvwdocumentosescaneados.AllowDrop = true;
-            this.tab3_lstvwdocumentosescaneados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tab3_lstvwdocumentosescaneados.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tab3_lstvwdocumentosescaneados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tab3_lstvwdocumentosescaneados.ContextMenuStrip = this.cntmnuListViewScann;
-            this.tab3_lstvwdocumentosescaneados.Location = new System.Drawing.Point(5, 27);
-            this.tab3_lstvwdocumentosescaneados.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
+            this.tab3_lstvwdocumentosescaneados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab3_lstvwdocumentosescaneados.Location = new System.Drawing.Point(0, 25);
+            this.tab3_lstvwdocumentosescaneados.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.tab3_lstvwdocumentosescaneados.Name = "tab3_lstvwdocumentosescaneados";
-            this.tab3_lstvwdocumentosescaneados.Size = new System.Drawing.Size(474, 635);
+            this.tab3_lstvwdocumentosescaneados.Size = new System.Drawing.Size(480, 357);
             this.tab3_lstvwdocumentosescaneados.TabIndex = 4;
             this.tab3_lstvwdocumentosescaneados.UseCompatibleStateImageBehavior = false;
+            this.tab3_lstvwdocumentosescaneados.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lstvwdocumentosescaneados_ItemDrag);
+            this.tab3_lstvwdocumentosescaneados.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosescaneados_DragDrop);
+            this.tab3_lstvwdocumentosescaneados.DragOver += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosescaneados_DragOver);
             // 
             // label2
             // 
@@ -1226,6 +1019,319 @@ namespace thumbnail
             // 
             this.paCampostrazablesActivosporExpedienteResultBindingSource.DataSource = typeof(thumbnail.data_members.pa_CampostrazablesActivosporExpedienteResult);
             // 
+            // idcampotrazableDataGridViewTextBoxColumn
+            // 
+            this.idcampotrazableDataGridViewTextBoxColumn.DataPropertyName = "id_campotrazable";
+            this.idcampotrazableDataGridViewTextBoxColumn.HeaderText = "id_campotrazable";
+            this.idcampotrazableDataGridViewTextBoxColumn.Name = "idcampotrazableDataGridViewTextBoxColumn";
+            this.idcampotrazableDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Campo";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tamanioCaracteresDataGridViewTextBoxColumn
+            // 
+            this.tamanioCaracteresDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres";
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tamanioCaracteresDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle34;
+            this.tamanioCaracteresDataGridViewTextBoxColumn.HeaderText = "Tamaño de caracteres";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.Name = "tamanioCaracteresDataGridViewTextBoxColumn";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idestatusDataGridViewTextBoxColumn
+            // 
+            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
+            this.idestatusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // mascaraDataGridViewTextBoxColumn
+            // 
+            this.mascaraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mascaraDataGridViewTextBoxColumn.DataPropertyName = "Mascara";
+            this.mascaraDataGridViewTextBoxColumn.HeaderText = "Mascara";
+            this.mascaraDataGridViewTextBoxColumn.Name = "mascaraDataGridViewTextBoxColumn";
+            this.mascaraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // esprincipalDataGridViewCheckBoxColumn
+            // 
+            this.esprincipalDataGridViewCheckBoxColumn.DataPropertyName = "es_principal";
+            this.esprincipalDataGridViewCheckBoxColumn.HeaderText = "Es principal";
+            this.esprincipalDataGridViewCheckBoxColumn.Name = "esprincipalDataGridViewCheckBoxColumn";
+            this.esprincipalDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // col_valor_trazable
+            // 
+            this.col_valor_trazable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_valor_trazable.HeaderText = "Valor Trazable";
+            this.col_valor_trazable.Name = "col_valor_trazable";
+            this.col_valor_trazable.ToolTipText = "Introdúzca el valor de la trazabilidad";
+            // 
+            // tab0_tbllytpnldocumentos
+            // 
+            this.tab0_tbllytpnldocumentos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tab0_tbllytpnldocumentos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tab0_tbllytpnldocumentos.ColumnCount = 2;
+            this.tab0_tbllytpnldocumentos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tab0_tbllytpnldocumentos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tab0_tbllytpnldocumentos.Controls.Add(this.tab0_lstvwdocumentosenlazados, 1, 1);
+            this.tab0_tbllytpnldocumentos.Controls.Add(this.tab0_lstvwdocumentosescaneados, 0, 1);
+            this.tab0_tbllytpnldocumentos.Controls.Add(this.panel2, 1, 0);
+            this.tab0_tbllytpnldocumentos.Controls.Add(this.panel1, 0, 0);
+            this.tab0_tbllytpnldocumentos.Location = new System.Drawing.Point(6, 6);
+            this.tab0_tbllytpnldocumentos.Name = "tab0_tbllytpnldocumentos";
+            this.tab0_tbllytpnldocumentos.RowCount = 2;
+            this.tab0_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tab0_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tab0_tbllytpnldocumentos.Size = new System.Drawing.Size(967, 382);
+            this.tab0_tbllytpnldocumentos.TabIndex = 19;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tab0_pblbldocumentosescaneados);
+            this.panel1.Controls.Add(this.tab0_lbldocumentosescaneados);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(212, 25);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.tab0_pblbldocumentosenlazados);
+            this.panel2.Controls.Add(this.tab0_lbldocumentosenlazados);
+            this.panel2.Location = new System.Drawing.Point(483, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(214, 25);
+            this.panel2.TabIndex = 1;
+            // 
+            // tab0_lstvwdocumentosescaneados
+            // 
+            this.tab0_lstvwdocumentosescaneados.AllowDrop = true;
+            this.tab0_lstvwdocumentosescaneados.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tab0_lstvwdocumentosescaneados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tab0_lstvwdocumentosescaneados.ContextMenuStrip = this.cntmnuListViewScann;
+            this.tab0_lstvwdocumentosescaneados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab0_lstvwdocumentosescaneados.Location = new System.Drawing.Point(0, 25);
+            this.tab0_lstvwdocumentosescaneados.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.tab0_lstvwdocumentosescaneados.Name = "tab0_lstvwdocumentosescaneados";
+            this.tab0_lstvwdocumentosescaneados.Size = new System.Drawing.Size(480, 357);
+            this.tab0_lstvwdocumentosescaneados.TabIndex = 16;
+            this.tab0_lstvwdocumentosescaneados.Tag = "0";
+            this.tab0_lstvwdocumentosescaneados.UseCompatibleStateImageBehavior = false;
+            this.tab0_lstvwdocumentosescaneados.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lstvwdocumentosescaneados_ItemDrag);
+            this.tab0_lstvwdocumentosescaneados.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosescaneados_DragDrop);
+            this.tab0_lstvwdocumentosescaneados.DragOver += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosescaneados_DragOver);
+            // 
+            // tab0_lstvwdocumentosenlazados
+            // 
+            this.tab0_lstvwdocumentosenlazados.AllowDrop = true;
+            this.tab0_lstvwdocumentosenlazados.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tab0_lstvwdocumentosenlazados.BackgroundImageTiled = true;
+            this.tab0_lstvwdocumentosenlazados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tab0_lstvwdocumentosenlazados.ContextMenuStrip = this.cntmnuListViewEnlace;
+            this.tab0_lstvwdocumentosenlazados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab0_lstvwdocumentosenlazados.Location = new System.Drawing.Point(486, 25);
+            this.tab0_lstvwdocumentosenlazados.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.tab0_lstvwdocumentosenlazados.Name = "tab0_lstvwdocumentosenlazados";
+            this.tab0_lstvwdocumentosenlazados.Size = new System.Drawing.Size(481, 357);
+            this.tab0_lstvwdocumentosenlazados.TabIndex = 19;
+            this.tab0_lstvwdocumentosenlazados.Tag = "0";
+            this.tab0_lstvwdocumentosenlazados.UseCompatibleStateImageBehavior = false;
+            this.tab0_lstvwdocumentosenlazados.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lstvwdocumentosenlazados_ItemDrag);
+            this.tab0_lstvwdocumentosenlazados.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosenlazados_DragDrop);
+            this.tab0_lstvwdocumentosenlazados.DragOver += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosenlazados_DragOver);
+            // 
+            // tab0_pblbldocumentosescaneados
+            // 
+            this.tab0_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tab0_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab0_pblbldocumentosescaneados.Image")));
+            this.tab0_pblbldocumentosescaneados.Location = new System.Drawing.Point(0, 0);
+            this.tab0_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab0_pblbldocumentosescaneados.Name = "tab0_pblbldocumentosescaneados";
+            this.tab0_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
+            this.tab0_pblbldocumentosescaneados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab0_pblbldocumentosescaneados.TabIndex = 16;
+            this.tab0_pblbldocumentosescaneados.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.tab0_pblbldocumentosescaneados, "Escanear documentos");
+            // 
+            // tab0_lbldocumentosescaneados
+            // 
+            this.tab0_lbldocumentosescaneados.AutoSize = true;
+            this.tab0_lbldocumentosescaneados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tab0_lbldocumentosescaneados.Location = new System.Drawing.Point(20, 7);
+            this.tab0_lbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab0_lbldocumentosescaneados.Name = "tab0_lbldocumentosescaneados";
+            this.tab0_lbldocumentosescaneados.Size = new System.Drawing.Size(193, 20);
+            this.tab0_lbldocumentosescaneados.TabIndex = 15;
+            this.tab0_lbldocumentosescaneados.Text = "Documentos Escaneados";
+            // 
+            // tab0_pblbldocumentosenlazados
+            // 
+            this.tab0_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tab0_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab0_pblbldocumentosenlazados.Image")));
+            this.tab0_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 0);
+            this.tab0_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab0_pblbldocumentosenlazados.Name = "tab0_pblbldocumentosenlazados";
+            this.tab0_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
+            this.tab0_pblbldocumentosenlazados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab0_pblbldocumentosenlazados.TabIndex = 19;
+            this.tab0_pblbldocumentosenlazados.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.tab0_pblbldocumentosenlazados, "Escanear documentos");
+            // 
+            // tab0_lbldocumentosenlazados
+            // 
+            this.tab0_lbldocumentosenlazados.AutoSize = true;
+            this.tab0_lbldocumentosenlazados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tab0_lbldocumentosenlazados.Location = new System.Drawing.Point(27, 7);
+            this.tab0_lbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab0_lbldocumentosenlazados.Name = "tab0_lbldocumentosenlazados";
+            this.tab0_lbldocumentosenlazados.Size = new System.Drawing.Size(179, 20);
+            this.tab0_lbldocumentosenlazados.TabIndex = 18;
+            this.tab0_lbldocumentosenlazados.Text = "Documentos Enlazados";
+            // 
+            // tab1_tbllytpnldocumentos
+            // 
+            this.tab1_tbllytpnldocumentos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tab1_tbllytpnldocumentos.ColumnCount = 2;
+            this.tab1_tbllytpnldocumentos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tab1_tbllytpnldocumentos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tab1_tbllytpnldocumentos.Controls.Add(this.tab1_lstvwdocumentosenlazados, 1, 1);
+            this.tab1_tbllytpnldocumentos.Controls.Add(this.tab1_lstvwdocumentosescaneados, 0, 1);
+            this.tab1_tbllytpnldocumentos.Controls.Add(this.panel7, 1, 0);
+            this.tab1_tbllytpnldocumentos.Controls.Add(this.panel8, 0, 0);
+            this.tab1_tbllytpnldocumentos.Location = new System.Drawing.Point(6, 6);
+            this.tab1_tbllytpnldocumentos.Name = "tab1_tbllytpnldocumentos";
+            this.tab1_tbllytpnldocumentos.RowCount = 2;
+            this.tab1_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tab1_tbllytpnldocumentos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tab1_tbllytpnldocumentos.Size = new System.Drawing.Size(967, 382);
+            this.tab1_tbllytpnldocumentos.TabIndex = 21;
+            // 
+            // tab1_lstvwdocumentosenlazados
+            // 
+            this.tab1_lstvwdocumentosenlazados.AllowDrop = true;
+            this.tab1_lstvwdocumentosenlazados.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tab1_lstvwdocumentosenlazados.BackgroundImageTiled = true;
+            this.tab1_lstvwdocumentosenlazados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tab1_lstvwdocumentosenlazados.ContextMenuStrip = this.cntmnuListViewEnlace;
+            this.tab1_lstvwdocumentosenlazados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab1_lstvwdocumentosenlazados.Location = new System.Drawing.Point(486, 25);
+            this.tab1_lstvwdocumentosenlazados.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.tab1_lstvwdocumentosenlazados.Name = "tab1_lstvwdocumentosenlazados";
+            this.tab1_lstvwdocumentosenlazados.Size = new System.Drawing.Size(481, 357);
+            this.tab1_lstvwdocumentosenlazados.TabIndex = 19;
+            this.tab1_lstvwdocumentosenlazados.Tag = "0";
+            this.tab1_lstvwdocumentosenlazados.UseCompatibleStateImageBehavior = false;
+            this.tab1_lstvwdocumentosenlazados.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lstvwdocumentosenlazados_ItemDrag);
+            this.tab1_lstvwdocumentosenlazados.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosenlazados_DragDrop);
+            this.tab1_lstvwdocumentosenlazados.DragOver += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosenlazados_DragOver);
+            // 
+            // tab1_lstvwdocumentosescaneados
+            // 
+            this.tab1_lstvwdocumentosescaneados.AllowDrop = true;
+            this.tab1_lstvwdocumentosescaneados.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tab1_lstvwdocumentosescaneados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tab1_lstvwdocumentosescaneados.ContextMenuStrip = this.cntmnuListViewScann;
+            this.tab1_lstvwdocumentosescaneados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab1_lstvwdocumentosescaneados.Location = new System.Drawing.Point(0, 25);
+            this.tab1_lstvwdocumentosescaneados.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.tab1_lstvwdocumentosescaneados.Name = "tab1_lstvwdocumentosescaneados";
+            this.tab1_lstvwdocumentosescaneados.Size = new System.Drawing.Size(480, 357);
+            this.tab1_lstvwdocumentosescaneados.TabIndex = 16;
+            this.tab1_lstvwdocumentosescaneados.Tag = "0";
+            this.tab1_lstvwdocumentosescaneados.UseCompatibleStateImageBehavior = false;
+            this.tab1_lstvwdocumentosescaneados.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lstvwdocumentosescaneados_ItemDrag);
+            this.tab1_lstvwdocumentosescaneados.DragDrop += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosescaneados_DragDrop);
+            this.tab1_lstvwdocumentosescaneados.DragOver += new System.Windows.Forms.DragEventHandler(this.lstvwdocumentosescaneados_DragOver);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.tab1_pblbldocumentosenlazados);
+            this.panel7.Controls.Add(this.tab1_lbldocumentosenlazados);
+            this.panel7.Location = new System.Drawing.Point(483, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(209, 25);
+            this.panel7.TabIndex = 1;
+            // 
+            // tab1_pblbldocumentosenlazados
+            // 
+            this.tab1_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tab1_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab1_pblbldocumentosenlazados.Image")));
+            this.tab1_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 0);
+            this.tab1_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab1_pblbldocumentosenlazados.Name = "tab1_pblbldocumentosenlazados";
+            this.tab1_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
+            this.tab1_pblbldocumentosenlazados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab1_pblbldocumentosenlazados.TabIndex = 19;
+            this.tab1_pblbldocumentosenlazados.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.tab1_pblbldocumentosenlazados, "Escanear documentos");
+            // 
+            // tab1_lbldocumentosenlazados
+            // 
+            this.tab1_lbldocumentosenlazados.AutoSize = true;
+            this.tab1_lbldocumentosenlazados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tab1_lbldocumentosenlazados.Location = new System.Drawing.Point(27, 7);
+            this.tab1_lbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab1_lbldocumentosenlazados.Name = "tab1_lbldocumentosenlazados";
+            this.tab1_lbldocumentosenlazados.Size = new System.Drawing.Size(179, 20);
+            this.tab1_lbldocumentosenlazados.TabIndex = 18;
+            this.tab1_lbldocumentosenlazados.Text = "Documentos Enlazados";
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.tab1_pblbldocumentosescaneados);
+            this.panel8.Controls.Add(this.tab1_lbldocumentosescaneados);
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Margin = new System.Windows.Forms.Padding(0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(219, 25);
+            this.panel8.TabIndex = 0;
+            // 
+            // tab1_pblbldocumentosescaneados
+            // 
+            this.tab1_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tab1_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab1_pblbldocumentosescaneados.Image")));
+            this.tab1_pblbldocumentosescaneados.Location = new System.Drawing.Point(0, 0);
+            this.tab1_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab1_pblbldocumentosescaneados.Name = "tab1_pblbldocumentosescaneados";
+            this.tab1_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
+            this.tab1_pblbldocumentosescaneados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab1_pblbldocumentosescaneados.TabIndex = 16;
+            this.tab1_pblbldocumentosescaneados.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.tab1_pblbldocumentosescaneados, "Escanear documentos");
+            // 
+            // tab1_lbldocumentosescaneados
+            // 
+            this.tab1_lbldocumentosescaneados.AutoSize = true;
+            this.tab1_lbldocumentosescaneados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tab1_lbldocumentosescaneados.Location = new System.Drawing.Point(20, 7);
+            this.tab1_lbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab1_lbldocumentosescaneados.Name = "tab1_lbldocumentosescaneados";
+            this.tab1_lbldocumentosescaneados.Size = new System.Drawing.Size(193, 20);
+            this.tab1_lbldocumentosescaneados.TabIndex = 15;
+            this.tab1_lbldocumentosescaneados.Text = "Documentos Escaneados";
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lineShape2.BorderWidth = 2;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = -3;
+            this.lineShape2.X2 = 660;
+            this.lineShape2.Y1 = 280;
+            this.lineShape2.Y2 = 280;
+            // 
             // scann
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1259,10 +1365,6 @@ namespace thumbnail
             this.Load += new System.EventHandler(this.scann_Load);
             this.cntmnuListViewEnlace.ResumeLayout(false);
             this.cntmnuListViewScann.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosenlazados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosescaneados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosenlazados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosescaneados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab2_pblbldocumentosescaneados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab2_pblbldocumentosenlazados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosescaneados)).EndInit();
@@ -1272,9 +1374,7 @@ namespace thumbnail
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposTrazables)).EndInit();
             this.tbctrl.ResumeLayout(false);
             this.tabpgeUsuario.ResumeLayout(false);
-            this.tabpgeUsuario.PerformLayout();
             this.tabpgeInterno.ResumeLayout(false);
-            this.tabpgeInterno.PerformLayout();
             this.tabPgeExterno.ResumeLayout(false);
             this.tab2_tbllytpnldocumentos.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1288,6 +1388,20 @@ namespace thumbnail
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paCampostrazablesActivosporExpedienteResultBindingSource)).EndInit();
+            this.tab0_tbllytpnldocumentos.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosescaneados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosenlazados)).EndInit();
+            this.tab1_tbllytpnldocumentos.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosenlazados)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosescaneados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1360,29 +1474,36 @@ namespace thumbnail
         private System.Windows.Forms.ListView tab3_lstvwdocumentosenlazados;
         private System.Windows.Forms.ListView tab3_lstvwdocumentosescaneados;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_valor_trazable;
+        private System.Windows.Forms.BindingSource paCampostrazablesActivosporExpedienteResultBindingSource;
+        private System.Windows.Forms.Button btn_limpiarcontroles;
+        private System.Windows.Forms.Button btn_abririmagen;
+        private System.Windows.Forms.Button btn_scanear;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcampotrazableDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tamanioCaracteresDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idestatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mascaraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn esprincipalDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.BindingSource paCampostrazablesActivosporExpedienteResultBindingSource;
-        private System.Windows.Forms.Button btn_limpiarcontroles;
-        private System.Windows.Forms.Button btn_abririmagen;
-        private System.Windows.Forms.Button btn_scanear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_valor_trazable;
+        private System.Windows.Forms.TableLayoutPanel tab0_tbllytpnldocumentos;
         private System.Windows.Forms.ListView tab0_lstvwdocumentosenlazados;
-        private System.Windows.Forms.PictureBox tab0_pblbldocumentosenlazados;
         private System.Windows.Forms.ListView tab0_lstvwdocumentosescaneados;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox tab0_pblbldocumentosenlazados;
+        private System.Windows.Forms.Label tab0_lbldocumentosenlazados;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox tab0_pblbldocumentosescaneados;
         private System.Windows.Forms.Label tab0_lbldocumentosescaneados;
-        private System.Windows.Forms.Label tab0_lbldocumentosenlazados;
+        private System.Windows.Forms.TableLayoutPanel tab1_tbllytpnldocumentos;
         private System.Windows.Forms.ListView tab1_lstvwdocumentosenlazados;
         private System.Windows.Forms.ListView tab1_lstvwdocumentosescaneados;
+        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox tab1_pblbldocumentosenlazados;
+        private System.Windows.Forms.Label tab1_lbldocumentosenlazados;
+        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.PictureBox tab1_pblbldocumentosescaneados;
         private System.Windows.Forms.Label tab1_lbldocumentosescaneados;
-        private System.Windows.Forms.Label tab1_lbldocumentosenlazados;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
 
 
 
