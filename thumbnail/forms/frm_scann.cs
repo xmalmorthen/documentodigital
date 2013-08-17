@@ -19,37 +19,34 @@ namespace thumbnail
 {
     public partial class scann : Form
     {
-        Bd_Exp_TransportesDataContext bd = new Bd_Exp_TransportesDataContext();
-
-        expediente_model expediente = new expediente_model();
-
-        public enum __formmode
+        //enumeracion para el estado del formulario
+        public enum formmode
         {
             Add,
-            Edit,
-            Delete
+            Edit
         }
 
-        private __formmode _formmode;
-        public __formmode formmode { get { return _formmode; } set { _formmode = value; } }
+        //property para el control del estado del formulario
+        private formmode _formmode;
+        public formmode Form_Mode { get { return _formmode; } set { _formmode = value; } }
 
-        private __formmode _expedientemode;
-        public __formmode expedientemode { get { return _expedientemode; } set { _expedientemode = value; } }
-
-        private int idcampotrazableselected { get; set; }
-
+        //lista de imagenes global
         private ImageList thumbnainlist = new ImageList();
         
+        //lista de imagenes por cejilla
         private ImageList thumbnainlistusuario = new ImageList();
         private ImageList thumbnainlistinterno = new ImageList();
         private ImageList thumbnainlistexterno = new ImageList();
         private ImageList thumbnainlistproveedor = new ImageList();
 
+        //listview de thumbnails
         private ListView lstvwdocumentosescaneados;
         private ListView lstvwdocumentosenlazados;
 
+        //property para indicar el control que esta arrastrando un componente
         private ListView dragging { get; set; }
 
+        //propertys para la obtencion automatica del nombre de archivo a generar al escanear
         string swapdirectory
         {
             get
@@ -68,28 +65,38 @@ namespace thumbnail
                                           }
                                     }
 
-        public thumbnail.models.de_expedientedocumentodigital expedientedocumentodigital = new thumbnail.models.de_expedientedocumentodigital();
+        thumbnail.data_members.Bd_Exp_TransportesDataContext Bd_Exp_Transportes;
 
+        private BindingSource BindingSource_ListaTramites;
+        private BindingSource BindingSource_CamposTrazables;
+
+
+        //contructor de clase
         public scann()
         {
             InitializeComponent();
-
             Inicializa();
         }
 
         private void Inicializa()
         {
-            expedientemode = __formmode.Add;
+            Form_Mode = formmode.Add; //inicializar por default el formulario en modo add
 
-            //populate combo de tramites
-            /*lookUpEditTramites.Properties.DataSource = bd.vw_Tramites_Activos;
-            lookUpEditTramites.ItemIndex = 0; //seleccionar el primero por defecto            */
-            //populate combo de campos trazables
+            Bd_Exp_Transportes = new thumbnail.data_members.Bd_Exp_TransportesDataContext(); //instanciar variable base de datos
+            
+            populate_lookUpEdit_Tramites(); //popular combo de tramites
+            selectdefaultitem_lookUpEdit_Tramites(); //seleccionar tramite por default
+
+            
+
+            
+
+            
             populatelookUpEditCamposTrazables();
             //binding datagridview
-            bindingSource3.DataSource = expediente.expedientetrazable;
+            //bindingSource3.DataSource = expediente.expedientetrazable;
 
-            dataGridViewcampostrazables.AutoGenerateColumns = false;
+            /*dataGridViewcampostrazables.AutoGenerateColumns = false;
             dataGridViewcampostrazables.DataSource = bindingSource3;
             dataGridViewcampostrazables.AllowUserToAddRows = false;
             dataGridViewcampostrazables.AllowUserToDeleteRows = false;
@@ -97,7 +104,7 @@ namespace thumbnail
             dataGridViewcampostrazables.AllowUserToResizeColumns = true;
             dataGridViewcampostrazables.ShowCellErrors = false;
             dataGridViewcampostrazables.ShowEditingIcon = false;
-            dataGridViewcampostrazables.ShowRowErrors = false;
+            dataGridViewcampostrazables.ShowRowErrors = false;*/
 
             clearfrmcampostrazables();
 
@@ -119,6 +126,8 @@ namespace thumbnail
 
             tbctrl_SelectedIndexChanged(tbctrl, null);
         }
+
+        
 
 //asignador de lista de imagen al cambiar el tab
         private void tbctrl_SelectedIndexChanged(object sender, EventArgs e)
@@ -156,8 +165,8 @@ namespace thumbnail
             this.lstvwdocumentosescaneados.Refresh();
             this.lstvwdocumentosenlazados.Refresh();
 
-            tbllytpnlinfopbimage.Image = imglsttabs.Images[((TabControl)sender).TabPages[((TabControl)sender).SelectedIndex].ImageIndex];
-            tbllytpnlinfolbl.Text = ((TabControl)sender).TabPages[((TabControl)sender).SelectedIndex].Tag.ToString();
+            //tbllytpnlinfopbimage.Image = imglsttabs.Images[((TabControl)sender).TabPages[((TabControl)sender).SelectedIndex].ImageIndex];
+            //tbllytpnlinfolbl.Text = ((TabControl)sender).TabPages[((TabControl)sender).SelectedIndex].Tag.ToString();
         }
 
         private void changedropcolor(System.Windows.Forms.ListView obj, string state)
@@ -248,7 +257,7 @@ namespace thumbnail
                     foreach (ListViewItem current in (ListView.SelectedListViewItemCollection)e.Data.GetData(typeof(ListView.SelectedListViewItemCollection)))
                     {
                         Image img = Image.FromFile(current.Tag.ToString());
-                        expedientedocumentodigital.imagen.Add(img);
+                        //expedientedocumentodigital.imagen.Add(img);
                         img.Dispose();
 
                         try
@@ -262,9 +271,9 @@ namespace thumbnail
                         int idxgroup = 0;
                         foreach (ListViewGroup grupo in lstvwdocumentosenlazados.Groups)
                         {
-                            if (grupo.Name == expedientedocumentodigital.clasificaciondocumento) {
+                           /* if (grupo.Name == expedientedocumentodigital.clasificaciondocumento) {
                                 break;
-                            }
+                            }*/
                             idxgroup++;
                         }
 
@@ -284,7 +293,7 @@ namespace thumbnail
 
         private bool hocking()
         {
-            vw_ListaTramitesActivos row = lookUpEditTramites.Properties.GetDataSourceRowByKeyValue(lookUpEditTramites.EditValue) as vw_ListaTramitesActivos;
+            vw_ListaTramitesActivos row = lookUpEdit_Tramites.Properties.GetDataSourceRowByKeyValue(lookUpEdit_Tramites.EditValue) as vw_ListaTramitesActivos;
             int tramite = row.id_tramite;
             int origen = tbctrl.SelectedIndex + 1;
 
@@ -295,10 +304,10 @@ namespace thumbnail
             //int idx = lstvwdocumentosescaneados.SelectedItems[0].ImageIndex;
             if (result == DialogResult.OK)
             {
-                expedientedocumentodigital.id_documento = frm.expedientedocumentodigital.id_documento;
+                /*expedientedocumentodigital.id_documento = frm.expedientedocumentodigital.id_documento;
                 expedientedocumentodigital.valor_trazable = frm.expedientedocumentodigital.valor_trazable;
                 expedientedocumentodigital.clasificaciondocumento = frm.expedientedocumentodigital.clasificaciondocumento;
-                expedientedocumentodigital.documento = frm.expedientedocumentodigital.documento;
+                expedientedocumentodigital.documento = frm.expedientedocumentodigital.documento;*/
 
                 addlistviewgroup();
 
@@ -317,8 +326,8 @@ namespace thumbnail
         private void addlistviewgroup()
         {
             ListViewGroup grupo = new ListViewGroup();
-            grupo.Name = expedientedocumentodigital.clasificaciondocumento;
-            grupo.Header = expedientedocumentodigital.clasificaciondocumento + " [ " + expedientedocumentodigital.documento + " ]";
+            /*grupo.Name = expedientedocumentodigital.clasificaciondocumento;
+            grupo.Header = expedientedocumentodigital.clasificaciondocumento + " [ " + expedientedocumentodigital.documento + " ]";*/
             grupo.HeaderAlignment = HorizontalAlignment.Left;
             lstvwdocumentosenlazados.Groups.Add(grupo);
         }
@@ -586,35 +595,19 @@ namespace thumbnail
 //boton de abrir archivos
         private void pbopenfile_Click(object sender, EventArgs e)
         {
-            if (ofdabrirarchivo.ShowDialog(this) == System.Windows.Forms.DialogResult.OK) {
-                foreach (string file in ofdabrirarchivo.FileNames )
-                {
-                    generatethumbnailimage(file);    
-                }
-            }
+            
         }
 
 //boton de escanear documentos        
         private void pbmnuscann_Click(object sender, EventArgs e)
         {
-            Int32 lvRet;
-            Boolean lvUserCancel = false;
-            lvRet = KDImage.ScannerAcquireMultiPages(ref lvUserCancel, -1);
-            if (lvRet != 0) {
-                MessageBox.Show("Error: " + KDImage.GetErrorMsg(lvRet));
-            }
+            
         }
 
 //boton de limpiar listviews
         private void pbmnulimpiar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Confirma limpiar las listas", "Limpiar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
-            {
-                thumbnainlist.Images.Clear();
-                lstvwdocumentosescaneados.Clear();
-                lstvwdocumentosenlazados.Clear();
-                //File.Delete(pathfiletodelete);
-            }
+            
         }
 #endregion botonera listviews documentos escaneados y documentos enlazados        
 
@@ -641,11 +634,7 @@ namespace thumbnail
         }
 
 
-        private void lookUpEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-            //vw_Tramites_Activos row = ((LookUpEdit)sender).Properties.GetDataSourceRowByKeyValue(((LookUpEdit)sender).EditValue) as vw_Tramites_Activos;
-            //campostrazables qwe = new campostrazables();
-        }
+       
 
         private void populatelookUpEditCamposTrazables(){
            /* List<vw_Campos_Trazables> data = new List <vw_Campos_Trazables>();
@@ -660,9 +649,9 @@ namespace thumbnail
         }
 
         private void clearfrmcampostrazables(){
-            formmode = __formmode.Add;
+            //formmode = __formmode.Add;
 
-            lookUpEditCamposTrazables.Visible = true;
+            /*lookUpEditCamposTrazables.Visible = true;
             lookUpEditCamposTrazables.Properties.ForceInitialize();
             lookUpEditCamposTrazables.EditValue = null;
             lookUpEditCamposTrazables.Properties.DataSource = null;
@@ -675,7 +664,7 @@ namespace thumbnail
 
             dxValidationProvider1.RemoveControlError(lookUpEditCamposTrazables);
             dxValidationProvider1.RemoveControlError(txtvalortrazable);
-            dxValidationProvider2.RemoveControlError(txtvalortrazable);
+            dxValidationProvider2.RemoveControlError(txtvalortrazable);*/
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -724,7 +713,7 @@ namespace thumbnail
 
         private Boolean validatealldatascampostrazables()
         {
-            if (formmode == __formmode.Add)
+            /*if (formmode == __formmode.Add)
             {
                 dxValidationProvider1.Validate();
                 if (dxValidationProvider1.GetInvalidControls().Count() != 0) return false;
@@ -734,16 +723,18 @@ namespace thumbnail
                 dxValidationProvider2.Validate();
                 if (dxValidationProvider2.GetInvalidControls().Count() != 0) return false;
             }
-
+            */
             return true;
+
+
         }
 
         private void validatecampoprincipal()
         {
-            foreach (models.de_expedientestrazables item in expediente.expedientetrazable)
+            /*foreach (models.de_expedientestrazables item in expediente.expedientetrazable)
             {
                 item.es_principal = false;
-            }
+            }*/
         }
 
         private void lookUpEditCamposTrazables_EditValueChanged(object sender, EventArgs e)
@@ -761,11 +752,11 @@ namespace thumbnail
 
         private void actualizainfomascara(string mascara, int numcaracteres)
         {
-            lblmascampotrazable.Text = mascara;
+            /*lblmascampotrazable.Text = mascara;
             txtvalortrazable.Text = "";
             txtvalortrazable.Enabled = true;
             txtvalortrazable.Properties.Mask.EditMask = mascara;
-            txtvalortrazable.Properties.MaxLength = numcaracteres;
+            txtvalortrazable.Properties.MaxLength = numcaracteres;*/
         }
 
         private void lookUpEditCamposTrazables_QueryPopUp(object sender, CancelEventArgs e)
@@ -787,7 +778,7 @@ namespace thumbnail
             lookUpEditCamposTrazables.EditValue = lookUpEditCamposTrazables.Properties.GetKeyValueByDisplayValue(data);*/
             try
             {
-                formmode = __formmode.Edit;
+                /*formmode = __formmode.Edit;
 
                 idcampotrazableselected = (int)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colcampo"].Value;
 
@@ -800,17 +791,14 @@ namespace thumbnail
                 txtvalortrazable.Text = dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colValor"].Value.ToString();
                 txtvalortrazable.Focus();
 
-                checkEditcampoprincipal.Checked = (Boolean)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colCampoPrincipal"].Value;
+                checkEditcampoprincipal.Checked = (Boolean)dataGridViewcampostrazables.Rows[e.RowIndex].Cells["colCampoPrincipal"].Value;*/
             }
             catch (Exception)
             {
             }
         }
 
-        private void scann_Load(object sender, EventArgs e)
-        {
-            lookUpEditTramites.Focus();
-        }
+        
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -821,36 +809,14 @@ namespace thumbnail
         {
             if (MessageBox.Show("Confirma borrar el campo trazable seleccionado", "Borrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
             {
-                bindingSource3.RemoveAt(dataGridViewcampostrazables.SelectedRows[0].Index);
+               // bindingSource3.RemoveAt(dataGridViewcampostrazables.SelectedRows[0].Index);
                 clearfrmcampostrazables();
             }
         }
 
         private void txtvalortrazable_Click(object sender, EventArgs e)
         {
-            txtvalortrazable.SelectAll();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Confirma limpiar el formato", "Limpiar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
-            {
-                bindingSource3.Clear();
-                lstvwdocumentosescaneados.Items.Clear();
-                lstvwdocumentosenlazados.Items.Clear();
-                thumbnainlist.Images.Clear();
-
-                expediente.expedientedocumentodigital.Clear();
-                expediente.expedientetrazable.Clear();
-
-                Inicializa();
-            }
-        }
-
-        private void pbgardarexpediente_Click(object sender, EventArgs e)
-        {
-            if (expedientemode == __formmode.Add) crearexpediente();
-            else editarexpediente();
+           // txtvalortrazable.SelectAll();
         }
 
         private void editarexpediente()
@@ -860,20 +826,190 @@ namespace thumbnail
 
         private void crearexpediente()
         {
-            vw_ListaTramitesActivos row = lookUpEditTramites.Properties.GetDataSourceRowByKeyValue(lookUpEditTramites.EditValue) as vw_ListaTramitesActivos;
+           /* vw_ListaTramitesActivos row = lookUpEdit_Tramites.Properties.GetDataSourceRowByKeyValue(lookUpEdit_Tramites.EditValue) as vw_ListaTramitesActivos;
             expediente.idtramite = row.id_tramite;
-            expediente.id_resguardo = 666;
+            expediente.id_resguardo = 666;*/
         }
 
-        private void pbabrirexpediente_Click(object sender, EventArgs e)
+
+/*
+* ---------------------------------------------------------------------------------------
+* CORTE DE CODIGO NUEVO A PARTIR DE AQUI
+* ---------------------------------------------------------------------------------------
+*/
+
+        #region botonera superior
+        //guardar tramite
+        private void btn_guardar_Click(object sender, EventArgs e)
         {
-            expedientemode = __formmode.Edit;
+           /* if (expedientemode == __formmode.Add) crearexpediente();
+            else editarexpediente();*/
         }
 
-        private void pblimpiarforma_Click(object sender, EventArgs e)
+        //limpiar tramite
+        private void btn_limpiar_Click(object sender, EventArgs e)
+        {
+           /* if (MessageBox.Show("Confirma limpiar el formato", "Limpiar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+            {
+                //bindingSource3.Clear();
+                lstvwdocumentosescaneados.Items.Clear();
+                lstvwdocumentosenlazados.Items.Clear();
+                thumbnainlist.Images.Clear();
+
+                expediente.expedientedocumentodigital.Clear();
+                expediente.expedientetrazable.Clear();
+
+                Inicializa();
+            }*/
+        }
+
+        //cerrar
+        private void btn_cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        
+        //configurar scanner
+        private void btn_config_scann_Click(object sender, EventArgs e)
+        {
+            Int32 lvRet;
+            Boolean lvUserCancel = false;
+            lvRet = this.KDImage.ScannerSelect(ref lvUserCancel);
+            if (lvRet != 0)
+            {
+                throw new Exception("Error :" + KDImage.GetErrorMsg(lvRet));
+            }
+        }
+        #endregion botonera superior
 
+        //load de form
+        private void scann_Load(object sender, EventArgs e)
+        {            
+            this.lookUpEdit_Tramites.Focus(); //establecer el foco al combo de tramites al iniciar el form
+        }
+
+        #region lookUpEdit_Tramites
+
+        private void populate_lookUpEdit_Tramites (){
+            this.BindingSource_ListaTramites = new BindingSource(); //instanciar
+            this.BindingSource_ListaTramites.DataSource = this.Bd_Exp_Transportes.vw_ListaTramitesActivos.ToList(); //obtener la lista de tramites y vincularla al bindingsource
+            this.lookUpEdit_Tramites.Properties.DataSource = this.BindingSource_ListaTramites; //asignar datasourse al combo
+            this.lookUpEdit_Tramites.Properties.DisplayMember = "Nombre_tramite"; //establecer el campo a mostrar en combo
+            this.lookUpEdit_Tramites.Properties.ValueMember = "id_tramite"; //establecer valor a manejar en combo
+        }
+
+        //seleccionar tramite por default
+        private void selectdefaultitem_lookUpEdit_Tramites() {
+            /*
+             * selecciona el tramite a partir de la tabla de configuraciones,
+             * el id correspondiente a la fila de la tabla de configuraciones se obtiene 
+             * del valor Config_IdTramiteporDefault del archivo de configuraciones general del proyecto
+             */ 
+            thumbnail.data_members.tbl_configuraciones Configs = Bd_Exp_Transportes.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault);
+            this.lookUpEdit_Tramites.EditValue = int.Parse(Configs.Valor); //establecer el tramite a seleccionar
+        }
+
+        //combo de tramites al cambiar item
+        private thumbnail.data_members.vw_ListaTramitesActivos lookUpEdit_Tramites_selected;
+        private void lookUpEdit_Tramites_EditValueChanged(object sender, EventArgs e)
+        {
+            this.lookUpEdit_Tramites_selected = ((LookUpEdit)sender).Properties.GetDataSourceRowByKeyValue(((LookUpEdit)sender).EditValue) as thumbnail.data_members.vw_ListaTramitesActivos; //asignar la seleccion del combo
+            populate_dataGridView_campostrazables();
+        }
+
+        //combo de tramites al desplegar la lista
+        private void lookUpEdit_Tramites_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            this.populate_lookUpEdit_Tramites(); //popular combo
+        }
+
+        #endregion lookUpEdit_Tramites
+
+
+        #region dataGridView_campostrazables
+        //popular grid
+        private void populate_dataGridView_campostrazables()
+        {
+            this.BindingSource_CamposTrazables = new BindingSource(); //instanciar
+            /* obtener campos trazables ejecutando procedimiento almacenado mandando como parametro
+             * el id de expediente obtenido de los datos de la seleccion del combo de tramites
+             */ 
+            this.BindingSource_CamposTrazables.DataSource = this.Bd_Exp_Transportes.pa_CampostrazablesActivosporExpediente(lookUpEdit_Tramites_selected.id_expediente);
+            this.dataGridView_CamposTrazables.DataSource = this.BindingSource_CamposTrazables;
+            
+            this.formatear_celda_principal(); //dar formato a la fila del campo principal
+        }
+
+        private void formatear_celda_principal()
+        {
+            DataGridViewCellStyle style = new DataGridViewCellStyle();
+            style.BackColor = Settings.Default.CampoPrincipal_RowColorGrid;
+            style.ForeColor = Color.Black;
+
+            foreach (DataGridViewRow row in dataGridView_CamposTrazables.Rows)
+            {
+                if ( Boolean.Parse(row.Cells["esprincipalDataGridViewCheckBoxColumn"].Value.ToString()) == true)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        cell.Style = style;
+                    }
+                    break;
+                }
+            }
+        }
+
+        //cuando entra a la fila del grid de campos trazables
+        private void dataGridView_CamposTrazables_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            /*
+             * Establecer el maximo de caracteres en el campo valor trazable
+             */ 
+            string value = this.dataGridView_CamposTrazables["tamanioCaracteresDataGridViewTextBoxColumn", e.RowIndex].Value.ToString();
+
+            int number;
+            bool result = Int32.TryParse(value, out number);
+            if (result)
+            {
+                col_valor_trazable.MaxInputLength = number;
+            }
+
+        }
+        #endregion dataGridView_campostrazables
+
+        
+
+        private void btn_scanear_Click(object sender, EventArgs e)
+        {
+            Int32 lvRet;
+            Boolean lvUserCancel = false;
+            lvRet = KDImage.ScannerAcquireMultiPages(ref lvUserCancel, -1);
+            if (lvRet != 0)
+            {
+                MessageBox.Show("Error: " + KDImage.GetErrorMsg(lvRet));
+            }
+        }
+
+        private void btn_abririmagen_Click(object sender, EventArgs e)
+        {
+            if (ofdabrirarchivo.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+            {
+                foreach (string file in ofdabrirarchivo.FileNames)
+                {
+                    generatethumbnailimage(file);
+                }
+            }
+        }
+
+        private void btn_limpiarcontroles_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma limpiar las listas", "Limpiar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+            {
+                thumbnainlist.Images.Clear();
+                lstvwdocumentosescaneados.Clear();
+                lstvwdocumentosenlazados.Clear();
+                //File.Delete(pathfiletodelete);
+            }
+        }
     }
 }

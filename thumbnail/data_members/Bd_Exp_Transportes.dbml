@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Bd_Exp_Transportes" Class="Bd_Exp_TransportesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=XMALMORTHEN-SRV;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User ID=sa" SettingsObjectName="thumbnail.Properties.Settings" SettingsPropertyName="Bd_Exp_TransportesConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User ID=digitaldocs" SettingsObjectName="thumbnail.Properties.Settings" SettingsPropertyName="Bd_Exp_TransportesConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ca_acciones" Member="ca_acciones">
     <Type Name="ca_acciones">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -292,17 +292,13 @@
       <Column Name="Descripcion_estatus_tramite" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Function Name="dbo.pa_CampostrazablesActivosporExpediente" Method="pa_CampostrazablesActivosporExpediente">
-    <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
-    <ElementType Name="pa_CampostrazablesActivosporExpedienteResult">
-      <Column Name="id_campotrazable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="Tamanio_Caracteres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Mascara" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="es_principal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
+  <Table Name="dbo.tbl_configuraciones" Member="tbl_configuraciones">
+    <Type Name="tbl_configuraciones">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Valor" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
   <Function Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen" Method="pa_ObtenerDocumentosporTramiteyOrigen">
     <Parameter Name="id_tramite" Type="System.Int32" DbType="Int" />
     <Parameter Name="id_origen" Type="System.Int32" DbType="Int" />
@@ -335,6 +331,17 @@
       <Column Name="Politica" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Descripcion_estatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_CampostrazablesActivosporExpediente" Method="pa_CampostrazablesActivosporExpediente">
+    <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_CampostrazablesActivosporExpedienteResult">
+      <Column Name="id_campotrazable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Tamanio_Caracteres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mascara" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="es_principal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

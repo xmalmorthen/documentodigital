@@ -102,6 +102,9 @@ namespace thumbnail.data_members
     partial void Insertre_tramites_re_clasificaciondocumentos_documentos(re_tramites_re_clasificaciondocumentos_documentos instance);
     partial void Updatere_tramites_re_clasificaciondocumentos_documentos(re_tramites_re_clasificaciondocumentos_documentos instance);
     partial void Deletere_tramites_re_clasificaciondocumentos_documentos(re_tramites_re_clasificaciondocumentos_documentos instance);
+    partial void Inserttbl_configuraciones(tbl_configuraciones instance);
+    partial void Updatetbl_configuraciones(tbl_configuraciones instance);
+    partial void Deletetbl_configuraciones(tbl_configuraciones instance);
     #endregion
 		
 		public Bd_Exp_TransportesDataContext() : 
@@ -334,11 +337,12 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_CampostrazablesActivosporExpediente")]
-		public ISingleResult<pa_CampostrazablesActivosporExpedienteResult> pa_CampostrazablesActivosporExpediente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_expediente)
+		public System.Data.Linq.Table<tbl_configuraciones> tbl_configuraciones
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_expediente);
-			return ((ISingleResult<pa_CampostrazablesActivosporExpedienteResult>)(result.ReturnValue));
+			get
+			{
+				return this.GetTable<tbl_configuraciones>();
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen")]
@@ -346,6 +350,13 @@ namespace thumbnail.data_members
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_tramite, id_origen);
 			return ((ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_CampostrazablesActivosporExpediente")]
+		public ISingleResult<pa_CampostrazablesActivosporExpedienteResult> pa_CampostrazablesActivosporExpediente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_expediente)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_expediente);
+			return ((ISingleResult<pa_CampostrazablesActivosporExpedienteResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -6354,118 +6365,112 @@ namespace thumbnail.data_members
 		}
 	}
 	
-	public partial class pa_CampostrazablesActivosporExpedienteResult
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_configuraciones")]
+	public partial class tbl_configuraciones : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private int _id_campotrazable;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _Nombre;
+		private int _id;
 		
-		private int _Tamanio_Caracteres;
+		private string _Descripcion;
 		
-		private int _id_estatus;
+		private string _Valor;
 		
-		private string _Mascara;
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnDescripcionChanging(string value);
+    partial void OnDescripcionChanged();
+    partial void OnValorChanging(string value);
+    partial void OnValorChanged();
+    #endregion
 		
-		private bool _es_principal;
-		
-		public pa_CampostrazablesActivosporExpedienteResult()
+		public tbl_configuraciones()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_campotrazable", DbType="Int NOT NULL")]
-		public int id_campotrazable
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
 		{
 			get
 			{
-				return this._id_campotrazable;
+				return this._id;
 			}
 			set
 			{
-				if ((this._id_campotrazable != value))
+				if ((this._id != value))
 				{
-					this._id_campotrazable = value;
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Nombre
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Descripcion
 		{
 			get
 			{
-				return this._Nombre;
+				return this._Descripcion;
 			}
 			set
 			{
-				if ((this._Nombre != value))
+				if ((this._Descripcion != value))
 				{
-					this._Nombre = value;
+					this.OnDescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._Descripcion = value;
+					this.SendPropertyChanged("Descripcion");
+					this.OnDescripcionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tamanio_Caracteres", DbType="Int NOT NULL")]
-		public int Tamanio_Caracteres
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Valor", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Valor
 		{
 			get
 			{
-				return this._Tamanio_Caracteres;
+				return this._Valor;
 			}
 			set
 			{
-				if ((this._Tamanio_Caracteres != value))
+				if ((this._Valor != value))
 				{
-					this._Tamanio_Caracteres = value;
+					this.OnValorChanging(value);
+					this.SendPropertyChanging();
+					this._Valor = value;
+					this.SendPropertyChanged("Valor");
+					this.OnValorChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus", DbType="Int NOT NULL")]
-		public int id_estatus
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
 		{
-			get
+			if ((this.PropertyChanging != null))
 			{
-				return this._id_estatus;
-			}
-			set
-			{
-				if ((this._id_estatus != value))
-				{
-					this._id_estatus = value;
-				}
+				this.PropertyChanging(this, emptyChangingEventArgs);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mascara", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string Mascara
+		protected virtual void SendPropertyChanged(String propertyName)
 		{
-			get
+			if ((this.PropertyChanged != null))
 			{
-				return this._Mascara;
-			}
-			set
-			{
-				if ((this._Mascara != value))
-				{
-					this._Mascara = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_es_principal", DbType="Bit NOT NULL")]
-		public bool es_principal
-		{
-			get
-			{
-				return this._es_principal;
-			}
-			set
-			{
-				if ((this._es_principal != value))
-				{
-					this._es_principal = value;
-				}
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -6977,6 +6982,122 @@ namespace thumbnail.data_members
 				if ((this._Descripcion_estatus != value))
 				{
 					this._Descripcion_estatus = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_CampostrazablesActivosporExpedienteResult
+	{
+		
+		private int _id_campotrazable;
+		
+		private string _Nombre;
+		
+		private int _Tamanio_Caracteres;
+		
+		private int _id_estatus;
+		
+		private string _Mascara;
+		
+		private bool _es_principal;
+		
+		public pa_CampostrazablesActivosporExpedienteResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_campotrazable", DbType="Int NOT NULL")]
+		public int id_campotrazable
+		{
+			get
+			{
+				return this._id_campotrazable;
+			}
+			set
+			{
+				if ((this._id_campotrazable != value))
+				{
+					this._id_campotrazable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tamanio_Caracteres", DbType="Int NOT NULL")]
+		public int Tamanio_Caracteres
+		{
+			get
+			{
+				return this._Tamanio_Caracteres;
+			}
+			set
+			{
+				if ((this._Tamanio_Caracteres != value))
+				{
+					this._Tamanio_Caracteres = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus", DbType="Int NOT NULL")]
+		public int id_estatus
+		{
+			get
+			{
+				return this._id_estatus;
+			}
+			set
+			{
+				if ((this._id_estatus != value))
+				{
+					this._id_estatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mascara", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Mascara
+		{
+			get
+			{
+				return this._Mascara;
+			}
+			set
+			{
+				if ((this._Mascara != value))
+				{
+					this._Mascara = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_es_principal", DbType="Bit NOT NULL")]
+		public bool es_principal
+		{
+			get
+			{
+				return this._es_principal;
+			}
+			set
+			{
+				if ((this._es_principal != value))
+				{
+					this._es_principal = value;
 				}
 			}
 		}

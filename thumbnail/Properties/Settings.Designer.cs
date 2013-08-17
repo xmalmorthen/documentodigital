@@ -105,5 +105,29 @@ namespace thumbnail.Properties {
                 return ((string)(this["Bd_Exp_TransportesConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int Config_IdTramiteporDefault {
+            get {
+                return ((int)(this["Config_IdTramiteporDefault"]));
+            }
+            set {
+                this["Config_IdTramiteporDefault"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("NavajoWhite")]
+        public global::System.Drawing.Color CampoPrincipal_RowColorGrid {
+            get {
+                return ((global::System.Drawing.Color)(this["CampoPrincipal_RowColorGrid"]));
+            }
+            set {
+                this["CampoPrincipal_RowColorGrid"] = value;
+            }
+        }
     }
 }

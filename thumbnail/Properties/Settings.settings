@@ -28,5 +28,11 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User ID=digitaldocs;Password=..121212qw</Value>
     </Setting>
+    <Setting Name="Config_IdTramiteporDefault" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="CampoPrincipal_RowColorGrid" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">NavajoWhite</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

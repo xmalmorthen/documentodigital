@@ -82,6 +82,16 @@
     <Compile Include="forms\imgViewer.Designer.cs">
       <DependentUpon>imgViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Icons16x16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Icons16x16.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Icons32x32.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Icons32x32.resx</DependentUpon>
+    </Compile>
     <Compile Include="Icons48x48.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +119,14 @@
     <EmbeddedResource Include="forms\imgViewer.resx">
       <DependentUpon>imgViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Icons16x16.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Icons16x16.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons32x32.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Icons32x32.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Icons48x48.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Icons48x48.Designer.cs</LastGenOutput>
@@ -123,22 +141,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="assets\imgs\16x16\delete.png" />
-    <None Include="assets\imgs\16x16\hook.png" />
-    <None Include="assets\imgs\16x16\open.png" />
-    <None Include="assets\imgs\16x16\rotate_left.png" />
-    <None Include="assets\imgs\16x16\rotate_rigth.png" />
-    <None Include="assets\imgs\16x16\trash.png" />
-    <None Include="assets\imgs\16x16\view.png" />
-    <None Include="assets\imgs\48x48\clear_get.png" />
     <None Include="data_members\Bd_Exp_Transportes.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Bd_Exp_Transportes.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Properties\DataSources\thumbnail.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult.datasource" />
-    <None Include="Properties\DataSources\thumbnail.data_members.vw_Campos_Trazables.datasource" />
-    <None Include="Properties\DataSources\thumbnail.data_members.vw_Tramites_Activos.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.pa_CampostrazablesActivosporExpedienteResult.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -153,41 +161,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="assets\imgs\16x16\cancel.png" />
-    <None Include="assets\imgs\16x16\desenlazar.png" />
-    <Content Include="assets\imgs\16x16\get.png" />
-    <Content Include="assets\imgs\16x16\redo.png" />
-    <Content Include="assets\imgs\16x16\reload.png" />
-    <Content Include="assets\imgs\16x16\undo.png" />
-    <Content Include="assets\imgs\16x16\users.png" />
-    <Content Include="assets\imgs\16x16\zoom.png" />
-    <Content Include="assets\imgs\32x32\externo.png" />
-    <Content Include="assets\imgs\32x32\interno.png" />
-    <Content Include="assets\imgs\32x32\proveedor.png" />
-    <Content Include="assets\imgs\32x32\users.png" />
-    <None Include="assets\imgs\48x48\flip_vertically.png" />
-    <None Include="assets\imgs\48x48\flip_horizontal.png" />
-    <None Include="assets\imgs\48x48\delete.png" />
-    <None Include="assets\imgs\48x48\close.png" />
-    <None Include="assets\imgs\48x48\fit.png" />
-    <None Include="assets\imgs\48x48\clear.png" />
-    <None Include="assets\imgs\48x48\checkbox_checked.png" />
-    <None Include="assets\imgs\48x48\checkmark.png" />
-    <Content Include="assets\imgs\48x48\folder_open.png" />
-    <None Include="assets\imgs\48x48\gestion.png" />
-    <Content Include="assets\imgs\48x48\get.png" />
-    <None Include="assets\imgs\48x48\rotateizq.png" />
-    <None Include="assets\imgs\48x48\rotateder.png" />
-    <None Include="assets\imgs\48x48\zoomout.png" />
-    <None Include="assets\imgs\48x48\zoomin.png" />
-    <None Include="assets\imgs\48x48\zoomorigin.png" />
-    <None Include="assets\imgs\48x48\save.png" />
-    <None Include="assets\imgs\48x48\reset.png" />
-    <None Include="assets\imgs\48x48\scanner.png" />
-    <None Include="assets\imgs\48x48\users.png" />
-    <Content Include="assets\imgs\icons\fav-icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxKDImageEditor">
@@ -220,7 +193,24 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="assets\imgs\16x16\scanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\32x32\externo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\32x32\interno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\32x32\proveedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\32x32\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\16x16\gestion.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

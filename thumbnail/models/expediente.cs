@@ -129,7 +129,6 @@ namespace thumbnail.models
             }
         }
 
-
         private string _documento;
         public string documento
         {

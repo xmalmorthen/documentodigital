@@ -17,6 +17,10 @@ namespace thumbnail
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Application.Run(new scann());
+
+            /*
+             
             frm_login login = new frm_login();
             scann frmscann = new scann();
 
@@ -25,6 +29,9 @@ namespace thumbnail
             {                
                 frmscann.ShowDialog();
             }
+            
+            */
+
         }
     }
 }
