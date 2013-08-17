@@ -36,8 +36,17 @@ namespace thumbnail.forms
         //validador de formulario
         private bool valida()
         {
-            dxValidationProvider.Validate(); //lanzar validacion
-            if (dxValidationProvider.GetInvalidControls().Count() != 0) return false;
+            dxValidationProvider_lookUpEdit_ClasificacionDocumento.RemoveControlError(lookUpEdit_ClasificacionDocumento);
+            dxValidationProvider_Valor.RemoveControlError(txtvalortrazable);
+
+            dxValidationProvider_lookUpEdit_ClasificacionDocumento.Validate(); //lanzar validacion
+
+            if (txtvalortrazable.Enabled) {
+                dxValidationProvider_Valor.Validate();
+            }
+
+            if (dxValidationProvider_lookUpEdit_ClasificacionDocumento.GetInvalidControls().Count() != 0 || dxValidationProvider_Valor.GetInvalidControls().Count() != 0) return false;
+            
             return true;
         }
 
@@ -87,7 +96,6 @@ namespace thumbnail.forms
             Boolean trazabilidad = Boolean.Parse(string.Format("{0}", _Trazabilidad));
             txtvalortrazable.Enabled = trazabilidad; // habilitar o deshabilitar caja de texto de valor trasable segun se requiera su trazabilidad
             lblmascampotrazable.Text = ""; //limpiar label de muestra de mascara trazable
-
             
             int id_documento = int.Parse(string.Format("{0}", _id_documento));
             source.id_documento = id_documento; //asignar el id documento a variable colectora

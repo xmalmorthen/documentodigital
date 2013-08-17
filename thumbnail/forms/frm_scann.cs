@@ -372,6 +372,7 @@ namespace thumbnail
                         catch (Exception) { }
                         lstvwdocumentosescaneados.Items.Add((ListViewItem)current.Clone());                        
                     }
+                    this.removelistviewgroup();
                 }
                 else
                 {
@@ -447,7 +448,9 @@ namespace thumbnail
                             idxgroup++;
                         }
 
-                        lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];                                             
+                        lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];
+
+                        sources.Add(source);
                     }
                 }
                 else
@@ -500,7 +503,31 @@ namespace thumbnail
             grupo.Name = source.clasificaciondocumento; //obtener el nombre del grupo a partir de su clasificacion de documento
             grupo.Header = source.clasificaciondocumento + " [ " + source.documento + " ]"; //concatenar la clasificacion de documentos con el nombre del documento
             grupo.HeaderAlignment = HorizontalAlignment.Left;
-            lstvwdocumentosenlazados.Groups.Add(grupo); //agregar grupo
+
+            Boolean existe = false;
+            foreach (ListViewGroup _grupo in lstvwdocumentosenlazados.Groups)
+            {
+                if (_grupo.Name == grupo.Name)
+                {
+                    existe = true;
+                    break;
+                }
+            }
+
+            if (!existe)
+            {
+                lstvwdocumentosenlazados.Groups.Add(grupo); //agregar grupo
+            }
+        }
+
+        private void removelistviewgroup()
+        {
+            foreach (ListViewGroup grupo in lstvwdocumentosenlazados.Groups)
+            {
+                if (grupo.Items.Count == 0) {
+                    lstvwdocumentosenlazados.Groups.Remove(grupo);
+                }
+            }
         }
 
         #endregion lstvwdocumentosenlazados drag and drop
