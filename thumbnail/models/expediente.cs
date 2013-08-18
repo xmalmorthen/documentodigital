@@ -6,6 +6,34 @@ using System.Text;
 
 namespace thumbnail.models
 {
+    public class tramite_model {
+        private List<trazabilidad_tramite> _trazabilidad = new List<trazabilidad_tramite>();
+        public List<trazabilidad_tramite> trazabilidad
+        {
+            get
+            {
+                return _trazabilidad;
+            }
+            set
+            {
+                _trazabilidad = value;
+            }
+        }
+
+        private List<digital> _imagenes_digital = new List<digital>();
+        public List<digital> imagenes_digital
+        {
+            get
+            {
+                return _imagenes_digital;
+            }
+            set
+            {
+                _imagenes_digital = value;
+            }
+        }
+    }
+
 
     public class trazabilidad_tramite {
         private int _id_re_expediente_campotrazable;
@@ -59,7 +87,6 @@ namespace thumbnail.models
                 _hora = value;
             }
         }
-       
     }
 
     public class digital
@@ -138,20 +165,6 @@ namespace thumbnail.models
                 _valor_trazable = value;
             }
         }
-
-        private List<trazabilidad_tramite> _trazabilidad_tramite = new List<trazabilidad_tramite>();
-        public List<trazabilidad_tramite> trazabilidad_tramite
-        {
-            get
-            {
-                return _trazabilidad_tramite;
-            }
-            set
-            {
-                _trazabilidad_tramite = value;
-            }
-        }
-
 
         //otras propertys necesarias para el flujo de representacion de informacion
         private string _clasificaciondocumento;

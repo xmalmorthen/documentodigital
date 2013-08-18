@@ -7,17 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using thumbnail.forms;
 using thumbnail.Properties;
 using System.Configuration;
 using thumbnail.data_members;
 using DevExpress.XtraEditors;
 using thumbnail.models;
 using DevExpress.XtraGrid.Views.Grid;
+using thumbnail.classes;
 
-namespace thumbnail
+namespace thumbnail.forms
 {
-    public partial class scann : Form
+    public partial class frm_scann : Form
     {
         #region enumss, propertys, variables, etc
 
@@ -71,10 +71,13 @@ namespace thumbnail
 
         private BindingSource BindingSource_ListaTramites;
         private BindingSource BindingSource_CamposTrazables;
+
+        private tramite_model tramite = new tramite_model();
+
         #endregion enumss, propertys, variables, etc
 
         //contructor de clase
-        public scann()
+        public frm_scann()
         {
             InitializeComponent();
             Inicializa();
@@ -107,12 +110,23 @@ namespace thumbnail
             this.thumbnainlist.ColorDepth = Settings.Default.ThumbNailColorDepth;
 
             tbctrl_SelectedIndexChanged(tbctrl, null);
+
+            this.Paint += frm_scann_Paint;
         }
 
+        /*
+         * utilizado para que se vea el pintado de la celda, si no hacemos esto al iniciar
+         * la forma no aparece iluminada la fila de campo principal en el grid de campos trazables
+         */ 
+        void frm_scann_Paint(object sender, PaintEventArgs e)
+        {
+            this.formatear_celda_principal(); //dar formato a la fila del campo principal
+            this.Paint -= frm_scann_Paint;
+        }
 
         //load de form
         private void scann_Load(object sender, EventArgs e)
-        {
+        {            
             this.lookUpEdit_Tramites.Focus(); //establecer el foco al combo de tramites al iniciar el form
         }
 
@@ -120,25 +134,41 @@ namespace thumbnail
         //guardar tramite
         private void btn_guardar_Click(object sender, EventArgs e)
         {
+            this.colectar_campostrazables();
+            this.colectar_archivosdigital();
+
+
+
             /* if (expedientemode == __formmode.Add) crearexpediente();
              else editarexpediente();*/
         }
 
+        List<trazabilidad_tramite> sources_trazabilidad = new List<trazabilidad_tramite>();
+        trazabilidad_tramite source_trazabilidad = new trazabilidad_tramite();
+        private void colectar_campostrazables()
+        {
+            foreach (DataGridViewRow row in dataGridView_CamposTrazables.Rows)
+            {
+                source_trazabilidad.id_re_expediente_campotrazable = (int)id_re_tramites_re_clasificaciondocumentos_documentos;
+                source_trazabilidad.valor_trazable = row.Cells["col_valor_trazable"].ToString();
+                source_trazabilidad.fecha = obtener.fecha();
+                source_trazabilidad.hora = obtener.hora();                
+            }
+        }
+
+        private void colectar_archivosdigital() {
+            tramite.imagenes_digital = sources_digital;
+        }
+
+
         //limpiar tramite
         private void btn_limpiar_Click(object sender, EventArgs e)
         {
-            /* if (MessageBox.Show("Confirma limpiar el formato", "Limpiar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
-             {
-                 //bindingSource3.Clear();
-                 lstvwdocumentosescaneados.Items.Clear();
-                 lstvwdocumentosenlazados.Items.Clear();
-                 thumbnainlist.Images.Clear();
-
-                 expediente.expedientedocumentodigital.Clear();
-                 expediente.expedientetrazable.Clear();
-
-                 Inicializa();
-             }*/
+            if (MessageBox.Show("Confirma limpiar el formato", "Limpiar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+            {
+                limpia_controles_digitales();              
+                Inicializa();
+            }
         }
 
         //cerrar
@@ -194,7 +224,7 @@ namespace thumbnail
         //combo de tramites al desplegar la lista
         private void lookUpEdit_Tramites_QueryPopUp(object sender, CancelEventArgs e)
         {
-            this.populate_lookUpEdit_Tramites(); //popular combo
+            //this.populate_lookUpEdit_Tramites(); //popular combo
         }
 
         #endregion lookUpEdit_Tramites
@@ -266,10 +296,22 @@ namespace thumbnail
         {
             if (ofdabrirarchivo.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
             {
+                this.Cursor = Cursors.WaitCursor;
+                tlp_proc.Visible = true;
+
+                Application.DoEvents();
                 foreach (string file in ofdabrirarchivo.FileNames)
                 {
+                    
+
                     generatethumbnailimage(file);
+
+                    
                 }
+                Application.DoEvents();
+
+                tlp_proc.Visible = false;
+                this.Cursor = Cursors.Default;
             }
         }
 
@@ -277,12 +319,18 @@ namespace thumbnail
         {
             if (MessageBox.Show("Confirma limpiar las listas", "Limpiar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
             {
-                thumbnainlist.Images.Clear();
-                lstvwdocumentosescaneados.Clear();
-                lstvwdocumentosenlazados.Clear();
-                //File.Delete(pathfiletodelete);
+                this.limpia_controles_digitales();
             }
         }
+
+        private void limpia_controles_digitales() {
+            thumbnainlist.Images.Clear();
+            lstvwdocumentosescaneados.Clear();
+            lstvwdocumentosenlazados.Clear();
+            sources_digital.Clear();
+            //File.Delete(pathfiletodelete);
+        }
+
         #endregion botonera de inferior de thumbnails
 
         #region tabcontrol
@@ -417,19 +465,13 @@ namespace thumbnail
                     foreach (ListViewItem current in (ListView.SelectedListViewItemCollection)e.Data.GetData(typeof(ListView.SelectedListViewItemCollection)))
                     {
                         Image img = Image.FromFile(current.Tag.ToString());
-                        source.imagen = img; //asignar imagen al colector principal
+                        source_digital.imagen = img; //asignar imagen al colector principal
                         img.Dispose();
 
-                        //asignar fecha al colector principal
-                        thumbnail.data_members.pa_obtener_fechaResult fecha_server = Bd_Exp_Transportes.pa_obtener_fecha().SingleOrDefault();
-                        source.fecha = fecha_server.Fecha;
-                        fecha_server = null;
-                        //asignar hora al colector principal
-                        thumbnail.data_members.pa_obtener_horaResult hora_server = Bd_Exp_Transportes.pa_obtener_hora().SingleOrDefault();
-                        source.hora = hora_server.Hora;
-                        hora_server = null;
+                        source_digital.fecha = obtener.fecha(); //asignar fecha al colector principal
+                        source_digital.hora = obtener.hora();//asignar hora al colector principal
 
-                        source.idtramite = lookUpEdit_Tramites_selected.id_tramite; //asignar id tramite al colector principal;
+                        source_digital.idtramite = lookUpEdit_Tramites_selected.id_tramite; //asignar id tramite al colector principal;
 
                         try
                         {
@@ -442,7 +484,8 @@ namespace thumbnail
                         int idxgroup = 0;
                         foreach (ListViewGroup grupo in lstvwdocumentosenlazados.Groups)
                         {
-                            if (grupo.Name == source.clasificaciondocumento) {
+                            if (grupo.Name == source_digital.clasificaciondocumento)
+                            {
                                 break;
                             }
                             idxgroup++;
@@ -450,7 +493,7 @@ namespace thumbnail
 
                         lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];
 
-                        sources.Add(source);
+                        sources_digital.Add(source_digital);
                     }
                 }
                 else
@@ -464,24 +507,28 @@ namespace thumbnail
             }
         }
 
-        public List<thumbnail.models.digital> sources = new List<thumbnail.models.digital>();
-        public thumbnail.models.digital source = new thumbnail.models.digital(); //instancia a modelo principal para el guardado de la información
+        public List<thumbnail.models.digital> sources_digital = new List<thumbnail.models.digital>();
+        public thumbnail.models.digital source_digital = new thumbnail.models.digital(); //instancia a modelo principal para el guardado de la información
+        private int? id_re_tramites_re_clasificaciondocumentos_documentos = null;
+        frm_hook frm = new frm_hook(); //inicializar formulario
         private bool hocking()
         {
             int tramite = lookUpEdit_Tramites_selected.id_tramite; //obtener el id del tramite a partir del combo de tramites
             int origen = tbctrl.SelectedIndex + 1; //obtener el origen a partir del tab seleccionado
 
-            frmhook frm = new frmhook(tramite,origen,sources); //inicializar formulario
+            frm.inicializa(tramite, origen, sources_digital);
 
             DialogResult result = frm.ShowDialog(this); //mostrar forlulario
 
             //int idx = lstvwdocumentosescaneados.SelectedItems[0].ImageIndex;
             if (result == DialogResult.OK)
             {
-                source.id_documento = frm.source.id_documento; //se asigna el id del documento retornado de la forma al colector principal
-                source.valor_trazable = frm.source.valor_trazable; //se asigna el valor trazable retornado de la forma al colector principal
-                source.clasificaciondocumento = frm.source.clasificaciondocumento; //se asigna la clasificacion de documento retornado de la forma al colector principal
-                source.documento = frm.source.documento; //se asigna el nombre de documento retornado de la forma al colector principal
+                source_digital.id_documento = frm.source.id_documento; //se asigna el id del documento retornado de la forma al colector principal
+                source_digital.valor_trazable = frm.source.valor_trazable; //se asigna el valor trazable retornado de la forma al colector principal
+                source_digital.clasificaciondocumento = frm.source.clasificaciondocumento; //se asigna la clasificacion de documento retornado de la forma al colector principal
+                source_digital.documento = frm.source.documento; //se asigna el nombre de documento retornado de la forma al colector principal
+
+                id_re_tramites_re_clasificaciondocumentos_documentos = frm.id_re_tramites_re_clasificaciondocumentos_documentos;
 
                 addlistviewgroup(); //agregar grupo
 
@@ -500,8 +547,8 @@ namespace thumbnail
         private void addlistviewgroup()
         {
             ListViewGroup grupo = new ListViewGroup();
-            grupo.Name = source.clasificaciondocumento; //obtener el nombre del grupo a partir de su clasificacion de documento
-            grupo.Header = source.clasificaciondocumento + " [ " + source.documento + " ]"; //concatenar la clasificacion de documentos con el nombre del documento
+            grupo.Name = source_digital.clasificaciondocumento; //obtener el nombre del grupo a partir de su clasificacion de documento
+            grupo.Header = source_digital.clasificaciondocumento + " [ " + source_digital.documento + " ]"; //concatenar la clasificacion de documentos con el nombre del documento
             grupo.HeaderAlignment = HorizontalAlignment.Left;
 
             Boolean existe = false;
@@ -557,9 +604,9 @@ namespace thumbnail
             e.Cancel = (numItemsSelects == 0 ? true : false);
 
             tsmnuitemlstvwenlaceabrir.Visible = (numItemsSelects == 1 ? true : false);
-            tsmnuitemlstvwenlaceeliminar.Visible = (numItemsSelects >= 1 ? true : false);
+            //tsmnuitemlstvwenlaceeliminar.Visible = (numItemsSelects >= 1 ? true : false);
             tsmnuitemlstvwenlacedesenlazar.Visible = (numItemsSelects == 1 ? true : false);
-            tsmnuitemlstvwenlacedesenlazartodo.Visible = true;
+            //tsmnuitemlstvwenlacedesenlazartodo.Visible = true;
             tsmnuitemlstvwenlacegirarderecha.Visible = (numItemsSelects >= 1 ? true : false);
             tsmnuitemlstvwenlacegirarizquierda.Visible = (numItemsSelects >= 1 ? true : false);
         }
@@ -626,12 +673,39 @@ namespace thumbnail
 //boton de enlazar
         private void tsmnuitemlstvwscannenlazar_Click(object sender, EventArgs e)
         {
+            if (!hocking()) return;
+
             foreach (ListViewItem item in lstvwdocumentosescaneados.SelectedItems)
             {
-                lstvwdocumentosenlazados.Items.Add((ListViewItem)item.Clone());
+                Image img = Image.FromFile(item.Tag.ToString());
+                source_digital.imagen = img; //asignar imagen al colector principal
+                img.Dispose();
+
+                source_digital.fecha = obtener.fecha(); //asignar fecha al colector principal
+                source_digital.hora = obtener.hora();//asignar hora al colector principal
+                
+                source_digital.idtramite = lookUpEdit_Tramites_selected.id_tramite; //asignar id tramite al colector principal;
+
                 item.Remove();
 
+                lstvwdocumentosenlazados.Items.Add((ListViewItem)item.Clone());
+                
+
                 cntmnuListViewScann.Hide();
+
+                int idxgroup = 0;
+                foreach (ListViewGroup grupo in lstvwdocumentosenlazados.Groups)
+                {
+                    if (grupo.Name == source_digital.clasificaciondocumento)
+                    {
+                        break;
+                    }
+                    idxgroup++;
+                }
+
+                lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];
+
+                sources_digital.Add(source_digital);
             }
             try
             {
@@ -645,10 +719,36 @@ namespace thumbnail
 //boton submenu enlazar/todo
         private void tsmnuitemlstvwscannenlazarsubmnutodo_Click(object sender, EventArgs e)
         {
+            if (!hocking()) return;
+
             foreach (ListViewItem item in lstvwdocumentosescaneados.Items)
             {
-                lstvwdocumentosenlazados.Items.Add((ListViewItem)item.Clone());
+                Image img = Image.FromFile(item.Tag.ToString());
+                source_digital.imagen = img; //asignar imagen al colector principal
+                img.Dispose();
+
+                source_digital.fecha = obtener.fecha(); //asignar fecha al colector principal
+                source_digital.hora = obtener.hora();//asignar hora al colector principal
+
+                source_digital.idtramite = lookUpEdit_Tramites_selected.id_tramite; //asignar id tramite al colector principal;
+
                 item.Remove();
+
+                lstvwdocumentosenlazados.Items.Add((ListViewItem)item.Clone());
+
+                int idxgroup = 0;
+                foreach (ListViewGroup grupo in lstvwdocumentosenlazados.Groups)
+                {
+                    if (grupo.Name == source_digital.clasificaciondocumento)
+                    {
+                        break;
+                    }
+                    idxgroup++;
+                }
+
+                lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];
+
+                sources_digital.Add(source_digital);
             }
         }
 
@@ -691,6 +791,7 @@ namespace thumbnail
             {
                 Image img = Image.FromFile(lstvwdocumentosescaneados.SelectedItems[0].Tag.ToString());
                 thumbnainlist.Images[idx] = classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img);
+                lstvwdocumentosescaneados.Refresh();
             }
             else if (result == DialogResult.OK) {
                 deletethumbnailandimage(lstvwdocumentosescaneados);

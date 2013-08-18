@@ -17,21 +17,18 @@ namespace thumbnail
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new scann());
+            Application.Run(new frm_main());
 
-            /*
-             
+            /* 
             frm_login login = new frm_login();
-            scann frmscann = new scann();
+            frm_main main = new frm_main();
 
             DialogResult loginresult = login.ShowDialog();
             if (loginresult == DialogResult.OK)
-            {                
-                frmscann.ShowDialog();
+            {
+                main.ShowDialog();
             }
-            
-            */
-
+             * */
         }
     }
 }

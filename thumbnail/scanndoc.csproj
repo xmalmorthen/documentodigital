@@ -58,17 +58,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\convert_md5.cs" />
+    <Compile Include="classes\obtener.cs" />
     <Compile Include="classes\thumbnail.cs" />
     <Compile Include="data_members\Bd_Exp_Transportes.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Bd_Exp_Transportes.dbml</DependentUpon>
     </Compile>
-    <Compile Include="forms\frmhook.cs">
+    <Compile Include="forms\frm_hook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\frmhook.Designer.cs">
-      <DependentUpon>frmhook.cs</DependentUpon>
+    <Compile Include="forms\frm_hook.Designer.cs">
+      <DependentUpon>frm_hook.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frm_login.cs">
       <SubType>Form</SubType>
@@ -76,11 +77,17 @@
     <Compile Include="forms\frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\imgViewer.cs">
+    <Compile Include="forms\frm_imgViewer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\imgViewer.Designer.cs">
-      <DependentUpon>imgViewer.cs</DependentUpon>
+    <Compile Include="forms\frm_imgViewer.Designer.cs">
+      <DependentUpon>frm_imgViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_main.Designer.cs">
+      <DependentUpon>frm_main.cs</DependentUpon>
     </Compile>
     <Compile Include="Icons16x16.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -97,7 +104,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Icons48x48.resx</DependentUpon>
     </Compile>
-    <Compile Include="models\campostrazables.cs" />
     <Compile Include="models\expediente.cs" />
     <Compile Include="forms\frm_scann.cs">
       <SubType>Form</SubType>
@@ -110,14 +116,17 @@
     <None Include="data_members\Bd_Exp_Transportes.dbml.layout">
       <DependentUpon>Bd_Exp_Transportes.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="forms\frmhook.resx">
-      <DependentUpon>frmhook.cs</DependentUpon>
+    <EmbeddedResource Include="forms\frm_hook.resx">
+      <DependentUpon>frm_hook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\imgViewer.resx">
-      <DependentUpon>imgViewer.cs</DependentUpon>
+    <EmbeddedResource Include="forms\frm_imgViewer.resx">
+      <DependentUpon>frm_imgViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_main.resx">
+      <DependentUpon>frm_main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Icons16x16.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -211,6 +220,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\imgs\16x16\gestion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\16x16\notepad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\16x16\app_window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\16x16\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\16x16\wrench_plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\48x48\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\32x32\fit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\32x32\zoomin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\32x32\zoomorigin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\32x32\zoomout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

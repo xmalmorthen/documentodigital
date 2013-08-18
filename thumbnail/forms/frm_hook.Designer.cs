@@ -1,6 +1,6 @@
 ﻿namespace thumbnail.forms
 {
-    partial class frmhook
+    partial class frm_hook
     {
         /// <summary>
         /// Required designer variable.
@@ -81,6 +81,7 @@
             // 
             this.txtvalortrazable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtvalortrazable.Enabled = false;
             this.txtvalortrazable.Location = new System.Drawing.Point(12, 97);
             this.txtvalortrazable.Name = "txtvalortrazable";
             this.txtvalortrazable.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
@@ -405,7 +406,7 @@
             // 
             this.dxValidationProvider_Valor.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
             // 
-            // frmhook
+            // frm_hook
             // 
             this.AcceptButton = this.btn_aceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,7 +421,7 @@
             this.Controls.Add(this.txtvalortrazable);
             this.Controls.Add(this.lookUpEdit_ClasificacionDocumento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmhook";
+            this.Name = "frm_hook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Vinculación de imagenes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmhook_FormClosing);

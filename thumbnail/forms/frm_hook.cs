@@ -11,7 +11,7 @@ using thumbnail.models;
 
 namespace thumbnail.forms
 {
-    public partial class frmhook : Form
+    public partial class frm_hook : Form
     {
         thumbnail.data_members.Bd_Exp_TransportesDataContext Bd_Exp_Transportes; //variable base de datos
 
@@ -24,15 +24,28 @@ namespace thumbnail.forms
 
         BindingSource BindingSource_ClasificacionDocumento; //variable binding para lista de clasificacion de documentos
 
+        public int ?id_re_tramites_re_clasificaciondocumentos_documentos = null;
+
         //constructor
-        public frmhook(int tramite, int origen, List<thumbnail.models.digital> _sources)
+        public frm_hook()
         {
             InitializeComponent();
+            Bd_Exp_Transportes = new thumbnail.data_members.Bd_Exp_TransportesDataContext(); //instancia de base de datos
+        }
+        //sobrecarga de constructor
+        public frm_hook(int tramite, int origen, List<thumbnail.models.digital> _sources)
+        {
+            InitializeComponent();
+            Bd_Exp_Transportes = new thumbnail.data_members.Bd_Exp_TransportesDataContext(); //instancia de base de datos
+            this.inicializa(tramite, origen, _sources);
+        }
+
+        //funcion para inicializar variables
+        public void inicializa(int tramite, int origen, List<thumbnail.models.digital> _sources) {
             Tramite = tramite; //inicializar property tramite a partir de parametro
             Origen = origen; //inicializar property origen a partir de parametro
             sources = _sources;
-
-            Bd_Exp_Transportes = new thumbnail.data_members.Bd_Exp_TransportesDataContext(); //instancia de base de datos
+            this.populate_lookUpEdit_ClasificacionDocumento(); //popular combo
         }
 
         //validador de formulario
@@ -55,7 +68,7 @@ namespace thumbnail.forms
         //cuando se muestre la lista del combo
         private void lookUpEditCamposTrazables_QueryPopUp(object sender, CancelEventArgs e)
         {
-            this.populate_lookUpEdit_ClasificacionDocumento(); //popular combo
+            //this.populate_lookUpEdit_ClasificacionDocumento(); //popular combo
         }
 
         //funcion para popular combo de clasificacion de documentos
@@ -99,7 +112,8 @@ namespace thumbnail.forms
             object _id_documento = view.GetRowCellValue(view.FocusedRowHandle, "id_documento");
             object _clasificaciondocumento = view.GetRowCellValue(view.FocusedRowHandle, "Descripcion_clasificaciondocumento");
             object _documento = view.GetRowCellValue(view.FocusedRowHandle, "Nombre");
-
+            object _id_re_tramites_re_clasificaciondocumentos_documentos = view.GetRowCellValue(view.FocusedRowHandle, "id_re_tramites_re_clasificaciondocumentos_documentos");
+            
             if (_id_documento == null) return;
 
             txtvalortrazable.Text = ""; //limpiar caja de texto de valor trazable
@@ -125,6 +139,8 @@ namespace thumbnail.forms
                 
                 txtvalortrazable.Focus();
             }
+
+            id_re_tramites_re_clasificaciondocumentos_documentos = int.Parse(string.Format("{0}", _id_re_tramites_re_clasificaciondocumentos_documentos));
         }
 
         private void txtvalortrazable_Click(object sender, EventArgs e)
@@ -160,7 +176,6 @@ namespace thumbnail.forms
         {
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
         }
-
-        
+                
     }
 }
