@@ -463,12 +463,12 @@ namespace thumbnail.forms
                     {
                         try
                         {
+                            this.removelistviewgroup(current);
                             lstvwdocumentosenlazados.Items.Remove(lstvwdocumentosenlazados.SelectedItems[0]);
                         }
                         catch (Exception) { }
                         lstvwdocumentosescaneados.Items.Add((ListViewItem)current.Clone());                        
-                    }
-                    this.removelistviewgroup();
+                    }                    
                 }
                 else
                 {
@@ -541,7 +541,7 @@ namespace thumbnail.forms
 
                         lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];
 
-                        sources_digital.Add(source_digital);
+                        sources_digital.Add(source_digital);                        
                     }
                 }
                 else
@@ -610,13 +610,20 @@ namespace thumbnail.forms
             }
         }
 
-        private void removelistviewgroup()
+        private void removelistviewgroup(ListViewItem item)
         {
-            foreach (ListViewGroup grupo in lstvwdocumentosenlazados.Groups)
+            try
             {
-                if (grupo.Items.Count == 0) {
-                    lstvwdocumentosenlazados.Groups.Remove(grupo);
+                ListViewGroup grupo = item.Group;
+                
+                item.Group = null;
+
+                if (lstvwdocumentosenlazados.Groups[grupo.Name].Items.Count == 0) {
+                    lstvwdocumentosenlazados.Groups.Remove(grupo);                
                 }
+            }
+            catch (Exception)
+            {
             }
         }
 
@@ -733,9 +740,6 @@ namespace thumbnail.forms
 
                 lstvwdocumentosenlazados.Items.Add((ListViewItem)item.Clone());
                 
-
-                cntmnuListViewScann.Hide();
-
                 int idxgroup = 0;
                 foreach (ListViewGroup grupo in lstvwdocumentosenlazados.Groups)
                 {
@@ -750,6 +754,7 @@ namespace thumbnail.forms
 
                 sources_digital.Add(source_digital);
             }
+            cntmnuListViewScann.Hide();
             try
             {
                 lstvwdocumentosescaneados.Items[0].Selected = true;
@@ -861,12 +866,18 @@ namespace thumbnail.forms
         {
             foreach (ListViewItem item in lstvwdocumentosenlazados.SelectedItems)
             {
+                try
+                {
+                    this.removelistviewgroup(item);
+                    lstvwdocumentosenlazados.Items.Remove(item);
+                }
+                catch (Exception)
+                {
+                }
                 lstvwdocumentosescaneados.Items.Add((ListViewItem)item.Clone());
-                lstvwdocumentosenlazados.Items.Remove(item);
             }
-            lstvwdocumentosenlazados.Refresh();
-            this.removelistviewgroup();
             cntmnuListViewEnlace.Hide();
+            
         }
 
 //boton abrir
