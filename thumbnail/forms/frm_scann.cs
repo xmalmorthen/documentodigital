@@ -149,7 +149,7 @@ namespace thumbnail.forms
         {
             foreach (DataGridViewRow row in dataGridView_CamposTrazables.Rows)
             {
-                source_trazabilidad.id_re_expediente_campotrazable = "";
+                source_trazabilidad.id_re_expediente_campotrazable = 0;
                 source_trazabilidad.valor_trazable = row.Cells["col_valor_trazable"].ToString();
                 source_trazabilidad.fecha = obtener.fecha();
                 source_trazabilidad.hora = obtener.hora();                

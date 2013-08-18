@@ -352,13 +352,6 @@ namespace thumbnail.data_members
 			return ((ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_CampostrazablesActivosporExpediente")]
-		public ISingleResult<pa_CampostrazablesActivosporExpedienteResult> pa_CampostrazablesActivosporExpediente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_expediente)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_expediente);
-			return ((ISingleResult<pa_CampostrazablesActivosporExpedienteResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_obtener_fecha")]
 		public ISingleResult<pa_obtener_fechaResult> pa_obtener_fecha()
 		{
@@ -371,6 +364,13 @@ namespace thumbnail.data_members
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<pa_obtener_horaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_CampostrazablesActivosporExpediente")]
+		public ISingleResult<pa_CampostrazablesActivosporExpedienteResult> pa_CampostrazablesActivosporExpediente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_expediente)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_expediente);
+			return ((ISingleResult<pa_CampostrazablesActivosporExpedienteResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -7001,8 +7001,62 @@ namespace thumbnail.data_members
 		}
 	}
 	
+	public partial class pa_obtener_fechaResult
+	{
+		
+		private string _Fecha;
+		
+		public pa_obtener_fechaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="VarChar(8)")]
+		public string Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_obtener_horaResult
+	{
+		
+		private string _Hora;
+		
+		public pa_obtener_horaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hora", DbType="VarChar(8)")]
+		public string Hora
+		{
+			get
+			{
+				return this._Hora;
+			}
+			set
+			{
+				if ((this._Hora != value))
+				{
+					this._Hora = value;
+				}
+			}
+		}
+	}
+	
 	public partial class pa_CampostrazablesActivosporExpedienteResult
 	{
+		
+		private int _id_re_expedientes_campostrazables;
 		
 		private int _id_campotrazable;
 		
@@ -7018,6 +7072,22 @@ namespace thumbnail.data_members
 		
 		public pa_CampostrazablesActivosporExpedienteResult()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_expedientes_campostrazables", DbType="Int NOT NULL")]
+		public int id_re_expedientes_campostrazables
+		{
+			get
+			{
+				return this._id_re_expedientes_campostrazables;
+			}
+			set
+			{
+				if ((this._id_re_expedientes_campostrazables != value))
+				{
+					this._id_re_expedientes_campostrazables = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_campotrazable", DbType="Int NOT NULL")]
@@ -7112,58 +7182,6 @@ namespace thumbnail.data_members
 				if ((this._es_principal != value))
 				{
 					this._es_principal = value;
-				}
-			}
-		}
-	}
-	
-	public partial class pa_obtener_fechaResult
-	{
-		
-		private string _Fecha;
-		
-		public pa_obtener_fechaResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="VarChar(8)")]
-		public string Fecha
-		{
-			get
-			{
-				return this._Fecha;
-			}
-			set
-			{
-				if ((this._Fecha != value))
-				{
-					this._Fecha = value;
-				}
-			}
-		}
-	}
-	
-	public partial class pa_obtener_horaResult
-	{
-		
-		private string _Hora;
-		
-		public pa_obtener_horaResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hora", DbType="VarChar(8)")]
-		public string Hora
-		{
-			get
-			{
-				return this._Hora;
-			}
-			set
-			{
-				if ((this._Hora != value))
-				{
-					this._Hora = value;
 				}
 			}
 		}
