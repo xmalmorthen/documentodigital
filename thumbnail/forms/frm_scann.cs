@@ -149,7 +149,7 @@ namespace thumbnail.forms
         {
             foreach (DataGridViewRow row in dataGridView_CamposTrazables.Rows)
             {
-                source_trazabilidad.id_re_expediente_campotrazable = (int)id_re_tramites_re_clasificaciondocumentos_documentos;
+                source_trazabilidad.id_re_expediente_campotrazable = "";
                 source_trazabilidad.valor_trazable = row.Cells["col_valor_trazable"].ToString();
                 source_trazabilidad.fecha = obtener.fecha();
                 source_trazabilidad.hora = obtener.hora();                
@@ -509,7 +509,6 @@ namespace thumbnail.forms
 
         public List<thumbnail.models.digital> sources_digital = new List<thumbnail.models.digital>();
         public thumbnail.models.digital source_digital = new thumbnail.models.digital(); //instancia a modelo principal para el guardado de la información
-        private int? id_re_tramites_re_clasificaciondocumentos_documentos = null;
         frm_hook frm = new frm_hook(); //inicializar formulario
         private bool hocking()
         {
@@ -527,8 +526,6 @@ namespace thumbnail.forms
                 source_digital.valor_trazable = frm.source.valor_trazable; //se asigna el valor trazable retornado de la forma al colector principal
                 source_digital.clasificaciondocumento = frm.source.clasificaciondocumento; //se asigna la clasificacion de documento retornado de la forma al colector principal
                 source_digital.documento = frm.source.documento; //se asigna el nombre de documento retornado de la forma al colector principal
-
-                id_re_tramites_re_clasificaciondocumentos_documentos = frm.id_re_tramites_re_clasificaciondocumentos_documentos;
 
                 addlistviewgroup(); //agregar grupo
 

@@ -24,8 +24,6 @@ namespace thumbnail.forms
 
         BindingSource BindingSource_ClasificacionDocumento; //variable binding para lista de clasificacion de documentos
 
-        public int ?id_re_tramites_re_clasificaciondocumentos_documentos = null;
-
         //constructor
         public frm_hook()
         {
@@ -140,7 +138,6 @@ namespace thumbnail.forms
                 txtvalortrazable.Focus();
             }
 
-            id_re_tramites_re_clasificaciondocumentos_documentos = int.Parse(string.Format("{0}", _id_re_tramites_re_clasificaciondocumentos_documentos));
         }
 
         private void txtvalortrazable_Click(object sender, EventArgs e)
