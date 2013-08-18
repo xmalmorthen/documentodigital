@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.txtvalortrazable = new DevExpress.XtraEditors.TextEdit();
@@ -65,11 +64,11 @@
             this.colPolitica = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_estatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcion_estatus = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip();
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            this.dxValidationProvider_lookUpEdit_ClasificacionDocumento = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.dxValidationProvider_Valor = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.dxValidationProvider_lookUpEdit_ClasificacionDocumento = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.dxValidationProvider_Valor = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             ((System.ComponentModel.ISupportInitialize)(this.txtvalortrazable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_ClasificacionDocumento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditClasificacionDocumentoView)).BeginInit();
@@ -90,7 +89,7 @@
             this.txtvalortrazable.Properties.Mask.EditMask = "9999-9999";
             this.txtvalortrazable.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.txtvalortrazable.Size = new System.Drawing.Size(576, 30);
-            this.txtvalortrazable.TabIndex = 3;
+            this.txtvalortrazable.TabIndex = 1;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Debe especificar el valor trazable";
             conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -148,7 +147,7 @@
             this.lookUpEdit_ClasificacionDocumento.Properties.ValueMember = "id_documento";
             this.lookUpEdit_ClasificacionDocumento.Properties.View = this.lookUpEditClasificacionDocumentoView;
             this.lookUpEdit_ClasificacionDocumento.Size = new System.Drawing.Size(576, 30);
-            this.lookUpEdit_ClasificacionDocumento.TabIndex = 1;
+            this.lookUpEdit_ClasificacionDocumento.TabIndex = 0;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "Debe indicar el documento a vincular";
             conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
@@ -373,7 +372,7 @@
             this.btn_aceptar.Location = new System.Drawing.Point(464, 139);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(54, 54);
-            this.btn_aceptar.TabIndex = 45;
+            this.btn_aceptar.TabIndex = 2;
             this.toolTip.SetToolTip(this.btn_aceptar, "Vincular documento");
             this.btn_aceptar.UseVisualStyleBackColor = false;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
@@ -393,7 +392,7 @@
             this.btn_cancelar.Location = new System.Drawing.Point(533, 139);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(54, 54);
-            this.btn_cancelar.TabIndex = 46;
+            this.btn_cancelar.TabIndex = 3;
             this.toolTip.SetToolTip(this.btn_cancelar, "Cancelar vinculación de documento");
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);

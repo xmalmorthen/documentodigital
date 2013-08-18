@@ -44,6 +44,9 @@ namespace thumbnail.forms
             Origen = origen; //inicializar property origen a partir de parametro
             sources = _sources;
             this.populate_lookUpEdit_ClasificacionDocumento(); //popular combo
+
+            actualizainfomascara("", 0, "");
+            this.lookUpEdit_ClasificacionDocumento.EditValue = 1; //establecer el tramite a seleccionar
         }
 
         //validador de formulario

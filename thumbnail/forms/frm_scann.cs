@@ -136,23 +136,24 @@ namespace thumbnail.forms
         {
             this.colectar_campostrazables();
             this.colectar_archivosdigital();
-
-
+            tramite.trazabilidad = sources_trazabilidad;
 
             /* if (expedientemode == __formmode.Add) crearexpediente();
              else editarexpediente();*/
         }
 
         List<trazabilidad_tramite> sources_trazabilidad = new List<trazabilidad_tramite>();
-        trazabilidad_tramite source_trazabilidad = new trazabilidad_tramite();
         private void colectar_campostrazables()
         {
             foreach (DataGridViewRow row in dataGridView_CamposTrazables.Rows)
             {
-                source_trazabilidad.id_re_expediente_campotrazable = 0;
-                source_trazabilidad.valor_trazable = row.Cells["col_valor_trazable"].ToString();
+                trazabilidad_tramite source_trazabilidad = new trazabilidad_tramite();
+                source_trazabilidad.id_re_expediente_campotrazable = int.Parse(row.Cells["id_re_expedientes_campostrazables"].Value.ToString());
+                source_trazabilidad.valor_trazable = row.Cells["col_valor_trazable"].Value.ToString();
                 source_trazabilidad.fecha = obtener.fecha();
-                source_trazabilidad.hora = obtener.hora();                
+                source_trazabilidad.hora = obtener.hora();
+                sources_trazabilidad.Add(source_trazabilidad);
+                source_trazabilidad = null;
             }
         }
 
@@ -216,9 +217,40 @@ namespace thumbnail.forms
         //combo de tramites al cambiar item
         private thumbnail.data_members.vw_ListaTramitesActivos lookUpEdit_Tramites_selected;
         private void lookUpEdit_Tramites_EditValueChanged(object sender, EventArgs e)
-        {
+        {            
             this.lookUpEdit_Tramites_selected = ((LookUpEdit)sender).Properties.GetDataSourceRowByKeyValue(((LookUpEdit)sender).EditValue) as thumbnail.data_members.vw_ListaTramitesActivos; //asignar la seleccion del combo
             populate_dataGridView_campostrazables();
+            limpia_control_de_enlazados();
+        }
+
+        private void lookUpEdit_Tramites_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            try
+            {
+                if (lstvwdocumentosenlazados.Items.Count != 0)
+                {
+                    if (MessageBox.Show("Al cambiar el trámite se perderán los cambios realizados actualmente", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
+                    {
+                        e.Cancel = true;
+                    }
+                    else
+                    {
+                        /*
+                         * seleccionar todos los items, para posteriormente llamar al metodo
+                         * que mueve los elementos al otro control
+                         */ 
+                        foreach (ListViewItem item in lstvwdocumentosenlazados.Items)
+                        {
+                            item.Selected = true;
+                        }
+                        tsmnuitemlstvwenlacedesenlazar_Click(null, null);
+                        sources_digital.Clear();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
 
         //combo de tramites al desplegar la lista
@@ -324,11 +356,27 @@ namespace thumbnail.forms
         }
 
         private void limpia_controles_digitales() {
-            thumbnainlist.Images.Clear();
-            lstvwdocumentosescaneados.Clear();
-            lstvwdocumentosenlazados.Clear();
-            sources_digital.Clear();
-            //File.Delete(pathfiletodelete);
+            try
+            {
+                thumbnainlist.Images.Clear();
+                lstvwdocumentosescaneados.Clear();
+                //File.Delete(pathfiletodelete);
+            }
+            catch (Exception)
+            {
+            }
+            this.limpia_control_de_enlazados();
+        }
+
+        private void limpia_control_de_enlazados() {
+            try
+            {
+                lstvwdocumentosenlazados.Clear();
+                sources_digital.Clear();
+            }
+            catch (Exception)
+            {
+            }
         }
 
         #endregion botonera de inferior de thumbnails
@@ -529,12 +577,10 @@ namespace thumbnail.forms
 
                 addlistviewgroup(); //agregar grupo
 
-                frm.Dispose();
                 return true;
             }
             else if (result == DialogResult.Cancel)
             {
-                frm.Dispose();
                 return false;
             }
             return false;
@@ -602,7 +648,7 @@ namespace thumbnail.forms
 
             tsmnuitemlstvwenlaceabrir.Visible = (numItemsSelects == 1 ? true : false);
             //tsmnuitemlstvwenlaceeliminar.Visible = (numItemsSelects >= 1 ? true : false);
-            tsmnuitemlstvwenlacedesenlazar.Visible = (numItemsSelects == 1 ? true : false);
+            tsmnuitemlstvwenlacedesenlazar.Visible = (numItemsSelects >= 1 ? true : false);
             //tsmnuitemlstvwenlacedesenlazartodo.Visible = true;
             tsmnuitemlstvwenlacegirarderecha.Visible = (numItemsSelects >= 1 ? true : false);
             tsmnuitemlstvwenlacegirarizquierda.Visible = (numItemsSelects >= 1 ? true : false);
@@ -816,9 +862,11 @@ namespace thumbnail.forms
             foreach (ListViewItem item in lstvwdocumentosenlazados.SelectedItems)
             {
                 lstvwdocumentosescaneados.Items.Add((ListViewItem)item.Clone());
-                item.Remove();
-                cntmnuListViewEnlace.Hide();
+                lstvwdocumentosenlazados.Items.Remove(item);
             }
+            lstvwdocumentosenlazados.Refresh();
+            this.removelistviewgroup();
+            cntmnuListViewEnlace.Hide();
         }
 
 //boton abrir
