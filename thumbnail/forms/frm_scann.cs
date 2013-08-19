@@ -15,6 +15,7 @@ using thumbnail.models;
 using DevExpress.XtraGrid.Views.Grid;
 using thumbnail.classes;
 using System.Collections;
+using System.Xml;
 
 namespace thumbnail.forms
 {
@@ -997,6 +998,53 @@ namespace thumbnail.forms
                 MessageBox.Show("Error: " + KDImage.GetErrorMsg(lvRet));
             }
             generatethumbnailimage(pathfilename); 
+        }
+
+        private void dataGridView_CamposTrazables_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (e.ColumnIndex == 6) { //si la columna es igual a la de valor trazable
+                string mascara = dataGridView_CamposTrazables.Rows[e.RowIndex].Cells["mascaraDataGridViewTextBoxColumn"].Value.ToString();
+
+                if (!string.IsNullOrEmpty(mascara))
+                {
+                    TextEdit txt_validator = new TextEdit();
+                    txt_validator.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+                    txt_validator.Properties.Mask.EditMask = mascara;
+                    txt_validator.Properties.ValidateOnEnterKey = true;
+                    txt_validator.InvalidValue += txt_validator_InvalidValue;
+                    txt_validator.Validating += txt_validator_Validating;
+                    txt_validator.Properties.Mask.IgnoreMaskBlank = false;
+
+                    txt_validator.Properties.BeginInit();
+                    txt_validator.Properties.BeginUpdate();
+                    txt_validator.Text = e.FormattedValue.ToString();
+                    txt_validator.Properties.EndUpdate();
+                    txt_validator.Properties.EndInit();
+
+                    //txt_validator.Properties.va
+
+                    
+
+                    //dataGridView_CamposTrazables.Rows[e.RowIndex].ErrorText = "El valor trazable no cumple los criterios de mascara, favor de revisar";
+                    //e.Cancel = true;
+
+                }
+            }
+
+
+            //dataGridView_CamposTrazables[e.ColumnIndex,e.RowIndex]
+
+            //e.FormattedValue
+        }
+
+        void txt_validator_Validating(object sender, CancelEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        void txt_validator_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
+        {            
+            MessageBox.Show("error en mascara");
         }
 
     }

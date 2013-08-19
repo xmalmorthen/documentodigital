@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmimgViewer));
-            this.ttimageviewer = new System.Windows.Forms.ToolTip(this.components);
+            this.ttimageviewer = new System.Windows.Forms.ToolTip();
             this.btn_reestablecer = new System.Windows.Forms.Button();
             this.btn_rotarizquierda = new System.Windows.Forms.Button();
             this.btn_rotarderecha = new System.Windows.Forms.Button();
@@ -65,7 +64,7 @@
             this.btn_reestablecer.Location = new System.Drawing.Point(421, 7);
             this.btn_reestablecer.Name = "btn_reestablecer";
             this.btn_reestablecer.Size = new System.Drawing.Size(54, 54);
-            this.btn_reestablecer.TabIndex = 50;
+            this.btn_reestablecer.TabIndex = 8;
             this.ttimageviewer.SetToolTip(this.btn_reestablecer, "Reestablecer imagen");
             this.btn_reestablecer.UseVisualStyleBackColor = false;
             this.btn_reestablecer.Click += new System.EventHandler(this.btn_reestablecer_Click);
@@ -83,7 +82,7 @@
             this.btn_rotarizquierda.Location = new System.Drawing.Point(289, 7);
             this.btn_rotarizquierda.Name = "btn_rotarizquierda";
             this.btn_rotarizquierda.Size = new System.Drawing.Size(56, 56);
-            this.btn_rotarizquierda.TabIndex = 49;
+            this.btn_rotarizquierda.TabIndex = 7;
             this.ttimageviewer.SetToolTip(this.btn_rotarizquierda, "Rotar a la izquierda");
             this.btn_rotarizquierda.UseVisualStyleBackColor = false;
             this.btn_rotarizquierda.Click += new System.EventHandler(this.btn_rotarizquierda_Click);
@@ -101,7 +100,7 @@
             this.btn_rotarderecha.Location = new System.Drawing.Point(229, 7);
             this.btn_rotarderecha.Name = "btn_rotarderecha";
             this.btn_rotarderecha.Size = new System.Drawing.Size(56, 56);
-            this.btn_rotarderecha.TabIndex = 48;
+            this.btn_rotarderecha.TabIndex = 6;
             this.ttimageviewer.SetToolTip(this.btn_rotarderecha, "Rotar a la derecha");
             this.btn_rotarderecha.UseVisualStyleBackColor = false;
             this.btn_rotarderecha.Click += new System.EventHandler(this.btn_rotarderecha_Click);
@@ -120,7 +119,7 @@
             this.btn_borrar.Location = new System.Drawing.Point(572, 7);
             this.btn_borrar.Name = "btn_borrar";
             this.btn_borrar.Size = new System.Drawing.Size(54, 54);
-            this.btn_borrar.TabIndex = 46;
+            this.btn_borrar.TabIndex = 9;
             this.ttimageviewer.SetToolTip(this.btn_borrar, "Eliminar imagen");
             this.btn_borrar.UseVisualStyleBackColor = false;
             this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
@@ -139,7 +138,7 @@
             this.btn_cerrar.Location = new System.Drawing.Point(718, 7);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
-            this.btn_cerrar.TabIndex = 45;
+            this.btn_cerrar.TabIndex = 10;
             this.ttimageviewer.SetToolTip(this.btn_cerrar, "Cerrar visualizador");
             this.btn_cerrar.UseVisualStyleBackColor = false;
             this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
@@ -196,7 +195,7 @@
             this.zoomSlider.Properties.ShowValueToolTip = true;
             this.zoomSlider.Properties.SmallChange = 10;
             this.zoomSlider.Size = new System.Drawing.Size(170, 23);
-            this.zoomSlider.TabIndex = 52;
+            this.zoomSlider.TabIndex = 1;
             this.zoomSlider.EditValueChanged += new System.EventHandler(this.zoomSlider_ValueChanged);
             // 
             // btn_ajuste
@@ -212,7 +211,7 @@
             this.btn_ajuste.Location = new System.Drawing.Point(140, 7);
             this.btn_ajuste.Name = "btn_ajuste";
             this.btn_ajuste.Size = new System.Drawing.Size(40, 40);
-            this.btn_ajuste.TabIndex = 55;
+            this.btn_ajuste.TabIndex = 5;
             this.btn_ajuste.UseVisualStyleBackColor = false;
             this.btn_ajuste.Click += new System.EventHandler(this.btn_ajuste_Click);
             // 
@@ -229,7 +228,7 @@
             this.btn_tamaniooriginal.Location = new System.Drawing.Point(96, 7);
             this.btn_tamaniooriginal.Name = "btn_tamaniooriginal";
             this.btn_tamaniooriginal.Size = new System.Drawing.Size(40, 40);
-            this.btn_tamaniooriginal.TabIndex = 54;
+            this.btn_tamaniooriginal.TabIndex = 4;
             this.btn_tamaniooriginal.UseVisualStyleBackColor = false;
             this.btn_tamaniooriginal.Click += new System.EventHandler(this.btn_tamaniooriginal_Click);
             // 
@@ -246,7 +245,7 @@
             this.btn_zommmenos.Location = new System.Drawing.Point(8, 7);
             this.btn_zommmenos.Name = "btn_zommmenos";
             this.btn_zommmenos.Size = new System.Drawing.Size(40, 40);
-            this.btn_zommmenos.TabIndex = 53;
+            this.btn_zommmenos.TabIndex = 2;
             this.btn_zommmenos.UseVisualStyleBackColor = false;
             this.btn_zommmenos.Click += new System.EventHandler(this.btn_zommmenos_Click);
             // 
@@ -263,7 +262,7 @@
             this.btn_zoommas.Location = new System.Drawing.Point(52, 7);
             this.btn_zoommas.Name = "btn_zoommas";
             this.btn_zoommas.Size = new System.Drawing.Size(40, 40);
-            this.btn_zoommas.TabIndex = 47;
+            this.btn_zoommas.TabIndex = 3;
             this.btn_zoommas.UseVisualStyleBackColor = false;
             this.btn_zoommas.Click += new System.EventHandler(this.btn_zoommas_Click);
             // 
