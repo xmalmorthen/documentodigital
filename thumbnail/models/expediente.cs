@@ -91,6 +91,19 @@ namespace thumbnail.models
 
     public class digital
     {
+        private string _guid;
+        public string guid
+        {
+            get
+            {
+                return _guid;
+            }
+            set
+            {
+                _guid = value;
+            }
+        }
+
         private int _id_tramite;
         public int idtramite {
             get {

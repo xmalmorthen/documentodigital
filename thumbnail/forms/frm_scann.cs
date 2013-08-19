@@ -14,6 +14,7 @@ using DevExpress.XtraEditors;
 using thumbnail.models;
 using DevExpress.XtraGrid.Views.Grid;
 using thumbnail.classes;
+using System.Collections;
 
 namespace thumbnail.forms
 {
@@ -112,6 +113,9 @@ namespace thumbnail.forms
             tbctrl_SelectedIndexChanged(tbctrl, null);
 
             this.Paint += frm_scann_Paint;
+
+            tramite.imagenes_digital.Clear();
+            tramite.trazabilidad.Clear();
         }
 
         /*
@@ -145,11 +149,19 @@ namespace thumbnail.forms
         List<trazabilidad_tramite> sources_trazabilidad = new List<trazabilidad_tramite>();
         private void colectar_campostrazables()
         {
+            sources_trazabilidad.Clear();
             foreach (DataGridViewRow row in dataGridView_CamposTrazables.Rows)
             {
                 trazabilidad_tramite source_trazabilidad = new trazabilidad_tramite();
                 source_trazabilidad.id_re_expediente_campotrazable = int.Parse(row.Cells["id_re_expedientes_campostrazables"].Value.ToString());
-                source_trazabilidad.valor_trazable = row.Cells["col_valor_trazable"].Value.ToString();
+                try
+                {
+                    source_trazabilidad.valor_trazable = row.Cells["col_valor_trazable"].Value.ToString();
+                }
+                catch (Exception)
+                {
+                    source_trazabilidad.valor_trazable = null;
+                }                
                 source_trazabilidad.fecha = obtener.fecha();
                 source_trazabilidad.hora = obtener.hora();
                 sources_trazabilidad.Add(source_trazabilidad);
@@ -158,6 +170,7 @@ namespace thumbnail.forms
         }
 
         private void colectar_archivosdigital() {
+            tramite.imagenes_digital.Clear();
             tramite.imagenes_digital = sources_digital;
         }
 
@@ -463,7 +476,9 @@ namespace thumbnail.forms
                     {
                         try
                         {
-                            this.removelistviewgroup(current);
+                            sources_digital.Remove(sources_digital.FirstOrDefault(c => c.guid == ((tagstrunct)current.Tag).guid.ToString()));
+
+                            this.removelistviewgroup(current); //eliminar grupo en caso de que este vacío
                             lstvwdocumentosenlazados.Items.Remove(lstvwdocumentosenlazados.SelectedItems[0]);
                         }
                         catch (Exception) { }
@@ -512,14 +527,19 @@ namespace thumbnail.forms
                 {
                     foreach (ListViewItem current in (ListView.SelectedListViewItemCollection)e.Data.GetData(typeof(ListView.SelectedListViewItemCollection)))
                     {
-                        Image img = Image.FromFile(current.Tag.ToString());
-                        source_digital.imagen = img; //asignar imagen al colector principal
+                        thumbnail.models.digital source = new thumbnail.models.digital();
+
+                        Image img = Image.FromFile(  ( (tagstrunct) current.Tag ).path_image.ToString()  );
+                        source.imagen = img; //asignar imagen al colector principal
                         img.Dispose();
-
-                        source_digital.fecha = obtener.fecha(); //asignar fecha al colector principal
-                        source_digital.hora = obtener.hora();//asignar hora al colector principal
-
-                        source_digital.idtramite = lookUpEdit_Tramites_selected.id_tramite; //asignar id tramite al colector principal;
+                        source.id_documento = source_digital.id_documento;
+                        source.valor_trazable = source_digital.valor_trazable;
+                        source.clasificaciondocumento = source_digital.clasificaciondocumento;
+                        source.documento = source_digital.documento;
+                        source.guid = ((tagstrunct)current.Tag).guid.ToString();
+                        source.fecha = obtener.fecha(); //asignar fecha al colector principal
+                        source.hora = obtener.hora();//asignar hora al colector principal
+                        source.idtramite = lookUpEdit_Tramites_selected.id_tramite; //asignar id tramite al colector principal;
 
                         try
                         {
@@ -532,7 +552,7 @@ namespace thumbnail.forms
                         int idxgroup = 0;
                         foreach (ListViewGroup grupo in lstvwdocumentosenlazados.Groups)
                         {
-                            if (grupo.Name == source_digital.clasificaciondocumento)
+                            if (grupo.Name == source.clasificaciondocumento)
                             {
                                 break;
                             }
@@ -541,7 +561,8 @@ namespace thumbnail.forms
 
                         lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];
 
-                        sources_digital.Add(source_digital);                        
+                        sources_digital.Add(source);
+                        source = null;
                     }
                 }
                 else
@@ -640,7 +661,7 @@ namespace thumbnail.forms
             tsmnuitemlstvwscanneliminar.Visible = (numItemsSelects >= 1 ? true : false);
             tsmnuitemlstvwscannenlazarsubmnuseleccionado.Visible = (numItemsSelects == 1 ? true : false);
             tsmnuitemlstvwscannenlazarsubmnutodo.Visible = true;
-            tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar.Visible = (numItemsSelects >= 1 ? true : false);
+            //tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar.Visible = (numItemsSelects >= 1 ? true : false);
             tsmnuitemlstvwscannseltodo.Visible = true;
             tsmnuitemlstvwscannrotarderecha.Visible = (numItemsSelects >= 1 ? true : false);
             tsmnuitemlstvwscannrotarizquierda.Visible = (numItemsSelects >= 1 ? true : false);
@@ -672,7 +693,7 @@ namespace thumbnail.forms
                 img.RotateFlip(rotacion);
                 this.thumbnainlist.Images[idx] = img;
 
-                string path_filename = item.Tag.ToString();
+                string path_filename = ( (tagstrunct) item.Tag ).path_image.ToString();
                 
                 double rotateangle = 0;
                 switch (rotacion)
@@ -727,14 +748,19 @@ namespace thumbnail.forms
 
             foreach (ListViewItem item in lstvwdocumentosescaneados.SelectedItems)
             {
-                Image img = Image.FromFile(item.Tag.ToString());
-                source_digital.imagen = img; //asignar imagen al colector principal
-                img.Dispose();
+                thumbnail.models.digital source = new thumbnail.models.digital();
 
-                source_digital.fecha = obtener.fecha(); //asignar fecha al colector principal
-                source_digital.hora = obtener.hora();//asignar hora al colector principal
-                
-                source_digital.idtramite = lookUpEdit_Tramites_selected.id_tramite; //asignar id tramite al colector principal;
+                Image img = Image.FromFile(((tagstrunct)item.Tag).path_image.ToString());
+                source.imagen = img; //asignar imagen al colector principal
+                img.Dispose();
+                source.id_documento = source_digital.id_documento;
+                source.valor_trazable = source_digital.valor_trazable;
+                source.clasificaciondocumento = source_digital.clasificaciondocumento;
+                source.documento = source_digital.documento;
+                source.guid = ((tagstrunct)item.Tag).guid.ToString();
+                source.fecha = obtener.fecha(); //asignar fecha al colector principal
+                source.hora = obtener.hora();//asignar hora al colector principal
+                source.idtramite = lookUpEdit_Tramites_selected.id_tramite; //asignar id tramite al colector principal;
 
                 item.Remove();
 
@@ -752,7 +778,7 @@ namespace thumbnail.forms
 
                 lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];
 
-                sources_digital.Add(source_digital);
+                sources_digital.Add(source);                
             }
             cntmnuListViewScann.Hide();
             try
@@ -771,14 +797,19 @@ namespace thumbnail.forms
 
             foreach (ListViewItem item in lstvwdocumentosescaneados.Items)
             {
-                Image img = Image.FromFile(item.Tag.ToString());
-                source_digital.imagen = img; //asignar imagen al colector principal
+                thumbnail.models.digital source = new thumbnail.models.digital();
+
+                Image img = Image.FromFile(((tagstrunct)item.Tag).path_image.ToString());
+                source.imagen = img; //asignar imagen al colector principal
                 img.Dispose();
-
-                source_digital.fecha = obtener.fecha(); //asignar fecha al colector principal
-                source_digital.hora = obtener.hora();//asignar hora al colector principal
-
-                source_digital.idtramite = lookUpEdit_Tramites_selected.id_tramite; //asignar id tramite al colector principal;
+                source.id_documento = source_digital.id_documento;
+                source.valor_trazable = source_digital.valor_trazable;
+                source.clasificaciondocumento = source_digital.clasificaciondocumento;
+                source.documento = source_digital.documento;
+                source.guid = ((tagstrunct)item.Tag).guid.ToString();
+                source.fecha = obtener.fecha(); //asignar fecha al colector principal
+                source.hora = obtener.hora();//asignar hora al colector principal
+                source.idtramite = lookUpEdit_Tramites_selected.id_tramite; //asignar id tramite al colector principal;
 
                 item.Remove();
 
@@ -796,7 +827,7 @@ namespace thumbnail.forms
 
                 lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];
 
-                sources_digital.Add(source_digital);
+                sources_digital.Add(source);
             }
         }
 
@@ -830,14 +861,14 @@ namespace thumbnail.forms
 //boton abrir
         private void tsmnuitemlstvwscannabrir_Click(object sender, EventArgs e)
         {
-            frmimgViewer testDialog = new frmimgViewer(lstvwdocumentosescaneados.SelectedItems[0].Tag.ToString());
+            frmimgViewer testDialog = new frmimgViewer( ( (tagstrunct) lstvwdocumentosescaneados.SelectedItems[0].Tag ).path_image.ToString() );
 
             DialogResult result = testDialog.ShowDialog(this);
 
             int idx = lstvwdocumentosescaneados.SelectedItems[0].ImageIndex;
             if (result == DialogResult.Yes)
             {
-                Image img = Image.FromFile(lstvwdocumentosescaneados.SelectedItems[0].Tag.ToString());
+                Image img = Image.FromFile( ( (tagstrunct) lstvwdocumentosescaneados.SelectedItems[0].Tag ).path_image.ToString() );
                 thumbnainlist.Images[idx] = classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img);
                 lstvwdocumentosescaneados.Refresh();
             }
@@ -868,6 +899,8 @@ namespace thumbnail.forms
             {
                 try
                 {
+                    sources_digital.Remove(sources_digital.FirstOrDefault(c => c.guid == ((tagstrunct)item.Tag).guid.ToString()));
+
                     this.removelistviewgroup(item);
                     lstvwdocumentosenlazados.Items.Remove(item);
                 }
@@ -883,14 +916,14 @@ namespace thumbnail.forms
 //boton abrir
         private void tsmnuitemlstvwenlaceabrir_Click(object sender, EventArgs e)
         {
-            frmimgViewer testDialog = new frmimgViewer(lstvwdocumentosenlazados.SelectedItems[0].Tag.ToString());
+            frmimgViewer testDialog = new frmimgViewer(((tagstrunct)lstvwdocumentosenlazados.SelectedItems[0].Tag).path_image.ToString() );
 
             DialogResult result = testDialog.ShowDialog(this);
 
             int idx = lstvwdocumentosenlazados.SelectedItems[0].ImageIndex;
             if (result == DialogResult.Yes)
             {
-                Image img = Image.FromFile(lstvwdocumentosenlazados.SelectedItems[0].Tag.ToString());
+                Image img = Image.FromFile(((tagstrunct)lstvwdocumentosenlazados.SelectedItems[0].Tag).path_image.ToString());
                 thumbnainlist.Images[idx] = classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img);
                 lstvwdocumentosenlazados.Refresh();
             }
@@ -922,7 +955,7 @@ namespace thumbnail.forms
         private void deletethumbnailandimage(ListView obj) {
             foreach (ListViewItem item in obj.SelectedItems)
             {
-                string pathfiletodelete = item.Tag.ToString();
+                string pathfiletodelete =  ((tagstrunct)item.Tag).path_image.ToString();
                 int idx = item.ImageIndex;
                 thumbnainlist.Images.RemoveAt(idx);
                 item.Remove();
@@ -931,6 +964,14 @@ namespace thumbnail.forms
             obj.Refresh();
         }
 
+        //estructura para la informacion en tag
+        public struct tagstrunct
+        {
+            public string path_image;
+            public string guid;
+        };
+        public tagstrunct tag; //variable global para los tag de los items
+        
         //metodo para generar thumbnail de imagen
         private void generatethumbnailimage(string file)
         {
@@ -938,7 +979,11 @@ namespace thumbnail.forms
             thumbnainlist.Images.Add(classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img));
 
             this.lstvwdocumentosescaneados.Items.Add("", (int)thumbnainlist.Images.Count - 1);
-            this.lstvwdocumentosescaneados.Items[lstvwdocumentosescaneados.Items.Count - 1].Tag = file.ToString();
+            
+            tag.path_image = file.ToString();
+            tag.guid =  Guid.NewGuid().ToString();
+
+            this.lstvwdocumentosescaneados.Items[lstvwdocumentosescaneados.Items.Count - 1].Tag = tag;
         }
 
         //evento de escaneo kdimage

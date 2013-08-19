@@ -103,9 +103,9 @@
             this.lblmascampotrazable.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lblmascampotrazable.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.lblmascampotrazable.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblmascampotrazable.Location = new System.Drawing.Point(433, 85);
+            this.lblmascampotrazable.Location = new System.Drawing.Point(73, 79);
             this.lblmascampotrazable.Name = "lblmascampotrazable";
-            this.lblmascampotrazable.Size = new System.Drawing.Size(154, 10);
+            this.lblmascampotrazable.Size = new System.Drawing.Size(514, 16);
             this.lblmascampotrazable.TabIndex = 4;
             // 
             // labelControl2
