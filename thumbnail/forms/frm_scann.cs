@@ -131,7 +131,8 @@ namespace thumbnail.forms
 
         //load de form
         private void scann_Load(object sender, EventArgs e)
-        {            
+        {
+            this.WindowState = FormWindowState.Normal;
             this.lookUpEdit_Tramites.Focus(); //establecer el foco al combo de tramites al iniciar el form
         }
 

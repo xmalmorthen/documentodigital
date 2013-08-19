@@ -50,10 +50,12 @@
             this.preferenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenarVentanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cascadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnustrip_menuprincipal.SuspendLayout();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -241,10 +243,20 @@
             // 
             // ventanasToolStripMenuItem
             // 
+            this.ventanasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ordenarVentanasToolStripMenuItem});
             this.ventanasToolStripMenuItem.Image = global::thumbnail.Icons16x16.app_window;
             this.ventanasToolStripMenuItem.Name = "ventanasToolStripMenuItem";
             this.ventanasToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
             this.ventanasToolStripMenuItem.Text = "Ventanas";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Image = global::thumbnail.Icons16x16.delete;
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // tlp_proc
             // 
@@ -288,13 +300,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Favor de esperar";
             // 
-            // salirToolStripMenuItem
+            // ordenarVentanasToolStripMenuItem
             // 
-            this.salirToolStripMenuItem.Image = global::thumbnail.Icons16x16.delete;
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.ordenarVentanasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cascadaToolStripMenuItem});
+            this.ordenarVentanasToolStripMenuItem.Name = "ordenarVentanasToolStripMenuItem";
+            this.ordenarVentanasToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.ordenarVentanasToolStripMenuItem.Text = "Ordenar ventanas";
+            // 
+            // cascadaToolStripMenuItem
+            // 
+            this.cascadaToolStripMenuItem.Name = "cascadaToolStripMenuItem";
+            this.cascadaToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.cascadaToolStripMenuItem.Text = "Cascada";
+            this.cascadaToolStripMenuItem.Click += new System.EventHandler(this.cascadaToolStripMenuItem_Click);
             // 
             // frm_main
             // 
@@ -347,5 +366,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenarVentanasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cascadaToolStripMenuItem;
     }
 }
