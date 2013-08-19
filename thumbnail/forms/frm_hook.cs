@@ -13,8 +13,6 @@ namespace thumbnail.forms
 {
     public partial class frm_hook : Form
     {
-        thumbnail.data_members.Bd_Exp_TransportesDataContext Bd_Exp_Transportes; //variable base de datos
-
         // propertys
         int Tramite { get; set; }
         int Origen { get; set; }
@@ -28,13 +26,11 @@ namespace thumbnail.forms
         public frm_hook()
         {
             InitializeComponent();
-            Bd_Exp_Transportes = new thumbnail.data_members.Bd_Exp_TransportesDataContext(); //instancia de base de datos
         }
         //sobrecarga de constructor
         public frm_hook(int tramite, int origen, List<thumbnail.models.digital> _sources)
         {
             InitializeComponent();
-            Bd_Exp_Transportes = new thumbnail.data_members.Bd_Exp_TransportesDataContext(); //instancia de base de datos
             this.inicializa(tramite, origen, _sources);
         }
 
@@ -76,7 +72,7 @@ namespace thumbnail.forms
         private void populate_lookUpEdit_ClasificacionDocumento()
         {
             this.BindingSource_ClasificacionDocumento = new BindingSource(); //instanciar
-            this.BindingSource_ClasificacionDocumento.DataSource = this.Bd_Exp_Transportes.pa_ObtenerDocumentosporTramiteyOrigen(Tramite,Origen).ToList(); //obtener la lista de documentos por tramite y origen
+            this.BindingSource_ClasificacionDocumento.DataSource = Program.Bd_Exp_Transportes.pa_ObtenerDocumentosporTramiteyOrigen(Tramite,Origen).ToList(); //obtener la lista de documentos por tramite y origen
             this.lookUpEdit_ClasificacionDocumento.Properties.DataSource = this.BindingSource_ClasificacionDocumento; //asignar datasourse al combo
             this.lookUpEdit_ClasificacionDocumento.Properties.DisplayMember = "Nombre"; //establecer el campo a mostrar en combo
             this.lookUpEdit_ClasificacionDocumento.Properties.ValueMember = "id_documento"; //establecer valor a manejar en combo

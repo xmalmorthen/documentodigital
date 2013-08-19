@@ -69,8 +69,6 @@ namespace thumbnail.forms
                                           }
                                     }
 
-        thumbnail.data_members.Bd_Exp_TransportesDataContext Bd_Exp_Transportes;
-
         private BindingSource BindingSource_ListaTramites;
         private BindingSource BindingSource_CamposTrazables;
 
@@ -90,8 +88,6 @@ namespace thumbnail.forms
         {
             Form_Mode = formmode.Add; //inicializar por default el formulario en modo add
 
-            Bd_Exp_Transportes = new thumbnail.data_members.Bd_Exp_TransportesDataContext(); //instanciar variable base de datos
-            
             populate_lookUpEdit_Tramites(); //popular combo de tramites
             selectdefaultitem_lookUpEdit_Tramites(); //seleccionar tramite por default
                         
@@ -241,7 +237,7 @@ namespace thumbnail.forms
         private void populate_lookUpEdit_Tramites()
         {
             this.BindingSource_ListaTramites = new BindingSource(); //instanciar
-            this.BindingSource_ListaTramites.DataSource = this.Bd_Exp_Transportes.vw_ListaTramitesActivos.ToList(); //obtener la lista de tramites y vincularla al bindingsource
+            this.BindingSource_ListaTramites.DataSource = Program.Bd_Exp_Transportes.vw_ListaTramitesActivos.ToList(); //obtener la lista de tramites y vincularla al bindingsource
             this.lookUpEdit_Tramites.Properties.DataSource = this.BindingSource_ListaTramites; //asignar datasourse al combo
             this.lookUpEdit_Tramites.Properties.DisplayMember = "Nombre_tramite"; //establecer el campo a mostrar en combo
             this.lookUpEdit_Tramites.Properties.ValueMember = "id_tramite"; //establecer valor a manejar en combo
@@ -255,7 +251,7 @@ namespace thumbnail.forms
              * el id correspondiente a la fila de la tabla de configuraciones se obtiene 
              * del valor Config_IdTramiteporDefault del archivo de configuraciones general del proyecto
              */
-            thumbnail.data_members.tbl_configuraciones Configs = Bd_Exp_Transportes.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault);
+            thumbnail.data_members.tbl_configuraciones Configs = Program.Bd_Exp_Transportes.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault);
             this.lookUpEdit_Tramites.EditValue = int.Parse(Configs.Valor); //establecer el tramite a seleccionar
         }
 
@@ -314,7 +310,7 @@ namespace thumbnail.forms
             /* obtener campos trazables ejecutando procedimiento almacenado mandando como parametro
              * el id de expediente obtenido de los datos de la seleccion del combo de tramites
              */
-            this.BindingSource_CamposTrazables.DataSource = this.Bd_Exp_Transportes.pa_CampostrazablesActivosporExpediente(lookUpEdit_Tramites_selected.id_expediente);
+            this.BindingSource_CamposTrazables.DataSource = Program.Bd_Exp_Transportes.pa_CampostrazablesActivosporExpediente(lookUpEdit_Tramites_selected.id_expediente);
             this.dataGridView_CamposTrazables.DataSource = this.BindingSource_CamposTrazables;
 
             this.formatear_celda_principal(); //dar formato a la fila del campo principal
