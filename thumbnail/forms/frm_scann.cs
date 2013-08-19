@@ -140,8 +140,9 @@ namespace thumbnail.forms
         //guardar tramite
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            this.colectar_campostrazables();
-            this.colectar_archivosdigital();
+            if (!this.colectar_campostrazables()) return;
+            if (!this.colectar_archivosdigital()) return;
+
             tramite.trazabilidad = sources_trazabilidad;
 
             /* if (expedientemode == __formmode.Add) crearexpediente();
@@ -149,11 +150,20 @@ namespace thumbnail.forms
         }
 
         List<trazabilidad_tramite> sources_trazabilidad = new List<trazabilidad_tramite>();
-        private void colectar_campostrazables()
+        private Boolean colectar_campostrazables()
         {
+            Boolean result = true;
             sources_trazabilidad.Clear();
             foreach (DataGridViewRow row in dataGridView_CamposTrazables.Rows)
             {
+                if (row.ErrorText.Length != 0)
+                {
+                    MessageBox.Show("Se encontraron errores en las máscaras de trazabilidad del expediente, imposible procesar, favor de revisar", "Error en valores trazables", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dataGridView_CamposTrazables.Focus();
+                    result = false;
+                    break;
+                }                
+
                 trazabilidad_tramite source_trazabilidad = new trazabilidad_tramite();
                 source_trazabilidad.id_re_expediente_campotrazable = int.Parse(row.Cells["id_re_expedientes_campostrazables"].Value.ToString());
                 try
@@ -162,6 +172,9 @@ namespace thumbnail.forms
                 }
                 catch (Exception)
                 {
+                    MessageBox.Show("Se encontraron campos trazables sin valor, imposible procesar, favor de revisar", "Error en valores trazables", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    result = false;
+                    break;
                     source_trazabilidad.valor_trazable = null;
                 }                
                 source_trazabilidad.fecha = obtener.fecha();
@@ -169,11 +182,17 @@ namespace thumbnail.forms
                 sources_trazabilidad.Add(source_trazabilidad);
                 source_trazabilidad = null;
             }
+            return result;
         }
 
-        private void colectar_archivosdigital() {
+        private Boolean colectar_archivosdigital() {
             tramite.imagenes_digital.Clear();
+            if (sources_digital.Count() == 0) {
+                MessageBox.Show("No se encontraron documentos enlazados, favor de revisar", "Documentos digitales", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             tramite.imagenes_digital = sources_digital;
+            return true;
         }
 
 
@@ -184,6 +203,17 @@ namespace thumbnail.forms
             {
                 limpia_controles_digitales();              
                 Inicializa();
+                limpia_contenido_grid_campostrazables();
+                lookUpEdit_Tramites.Focus();
+            }
+        }
+
+        private void limpia_contenido_grid_campostrazables()
+        {
+            foreach (DataGridViewRow row in dataGridView_CamposTrazables.Rows)
+            {
+                row.Cells["col_valor_trazable"].Value = "";
+                row.ErrorText = "";
             }
         }
 
@@ -1005,10 +1035,20 @@ namespace thumbnail.forms
         {
             if (e.ColumnIndex == 6) { //si la columna es igual a la de valor trazable
                 string mascara = dataGridView_CamposTrazables.Rows[e.RowIndex].Cells["mascaraDataGridViewTextBoxColumn"].Value.ToString();
+                int tamaniocaracteres = int.Parse(dataGridView_CamposTrazables.Rows[e.RowIndex].Cells["tamanioCaracteresDataGridViewTextBoxColumn"].Value.ToString()); 
 
                 if (!string.IsNullOrEmpty(mascara))
                 {
-                    TextEdit txt_validator = new TextEdit();
+                    int tamanioreal = e.FormattedValue.ToString().Length;
+
+                    dataGridView_CamposTrazables.Rows[e.RowIndex].ErrorText = "";
+
+                    if( (tamanioreal != 0) && (tamanioreal != tamaniocaracteres) )
+                    {
+                        dataGridView_CamposTrazables.Rows[e.RowIndex].ErrorText = "El valor trazable no cumple los criterios de longitud de la mascara, favor de revisar";                        
+                    }
+                    
+                    /*TextEdit txt_validator = new TextEdit();
                     txt_validator.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
                     txt_validator.Properties.Mask.EditMask = mascara;
                     txt_validator.Properties.ValidateOnEnterKey = true;
@@ -1023,19 +1063,14 @@ namespace thumbnail.forms
                     txt_validator.Properties.EndInit();
 
                     //txt_validator.Properties.va
+                    */
 
                     
 
                     //dataGridView_CamposTrazables.Rows[e.RowIndex].ErrorText = "El valor trazable no cumple los criterios de mascara, favor de revisar";
                     //e.Cancel = true;
-
                 }
             }
-
-
-            //dataGridView_CamposTrazables[e.ColumnIndex,e.RowIndex]
-
-            //e.FormattedValue
         }
 
         void txt_validator_Validating(object sender, CancelEventArgs e)

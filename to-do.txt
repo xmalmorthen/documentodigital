@@ -2,3 +2,6 @@ Validar campos trazables
 Guardar en base de datos
 Recuperar datos de base de datos
 Boton de bloquear
+control de errores, log envio de info de errores
+etiquetas en archivos de recursos
+cambiar las instancias a la variable base de datos
