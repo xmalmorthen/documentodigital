@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using thumbnail.classes;
 using System.Collections;
+using thumbnail.models;
 
 namespace thumbnail.forms
 {
@@ -27,18 +28,33 @@ namespace thumbnail.forms
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            thumbnail.data_members.Bd_Exp_TransportesDataContext db = new data_members.Bd_Exp_TransportesDataContext();
-
-            thumbnail.data_members.ca_usuarios usuario = db.ca_usuarios.SingleOrDefault(c => c.usuario == txt_usuario.Text);
+            thumbnail.data_members.ca_usuarios usuario = Program.Bd_Exp_Transportes.ca_usuarios.SingleOrDefault(c => c.usuario == txt_usuario.Text);
 
             if (!convert_md5.verifyMd5Hash(txt_contrasenia.Text, usuario.contrasenia))
             {
                 MessageBox.Show("Usuario y/o contraseña no válidos", "Error de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else {
-                valid = true;
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                if (Parse_data_user(usuario))
+                {
+                    valid = true;
+                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                }
             }
+        }
+
+        private bool Parse_data_user(thumbnail.data_members.ca_usuarios usuario)
+        {
+            try 
+	        {
+                Usuario.Logeado = usuario;
+	        }
+	        catch (Exception)
+	        {
+                return false;
+	        }
+            
+            return true;
         }
 
         private void frm_login_FormClosing(object sender, FormClosingEventArgs e)

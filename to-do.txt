@@ -1,0 +1,4 @@
+Validar campos trazables
+Guardar en base de datos
+Recuperar datos de base de datos
+Boton de bloquear

@@ -33,9 +33,9 @@ namespace thumbnail.data_members
     partial void Insertca_acciones(ca_acciones instance);
     partial void Updateca_acciones(ca_acciones instance);
     partial void Deleteca_acciones(ca_acciones instance);
-    partial void Insertre_usuarios_roles_permisos(re_usuarios_roles_permisos instance);
-    partial void Updatere_usuarios_roles_permisos(re_usuarios_roles_permisos instance);
-    partial void Deletere_usuarios_roles_permisos(re_usuarios_roles_permisos instance);
+    partial void Inserttbl_configuraciones(tbl_configuraciones instance);
+    partial void Updatetbl_configuraciones(tbl_configuraciones instance);
+    partial void Deletetbl_configuraciones(tbl_configuraciones instance);
     partial void Insertca_campostrazables(ca_campostrazables instance);
     partial void Updateca_campostrazables(ca_campostrazables instance);
     partial void Deleteca_campostrazables(ca_campostrazables instance);
@@ -72,12 +72,18 @@ namespace thumbnail.data_members
     partial void Insertca_tablas(ca_tablas instance);
     partial void Updateca_tablas(ca_tablas instance);
     partial void Deleteca_tablas(ca_tablas instance);
+    partial void Insertca_tiposbloqueos(ca_tiposbloqueos instance);
+    partial void Updateca_tiposbloqueos(ca_tiposbloqueos instance);
+    partial void Deleteca_tiposbloqueos(ca_tiposbloqueos instance);
     partial void Insertca_tramites(ca_tramites instance);
     partial void Updateca_tramites(ca_tramites instance);
     partial void Deleteca_tramites(ca_tramites instance);
     partial void Insertca_usuarios(ca_usuarios instance);
     partial void Updateca_usuarios(ca_usuarios instance);
     partial void Deleteca_usuarios(ca_usuarios instance);
+    partial void Insertde_acciones_modulo(de_acciones_modulo instance);
+    partial void Updatede_acciones_modulo(de_acciones_modulo instance);
+    partial void Deletede_acciones_modulo(de_acciones_modulo instance);
     partial void Insertde_digital_campostrazables(de_digital_campostrazables instance);
     partial void Updatede_digital_campostrazables(de_digital_campostrazables instance);
     partial void Deletede_digital_campostrazables(de_digital_campostrazables instance);
@@ -96,15 +102,18 @@ namespace thumbnail.data_members
     partial void Insertre_expedientes_tramites(re_expedientes_tramites instance);
     partial void Updatere_expedientes_tramites(re_expedientes_tramites instance);
     partial void Deletere_expedientes_tramites(re_expedientes_tramites instance);
+    partial void Insertre_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos instance);
+    partial void Updatere_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos instance);
+    partial void Deletere_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos instance);
     partial void Insertre_roles_modulos(re_roles_modulos instance);
     partial void Updatere_roles_modulos(re_roles_modulos instance);
     partial void Deletere_roles_modulos(re_roles_modulos instance);
     partial void Insertre_tramites_re_clasificaciondocumentos_documentos(re_tramites_re_clasificaciondocumentos_documentos instance);
     partial void Updatere_tramites_re_clasificaciondocumentos_documentos(re_tramites_re_clasificaciondocumentos_documentos instance);
     partial void Deletere_tramites_re_clasificaciondocumentos_documentos(re_tramites_re_clasificaciondocumentos_documentos instance);
-    partial void Inserttbl_configuraciones(tbl_configuraciones instance);
-    partial void Updatetbl_configuraciones(tbl_configuraciones instance);
-    partial void Deletetbl_configuraciones(tbl_configuraciones instance);
+    partial void Insertre_usuarios_roles_permisos(re_usuarios_roles_permisos instance);
+    partial void Updatere_usuarios_roles_permisos(re_usuarios_roles_permisos instance);
+    partial void Deletere_usuarios_roles_permisos(re_usuarios_roles_permisos instance);
     #endregion
 		
 		public Bd_Exp_TransportesDataContext() : 
@@ -145,11 +154,11 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		public System.Data.Linq.Table<re_usuarios_roles_permisos> re_usuarios_roles_permisos
+		public System.Data.Linq.Table<tbl_configuraciones> tbl_configuraciones
 		{
 			get
 			{
-				return this.GetTable<re_usuarios_roles_permisos>();
+				return this.GetTable<tbl_configuraciones>();
 			}
 		}
 		
@@ -249,6 +258,14 @@ namespace thumbnail.data_members
 			}
 		}
 		
+		public System.Data.Linq.Table<ca_tiposbloqueos> ca_tiposbloqueos
+		{
+			get
+			{
+				return this.GetTable<ca_tiposbloqueos>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ca_tramites> ca_tramites
 		{
 			get
@@ -262,6 +279,14 @@ namespace thumbnail.data_members
 			get
 			{
 				return this.GetTable<ca_usuarios>();
+			}
+		}
+		
+		public System.Data.Linq.Table<de_acciones_modulo> de_acciones_modulo
+		{
+			get
+			{
+				return this.GetTable<de_acciones_modulo>();
 			}
 		}
 		
@@ -313,6 +338,14 @@ namespace thumbnail.data_members
 			}
 		}
 		
+		public System.Data.Linq.Table<re_expedientestramites_tiposbloqueos> re_expedientestramites_tiposbloqueos
+		{
+			get
+			{
+				return this.GetTable<re_expedientestramites_tiposbloqueos>();
+			}
+		}
+		
 		public System.Data.Linq.Table<re_roles_modulos> re_roles_modulos
 		{
 			get
@@ -329,6 +362,14 @@ namespace thumbnail.data_members
 			}
 		}
 		
+		public System.Data.Linq.Table<re_usuarios_roles_permisos> re_usuarios_roles_permisos
+		{
+			get
+			{
+				return this.GetTable<re_usuarios_roles_permisos>();
+			}
+		}
+		
 		public System.Data.Linq.Table<vw_ListaTramitesActivos> vw_ListaTramitesActivos
 		{
 			get
@@ -337,19 +378,11 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		public System.Data.Linq.Table<tbl_configuraciones> tbl_configuraciones
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_CampostrazablesActivosporExpediente")]
+		public ISingleResult<pa_CampostrazablesActivosporExpedienteResult> pa_CampostrazablesActivosporExpediente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_expediente)
 		{
-			get
-			{
-				return this.GetTable<tbl_configuraciones>();
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen")]
-		public ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult> pa_ObtenerDocumentosporTramiteyOrigen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tramite, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_origen)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_tramite, id_origen);
-			return ((ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_expediente);
+			return ((ISingleResult<pa_CampostrazablesActivosporExpedienteResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_obtener_fecha")]
@@ -366,11 +399,18 @@ namespace thumbnail.data_members
 			return ((ISingleResult<pa_obtener_horaResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_CampostrazablesActivosporExpediente")]
-		public ISingleResult<pa_CampostrazablesActivosporExpedienteResult> pa_CampostrazablesActivosporExpediente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_expediente)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen")]
+		public ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult> pa_ObtenerDocumentosporTramiteyOrigen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tramite, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_origen)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_expediente);
-			return ((ISingleResult<pa_CampostrazablesActivosporExpedienteResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_tramite, id_origen);
+			return ((ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_Permsos_Modulos")]
+		public ISingleResult<pa_Permsos_ModulosResult> pa_Permsos_Modulos([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_usuario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_usuario);
+			return ((ISingleResult<pa_Permsos_ModulosResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -383,6 +423,8 @@ namespace thumbnail.data_members
 		private int _id;
 		
 		private string _Descripcion;
+		
+		private EntitySet<de_acciones_modulo> _de_acciones_modulo;
 		
 		private EntitySet<hco_cambios> _hco_cambios;
 		
@@ -398,6 +440,7 @@ namespace thumbnail.data_members
 		
 		public ca_acciones()
 		{
+			this._de_acciones_modulo = new EntitySet<de_acciones_modulo>(new Action<de_acciones_modulo>(this.attach_de_acciones_modulo), new Action<de_acciones_modulo>(this.detach_de_acciones_modulo));
 			this._hco_cambios = new EntitySet<hco_cambios>(new Action<hco_cambios>(this.attach_hco_cambios), new Action<hco_cambios>(this.detach_hco_cambios));
 			OnCreated();
 		}
@@ -442,6 +485,19 @@ namespace thumbnail.data_members
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_acciones_de_acciones_modulo", Storage="_de_acciones_modulo", ThisKey="id", OtherKey="id_acccion")]
+		public EntitySet<de_acciones_modulo> de_acciones_modulo
+		{
+			get
+			{
+				return this._de_acciones_modulo;
+			}
+			set
+			{
+				this._de_acciones_modulo.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_acciones_hco_cambios", Storage="_hco_cambios", ThisKey="id", OtherKey="id_accion")]
 		public EntitySet<hco_cambios> hco_cambios
 		{
@@ -475,6 +531,18 @@ namespace thumbnail.data_members
 			}
 		}
 		
+		private void attach_de_acciones_modulo(de_acciones_modulo entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_acciones = this;
+		}
+		
+		private void detach_de_acciones_modulo(de_acciones_modulo entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_acciones = null;
+		}
+		
 		private void attach_hco_cambios(hco_cambios entity)
 		{
 			this.SendPropertyChanging();
@@ -488,21 +556,17 @@ namespace thumbnail.data_members
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.re_usuarios_roles_permisos")]
-	public partial class re_usuarios_roles_permisos : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_configuraciones")]
+	public partial class tbl_configuraciones : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _id;
 		
-		private int _id_usuario;
+		private string _Descripcion;
 		
-		private int _id_re_roles_modulos;
-		
-		private EntityRef<ca_usuarios> _ca_usuarios;
-		
-		private EntityRef<re_roles_modulos> _re_roles_modulos;
+		private string _Valor;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -510,16 +574,14 @@ namespace thumbnail.data_members
     partial void OnCreated();
     partial void OnidChanging(int value);
     partial void OnidChanged();
-    partial void Onid_usuarioChanging(int value);
-    partial void Onid_usuarioChanged();
-    partial void Onid_re_roles_modulosChanging(int value);
-    partial void Onid_re_roles_modulosChanged();
+    partial void OnDescripcionChanging(string value);
+    partial void OnDescripcionChanged();
+    partial void OnValorChanging(string value);
+    partial void OnValorChanged();
     #endregion
 		
-		public re_usuarios_roles_permisos()
+		public tbl_configuraciones()
 		{
-			this._ca_usuarios = default(EntityRef<ca_usuarios>);
-			this._re_roles_modulos = default(EntityRef<re_roles_modulos>);
 			OnCreated();
 		}
 		
@@ -543,118 +605,42 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_usuario", DbType="Int NOT NULL")]
-		public int id_usuario
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Descripcion
 		{
 			get
 			{
-				return this._id_usuario;
+				return this._Descripcion;
 			}
 			set
 			{
-				if ((this._id_usuario != value))
+				if ((this._Descripcion != value))
 				{
-					if (this._ca_usuarios.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_usuarioChanging(value);
+					this.OnDescripcionChanging(value);
 					this.SendPropertyChanging();
-					this._id_usuario = value;
-					this.SendPropertyChanged("id_usuario");
-					this.Onid_usuarioChanged();
+					this._Descripcion = value;
+					this.SendPropertyChanged("Descripcion");
+					this.OnDescripcionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_roles_modulos", DbType="Int NOT NULL")]
-		public int id_re_roles_modulos
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Valor", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Valor
 		{
 			get
 			{
-				return this._id_re_roles_modulos;
+				return this._Valor;
 			}
 			set
 			{
-				if ((this._id_re_roles_modulos != value))
+				if ((this._Valor != value))
 				{
-					if (this._re_roles_modulos.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_re_roles_modulosChanging(value);
+					this.OnValorChanging(value);
 					this.SendPropertyChanging();
-					this._id_re_roles_modulos = value;
-					this.SendPropertyChanged("id_re_roles_modulos");
-					this.Onid_re_roles_modulosChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_usuarios_re_usuarios_roles_permisos", Storage="_ca_usuarios", ThisKey="id_usuario", OtherKey="id", IsForeignKey=true)]
-		public ca_usuarios ca_usuarios
-		{
-			get
-			{
-				return this._ca_usuarios.Entity;
-			}
-			set
-			{
-				ca_usuarios previousValue = this._ca_usuarios.Entity;
-				if (((previousValue != value) 
-							|| (this._ca_usuarios.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ca_usuarios.Entity = null;
-						previousValue.re_usuarios_roles_permisos.Remove(this);
-					}
-					this._ca_usuarios.Entity = value;
-					if ((value != null))
-					{
-						value.re_usuarios_roles_permisos.Add(this);
-						this._id_usuario = value.id;
-					}
-					else
-					{
-						this._id_usuario = default(int);
-					}
-					this.SendPropertyChanged("ca_usuarios");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="re_roles_modulos_re_usuarios_roles_permisos", Storage="_re_roles_modulos", ThisKey="id_re_roles_modulos", OtherKey="id", IsForeignKey=true)]
-		public re_roles_modulos re_roles_modulos
-		{
-			get
-			{
-				return this._re_roles_modulos.Entity;
-			}
-			set
-			{
-				re_roles_modulos previousValue = this._re_roles_modulos.Entity;
-				if (((previousValue != value) 
-							|| (this._re_roles_modulos.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._re_roles_modulos.Entity = null;
-						previousValue.re_usuarios_roles_permisos.Remove(this);
-					}
-					this._re_roles_modulos.Entity = value;
-					if ((value != null))
-					{
-						value.re_usuarios_roles_permisos.Add(this);
-						this._id_re_roles_modulos = value.id;
-					}
-					else
-					{
-						this._id_re_roles_modulos = default(int);
-					}
-					this.SendPropertyChanged("re_roles_modulos");
+					this._Valor = value;
+					this.SendPropertyChanged("Valor");
+					this.OnValorChanged();
 				}
 			}
 		}
@@ -2753,6 +2739,8 @@ namespace thumbnail.data_members
 		
 		private EntitySet<re_roles_modulos> _re_roles_modulos;
 		
+		private EntitySet<re_usuarios_roles_permisos> _re_usuarios_roles_permisos;
+		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2766,6 +2754,7 @@ namespace thumbnail.data_members
 		public ca_roles()
 		{
 			this._re_roles_modulos = new EntitySet<re_roles_modulos>(new Action<re_roles_modulos>(this.attach_re_roles_modulos), new Action<re_roles_modulos>(this.detach_re_roles_modulos));
+			this._re_usuarios_roles_permisos = new EntitySet<re_usuarios_roles_permisos>(new Action<re_usuarios_roles_permisos>(this.attach_re_usuarios_roles_permisos), new Action<re_usuarios_roles_permisos>(this.detach_re_usuarios_roles_permisos));
 			OnCreated();
 		}
 		
@@ -2822,6 +2811,19 @@ namespace thumbnail.data_members
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_roles_re_usuarios_roles_permisos", Storage="_re_usuarios_roles_permisos", ThisKey="id", OtherKey="id_rol")]
+		public EntitySet<re_usuarios_roles_permisos> re_usuarios_roles_permisos
+		{
+			get
+			{
+				return this._re_usuarios_roles_permisos;
+			}
+			set
+			{
+				this._re_usuarios_roles_permisos.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2849,6 +2851,18 @@ namespace thumbnail.data_members
 		}
 		
 		private void detach_re_roles_modulos(re_roles_modulos entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_roles = null;
+		}
+		
+		private void attach_re_usuarios_roles_permisos(re_usuarios_roles_permisos entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_roles = this;
+		}
+		
+		private void detach_re_usuarios_roles_permisos(re_usuarios_roles_permisos entity)
 		{
 			this.SendPropertyChanging();
 			entity.ca_roles = null;
@@ -2990,6 +3004,120 @@ namespace thumbnail.data_members
 		{
 			this.SendPropertyChanging();
 			entity.ca_tablas = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ca_tiposbloqueos")]
+	public partial class ca_tiposbloqueos : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _Descripcion;
+		
+		private EntitySet<re_expedientestramites_tiposbloqueos> _re_expedientestramites_tiposbloqueos;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnDescripcionChanging(string value);
+    partial void OnDescripcionChanged();
+    #endregion
+		
+		public ca_tiposbloqueos()
+		{
+			this._re_expedientestramites_tiposbloqueos = new EntitySet<re_expedientestramites_tiposbloqueos>(new Action<re_expedientestramites_tiposbloqueos>(this.attach_re_expedientestramites_tiposbloqueos), new Action<re_expedientestramites_tiposbloqueos>(this.detach_re_expedientestramites_tiposbloqueos));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this.OnDescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._Descripcion = value;
+					this.SendPropertyChanged("Descripcion");
+					this.OnDescripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tiposbloqueos_re_expedientestramites_tiposbloqueos", Storage="_re_expedientestramites_tiposbloqueos", ThisKey="id", OtherKey="id_tipobloqueo")]
+		public EntitySet<re_expedientestramites_tiposbloqueos> re_expedientestramites_tiposbloqueos
+		{
+			get
+			{
+				return this._re_expedientestramites_tiposbloqueos;
+			}
+			set
+			{
+				this._re_expedientestramites_tiposbloqueos.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_re_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_tiposbloqueos = this;
+		}
+		
+		private void detach_re_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_tiposbloqueos = null;
 		}
 	}
 	
@@ -3451,9 +3579,9 @@ namespace thumbnail.data_members
 		
 		private int _id_persona;
 		
-		private EntitySet<re_usuarios_roles_permisos> _re_usuarios_roles_permisos;
-		
 		private EntitySet<hco_cambios> _hco_cambios;
+		
+		private EntitySet<re_usuarios_roles_permisos> _re_usuarios_roles_permisos;
 		
 		private EntityRef<ca_personas> _ca_personas;
 		
@@ -3473,8 +3601,8 @@ namespace thumbnail.data_members
 		
 		public ca_usuarios()
 		{
-			this._re_usuarios_roles_permisos = new EntitySet<re_usuarios_roles_permisos>(new Action<re_usuarios_roles_permisos>(this.attach_re_usuarios_roles_permisos), new Action<re_usuarios_roles_permisos>(this.detach_re_usuarios_roles_permisos));
 			this._hco_cambios = new EntitySet<hco_cambios>(new Action<hco_cambios>(this.attach_hco_cambios), new Action<hco_cambios>(this.detach_hco_cambios));
+			this._re_usuarios_roles_permisos = new EntitySet<re_usuarios_roles_permisos>(new Action<re_usuarios_roles_permisos>(this.attach_re_usuarios_roles_permisos), new Action<re_usuarios_roles_permisos>(this.detach_re_usuarios_roles_permisos));
 			this._ca_personas = default(EntityRef<ca_personas>);
 			OnCreated();
 		}
@@ -3563,19 +3691,6 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_usuarios_re_usuarios_roles_permisos", Storage="_re_usuarios_roles_permisos", ThisKey="id", OtherKey="id_usuario")]
-		public EntitySet<re_usuarios_roles_permisos> re_usuarios_roles_permisos
-		{
-			get
-			{
-				return this._re_usuarios_roles_permisos;
-			}
-			set
-			{
-				this._re_usuarios_roles_permisos.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_usuarios_hco_cambios", Storage="_hco_cambios", ThisKey="id", OtherKey="id_usuario")]
 		public EntitySet<hco_cambios> hco_cambios
 		{
@@ -3586,6 +3701,19 @@ namespace thumbnail.data_members
 			set
 			{
 				this._hco_cambios.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_usuarios_re_usuarios_roles_permisos", Storage="_re_usuarios_roles_permisos", ThisKey="id", OtherKey="id_usuario")]
+		public EntitySet<re_usuarios_roles_permisos> re_usuarios_roles_permisos
+		{
+			get
+			{
+				return this._re_usuarios_roles_permisos;
+			}
+			set
+			{
+				this._re_usuarios_roles_permisos.Assign(value);
 			}
 		}
 		
@@ -3643,6 +3771,18 @@ namespace thumbnail.data_members
 			}
 		}
 		
+		private void attach_hco_cambios(hco_cambios entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_usuarios = this;
+		}
+		
+		private void detach_hco_cambios(hco_cambios entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_usuarios = null;
+		}
+		
 		private void attach_re_usuarios_roles_permisos(re_usuarios_roles_permisos entity)
 		{
 			this.SendPropertyChanging();
@@ -3654,17 +3794,156 @@ namespace thumbnail.data_members
 			this.SendPropertyChanging();
 			entity.ca_usuarios = null;
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.de_acciones_modulo")]
+	public partial class de_acciones_modulo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		private void attach_hco_cambios(hco_cambios entity)
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _id_re_roles_modulos;
+		
+		private int _id_acccion;
+		
+		private EntityRef<ca_acciones> _ca_acciones;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onid_re_roles_modulosChanging(int value);
+    partial void Onid_re_roles_modulosChanged();
+    partial void Onid_acccionChanging(int value);
+    partial void Onid_acccionChanged();
+    #endregion
+		
+		public de_acciones_modulo()
 		{
-			this.SendPropertyChanging();
-			entity.ca_usuarios = this;
+			this._ca_acciones = default(EntityRef<ca_acciones>);
+			OnCreated();
 		}
 		
-		private void detach_hco_cambios(hco_cambios entity)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
 		{
-			this.SendPropertyChanging();
-			entity.ca_usuarios = null;
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_roles_modulos", DbType="Int NOT NULL")]
+		public int id_re_roles_modulos
+		{
+			get
+			{
+				return this._id_re_roles_modulos;
+			}
+			set
+			{
+				if ((this._id_re_roles_modulos != value))
+				{
+					this.Onid_re_roles_modulosChanging(value);
+					this.SendPropertyChanging();
+					this._id_re_roles_modulos = value;
+					this.SendPropertyChanged("id_re_roles_modulos");
+					this.Onid_re_roles_modulosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_acccion", DbType="Int NOT NULL")]
+		public int id_acccion
+		{
+			get
+			{
+				return this._id_acccion;
+			}
+			set
+			{
+				if ((this._id_acccion != value))
+				{
+					if (this._ca_acciones.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_acccionChanging(value);
+					this.SendPropertyChanging();
+					this._id_acccion = value;
+					this.SendPropertyChanged("id_acccion");
+					this.Onid_acccionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_acciones_de_acciones_modulo", Storage="_ca_acciones", ThisKey="id_acccion", OtherKey="id", IsForeignKey=true)]
+		public ca_acciones ca_acciones
+		{
+			get
+			{
+				return this._ca_acciones.Entity;
+			}
+			set
+			{
+				ca_acciones previousValue = this._ca_acciones.Entity;
+				if (((previousValue != value) 
+							|| (this._ca_acciones.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ca_acciones.Entity = null;
+						previousValue.de_acciones_modulo.Remove(this);
+					}
+					this._ca_acciones.Entity = value;
+					if ((value != null))
+					{
+						value.de_acciones_modulo.Add(this);
+						this._id_acccion = value.id;
+					}
+					else
+					{
+						this._id_acccion = default(int);
+					}
+					this.SendPropertyChanged("ca_acciones");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -5356,6 +5635,8 @@ namespace thumbnail.data_members
 		
 		private int _u_act;
 		
+		private EntitySet<re_expedientestramites_tiposbloqueos> _re_expedientestramites_tiposbloqueos;
+		
 		private EntityRef<ca_expedientes> _ca_expedientes;
 		
 		private EntityRef<ca_tramites> _ca_tramites;
@@ -5378,6 +5659,7 @@ namespace thumbnail.data_members
 		
 		public re_expedientes_tramites()
 		{
+			this._re_expedientestramites_tiposbloqueos = new EntitySet<re_expedientestramites_tiposbloqueos>(new Action<re_expedientestramites_tiposbloqueos>(this.attach_re_expedientestramites_tiposbloqueos), new Action<re_expedientestramites_tiposbloqueos>(this.detach_re_expedientestramites_tiposbloqueos));
 			this._ca_expedientes = default(EntityRef<ca_expedientes>);
 			this._ca_tramites = default(EntityRef<ca_tramites>);
 			OnCreated();
@@ -5491,6 +5773,19 @@ namespace thumbnail.data_members
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="re_expedientes_tramites_re_expedientestramites_tiposbloqueos", Storage="_re_expedientestramites_tiposbloqueos", ThisKey="id", OtherKey="id_re_expediente_tramite")]
+		public EntitySet<re_expedientestramites_tiposbloqueos> re_expedientestramites_tiposbloqueos
+		{
+			get
+			{
+				return this._re_expedientestramites_tiposbloqueos;
+			}
+			set
+			{
+				this._re_expedientestramites_tiposbloqueos.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_expedientes_re_expedientes_tramites", Storage="_ca_expedientes", ThisKey="id_expediente", OtherKey="id", IsForeignKey=true)]
 		public ca_expedientes ca_expedientes
 		{
@@ -5578,6 +5873,258 @@ namespace thumbnail.data_members
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_re_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos entity)
+		{
+			this.SendPropertyChanging();
+			entity.re_expedientes_tramites = this;
+		}
+		
+		private void detach_re_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos entity)
+		{
+			this.SendPropertyChanging();
+			entity.re_expedientes_tramites = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.re_expedientestramites_tiposbloqueos")]
+	public partial class re_expedientestramites_tiposbloqueos : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _id_re_expediente_tramite;
+		
+		private int _id_tipobloqueo;
+		
+		private System.Nullable<short> _no_horas;
+		
+		private System.Nullable<short> _no_dias;
+		
+		private EntityRef<ca_tiposbloqueos> _ca_tiposbloqueos;
+		
+		private EntityRef<re_expedientes_tramites> _re_expedientes_tramites;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onid_re_expediente_tramiteChanging(int value);
+    partial void Onid_re_expediente_tramiteChanged();
+    partial void Onid_tipobloqueoChanging(int value);
+    partial void Onid_tipobloqueoChanged();
+    partial void Onno_horasChanging(System.Nullable<short> value);
+    partial void Onno_horasChanged();
+    partial void Onno_diasChanging(System.Nullable<short> value);
+    partial void Onno_diasChanged();
+    #endregion
+		
+		public re_expedientestramites_tiposbloqueos()
+		{
+			this._ca_tiposbloqueos = default(EntityRef<ca_tiposbloqueos>);
+			this._re_expedientes_tramites = default(EntityRef<re_expedientes_tramites>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_expediente_tramite", DbType="Int NOT NULL")]
+		public int id_re_expediente_tramite
+		{
+			get
+			{
+				return this._id_re_expediente_tramite;
+			}
+			set
+			{
+				if ((this._id_re_expediente_tramite != value))
+				{
+					if (this._re_expedientes_tramites.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_re_expediente_tramiteChanging(value);
+					this.SendPropertyChanging();
+					this._id_re_expediente_tramite = value;
+					this.SendPropertyChanged("id_re_expediente_tramite");
+					this.Onid_re_expediente_tramiteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tipobloqueo", DbType="Int NOT NULL")]
+		public int id_tipobloqueo
+		{
+			get
+			{
+				return this._id_tipobloqueo;
+			}
+			set
+			{
+				if ((this._id_tipobloqueo != value))
+				{
+					if (this._ca_tiposbloqueos.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_tipobloqueoChanging(value);
+					this.SendPropertyChanging();
+					this._id_tipobloqueo = value;
+					this.SendPropertyChanged("id_tipobloqueo");
+					this.Onid_tipobloqueoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_no_horas", DbType="SmallInt")]
+		public System.Nullable<short> no_horas
+		{
+			get
+			{
+				return this._no_horas;
+			}
+			set
+			{
+				if ((this._no_horas != value))
+				{
+					this.Onno_horasChanging(value);
+					this.SendPropertyChanging();
+					this._no_horas = value;
+					this.SendPropertyChanged("no_horas");
+					this.Onno_horasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_no_dias", DbType="SmallInt")]
+		public System.Nullable<short> no_dias
+		{
+			get
+			{
+				return this._no_dias;
+			}
+			set
+			{
+				if ((this._no_dias != value))
+				{
+					this.Onno_diasChanging(value);
+					this.SendPropertyChanging();
+					this._no_dias = value;
+					this.SendPropertyChanged("no_dias");
+					this.Onno_diasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tiposbloqueos_re_expedientestramites_tiposbloqueos", Storage="_ca_tiposbloqueos", ThisKey="id_tipobloqueo", OtherKey="id", IsForeignKey=true)]
+		public ca_tiposbloqueos ca_tiposbloqueos
+		{
+			get
+			{
+				return this._ca_tiposbloqueos.Entity;
+			}
+			set
+			{
+				ca_tiposbloqueos previousValue = this._ca_tiposbloqueos.Entity;
+				if (((previousValue != value) 
+							|| (this._ca_tiposbloqueos.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ca_tiposbloqueos.Entity = null;
+						previousValue.re_expedientestramites_tiposbloqueos.Remove(this);
+					}
+					this._ca_tiposbloqueos.Entity = value;
+					if ((value != null))
+					{
+						value.re_expedientestramites_tiposbloqueos.Add(this);
+						this._id_tipobloqueo = value.id;
+					}
+					else
+					{
+						this._id_tipobloqueo = default(int);
+					}
+					this.SendPropertyChanged("ca_tiposbloqueos");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="re_expedientes_tramites_re_expedientestramites_tiposbloqueos", Storage="_re_expedientes_tramites", ThisKey="id_re_expediente_tramite", OtherKey="id", IsForeignKey=true)]
+		public re_expedientes_tramites re_expedientes_tramites
+		{
+			get
+			{
+				return this._re_expedientes_tramites.Entity;
+			}
+			set
+			{
+				re_expedientes_tramites previousValue = this._re_expedientes_tramites.Entity;
+				if (((previousValue != value) 
+							|| (this._re_expedientes_tramites.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._re_expedientes_tramites.Entity = null;
+						previousValue.re_expedientestramites_tiposbloqueos.Remove(this);
+					}
+					this._re_expedientes_tramites.Entity = value;
+					if ((value != null))
+					{
+						value.re_expedientestramites_tiposbloqueos.Add(this);
+						this._id_re_expediente_tramite = value.id;
+					}
+					else
+					{
+						this._id_re_expediente_tramite = default(int);
+					}
+					this.SendPropertyChanged("re_expedientes_tramites");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.re_roles_modulos")]
@@ -5591,8 +6138,6 @@ namespace thumbnail.data_members
 		private int _id_rol;
 		
 		private int _id_modulo;
-		
-		private EntitySet<re_usuarios_roles_permisos> _re_usuarios_roles_permisos;
 		
 		private EntityRef<ca_modulos> _ca_modulos;
 		
@@ -5612,7 +6157,6 @@ namespace thumbnail.data_members
 		
 		public re_roles_modulos()
 		{
-			this._re_usuarios_roles_permisos = new EntitySet<re_usuarios_roles_permisos>(new Action<re_usuarios_roles_permisos>(this.attach_re_usuarios_roles_permisos), new Action<re_usuarios_roles_permisos>(this.detach_re_usuarios_roles_permisos));
 			this._ca_modulos = default(EntityRef<ca_modulos>);
 			this._ca_roles = default(EntityRef<ca_roles>);
 			OnCreated();
@@ -5683,19 +6227,6 @@ namespace thumbnail.data_members
 					this.SendPropertyChanged("id_modulo");
 					this.Onid_moduloChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="re_roles_modulos_re_usuarios_roles_permisos", Storage="_re_usuarios_roles_permisos", ThisKey="id", OtherKey="id_re_roles_modulos")]
-		public EntitySet<re_usuarios_roles_permisos> re_usuarios_roles_permisos
-		{
-			get
-			{
-				return this._re_usuarios_roles_permisos;
-			}
-			set
-			{
-				this._re_usuarios_roles_permisos.Assign(value);
 			}
 		}
 		
@@ -5785,18 +6316,6 @@ namespace thumbnail.data_members
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_re_usuarios_roles_permisos(re_usuarios_roles_permisos entity)
-		{
-			this.SendPropertyChanging();
-			entity.re_roles_modulos = this;
-		}
-		
-		private void detach_re_usuarios_roles_permisos(re_usuarios_roles_permisos entity)
-		{
-			this.SendPropertyChanging();
-			entity.re_roles_modulos = null;
 		}
 	}
 	
@@ -6154,6 +6673,198 @@ namespace thumbnail.data_members
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.re_usuarios_roles_permisos")]
+	public partial class re_usuarios_roles_permisos : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _id_usuario;
+		
+		private int _id_rol;
+		
+		private EntityRef<ca_roles> _ca_roles;
+		
+		private EntityRef<ca_usuarios> _ca_usuarios;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onid_usuarioChanging(int value);
+    partial void Onid_usuarioChanged();
+    partial void Onid_rolChanging(int value);
+    partial void Onid_rolChanged();
+    #endregion
+		
+		public re_usuarios_roles_permisos()
+		{
+			this._ca_roles = default(EntityRef<ca_roles>);
+			this._ca_usuarios = default(EntityRef<ca_usuarios>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_usuario", DbType="Int NOT NULL")]
+		public int id_usuario
+		{
+			get
+			{
+				return this._id_usuario;
+			}
+			set
+			{
+				if ((this._id_usuario != value))
+				{
+					if (this._ca_usuarios.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_usuarioChanging(value);
+					this.SendPropertyChanging();
+					this._id_usuario = value;
+					this.SendPropertyChanged("id_usuario");
+					this.Onid_usuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_rol", DbType="Int NOT NULL")]
+		public int id_rol
+		{
+			get
+			{
+				return this._id_rol;
+			}
+			set
+			{
+				if ((this._id_rol != value))
+				{
+					if (this._ca_roles.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_rolChanging(value);
+					this.SendPropertyChanging();
+					this._id_rol = value;
+					this.SendPropertyChanged("id_rol");
+					this.Onid_rolChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_roles_re_usuarios_roles_permisos", Storage="_ca_roles", ThisKey="id_rol", OtherKey="id", IsForeignKey=true)]
+		public ca_roles ca_roles
+		{
+			get
+			{
+				return this._ca_roles.Entity;
+			}
+			set
+			{
+				ca_roles previousValue = this._ca_roles.Entity;
+				if (((previousValue != value) 
+							|| (this._ca_roles.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ca_roles.Entity = null;
+						previousValue.re_usuarios_roles_permisos.Remove(this);
+					}
+					this._ca_roles.Entity = value;
+					if ((value != null))
+					{
+						value.re_usuarios_roles_permisos.Add(this);
+						this._id_rol = value.id;
+					}
+					else
+					{
+						this._id_rol = default(int);
+					}
+					this.SendPropertyChanged("ca_roles");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_usuarios_re_usuarios_roles_permisos", Storage="_ca_usuarios", ThisKey="id_usuario", OtherKey="id", IsForeignKey=true)]
+		public ca_usuarios ca_usuarios
+		{
+			get
+			{
+				return this._ca_usuarios.Entity;
+			}
+			set
+			{
+				ca_usuarios previousValue = this._ca_usuarios.Entity;
+				if (((previousValue != value) 
+							|| (this._ca_usuarios.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ca_usuarios.Entity = null;
+						previousValue.re_usuarios_roles_permisos.Remove(this);
+					}
+					this._ca_usuarios.Entity = value;
+					if ((value != null))
+					{
+						value.re_usuarios_roles_permisos.Add(this);
+						this._id_usuario = value.id;
+					}
+					else
+					{
+						this._id_usuario = default(int);
+					}
+					this.SendPropertyChanged("ca_usuarios");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_ListaTramitesActivos")]
 	public partial class vw_ListaTramitesActivos
 	{
@@ -6379,112 +7090,188 @@ namespace thumbnail.data_members
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_configuraciones")]
-	public partial class tbl_configuraciones : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class pa_CampostrazablesActivosporExpedienteResult
 	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		private int _id_re_expedientes_campostrazables;
 		
-		private int _id;
+		private int _id_campotrazable;
 		
-		private string _Descripcion;
+		private string _Nombre;
 		
-		private string _Valor;
+		private int _Tamanio_Caracteres;
 		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnDescripcionChanging(string value);
-    partial void OnDescripcionChanged();
-    partial void OnValorChanging(string value);
-    partial void OnValorChanged();
-    #endregion
+		private int _id_estatus;
 		
-		public tbl_configuraciones()
+		private string _Mascara;
+		
+		private bool _es_principal;
+		
+		public pa_CampostrazablesActivosporExpedienteResult()
 		{
-			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_expedientes_campostrazables", DbType="Int NOT NULL")]
+		public int id_re_expedientes_campostrazables
 		{
 			get
 			{
-				return this._id;
+				return this._id_re_expedientes_campostrazables;
 			}
 			set
 			{
-				if ((this._id != value))
+				if ((this._id_re_expedientes_campostrazables != value))
 				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
+					this._id_re_expedientes_campostrazables = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Descripcion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_campotrazable", DbType="Int NOT NULL")]
+		public int id_campotrazable
 		{
 			get
 			{
-				return this._Descripcion;
+				return this._id_campotrazable;
 			}
 			set
 			{
-				if ((this._Descripcion != value))
+				if ((this._id_campotrazable != value))
 				{
-					this.OnDescripcionChanging(value);
-					this.SendPropertyChanging();
-					this._Descripcion = value;
-					this.SendPropertyChanged("Descripcion");
-					this.OnDescripcionChanged();
+					this._id_campotrazable = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Valor", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Valor
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public string Nombre
 		{
 			get
 			{
-				return this._Valor;
+				return this._Nombre;
 			}
 			set
 			{
-				if ((this._Valor != value))
+				if ((this._Nombre != value))
 				{
-					this.OnValorChanging(value);
-					this.SendPropertyChanging();
-					this._Valor = value;
-					this.SendPropertyChanged("Valor");
-					this.OnValorChanged();
+					this._Nombre = value;
 				}
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tamanio_Caracteres", DbType="Int NOT NULL")]
+		public int Tamanio_Caracteres
 		{
-			if ((this.PropertyChanging != null))
+			get
 			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
+				return this._Tamanio_Caracteres;
+			}
+			set
+			{
+				if ((this._Tamanio_Caracteres != value))
+				{
+					this._Tamanio_Caracteres = value;
+				}
 			}
 		}
 		
-		protected virtual void SendPropertyChanged(String propertyName)
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus", DbType="Int NOT NULL")]
+		public int id_estatus
 		{
-			if ((this.PropertyChanged != null))
+			get
 			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this._id_estatus;
+			}
+			set
+			{
+				if ((this._id_estatus != value))
+				{
+					this._id_estatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mascara", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Mascara
+		{
+			get
+			{
+				return this._Mascara;
+			}
+			set
+			{
+				if ((this._Mascara != value))
+				{
+					this._Mascara = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_es_principal", DbType="Bit NOT NULL")]
+		public bool es_principal
+		{
+			get
+			{
+				return this._es_principal;
+			}
+			set
+			{
+				if ((this._es_principal != value))
+				{
+					this._es_principal = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_obtener_fechaResult
+	{
+		
+		private string _Fecha;
+		
+		public pa_obtener_fechaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="VarChar(8)")]
+		public string Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_obtener_horaResult
+	{
+		
+		private string _Hora;
+		
+		public pa_obtener_horaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hora", DbType="VarChar(8)")]
+		public string Hora
+		{
+			get
+			{
+				return this._Hora;
+			}
+			set
+			{
+				if ((this._Hora != value))
+				{
+					this._Hora = value;
+				}
 			}
 		}
 	}
@@ -7001,187 +7788,81 @@ namespace thumbnail.data_members
 		}
 	}
 	
-	public partial class pa_obtener_fechaResult
+	public partial class pa_Permsos_ModulosResult
 	{
 		
-		private string _Fecha;
+		private int _id_modulo;
 		
-		public pa_obtener_fechaResult()
+		private System.Nullable<int> _id_menu;
+		
+		private System.Nullable<int> _id_submenu;
+		
+		private string _Modulo;
+		
+		public pa_Permsos_ModulosResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="VarChar(8)")]
-		public string Fecha
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_modulo", DbType="Int NOT NULL")]
+		public int id_modulo
 		{
 			get
 			{
-				return this._Fecha;
+				return this._id_modulo;
 			}
 			set
 			{
-				if ((this._Fecha != value))
+				if ((this._id_modulo != value))
 				{
-					this._Fecha = value;
-				}
-			}
-		}
-	}
-	
-	public partial class pa_obtener_horaResult
-	{
-		
-		private string _Hora;
-		
-		public pa_obtener_horaResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hora", DbType="VarChar(8)")]
-		public string Hora
-		{
-			get
-			{
-				return this._Hora;
-			}
-			set
-			{
-				if ((this._Hora != value))
-				{
-					this._Hora = value;
-				}
-			}
-		}
-	}
-	
-	public partial class pa_CampostrazablesActivosporExpedienteResult
-	{
-		
-		private int _id_re_expedientes_campostrazables;
-		
-		private int _id_campotrazable;
-		
-		private string _Nombre;
-		
-		private int _Tamanio_Caracteres;
-		
-		private int _id_estatus;
-		
-		private string _Mascara;
-		
-		private bool _es_principal;
-		
-		public pa_CampostrazablesActivosporExpedienteResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_expedientes_campostrazables", DbType="Int NOT NULL")]
-		public int id_re_expedientes_campostrazables
-		{
-			get
-			{
-				return this._id_re_expedientes_campostrazables;
-			}
-			set
-			{
-				if ((this._id_re_expedientes_campostrazables != value))
-				{
-					this._id_re_expedientes_campostrazables = value;
+					this._id_modulo = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_campotrazable", DbType="Int NOT NULL")]
-		public int id_campotrazable
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_menu", DbType="Int")]
+		public System.Nullable<int> id_menu
 		{
 			get
 			{
-				return this._id_campotrazable;
+				return this._id_menu;
 			}
 			set
 			{
-				if ((this._id_campotrazable != value))
+				if ((this._id_menu != value))
 				{
-					this._id_campotrazable = value;
+					this._id_menu = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Nombre
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_submenu", DbType="Int")]
+		public System.Nullable<int> id_submenu
 		{
 			get
 			{
-				return this._Nombre;
+				return this._id_submenu;
 			}
 			set
 			{
-				if ((this._Nombre != value))
+				if ((this._id_submenu != value))
 				{
-					this._Nombre = value;
+					this._id_submenu = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tamanio_Caracteres", DbType="Int NOT NULL")]
-		public int Tamanio_Caracteres
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Modulo", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Modulo
 		{
 			get
 			{
-				return this._Tamanio_Caracteres;
+				return this._Modulo;
 			}
 			set
 			{
-				if ((this._Tamanio_Caracteres != value))
+				if ((this._Modulo != value))
 				{
-					this._Tamanio_Caracteres = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus", DbType="Int NOT NULL")]
-		public int id_estatus
-		{
-			get
-			{
-				return this._id_estatus;
-			}
-			set
-			{
-				if ((this._id_estatus != value))
-				{
-					this._id_estatus = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mascara", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string Mascara
-		{
-			get
-			{
-				return this._Mascara;
-			}
-			set
-			{
-				if ((this._Mascara != value))
-				{
-					this._Mascara = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_es_principal", DbType="Bit NOT NULL")]
-		public bool es_principal
-		{
-			get
-			{
-				return this._es_principal;
-			}
-			set
-			{
-				if ((this._es_principal != value))
-				{
-					this._es_principal = value;
+					this._Modulo = value;
 				}
 			}
 		}

@@ -4,16 +4,15 @@
     <Type Name="ca_acciones">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ca_acciones_de_acciones_modulo" Member="de_acciones_modulo" ThisKey="id" OtherKey="id_acccion" Type="de_acciones_modulo" />
       <Association Name="ca_acciones_hco_cambios" Member="hco_cambios" ThisKey="id" OtherKey="id_accion" Type="hco_cambios" />
     </Type>
   </Table>
-  <Table Name="dbo.re_usuarios_roles_permisos" Member="re_usuarios_roles_permisos">
-    <Type Name="re_usuarios_roles_permisos">
+  <Table Name="dbo.tbl_configuraciones" Member="tbl_configuraciones">
+    <Type Name="tbl_configuraciones">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="id_usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_re_roles_modulos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ca_usuarios_re_usuarios_roles_permisos" Member="ca_usuarios" ThisKey="id_usuario" OtherKey="id" Type="ca_usuarios" IsForeignKey="true" />
-      <Association Name="re_roles_modulos_re_usuarios_roles_permisos" Member="re_roles_modulos" ThisKey="id_re_roles_modulos" OtherKey="id" Type="re_roles_modulos" IsForeignKey="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Valor" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="dbo.ca_campostrazables" Member="ca_campostrazables">
@@ -128,6 +127,7 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="ca_roles_re_roles_modulos" Member="re_roles_modulos" ThisKey="id" OtherKey="id_rol" Type="re_roles_modulos" />
+      <Association Name="ca_roles_re_usuarios_roles_permisos" Member="re_usuarios_roles_permisos" ThisKey="id" OtherKey="id_rol" Type="re_usuarios_roles_permisos" />
     </Type>
   </Table>
   <Table Name="dbo.ca_tablas" Member="ca_tablas">
@@ -136,6 +136,13 @@
       <Column Name="nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="descripcion" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Association Name="ca_tablas_hco_cambios" Member="hco_cambios" ThisKey="id" OtherKey="id_tabla" Type="hco_cambios" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ca_tiposbloqueos" Member="ca_tiposbloqueos">
+    <Type Name="ca_tiposbloqueos">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="ca_tiposbloqueos_re_expedientestramites_tiposbloqueos" Member="re_expedientestramites_tiposbloqueos" ThisKey="id" OtherKey="id_tipobloqueo" Type="re_expedientestramites_tiposbloqueos" />
     </Type>
   </Table>
   <Table Name="dbo.ca_tramites" Member="ca_tramites">
@@ -163,9 +170,17 @@
       <Column Name="usuario" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="contrasenia" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="id_persona" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ca_usuarios_re_usuarios_roles_permisos" Member="re_usuarios_roles_permisos" ThisKey="id" OtherKey="id_usuario" Type="re_usuarios_roles_permisos" />
       <Association Name="ca_usuarios_hco_cambios" Member="hco_cambios" ThisKey="id" OtherKey="id_usuario" Type="hco_cambios" />
+      <Association Name="ca_usuarios_re_usuarios_roles_permisos" Member="re_usuarios_roles_permisos" ThisKey="id" OtherKey="id_usuario" Type="re_usuarios_roles_permisos" />
       <Association Name="ca_personas_ca_usuarios" Member="ca_personas" ThisKey="id_persona" OtherKey="id" Type="ca_personas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.de_acciones_modulo" Member="de_acciones_modulo">
+    <Type Name="de_acciones_modulo">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_re_roles_modulos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_acccion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ca_acciones_de_acciones_modulo" Member="ca_acciones" ThisKey="id_acccion" OtherKey="id" Type="ca_acciones" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.de_digital_campostrazables" Member="de_digital_campostrazables">
@@ -247,8 +262,20 @@
       <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="f_act" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="u_act" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="re_expedientes_tramites_re_expedientestramites_tiposbloqueos" Member="re_expedientestramites_tiposbloqueos" ThisKey="id" OtherKey="id_re_expediente_tramite" Type="re_expedientestramites_tiposbloqueos" />
       <Association Name="ca_expedientes_re_expedientes_tramites" Member="ca_expedientes" ThisKey="id_expediente" OtherKey="id" Type="ca_expedientes" IsForeignKey="true" />
       <Association Name="ca_tramites_re_expedientes_tramites" Member="ca_tramites" ThisKey="id_tramite" OtherKey="id" Type="ca_tramites" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.re_expedientestramites_tiposbloqueos" Member="re_expedientestramites_tiposbloqueos">
+    <Type Name="re_expedientestramites_tiposbloqueos">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_re_expediente_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_tipobloqueo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="no_horas" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="no_dias" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="ca_tiposbloqueos_re_expedientestramites_tiposbloqueos" Member="ca_tiposbloqueos" ThisKey="id_tipobloqueo" OtherKey="id" Type="ca_tiposbloqueos" IsForeignKey="true" />
+      <Association Name="re_expedientes_tramites_re_expedientestramites_tiposbloqueos" Member="re_expedientes_tramites" ThisKey="id_re_expediente_tramite" OtherKey="id" Type="re_expedientes_tramites" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.re_roles_modulos" Member="re_roles_modulos">
@@ -256,7 +283,6 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="id_rol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_modulo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="re_roles_modulos_re_usuarios_roles_permisos" Member="re_usuarios_roles_permisos" ThisKey="id" OtherKey="id_re_roles_modulos" Type="re_usuarios_roles_permisos" />
       <Association Name="ca_modulos_re_roles_modulos" Member="ca_modulos" ThisKey="id_modulo" OtherKey="id" Type="ca_modulos" IsForeignKey="true" />
       <Association Name="ca_roles_re_roles_modulos" Member="ca_roles" ThisKey="id_rol" OtherKey="id" Type="ca_roles" IsForeignKey="true" />
     </Type>
@@ -276,6 +302,15 @@
       <Association Name="ca_origenes_re_tramites_re_clasificaciondocumentos_documentos" Member="ca_origenes" ThisKey="id_origen" OtherKey="id" Type="ca_origenes" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.re_usuarios_roles_permisos" Member="re_usuarios_roles_permisos">
+    <Type Name="re_usuarios_roles_permisos">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_rol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ca_roles_re_usuarios_roles_permisos" Member="ca_roles" ThisKey="id_rol" OtherKey="id" Type="ca_roles" IsForeignKey="true" />
+      <Association Name="ca_usuarios_re_usuarios_roles_permisos" Member="ca_usuarios" ThisKey="id_usuario" OtherKey="id" Type="ca_usuarios" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.vw_ListaTramitesActivos" Member="vw_ListaTramitesActivos">
     <Type Name="vw_ListaTramitesActivos">
       <Column Name="id_expediente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -292,13 +327,28 @@
       <Column Name="Descripcion_estatus_tramite" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.tbl_configuraciones" Member="tbl_configuraciones">
-    <Type Name="tbl_configuraciones">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="Valor" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-    </Type>
-  </Table>
+  <Function Name="dbo.pa_CampostrazablesActivosporExpediente" Method="pa_CampostrazablesActivosporExpediente">
+    <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_CampostrazablesActivosporExpedienteResult">
+      <Column Name="id_re_expedientes_campostrazables" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_campotrazable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Tamanio_Caracteres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mascara" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="es_principal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_obtener_fecha" Method="pa_obtener_fecha">
+    <ElementType Name="pa_obtener_fechaResult">
+      <Column Name="Fecha" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_obtener_hora" Method="pa_obtener_hora">
+    <ElementType Name="pa_obtener_horaResult">
+      <Column Name="Hora" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen" Method="pa_ObtenerDocumentosporTramiteyOrigen">
     <Parameter Name="id_tramite" Type="System.Int32" DbType="Int" />
     <Parameter Name="id_origen" Type="System.Int32" DbType="Int" />
@@ -333,26 +383,13 @@
       <Column Name="Descripcion_estatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_obtener_fecha" Method="pa_obtener_fecha">
-    <ElementType Name="pa_obtener_fechaResult">
-      <Column Name="Fecha" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.pa_obtener_hora" Method="pa_obtener_hora">
-    <ElementType Name="pa_obtener_horaResult">
-      <Column Name="Hora" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.pa_CampostrazablesActivosporExpediente" Method="pa_CampostrazablesActivosporExpediente">
-    <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
-    <ElementType Name="pa_CampostrazablesActivosporExpedienteResult">
-      <Column Name="id_re_expedientes_campostrazables" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_campotrazable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="Tamanio_Caracteres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Mascara" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="es_principal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+  <Function Name="dbo.pa_Permsos_Modulos" Method="pa_Permsos_Modulos">
+    <Parameter Name="id_usuario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_Permsos_ModulosResult">
+      <Column Name="id_modulo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_menu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_submenu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modulo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

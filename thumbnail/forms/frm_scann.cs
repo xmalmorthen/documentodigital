@@ -338,21 +338,21 @@ namespace thumbnail.forms
             }
         }
 
+        private void ofdabrirarchivo_FileOk(object sender, CancelEventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+        }
+
         private void btn_abririmagen_Click(object sender, EventArgs e)
         {
             if (ofdabrirarchivo.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
             {
-                this.Cursor = Cursors.WaitCursor;
-                tlp_proc.Visible = true;
-
-                Application.DoEvents();
                 foreach (string file in ofdabrirarchivo.FileNames)
                 {
-                    
-
                     generatethumbnailimage(file);
-
-                    
                 }
                 Application.DoEvents();
 
