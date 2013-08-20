@@ -104,26 +104,16 @@ namespace thumbnail.models
             }
         }
 
-        private int _id_tramite;
-        public int idtramite {
-            get {
-                return _id_tramite;
-            }
-            set {
-                _id_tramite = value;
-            }
-        }
-
-        private int _id_documento;
-        public int id_documento
+        private int _id_re_clasificaciondocumento_documento;
+        public int id_re_clasificaciondocumento_documento
         {
             get
             {
-                return _id_documento;
+                return _id_re_clasificaciondocumento_documento;
             }
             set
             {
-                _id_documento = value;
+                _id_re_clasificaciondocumento_documento = value;
             }
         }
 

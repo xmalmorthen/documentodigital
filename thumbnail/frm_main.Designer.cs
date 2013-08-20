@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_main));
             this.mnustrip_menuprincipal = new System.Windows.Forms.MenuStrip();
             this.creaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expedientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,12 +51,12 @@
             this.preferenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenarVentanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cascadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ordenarVentanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cascadaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnustrip_menuprincipal.SuspendLayout();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -102,6 +103,7 @@
             this.expedientesToolStripMenuItem.Size = new System.Drawing.Size(268, 24);
             this.expedientesToolStripMenuItem.Tag = "1,1";
             this.expedientesToolStripMenuItem.Text = "Expedientes";
+            this.expedientesToolStripMenuItem.Click += new System.EventHandler(this.expedientesToolStripMenuItem_Click);
             // 
             // camposTrazablesToolStripMenuItem
             // 
@@ -250,6 +252,21 @@
             this.ventanasToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
             this.ventanasToolStripMenuItem.Text = "Ventanas";
             // 
+            // ordenarVentanasToolStripMenuItem
+            // 
+            this.ordenarVentanasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cascadaToolStripMenuItem});
+            this.ordenarVentanasToolStripMenuItem.Name = "ordenarVentanasToolStripMenuItem";
+            this.ordenarVentanasToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.ordenarVentanasToolStripMenuItem.Text = "Ordenar ventanas";
+            // 
+            // cascadaToolStripMenuItem
+            // 
+            this.cascadaToolStripMenuItem.Name = "cascadaToolStripMenuItem";
+            this.cascadaToolStripMenuItem.Size = new System.Drawing.Size(133, 24);
+            this.cascadaToolStripMenuItem.Text = "Cascada";
+            this.cascadaToolStripMenuItem.Click += new System.EventHandler(this.cascadaToolStripMenuItem_Click);
+            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Image = global::thumbnail.Icons16x16.delete;
@@ -300,21 +317,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Favor de esperar";
             // 
-            // ordenarVentanasToolStripMenuItem
-            // 
-            this.ordenarVentanasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cascadaToolStripMenuItem});
-            this.ordenarVentanasToolStripMenuItem.Name = "ordenarVentanasToolStripMenuItem";
-            this.ordenarVentanasToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
-            this.ordenarVentanasToolStripMenuItem.Text = "Ordenar ventanas";
-            // 
-            // cascadaToolStripMenuItem
-            // 
-            this.cascadaToolStripMenuItem.Name = "cascadaToolStripMenuItem";
-            this.cascadaToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.cascadaToolStripMenuItem.Text = "Cascada";
-            this.cascadaToolStripMenuItem.Click += new System.EventHandler(this.cascadaToolStripMenuItem_Click);
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,6 +324,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.tlp_proc);
             this.Controls.Add(this.mnustrip_menuprincipal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnustrip_menuprincipal;
             this.Name = "frm_main";

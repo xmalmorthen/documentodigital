@@ -560,14 +560,13 @@ namespace thumbnail.forms
                         Image img = Image.FromFile(  ( (tagstrunct) current.Tag ).path_image.ToString()  );
                         source.imagen = img; //asignar imagen al colector principal
                         img.Dispose();
-                        source.id_documento = source_digital.id_documento;
+                        source.id_re_clasificaciondocumento_documento = source_digital.id_re_clasificaciondocumento_documento;
                         source.valor_trazable = source_digital.valor_trazable;
                         source.clasificaciondocumento = source_digital.clasificaciondocumento;
                         source.documento = source_digital.documento;
                         source.guid = ((tagstrunct)current.Tag).guid.ToString();
                         source.fecha = obtener.fecha(); //asignar fecha al colector principal
                         source.hora = obtener.hora();//asignar hora al colector principal
-                        source.idtramite = lookUpEdit_Tramites_selected.id_tramite; //asignar id tramite al colector principal;
 
                         try
                         {
@@ -619,7 +618,7 @@ namespace thumbnail.forms
             //int idx = lstvwdocumentosescaneados.SelectedItems[0].ImageIndex;
             if (result == DialogResult.OK)
             {
-                source_digital.id_documento = frm.source.id_documento; //se asigna el id del documento retornado de la forma al colector principal
+                source_digital.id_re_clasificaciondocumento_documento = frm.source.id_re_clasificaciondocumento_documento; //se asigna el id del documento retornado de la forma al colector principal
                 source_digital.valor_trazable = frm.source.valor_trazable; //se asigna el valor trazable retornado de la forma al colector principal
                 source_digital.clasificaciondocumento = frm.source.clasificaciondocumento; //se asigna la clasificacion de documento retornado de la forma al colector principal
                 source_digital.documento = frm.source.documento; //se asigna el nombre de documento retornado de la forma al colector principal
@@ -781,14 +780,13 @@ namespace thumbnail.forms
                 Image img = Image.FromFile(((tagstrunct)item.Tag).path_image.ToString());
                 source.imagen = img; //asignar imagen al colector principal
                 img.Dispose();
-                source.id_documento = source_digital.id_documento;
+                source.id_re_clasificaciondocumento_documento = source_digital.id_re_clasificaciondocumento_documento;
                 source.valor_trazable = source_digital.valor_trazable;
                 source.clasificaciondocumento = source_digital.clasificaciondocumento;
                 source.documento = source_digital.documento;
                 source.guid = ((tagstrunct)item.Tag).guid.ToString();
                 source.fecha = obtener.fecha(); //asignar fecha al colector principal
                 source.hora = obtener.hora();//asignar hora al colector principal
-                source.idtramite = lookUpEdit_Tramites_selected.id_tramite; //asignar id tramite al colector principal;
 
                 item.Remove();
 
@@ -830,14 +828,13 @@ namespace thumbnail.forms
                 Image img = Image.FromFile(((tagstrunct)item.Tag).path_image.ToString());
                 source.imagen = img; //asignar imagen al colector principal
                 img.Dispose();
-                source.id_documento = source_digital.id_documento;
+                source.id_re_clasificaciondocumento_documento = source_digital.id_re_clasificaciondocumento_documento;
                 source.valor_trazable = source_digital.valor_trazable;
                 source.clasificaciondocumento = source_digital.clasificaciondocumento;
                 source.documento = source_digital.documento;
                 source.guid = ((tagstrunct)item.Tag).guid.ToString();
                 source.fecha = obtener.fecha(); //asignar fecha al colector principal
                 source.hora = obtener.hora();//asignar hora al colector principal
-                source.idtramite = lookUpEdit_Tramites_selected.id_tramite; //asignar id tramite al colector principal;
 
                 item.Remove();
 

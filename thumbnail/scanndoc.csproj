@@ -65,6 +65,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Bd_Exp_Transportes.dbml</DependentUpon>
     </Compile>
+    <Compile Include="forms\ca_expedientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ca_expedientes.Designer.cs">
+      <DependentUpon>ca_expedientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frm_hook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     <None Include="data_members\Bd_Exp_Transportes.dbml.layout">
       <DependentUpon>Bd_Exp_Transportes.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="forms\ca_expedientes.resx">
+      <DependentUpon>ca_expedientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_hook.resx">
       <DependentUpon>frm_hook.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +165,7 @@
       <LastGenOutput>Bd_Exp_Transportes.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\thumbnail.data_members.ca_expedientes.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_CampostrazablesActivosporExpedienteResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult.datasource" />
     <None Include="Properties\Settings.settings">

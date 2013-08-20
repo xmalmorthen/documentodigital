@@ -29,12 +29,13 @@ namespace thumbnail.forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_scann));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.cntmnuListViewEnlace = new System.Windows.Forms.ContextMenuStrip();
+            this.cntmnuListViewEnlace = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmnuitemlstvwenlaceabrir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwenlaceeliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwenlaceseparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -44,7 +45,7 @@ namespace thumbnail.forms
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmnuitemlstvwenlacegirarderecha = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwenlacegirarizquierda = new System.Windows.Forms.ToolStripMenuItem();
-            this.cntmnuListViewScann = new System.Windows.Forms.ContextMenuStrip();
+            this.cntmnuListViewScann = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmnuitemlstvwscannabrir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwscanneliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwscannseparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -57,8 +58,8 @@ namespace thumbnail.forms
             this.tsmnuitemlstvwscannseltodo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwscannrotarderecha = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwscannrotarizquierda = new System.Windows.Forms.ToolStripMenuItem();
-            this.imglsttabs = new System.Windows.Forms.ImageList();
-            this.tooltipBtnMnuOptions = new System.Windows.Forms.ToolTip();
+            this.imglsttabs = new System.Windows.Forms.ImageList(this.components);
+            this.tooltipBtnMnuOptions = new System.Windows.Forms.ToolTip(this.components);
             this.btn_limpiarcontroles = new System.Windows.Forms.Button();
             this.btn_abririmagen = new System.Windows.Forms.Button();
             this.btn_scanear = new System.Windows.Forms.Button();
@@ -90,7 +91,7 @@ namespace thumbnail.forms
             this.esprincipalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_valor_trazable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_re_expedientes_campostrazables = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paCampostrazablesActivosporExpedienteResultBindingSource = new System.Windows.Forms.BindingSource();
+            this.paCampostrazablesActivosporExpedienteResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbctrl = new System.Windows.Forms.TabControl();
             this.tabpgeUsuario = new System.Windows.Forms.TabPage();
             this.tab0_tbllytpnldocumentos = new System.Windows.Forms.TableLayoutPanel();
@@ -128,7 +129,6 @@ namespace thumbnail.forms
             this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.cntmnuListViewEnlace.SuspendLayout();
             this.cntmnuListViewScann.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab2_pblbldocumentosescaneados)).BeginInit();
@@ -1348,24 +1348,6 @@ namespace thumbnail.forms
             this.label3.TabIndex = 0;
             this.label3.Text = "Favor de esperar";
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::thumbnail.Icons48x48.save;
-            this.button1.Location = new System.Drawing.Point(623, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 54);
-            this.button1.TabIndex = 59;
-            this.tooltipBtnMnuOptions.SetToolTip(this.button1, "Guardar tramite");
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // frm_scann
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1374,7 +1356,6 @@ namespace thumbnail.forms
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1008, 730);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_config_scann);
             this.Controls.Add(this.tlp_proc);
             this.Controls.Add(this.btn_limpiarcontroles);
@@ -1542,7 +1523,6 @@ namespace thumbnail.forms
         private System.Windows.Forms.DataGridViewCheckBoxColumn esprincipalDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_valor_trazable;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_re_expedientes_campostrazables;
-        private System.Windows.Forms.Button button1;
 
 
 

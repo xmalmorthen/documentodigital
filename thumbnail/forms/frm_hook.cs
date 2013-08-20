@@ -109,7 +109,7 @@ namespace thumbnail.forms
             object _id_documento = view.GetRowCellValue(view.FocusedRowHandle, "id_documento");
             object _clasificaciondocumento = view.GetRowCellValue(view.FocusedRowHandle, "Descripcion_clasificaciondocumento");
             object _documento = view.GetRowCellValue(view.FocusedRowHandle, "Nombre");
-            object _id_re_tramites_re_clasificaciondocumentos_documentos = view.GetRowCellValue(view.FocusedRowHandle, "id_re_tramites_re_clasificaciondocumentos_documentos");
+            object _id_re_clasificaciondocumento_documento = view.GetRowCellValue(view.FocusedRowHandle, "re_clasificaciondocumento_documento");
             
             if (_id_documento == null) return;
 
@@ -118,14 +118,14 @@ namespace thumbnail.forms
             txtvalortrazable.Enabled = trazabilidad; // habilitar o deshabilitar caja de texto de valor trasable segun se requiera su trazabilidad
             lblmascampotrazable.Text = ""; //limpiar label de muestra de mascara trazable
             
-            int id_documento = int.Parse(string.Format("{0}", _id_documento));
-            source.id_documento = id_documento; //asignar el id documento a variable colectora
-            
             string clasificaciondocumento = (string)_clasificaciondocumento;
             source.clasificaciondocumento = clasificaciondocumento; //asignar la clasificacion a variable colectora
             
             string documento = (string)_documento;            
             source.documento = documento; //asignar el nombre del documento a variable colectora
+
+            int id_re_clasificaciondocumento_documento = int.Parse(string.Format("{0}", _id_re_clasificaciondocumento_documento));
+            source.id_re_clasificaciondocumento_documento = id_re_clasificaciondocumento_documento;
 
             if (trazabilidad)
             {

@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmimgViewer));
-            this.ttimageviewer = new System.Windows.Forms.ToolTip();
+            this.ttimageviewer = new System.Windows.Forms.ToolTip(this.components);
             this.btn_reestablecer = new System.Windows.Forms.Button();
             this.btn_rotarizquierda = new System.Windows.Forms.Button();
             this.btn_rotarderecha = new System.Windows.Forms.Button();
