@@ -182,7 +182,7 @@ namespace thumbnail.forms
             // 
             // tsmnuitemlstvwenlaceabrir
             // 
-            this.tsmnuitemlstvwenlaceabrir.Image = global::thumbnail.Properties.Resources.view;
+            this.tsmnuitemlstvwenlaceabrir.Image = Icons16x16.view;
             this.tsmnuitemlstvwenlaceabrir.Name = "tsmnuitemlstvwenlaceabrir";
             this.tsmnuitemlstvwenlaceabrir.Size = new System.Drawing.Size(211, 26);
             this.tsmnuitemlstvwenlaceabrir.Text = "Abrir";
@@ -190,7 +190,7 @@ namespace thumbnail.forms
             // 
             // tsmnuitemlstvwenlaceeliminar
             // 
-            this.tsmnuitemlstvwenlaceeliminar.Image = global::thumbnail.Properties.Resources.trash;
+            this.tsmnuitemlstvwenlaceeliminar.Image = Icons16x16.trash;
             this.tsmnuitemlstvwenlaceeliminar.Name = "tsmnuitemlstvwenlaceeliminar";
             this.tsmnuitemlstvwenlaceeliminar.Size = new System.Drawing.Size(211, 26);
             this.tsmnuitemlstvwenlaceeliminar.Text = "Eliminar";
@@ -207,7 +207,7 @@ namespace thumbnail.forms
             this.tsmnuitemlstvwenlacedesenlazar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmnuitemlstvwenlacedesenlazarseleccionado,
             this.tsmnuitemlstvwenlacedesenlazartodo});
-            this.tsmnuitemlstvwenlacedesenlazar.Image = global::thumbnail.Properties.Resources.desenlazar;
+            this.tsmnuitemlstvwenlacedesenlazar.Image = Icons16x16.desenlazar;
             this.tsmnuitemlstvwenlacedesenlazar.Name = "tsmnuitemlstvwenlacedesenlazar";
             this.tsmnuitemlstvwenlacedesenlazar.Size = new System.Drawing.Size(211, 26);
             this.tsmnuitemlstvwenlacedesenlazar.Text = "Desenlazar";
@@ -269,7 +269,7 @@ namespace thumbnail.forms
             // 
             // tsmnuitemlstvwscannabrir
             // 
-            this.tsmnuitemlstvwscannabrir.Image = global::thumbnail.Properties.Resources.view;
+            this.tsmnuitemlstvwscannabrir.Image = Icons16x16.view;
             this.tsmnuitemlstvwscannabrir.Name = "tsmnuitemlstvwscannabrir";
             this.tsmnuitemlstvwscannabrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.tsmnuitemlstvwscannabrir.Size = new System.Drawing.Size(285, 26);
@@ -278,7 +278,7 @@ namespace thumbnail.forms
             // 
             // tsmnuitemlstvwscanneliminar
             // 
-            this.tsmnuitemlstvwscanneliminar.Image = global::thumbnail.Properties.Resources.trash;
+            this.tsmnuitemlstvwscanneliminar.Image = Icons16x16.trash;
             this.tsmnuitemlstvwscanneliminar.Name = "tsmnuitemlstvwscanneliminar";
             this.tsmnuitemlstvwscanneliminar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
             this.tsmnuitemlstvwscanneliminar.Size = new System.Drawing.Size(285, 26);

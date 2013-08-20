@@ -30,10 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descripcionLabel;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ca_expedientes));
-            this.ca_expedientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ca_expedientesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label descripcionLabel1;
+            this.BindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -45,43 +50,64 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ca_expedientesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.ca_expedientesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.btn_cerrar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Limpiar = new System.Windows.Forms.Button();
+            this.pbfind = new System.Windows.Forms.PictureBox();
+            this.descripcionTextBox = new System.Windows.Forms.TextBox();
             descripcionLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesBindingNavigator)).BeginInit();
-            this.ca_expedientesBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).BeginInit();
+            label1 = new System.Windows.Forms.Label();
+            descripcionLabel1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingNavigator)).BeginInit();
+            this.BindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbfind)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(12, 9);
+            descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descripcionLabel.Location = new System.Drawing.Point(17, 89);
             descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.Size = new System.Drawing.Size(90, 18);
             descripcionLabel.TabIndex = 2;
-            descripcionLabel.Text = "Descripcion:";
+            descripcionLabel.Text = "Expediente";
             // 
-            // ca_expedientesBindingSource
+            // label1
             // 
-            this.ca_expedientesBindingSource.DataSource = typeof(thumbnail.data_members.ca_expedientes);
+            label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.Location = new System.Drawing.Point(9, 171);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(189, 18);
+            label1.TabIndex = 11;
+            label1.Text = "Expedientes registrados";
             // 
-            // ca_expedientesBindingNavigator
+            // BindingNavigator
             // 
-            this.ca_expedientesBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.ca_expedientesBindingNavigator.BindingSource = this.ca_expedientesBindingSource;
-            this.ca_expedientesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.ca_expedientesBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.ca_expedientesBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ca_expedientesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.BindingNavigator.BindingSource = this.BindingSource;
+            this.BindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.BindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.BindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -94,16 +120,16 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.ca_expedientesBindingNavigatorSaveItem});
-            this.ca_expedientesBindingNavigator.Location = new System.Drawing.Point(0, 378);
-            this.ca_expedientesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.ca_expedientesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.ca_expedientesBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.ca_expedientesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.ca_expedientesBindingNavigator.Name = "ca_expedientesBindingNavigator";
-            this.ca_expedientesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.ca_expedientesBindingNavigator.Size = new System.Drawing.Size(756, 25);
-            this.ca_expedientesBindingNavigator.TabIndex = 0;
-            this.ca_expedientesBindingNavigator.Text = "bindingNavigator1";
+            this.BindingNavigator.Location = new System.Drawing.Point(0, 407);
+            this.BindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.BindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.BindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.BindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.BindingNavigator.Name = "BindingNavigator";
+            this.BindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.BindingNavigator.Size = new System.Drawing.Size(756, 25);
+            this.BindingNavigator.TabIndex = 2;
+            this.BindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -114,6 +140,11 @@
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
             this.bindingNavigatorAddNewItem.Visible = false;
+            // 
+            // BindingSource
+            // 
+            this.BindingSource.DataSource = typeof(thumbnail.data_members.ca_expedientes);
+            this.BindingSource.CurrentItemChanged += new System.EventHandler(this.ca_expedientesBindingSource_CurrentItemChanged);
             // 
             // bindingNavigatorCountItem
             // 
@@ -202,68 +233,192 @@
             this.ca_expedientesBindingNavigatorSaveItem.Text = "Guardar datos";
             this.ca_expedientesBindingNavigatorSaveItem.Visible = false;
             // 
-            // ca_expedientesDataGridView
-            // 
-            this.ca_expedientesDataGridView.AllowUserToAddRows = false;
-            this.ca_expedientesDataGridView.AllowUserToDeleteRows = false;
-            this.ca_expedientesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ca_expedientesDataGridView.AutoGenerateColumns = false;
-            this.ca_expedientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ca_expedientesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.ca_expedientesDataGridView.DataSource = this.ca_expedientesBindingSource;
-            this.ca_expedientesDataGridView.Location = new System.Drawing.Point(15, 82);
-            this.ca_expedientesDataGridView.Name = "ca_expedientesDataGridView";
-            this.ca_expedientesDataGridView.ReadOnly = true;
-            this.ca_expedientesDataGridView.Size = new System.Drawing.Size(729, 293);
-            this.ca_expedientesDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descripcion";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Expediente";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "f_act";
-            this.dataGridViewTextBoxColumn3.HeaderText = "f_act";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "u_act";
-            this.dataGridViewTextBoxColumn4.HeaderText = "u_act";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
             // descripcionTextEdit
             // 
             this.descripcionTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.descripcionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.ca_expedientesBindingSource, "Descripcion", true));
-            this.descripcionTextEdit.Location = new System.Drawing.Point(84, 6);
+            this.descripcionTextEdit.Location = new System.Drawing.Point(20, 110);
             this.descripcionTextEdit.Name = "descripcionTextEdit";
-            this.descripcionTextEdit.Size = new System.Drawing.Size(660, 20);
-            this.descripcionTextEdit.TabIndex = 3;
+            this.descripcionTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.descripcionTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.descripcionTextEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.descripcionTextEdit.Size = new System.Drawing.Size(716, 24);
+            this.descripcionTextEdit.TabIndex = 0;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.BindingSource;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridView.EnableHeadersVisualStyles = false;
+            this.dataGridView.Location = new System.Drawing.Point(12, 196);
+            this.dataGridView.MultiSelect = false;
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(729, 208);
+            this.dataGridView.TabIndex = 1;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Expediente";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.rectangleShape1,
+            this.lineShape2,
+            this.lineShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(756, 432);
+            this.shapeContainer1.TabIndex = 10;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // rectangleShape1
+            // 
+            this.rectangleShape1.Location = new System.Drawing.Point(12, 75);
+            this.rectangleShape1.Name = "rectangleShape1";
+            this.rectangleShape1.Size = new System.Drawing.Size(729, 67);
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lineShape2.BorderWidth = 2;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 400;
+            this.lineShape2.X2 = 757;
+            this.lineShape2.Y1 = 60;
+            this.lineShape2.Y2 = 60;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lineShape1.BorderWidth = 2;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = -4;
+            this.lineShape1.X2 = 361;
+            this.lineShape1.Y1 = 191;
+            this.lineShape1.Y2 = 191;
+            // 
+            // txt_buscar
+            // 
+            this.txt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_buscar.Location = new System.Drawing.Point(453, 381);
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.txt_buscar.Properties.Appearance.Options.UseFont = true;
+            this.txt_buscar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txt_buscar.Size = new System.Drawing.Size(266, 24);
+            this.txt_buscar.TabIndex = 3;
+            this.txt_buscar.EditValueChanged += new System.EventHandler(this.txt_buscar_EditValueChanged);
+            // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Agregar.AutoSize = true;
+            this.btn_Agregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Agregar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Agregar.FlatAppearance.BorderSize = 0;
+            this.btn_Agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Agregar.Image = global::thumbnail.Icons48x48.doc_plus;
+            this.btn_Agregar.Location = new System.Drawing.Point(427, 3);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(54, 54);
+            this.btn_Agregar.TabIndex = 4;
+            this.toolTip.SetToolTip(this.btn_Agregar, "Agregar");
+            this.btn_Agregar.UseVisualStyleBackColor = false;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_eliminar.AutoSize = true;
+            this.btn_eliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_eliminar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_eliminar.FlatAppearance.BorderSize = 0;
+            this.btn_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_eliminar.Image = global::thumbnail.Icons48x48.delete;
+            this.btn_eliminar.Location = new System.Drawing.Point(606, 3);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(54, 54);
+            this.btn_eliminar.TabIndex = 7;
+            this.toolTip.SetToolTip(this.btn_eliminar, "Eliminar");
+            this.btn_eliminar.UseVisualStyleBackColor = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
+            // 
+            // btn_cerrar
+            // 
+            this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cerrar.AutoSize = true;
+            this.btn_cerrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_cerrar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cerrar.FlatAppearance.BorderSize = 0;
+            this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cerrar.Location = new System.Drawing.Point(687, 3);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
+            this.btn_cerrar.TabIndex = 8;
+            this.toolTip.SetToolTip(this.btn_cerrar, "Cerrar");
+            this.btn_cerrar.UseVisualStyleBackColor = false;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
             // btn_guardar
             // 
@@ -276,51 +431,94 @@
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar.Image = global::thumbnail.Icons48x48.save;
-            this.btn_guardar.Location = new System.Drawing.Point(562, 22);
+            this.btn_guardar.Location = new System.Drawing.Point(546, 3);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(54, 54);
-            this.btn_guardar.TabIndex = 7;
+            this.btn_guardar.TabIndex = 6;
+            this.toolTip.SetToolTip(this.btn_guardar, "Guardar");
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // button1
+            // btn_Limpiar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::thumbnail.Icons48x48.save;
-            this.button1.Location = new System.Drawing.Point(622, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 54);
-            this.button1.TabIndex = 8;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Limpiar.AutoSize = true;
+            this.btn_Limpiar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Limpiar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Limpiar.FlatAppearance.BorderSize = 0;
+            this.btn_Limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Limpiar.Image = global::thumbnail.Icons16x16.app_window;
+            this.btn_Limpiar.Location = new System.Drawing.Point(487, 12);
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            this.btn_Limpiar.Size = new System.Drawing.Size(22, 22);
+            this.btn_Limpiar.TabIndex = 5;
+            this.toolTip.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
+            this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            // 
+            // pbfind
+            // 
+            this.pbfind.BackColor = System.Drawing.Color.Transparent;
+            this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
+            this.pbfind.Location = new System.Drawing.Point(725, 382);
+            this.pbfind.Name = "pbfind";
+            this.pbfind.Size = new System.Drawing.Size(16, 16);
+            this.pbfind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbfind.TabIndex = 14;
+            this.pbfind.TabStop = false;
+            // 
+            // descripcionLabel1
+            // 
+            descripcionLabel1.AutoSize = true;
+            descripcionLabel1.Location = new System.Drawing.Point(42, 32);
+            descripcionLabel1.Name = "descripcionLabel1";
+            descripcionLabel1.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel1.TabIndex = 0;
+            descripcionLabel1.Text = "Descripcion:";
+            // 
+            // descripcionTextBox
+            // 
+            this.descripcionTextBox.Location = new System.Drawing.Point(12, 48);
+            this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.Size = new System.Drawing.Size(348, 20);
+            this.descripcionTextBox.TabIndex = 1;
             // 
             // ca_expedientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 403);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(756, 432);
+            this.Controls.Add(descripcionLabel1);
+            this.Controls.Add(this.descripcionTextBox);
+            this.Controls.Add(this.btn_Limpiar);
+            this.Controls.Add(this.btn_Agregar);
+            this.Controls.Add(this.btn_eliminar);
+            this.Controls.Add(this.pbfind);
+            this.Controls.Add(this.txt_buscar);
+            this.Controls.Add(this.btn_cerrar);
+            this.Controls.Add(label1);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(descripcionLabel);
             this.Controls.Add(this.descripcionTextEdit);
-            this.Controls.Add(this.ca_expedientesDataGridView);
-            this.Controls.Add(this.ca_expedientesBindingNavigator);
+            this.Controls.Add(this.BindingNavigator);
+            this.Controls.Add(this.shapeContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ca_expedientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catálogo de expedientes";
             this.Load += new System.EventHandler(this.ca_expedientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesBindingNavigator)).EndInit();
-            this.ca_expedientesBindingNavigator.ResumeLayout(false);
-            this.ca_expedientesBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingNavigator)).EndInit();
+            this.BindingNavigator.ResumeLayout(false);
+            this.BindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbfind)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,8 +526,8 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource ca_expedientesBindingSource;
-        private System.Windows.Forms.BindingNavigator ca_expedientesBindingNavigator;
+        private System.Windows.Forms.BindingSource BindingSource;
+        private System.Windows.Forms.BindingNavigator BindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -342,14 +540,23 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton ca_expedientesBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView ca_expedientesDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DevExpress.XtraEditors.TextEdit descripcionTextEdit;
         private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
+        private System.Windows.Forms.Button btn_cerrar;
+        private DevExpress.XtraEditors.TextEdit txt_buscar;
+        private System.Windows.Forms.PictureBox pbfind;
+        private System.Windows.Forms.Button btn_eliminar;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button btn_Agregar;
+        private System.Windows.Forms.Button btn_Limpiar;
+        private System.Windows.Forms.TextBox descripcionTextBox;
 
     }
 }

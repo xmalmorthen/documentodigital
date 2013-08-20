@@ -91,7 +91,7 @@
             this.toolStripMenuItem2,
             this.clasificaciónDeDocumentosToolStripMenuItem,
             this.documentosToolStripMenuItem});
-            this.creaciónToolStripMenuItem.Image = global::thumbnail.Properties.Resources.notepad;
+            this.creaciónToolStripMenuItem.Image = global::thumbnail.Icons16x16.notepad;
             this.creaciónToolStripMenuItem.Name = "creaciónToolStripMenuItem";
             this.creaciónToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
             this.creaciónToolStripMenuItem.Tag = "1";
@@ -111,6 +111,7 @@
             this.camposTrazablesToolStripMenuItem.Size = new System.Drawing.Size(268, 24);
             this.camposTrazablesToolStripMenuItem.Tag = "1,2";
             this.camposTrazablesToolStripMenuItem.Text = "Campos trazables";
+            this.camposTrazablesToolStripMenuItem.Click += new System.EventHandler(this.camposTrazablesToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
