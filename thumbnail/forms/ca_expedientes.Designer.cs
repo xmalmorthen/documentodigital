@@ -52,6 +52,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.btn_guardar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             descripcionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesBindingNavigator)).BeginInit();
@@ -275,18 +276,36 @@
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar.Image = global::thumbnail.Icons48x48.save;
-            this.btn_guardar.Location = new System.Drawing.Point(619, 22);
+            this.btn_guardar.Location = new System.Drawing.Point(562, 22);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(54, 54);
             this.btn_guardar.TabIndex = 7;
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::thumbnail.Icons48x48.save;
+            this.button1.Location = new System.Drawing.Point(622, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(54, 54);
+            this.button1.TabIndex = 8;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // ca_expedientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 403);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(descripcionLabel);
             this.Controls.Add(this.descripcionTextEdit);
@@ -330,6 +349,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DevExpress.XtraEditors.TextEdit descripcionTextEdit;
         private System.Windows.Forms.Button btn_guardar;
+        private System.Windows.Forms.Button button1;
 
     }
 }
