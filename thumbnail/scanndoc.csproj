@@ -99,6 +99,12 @@
     <Compile Include="forms\ca_expedientes.Designer.cs">
       <DependentUpon>ca_expedientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\ca_template.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ca_template.Designer.cs">
+      <DependentUpon>ca_template.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frm_hook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </None>
     <EmbeddedResource Include="forms\ca_expedientes.resx">
       <DependentUpon>ca_expedientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ca_template.resx">
+      <DependentUpon>ca_template.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_hook.resx">
       <DependentUpon>frm_hook.cs</DependentUpon>

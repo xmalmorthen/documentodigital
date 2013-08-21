@@ -29,51 +29,26 @@ namespace thumbnail.forms
                                                                         switch (value)
                                                                         {
                                                                             case form_mode.agregar:
-                                                                                dataGridView.Enabled = false;
-                                                                                BindingNavigator.Enabled = false;
-                                                                                unbind();
+                                                                                enabledisablecontrols();
                                                                                 break;
                                                                             case form_mode.editar:
                                                                             case form_mode.eliminar:
-                                                                                dataGridView.Enabled = true;
-                                                                                BindingNavigator.Enabled = true;
-                                                                                bind();
+                                                                                enabledisablecontrols();
                                                                                 break;
                                                                         }
                                                                    } }
 
-        private void bindingcontrols(Boolean bind = true) {
-            if (bind)
+        private void enabledisablecontrols() {
+            switch (Form_Mode)
             {
-                try
-                {
-                    this.descripcionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.BindingSource, "Descripcion", true));
-                }
-                catch (Exception)
-                {
-                }
-                
-            }
-            else {
-                try
-                {
-                    this.descripcionTextEdit.DataBindings.Clear();
-                }
-                catch (Exception)
-                {
-                }
+                case form_mode.agregar:
+                case form_mode.editar:
+                    
+                break;
             }
         }
 
-        private void bind()
-        {
-            bindingcontrols();
-        }
-
-        private void unbind()
-        {
-            bindingcontrols(false);
-        }
+        
 
         //lista con contenido de los registros
         private List<thumbnail.data_members.ca_expedientes> lista = Program.Bd_Exp_Transportes.GetTable<thumbnail.data_members.ca_expedientes>().ToList();
@@ -95,8 +70,6 @@ namespace thumbnail.forms
         //boton de agregar
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            this.BindingSource.EndEdit();
-            BindingSource.CancelEdit();
             Form_Mode = form_mode.agregar;
             descripcionTextEdit.Text = "";
             descripcionTextEdit.Focus();            
@@ -106,7 +79,7 @@ namespace thumbnail.forms
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             BindingSource.CancelEdit();
-            dataGridView.Focus();
+            datagridview.Focus();
         }
 
         //boton de guardar
@@ -116,7 +89,9 @@ namespace thumbnail.forms
             switch (Form_Mode)
             {   
                 case form_mode.agregar:
+                    Form_Mode = form_mode.guardando;
                     agregar_registro();
+                    Form_Mode = form_mode.guardado;
                     break;
                 case form_mode.editar:
                     editar_registro();
@@ -158,8 +133,7 @@ namespace thumbnail.forms
 
         //agregar
         private void agregar_registro()
-        {
-            Form_Mode = form_mode.guardando;
+        {            
             thumbnail.data_members.ca_expedientes expediente = new data_members.ca_expedientes();
             expediente.Descripcion = descripcionTextEdit.Text;
             expediente.f_act = DateTime.Now;
@@ -187,7 +161,7 @@ namespace thumbnail.forms
 											                       }).ToList();
 				  
 	        BindingSource.DataSource = valores;
-            dataGridView.Update();
+            datagridview.Update();
         }
 
         //cuando cambia seleccion de registro en el grid
