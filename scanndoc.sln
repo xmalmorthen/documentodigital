@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "scanndoc", "thumbnail\scanndoc.csproj", "{2F2D1FE2-64E6-4DF5-A1F1-BE32F20D0C76}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{EF4B647D-3F19-4C1D-9822-B78882CE924F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,8 @@ Global
 		{2F2D1FE2-64E6-4DF5-A1F1-BE32F20D0C76}.Debug|x86.Build.0 = Debug|x86
 		{2F2D1FE2-64E6-4DF5-A1F1-BE32F20D0C76}.Release|x86.ActiveCfg = Release|x86
 		{2F2D1FE2-64E6-4DF5-A1F1-BE32F20D0C76}.Release|x86.Build.0 = Release|x86
+		{EF4B647D-3F19-4C1D-9822-B78882CE924F}.Debug|x86.ActiveCfg = Debug
+		{EF4B647D-3F19-4C1D-9822-B78882CE924F}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

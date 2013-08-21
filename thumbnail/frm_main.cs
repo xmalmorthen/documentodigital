@@ -155,9 +155,9 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.ca_campostrazables frm = new forms.ca_campostrazables();
+            /*thumbnail.forms.ca_campostrazables frm = new forms.ca_campostrazables();
             frm.MdiParent = this;
-            frm.Show();
+            frm.Show();*/
 
             Application.DoEvents();
 
