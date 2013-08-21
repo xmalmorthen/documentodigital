@@ -141,9 +141,11 @@ namespace thumbnail.forms
         //boton de eliminar
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            Form_Mode = form_mode.eliminar;
-            eliminar_registro();
-            Form_Mode = form_mode.normal;
+            if ( MessageBox.Show("Eliminar registro","Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes) {
+                Form_Mode = form_mode.eliminar;
+                eliminar_registro();
+                Form_Mode = form_mode.normal;            
+            }            
         }
 
         //boton de guardar
@@ -181,7 +183,7 @@ namespace thumbnail.forms
                 if (bindingsource.DataSource != null) {
 		                Program.Bd_Exp_Transportes./*referencia a clase*/.InsertOnSubmit(catalogo);
                         Program.Bd_Exp_Transportes.SubmitChanges();
-	                }
+	            }
             }
             catch (Exception)
 	        {		
@@ -191,7 +193,16 @@ namespace thumbnail.forms
 
         private void editar_registro()
         {
- 	        throw new NotImplementedException();
+            try 
+	        {
+                if (bindingsource.DataSource != null) {
+                        Program.Bd_Exp_Transportes.SubmitChanges();
+	            }
+            }
+            catch (Exception)
+	        {		
+		        throw;
+	        }            
         }
 
                 

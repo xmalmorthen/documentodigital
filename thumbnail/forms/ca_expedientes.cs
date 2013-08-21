@@ -64,6 +64,11 @@ namespace thumbnail.forms
         {
             BindingSource.DataSource = lista; //asignar el source al binding            
             Form_Mode = form_mode.editar;
+
+
+            thumbnail.data_members.ca_expedientes catalogo = new data_members.ca_expedientes;
+            catalogo = (data_members.ca_expedientes) BindingSource.Current;
+
         }
 
 #region botonera
