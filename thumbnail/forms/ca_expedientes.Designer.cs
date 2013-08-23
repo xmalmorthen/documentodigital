@@ -28,16 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ca_expedientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.BindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.dataGridView_CamposTrazables = new System.Windows.Forms.DataGridView();
+            this.btn_Editar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_Limpiar = new System.Windows.Forms.Button();
+            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.btn_cerrar = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
+            this.descripcionTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.bindingsource = new System.Windows.Forms.BindingSource();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.bindingnavigator = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -49,61 +64,354 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ca_expedientesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.descripcionTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.datagridview = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.btn_Agregar = new System.Windows.Forms.Button();
-            this.btn_eliminar = new System.Windows.Forms.Button();
-            this.btn_cerrar = new System.Windows.Forms.Button();
-            this.btn_guardar = new System.Windows.Forms.Button();
-            this.btn_Limpiar = new System.Windows.Forms.Button();
+            this.factDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_totalregistros = new System.Windows.Forms.Label();
+            this.btn_refrescar = new System.Windows.Forms.Button();
             this.pbfind = new System.Windows.Forms.PictureBox();
+            this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.toolTip = new System.Windows.Forms.ToolTip();
+            this.ca_expedientesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ca_campostrazablesBindingSource = new System.Windows.Forms.BindingSource();
+            this.ColumnEnlazar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tamanioCaracteresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mascaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.factDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uactDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingNavigator)).BeginInit();
-            this.BindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
+            label2 = new System.Windows.Forms.Label();
+            this.splitContainer.Panel1.SuspendLayout();
+            this.splitContainer.Panel2.SuspendLayout();
+            this.splitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposTrazables)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator)).BeginInit();
+            this.bindingnavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ca_campostrazablesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
             descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descripcionLabel.Location = new System.Drawing.Point(17, 89);
+            descripcionLabel.Location = new System.Drawing.Point(9, 71);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(90, 18);
-            descripcionLabel.TabIndex = 2;
+            descripcionLabel.TabIndex = 10;
             descripcionLabel.Text = "Expediente";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.Location = new System.Drawing.Point(9, 171);
+            label1.Location = new System.Drawing.Point(9, 9);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(189, 18);
-            label1.TabIndex = 11;
-            label1.Text = "Expedientes registrados";
+            label1.Size = new System.Drawing.Size(139, 18);
+            label1.TabIndex = 13;
+            label1.Text = "Lista de registros";
             // 
-            // BindingNavigator
+            // label2
             // 
-            this.BindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.BindingNavigator.BindingSource = this.BindingSource;
-            this.BindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.BindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.BindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(9, 119);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(145, 18);
+            label2.TabIndex = 19;
+            label2.Text = "Campos trazables";
+            // 
+            // splitContainer
+            // 
+            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.splitContainer.Name = "splitContainer";
+            this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer.Panel1
+            // 
+            this.splitContainer.Panel1.Controls.Add(label2);
+            this.splitContainer.Panel1.Controls.Add(this.dataGridView_CamposTrazables);
+            this.splitContainer.Panel1.Controls.Add(this.btn_Editar);
+            this.splitContainer.Panel1.Controls.Add(this.btn_cancelar);
+            this.splitContainer.Panel1.Controls.Add(this.btn_Limpiar);
+            this.splitContainer.Panel1.Controls.Add(this.btn_Agregar);
+            this.splitContainer.Panel1.Controls.Add(this.btn_eliminar);
+            this.splitContainer.Panel1.Controls.Add(this.btn_cerrar);
+            this.splitContainer.Panel1.Controls.Add(this.btn_guardar);
+            this.splitContainer.Panel1.Controls.Add(descripcionLabel);
+            this.splitContainer.Panel1.Controls.Add(this.descripcionTextEdit);
+            this.splitContainer.Panel1.Controls.Add(this.shapeContainer1);
+            this.splitContainer.Panel1MinSize = 70;
+            // 
+            // splitContainer.Panel2
+            // 
+            this.splitContainer.Panel2.AutoScroll = true;
+            this.splitContainer.Panel2.Controls.Add(this.bindingnavigator);
+            this.splitContainer.Panel2.Controls.Add(this.datagridview);
+            this.splitContainer.Panel2.Controls.Add(this.lbl_totalregistros);
+            this.splitContainer.Panel2.Controls.Add(this.btn_refrescar);
+            this.splitContainer.Panel2.Controls.Add(this.pbfind);
+            this.splitContainer.Panel2.Controls.Add(this.txt_buscar);
+            this.splitContainer.Panel2.Controls.Add(label1);
+            this.splitContainer.Panel2.Controls.Add(this.shapeContainer2);
+            this.splitContainer.Size = new System.Drawing.Size(699, 594);
+            this.splitContainer.SplitterDistance = 293;
+            this.splitContainer.TabIndex = 16;
+            // 
+            // dataGridView_CamposTrazables
+            // 
+            this.dataGridView_CamposTrazables.AllowUserToAddRows = false;
+            this.dataGridView_CamposTrazables.AllowUserToDeleteRows = false;
+            this.dataGridView_CamposTrazables.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_CamposTrazables.AutoGenerateColumns = false;
+            this.dataGridView_CamposTrazables.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_CamposTrazables.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView_CamposTrazables.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CamposTrazables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView_CamposTrazables.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnEnlazar,
+            this.idDataGridViewTextBoxColumn1,
+            this.nombreDataGridViewTextBoxColumn,
+            this.tamanioCaracteresDataGridViewTextBoxColumn,
+            this.mascaraDataGridViewTextBoxColumn,
+            this.factDataGridViewTextBoxColumn1,
+            this.uactDataGridViewTextBoxColumn1});
+            this.dataGridView_CamposTrazables.DataSource = this.ca_campostrazablesBindingSource;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_CamposTrazables.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView_CamposTrazables.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridView_CamposTrazables.EnableHeadersVisualStyles = false;
+            this.dataGridView_CamposTrazables.Location = new System.Drawing.Point(12, 140);
+            this.dataGridView_CamposTrazables.MultiSelect = false;
+            this.dataGridView_CamposTrazables.Name = "dataGridView_CamposTrazables";
+            this.dataGridView_CamposTrazables.ReadOnly = true;
+            this.dataGridView_CamposTrazables.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CamposTrazables.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridView_CamposTrazables.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView_CamposTrazables.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView_CamposTrazables.Size = new System.Drawing.Size(672, 150);
+            this.dataGridView_CamposTrazables.TabIndex = 18;
+            // 
+            // btn_Editar
+            // 
+            this.btn_Editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Editar.AutoSize = true;
+            this.btn_Editar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Editar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Editar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Editar.FlatAppearance.BorderSize = 0;
+            this.btn_Editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOliveGreen;
+            this.btn_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Editar.Image = global::thumbnail.Icons16x16.edit;
+            this.btn_Editar.Location = new System.Drawing.Point(475, 5);
+            this.btn_Editar.Name = "btn_Editar";
+            this.btn_Editar.Size = new System.Drawing.Size(22, 22);
+            this.btn_Editar.TabIndex = 17;
+            this.toolTip.SetToolTip(this.btn_Editar, "Editar");
+            this.btn_Editar.UseVisualStyleBackColor = false;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cancelar.AutoSize = true;
+            this.btn_cancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_cancelar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelar.Image = global::thumbnail.Icons16x16.cancel;
+            this.btn_cancelar.Location = new System.Drawing.Point(475, 33);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(22, 22);
+            this.btn_cancelar.TabIndex = 16;
+            this.toolTip.SetToolTip(this.btn_cancelar, "Cancelar");
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // btn_Limpiar
+            // 
+            this.btn_Limpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Limpiar.AutoSize = true;
+            this.btn_Limpiar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Limpiar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Limpiar.FlatAppearance.BorderSize = 0;
+            this.btn_Limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btn_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Limpiar.Image = global::thumbnail.Icons16x16.app_window;
+            this.btn_Limpiar.Location = new System.Drawing.Point(504, 5);
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            this.btn_Limpiar.Size = new System.Drawing.Size(22, 22);
+            this.btn_Limpiar.TabIndex = 12;
+            this.toolTip.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
+            this.btn_Limpiar.UseVisualStyleBackColor = false;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Agregar.AutoSize = true;
+            this.btn_Agregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Agregar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Agregar.FlatAppearance.BorderSize = 0;
+            this.btn_Agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Agregar.Image = global::thumbnail.Icons48x48.doc_plus;
+            this.btn_Agregar.Location = new System.Drawing.Point(405, 3);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(54, 54);
+            this.btn_Agregar.TabIndex = 11;
+            this.toolTip.SetToolTip(this.btn_Agregar, "Agregar");
+            this.btn_Agregar.UseVisualStyleBackColor = false;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_eliminar.AutoSize = true;
+            this.btn_eliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_eliminar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_eliminar.FlatAppearance.BorderSize = 0;
+            this.btn_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_eliminar.Image = global::thumbnail.Icons16x16.trash;
+            this.btn_eliminar.Location = new System.Drawing.Point(504, 33);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(22, 22);
+            this.btn_eliminar.TabIndex = 14;
+            this.toolTip.SetToolTip(this.btn_eliminar, "Eliminar");
+            this.btn_eliminar.UseVisualStyleBackColor = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
+            // 
+            // btn_cerrar
+            // 
+            this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cerrar.AutoSize = true;
+            this.btn_cerrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_cerrar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cerrar.FlatAppearance.BorderSize = 0;
+            this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cerrar.Location = new System.Drawing.Point(633, 3);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
+            this.btn_cerrar.TabIndex = 15;
+            this.toolTip.SetToolTip(this.btn_cerrar, "Cerrar");
+            this.btn_cerrar.UseVisualStyleBackColor = false;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_guardar.AutoSize = true;
+            this.btn_guardar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_guardar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_guardar.FlatAppearance.BorderSize = 0;
+            this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_guardar.Image = global::thumbnail.Icons48x48.save;
+            this.btn_guardar.Location = new System.Drawing.Point(549, 3);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(54, 54);
+            this.btn_guardar.TabIndex = 13;
+            this.toolTip.SetToolTip(this.btn_guardar, "Guardar");
+            this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
+            // 
+            // descripcionTextEdit
+            // 
+            this.descripcionTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.descripcionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Descripcion", true));
+            this.descripcionTextEdit.Location = new System.Drawing.Point(12, 92);
+            this.descripcionTextEdit.Name = "descripcionTextEdit";
+            this.descripcionTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.descripcionTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.descripcionTextEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.descripcionTextEdit.Size = new System.Drawing.Size(675, 24);
+            this.descripcionTextEdit.TabIndex = 9;
+            // 
+            // bindingsource
+            // 
+            this.bindingsource.DataSource = typeof(thumbnail.data_members.ca_expedientes);
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.AutoScroll = true;
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape2});
+            this.shapeContainer1.Size = new System.Drawing.Size(699, 293);
+            this.shapeContainer1.TabIndex = 0;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lineShape2.BorderWidth = 2;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 309;
+            this.lineShape2.X2 = 666;
+            this.lineShape2.Y1 = 61;
+            this.lineShape2.Y2 = 61;
+            // 
+            // bindingnavigator
+            // 
+            this.bindingnavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingnavigator.BindingSource = this.bindingsource;
+            this.bindingnavigator.CountItem = this.bindingNavigatorCountItem;
+            this.bindingnavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingnavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingnavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -116,16 +424,16 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.ca_expedientesBindingNavigatorSaveItem});
-            this.BindingNavigator.Location = new System.Drawing.Point(0, 618);
-            this.BindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.BindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.BindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.BindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.BindingNavigator.Name = "BindingNavigator";
-            this.BindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.BindingNavigator.Size = new System.Drawing.Size(775, 25);
-            this.BindingNavigator.TabIndex = 2;
-            this.BindingNavigator.Text = "bindingNavigator1";
+            this.bindingnavigator.Location = new System.Drawing.Point(0, 272);
+            this.bindingnavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingnavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingnavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingnavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingnavigator.Name = "bindingnavigator";
+            this.bindingnavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingnavigator.Size = new System.Drawing.Size(699, 25);
+            this.bindingnavigator.TabIndex = 21;
+            this.bindingnavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -135,12 +443,6 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            this.bindingNavigatorAddNewItem.Visible = false;
-            // 
-            // BindingSource
-            // 
-            this.BindingSource.DataSource = typeof(thumbnail.data_members.ca_expedientes);
-            this.BindingSource.CurrentItemChanged += new System.EventHandler(this.ca_expedientesBindingSource_CurrentItemChanged);
             // 
             // bindingNavigatorCountItem
             // 
@@ -157,7 +459,6 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
-            this.bindingNavigatorDeleteItem.Visible = false;
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -227,19 +528,6 @@
             this.ca_expedientesBindingNavigatorSaveItem.Name = "ca_expedientesBindingNavigatorSaveItem";
             this.ca_expedientesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.ca_expedientesBindingNavigatorSaveItem.Text = "Guardar datos";
-            this.ca_expedientesBindingNavigatorSaveItem.Visible = false;
-            // 
-            // descripcionTextEdit
-            // 
-            this.descripcionTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.descripcionTextEdit.Location = new System.Drawing.Point(20, 110);
-            this.descripcionTextEdit.Name = "descripcionTextEdit";
-            this.descripcionTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.descripcionTextEdit.Properties.Appearance.Options.UseFont = true;
-            this.descripcionTextEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.descripcionTextEdit.Size = new System.Drawing.Size(735, 24);
-            this.descripcionTextEdit.TabIndex = 0;
             // 
             // datagridview
             // 
@@ -252,45 +540,47 @@
             this.datagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.datagridview.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.datagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn});
-            this.datagridview.DataSource = this.BindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridview.DefaultCellStyle = dataGridViewCellStyle2;
+            this.descripcionDataGridViewTextBoxColumn,
+            this.factDataGridViewTextBoxColumn,
+            this.uactDataGridViewTextBoxColumn});
+            this.datagridview.DataSource = this.bindingsource;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridview.DefaultCellStyle = dataGridViewCellStyle11;
             this.datagridview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.datagridview.EnableHeadersVisualStyles = false;
-            this.datagridview.Location = new System.Drawing.Point(12, 196);
+            this.datagridview.Location = new System.Drawing.Point(12, 38);
             this.datagridview.MultiSelect = false;
             this.datagridview.Name = "datagridview";
             this.datagridview.ReadOnly = true;
             this.datagridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridview.Size = new System.Drawing.Size(748, 419);
-            this.datagridview.TabIndex = 1;
+            this.datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.datagridview.Size = new System.Drawing.Size(672, 231);
+            this.datagridview.TabIndex = 20;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -298,216 +588,257 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
             this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Expediente";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // shapeContainer1
+            // factDataGridViewTextBoxColumn
             // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.rectangleShape1,
-            this.lineShape2,
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(775, 643);
-            this.shapeContainer1.TabIndex = 10;
-            this.shapeContainer1.TabStop = false;
+            this.factDataGridViewTextBoxColumn.DataPropertyName = "f_act";
+            this.factDataGridViewTextBoxColumn.HeaderText = "f_act";
+            this.factDataGridViewTextBoxColumn.Name = "factDataGridViewTextBoxColumn";
+            this.factDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // rectangleShape1
+            // uactDataGridViewTextBoxColumn
             // 
-            this.rectangleShape1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rectangleShape1.Location = new System.Drawing.Point(12, 75);
-            this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(748, 67);
+            this.uactDataGridViewTextBoxColumn.DataPropertyName = "u_act";
+            this.uactDataGridViewTextBoxColumn.HeaderText = "u_act";
+            this.uactDataGridViewTextBoxColumn.Name = "uactDataGridViewTextBoxColumn";
+            this.uactDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // lineShape2
+            // lbl_totalregistros
             // 
-            this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lineShape2.BorderWidth = 2;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 419;
-            this.lineShape2.X2 = 776;
-            this.lineShape2.Y1 = 60;
-            this.lineShape2.Y2 = 60;
+            this.lbl_totalregistros.AutoSize = true;
+            this.lbl_totalregistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalregistros.ForeColor = System.Drawing.Color.Gray;
+            this.lbl_totalregistros.Location = new System.Drawing.Point(445, 16);
+            this.lbl_totalregistros.Name = "lbl_totalregistros";
+            this.lbl_totalregistros.Size = new System.Drawing.Size(122, 13);
+            this.lbl_totalregistros.TabIndex = 19;
+            this.lbl_totalregistros.Text = "10 registros encontrados";
             // 
-            // lineShape1
+            // btn_refrescar
             // 
-            this.lineShape1.BorderWidth = 2;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = -4;
-            this.lineShape1.X2 = 361;
-            this.lineShape1.Y1 = 191;
-            this.lineShape1.Y2 = 191;
-            // 
-            // txt_buscar
-            // 
-            this.txt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_buscar.Location = new System.Drawing.Point(472, 617);
-            this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.txt_buscar.Properties.Appearance.Options.UseFont = true;
-            this.txt_buscar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txt_buscar.Size = new System.Drawing.Size(266, 24);
-            this.txt_buscar.TabIndex = 3;
-            this.txt_buscar.EditValueChanged += new System.EventHandler(this.txt_buscar_EditValueChanged);
-            // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Agregar.AutoSize = true;
-            this.btn_Agregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_Agregar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Agregar.FlatAppearance.BorderSize = 0;
-            this.btn_Agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Agregar.Image = global::thumbnail.Icons48x48.doc_plus;
-            this.btn_Agregar.Location = new System.Drawing.Point(446, 3);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(54, 54);
-            this.btn_Agregar.TabIndex = 4;
-            this.toolTip.SetToolTip(this.btn_Agregar, "Agregar");
-            this.btn_Agregar.UseVisualStyleBackColor = false;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
-            // 
-            // btn_eliminar
-            // 
-            this.btn_eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_eliminar.AutoSize = true;
-            this.btn_eliminar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_eliminar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_eliminar.FlatAppearance.BorderSize = 0;
-            this.btn_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_eliminar.Image = global::thumbnail.Icons48x48.delete;
-            this.btn_eliminar.Location = new System.Drawing.Point(625, 3);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(54, 54);
-            this.btn_eliminar.TabIndex = 7;
-            this.toolTip.SetToolTip(this.btn_eliminar, "Eliminar");
-            this.btn_eliminar.UseVisualStyleBackColor = false;
-            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
-            // 
-            // btn_cerrar
-            // 
-            this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cerrar.AutoSize = true;
-            this.btn_cerrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_cerrar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cerrar.FlatAppearance.BorderSize = 0;
-            this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
-            this.btn_cerrar.Location = new System.Drawing.Point(706, 3);
-            this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
-            this.btn_cerrar.TabIndex = 8;
-            this.toolTip.SetToolTip(this.btn_cerrar, "Cerrar");
-            this.btn_cerrar.UseVisualStyleBackColor = false;
-            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
-            // 
-            // btn_guardar
-            // 
-            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_guardar.AutoSize = true;
-            this.btn_guardar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_guardar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_guardar.FlatAppearance.BorderSize = 0;
-            this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardar.Image = global::thumbnail.Icons48x48.save;
-            this.btn_guardar.Location = new System.Drawing.Point(565, 3);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(54, 54);
-            this.btn_guardar.TabIndex = 6;
-            this.toolTip.SetToolTip(this.btn_guardar, "Guardar");
-            this.btn_guardar.UseVisualStyleBackColor = false;
-            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
-            // 
-            // btn_Limpiar
-            // 
-            this.btn_Limpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Limpiar.AutoSize = true;
-            this.btn_Limpiar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_Limpiar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Limpiar.FlatAppearance.BorderSize = 0;
-            this.btn_Limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btn_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Limpiar.Image = global::thumbnail.Icons16x16.app_window;
-            this.btn_Limpiar.Location = new System.Drawing.Point(506, 12);
-            this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.Size = new System.Drawing.Size(22, 22);
-            this.btn_Limpiar.TabIndex = 5;
-            this.toolTip.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
-            this.btn_Limpiar.UseVisualStyleBackColor = false;
-            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            this.btn_refrescar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_refrescar.AutoSize = true;
+            this.btn_refrescar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_refrescar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_refrescar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_refrescar.FlatAppearance.BorderSize = 0;
+            this.btn_refrescar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_refrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_refrescar.Image = global::thumbnail.Icons16x16.reload;
+            this.btn_refrescar.Location = new System.Drawing.Point(665, 10);
+            this.btn_refrescar.Name = "btn_refrescar";
+            this.btn_refrescar.Size = new System.Drawing.Size(22, 22);
+            this.btn_refrescar.TabIndex = 17;
+            this.toolTip.SetToolTip(this.btn_refrescar, "Recargar lista de registros");
+            this.btn_refrescar.UseVisualStyleBackColor = false;
             // 
             // pbfind
             // 
             this.pbfind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbfind.BackColor = System.Drawing.Color.Transparent;
             this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
-            this.pbfind.Location = new System.Drawing.Point(744, 618);
+            this.pbfind.Location = new System.Drawing.Point(368, -150);
             this.pbfind.Name = "pbfind";
             this.pbfind.Size = new System.Drawing.Size(16, 16);
             this.pbfind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbfind.TabIndex = 14;
+            this.pbfind.TabIndex = 16;
             this.pbfind.TabStop = false;
+            // 
+            // txt_buscar
+            // 
+            this.txt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_buscar.Location = new System.Drawing.Point(213, -152);
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_buscar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.txt_buscar.Properties.Appearance.Options.UseBackColor = true;
+            this.txt_buscar.Properties.Appearance.Options.UseFont = true;
+            this.txt_buscar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txt_buscar.Size = new System.Drawing.Size(173, 20);
+            this.txt_buscar.TabIndex = 15;
+            this.txt_buscar.Tag = "0";
+            // 
+            // shapeContainer2
+            // 
+            this.shapeContainer2.AutoScroll = true;
+            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1});
+            this.shapeContainer2.Size = new System.Drawing.Size(699, 297);
+            this.shapeContainer2.TabIndex = 14;
+            this.shapeContainer2.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderWidth = 2;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 0;
+            this.lineShape1.X2 = 200;
+            this.lineShape1.Y1 = 30;
+            this.lineShape1.Y2 = 30;
+            // 
+            // ca_expedientesDataGridView
+            // 
+            this.ca_expedientesDataGridView.AutoGenerateColumns = false;
+            this.ca_expedientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ca_expedientesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.ca_expedientesDataGridView.Location = new System.Drawing.Point(38, 62);
+            this.ca_expedientesDataGridView.Name = "ca_expedientesDataGridView";
+            this.ca_expedientesDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.ca_expedientesDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descripcion";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descripcion";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "f_act";
+            this.dataGridViewTextBoxColumn3.HeaderText = "f_act";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "u_act";
+            this.dataGridViewTextBoxColumn4.HeaderText = "u_act";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // ca_campostrazablesBindingSource
+            // 
+            this.ca_campostrazablesBindingSource.DataSource = typeof(thumbnail.data_members.ca_campostrazables);
+            // 
+            // ColumnEnlazar
+            // 
+            this.ColumnEnlazar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnEnlazar.DataPropertyName = "id";
+            this.ColumnEnlazar.Frozen = true;
+            this.ColumnEnlazar.HeaderText = "Vincular";
+            this.ColumnEnlazar.Name = "ColumnEnlazar";
+            this.ColumnEnlazar.ReadOnly = true;
+            this.ColumnEnlazar.Width = 72;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tamanioCaracteresDataGridViewTextBoxColumn
+            // 
+            this.tamanioCaracteresDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tamanioCaracteresDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.HeaderText = "Tamanio_Caracteres";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.Name = "tamanioCaracteresDataGridViewTextBoxColumn";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mascaraDataGridViewTextBoxColumn
+            // 
+            this.mascaraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mascaraDataGridViewTextBoxColumn.DataPropertyName = "Mascara";
+            this.mascaraDataGridViewTextBoxColumn.HeaderText = "Mascara";
+            this.mascaraDataGridViewTextBoxColumn.Name = "mascaraDataGridViewTextBoxColumn";
+            this.mascaraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // factDataGridViewTextBoxColumn1
+            // 
+            this.factDataGridViewTextBoxColumn1.DataPropertyName = "f_act";
+            this.factDataGridViewTextBoxColumn1.HeaderText = "f_act";
+            this.factDataGridViewTextBoxColumn1.Name = "factDataGridViewTextBoxColumn1";
+            this.factDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.factDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // uactDataGridViewTextBoxColumn1
+            // 
+            this.uactDataGridViewTextBoxColumn1.DataPropertyName = "u_act";
+            this.uactDataGridViewTextBoxColumn1.HeaderText = "u_act";
+            this.uactDataGridViewTextBoxColumn1.Name = "uactDataGridViewTextBoxColumn1";
+            this.uactDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.uactDataGridViewTextBoxColumn1.Visible = false;
             // 
             // ca_expedientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(775, 643);
-            this.Controls.Add(this.btn_Limpiar);
-            this.Controls.Add(this.btn_Agregar);
-            this.Controls.Add(this.btn_eliminar);
-            this.Controls.Add(this.pbfind);
-            this.Controls.Add(this.txt_buscar);
-            this.Controls.Add(this.btn_cerrar);
-            this.Controls.Add(label1);
-            this.Controls.Add(this.datagridview);
-            this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(descripcionLabel);
-            this.Controls.Add(this.descripcionTextEdit);
-            this.Controls.Add(this.BindingNavigator);
-            this.Controls.Add(this.shapeContainer1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.ClientSize = new System.Drawing.Size(699, 594);
+            this.Controls.Add(this.splitContainer);
             this.Name = "ca_expedientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Catálogo de expedientes";
-            this.Load += new System.EventHandler(this.ca_expedientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.BindingNavigator)).EndInit();
-            this.BindingNavigator.ResumeLayout(false);
-            this.BindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
+            this.Text = "Expedientes";
+            this.Load += new System.EventHandler(this.ca_template_Load);
+            this.splitContainer.Panel1.ResumeLayout(false);
+            this.splitContainer.Panel1.PerformLayout();
+            this.splitContainer.Panel2.ResumeLayout(false);
+            this.splitContainer.Panel2.PerformLayout();
+            this.splitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposTrazables)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator)).EndInit();
+            this.bindingnavigator.ResumeLayout(false);
+            this.bindingnavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ca_campostrazablesBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.BindingSource BindingSource;
-        private System.Windows.Forms.BindingNavigator BindingNavigator;
+        private System.Windows.Forms.SplitContainer splitContainer;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private System.Windows.Forms.Button btn_Limpiar;
+        private System.Windows.Forms.Button btn_Agregar;
+        private System.Windows.Forms.Button btn_eliminar;
+        private System.Windows.Forms.Button btn_cerrar;
+        private System.Windows.Forms.Button btn_guardar;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.PictureBox pbfind;
+        private DevExpress.XtraEditors.TextEdit txt_buscar;
+        private System.Windows.Forms.Button btn_refrescar;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Label lbl_totalregistros;
+        private System.Windows.Forms.Button btn_Editar;
+        private System.Windows.Forms.DataGridView dataGridView_CamposTrazables;
+        private System.Windows.Forms.BindingNavigator bindingnavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.BindingSource bindingsource;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -519,22 +850,24 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton ca_expedientesBindingNavigatorSaveItem;
-        private DevExpress.XtraEditors.TextEdit descripcionTextEdit;
-        private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.DataGridView datagridview;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
-        private System.Windows.Forms.Button btn_cerrar;
-        private DevExpress.XtraEditors.TextEdit txt_buscar;
-        private System.Windows.Forms.PictureBox pbfind;
-        private System.Windows.Forms.Button btn_eliminar;
-        private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.Button btn_Agregar;
-        private System.Windows.Forms.Button btn_Limpiar;
-
+        private System.Windows.Forms.DataGridViewTextBoxColumn factDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uactDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView ca_expedientesDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DevExpress.XtraEditors.TextEdit descripcionTextEdit;
+        private System.Windows.Forms.BindingSource ca_campostrazablesBindingSource;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnEnlazar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tamanioCaracteresDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mascaraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn factDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uactDataGridViewTextBoxColumn1;
     }
 }

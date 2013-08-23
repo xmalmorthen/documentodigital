@@ -29,17 +29,24 @@ namespace thumbnail.forms
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
             thumbnail.data_members.ca_usuarios usuario = Program.Bd_Exp_Transportes.ca_usuarios.SingleOrDefault(c => c.usuario == txt_usuario.Text);
-
-            if (!convert_md5.verifyMd5Hash(txt_contrasenia.Text, usuario.contrasenia))
+            try
             {
-                MessageBox.Show("Usuario y/o contraseña no válidos", "Error de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else {
-                if (Parse_data_user(usuario))
+                if (!convert_md5.verifyMd5Hash(txt_contrasenia.Text, usuario.contrasenia))
                 {
-                    valid = true;
-                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                    MessageBox.Show("Usuario y/o contraseña no válidos", "Error de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else
+                {
+                    if (Parse_data_user(usuario))
+                    {
+                        valid = true;
+                        this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 

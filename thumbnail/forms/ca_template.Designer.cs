@@ -28,18 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label label1;
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.descripcionTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lbl_totalregistros = new System.Windows.Forms.Label();
-            this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.btn_Editar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
@@ -47,16 +38,24 @@
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
+            this.descripcionTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lbl_totalregistros = new System.Windows.Forms.Label();
             this.btn_refrescar = new System.Windows.Forms.Button();
             this.pbfind = new System.Windows.Forms.PictureBox();
+            this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.toolTip = new System.Windows.Forms.ToolTip();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
@@ -110,86 +109,8 @@
             this.splitContainer.Panel2.Controls.Add(label1);
             this.splitContainer.Panel2.Controls.Add(this.shapeContainer2);
             this.splitContainer.Size = new System.Drawing.Size(699, 594);
-            this.splitContainer.SplitterDistance = 128;
+            this.splitContainer.SplitterDistance = 280;
             this.splitContainer.TabIndex = 16;
-            // 
-            // descripcionTextEdit
-            // 
-            this.descripcionTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.descripcionTextEdit.Location = new System.Drawing.Point(12, 92);
-            this.descripcionTextEdit.Name = "descripcionTextEdit";
-            this.descripcionTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.descripcionTextEdit.Properties.Appearance.Options.UseFont = true;
-            this.descripcionTextEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.descripcionTextEdit.Size = new System.Drawing.Size(675, 24);
-            this.descripcionTextEdit.TabIndex = 9;
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape2});
-            this.shapeContainer1.Size = new System.Drawing.Size(699, 128);
-            this.shapeContainer1.TabIndex = 0;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lineShape2.BorderWidth = 2;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 343;
-            this.lineShape2.X2 = 700;
-            this.lineShape2.Y1 = 61;
-            this.lineShape2.Y2 = 61;
-            // 
-            // lbl_totalregistros
-            // 
-            this.lbl_totalregistros.AutoSize = true;
-            this.lbl_totalregistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalregistros.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_totalregistros.Location = new System.Drawing.Point(445, 16);
-            this.lbl_totalregistros.Name = "lbl_totalregistros";
-            this.lbl_totalregistros.Size = new System.Drawing.Size(122, 13);
-            this.lbl_totalregistros.TabIndex = 19;
-            this.lbl_totalregistros.Text = "10 registros encontrados";
-            // 
-            // txt_buscar
-            // 
-            this.txt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_buscar.Location = new System.Drawing.Point(213, 13);
-            this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txt_buscar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txt_buscar.Properties.Appearance.Options.UseBackColor = true;
-            this.txt_buscar.Properties.Appearance.Options.UseFont = true;
-            this.txt_buscar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txt_buscar.Size = new System.Drawing.Size(173, 20);
-            this.txt_buscar.TabIndex = 15;
-            this.txt_buscar.Tag = "0";
-            // 
-            // shapeContainer2
-            // 
-            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer2";
-            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(699, 462);
-            this.shapeContainer2.TabIndex = 14;
-            this.shapeContainer2.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderWidth = 2;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 0;
-            this.lineShape1.X2 = 200;
-            this.lineShape1.Y1 = 30;
-            this.lineShape1.Y2 = 30;
             // 
             // btn_Editar
             // 
@@ -324,6 +245,50 @@
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
+            // descripcionTextEdit
+            // 
+            this.descripcionTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.descripcionTextEdit.Location = new System.Drawing.Point(12, 92);
+            this.descripcionTextEdit.Name = "descripcionTextEdit";
+            this.descripcionTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.descripcionTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.descripcionTextEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.descripcionTextEdit.Size = new System.Drawing.Size(675, 24);
+            this.descripcionTextEdit.TabIndex = 9;
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape2});
+            this.shapeContainer1.Size = new System.Drawing.Size(699, 280);
+            this.shapeContainer1.TabIndex = 0;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lineShape2.BorderWidth = 2;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 343;
+            this.lineShape2.X2 = 700;
+            this.lineShape2.Y1 = 61;
+            this.lineShape2.Y2 = 61;
+            // 
+            // lbl_totalregistros
+            // 
+            this.lbl_totalregistros.AutoSize = true;
+            this.lbl_totalregistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalregistros.ForeColor = System.Drawing.Color.Gray;
+            this.lbl_totalregistros.Location = new System.Drawing.Point(445, 16);
+            this.lbl_totalregistros.Name = "lbl_totalregistros";
+            this.lbl_totalregistros.Size = new System.Drawing.Size(122, 13);
+            this.lbl_totalregistros.TabIndex = 19;
+            this.lbl_totalregistros.Text = "10 registros encontrados";
+            // 
             // btn_refrescar
             // 
             this.btn_refrescar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -347,12 +312,46 @@
             this.pbfind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbfind.BackColor = System.Drawing.Color.Transparent;
             this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
-            this.pbfind.Location = new System.Drawing.Point(368, 15);
+            this.pbfind.Location = new System.Drawing.Point(368, -137);
             this.pbfind.Name = "pbfind";
             this.pbfind.Size = new System.Drawing.Size(16, 16);
             this.pbfind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbfind.TabIndex = 16;
             this.pbfind.TabStop = false;
+            // 
+            // txt_buscar
+            // 
+            this.txt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_buscar.Location = new System.Drawing.Point(213, -139);
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_buscar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.txt_buscar.Properties.Appearance.Options.UseBackColor = true;
+            this.txt_buscar.Properties.Appearance.Options.UseFont = true;
+            this.txt_buscar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txt_buscar.Size = new System.Drawing.Size(173, 20);
+            this.txt_buscar.TabIndex = 15;
+            this.txt_buscar.Tag = "0";
+            // 
+            // shapeContainer2
+            // 
+            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1});
+            this.shapeContainer2.Size = new System.Drawing.Size(699, 310);
+            this.shapeContainer2.TabIndex = 14;
+            this.shapeContainer2.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderWidth = 2;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 0;
+            this.lineShape1.X2 = 200;
+            this.lineShape1.Y1 = 30;
+            this.lineShape1.Y2 = 30;
             // 
             // ca_template
             // 
@@ -369,8 +368,8 @@
             this.splitContainer.Panel2.PerformLayout();
             this.splitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
