@@ -84,6 +84,9 @@ namespace thumbnail.data_members
     partial void Insertde_acciones_modulo(de_acciones_modulo instance);
     partial void Updatede_acciones_modulo(de_acciones_modulo instance);
     partial void Deletede_acciones_modulo(de_acciones_modulo instance);
+    partial void Insertde_digital(de_digital instance);
+    partial void Updatede_digital(de_digital instance);
+    partial void Deletede_digital(de_digital instance);
     partial void Insertde_digital_campostrazables(de_digital_campostrazables instance);
     partial void Updatede_digital_campostrazables(de_digital_campostrazables instance);
     partial void Deletede_digital_campostrazables(de_digital_campostrazables instance);
@@ -290,6 +293,14 @@ namespace thumbnail.data_members
 			}
 		}
 		
+		public System.Data.Linq.Table<de_digital> de_digital
+		{
+			get
+			{
+				return this.GetTable<de_digital>();
+			}
+		}
+		
 		public System.Data.Linq.Table<de_digital_campostrazables> de_digital_campostrazables
 		{
 			get
@@ -378,13 +389,6 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_CampostrazablesActivosporExpediente")]
-		public ISingleResult<pa_CampostrazablesActivosporExpedienteResult> pa_CampostrazablesActivosporExpediente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_expediente)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_expediente);
-			return ((ISingleResult<pa_CampostrazablesActivosporExpedienteResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_obtener_fecha")]
 		public ISingleResult<pa_obtener_fechaResult> pa_obtener_fecha()
 		{
@@ -399,18 +403,25 @@ namespace thumbnail.data_members
 			return ((ISingleResult<pa_obtener_horaResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen")]
-		public ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult> pa_ObtenerDocumentosporTramiteyOrigen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tramite, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_origen)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_tramite, id_origen);
-			return ((ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_Permsos_Modulos")]
 		public ISingleResult<pa_Permsos_ModulosResult> pa_Permsos_Modulos([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_usuario)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_usuario);
 			return ((ISingleResult<pa_Permsos_ModulosResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_CampostrazablesActivosporExpediente")]
+		public ISingleResult<pa_CampostrazablesActivosporExpedienteResult> pa_CampostrazablesActivosporExpediente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_expediente)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_expediente);
+			return ((ISingleResult<pa_CampostrazablesActivosporExpedienteResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen")]
+		public ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult> pa_ObtenerDocumentosporTramiteyOrigen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tramite, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_origen)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_tramite, id_origen);
+			return ((ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -680,10 +691,6 @@ namespace thumbnail.data_members
 		
 		private string _Mascara;
 		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
-		
 		private EntitySet<re_expedientes_campostrazables> _re_expedientes_campostrazables;
 		
     #region Definiciones de métodos de extensibilidad
@@ -698,10 +705,6 @@ namespace thumbnail.data_members
     partial void OnTamanio_CaracteresChanged();
     partial void OnMascaraChanging(string value);
     partial void OnMascaraChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
     #endregion
 		
 		public ca_campostrazables()
@@ -790,46 +793,6 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
-		{
-			get
-			{
-				return this._f_act;
-			}
-			set
-			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_campostrazables_re_expedientes_campostrazables", Storage="_re_expedientes_campostrazables", ThisKey="id", OtherKey="id_campotrazable")]
 		public EntitySet<re_expedientes_campostrazables> re_expedientes_campostrazables
 		{
@@ -886,10 +849,6 @@ namespace thumbnail.data_members
 		
 		private string _Descripcion;
 		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
-		
 		private EntitySet<re_clasificaciondocumentos_documentos> _re_clasificaciondocumentos_documentos;
 		
     #region Definiciones de métodos de extensibilidad
@@ -900,10 +859,6 @@ namespace thumbnail.data_members
     partial void OnidChanged();
     partial void OnDescripcionChanging(string value);
     partial void OnDescripcionChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
     #endregion
 		
 		public ca_clasificaciondocumentos()
@@ -948,46 +903,6 @@ namespace thumbnail.data_members
 					this._Descripcion = value;
 					this.SendPropertyChanged("Descripcion");
 					this.OnDescripcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
-		{
-			get
-			{
-				return this._f_act;
-			}
-			set
-			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
 				}
 			}
 		}
@@ -1048,10 +963,6 @@ namespace thumbnail.data_members
 		
 		private string _Descripcion;
 		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
-		
 		private EntitySet<ca_tramites> _ca_tramites;
 		
     #region Definiciones de métodos de extensibilidad
@@ -1062,10 +973,6 @@ namespace thumbnail.data_members
     partial void OnidChanged();
     partial void OnDescripcionChanging(string value);
     partial void OnDescripcionChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
     #endregion
 		
 		public ca_clasificaciontramites()
@@ -1110,46 +1017,6 @@ namespace thumbnail.data_members
 					this._Descripcion = value;
 					this.SendPropertyChanged("Descripcion");
 					this.OnDescripcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
-		{
-			get
-			{
-				return this._f_act;
-			}
-			set
-			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
 				}
 			}
 		}
@@ -1230,12 +1097,6 @@ namespace thumbnail.data_members
 		
 		private string _Politica;
 		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
-		
-		private EntitySet<ma_digital> _ma_digital;
-		
 		private EntitySet<re_clasificaciondocumentos_documentos> _re_clasificaciondocumentos_documentos;
 		
 		private EntityRef<ca_formatos> _ca_formatos;
@@ -1268,15 +1129,10 @@ namespace thumbnail.data_members
     partial void OnMascara_TrazableChanged();
     partial void OnPoliticaChanging(string value);
     partial void OnPoliticaChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
     #endregion
 		
 		public ca_documentos()
 		{
-			this._ma_digital = new EntitySet<ma_digital>(new Action<ma_digital>(this.attach_ma_digital), new Action<ma_digital>(this.detach_ma_digital));
 			this._re_clasificaciondocumentos_documentos = new EntitySet<re_clasificaciondocumentos_documentos>(new Action<re_clasificaciondocumentos_documentos>(this.attach_re_clasificaciondocumentos_documentos), new Action<re_clasificaciondocumentos_documentos>(this.detach_re_clasificaciondocumentos_documentos));
 			this._ca_formatos = default(EntityRef<ca_formatos>);
 			OnCreated();
@@ -1526,59 +1382,6 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
-		{
-			get
-			{
-				return this._f_act;
-			}
-			set
-			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_documentos_ma_digital", Storage="_ma_digital", ThisKey="id", OtherKey="id_documento")]
-		public EntitySet<ma_digital> ma_digital
-		{
-			get
-			{
-				return this._ma_digital;
-			}
-			set
-			{
-				this._ma_digital.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_documentos_re_clasificaciondocumentos_documentos", Storage="_re_clasificaciondocumentos_documentos", ThisKey="id", OtherKey="id_documento")]
 		public EntitySet<re_clasificaciondocumentos_documentos> re_clasificaciondocumentos_documentos
 		{
@@ -1646,18 +1449,6 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		private void attach_ma_digital(ma_digital entity)
-		{
-			this.SendPropertyChanging();
-			entity.ca_documentos = this;
-		}
-		
-		private void detach_ma_digital(ma_digital entity)
-		{
-			this.SendPropertyChanging();
-			entity.ca_documentos = null;
-		}
-		
 		private void attach_re_clasificaciondocumentos_documentos(re_clasificaciondocumentos_documentos entity)
 		{
 			this.SendPropertyChanging();
@@ -1681,11 +1472,11 @@ namespace thumbnail.data_members
 		
 		private string _Descripcion;
 		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
-		
 		private EntitySet<ca_tramites> _ca_tramites;
+		
+		private EntitySet<de_digital> _de_digital;
+		
+		private EntitySet<de_digital_campostrazables> _de_digital_campostrazables;
 		
 		private EntitySet<re_clasificaciondocumentos_documentos> _re_clasificaciondocumentos_documentos;
 		
@@ -1699,15 +1490,13 @@ namespace thumbnail.data_members
     partial void OnidChanged();
     partial void OnDescripcionChanging(string value);
     partial void OnDescripcionChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
     #endregion
 		
 		public ca_estatus()
 		{
 			this._ca_tramites = new EntitySet<ca_tramites>(new Action<ca_tramites>(this.attach_ca_tramites), new Action<ca_tramites>(this.detach_ca_tramites));
+			this._de_digital = new EntitySet<de_digital>(new Action<de_digital>(this.attach_de_digital), new Action<de_digital>(this.detach_de_digital));
+			this._de_digital_campostrazables = new EntitySet<de_digital_campostrazables>(new Action<de_digital_campostrazables>(this.attach_de_digital_campostrazables), new Action<de_digital_campostrazables>(this.detach_de_digital_campostrazables));
 			this._re_clasificaciondocumentos_documentos = new EntitySet<re_clasificaciondocumentos_documentos>(new Action<re_clasificaciondocumentos_documentos>(this.attach_re_clasificaciondocumentos_documentos), new Action<re_clasificaciondocumentos_documentos>(this.detach_re_clasificaciondocumentos_documentos));
 			this._re_expedientes_campostrazables = new EntitySet<re_expedientes_campostrazables>(new Action<re_expedientes_campostrazables>(this.attach_re_expedientes_campostrazables), new Action<re_expedientes_campostrazables>(this.detach_re_expedientes_campostrazables));
 			OnCreated();
@@ -1753,46 +1542,6 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
-		{
-			get
-			{
-				return this._f_act;
-			}
-			set
-			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_estatus_ca_tramites", Storage="_ca_tramites", ThisKey="id", OtherKey="id_estatus")]
 		public EntitySet<ca_tramites> ca_tramites
 		{
@@ -1803,6 +1552,32 @@ namespace thumbnail.data_members
 			set
 			{
 				this._ca_tramites.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_estatus_de_digital", Storage="_de_digital", ThisKey="id", OtherKey="id_estatus")]
+		public EntitySet<de_digital> de_digital
+		{
+			get
+			{
+				return this._de_digital;
+			}
+			set
+			{
+				this._de_digital.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_estatus_de_digital_campostrazables", Storage="_de_digital_campostrazables", ThisKey="id", OtherKey="id_estatus")]
+		public EntitySet<de_digital_campostrazables> de_digital_campostrazables
+		{
+			get
+			{
+				return this._de_digital_campostrazables;
+			}
+			set
+			{
+				this._de_digital_campostrazables.Assign(value);
 			}
 		}
 		
@@ -1864,6 +1639,30 @@ namespace thumbnail.data_members
 			entity.ca_estatus = null;
 		}
 		
+		private void attach_de_digital(de_digital entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_estatus = this;
+		}
+		
+		private void detach_de_digital(de_digital entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_estatus = null;
+		}
+		
+		private void attach_de_digital_campostrazables(de_digital_campostrazables entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_estatus = this;
+		}
+		
+		private void detach_de_digital_campostrazables(de_digital_campostrazables entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_estatus = null;
+		}
+		
 		private void attach_re_clasificaciondocumentos_documentos(re_clasificaciondocumentos_documentos entity)
 		{
 			this.SendPropertyChanging();
@@ -1899,10 +1698,6 @@ namespace thumbnail.data_members
 		
 		private string _Descripcion;
 		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
-		
 		private EntitySet<re_expedientes_campostrazables> _re_expedientes_campostrazables;
 		
 		private EntitySet<re_expedientes_tramites> _re_expedientes_tramites;
@@ -1915,10 +1710,6 @@ namespace thumbnail.data_members
     partial void OnidChanged();
     partial void OnDescripcionChanging(string value);
     partial void OnDescripcionChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
     #endregion
 		
 		public ca_expedientes()
@@ -1964,46 +1755,6 @@ namespace thumbnail.data_members
 					this._Descripcion = value;
 					this.SendPropertyChanged("Descripcion");
 					this.OnDescripcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
-		{
-			get
-			{
-				return this._f_act;
-			}
-			set
-			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
 				}
 			}
 		}
@@ -2089,10 +1840,6 @@ namespace thumbnail.data_members
 		
 		private string _Descripcion;
 		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
-		
 		private EntitySet<ca_documentos> _ca_documentos;
 		
     #region Definiciones de métodos de extensibilidad
@@ -2103,10 +1850,6 @@ namespace thumbnail.data_members
     partial void OnidChanged();
     partial void OnDescripcionChanging(string value);
     partial void OnDescripcionChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
     #endregion
 		
 		public ca_formatos()
@@ -2151,46 +1894,6 @@ namespace thumbnail.data_members
 					this._Descripcion = value;
 					this.SendPropertyChanged("Descripcion");
 					this.OnDescripcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
-		{
-			get
-			{
-				return this._f_act;
-			}
-			set
-			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
 				}
 			}
 		}
@@ -2251,6 +1954,10 @@ namespace thumbnail.data_members
 		
 		private string _Modulo;
 		
+		private System.Nullable<int> _id_menu;
+		
+		private System.Nullable<int> _id_submenu;
+		
 		private EntitySet<re_roles_modulos> _re_roles_modulos;
 		
     #region Definiciones de métodos de extensibilidad
@@ -2261,6 +1968,10 @@ namespace thumbnail.data_members
     partial void OnidChanged();
     partial void OnModuloChanging(string value);
     partial void OnModuloChanged();
+    partial void Onid_menuChanging(System.Nullable<int> value);
+    partial void Onid_menuChanged();
+    partial void Onid_submenuChanging(System.Nullable<int> value);
+    partial void Onid_submenuChanged();
     #endregion
 		
 		public ca_modulos()
@@ -2305,6 +2016,46 @@ namespace thumbnail.data_members
 					this._Modulo = value;
 					this.SendPropertyChanged("Modulo");
 					this.OnModuloChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_menu", DbType="Int")]
+		public System.Nullable<int> id_menu
+		{
+			get
+			{
+				return this._id_menu;
+			}
+			set
+			{
+				if ((this._id_menu != value))
+				{
+					this.Onid_menuChanging(value);
+					this.SendPropertyChanging();
+					this._id_menu = value;
+					this.SendPropertyChanged("id_menu");
+					this.Onid_menuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_submenu", DbType="Int")]
+		public System.Nullable<int> id_submenu
+		{
+			get
+			{
+				return this._id_submenu;
+			}
+			set
+			{
+				if ((this._id_submenu != value))
+				{
+					this.Onid_submenuChanging(value);
+					this.SendPropertyChanging();
+					this._id_submenu = value;
+					this.SendPropertyChanged("id_submenu");
+					this.Onid_submenuChanged();
 				}
 			}
 		}
@@ -2365,10 +2116,6 @@ namespace thumbnail.data_members
 		
 		private string _Descripcion;
 		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
-		
 		private EntitySet<re_tramites_re_clasificaciondocumentos_documentos> _re_tramites_re_clasificaciondocumentos_documentos;
 		
     #region Definiciones de métodos de extensibilidad
@@ -2379,10 +2126,6 @@ namespace thumbnail.data_members
     partial void OnidChanged();
     partial void OnDescripcionChanging(string value);
     partial void OnDescripcionChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
     #endregion
 		
 		public ca_origenes()
@@ -2427,46 +2170,6 @@ namespace thumbnail.data_members
 					this._Descripcion = value;
 					this.SendPropertyChanged("Descripcion");
 					this.OnDescripcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
-		{
-			get
-			{
-				return this._f_act;
-			}
-			set
-			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
 				}
 			}
 		}
@@ -3143,12 +2846,6 @@ namespace thumbnail.data_members
 		
 		private int _id_estatus;
 		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
-		
-		private EntitySet<ma_digital> _ma_digital;
-		
 		private EntitySet<re_expedientes_tramites> _re_expedientes_tramites;
 		
 		private EntitySet<re_tramites_re_clasificaciondocumentos_documentos> _re_tramites_re_clasificaciondocumentos_documentos;
@@ -3177,15 +2874,10 @@ namespace thumbnail.data_members
     partial void Onid_ClasificacionTramiteChanged();
     partial void Onid_estatusChanging(int value);
     partial void Onid_estatusChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
     #endregion
 		
 		public ca_tramites()
 		{
-			this._ma_digital = new EntitySet<ma_digital>(new Action<ma_digital>(this.attach_ma_digital), new Action<ma_digital>(this.detach_ma_digital));
 			this._re_expedientes_tramites = new EntitySet<re_expedientes_tramites>(new Action<re_expedientes_tramites>(this.attach_re_expedientes_tramites), new Action<re_expedientes_tramites>(this.detach_re_expedientes_tramites));
 			this._re_tramites_re_clasificaciondocumentos_documentos = new EntitySet<re_tramites_re_clasificaciondocumentos_documentos>(new Action<re_tramites_re_clasificaciondocumentos_documentos>(this.attach_re_tramites_re_clasificaciondocumentos_documentos), new Action<re_tramites_re_clasificaciondocumentos_documentos>(this.detach_re_tramites_re_clasificaciondocumentos_documentos));
 			this._ca_clasificaciontramites = default(EntityRef<ca_clasificaciontramites>);
@@ -3361,59 +3053,6 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
-		{
-			get
-			{
-				return this._f_act;
-			}
-			set
-			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tramites_ma_digital", Storage="_ma_digital", ThisKey="id", OtherKey="id_tramite")]
-		public EntitySet<ma_digital> ma_digital
-		{
-			get
-			{
-				return this._ma_digital;
-			}
-			set
-			{
-				this._ma_digital.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tramites_re_expedientes_tramites", Storage="_re_expedientes_tramites", ThisKey="id", OtherKey="id_tramite")]
 		public EntitySet<re_expedientes_tramites> re_expedientes_tramites
 		{
@@ -3526,18 +3165,6 @@ namespace thumbnail.data_members
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_ma_digital(ma_digital entity)
-		{
-			this.SendPropertyChanging();
-			entity.ca_tramites = this;
-		}
-		
-		private void detach_ma_digital(ma_digital entity)
-		{
-			this.SendPropertyChanging();
-			entity.ca_tramites = null;
 		}
 		
 		private void attach_re_expedientes_tramites(re_expedientes_tramites entity)
@@ -3947,6 +3574,359 @@ namespace thumbnail.data_members
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.de_digital")]
+	public partial class de_digital : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _id_ma_digital;
+		
+		private System.Data.Linq.Binary _thumbnail;
+		
+		private int _id_re_clasificaciondocumento_documento;
+		
+		private System.Data.Linq.Binary _imagen;
+		
+		private System.DateTime _fecha_hora;
+		
+		private string _valor_trazable;
+		
+		private int _id_estatus;
+		
+		private EntityRef<ca_estatus> _ca_estatus;
+		
+		private EntityRef<ma_digital> _ma_digital;
+		
+		private EntityRef<re_clasificaciondocumentos_documentos> _re_clasificaciondocumentos_documentos;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onid_ma_digitalChanging(int value);
+    partial void Onid_ma_digitalChanged();
+    partial void OnthumbnailChanging(System.Data.Linq.Binary value);
+    partial void OnthumbnailChanged();
+    partial void Onid_re_clasificaciondocumento_documentoChanging(int value);
+    partial void Onid_re_clasificaciondocumento_documentoChanged();
+    partial void OnimagenChanging(System.Data.Linq.Binary value);
+    partial void OnimagenChanged();
+    partial void Onfecha_horaChanging(System.DateTime value);
+    partial void Onfecha_horaChanged();
+    partial void Onvalor_trazableChanging(string value);
+    partial void Onvalor_trazableChanged();
+    partial void Onid_estatusChanging(int value);
+    partial void Onid_estatusChanged();
+    #endregion
+		
+		public de_digital()
+		{
+			this._ca_estatus = default(EntityRef<ca_estatus>);
+			this._ma_digital = default(EntityRef<ma_digital>);
+			this._re_clasificaciondocumentos_documentos = default(EntityRef<re_clasificaciondocumentos_documentos>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_ma_digital", DbType="Int NOT NULL")]
+		public int id_ma_digital
+		{
+			get
+			{
+				return this._id_ma_digital;
+			}
+			set
+			{
+				if ((this._id_ma_digital != value))
+				{
+					if (this._ma_digital.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_ma_digitalChanging(value);
+					this.SendPropertyChanging();
+					this._id_ma_digital = value;
+					this.SendPropertyChanged("id_ma_digital");
+					this.Onid_ma_digitalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thumbnail", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary thumbnail
+		{
+			get
+			{
+				return this._thumbnail;
+			}
+			set
+			{
+				if ((this._thumbnail != value))
+				{
+					this.OnthumbnailChanging(value);
+					this.SendPropertyChanging();
+					this._thumbnail = value;
+					this.SendPropertyChanged("thumbnail");
+					this.OnthumbnailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_clasificaciondocumento_documento", DbType="Int NOT NULL")]
+		public int id_re_clasificaciondocumento_documento
+		{
+			get
+			{
+				return this._id_re_clasificaciondocumento_documento;
+			}
+			set
+			{
+				if ((this._id_re_clasificaciondocumento_documento != value))
+				{
+					if (this._re_clasificaciondocumentos_documentos.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_re_clasificaciondocumento_documentoChanging(value);
+					this.SendPropertyChanging();
+					this._id_re_clasificaciondocumento_documento = value;
+					this.SendPropertyChanged("id_re_clasificaciondocumento_documento");
+					this.Onid_re_clasificaciondocumento_documentoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imagen", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary imagen
+		{
+			get
+			{
+				return this._imagen;
+			}
+			set
+			{
+				if ((this._imagen != value))
+				{
+					this.OnimagenChanging(value);
+					this.SendPropertyChanging();
+					this._imagen = value;
+					this.SendPropertyChanged("imagen");
+					this.OnimagenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_hora", DbType="DateTime NOT NULL")]
+		public System.DateTime fecha_hora
+		{
+			get
+			{
+				return this._fecha_hora;
+			}
+			set
+			{
+				if ((this._fecha_hora != value))
+				{
+					this.Onfecha_horaChanging(value);
+					this.SendPropertyChanging();
+					this._fecha_hora = value;
+					this.SendPropertyChanged("fecha_hora");
+					this.Onfecha_horaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_valor_trazable", DbType="VarChar(200)")]
+		public string valor_trazable
+		{
+			get
+			{
+				return this._valor_trazable;
+			}
+			set
+			{
+				if ((this._valor_trazable != value))
+				{
+					this.Onvalor_trazableChanging(value);
+					this.SendPropertyChanging();
+					this._valor_trazable = value;
+					this.SendPropertyChanged("valor_trazable");
+					this.Onvalor_trazableChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus", DbType="Int NOT NULL")]
+		public int id_estatus
+		{
+			get
+			{
+				return this._id_estatus;
+			}
+			set
+			{
+				if ((this._id_estatus != value))
+				{
+					if (this._ca_estatus.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_estatusChanging(value);
+					this.SendPropertyChanging();
+					this._id_estatus = value;
+					this.SendPropertyChanged("id_estatus");
+					this.Onid_estatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_estatus_de_digital", Storage="_ca_estatus", ThisKey="id_estatus", OtherKey="id", IsForeignKey=true)]
+		public ca_estatus ca_estatus
+		{
+			get
+			{
+				return this._ca_estatus.Entity;
+			}
+			set
+			{
+				ca_estatus previousValue = this._ca_estatus.Entity;
+				if (((previousValue != value) 
+							|| (this._ca_estatus.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ca_estatus.Entity = null;
+						previousValue.de_digital.Remove(this);
+					}
+					this._ca_estatus.Entity = value;
+					if ((value != null))
+					{
+						value.de_digital.Add(this);
+						this._id_estatus = value.id;
+					}
+					else
+					{
+						this._id_estatus = default(int);
+					}
+					this.SendPropertyChanged("ca_estatus");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ma_digital_de_digital", Storage="_ma_digital", ThisKey="id_ma_digital", OtherKey="id", IsForeignKey=true)]
+		public ma_digital ma_digital
+		{
+			get
+			{
+				return this._ma_digital.Entity;
+			}
+			set
+			{
+				ma_digital previousValue = this._ma_digital.Entity;
+				if (((previousValue != value) 
+							|| (this._ma_digital.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ma_digital.Entity = null;
+						previousValue.de_digital.Remove(this);
+					}
+					this._ma_digital.Entity = value;
+					if ((value != null))
+					{
+						value.de_digital.Add(this);
+						this._id_ma_digital = value.id;
+					}
+					else
+					{
+						this._id_ma_digital = default(int);
+					}
+					this.SendPropertyChanged("ma_digital");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="re_clasificaciondocumentos_documentos_de_digital", Storage="_re_clasificaciondocumentos_documentos", ThisKey="id_re_clasificaciondocumento_documento", OtherKey="id", IsForeignKey=true)]
+		public re_clasificaciondocumentos_documentos re_clasificaciondocumentos_documentos
+		{
+			get
+			{
+				return this._re_clasificaciondocumentos_documentos.Entity;
+			}
+			set
+			{
+				re_clasificaciondocumentos_documentos previousValue = this._re_clasificaciondocumentos_documentos.Entity;
+				if (((previousValue != value) 
+							|| (this._re_clasificaciondocumentos_documentos.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._re_clasificaciondocumentos_documentos.Entity = null;
+						previousValue.de_digital.Remove(this);
+					}
+					this._re_clasificaciondocumentos_documentos.Entity = value;
+					if ((value != null))
+					{
+						value.de_digital.Add(this);
+						this._id_re_clasificaciondocumento_documento = value.id;
+					}
+					else
+					{
+						this._id_re_clasificaciondocumento_documento = default(int);
+					}
+					this.SendPropertyChanged("re_clasificaciondocumentos_documentos");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.de_digital_campostrazables")]
 	public partial class de_digital_campostrazables : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3961,13 +3941,11 @@ namespace thumbnail.data_members
 		
 		private string _valor_trazable;
 		
-		private string _fecha;
+		private string _fecha_hora_creacion;
 		
-		private string _hora;
+		private int _id_estatus;
 		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
+		private EntityRef<ca_estatus> _ca_estatus;
 		
 		private EntityRef<ma_digital> _ma_digital;
 		
@@ -3985,18 +3963,15 @@ namespace thumbnail.data_members
     partial void Onid_re_expediente_campotrazableChanged();
     partial void Onvalor_trazableChanging(string value);
     partial void Onvalor_trazableChanged();
-    partial void OnfechaChanging(string value);
-    partial void OnfechaChanged();
-    partial void OnhoraChanging(string value);
-    partial void OnhoraChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
+    partial void Onfecha_hora_creacionChanging(string value);
+    partial void Onfecha_hora_creacionChanged();
+    partial void Onid_estatusChanging(int value);
+    partial void Onid_estatusChanged();
     #endregion
 		
 		public de_digital_campostrazables()
 		{
+			this._ca_estatus = default(EntityRef<ca_estatus>);
 			this._ma_digital = default(EntityRef<ma_digital>);
 			this._re_expedientes_campostrazables = default(EntityRef<re_expedientes_campostrazables>);
 			OnCreated();
@@ -4090,82 +4065,80 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string fecha
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_hora_creacion", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string fecha_hora_creacion
 		{
 			get
 			{
-				return this._fecha;
+				return this._fecha_hora_creacion;
 			}
 			set
 			{
-				if ((this._fecha != value))
+				if ((this._fecha_hora_creacion != value))
 				{
-					this.OnfechaChanging(value);
+					this.Onfecha_hora_creacionChanging(value);
 					this.SendPropertyChanging();
-					this._fecha = value;
-					this.SendPropertyChanged("fecha");
-					this.OnfechaChanged();
+					this._fecha_hora_creacion = value;
+					this.SendPropertyChanged("fecha_hora_creacion");
+					this.Onfecha_hora_creacionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hora", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string hora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus", DbType="Int NOT NULL")]
+		public int id_estatus
 		{
 			get
 			{
-				return this._hora;
+				return this._id_estatus;
 			}
 			set
 			{
-				if ((this._hora != value))
+				if ((this._id_estatus != value))
 				{
-					this.OnhoraChanging(value);
+					if (this._ca_estatus.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_estatusChanging(value);
 					this.SendPropertyChanging();
-					this._hora = value;
-					this.SendPropertyChanged("hora");
-					this.OnhoraChanged();
+					this._id_estatus = value;
+					this.SendPropertyChanged("id_estatus");
+					this.Onid_estatusChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_estatus_de_digital_campostrazables", Storage="_ca_estatus", ThisKey="id_estatus", OtherKey="id", IsForeignKey=true)]
+		public ca_estatus ca_estatus
 		{
 			get
 			{
-				return this._f_act;
+				return this._ca_estatus.Entity;
 			}
 			set
 			{
-				if ((this._f_act != value))
+				ca_estatus previousValue = this._ca_estatus.Entity;
+				if (((previousValue != value) 
+							|| (this._ca_estatus.HasLoadedOrAssignedValue == false)))
 				{
-					this.Onf_actChanging(value);
 					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
+					if ((previousValue != null))
+					{
+						this._ca_estatus.Entity = null;
+						previousValue.de_digital_campostrazables.Remove(this);
+					}
+					this._ca_estatus.Entity = value;
+					if ((value != null))
+					{
+						value.de_digital_campostrazables.Add(this);
+						this._id_estatus = value.id;
+					}
+					else
+					{
+						this._id_estatus = default(int);
+					}
+					this.SendPropertyChanged("ca_estatus");
 				}
 			}
 		}
@@ -4572,27 +4545,21 @@ namespace thumbnail.data_members
 		
 		private int _id;
 		
-		private int _id_tramite;
+		private int _id_re_expediente_tramite;
 		
-		private int _id_documento;
+		private System.DateTime _fecha_hora_creacion;
 		
-		private System.Data.Linq.Binary _imagen;
+		private string _nota;
 		
-		private string _fecha;
+		private System.DateTime _fecha_hora_bloqueo;
 		
-		private string _hora;
+		private int _id_estatus;
 		
-		private string _valor_trazable;
-		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
+		private EntitySet<de_digital> _de_digital;
 		
 		private EntitySet<de_digital_campostrazables> _de_digital_campostrazables;
 		
-		private EntityRef<ca_documentos> _ca_documentos;
-		
-		private EntityRef<ca_tramites> _ca_tramites;
+		private EntityRef<re_expedientes_tramites> _re_expedientes_tramites;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -4600,29 +4567,23 @@ namespace thumbnail.data_members
     partial void OnCreated();
     partial void OnidChanging(int value);
     partial void OnidChanged();
-    partial void Onid_tramiteChanging(int value);
-    partial void Onid_tramiteChanged();
-    partial void Onid_documentoChanging(int value);
-    partial void Onid_documentoChanged();
-    partial void OnimagenChanging(System.Data.Linq.Binary value);
-    partial void OnimagenChanged();
-    partial void OnfechaChanging(string value);
-    partial void OnfechaChanged();
-    partial void OnhoraChanging(string value);
-    partial void OnhoraChanged();
-    partial void Onvalor_trazableChanging(string value);
-    partial void Onvalor_trazableChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
+    partial void Onid_re_expediente_tramiteChanging(int value);
+    partial void Onid_re_expediente_tramiteChanged();
+    partial void Onfecha_hora_creacionChanging(System.DateTime value);
+    partial void Onfecha_hora_creacionChanged();
+    partial void OnnotaChanging(string value);
+    partial void OnnotaChanged();
+    partial void Onfecha_hora_bloqueoChanging(System.DateTime value);
+    partial void Onfecha_hora_bloqueoChanged();
+    partial void Onid_estatusChanging(int value);
+    partial void Onid_estatusChanged();
     #endregion
 		
 		public ma_digital()
 		{
+			this._de_digital = new EntitySet<de_digital>(new Action<de_digital>(this.attach_de_digital), new Action<de_digital>(this.detach_de_digital));
 			this._de_digital_campostrazables = new EntitySet<de_digital_campostrazables>(new Action<de_digital_campostrazables>(this.attach_de_digital_campostrazables), new Action<de_digital_campostrazables>(this.detach_de_digital_campostrazables));
-			this._ca_documentos = default(EntityRef<ca_documentos>);
-			this._ca_tramites = default(EntityRef<ca_tramites>);
+			this._re_expedientes_tramites = default(EntityRef<re_expedientes_tramites>);
 			OnCreated();
 		}
 		
@@ -4646,171 +4607,120 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tramite", DbType="Int NOT NULL")]
-		public int id_tramite
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_expediente_tramite", DbType="Int NOT NULL")]
+		public int id_re_expediente_tramite
 		{
 			get
 			{
-				return this._id_tramite;
+				return this._id_re_expediente_tramite;
 			}
 			set
 			{
-				if ((this._id_tramite != value))
+				if ((this._id_re_expediente_tramite != value))
 				{
-					if (this._ca_tramites.HasLoadedOrAssignedValue)
+					if (this._re_expedientes_tramites.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.Onid_tramiteChanging(value);
+					this.Onid_re_expediente_tramiteChanging(value);
 					this.SendPropertyChanging();
-					this._id_tramite = value;
-					this.SendPropertyChanged("id_tramite");
-					this.Onid_tramiteChanged();
+					this._id_re_expediente_tramite = value;
+					this.SendPropertyChanged("id_re_expediente_tramite");
+					this.Onid_re_expediente_tramiteChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_documento", DbType="Int NOT NULL")]
-		public int id_documento
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_hora_creacion", DbType="DateTime NOT NULL")]
+		public System.DateTime fecha_hora_creacion
 		{
 			get
 			{
-				return this._id_documento;
+				return this._fecha_hora_creacion;
 			}
 			set
 			{
-				if ((this._id_documento != value))
+				if ((this._fecha_hora_creacion != value))
 				{
-					if (this._ca_documentos.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_documentoChanging(value);
+					this.Onfecha_hora_creacionChanging(value);
 					this.SendPropertyChanging();
-					this._id_documento = value;
-					this.SendPropertyChanged("id_documento");
-					this.Onid_documentoChanged();
+					this._fecha_hora_creacion = value;
+					this.SendPropertyChanged("fecha_hora_creacion");
+					this.Onfecha_hora_creacionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imagen", DbType="Image NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary imagen
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nota", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string nota
 		{
 			get
 			{
-				return this._imagen;
+				return this._nota;
 			}
 			set
 			{
-				if ((this._imagen != value))
+				if ((this._nota != value))
 				{
-					this.OnimagenChanging(value);
+					this.OnnotaChanging(value);
 					this.SendPropertyChanging();
-					this._imagen = value;
-					this.SendPropertyChanged("imagen");
-					this.OnimagenChanged();
+					this._nota = value;
+					this.SendPropertyChanged("nota");
+					this.OnnotaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string fecha
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_hora_bloqueo", DbType="DateTime NOT NULL")]
+		public System.DateTime fecha_hora_bloqueo
 		{
 			get
 			{
-				return this._fecha;
+				return this._fecha_hora_bloqueo;
 			}
 			set
 			{
-				if ((this._fecha != value))
+				if ((this._fecha_hora_bloqueo != value))
 				{
-					this.OnfechaChanging(value);
+					this.Onfecha_hora_bloqueoChanging(value);
 					this.SendPropertyChanging();
-					this._fecha = value;
-					this.SendPropertyChanged("fecha");
-					this.OnfechaChanged();
+					this._fecha_hora_bloqueo = value;
+					this.SendPropertyChanged("fecha_hora_bloqueo");
+					this.Onfecha_hora_bloqueoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hora", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string hora
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus", DbType="Int NOT NULL")]
+		public int id_estatus
 		{
 			get
 			{
-				return this._hora;
+				return this._id_estatus;
 			}
 			set
 			{
-				if ((this._hora != value))
+				if ((this._id_estatus != value))
 				{
-					this.OnhoraChanging(value);
+					this.Onid_estatusChanging(value);
 					this.SendPropertyChanging();
-					this._hora = value;
-					this.SendPropertyChanged("hora");
-					this.OnhoraChanged();
+					this._id_estatus = value;
+					this.SendPropertyChanged("id_estatus");
+					this.Onid_estatusChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_valor_trazable", DbType="VarChar(200)")]
-		public string valor_trazable
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ma_digital_de_digital", Storage="_de_digital", ThisKey="id", OtherKey="id_ma_digital")]
+		public EntitySet<de_digital> de_digital
 		{
 			get
 			{
-				return this._valor_trazable;
+				return this._de_digital;
 			}
 			set
 			{
-				if ((this._valor_trazable != value))
-				{
-					this.Onvalor_trazableChanging(value);
-					this.SendPropertyChanging();
-					this._valor_trazable = value;
-					this.SendPropertyChanged("valor_trazable");
-					this.Onvalor_trazableChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
-		{
-			get
-			{
-				return this._f_act;
-			}
-			set
-			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
-				}
+				this._de_digital.Assign(value);
 			}
 		}
 		
@@ -4827,70 +4737,36 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_documentos_ma_digital", Storage="_ca_documentos", ThisKey="id_documento", OtherKey="id", IsForeignKey=true)]
-		public ca_documentos ca_documentos
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="re_expedientes_tramites_ma_digital", Storage="_re_expedientes_tramites", ThisKey="id_re_expediente_tramite", OtherKey="id", IsForeignKey=true)]
+		public re_expedientes_tramites re_expedientes_tramites
 		{
 			get
 			{
-				return this._ca_documentos.Entity;
+				return this._re_expedientes_tramites.Entity;
 			}
 			set
 			{
-				ca_documentos previousValue = this._ca_documentos.Entity;
+				re_expedientes_tramites previousValue = this._re_expedientes_tramites.Entity;
 				if (((previousValue != value) 
-							|| (this._ca_documentos.HasLoadedOrAssignedValue == false)))
+							|| (this._re_expedientes_tramites.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._ca_documentos.Entity = null;
+						this._re_expedientes_tramites.Entity = null;
 						previousValue.ma_digital.Remove(this);
 					}
-					this._ca_documentos.Entity = value;
+					this._re_expedientes_tramites.Entity = value;
 					if ((value != null))
 					{
 						value.ma_digital.Add(this);
-						this._id_documento = value.id;
+						this._id_re_expediente_tramite = value.id;
 					}
 					else
 					{
-						this._id_documento = default(int);
+						this._id_re_expediente_tramite = default(int);
 					}
-					this.SendPropertyChanged("ca_documentos");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tramites_ma_digital", Storage="_ca_tramites", ThisKey="id_tramite", OtherKey="id", IsForeignKey=true)]
-		public ca_tramites ca_tramites
-		{
-			get
-			{
-				return this._ca_tramites.Entity;
-			}
-			set
-			{
-				ca_tramites previousValue = this._ca_tramites.Entity;
-				if (((previousValue != value) 
-							|| (this._ca_tramites.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ca_tramites.Entity = null;
-						previousValue.ma_digital.Remove(this);
-					}
-					this._ca_tramites.Entity = value;
-					if ((value != null))
-					{
-						value.ma_digital.Add(this);
-						this._id_tramite = value.id;
-					}
-					else
-					{
-						this._id_tramite = default(int);
-					}
-					this.SendPropertyChanged("ca_tramites");
+					this.SendPropertyChanged("re_expedientes_tramites");
 				}
 			}
 		}
@@ -4913,6 +4789,18 @@ namespace thumbnail.data_members
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_de_digital(de_digital entity)
+		{
+			this.SendPropertyChanging();
+			entity.ma_digital = this;
+		}
+		
+		private void detach_de_digital(de_digital entity)
+		{
+			this.SendPropertyChanging();
+			entity.ma_digital = null;
 		}
 		
 		private void attach_de_digital_campostrazables(de_digital_campostrazables entity)
@@ -4942,9 +4830,7 @@ namespace thumbnail.data_members
 		
 		private int _id_estatus;
 		
-		private int _u_act;
-		
-		private System.DateTime _f_act;
+		private EntitySet<de_digital> _de_digital;
 		
 		private EntitySet<re_tramites_re_clasificaciondocumentos_documentos> _re_tramites_re_clasificaciondocumentos_documentos;
 		
@@ -4966,14 +4852,11 @@ namespace thumbnail.data_members
     partial void Onid_documentoChanged();
     partial void Onid_estatusChanging(int value);
     partial void Onid_estatusChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
     #endregion
 		
 		public re_clasificaciondocumentos_documentos()
 		{
+			this._de_digital = new EntitySet<de_digital>(new Action<de_digital>(this.attach_de_digital), new Action<de_digital>(this.detach_de_digital));
 			this._re_tramites_re_clasificaciondocumentos_documentos = new EntitySet<re_tramites_re_clasificaciondocumentos_documentos>(new Action<re_tramites_re_clasificaciondocumentos_documentos>(this.attach_re_tramites_re_clasificaciondocumentos_documentos), new Action<re_tramites_re_clasificaciondocumentos_documentos>(this.detach_re_tramites_re_clasificaciondocumentos_documentos));
 			this._ca_clasificaciondocumentos = default(EntityRef<ca_clasificaciondocumentos>);
 			this._ca_documentos = default(EntityRef<ca_documentos>);
@@ -5073,43 +4956,16 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="re_clasificaciondocumentos_documentos_de_digital", Storage="_de_digital", ThisKey="id", OtherKey="id_re_clasificaciondocumento_documento")]
+		public EntitySet<de_digital> de_digital
 		{
 			get
 			{
-				return this._u_act;
+				return this._de_digital;
 			}
 			set
 			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
-		{
-			get
-			{
-				return this._f_act;
-			}
-			set
-			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
+				this._de_digital.Assign(value);
 			}
 		}
 		
@@ -5249,6 +5105,18 @@ namespace thumbnail.data_members
 			}
 		}
 		
+		private void attach_de_digital(de_digital entity)
+		{
+			this.SendPropertyChanging();
+			entity.re_clasificaciondocumentos_documentos = this;
+		}
+		
+		private void detach_de_digital(de_digital entity)
+		{
+			this.SendPropertyChanging();
+			entity.re_clasificaciondocumentos_documentos = null;
+		}
+		
 		private void attach_re_tramites_re_clasificaciondocumentos_documentos(re_tramites_re_clasificaciondocumentos_documentos entity)
 		{
 			this.SendPropertyChanging();
@@ -5278,10 +5146,6 @@ namespace thumbnail.data_members
 		
 		private int _id_estatus;
 		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
-		
 		private EntitySet<de_digital_campostrazables> _de_digital_campostrazables;
 		
 		private EntityRef<ca_campostrazables> _ca_campostrazables;
@@ -5304,10 +5168,6 @@ namespace thumbnail.data_members
     partial void Ones_principalChanged();
     partial void Onid_estatusChanging(int value);
     partial void Onid_estatusChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
     #endregion
 		
 		public re_expedientes_campostrazables()
@@ -5427,46 +5287,6 @@ namespace thumbnail.data_members
 					this._id_estatus = value;
 					this.SendPropertyChanged("id_estatus");
 					this.Onid_estatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
-		{
-			get
-			{
-				return this._f_act;
-			}
-			set
-			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
 				}
 			}
 		}
@@ -5631,9 +5451,7 @@ namespace thumbnail.data_members
 		
 		private int _id_tramite;
 		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
+		private EntitySet<ma_digital> _ma_digital;
 		
 		private EntitySet<re_expedientestramites_tiposbloqueos> _re_expedientestramites_tiposbloqueos;
 		
@@ -5651,14 +5469,11 @@ namespace thumbnail.data_members
     partial void Onid_expedienteChanged();
     partial void Onid_tramiteChanging(int value);
     partial void Onid_tramiteChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
     #endregion
 		
 		public re_expedientes_tramites()
 		{
+			this._ma_digital = new EntitySet<ma_digital>(new Action<ma_digital>(this.attach_ma_digital), new Action<ma_digital>(this.detach_ma_digital));
 			this._re_expedientestramites_tiposbloqueos = new EntitySet<re_expedientestramites_tiposbloqueos>(new Action<re_expedientestramites_tiposbloqueos>(this.attach_re_expedientestramites_tiposbloqueos), new Action<re_expedientestramites_tiposbloqueos>(this.detach_re_expedientestramites_tiposbloqueos));
 			this._ca_expedientes = default(EntityRef<ca_expedientes>);
 			this._ca_tramites = default(EntityRef<ca_tramites>);
@@ -5733,43 +5548,16 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="re_expedientes_tramites_ma_digital", Storage="_ma_digital", ThisKey="id", OtherKey="id_re_expediente_tramite")]
+		public EntitySet<ma_digital> ma_digital
 		{
 			get
 			{
-				return this._f_act;
+				return this._ma_digital;
 			}
 			set
 			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
-				}
+				this._ma_digital.Assign(value);
 			}
 		}
 		
@@ -5872,6 +5660,18 @@ namespace thumbnail.data_members
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_ma_digital(ma_digital entity)
+		{
+			this.SendPropertyChanging();
+			entity.re_expedientes_tramites = this;
+		}
+		
+		private void detach_ma_digital(ma_digital entity)
+		{
+			this.SendPropertyChanging();
+			entity.re_expedientes_tramites = null;
 		}
 		
 		private void attach_re_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos entity)
@@ -6337,10 +6137,6 @@ namespace thumbnail.data_members
 		
 		private bool _Obligatorio;
 		
-		private System.DateTime _f_act;
-		
-		private int _u_act;
-		
 		private EntityRef<ca_tramites> _ca_tramites;
 		
 		private EntityRef<re_clasificaciondocumentos_documentos> _re_clasificaciondocumentos_documentos;
@@ -6363,10 +6159,6 @@ namespace thumbnail.data_members
     partial void OnOrdenChanged();
     partial void OnObligatorioChanging(bool value);
     partial void OnObligatorioChanged();
-    partial void Onf_actChanging(System.DateTime value);
-    partial void Onf_actChanged();
-    partial void Onu_actChanging(int value);
-    partial void Onu_actChanged();
     #endregion
 		
 		public re_tramites_re_clasificaciondocumentos_documentos()
@@ -6505,46 +6297,6 @@ namespace thumbnail.data_members
 					this._Obligatorio = value;
 					this.SendPropertyChanged("Obligatorio");
 					this.OnObligatorioChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_act", DbType="DateTime NOT NULL")]
-		public System.DateTime f_act
-		{
-			get
-			{
-				return this._f_act;
-			}
-			set
-			{
-				if ((this._f_act != value))
-				{
-					this.Onf_actChanging(value);
-					this.SendPropertyChanging();
-					this._f_act = value;
-					this.SendPropertyChanged("f_act");
-					this.Onf_actChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_u_act", DbType="Int NOT NULL")]
-		public int u_act
-		{
-			get
-			{
-				return this._u_act;
-			}
-			set
-			{
-				if ((this._u_act != value))
-				{
-					this.Onu_actChanging(value);
-					this.SendPropertyChanging();
-					this._u_act = value;
-					this.SendPropertyChanged("u_act");
-					this.Onu_actChanged();
 				}
 			}
 		}
@@ -7090,6 +6842,138 @@ namespace thumbnail.data_members
 		}
 	}
 	
+	public partial class pa_obtener_fechaResult
+	{
+		
+		private string _Fecha;
+		
+		public pa_obtener_fechaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="VarChar(8)")]
+		public string Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_obtener_horaResult
+	{
+		
+		private string _Hora;
+		
+		public pa_obtener_horaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hora", DbType="VarChar(8)")]
+		public string Hora
+		{
+			get
+			{
+				return this._Hora;
+			}
+			set
+			{
+				if ((this._Hora != value))
+				{
+					this._Hora = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_Permsos_ModulosResult
+	{
+		
+		private int _id_modulo;
+		
+		private System.Nullable<int> _id_menu;
+		
+		private System.Nullable<int> _id_submenu;
+		
+		private string _Modulo;
+		
+		public pa_Permsos_ModulosResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_modulo", DbType="Int NOT NULL")]
+		public int id_modulo
+		{
+			get
+			{
+				return this._id_modulo;
+			}
+			set
+			{
+				if ((this._id_modulo != value))
+				{
+					this._id_modulo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_menu", DbType="Int")]
+		public System.Nullable<int> id_menu
+		{
+			get
+			{
+				return this._id_menu;
+			}
+			set
+			{
+				if ((this._id_menu != value))
+				{
+					this._id_menu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_submenu", DbType="Int")]
+		public System.Nullable<int> id_submenu
+		{
+			get
+			{
+				return this._id_submenu;
+			}
+			set
+			{
+				if ((this._id_submenu != value))
+				{
+					this._id_submenu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Modulo", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Modulo
+		{
+			get
+			{
+				return this._Modulo;
+			}
+			set
+			{
+				if ((this._Modulo != value))
+				{
+					this._Modulo = value;
+				}
+			}
+		}
+	}
+	
 	public partial class pa_CampostrazablesActivosporExpedienteResult
 	{
 		
@@ -7219,58 +7103,6 @@ namespace thumbnail.data_members
 				if ((this._es_principal != value))
 				{
 					this._es_principal = value;
-				}
-			}
-		}
-	}
-	
-	public partial class pa_obtener_fechaResult
-	{
-		
-		private string _Fecha;
-		
-		public pa_obtener_fechaResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="VarChar(8)")]
-		public string Fecha
-		{
-			get
-			{
-				return this._Fecha;
-			}
-			set
-			{
-				if ((this._Fecha != value))
-				{
-					this._Fecha = value;
-				}
-			}
-		}
-	}
-	
-	public partial class pa_obtener_horaResult
-	{
-		
-		private string _Hora;
-		
-		public pa_obtener_horaResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hora", DbType="VarChar(8)")]
-		public string Hora
-		{
-			get
-			{
-				return this._Hora;
-			}
-			set
-			{
-				if ((this._Hora != value))
-				{
-					this._Hora = value;
 				}
 			}
 		}
@@ -7783,86 +7615,6 @@ namespace thumbnail.data_members
 				if ((this._Descripcion_estatus != value))
 				{
 					this._Descripcion_estatus = value;
-				}
-			}
-		}
-	}
-	
-	public partial class pa_Permsos_ModulosResult
-	{
-		
-		private int _id_modulo;
-		
-		private System.Nullable<int> _id_menu;
-		
-		private System.Nullable<int> _id_submenu;
-		
-		private string _Modulo;
-		
-		public pa_Permsos_ModulosResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_modulo", DbType="Int NOT NULL")]
-		public int id_modulo
-		{
-			get
-			{
-				return this._id_modulo;
-			}
-			set
-			{
-				if ((this._id_modulo != value))
-				{
-					this._id_modulo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_menu", DbType="Int")]
-		public System.Nullable<int> id_menu
-		{
-			get
-			{
-				return this._id_menu;
-			}
-			set
-			{
-				if ((this._id_menu != value))
-				{
-					this._id_menu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_submenu", DbType="Int")]
-		public System.Nullable<int> id_submenu
-		{
-			get
-			{
-				return this._id_submenu;
-			}
-			set
-			{
-				if ((this._id_submenu != value))
-				{
-					this._id_submenu = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Modulo", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Modulo
-		{
-			get
-			{
-				return this._Modulo;
-			}
-			set
-			{
-				if ((this._Modulo != value))
-				{
-					this._Modulo = value;
 				}
 			}
 		}
