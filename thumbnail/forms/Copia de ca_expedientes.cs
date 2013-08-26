@@ -43,8 +43,6 @@ namespace thumbnail.forms
              */
             //agregar
             btn_Agregar.Enabled = Form_Mode == form_mode.normal ? true : false;
-            //editar
-            btn_Editar.Enabled = Form_Mode == form_mode.normal ? true : false;
             //limpiar
             btn_Limpiar.Enabled = ( Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar ) ? true : false;
             //cancelar
@@ -54,10 +52,8 @@ namespace thumbnail.forms
             //eliminar
             btn_eliminar.Enabled = Form_Mode == form_mode.normal ? true : false;
 
-            descripcionTextEdit.Enabled = (Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar) ? true : false;
-
             //limpiar controles
-            if (Form_Mode == form_mode.agregar ) limpiar_controles();
+            limpiar_controles();
 
             /*
              * grid de datos
@@ -69,11 +65,11 @@ namespace thumbnail.forms
             //grid de datos
             datagridview.Enabled = Form_Mode == form_mode.normal ? true : false;
             //navigator
-            //bindingnavigator.Enabled = Form_Mode == form_mode.normal ? true : false;
+            bindingnavigator.Enabled = Form_Mode == form_mode.normal ? true : false;
         }
 
         //lista con contenido de los registros
-        private List<data_members.ca_expedientes> lista;
+        private List<data_members.ca_expedientes> lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_expedientes>().ToList();
         private data_members.ca_expedientes catalogo;
 
         public ca_expedientes()
@@ -81,22 +77,11 @@ namespace thumbnail.forms
             InitializeComponent();
         }
 
-        private void actualiza_lista() {
-            try
-            {
-                lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_expedientes>().ToList();
-                bindingsource.DataSource = lista;
-            }
-            catch (Exception)
-            {
-            }
-        }
-
         private void ca_template_Load(object sender, EventArgs e)
         {
             try 
-	        {
-                actualiza_lista();
+	        {	        
+		        bindingsource.DataSource = lista; //asignar el source al binding            
 	        }
 	        catch (Exception)
 	        {		
@@ -109,11 +94,14 @@ namespace thumbnail.forms
         private void limpiar_controles()
         {
             try 
-	        {
-                descripcionTextEdit.Text = "";
+	        {	        
+/*
+ * implementar la limpieza de controles
+ */ 		
 	        }
 	        catch (Exception)
 	        {
+		
 		        throw;
 	        }
         }
@@ -122,11 +110,12 @@ namespace thumbnail.forms
         //boton de agregar
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            bindingsource.AddNew();
             Form_Mode = form_mode.agregar;
-
-            //limpiar_controles();
-            descripcionTextEdit.Focus();
+            limpiar_controles();
+            //mandar foco al primer control
+/*
+* implementar aqui el focus
+*/
         }
 
         //boton editar
@@ -140,7 +129,6 @@ namespace thumbnail.forms
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             catalogo = null;
-            bindingsource.CancelEdit();
             Form_Mode = form_mode.normal;
         }
 
@@ -156,8 +144,7 @@ namespace thumbnail.forms
             if ( MessageBox.Show("Eliminar registro","Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes) {
                 Form_Mode = form_mode.eliminar;
                 eliminar_registro();
-                Form_Mode = form_mode.normal;
-                actualiza_lista();
+                Form_Mode = form_mode.normal;            
             }            
         }
 
@@ -177,7 +164,6 @@ namespace thumbnail.forms
                     break;
             }
             Form_Mode = form_mode.normal;
-            actualiza_lista();
         }
 
         //boton cerrar
@@ -190,61 +176,11 @@ namespace thumbnail.forms
         
 #endregion botonera        
 
-        //caja de texto de busqueda
-        private void txt_buscar_EditValueChanged(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.WaitCursor;
-            tlp_proc.Visible = true;
-
-            Application.DoEvents();
-
-            try
-            {
-                List<thumbnail.data_members.ca_expedientes> valores = (from expediente in lista
-                                                                       where expediente.Descripcion.ToString().Contains(txt_buscar.Text.ToString())
-                                                                       select new thumbnail.data_members.ca_expedientes()
-                                                                       {
-                                                                           id = expediente.id,
-                                                                           Descripcion = expediente.Descripcion,
-                                                                           re_expedientes_campostrazables = expediente.re_expedientes_campostrazables,
-                                                                           re_expedientes_tramites = expediente.re_expedientes_tramites
-                                                                       }).ToList();
-                bindingsource.DataSource = valores;
-                datagridview.Update();
-            }
-            catch (Exception)
-            {
-            }
-
-            Application.DoEvents();
-
-            tlp_proc.Visible = false;
-            this.Cursor = Cursors.Default;            
-        }
-
-        //boton de refrescar lista
-        private void btn_refrescar_Click(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.WaitCursor;
-            tlp_proc.Visible = true;
-
-            Application.DoEvents();
-
-            actualiza_lista();
-
-            Application.DoEvents();
-
-            tlp_proc.Visible = false;
-            this.Cursor = Cursors.Default;
-        }
-
-        //agregar
         private void agregar_registro()
         {
             try 
 	        {
                 if (bindingsource.DataSource != null) {
-                    catalogo = (data_members.ca_expedientes)bindingsource.Current;
                     Program.Bd_Exp_Transportes.ca_expedientes.InsertOnSubmit(catalogo);
                     Program.Bd_Exp_Transportes.SubmitChanges();
 	            }
@@ -255,52 +191,24 @@ namespace thumbnail.forms
 	        }
         }
 
-        //editar
         private void editar_registro()
         {
-            if (bindingsource.DataSource != null) {
-                try 
-	            {
-                
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+            try 
+	        {
+                if (bindingsource.DataSource != null) {
+                        Program.Bd_Exp_Transportes.SubmitChanges();
 	            }
-                catch (Exception)
-                {
-                    throw;
-                }
-            }            
-        }
-                
-        //eliminar
-        private void eliminar_registro()
-        {
-            try
-            {
-                if (bindingsource.DataSource != null)
-                {
-                    catalogo = (data_members.ca_expedientes)bindingsource.Current;
-                    Program.Bd_Exp_Transportes.ca_expedientes.DeleteOnSubmit(catalogo);
-                    Program.Bd_Exp_Transportes.SubmitChanges();
-                }
             }
             catch (Exception)
-            {
-                throw;
-            }
+	        {		
+		        throw;
+	        }            
         }
 
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+                
+        private void eliminar_registro()
         {
-
-        }
-
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            Form_Mode = form_mode.agregar;            
-        }
-
-        private void ca_expedientesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
+ 	        throw new NotImplementedException();
         }
 
     }

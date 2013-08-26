@@ -31,57 +31,22 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label2;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ca_expedientes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ca_expedientes));
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.dataGridView_CamposTrazables = new System.Windows.Forms.DataGridView();
-            this.ColumnEnlazar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tamanioCaracteresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mascaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.factDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uactDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ca_campostrazablesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btn_Editar = new System.Windows.Forms.Button();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_Limpiar = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
-            this.btn_eliminar = new System.Windows.Forms.Button();
-            this.btn_cerrar = new System.Windows.Forms.Button();
-            this.btn_guardar = new System.Windows.Forms.Button();
             this.descripcionTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.bindingnavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ca_expedientesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.datagridview = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.factDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_totalregistros = new System.Windows.Forms.Label();
-            this.btn_refrescar = new System.Windows.Forms.Button();
-            this.pbfind = new System.Windows.Forms.PictureBox();
-            this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -90,24 +55,44 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Editar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_Limpiar = new System.Windows.Forms.Button();
+            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.btn_cerrar = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
+            this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.ca_expedientesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.btn_refrescar = new System.Windows.Forms.Button();
+            this.pbfind = new System.Windows.Forms.PictureBox();
+            this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
-            label2 = new System.Windows.Forms.Label();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposTrazables)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ca_campostrazablesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator)).BeginInit();
             this.bindingnavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).BeginInit();
+            this.tlp_proc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
@@ -130,16 +115,6 @@
             label1.TabIndex = 13;
             label1.Text = "Lista de registros";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(9, 119);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(145, 18);
-            label2.TabIndex = 19;
-            label2.Text = "Campos trazables";
-            // 
             // splitContainer
             // 
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -150,10 +125,6 @@
             // 
             // splitContainer.Panel1
             // 
-            this.splitContainer.Panel1.Controls.Add(this.button2);
-            this.splitContainer.Panel1.Controls.Add(this.button1);
-            this.splitContainer.Panel1.Controls.Add(label2);
-            this.splitContainer.Panel1.Controls.Add(this.dataGridView_CamposTrazables);
             this.splitContainer.Panel1.Controls.Add(this.btn_Editar);
             this.splitContainer.Panel1.Controls.Add(this.btn_cancelar);
             this.splitContainer.Panel1.Controls.Add(this.btn_Limpiar);
@@ -169,6 +140,7 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.AutoScroll = true;
+            this.splitContainer.Panel2.Controls.Add(this.tlp_proc);
             this.splitContainer.Panel2.Controls.Add(this.bindingnavigator);
             this.splitContainer.Panel2.Controls.Add(this.datagridview);
             this.splitContainer.Panel2.Controls.Add(this.lbl_totalregistros);
@@ -177,127 +149,227 @@
             this.splitContainer.Panel2.Controls.Add(this.txt_buscar);
             this.splitContainer.Panel2.Controls.Add(label1);
             this.splitContainer.Panel2.Controls.Add(this.shapeContainer2);
-            this.splitContainer.Size = new System.Drawing.Size(699, 594);
-            this.splitContainer.SplitterDistance = 293;
+            this.splitContainer.Size = new System.Drawing.Size(699, 370);
+            this.splitContainer.SplitterDistance = 125;
             this.splitContainer.TabIndex = 16;
             // 
-            // dataGridView_CamposTrazables
+            // descripcionTextEdit
             // 
-            this.dataGridView_CamposTrazables.AllowUserToAddRows = false;
-            this.dataGridView_CamposTrazables.AllowUserToDeleteRows = false;
-            this.dataGridView_CamposTrazables.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.descripcionTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.descripcionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Descripcion", true));
+            this.descripcionTextEdit.Location = new System.Drawing.Point(12, 92);
+            this.descripcionTextEdit.Name = "descripcionTextEdit";
+            this.descripcionTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.descripcionTextEdit.Properties.Appearance.Options.UseFont = true;
+            this.descripcionTextEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.descripcionTextEdit.Size = new System.Drawing.Size(675, 24);
+            this.descripcionTextEdit.TabIndex = 9;
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.AutoScroll = true;
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape2});
+            this.shapeContainer1.Size = new System.Drawing.Size(699, 125);
+            this.shapeContainer1.TabIndex = 0;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lineShape2.BorderWidth = 2;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 309;
+            this.lineShape2.X2 = 666;
+            this.lineShape2.Y1 = 61;
+            this.lineShape2.Y2 = 61;
+            // 
+            // bindingnavigator
+            // 
+            this.bindingnavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingnavigator.BindingSource = this.bindingsource;
+            this.bindingnavigator.CountItem = this.bindingNavigatorCountItem;
+            this.bindingnavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingnavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingnavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.ca_expedientesBindingNavigatorSaveItem});
+            this.bindingnavigator.Location = new System.Drawing.Point(0, 216);
+            this.bindingnavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bindingnavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bindingnavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bindingnavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bindingnavigator.Name = "bindingnavigator";
+            this.bindingnavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.bindingnavigator.Size = new System.Drawing.Size(699, 25);
+            this.bindingnavigator.TabIndex = 21;
+            this.bindingnavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // datagridview
+            // 
+            this.datagridview.AllowUserToAddRows = false;
+            this.datagridview.AllowUserToDeleteRows = false;
+            this.datagridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView_CamposTrazables.AutoGenerateColumns = false;
-            this.dataGridView_CamposTrazables.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_CamposTrazables.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView_CamposTrazables.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CamposTrazables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView_CamposTrazables.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnEnlazar,
-            this.idDataGridViewTextBoxColumn1,
-            this.nombreDataGridViewTextBoxColumn,
-            this.tamanioCaracteresDataGridViewTextBoxColumn,
-            this.mascaraDataGridViewTextBoxColumn,
-            this.factDataGridViewTextBoxColumn1,
-            this.uactDataGridViewTextBoxColumn1});
-            this.dataGridView_CamposTrazables.DataSource = this.ca_campostrazablesBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_CamposTrazables.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView_CamposTrazables.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView_CamposTrazables.EnableHeadersVisualStyles = false;
-            this.dataGridView_CamposTrazables.Location = new System.Drawing.Point(12, 140);
-            this.dataGridView_CamposTrazables.MultiSelect = false;
-            this.dataGridView_CamposTrazables.Name = "dataGridView_CamposTrazables";
-            this.dataGridView_CamposTrazables.ReadOnly = true;
-            this.dataGridView_CamposTrazables.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CamposTrazables.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView_CamposTrazables.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView_CamposTrazables.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_CamposTrazables.Size = new System.Drawing.Size(647, 150);
-            this.dataGridView_CamposTrazables.TabIndex = 18;
+            this.datagridview.AutoGenerateColumns = false;
+            this.datagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagridview.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.datagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn});
+            this.datagridview.DataSource = this.bindingsource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridview.DefaultCellStyle = dataGridViewCellStyle5;
+            this.datagridview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.datagridview.EnableHeadersVisualStyles = false;
+            this.datagridview.Location = new System.Drawing.Point(12, 38);
+            this.datagridview.MultiSelect = false;
+            this.datagridview.Name = "datagridview";
+            this.datagridview.ReadOnly = true;
+            this.datagridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridview.Size = new System.Drawing.Size(672, 178);
+            this.datagridview.TabIndex = 20;
             // 
-            // ColumnEnlazar
+            // lbl_totalregistros
             // 
-            this.ColumnEnlazar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnEnlazar.DataPropertyName = "id";
-            this.ColumnEnlazar.Frozen = true;
-            this.ColumnEnlazar.HeaderText = "Vincular";
-            this.ColumnEnlazar.Name = "ColumnEnlazar";
-            this.ColumnEnlazar.ReadOnly = true;
-            this.ColumnEnlazar.Width = 72;
+            this.lbl_totalregistros.AutoSize = true;
+            this.lbl_totalregistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_totalregistros.ForeColor = System.Drawing.Color.Gray;
+            this.lbl_totalregistros.Location = new System.Drawing.Point(445, 16);
+            this.lbl_totalregistros.Name = "lbl_totalregistros";
+            this.lbl_totalregistros.Size = new System.Drawing.Size(122, 13);
+            this.lbl_totalregistros.TabIndex = 19;
+            this.lbl_totalregistros.Text = "10 registros encontrados";
             // 
-            // idDataGridViewTextBoxColumn1
+            // shapeContainer2
             // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn1.Visible = false;
+            this.shapeContainer2.AutoScroll = true;
+            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1});
+            this.shapeContainer2.Size = new System.Drawing.Size(699, 241);
+            this.shapeContainer2.TabIndex = 14;
+            this.shapeContainer2.TabStop = false;
             // 
-            // nombreDataGridViewTextBoxColumn
+            // lineShape1
             // 
-            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lineShape1.BorderWidth = 2;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 0;
+            this.lineShape1.X2 = 200;
+            this.lineShape1.Y1 = 30;
+            this.lineShape1.Y2 = 30;
             // 
-            // tamanioCaracteresDataGridViewTextBoxColumn
+            // ca_expedientesDataGridView
             // 
-            this.tamanioCaracteresDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tamanioCaracteresDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres";
-            this.tamanioCaracteresDataGridViewTextBoxColumn.HeaderText = "Tamanio_Caracteres";
-            this.tamanioCaracteresDataGridViewTextBoxColumn.Name = "tamanioCaracteresDataGridViewTextBoxColumn";
-            this.tamanioCaracteresDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ca_expedientesDataGridView.AutoGenerateColumns = false;
+            this.ca_expedientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ca_expedientesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.ca_expedientesDataGridView.Location = new System.Drawing.Point(38, 62);
+            this.ca_expedientesDataGridView.Name = "ca_expedientesDataGridView";
+            this.ca_expedientesDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.ca_expedientesDataGridView.TabIndex = 0;
             // 
-            // mascaraDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.mascaraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mascaraDataGridViewTextBoxColumn.DataPropertyName = "Mascara";
-            this.mascaraDataGridViewTextBoxColumn.HeaderText = "Mascara";
-            this.mascaraDataGridViewTextBoxColumn.Name = "mascaraDataGridViewTextBoxColumn";
-            this.mascaraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // factDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn2
             // 
-            this.factDataGridViewTextBoxColumn1.DataPropertyName = "f_act";
-            this.factDataGridViewTextBoxColumn1.HeaderText = "f_act";
-            this.factDataGridViewTextBoxColumn1.Name = "factDataGridViewTextBoxColumn1";
-            this.factDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.factDataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descripcion";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descripcion";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // uactDataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn3
             // 
-            this.uactDataGridViewTextBoxColumn1.DataPropertyName = "u_act";
-            this.uactDataGridViewTextBoxColumn1.HeaderText = "u_act";
-            this.uactDataGridViewTextBoxColumn1.Name = "uactDataGridViewTextBoxColumn1";
-            this.uactDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.uactDataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "f_act";
+            this.dataGridViewTextBoxColumn3.HeaderText = "f_act";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // ca_campostrazablesBindingSource
+            // dataGridViewTextBoxColumn4
             // 
-            this.ca_campostrazablesBindingSource.DataSource = typeof(thumbnail.data_members.ca_campostrazables);
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "u_act";
+            this.dataGridViewTextBoxColumn4.HeaderText = "u_act";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // btn_Editar
             // 
@@ -432,75 +504,9 @@
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // descripcionTextEdit
-            // 
-            this.descripcionTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.descripcionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Descripcion", true));
-            this.descripcionTextEdit.Location = new System.Drawing.Point(12, 92);
-            this.descripcionTextEdit.Name = "descripcionTextEdit";
-            this.descripcionTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.descripcionTextEdit.Properties.Appearance.Options.UseFont = true;
-            this.descripcionTextEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.descripcionTextEdit.Size = new System.Drawing.Size(675, 24);
-            this.descripcionTextEdit.TabIndex = 9;
-            // 
             // bindingsource
             // 
             this.bindingsource.DataSource = typeof(thumbnail.data_members.ca_expedientes);
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.AutoScroll = true;
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape2});
-            this.shapeContainer1.Size = new System.Drawing.Size(699, 293);
-            this.shapeContainer1.TabIndex = 0;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lineShape2.BorderWidth = 2;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 309;
-            this.lineShape2.X2 = 666;
-            this.lineShape2.Y1 = 61;
-            this.lineShape2.Y2 = 61;
-            // 
-            // bindingnavigator
-            // 
-            this.bindingnavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingnavigator.BindingSource = this.bindingsource;
-            this.bindingnavigator.CountItem = this.bindingNavigatorCountItem;
-            this.bindingnavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bindingnavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bindingnavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.ca_expedientesBindingNavigatorSaveItem});
-            this.bindingnavigator.Location = new System.Drawing.Point(0, 272);
-            this.bindingnavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingnavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingnavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingnavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingnavigator.Name = "bindingnavigator";
-            this.bindingnavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingnavigator.Size = new System.Drawing.Size(699, 25);
-            this.bindingnavigator.TabIndex = 21;
-            this.bindingnavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -510,13 +516,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -526,6 +526,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -545,25 +546,6 @@
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -582,111 +564,14 @@
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
             // ca_expedientesBindingNavigatorSaveItem
             // 
             this.ca_expedientesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ca_expedientesBindingNavigatorSaveItem.Enabled = false;
             this.ca_expedientesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("ca_expedientesBindingNavigatorSaveItem.Image")));
             this.ca_expedientesBindingNavigatorSaveItem.Name = "ca_expedientesBindingNavigatorSaveItem";
             this.ca_expedientesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.ca_expedientesBindingNavigatorSaveItem.Text = "Guardar datos";
-            // 
-            // datagridview
-            // 
-            this.datagridview.AllowUserToAddRows = false;
-            this.datagridview.AllowUserToDeleteRows = false;
-            this.datagridview.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.datagridview.AutoGenerateColumns = false;
-            this.datagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.datagridview.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.datagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn,
-            this.factDataGridViewTextBoxColumn,
-            this.uactDataGridViewTextBoxColumn});
-            this.datagridview.DataSource = this.bindingsource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridview.DefaultCellStyle = dataGridViewCellStyle5;
-            this.datagridview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.datagridview.EnableHeadersVisualStyles = false;
-            this.datagridview.Location = new System.Drawing.Point(12, 38);
-            this.datagridview.MultiSelect = false;
-            this.datagridview.Name = "datagridview";
-            this.datagridview.ReadOnly = true;
-            this.datagridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.datagridview.Size = new System.Drawing.Size(672, 231);
-            this.datagridview.TabIndex = 20;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // factDataGridViewTextBoxColumn
-            // 
-            this.factDataGridViewTextBoxColumn.DataPropertyName = "f_act";
-            this.factDataGridViewTextBoxColumn.HeaderText = "f_act";
-            this.factDataGridViewTextBoxColumn.Name = "factDataGridViewTextBoxColumn";
-            this.factDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // uactDataGridViewTextBoxColumn
-            // 
-            this.uactDataGridViewTextBoxColumn.DataPropertyName = "u_act";
-            this.uactDataGridViewTextBoxColumn.HeaderText = "u_act";
-            this.uactDataGridViewTextBoxColumn.Name = "uactDataGridViewTextBoxColumn";
-            this.uactDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lbl_totalregistros
-            // 
-            this.lbl_totalregistros.AutoSize = true;
-            this.lbl_totalregistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totalregistros.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_totalregistros.Location = new System.Drawing.Point(445, 16);
-            this.lbl_totalregistros.Name = "lbl_totalregistros";
-            this.lbl_totalregistros.Size = new System.Drawing.Size(122, 13);
-            this.lbl_totalregistros.TabIndex = 19;
-            this.lbl_totalregistros.Text = "10 registros encontrados";
+            this.ca_expedientesBindingNavigatorSaveItem.Click += new System.EventHandler(this.ca_expedientesBindingNavigatorSaveItem_Click);
             // 
             // btn_refrescar
             // 
@@ -705,13 +590,13 @@
             this.btn_refrescar.TabIndex = 17;
             this.toolTip.SetToolTip(this.btn_refrescar, "Recargar lista de registros");
             this.btn_refrescar.UseVisualStyleBackColor = false;
+            this.btn_refrescar.Click += new System.EventHandler(this.btn_refrescar_Click);
             // 
             // pbfind
             // 
-            this.pbfind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pbfind.BackColor = System.Drawing.Color.Transparent;
             this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
-            this.pbfind.Location = new System.Drawing.Point(368, -150);
+            this.pbfind.Location = new System.Drawing.Point(368, 16);
             this.pbfind.Name = "pbfind";
             this.pbfind.Size = new System.Drawing.Size(16, 16);
             this.pbfind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -720,8 +605,7 @@
             // 
             // txt_buscar
             // 
-            this.txt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_buscar.Location = new System.Drawing.Point(213, -152);
+            this.txt_buscar.Location = new System.Drawing.Point(213, 14);
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txt_buscar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
@@ -731,107 +615,71 @@
             this.txt_buscar.Size = new System.Drawing.Size(173, 20);
             this.txt_buscar.TabIndex = 15;
             this.txt_buscar.Tag = "0";
+            this.txt_buscar.EditValueChanged += new System.EventHandler(this.txt_buscar_EditValueChanged);
             // 
-            // shapeContainer2
+            // idDataGridViewTextBoxColumn
             // 
-            this.shapeContainer2.AutoScroll = true;
-            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer2";
-            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(699, 297);
-            this.shapeContainer2.TabIndex = 14;
-            this.shapeContainer2.TabStop = false;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
-            // lineShape1
+            // descripcionDataGridViewTextBoxColumn
             // 
-            this.lineShape1.BorderWidth = 2;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 0;
-            this.lineShape1.X2 = 200;
-            this.lineShape1.Y1 = 30;
-            this.lineShape1.Y2 = 30;
+            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // ca_expedientesDataGridView
+            // tlp_proc
             // 
-            this.ca_expedientesDataGridView.AutoGenerateColumns = false;
-            this.ca_expedientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ca_expedientesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.ca_expedientesDataGridView.Location = new System.Drawing.Point(38, 62);
-            this.ca_expedientesDataGridView.Name = "ca_expedientesDataGridView";
-            this.ca_expedientesDataGridView.Size = new System.Drawing.Size(300, 220);
-            this.ca_expedientesDataGridView.TabIndex = 0;
+            this.tlp_proc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlp_proc.BackColor = System.Drawing.Color.Transparent;
+            this.tlp_proc.ColumnCount = 2;
+            this.tlp_proc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_proc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_proc.Controls.Add(this.pictureBox1, 0, 0);
+            this.tlp_proc.Controls.Add(this.label2, 1, 0);
+            this.tlp_proc.Location = new System.Drawing.Point(492, 179);
+            this.tlp_proc.Name = "tlp_proc";
+            this.tlp_proc.RowCount = 1;
+            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_proc.Size = new System.Drawing.Size(195, 50);
+            this.tlp_proc.TabIndex = 22;
+            this.tlp_proc.Visible = false;
             // 
-            // dataGridViewTextBoxColumn1
+            // pictureBox1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
-            // dataGridViewTextBoxColumn2
+            // label2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descripcion";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Descripcion";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "f_act";
-            this.dataGridViewTextBoxColumn3.HeaderText = "f_act";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "u_act";
-            this.dataGridViewTextBoxColumn4.HeaderText = "u_act";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSize = true;
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOliveGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::thumbnail.Icons16x16.edit;
-            this.button1.Location = new System.Drawing.Point(665, 140);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(22, 22);
-            this.button1.TabIndex = 20;
-            this.toolTip.SetToolTip(this.button1, "Editar");
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.AutoSize = true;
-            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOliveGreen;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::thumbnail.Icons16x16.edit;
-            this.button2.Location = new System.Drawing.Point(665, 168);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(22, 22);
-            this.button2.TabIndex = 21;
-            this.toolTip.SetToolTip(this.button2, "Editar");
-            this.button2.UseVisualStyleBackColor = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(48, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label2.Size = new System.Drawing.Size(145, 35);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Favor de esperar";
             // 
             // ca_expedientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 594);
+            this.ClientSize = new System.Drawing.Size(699, 370);
             this.Controls.Add(this.splitContainer);
             this.Name = "ca_expedientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -842,17 +690,18 @@
             this.splitContainer.Panel2.ResumeLayout(false);
             this.splitContainer.Panel2.PerformLayout();
             this.splitContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposTrazables)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ca_campostrazablesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator)).EndInit();
             this.bindingnavigator.ResumeLayout(false);
             this.bindingnavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).EndInit();
+            this.tlp_proc.ResumeLayout(false);
+            this.tlp_proc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -870,13 +719,11 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.PictureBox pbfind;
-        private DevExpress.XtraEditors.TextEdit txt_buscar;
         private System.Windows.Forms.Button btn_refrescar;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Label lbl_totalregistros;
         private System.Windows.Forms.Button btn_Editar;
-        private System.Windows.Forms.DataGridView dataGridView_CamposTrazables;
         private System.Windows.Forms.BindingNavigator bindingnavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.BindingSource bindingsource;
@@ -892,8 +739,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton ca_expedientesBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView datagridview;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn factDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uactDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView ca_expedientesDataGridView;
@@ -902,15 +747,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DevExpress.XtraEditors.TextEdit descripcionTextEdit;
-        private System.Windows.Forms.BindingSource ca_campostrazablesBindingSource;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnEnlazar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tamanioCaracteresDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mascaraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn factDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn uactDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private DevExpress.XtraEditors.TextEdit txt_buscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TableLayoutPanel tlp_proc;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
