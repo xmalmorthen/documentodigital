@@ -33,12 +33,14 @@
             this.creaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expedientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.camposTrazablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.clasificaciñonDeTramitesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tramitesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.clasificaciónDeDocumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clasificarDocumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.papelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroYSeguimientoDeTramiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
@@ -85,12 +87,14 @@
             this.creaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.expedientesToolStripMenuItem,
             this.camposTrazablesToolStripMenuItem,
+            this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem,
             this.toolStripMenuItem1,
             this.clasificaciñonDeTramitesToolStripMenuItem,
             this.tramitesToolStripMenuItem,
             this.toolStripMenuItem2,
             this.clasificaciónDeDocumentosToolStripMenuItem,
-            this.documentosToolStripMenuItem});
+            this.documentosToolStripMenuItem,
+            this.clasificarDocumentosToolStripMenuItem});
             this.creaciónToolStripMenuItem.Image = global::thumbnail.Icons16x16.notepad;
             this.creaciónToolStripMenuItem.Name = "creaciónToolStripMenuItem";
             this.creaciónToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
@@ -100,7 +104,7 @@
             // expedientesToolStripMenuItem
             // 
             this.expedientesToolStripMenuItem.Name = "expedientesToolStripMenuItem";
-            this.expedientesToolStripMenuItem.Size = new System.Drawing.Size(268, 24);
+            this.expedientesToolStripMenuItem.Size = new System.Drawing.Size(358, 24);
             this.expedientesToolStripMenuItem.Tag = "1,1";
             this.expedientesToolStripMenuItem.Text = "Expedientes";
             this.expedientesToolStripMenuItem.Click += new System.EventHandler(this.expedientesToolStripMenuItem_Click);
@@ -108,50 +112,64 @@
             // camposTrazablesToolStripMenuItem
             // 
             this.camposTrazablesToolStripMenuItem.Name = "camposTrazablesToolStripMenuItem";
-            this.camposTrazablesToolStripMenuItem.Size = new System.Drawing.Size(268, 24);
+            this.camposTrazablesToolStripMenuItem.Size = new System.Drawing.Size(358, 24);
             this.camposTrazablesToolStripMenuItem.Tag = "1,2";
             this.camposTrazablesToolStripMenuItem.Text = "Campos trazables";
             this.camposTrazablesToolStripMenuItem.Click += new System.EventHandler(this.camposTrazablesToolStripMenuItem_Click);
             // 
+            // asignarCamposTrazablesAUnExpedienteToolStripMenuItem
+            // 
+            this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem.Name = "asignarCamposTrazablesAUnExpedienteToolStripMenuItem";
+            this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem.Size = new System.Drawing.Size(358, 24);
+            this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem.Text = "Asignar campos trazables a un expediente";
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(265, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(355, 6);
             this.toolStripMenuItem1.Tag = "";
             // 
             // clasificaciñonDeTramitesToolStripMenuItem
             // 
             this.clasificaciñonDeTramitesToolStripMenuItem.Name = "clasificaciñonDeTramitesToolStripMenuItem";
-            this.clasificaciñonDeTramitesToolStripMenuItem.Size = new System.Drawing.Size(268, 24);
+            this.clasificaciñonDeTramitesToolStripMenuItem.Size = new System.Drawing.Size(358, 24);
             this.clasificaciñonDeTramitesToolStripMenuItem.Tag = "1,3";
-            this.clasificaciñonDeTramitesToolStripMenuItem.Text = "Clasificaciñon de trámites";
+            this.clasificaciñonDeTramitesToolStripMenuItem.Text = "Clasificación de trámites";
+            this.clasificaciñonDeTramitesToolStripMenuItem.Click += new System.EventHandler(this.clasificaciñonDeTramitesToolStripMenuItem_Click);
             // 
             // tramitesToolStripMenuItem
             // 
             this.tramitesToolStripMenuItem.Name = "tramitesToolStripMenuItem";
-            this.tramitesToolStripMenuItem.Size = new System.Drawing.Size(268, 24);
+            this.tramitesToolStripMenuItem.Size = new System.Drawing.Size(358, 24);
             this.tramitesToolStripMenuItem.Tag = "1,4";
             this.tramitesToolStripMenuItem.Text = "Trámites";
+            this.tramitesToolStripMenuItem.Click += new System.EventHandler(this.tramitesToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(265, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(355, 6);
             this.toolStripMenuItem2.Tag = "";
             // 
             // clasificaciónDeDocumentosToolStripMenuItem
             // 
             this.clasificaciónDeDocumentosToolStripMenuItem.Name = "clasificaciónDeDocumentosToolStripMenuItem";
-            this.clasificaciónDeDocumentosToolStripMenuItem.Size = new System.Drawing.Size(268, 24);
+            this.clasificaciónDeDocumentosToolStripMenuItem.Size = new System.Drawing.Size(358, 24);
             this.clasificaciónDeDocumentosToolStripMenuItem.Tag = "1,5";
             this.clasificaciónDeDocumentosToolStripMenuItem.Text = "Clasificación de documentos";
             // 
             // documentosToolStripMenuItem
             // 
             this.documentosToolStripMenuItem.Name = "documentosToolStripMenuItem";
-            this.documentosToolStripMenuItem.Size = new System.Drawing.Size(268, 24);
+            this.documentosToolStripMenuItem.Size = new System.Drawing.Size(358, 24);
             this.documentosToolStripMenuItem.Tag = "1,6";
             this.documentosToolStripMenuItem.Text = "Documentos";
+            // 
+            // clasificarDocumentosToolStripMenuItem
+            // 
+            this.clasificarDocumentosToolStripMenuItem.Name = "clasificarDocumentosToolStripMenuItem";
+            this.clasificarDocumentosToolStripMenuItem.Size = new System.Drawing.Size(358, 24);
+            this.clasificarDocumentosToolStripMenuItem.Text = "Clasificar documentos";
             // 
             // papelToolStripMenuItem
             // 
@@ -372,5 +390,7 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordenarVentanasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cascadaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarCamposTrazablesAUnExpedienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clasificarDocumentosToolStripMenuItem;
     }
 }

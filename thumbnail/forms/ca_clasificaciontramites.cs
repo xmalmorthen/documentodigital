@@ -10,7 +10,7 @@ using thumbnail.data_members;
 
 namespace thumbnail.forms
 {
-    public partial class ca_expedientes : Form
+    public partial class ca_clasificaciontramites : Form
     {
         //enumeracion para el control del estado de la forma
         public enum form_mode
@@ -20,8 +20,10 @@ namespace thumbnail.forms
             editar,
             eliminar,
             guardando,
-            guardado
+            guardado            
         }
+
+        private Boolean agregar_externo { get; set; }
 
         //property para el manejo del estado de la forma
         private form_mode _frm_mode;
@@ -76,21 +78,38 @@ namespace thumbnail.forms
             datagridview.Enabled = Form_Mode == form_mode.normal ? true : false;
             //navigator
             bindingnavigator.Enabled = Form_Mode == form_mode.normal ? true : false;
+
+            btn_cerrar.Enabled = !agregar_externo ? true : false;
+
         }
 
         //lista con contenido de los registros
-        private List<data_members.ca_expedientes> lista;
-        private data_members.ca_expedientes catalogo;
+        private List<data_members.ca_clasificaciontramites> lista;
+        private data_members.ca_clasificaciontramites catalogo;
 
-        public ca_expedientes()
+        public ca_clasificaciontramites()
         {
             InitializeComponent();
+            Form_Mode = form_mode.normal;
+        }
+
+        public ca_clasificaciontramites(Boolean externo)
+        {
+            InitializeComponent();
+            agregar_externo = externo;
+            this.Paint += new PaintEventHandler(ca_clasificaciontramites_Paint);
+        }
+
+        void ca_clasificaciontramites_Paint(object sender, PaintEventArgs e)
+        {
+            descripcionTextEdit.Focus();
+            this.Paint -= new PaintEventHandler(ca_clasificaciontramites_Paint);
         }
 
         private void actualiza_lista() {
             try
             {
-                lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_expedientes>().ToList();
+                lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_clasificaciontramites>().ToList();
                 bindingsource.DataSource = lista;
             }
             catch (Exception)
@@ -107,8 +126,9 @@ namespace thumbnail.forms
 	        catch (Exception)
 	        {		
 		        throw;
-	        }            
-            Form_Mode = form_mode.normal;
+	        }
+
+            if (agregar_externo) Form_Mode = form_mode.agregar;
         }
 
         //limpiar controles
@@ -140,15 +160,22 @@ namespace thumbnail.forms
         private void btn_Editar_Click(object sender, EventArgs e)
         {
             Form_Mode = form_mode.editar;
-            catalogo = (data_members.ca_expedientes)bindingsource.Current;
+            catalogo = (data_members.ca_clasificaciontramites)bindingsource.Current;
         }
 
         //boton cancelar
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            catalogo = null;
-            bindingsource.CancelEdit();
-            Form_Mode = form_mode.normal;
+            if (agregar_externo)
+            {
+                this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            }
+            else
+            {
+                catalogo = null;
+                bindingsource.CancelEdit();
+                Form_Mode = form_mode.normal;
+            }
         }
 
         //boton de limpiar
@@ -204,14 +231,13 @@ namespace thumbnail.forms
 
             try
             {
-                List<thumbnail.data_members.ca_expedientes> valores = (from expediente in lista
-                                                                       where expediente.Descripcion.ToString().Contains(txt_buscar.Text.ToString())
-                                                                       select new thumbnail.data_members.ca_expedientes()
+                List<thumbnail.data_members.ca_clasificaciontramites> valores = (from query in lista
+                                                                                 where query.Descripcion.ToString().Contains(txt_buscar.Text.ToString())
+                                                                                 select new thumbnail.data_members.ca_clasificaciontramites()
                                                                        {
-                                                                           id = expediente.id,
-                                                                           Descripcion = expediente.Descripcion,
-                                                                           re_expedientes_campostrazables = expediente.re_expedientes_campostrazables,
-                                                                           re_expedientes_tramites = expediente.re_expedientes_tramites
+                                                                           id = query.id,
+                                                                           Descripcion = query.Descripcion,
+                                                                           ca_tramites = query.ca_tramites
                                                                        }).ToList();
                 bindingsource.DataSource = valores;
                 datagridview.Update();
@@ -248,15 +274,23 @@ namespace thumbnail.forms
             try 
 	        {
                 if (bindingsource.DataSource != null) {
-                    catalogo = (data_members.ca_expedientes)bindingsource.Current;
+                    catalogo = (data_members.ca_clasificaciontramites)bindingsource.Current;
                     if (valida())
                     {
                         if (!buscar_si_existe())
                         {
-                            Program.Bd_Exp_Transportes.ca_expedientes.InsertOnSubmit(catalogo);
+                            Program.Bd_Exp_Transportes.ca_clasificaciontramites.InsertOnSubmit(catalogo);
                             Program.Bd_Exp_Transportes.SubmitChanges();
-                            Form_Mode = form_mode.normal;
-                            actualiza_lista();
+
+                            if (agregar_externo)
+                            {
+                                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                            }
+                            else
+                            {
+                                Form_Mode = form_mode.normal;
+                                actualiza_lista();
+                            }
                         }
                         else
                         {
@@ -282,7 +316,7 @@ namespace thumbnail.forms
 
         private bool buscar_si_existe()
         {
-            data_members.ca_expedientes filtro = Program.Bd_Exp_Transportes.ca_expedientes.SingleOrDefault(query => query.Descripcion == catalogo.Descripcion);
+            data_members.ca_clasificaciontramites filtro = Program.Bd_Exp_Transportes.ca_clasificaciontramites.SingleOrDefault(query => query.Descripcion == catalogo.Descripcion);
             if ( filtro != null ) {
                 MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
@@ -320,16 +354,16 @@ namespace thumbnail.forms
             {
                 if (bindingsource.DataSource != null)
                 {
-                    catalogo = (data_members.ca_expedientes)bindingsource.Current;
-                    Program.Bd_Exp_Transportes.ca_expedientes.DeleteOnSubmit(catalogo);
+                    catalogo = (data_members.ca_clasificaciontramites)bindingsource.Current;
+                    Program.Bd_Exp_Transportes.ca_clasificaciontramites.DeleteOnSubmit(catalogo);
                     Program.Bd_Exp_Transportes.SubmitChanges();
                 }
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show(this, "La clasificación está en uso", "Imposible eliminar", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-        }
+        }       
 
     }
 }

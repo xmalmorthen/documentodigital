@@ -1,410 +1,410 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.75, 20.125" name="Bd_Exp_Transportes">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 17.75, 27.875" name="Bd_Exp_Transportes">
   <DataContextMoniker Name="/Bd_Exp_TransportesDataContext" />
   <nestedChildShapes>
-    <classShape Id="5f45fb03-d3bd-40f8-88fa-43e0be1c7923" absoluteBounds="6.75, 3.25, 2, 1.1939925123006105">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_acciones" />
-      <nestedChildShapes>
-        <elementListCompartment Id="edb85fce-d3a8-48af-a9db-bf7a78b305f2" absoluteBounds="6.7650000005960464, 3.7100000008940697, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="97f10e9d-72df-4e91-afaa-02cc2c84258a" absoluteBounds="11.75, 14.5, 2, 1.3862939453125023">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/tbl_configuraciones" />
-      <nestedChildShapes>
-        <elementListCompartment Id="553ad510-b4da-41d7-a4f2-dacfe2576d25" absoluteBounds="11.765, 14.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="8c5a5045-cb2b-478a-8f29-c8925cd761f8" absoluteBounds="0.75, 1.125, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_campostrazables" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5c5f81e4-3cf2-48c9-a538-3b1266642033" absoluteBounds="0.765, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="90cb2ad3-0ed0-4012-a166-4b79f7b0be9c" absoluteBounds="0.75, 4.375, 2, 1.1939925130208344">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_clasificaciondocumentos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a3c7dc28-2163-4f14-9283-8e581ff83aa2" absoluteBounds="0.765, 4.8350000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="17155b78-695a-4b53-aa72-66ab82a25aea" absoluteBounds="0.75, 17.25, 2, 1.1939925130208309">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_clasificaciontramites" />
-      <nestedChildShapes>
-        <elementListCompartment Id="681e6700-cc3a-4570-8fe5-8704bf707e9f" absoluteBounds="0.765, 17.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e2e5193c-58fa-4321-a83c-5b59802b77f7" absoluteBounds="0.75, 11.25, 2, 3.1170068359375023">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_documentos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="33198733-0a18-427b-a256-20f634006e87" absoluteBounds="0.765, 11.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="837ec63a-dce8-4499-a03d-d490a3f1e1db" absoluteBounds="0.75, 9.25, 2, 1.1939925123006105">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_estatus" />
-      <nestedChildShapes>
-        <elementListCompartment Id="77a0e224-90a0-475a-91f4-1cb33d3ee418" absoluteBounds="0.76500000059604645, 9.71000000089407, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="fff4f0ef-086e-4dc3-946f-21a8f5de01b3" absoluteBounds="0.75, 6.5, 2, 1.1939925130208344">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_expedientes" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7671cfba-5593-4011-bc1c-0cb5b51e13f3" absoluteBounds="0.765, 6.9600000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f9eedc0c-71cf-4c37-8937-1d3e371d6151" absoluteBounds="1.5, 15.25, 2, 1.1939925130208291">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_formatos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="04bd2090-5592-4571-b50c-9f294b048a60" absoluteBounds="1.5150000000000001, 15.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="8a67c963-afd4-457c-89d1-9e09beb96808" absoluteBounds="12.75, 5.75, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_modulos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="609e7c65-434d-47bc-933f-c1e7c916deb8" absoluteBounds="12.765, 6.2100000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="4e609d24-964b-4a38-85c6-fcdda3175dab" absoluteBounds="3.5, 3.5, 2, 1.193992513020838">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_origenes" />
-      <nestedChildShapes>
-        <elementListCompartment Id="35be522a-5d9b-4037-8f83-f483ca64b244" absoluteBounds="3.515, 3.9600000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="7a6ad0c9-031b-473a-a8bb-d0f28d884539" absoluteBounds="4, 17.875, 2, 1.9631982421875023">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_personas" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a9866f4d-7b52-4235-96c5-a02945d6ad89" absoluteBounds="4.015, 18.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="05fbddc5-83ca-4abc-945b-24cb9149914e" absoluteBounds="12.75, 2.875, 2, 1.1939925123006105">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_roles" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5483bfb8-27f1-4ee1-acc2-1edbf50bfe19" absoluteBounds="12.765000000596046, 3.3350000008940697, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="9830caf7-bb80-42d9-ad1d-836369418632" absoluteBounds="6.75, 0.75, 2, 1.3862939453125005">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_tablas" />
-      <nestedChildShapes>
-        <elementListCompartment Id="2afeae29-36d5-4936-a1e1-cd26b1c15ae7" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f0922dbf-9618-4172-9f8d-f16968fdba36" absoluteBounds="6.25, 15.25, 2, 1.1939925130208309">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_tiposbloqueos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="85f9c460-5587-4353-bfcf-8e546305901b" absoluteBounds="6.265, 15.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="4d153e84-08cd-45ea-ba1c-12ec4dcc8774" absoluteBounds="3.5, 11.75, 2, 2.3478011060506105">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_tramites" />
-      <nestedChildShapes>
-        <elementListCompartment Id="78a49f8e-67a1-489e-bc60-a224192a245d" absoluteBounds="3.5150000005960464, 12.21000000089407, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="bc47f8a8-5967-4ae7-b757-15ef3e39ad00" absoluteBounds="6.75, 18.125, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_usuarios" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4d20be77-c7f8-466a-a5d4-e5e234fa4363" absoluteBounds="6.765, 18.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5a0f4b2e-7c43-4c4d-bcfb-12713a555b3c" absoluteBounds="9.5, 5.875, 2, 1.3862939458340406">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/de_acciones_modulo" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7b8f7cfc-9a16-4997-b8c8-36d27235c230" absoluteBounds="9.5150000005960464, 6.33500000089407, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e2f32fec-35ec-41df-a0f7-baabea65e740" absoluteBounds="11.75, 8, 2, 2.347801106770838">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/de_digital" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c74a4690-c435-450b-874b-768e3129a93f" absoluteBounds="11.765, 8.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="333bcb99-b14e-464a-8e8a-3deab7d9d12a" absoluteBounds="11.75, 11.75, 2, 1.9631982421874987">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/de_digital_campostrazables" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7fda193f-93f3-4cf4-a19f-ea6c6539c557" absoluteBounds="11.765, 12.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="ad2d853e-9b0c-4185-945a-3b02da4ff5e0" absoluteBounds="9.5, 2.875, 2, 1.9631982427090406">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/hco_cambios" />
-      <nestedChildShapes>
-        <elementListCompartment Id="69903941-6541-44ab-b266-9e96a471eb89" absoluteBounds="9.5150000005960464, 3.3350000008940697, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="1f99068c-dd26-439f-ba82-860053991cc4" absoluteBounds="9, 14.375, 2, 1.9631982421875023">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ma_digital" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b6d77110-b4fd-4027-a8d3-c08289ca6a89" absoluteBounds="9.015, 14.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="39c228bf-20b9-4886-b49b-58f6d31fac82" absoluteBounds="3.5, 6.125, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_clasificaciondocumentos_documentos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b54b420a-e186-4292-b3bd-d28a1030a10c" absoluteBounds="3.515, 6.5850000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5bb90b64-63b1-43e1-b82b-21f3ea36e65f" absoluteBounds="3.5, 9, 2, 1.7708968098958344">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_expedientes_campostrazables" />
-      <nestedChildShapes>
-        <elementListCompartment Id="0de75aff-0a1e-47fb-9909-59ebb4fe17fa" absoluteBounds="3.515, 9.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="080b9ad6-ae2d-4750-83f8-0102e0eed895" absoluteBounds="6.25, 12.125, 2, 1.3862939453124987">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_expedientes_tramites" />
-      <nestedChildShapes>
-        <elementListCompartment Id="1d77e10a-ad02-45f7-88ad-9b3a159f5755" absoluteBounds="6.265, 12.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="27e00a03-2fe2-4b81-9b01-c9fcbeac0ec3" absoluteBounds="9, 11, 2, 1.7708968098958344">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_expedientestramites_tiposbloqueos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="563a0f78-ace7-4ab9-ac5c-1d36a75c4404" absoluteBounds="9.015, 11.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="bb8f6c39-7ce8-4dc4-9e2b-858042f15984" absoluteBounds="15.5, 2.75, 2, 1.3862939458340406">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_roles_modulos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="2d8b0009-2daf-45f9-a4ad-76cb216415ff" absoluteBounds="15.515000000596046, 3.2100000008940697, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a020fd6a-74f1-4514-aee9-9f52fc1b651b" absoluteBounds="6.25, 9.125, 2, 1.9631982421874987">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_tramites_re_clasificaciondocumentos_documentos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9104db0b-6eff-4b84-b9fc-92aff795ed79" absoluteBounds="6.265, 9.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="adfbd076-4570-4ea3-a0ea-f13262700481" absoluteBounds="15.5, 10.625, 2, 1.3862939453125023">
-      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_usuarios_roles_permisos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="1ad42850-152d-4bbf-ae75-a5803ca08ee2" absoluteBounds="15.515, 11.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(2.125 : 15.25); (2.125 : 14.3670068359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_formatos/ca_formatos_ca_documentos" />
-      <nodes>
-        <classShapeMoniker Id="f9eedc0c-71cf-4c37-8937-1d3e371d6151" />
-        <classShapeMoniker Id="e2e5193c-58fa-4321-a83c-5b59802b77f7" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 17.53125); (3.75 : 17.53125); (3.75 : 14.0978011060506)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_clasificaciontramites/ca_clasificaciontramites_ca_tramites" />
-      <nodes>
-        <classShapeMoniker Id="17155b78-695a-4b53-aa72-66ab82a25aea" />
-        <classShapeMoniker Id="4d153e84-08cd-45ea-ba1c-12ec4dcc8774" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 10.4439925123006); (3.125 : 10.8189925123006); (3.125 : 12.9239005530253); (3.5 : 12.9239005530253)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_estatus/ca_estatus_ca_tramites" />
-      <nodes>
-        <classShapeMoniker Id="837ec63a-dce8-4499-a03d-d490a3f1e1db" />
-        <classShapeMoniker Id="4d153e84-08cd-45ea-ba1c-12ec4dcc8774" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(6 : 18.9142976888021); (6.75 : 18.9142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_personas/ca_personas_ca_usuarios" />
-      <nodes>
-        <classShapeMoniker Id="7a6ad0c9-031b-473a-a8bb-d0f28d884539" />
-        <classShapeMoniker Id="bc47f8a8-5967-4ae7-b757-15ef3e39ad00" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(7.75 : 4.44399251230061); (7.75 : 6.56814697291702); (8.41666666666667 : 6.56814697291702 : JumpStart); (8.58333333333333 : 6.56814697291702 : JumpEnd); (9.5 : 6.56814697291702)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_acciones/ca_acciones_de_acciones_modulo" />
-      <nodes>
-        <classShapeMoniker Id="5f45fb03-d3bd-40f8-88fa-43e0be1c7923" />
-        <classShapeMoniker Id="5a0f4b2e-7c43-4c4d-bcfb-12713a555b3c" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 9.25); (1.75 : 8.46875); (3.07291666666667 : 8.46875 : JumpStart); (3.45833333333333 : 8.46875 : JumpEnd); (5.79166666666667 : 8.46875 : JumpStart); (5.95833333333333 : 8.46875 : JumpEnd); (6.38541666666667 : 8.46875 : JumpStart); (6.55208333333333 : 8.46875 : JumpEnd); (6.91666666666667 : 8.46875 : JumpStart); (7.08333333333333 : 8.46875 : JumpEnd); (8.41666666666667 : 8.46875 : JumpStart); (8.58333333333333 : 8.46875 : JumpEnd); (11.75 : 8.46875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_estatus/ca_estatus_de_digital" />
-      <nodes>
-        <classShapeMoniker Id="837ec63a-dce8-4499-a03d-d490a3f1e1db" />
-        <classShapeMoniker Id="e2f32fec-35ec-41df-a0f7-baabea65e740" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 9.81574425615031); (3.07291666666667 : 9.81574425615031 : JumpStart); (3.23958333333333 : 9.81574425615031 : JumpEnd); (3.25 : 9.81574425615031); (3.25 : 11.3381982421875); (5.79166666666667 : 11.3381982421875 : JumpStart); (6.08333333333333 : 11.3381982421875 : JumpEnd); (8.41666666666667 : 11.3381982421875 : JumpStart); (8.58333333333333 : 11.3381982421875 : JumpEnd); (8.75 : 11.3381982421875); (8.75 : 10.75); (8.79166666666667 : 10.75 : JumpStart); (8.95833333333333 : 10.75 : JumpEnd); (11.2916666666667 : 10.75 : JumpStart); (11.4583333333333 : 10.75 : JumpEnd); (12.1354146666667 : 10.75 : JumpStart); (12.3020813333333 : 10.75 : JumpEnd); (12.75 : 10.75); (12.75 : 11.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_estatus/ca_estatus_de_digital_campostrazables" />
-      <nodes>
-        <classShapeMoniker Id="837ec63a-dce8-4499-a03d-d490a3f1e1db" />
-        <classShapeMoniker Id="333bcb99-b14e-464a-8e8a-3deab7d9d12a" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.75 : 3.84699625615031); (9.5 : 3.84699625615031)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_acciones/ca_acciones_hco_cambios" />
-      <nodes>
-        <classShapeMoniker Id="5f45fb03-d3bd-40f8-88fa-43e0be1c7923" />
-        <classShapeMoniker Id="ad2d853e-9b0c-4185-945a-3b02da4ff5e0" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.75 : 1.44314697265625); (10.5 : 1.44314697265625); (10.5 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_tablas/ca_tablas_hco_cambios" />
-      <nodes>
-        <classShapeMoniker Id="9830caf7-bb80-42d9-ad1d-836369418632" />
-        <classShapeMoniker Id="ad2d853e-9b0c-4185-945a-3b02da4ff5e0" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(7.75 : 18.125); (7.75 : 16.6939925130208); (8.5 : 16.6939925130208); (8.5 : 4.69399251230061); (9 : 4.69399251230061); (9 : 4.37384924942967); (9.5 : 4.37384924942967)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_usuarios/ca_usuarios_hco_cambios" />
-      <nodes>
-        <classShapeMoniker Id="bc47f8a8-5967-4ae7-b757-15ef3e39ad00" />
-        <classShapeMoniker Id="ad2d853e-9b0c-4185-945a-3b02da4ff5e0" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(10.9682867976262 : 14.375); (11.375 : 14.0119861559899); (11.375 : 9.43952755338542); (11.75 : 9.43952755338542)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ma_digital/ma_digital_de_digital" />
-      <nodes>
-        <classShapeMoniker Id="1f99068c-dd26-439f-ba82-860053991cc4" />
-        <classShapeMoniker Id="e2f32fec-35ec-41df-a0f7-baabea65e740" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(11 : 14.4701386071214); (11.5625 : 13.9680765003005); (11.5625 : 12.7315991210937); (11.75 : 12.7315991210937)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ma_digital/ma_digital_de_digital_campostrazables" />
-      <nodes>
-        <classShapeMoniker Id="1f99068c-dd26-439f-ba82-860053991cc4" />
-        <classShapeMoniker Id="333bcb99-b14e-464a-8e8a-3deab7d9d12a" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.54734537760417); (6.38541666666667 : 7.54734537760417 : JumpStart); (6.55208333333333 : 7.54734537760417 : JumpEnd); (6.91666666666667 : 7.54734537760417 : JumpStart); (7.08333333333333 : 7.54734537760417 : JumpEnd); (8.41666666666667 : 7.54734537760417 : JumpStart); (8.58333333333333 : 7.54734537760417 : JumpEnd); (12.21875 : 7.54734537760417); (12.21875 : 8)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/re_clasificaciondocumentos_documentos/re_clasificaciondocumentos_documentos_de_digital" />
-      <nodes>
-        <classShapeMoniker Id="39c228bf-20b9-4886-b49b-58f6d31fac82" />
-        <classShapeMoniker Id="e2f32fec-35ec-41df-a0f7-baabea65e740" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.56899251302083); (3.125 : 5.94399251302083); (3.125 : 5.74878669586338); (3.50121330413662 : 6.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_clasificaciondocumentos/ca_clasificaciondocumentos_re_clasificaciondocumentos_documentos" />
-      <nodes>
-        <classShapeMoniker Id="90cb2ad3-0ed0-4012-a166-4b79f7b0be9c" />
-        <classShapeMoniker Id="39c228bf-20b9-4886-b49b-58f6d31fac82" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 11.3130759230769); (3.06607443490112 : 10.9970014881758 : JumpStart); (3.18392556509888 : 10.879150357978 : JumpEnd); (3.1875 : 10.8755759230769); (3.1875 : 6.91429768880208); (3.5 : 6.91429768880208)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_documentos/ca_documentos_re_clasificaciondocumentos_documentos" />
-      <nodes>
-        <classShapeMoniker Id="e2e5193c-58fa-4321-a83c-5b59802b77f7" />
-        <classShapeMoniker Id="39c228bf-20b9-4886-b49b-58f6d31fac82" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 9.25091745577869); (3.09732443490112 : 8.90359302087757 : JumpStart); (3.30892556509888 : 8.69199189067982 : JumpEnd); (3.375 : 8.62591745577869); (3.375 : 7.34019853320313); (3.5 : 7.34019853320313)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_estatus/ca_estatus_re_clasificaciondocumentos_documentos" />
-      <nodes>
-        <classShapeMoniker Id="837ec63a-dce8-4499-a03d-d490a3f1e1db" />
-        <classShapeMoniker Id="39c228bf-20b9-4886-b49b-58f6d31fac82" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 9.88544840494792); (5.79166666666667 : 9.88544840494792 : JumpStart); (5.95833333333333 : 9.88544840494792 : JumpEnd); (6 : 9.88544840494792); (6 : 11.5881982421875); (8.41666666666667 : 11.5881982421875 : JumpStart); (8.58333333333333 : 11.5881982421875 : JumpEnd); (8.875 : 11.5881982421875); (8.875 : 10.5978011067708); (11.2916666666667 : 10.5978011067708 : JumpStart); (11.4583333333333 : 10.5978011067708 : JumpEnd); (12.218748 : 10.5978011067708); (12.218748 : 11.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/re_expedientes_campostrazables/re_expedientes_campostrazables_de_digital_campostrazables" />
-      <nodes>
-        <classShapeMoniker Id="5bb90b64-63b1-43e1-b82b-21f3ea36e65f" />
-        <classShapeMoniker Id="333bcb99-b14e-464a-8e8a-3deab7d9d12a" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.6732367741887); (3.15625 : 3.0794867741887); (3.15625 : 10.2933200330231); (3.16666666666667 : 10.2933200330231 : JumpStart); (3.33333333333333 : 10.2933200330231 : JumpEnd); (3.5 : 10.2933200330231)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_campostrazables/ca_campostrazables_re_expedientes_campostrazables" />
-      <nodes>
-        <classShapeMoniker Id="8c5a5045-cb2b-478a-8f29-c8925cd761f8" />
-        <classShapeMoniker Id="5bb90b64-63b1-43e1-b82b-21f3ea36e65f" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 9.5020833559645); (3.07291666666667 : 9.5020833559645 : JumpStart); (3.27083333333333 : 9.5020833559645 : JumpEnd); (3.5 : 9.5020833559645)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_estatus/ca_estatus_re_expedientes_campostrazables" />
-      <nodes>
-        <classShapeMoniker Id="837ec63a-dce8-4499-a03d-d490a3f1e1db" />
-        <classShapeMoniker Id="5bb90b64-63b1-43e1-b82b-21f3ea36e65f" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.73071242863582 : 7.69399251302083); (3.09732443490112 : 8.06060451928614 : JumpStart); (3.24642556509888 : 8.2097056494839 : JumpEnd); (3.25 : 8.21328008438502); (3.25 : 9.21978967798225); (3.5 : 9.21978967798225)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_expedientes/ca_expedientes_re_expedientes_campostrazables" />
-      <nodes>
-        <classShapeMoniker Id="fff4f0ef-086e-4dc3-946f-21a8f5de01b3" />
-        <classShapeMoniker Id="5bb90b64-63b1-43e1-b82b-21f3ea36e65f" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 13.5112939453125); (8.44107443490112 : 13.7023683802136 : JumpStart); (8.55892556509888 : 13.8202195104114 : JumpEnd); (8.625 : 13.8862939453125); (8.625 : 15.3565991210938); (9 : 15.3565991210938)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/re_expedientes_tramites/re_expedientes_tramites_ma_digital" />
-      <nodes>
-        <classShapeMoniker Id="080b9ad6-ae2d-4750-83f8-0102e0eed895" />
-        <classShapeMoniker Id="1f99068c-dd26-439f-ba82-860053991cc4" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.6737854858774); (3.14520702714343 : 8.06899251302083); (3.29166666666667 : 8.06899251302083 : JumpStart); (3.45833333333333 : 8.06899251302083 : JumpEnd); (5.875 : 8.06899251302083); (5.875 : 11.75); (6.25 : 12.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_expedientes/ca_expedientes_re_expedientes_tramites" />
-      <nodes>
-        <classShapeMoniker Id="fff4f0ef-086e-4dc3-946f-21a8f5de01b3" />
-        <classShapeMoniker Id="080b9ad6-ae2d-4750-83f8-0102e0eed895" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 12.8493994726562); (6.25 : 12.8493994726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_tramites/ca_tramites_re_expedientes_tramites" />
-      <nodes>
-        <classShapeMoniker Id="4d153e84-08cd-45ea-ba1c-12ec4dcc8774" />
-        <classShapeMoniker Id="080b9ad6-ae2d-4750-83f8-0102e0eed895" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 15.2812264964944); (8.44107443490112 : 15.0901520615933 : JumpStart); (8.55892556509888 : 14.9723009313955 : JumpEnd); (8.56607443490112 : 14.9651520615933 : JumpStart); (8.68392556509888 : 14.8473009313955 : JumpEnd); (8.78125 : 14.7499764964944); (8.78125 : 12.0317075800781); (9 : 12.0317075800781)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_tiposbloqueos/ca_tiposbloqueos_re_expedientestramites_tiposbloqueos" />
-      <nodes>
-        <classShapeMoniker Id="f0922dbf-9618-4172-9f8d-f16968fdba36" />
-        <classShapeMoniker Id="27e00a03-2fe2-4b81-9b01-c9fcbeac0ec3" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 12.5377219179688); (8.41666666666667 : 12.5377219179688 : JumpStart); (8.58333333333333 : 12.5377219179688 : JumpEnd); (8.69791666666667 : 12.5377219179688 : JumpStart); (8.86458333333333 : 12.5377219179688 : JumpEnd); (9 : 12.5377219179688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/re_expedientes_tramites/re_expedientes_tramites_re_expedientestramites_tiposbloqueos" />
-      <nodes>
-        <classShapeMoniker Id="080b9ad6-ae2d-4750-83f8-0102e0eed895" />
-        <classShapeMoniker Id="27e00a03-2fe2-4b81-9b01-c9fcbeac0ec3" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(14.75 : 6.53929768880208); (15.0416666666667 : 6.53929768880208 : JumpStart); (15.2083333333333 : 6.53929768880208 : JumpEnd); (16.5 : 6.53929768880208); (16.5 : 4.13629394583404)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_modulos/ca_modulos_re_roles_modulos" />
-      <nodes>
-        <classShapeMoniker Id="8a67c963-afd4-457c-89d1-9e09beb96808" />
-        <classShapeMoniker Id="bb8f6c39-7ce8-4dc4-9e2b-858042f15984" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(14.75 : 3.47199625615031); (15.5 : 3.47199625615031)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_roles/ca_roles_re_roles_modulos" />
-      <nodes>
-        <classShapeMoniker Id="05fbddc5-83ca-4abc-945b-24cb9149914e" />
-        <classShapeMoniker Id="bb8f6c39-7ce8-4dc4-9e2b-858042f15984" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 11.8115374615385); (5.81607443490112 : 11.4954630266373 : JumpStart); (5.93392556509888 : 11.3776118964396 : JumpEnd); (5.9375 : 11.3740374615385); (5.9375 : 10.4868228235677); (6.25 : 10.4868228235677)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_tramites/ca_tramites_re_tramites_re_clasificaciondocumentos_documentos" />
-      <nodes>
-        <classShapeMoniker Id="4d153e84-08cd-45ea-ba1c-12ec4dcc8774" />
-        <classShapeMoniker Id="a020fd6a-74f1-4514-aee9-9f52fc1b651b" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.02649367526059); (6.38541666666667 : 7.02649367526059 : JumpStart); (6.55208333333333 : 7.02649367526059 : JumpEnd); (7 : 7.02649367526059); (7 : 9.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/re_clasificaciondocumentos_documentos/re_clasificaciondocumentos_documentos_re_tramites_re_clasificaciondocumentos_documentos" />
-      <nodes>
-        <classShapeMoniker Id="39c228bf-20b9-4886-b49b-58f6d31fac82" />
-        <classShapeMoniker Id="a020fd6a-74f1-4514-aee9-9f52fc1b651b" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.60024251266072); (6.46875 : 4.60024251266072); (6.46875 : 9.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_origenes/ca_origenes_re_tramites_re_clasificaciondocumentos_documentos" />
-      <nodes>
-        <classShapeMoniker Id="4e609d24-964b-4a38-85c6-fcdda3175dab" />
-        <classShapeMoniker Id="a020fd6a-74f1-4514-aee9-9f52fc1b651b" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(14.75 : 4.06899251230061); (15.125 : 4.44399251230061); (15.125 : 11.3181469726563); (15.5 : 11.3181469726563)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_roles/ca_roles_re_usuarios_roles_permisos" />
-      <nodes>
-        <classShapeMoniker Id="05fbddc5-83ca-4abc-945b-24cb9149914e" />
-        <classShapeMoniker Id="adfbd076-4570-4ea3-a0ea-f13262700481" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.75 : 18.9142976888021); (17.15625 : 18.9142976888021); (17.15625 : 12.0112939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_usuarios/ca_usuarios_re_usuarios_roles_permisos" />
-      <nodes>
-        <classShapeMoniker Id="bc47f8a8-5967-4ae7-b757-15ef3e39ad00" />
-        <classShapeMoniker Id="adfbd076-4570-4ea3-a0ea-f13262700481" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="67a8d54e-0ac9-402a-a0d5-d46348c09c89" absoluteBounds="14.75, 13.5, 2, 3.1170068359375005">
+    <classShape Id="67a8d54e-0ac9-402a-a0d5-d46348c09c89" absoluteBounds="1, 24.5, 2, 3.1170068359375005">
       <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/vw_ListaTramitesActivos" />
       <nestedChildShapes>
-        <elementListCompartment Id="9694cd78-bb1e-42ae-808d-c5d62392d644" absoluteBounds="14.765, 13.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9694cd78-bb1e-42ae-808d-c5d62392d644" absoluteBounds="1.0150000000000006, 24.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="20487d09-abce-4bd6-ae4c-b099fdb7697c" absoluteBounds="6.75, 4.125, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_acciones" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18df9e19-4e4c-4250-a723-6abfb82465e8" absoluteBounds="6.765, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c4a245e-a1e1-40d4-b3ff-584cb578215e" absoluteBounds="6.75, 6.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/tbl_configuraciones" />
+      <nestedChildShapes>
+        <elementListCompartment Id="99d09f9a-e186-41c4-bc5f-3ecd9d94b7c9" absoluteBounds="6.765, 6.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="61450f64-0acd-4a95-92a2-0bbd86e2bed8" absoluteBounds="0.75, 12.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_clasificaciondocumentos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="61d2ed4b-5d7a-4661-bedc-5e0eca355f16" absoluteBounds="0.765, 12.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="18306630-6b04-4fa3-9515-987041966dff" absoluteBounds="0.75, 8.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_clasificaciontramites" />
+      <nestedChildShapes>
+        <elementListCompartment Id="21adc8f7-8561-42ef-9e69-1b050eb8b9df" absoluteBounds="0.765, 8.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e7a89a57-548c-44b6-a6ff-a156b897bb40" absoluteBounds="0.75, 14.25, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_documentos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5cca906f-6700-4008-98c3-c8608b110326" absoluteBounds="0.765, 14.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f59e21a2-ea61-4ca1-a8f0-59e10e626856" absoluteBounds="0.75, 10.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_estatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d15f01f-71f7-4c4e-8c26-9c1d9537e9df" absoluteBounds="0.765, 10.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a9ba495a-4bb1-4658-8887-bc4aaac3f58d" absoluteBounds="0.75, 6, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_expedientes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f12a18a8-0211-41aa-8a29-260c53158c9a" absoluteBounds="0.765, 6.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="82ac071b-a356-408f-a186-86206c92e057" absoluteBounds="1.5, 18.125, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_formatos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0451b75-abbc-4a31-8a59-d2647bc1a009" absoluteBounds="1.5150000000000001, 18.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59994481-2245-48a1-9761-be46c19ac7ab" absoluteBounds="12.75, 7.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_modulos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8cbc1e94-661c-4716-ab38-dab040b77e3b" absoluteBounds="12.765, 8.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="26af1797-cb47-4ecc-9132-ac30f8f2517a" absoluteBounds="3.5, 4.875, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_origenes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2568a243-8c7b-4dc5-9cf1-45c16f53d4c8" absoluteBounds="3.515, 5.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="22313900-5855-4108-b560-f06447aec15b" absoluteBounds="4, 21, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_personas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bac809e7-4433-4888-84af-7f8e9efdc91c" absoluteBounds="4.015, 21.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e78403e5-3495-4280-aa47-9f0593205f23" absoluteBounds="12.75, 3.875, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_roles" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ba1577f-64d4-4d03-b7d3-4d4251d70800" absoluteBounds="12.765, 4.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4d28022f-f7af-4b39-bc2a-e79e918c1128" absoluteBounds="6.75, 1.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_tablas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0c9f0b76-fd26-45b6-8ad3-5eb355b5c26b" absoluteBounds="6.765, 2.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a026489-084c-49e2-a2dd-e6249e3b99fa" absoluteBounds="6.25, 16.25, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_tiposbloqueos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="65fd672e-8d98-47f1-957d-f6986cc5b6fb" absoluteBounds="6.265, 16.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d48adbe-29a9-4a52-96d7-8ebca733df86" absoluteBounds="3.5, 12.625, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_tramites" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f748d673-ada1-4e08-8493-6bf668400845" absoluteBounds="3.515, 13.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ac749e9d-44de-4d24-bb29-526443bef2ba" absoluteBounds="6.75, 21.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_usuarios" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f153323-aece-4250-8dc3-05f2cfd52151" absoluteBounds="6.765, 21.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f74c12bb-223a-49fc-aa48-da35b5f3b365" absoluteBounds="9.5, 4, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/de_acciones_modulo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="66fbae13-2384-4e54-885c-2cb3446e8419" absoluteBounds="9.515, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6578e88e-ed11-4db2-b502-8bd7fcc08349" absoluteBounds="11.75, 14.5, 2, 2.3478011067708362">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/de_digital" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8c4bb2f-f328-422e-9545-549a12c7cb2b" absoluteBounds="11.765, 14.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="05f506a4-a312-4c7e-b7ee-93c83bfb27f3" absoluteBounds="11.75, 11.125, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/de_digital_campostrazables" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cbeee5e-9013-495e-b987-9a985498be00" absoluteBounds="11.765, 11.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9435db44-2461-4131-99d8-a84ca20d5c65" absoluteBounds="9.5, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/hco_cambios" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a2e25928-794d-4e34-acc5-20dd7b3994d8" absoluteBounds="9.515, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df2a6e4e-ee0c-4778-8567-fefea38e7a3f" absoluteBounds="9, 15.375, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ma_digital" />
+      <nestedChildShapes>
+        <elementListCompartment Id="86381f5f-1618-4be2-adbf-ffc006daecf8" absoluteBounds="9.015, 15.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="44302b9c-b7c9-4acd-9fc9-281bb2655a6c" absoluteBounds="3.5, 10, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_clasificaciondocumentos_documentos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74ba4286-9786-4f13-a8d8-fcce0c5eb403" absoluteBounds="3.515, 10.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9f807bf5-a3c7-45a9-98ab-74218f9a3729" absoluteBounds="3.5, 6.875, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_expedientes_campostrazables" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93082e6c-65f8-477e-822d-4e7b58c45a58" absoluteBounds="3.515, 7.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4b95ffdc-dd70-4e1a-91d0-4334f69de305" absoluteBounds="6.25, 13.125, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_expedientes_tramites" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45301161-60b4-4ad7-a730-94d831aae982" absoluteBounds="6.265, 13.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="94f19107-e62d-46a6-bf77-6e6165426e28" absoluteBounds="9, 11.875, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_expedientestramites_tiposbloqueos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ffbbd02-cf4f-442a-a1c8-0427ac86e6fe" absoluteBounds="9.015, 12.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="706b1dd3-23ce-4840-b587-44d0d7f93ed8" absoluteBounds="15.5, 3.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_roles_modulos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f1d5b0e6-a3c8-41ee-ac11-b04bb542ca8f" absoluteBounds="15.515, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e346038c-6c2e-44ae-a221-356167d75ad5" absoluteBounds="6.25, 9.5, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_tramites_re_clasificaciondocumentos_documentos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3049c687-d281-4ec9-8ee8-f568459d612a" absoluteBounds="6.265, 9.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="263e9c2f-581f-449c-834b-4293954893a1" absoluteBounds="15.5, 12.625, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/re_usuarios_roles_permisos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d7d1936-08b4-4ff2-8d33-922fe2cf3a14" absoluteBounds="15.515, 13.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.125 : 18.125); (2.125 : 17.3670068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_formatos/ca_formatos_ca_documentos" />
+      <nodes>
+        <classShapeMoniker Id="82ac071b-a356-408f-a186-86206c92e057" />
+        <classShapeMoniker Id="e7a89a57-548c-44b6-a6ff-a156b897bb40" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.44307305724159); (3.125 : 9.81807305724159); (3.125 : 13.7989005533854); (3.5 : 13.7989005533854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_clasificaciontramites/ca_clasificaciontramites_ca_tramites" />
+      <nodes>
+        <classShapeMoniker Id="18306630-6b04-4fa3-9515-987041966dff" />
+        <classShapeMoniker Id="5d48adbe-29a9-4a52-96d7-8ebca733df86" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.4118455607472); (3.06607443490112 : 11.7279199956483 : JumpStart); (3.18392556509888 : 11.8457711258461 : JumpEnd); (3.28125 : 11.9430955607472); (3.28125 : 13.1806982766927); (3.5 : 13.1806982766927)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_estatus/ca_estatus_ca_tramites" />
+      <nodes>
+        <classShapeMoniker Id="f59e21a2-ea61-4ca1-a8f0-59e10e626856" />
+        <classShapeMoniker Id="5d48adbe-29a9-4a52-96d7-8ebca733df86" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 22.0392976888021); (6.75 : 22.0392976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_personas/ca_personas_ca_usuarios" />
+      <nodes>
+        <classShapeMoniker Id="22313900-5855-4108-b560-f06447aec15b" />
+        <classShapeMoniker Id="ac749e9d-44de-4d24-bb29-526443bef2ba" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 4.72199625651042); (9.5 : 4.72199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_acciones/ca_acciones_de_acciones_modulo" />
+      <nodes>
+        <classShapeMoniker Id="20487d09-abce-4bd6-ae4c-b099fdb7697c" />
+        <classShapeMoniker Id="f74c12bb-223a-49fc-aa48-da35b5f3b365" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.7996707803736); (3 : 10.7996707803736); (3 : 11.8285953776042); (3.04166666666667 : 11.8285953776042 : JumpStart); (3.28596445222353 : 11.8285953776042 : JumpEnd); (5.66666666666667 : 11.8285953776042 : JumpStart); (5.95833333333333 : 11.8285953776042 : JumpEnd); (8.41666666666667 : 11.8285953776042 : JumpStart); (8.70833333333333 : 11.8285953776042 : JumpEnd); (8.75 : 11.8285953776042); (8.75 : 13.8958968098958); (11.3541666666667 : 13.8958968098958 : JumpStart); (11.5208333333333 : 13.8958968098958 : JumpEnd); (12.75 : 13.8958968098958); (12.75 : 14.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_estatus/ca_estatus_de_digital" />
+      <nodes>
+        <classShapeMoniker Id="f59e21a2-ea61-4ca1-a8f0-59e10e626856" />
+        <classShapeMoniker Id="6578e88e-ed11-4db2-b502-8bd7fcc08349" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 11.4439925130208); (1.75 : 12.1065991210937); (8.5 : 12.1065991210937); (8.5 : 11.375); (11.375 : 11.375); (11.375 : 12.1065991210937); (11.75 : 12.1065991210937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_estatus/ca_estatus_de_digital_campostrazables" />
+      <nodes>
+        <classShapeMoniker Id="f59e21a2-ea61-4ca1-a8f0-59e10e626856" />
+        <classShapeMoniker Id="05f506a4-a312-4c7e-b7ee-93c83bfb27f3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 4.12591745577925); (8.94107443490112 : 3.93484302087813 : JumpStart); (9.05892556509888 : 3.81699189068037 : JumpEnd); (9.125 : 3.75091745577925); (9.125 : 1.73159912109375); (9.5 : 1.73159912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_acciones/ca_acciones_hco_cambios" />
+      <nodes>
+        <classShapeMoniker Id="20487d09-abce-4bd6-ae4c-b099fdb7697c" />
+        <classShapeMoniker Id="9435db44-2461-4131-99d8-a84ca20d5c65" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 2.29409912109375); (9.5 : 2.29409912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_tablas/ca_tablas_hco_cambios" />
+      <nodes>
+        <classShapeMoniker Id="4d28022f-f7af-4b39-bc2a-e79e918c1128" />
+        <classShapeMoniker Id="9435db44-2461-4131-99d8-a84ca20d5c65" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.75 : 21.25); (7.75 : 17.6939925130208); (8.625 : 17.6939925130208); (8.625 : 8.0112939453125); (9 : 8.0112939453125); (9 : 1.20954756054688); (9.5 : 1.20954756054688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_usuarios/ca_usuarios_hco_cambios" />
+      <nodes>
+        <classShapeMoniker Id="ac749e9d-44de-4d24-bb29-526443bef2ba" />
+        <classShapeMoniker Id="9435db44-2461-4131-99d8-a84ca20d5c65" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 16.1114005533854); (11.75 : 16.1114005533854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ma_digital/ma_digital_de_digital" />
+      <nodes>
+        <classShapeMoniker Id="df2a6e4e-ee0c-4778-8567-fefea38e7a3f" />
+        <classShapeMoniker Id="6578e88e-ed11-4db2-b502-8bd7fcc08349" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 15.4369152522536); (11.4375 : 14.9994152522536); (11.4375 : 12.6286506816406); (11.75 : 12.6286506816406)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ma_digital/ma_digital_de_digital_campostrazables" />
+      <nodes>
+        <classShapeMoniker Id="df2a6e4e-ee0c-4778-8567-fefea38e7a3f" />
+        <classShapeMoniker Id="05f506a4-a312-4c7e-b7ee-93c83bfb27f3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 10.7892976888021); (5.66666666666667 : 10.7892976888021 : JumpStart); (5.95833333333333 : 10.7892976888021 : JumpEnd); (6 : 10.7892976888021); (6 : 11.5881982421875); (8.41666666666667 : 11.5881982421875 : JumpStart); (8.70833333333333 : 11.5881982421875 : JumpEnd); (8.875 : 11.5881982421875); (8.875 : 14.1458968098958); (11.3541666666667 : 14.1458968098958 : JumpStart); (11.5208333333333 : 14.1458968098958 : JumpEnd); (12.218748 : 14.1458968098958); (12.218748 : 14.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/re_clasificaciondocumentos_documentos/re_clasificaciondocumentos_documentos_de_digital" />
+      <nodes>
+        <classShapeMoniker Id="44302b9c-b7c9-4acd-9fc9-281bb2655a6c" />
+        <classShapeMoniker Id="6578e88e-ed11-4db2-b502-8bd7fcc08349" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 12.2812264964944); (3.06607443490112 : 11.9651520615933 : JumpStart); (3.18392556509888 : 11.8473009313955 : JumpEnd); (3.40625 : 11.6249764964944); (3.40625 : 11.6735586817408); (3.50121330413662 : 11.5785953776042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_clasificaciondocumentos/ca_clasificaciondocumentos_re_clasificaciondocumentos_documentos" />
+      <nodes>
+        <classShapeMoniker Id="61450f64-0acd-4a95-92a2-0bbd86e2bed8" />
+        <classShapeMoniker Id="44302b9c-b7c9-4acd-9fc9-281bb2655a6c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 14.3130759230769); (3.1875 : 13.8755759230769); (3.1875 : 10.7892976888021); (3.5 : 10.7892976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_documentos/ca_documentos_re_clasificaciondocumentos_documentos" />
+      <nodes>
+        <classShapeMoniker Id="e7a89a57-548c-44b6-a6ff-a156b897bb40" />
+        <classShapeMoniker Id="44302b9c-b7c9-4acd-9fc9-281bb2655a6c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.1370056705604); (2.91666666666667 : 11.1370056705604 : JumpStart); (3.27083333333333 : 11.1370056705604 : JumpEnd); (3.5 : 11.1370056705604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_estatus/ca_estatus_re_clasificaciondocumentos_documentos" />
+      <nodes>
+        <classShapeMoniker Id="f59e21a2-ea61-4ca1-a8f0-59e10e626856" />
+        <classShapeMoniker Id="44302b9c-b7c9-4acd-9fc9-281bb2655a6c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 8.64589680989583); (5.66666666666667 : 8.64589680989583 : JumpStart); (5.83333333333333 : 8.64589680989583 : JumpEnd); (6.38541666666667 : 8.64589680989583 : JumpStart); (6.55208333333333 : 8.64589680989583 : JumpEnd); (11.75 : 8.64589680989583); (11.75 : 11.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/re_expedientes_campostrazables/re_expedientes_campostrazables_de_digital_campostrazables" />
+      <nodes>
+        <classShapeMoniker Id="9f807bf5-a3c7-45a9-98ab-74218f9a3729" />
+        <classShapeMoniker Id="05f506a4-a312-4c7e-b7ee-93c83bfb27f3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.2812264964944); (3.06607443490112 : 9.96515206159327 : JumpStart); (3.18392556509888 : 9.84730093139551 : JumpEnd); (3.28125 : 9.74997649649439); (3.28125 : 8.23442460742188); (3.5 : 8.23442460742188)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_estatus/ca_estatus_re_expedientes_campostrazables" />
+      <nodes>
+        <classShapeMoniker Id="f59e21a2-ea61-4ca1-a8f0-59e10e626856" />
+        <classShapeMoniker Id="9f807bf5-a3c7-45a9-98ab-74218f9a3729" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.03449625651042); (2.88541666666667 : 7.03449625651042 : JumpStart); (3.05208333333333 : 7.03449625651042 : JumpEnd); (3.5 : 7.03449625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_expedientes/ca_expedientes_re_expedientes_campostrazables" />
+      <nodes>
+        <classShapeMoniker Id="a9ba495a-4bb1-4658-8887-bc4aaac3f58d" />
+        <classShapeMoniker Id="9f807bf5-a3c7-45a9-98ab-74218f9a3729" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 14.4494429077524); (8.8125 : 15.0119429077524); (8.8125 : 16.3565991210938); (9 : 16.3565991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/re_expedientes_tramites/re_expedientes_tramites_ma_digital" />
+      <nodes>
+        <classShapeMoniker Id="4b95ffdc-dd70-4e1a-91d0-4334f69de305" />
+        <classShapeMoniker Id="df2a6e4e-ee0c-4778-8567-fefea38e7a3f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.47199625651042); (2.88541666666667 : 6.47199625651042 : JumpStart); (3.05208333333333 : 6.47199625651042 : JumpEnd); (5.75 : 6.47199625651042); (5.75 : 12.75); (7.25 : 12.75); (7.25 : 13.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_expedientes/ca_expedientes_re_expedientes_tramites" />
+      <nodes>
+        <classShapeMoniker Id="a9ba495a-4bb1-4658-8887-bc4aaac3f58d" />
+        <classShapeMoniker Id="4b95ffdc-dd70-4e1a-91d0-4334f69de305" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 13.8181469726562); (6.25 : 13.8181469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_tramites/ca_tramites_re_expedientes_tramites" />
+      <nodes>
+        <classShapeMoniker Id="5d48adbe-29a9-4a52-96d7-8ebca733df86" />
+        <classShapeMoniker Id="4b95ffdc-dd70-4e1a-91d0-4334f69de305" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 16.2812264964944); (8.65625 : 15.8749764964944); (8.65625 : 12.7604484049479); (8.66666666666667 : 12.7604484049479 : JumpStart); (8.95833333333333 : 12.7604484049479 : JumpEnd); (9 : 12.7604484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_tiposbloqueos/ca_tiposbloqueos_re_expedientestramites_tiposbloqueos" />
+      <nodes>
+        <classShapeMoniker Id="7a026489-084c-49e2-a2dd-e6249e3b99fa" />
+        <classShapeMoniker Id="94f19107-e62d-46a6-bf77-6e6165426e28" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 13.3854484049479); (9 : 13.3854484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/re_expedientes_tramites/re_expedientes_tramites_re_expedientestramites_tiposbloqueos" />
+      <nodes>
+        <classShapeMoniker Id="4b95ffdc-dd70-4e1a-91d0-4334f69de305" />
+        <classShapeMoniker Id="94f19107-e62d-46a6-bf77-6e6165426e28" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.75 : 8.41429768880208); (16.5 : 8.41429768880208); (16.5 : 5.1362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_modulos/ca_modulos_re_roles_modulos" />
+      <nodes>
+        <classShapeMoniker Id="59994481-2245-48a1-9761-be46c19ac7ab" />
+        <classShapeMoniker Id="706b1dd3-23ce-4840-b587-44d0d7f93ed8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.75 : 4.47199625651042); (15.5 : 4.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_roles/ca_roles_re_roles_modulos" />
+      <nodes>
+        <classShapeMoniker Id="e78403e5-3495-4280-aa47-9f0593205f23" />
+        <classShapeMoniker Id="706b1dd3-23ce-4840-b587-44d0d7f93ed8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 12.625); (5.875 : 12.25); (5.875 : 10.144649344401); (6.25 : 10.144649344401)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_tramites/ca_tramites_re_tramites_re_clasificaciondocumentos_documentos" />
+      <nodes>
+        <classShapeMoniker Id="5d48adbe-29a9-4a52-96d7-8ebca733df86" />
+        <classShapeMoniker Id="e346038c-6c2e-44ae-a221-356167d75ad5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 11.1887479654948); (6.25 : 11.1887479654948)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/re_clasificaciondocumentos_documentos/re_clasificaciondocumentos_documentos_re_tramites_re_clasificaciondocumentos_documentos" />
+      <nodes>
+        <classShapeMoniker Id="44302b9c-b7c9-4acd-9fc9-281bb2655a6c" />
+        <classShapeMoniker Id="e346038c-6c2e-44ae-a221-356167d75ad5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.72524251302083); (6.46875 : 5.72524251302083); (6.46875 : 9.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_origenes/ca_origenes_re_tramites_re_clasificaciondocumentos_documentos" />
+      <nodes>
+        <classShapeMoniker Id="26af1797-cb47-4ecc-9132-ac30f8f2517a" />
+        <classShapeMoniker Id="e346038c-6c2e-44ae-a221-356167d75ad5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.75 : 5.06899251302083); (15.125 : 5.44399251302083); (15.125 : 13.3181469726562); (15.5 : 13.3181469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_roles/ca_roles_re_usuarios_roles_permisos" />
+      <nodes>
+        <classShapeMoniker Id="e78403e5-3495-4280-aa47-9f0593205f23" />
+        <classShapeMoniker Id="263e9c2f-581f-449c-834b-4293954893a1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 22.0392976888021); (16.5 : 22.0392976888021); (16.5 : 14.0112939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_usuarios/ca_usuarios_re_usuarios_roles_permisos" />
+      <nodes>
+        <classShapeMoniker Id="ac749e9d-44de-4d24-bb29-526443bef2ba" />
+        <classShapeMoniker Id="263e9c2f-581f-449c-834b-4293954893a1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0d7efa1f-9eb8-44bd-8070-e7b4a8af0b21" absoluteBounds="1.125, 2.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/Bd_Exp_TransportesDataContext/ca_campostrazables" />
+      <nestedChildShapes>
+        <elementListCompartment Id="980e4b26-6eba-48d6-a5a7-90bae0170f5a" absoluteBounds="1.1400000000000001, 3.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.96875 : 4.45359537760417); (2.96875 : 7.72199625651042); (3.5 : 7.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Bd_Exp_TransportesDataContext/ca_campostrazables/ca_campostrazables_re_expedientes_campostrazables" />
+      <nodes>
+        <classShapeMoniker Id="0d7efa1f-9eb8-44bd-8070-e7b4a8af0b21" />
+        <classShapeMoniker Id="9f807bf5-a3c7-45a9-98ab-74218f9a3729" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

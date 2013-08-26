@@ -10,7 +10,7 @@ using thumbnail.data_members;
 
 namespace thumbnail.forms
 {
-    public partial class ca_expedientes : Form
+    public partial class ca_campostrazables : Form
     {
         //enumeracion para el control del estado de la forma
         public enum form_mode
@@ -60,7 +60,9 @@ namespace thumbnail.forms
             //eliminar
             btn_eliminar.Enabled = Form_Mode == form_mode.normal ? true : false;
 
-            descripcionTextEdit.Enabled = (Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar) ? true : false;
+            descripcionTextEdit.Enabled = (Form_Mode == form_mode.agregar) ? true : false;
+            spinEdit1.Enabled = (Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar) ? true : false;
+            textEdit2.Enabled = (Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar) ? true : false;
 
             //limpiar controles
             if (Form_Mode == form_mode.agregar ) limpiar_controles();
@@ -79,10 +81,10 @@ namespace thumbnail.forms
         }
 
         //lista con contenido de los registros
-        private List<data_members.ca_expedientes> lista;
-        private data_members.ca_expedientes catalogo;
+        private List<data_members.ca_campostrazables> lista;
+        private data_members.ca_campostrazables catalogo;
 
-        public ca_expedientes()
+        public ca_campostrazables()
         {
             InitializeComponent();
         }
@@ -90,7 +92,7 @@ namespace thumbnail.forms
         private void actualiza_lista() {
             try
             {
-                lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_expedientes>().ToList();
+                lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_campostrazables>().ToList();
                 bindingsource.DataSource = lista;
             }
             catch (Exception)
@@ -118,6 +120,7 @@ namespace thumbnail.forms
 	        {
                 bindingsource.CancelEdit();
                 bindingsource.AddNew();
+                (bindingsource.Current as data_members.ca_campostrazables).Tamanio_Caracteres = 1;
 	        }
 	        catch (Exception)
 	        {
@@ -131,6 +134,7 @@ namespace thumbnail.forms
         {
             bindingsource.AddNew();
             Form_Mode = form_mode.agregar;
+            limpiar_controles();
 
             //limpiar_controles();
             descripcionTextEdit.Focus();
@@ -140,7 +144,7 @@ namespace thumbnail.forms
         private void btn_Editar_Click(object sender, EventArgs e)
         {
             Form_Mode = form_mode.editar;
-            catalogo = (data_members.ca_expedientes)bindingsource.Current;
+            catalogo = (data_members.ca_campostrazables)bindingsource.Current;
         }
 
         //boton cancelar
@@ -181,7 +185,7 @@ namespace thumbnail.forms
                 case form_mode.editar:
                     editar_registro();
                     break;
-            }            
+            }           
         }
 
         //boton cerrar
@@ -204,14 +208,14 @@ namespace thumbnail.forms
 
             try
             {
-                List<thumbnail.data_members.ca_expedientes> valores = (from expediente in lista
-                                                                       where expediente.Descripcion.ToString().Contains(txt_buscar.Text.ToString())
-                                                                       select new thumbnail.data_members.ca_expedientes()
+                List<thumbnail.data_members.ca_campostrazables> valores = (from query in lista
+                                                                           where query.Nombre.ToString().Contains(txt_buscar.Text.ToString())
+                                                                           select new thumbnail.data_members.ca_campostrazables()
                                                                        {
-                                                                           id = expediente.id,
-                                                                           Descripcion = expediente.Descripcion,
-                                                                           re_expedientes_campostrazables = expediente.re_expedientes_campostrazables,
-                                                                           re_expedientes_tramites = expediente.re_expedientes_tramites
+                                                                           id = query.id,
+                                                                           Nombre = query.Nombre,
+                                                                           re_expedientes_campostrazables = query.re_expedientes_campostrazables,
+                                                                           Tamanio_Caracteres = query.Tamanio_Caracteres
                                                                        }).ToList();
                 bindingsource.DataSource = valores;
                 datagridview.Update();
@@ -248,12 +252,13 @@ namespace thumbnail.forms
             try 
 	        {
                 if (bindingsource.DataSource != null) {
-                    catalogo = (data_members.ca_expedientes)bindingsource.Current;
+                    catalogo = (data_members.ca_campostrazables)bindingsource.Current;
+
                     if (valida())
                     {
                         if (!buscar_si_existe())
                         {
-                            Program.Bd_Exp_Transportes.ca_expedientes.InsertOnSubmit(catalogo);
+                            Program.Bd_Exp_Transportes.ca_campostrazables.InsertOnSubmit(catalogo);
                             Program.Bd_Exp_Transportes.SubmitChanges();
                             Form_Mode = form_mode.normal;
                             actualiza_lista();
@@ -269,21 +274,22 @@ namespace thumbnail.forms
             catch (Exception)
 	        {		
 		        throw;
-	        }            
+	        }
         }
 
         private bool valida()
         {
             dxValidationProvider.RemoveControlError(descripcionTextEdit);
             dxValidationProvider.Validate(); //lanzar validacion
-            if (dxValidationProvider.GetInvalidControls().Count() != 0) return false;
+            if (dxValidationProvider.GetInvalidControls().Count() != 0 ) return false;
             return true;
         }
 
         private bool buscar_si_existe()
         {
-            data_members.ca_expedientes filtro = Program.Bd_Exp_Transportes.ca_expedientes.SingleOrDefault(query => query.Descripcion == catalogo.Descripcion);
-            if ( filtro != null ) {
+            data_members.ca_campostrazables filtro = Program.Bd_Exp_Transportes.ca_campostrazables.SingleOrDefault(query => query.Nombre == catalogo.Nombre);
+            if (filtro != null)
+            {
                 MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
             }
@@ -296,15 +302,9 @@ namespace thumbnail.forms
             if (bindingsource.DataSource != null) {
                 try 
 	            {
-                    if (valida())
-                    {
-                        if (!buscar_si_existe())
-                        {
                             Program.Bd_Exp_Transportes.SubmitChanges();
                             Form_Mode = form_mode.normal;
                             actualiza_lista();
-                        }
-                    }
 	            }
                 catch (Exception)
                 {
@@ -320,8 +320,8 @@ namespace thumbnail.forms
             {
                 if (bindingsource.DataSource != null)
                 {
-                    catalogo = (data_members.ca_expedientes)bindingsource.Current;
-                    Program.Bd_Exp_Transportes.ca_expedientes.DeleteOnSubmit(catalogo);
+                    catalogo = (data_members.ca_campostrazables)bindingsource.Current;
+                    Program.Bd_Exp_Transportes.ca_campostrazables.DeleteOnSubmit(catalogo);
                     Program.Bd_Exp_Transportes.SubmitChanges();
                 }
             }

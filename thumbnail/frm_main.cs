@@ -155,9 +155,43 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            /*thumbnail.forms.ca_campostrazables frm = new forms.ca_campostrazables();
+            thumbnail.forms.ca_campostrazables frm = new forms.ca_campostrazables();
             frm.MdiParent = this;
-            frm.Show();*/
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void clasificaciñonDeTramitesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            thumbnail.forms.ca_clasificaciontramites frm = new forms.ca_clasificaciontramites();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+        }
+
+        private void tramitesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            thumbnail.forms.ca_tramites frm = new forms.ca_tramites();
+            frm.MdiParent = this;
+            frm.Show();
 
             Application.DoEvents();
 

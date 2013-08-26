@@ -1,6 +1,6 @@
 ﻿namespace thumbnail.forms
 {
-    partial class ca_expedientes
+    partial class ca_campostrazables
     {
         /// <summary>
         /// Required designer variable.
@@ -31,12 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label label3;
+            System.Windows.Forms.Label label4;
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ca_expedientes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ca_campostrazables));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.btn_Editar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
@@ -45,7 +50,6 @@
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.descripcionTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
@@ -63,7 +67,9 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.datagridview = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tamanioCaracteresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mascaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_refrescar = new System.Windows.Forms.Button();
             this.pbfind = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
@@ -78,11 +84,15 @@
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).BeginInit();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator)).BeginInit();
@@ -100,9 +110,9 @@
             descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descripcionLabel.Location = new System.Drawing.Point(9, 71);
             descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(90, 18);
+            descripcionLabel.Size = new System.Drawing.Size(127, 18);
             descripcionLabel.TabIndex = 10;
-            descripcionLabel.Text = "Expediente";
+            descripcionLabel.Text = "Campo trazable";
             // 
             // label1
             // 
@@ -113,6 +123,26 @@
             label1.Size = new System.Drawing.Size(139, 18);
             label1.TabIndex = 13;
             label1.Text = "Lista de registros";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label3.Location = new System.Drawing.Point(340, 71);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(177, 18);
+            label3.TabIndex = 19;
+            label3.Text = "Tamaño de caracteres";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label4.Location = new System.Drawing.Point(669, 71);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(73, 18);
+            label4.TabIndex = 21;
+            label4.Text = "Máscara";
             // 
             // splitContainer
             // 
@@ -125,6 +155,10 @@
             // 
             // splitContainer.Panel1
             // 
+            this.splitContainer.Panel1.Controls.Add(this.spinEdit1);
+            this.splitContainer.Panel1.Controls.Add(label4);
+            this.splitContainer.Panel1.Controls.Add(this.textEdit2);
+            this.splitContainer.Panel1.Controls.Add(label3);
             this.splitContainer.Panel1.Controls.Add(this.btn_Editar);
             this.splitContainer.Panel1.Controls.Add(this.btn_cancelar);
             this.splitContainer.Panel1.Controls.Add(this.btn_Limpiar);
@@ -149,8 +183,55 @@
             this.splitContainer.Panel2.Controls.Add(label1);
             this.splitContainer.Panel2.Controls.Add(this.shapeContainer2);
             this.splitContainer.Size = new System.Drawing.Size(1008, 730);
-            this.splitContainer.SplitterDistance = 132;
+            this.splitContainer.SplitterDistance = 127;
             this.splitContainer.TabIndex = 16;
+            // 
+            // spinEdit1
+            // 
+            this.spinEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingsource, "Tamanio_Caracteres", true));
+            this.spinEdit1.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinEdit1.Location = new System.Drawing.Point(343, 92);
+            this.spinEdit1.Name = "spinEdit1";
+            this.spinEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.spinEdit1.Properties.Appearance.Options.UseFont = true;
+            this.spinEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.spinEdit1.Properties.MaxLength = 4;
+            this.spinEdit1.Properties.MaxValue = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.spinEdit1.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinEdit1.Properties.NullText = "1";
+            this.spinEdit1.Size = new System.Drawing.Size(323, 24);
+            this.spinEdit1.TabIndex = 22;
+            // 
+            // bindingsource
+            // 
+            this.bindingsource.DataSource = typeof(thumbnail.data_members.ca_campostrazables);
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEdit2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Mascara", true));
+            this.textEdit2.Location = new System.Drawing.Point(672, 92);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.textEdit2.Properties.Appearance.Options.UseFont = true;
+            this.textEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.textEdit2.Size = new System.Drawing.Size(321, 24);
+            this.textEdit2.TabIndex = 20;
             // 
             // btn_Editar
             // 
@@ -289,21 +370,17 @@
             // 
             this.descripcionTextEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.descripcionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Descripcion", true));
+            this.descripcionTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Nombre", true));
             this.descripcionTextEdit.Location = new System.Drawing.Point(12, 92);
             this.descripcionTextEdit.Name = "descripcionTextEdit";
             this.descripcionTextEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.descripcionTextEdit.Properties.Appearance.Options.UseFont = true;
             this.descripcionTextEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.descripcionTextEdit.Size = new System.Drawing.Size(982, 24);
+            this.descripcionTextEdit.Size = new System.Drawing.Size(321, 24);
             this.descripcionTextEdit.TabIndex = 9;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Falta indicar el valor";
             this.dxValidationProvider.SetValidationRule(this.descripcionTextEdit, conditionValidationRule1);
-            // 
-            // bindingsource
-            // 
-            this.bindingsource.DataSource = typeof(thumbnail.data_members.ca_expedientes);
             // 
             // shapeContainer1
             // 
@@ -313,7 +390,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape2});
-            this.shapeContainer1.Size = new System.Drawing.Size(1006, 130);
+            this.shapeContainer1.Size = new System.Drawing.Size(1006, 125);
             this.shapeContainer1.TabIndex = 0;
             this.shapeContainer1.TabStop = false;
             // 
@@ -322,10 +399,10 @@
             this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lineShape2.BorderWidth = 2;
             this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 649;
+            this.lineShape2.X1 = 599;
             this.lineShape2.X2 = 1329;
-            this.lineShape2.Y1 = 61;
-            this.lineShape2.Y2 = 61;
+            this.lineShape2.Y1 = 60;
+            this.lineShape2.Y2 = 60;
             // 
             // tlp_proc
             // 
@@ -336,7 +413,7 @@
             this.tlp_proc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlp_proc.Controls.Add(this.pictureBox1, 0, 0);
             this.tlp_proc.Controls.Add(this.label2, 1, 0);
-            this.tlp_proc.Location = new System.Drawing.Point(799, 530);
+            this.tlp_proc.Location = new System.Drawing.Point(799, 535);
             this.tlp_proc.Name = "tlp_proc";
             this.tlp_proc.RowCount = 1;
             this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -386,7 +463,7 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2});
-            this.bindingnavigator.Location = new System.Drawing.Point(0, 567);
+            this.bindingnavigator.Location = new System.Drawing.Point(0, 572);
             this.bindingnavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingnavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingnavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -394,7 +471,7 @@
             this.bindingnavigator.Name = "bindingnavigator";
             this.bindingnavigator.PositionItem = this.bindingNavigatorPositionItem;
             this.bindingnavigator.Size = new System.Drawing.Size(1006, 25);
-            this.bindingnavigator.TabIndex = 21;
+            this.bindingnavigator.TabIndex = 23;
             this.bindingnavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
@@ -485,7 +562,9 @@
             this.datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.datagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn});
+            this.nombreDataGridViewTextBoxColumn,
+            this.tamanioCaracteresDataGridViewTextBoxColumn,
+            this.mascaraDataGridViewTextBoxColumn});
             this.datagridview.DataSource = this.bindingsource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -512,7 +591,7 @@
             this.datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridview.Size = new System.Drawing.Size(979, 529);
+            this.datagridview.Size = new System.Drawing.Size(979, 533);
             this.datagridview.TabIndex = 20;
             // 
             // idDataGridViewTextBoxColumn
@@ -523,13 +602,28 @@
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Visible = false;
             // 
-            // descripcionDataGridViewTextBoxColumn
+            // nombreDataGridViewTextBoxColumn
             // 
-            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre de campo trazable";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tamanioCaracteresDataGridViewTextBoxColumn
+            // 
+            this.tamanioCaracteresDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tamanioCaracteresDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.HeaderText = "Tamaño de caracteres";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.Name = "tamanioCaracteresDataGridViewTextBoxColumn";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mascaraDataGridViewTextBoxColumn
+            // 
+            this.mascaraDataGridViewTextBoxColumn.DataPropertyName = "Mascara";
+            this.mascaraDataGridViewTextBoxColumn.HeaderText = "Máscara";
+            this.mascaraDataGridViewTextBoxColumn.Name = "mascaraDataGridViewTextBoxColumn";
+            this.mascaraDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // btn_refrescar
             // 
@@ -554,7 +648,7 @@
             // 
             this.pbfind.BackColor = System.Drawing.Color.Transparent;
             this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
-            this.pbfind.Location = new System.Drawing.Point(563, 16);
+            this.pbfind.Location = new System.Drawing.Point(562, 16);
             this.pbfind.Name = "pbfind";
             this.pbfind.Size = new System.Drawing.Size(16, 16);
             this.pbfind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -583,7 +677,7 @@
             this.shapeContainer2.Name = "shapeContainer2";
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(1006, 592);
+            this.shapeContainer2.Size = new System.Drawing.Size(1006, 597);
             this.shapeContainer2.TabIndex = 14;
             this.shapeContainer2.TabStop = false;
             // 
@@ -638,24 +732,27 @@
             // 
             this.dxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
             // 
-            // ca_expedientes
+            // ca_campostrazables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.splitContainer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1024, 768);
-            this.Name = "ca_expedientes";
+            this.Name = "ca_campostrazables";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Expedientes";
+            this.Text = "Campos trazables";
             this.Load += new System.EventHandler(this.ca_template_Load);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel1.PerformLayout();
             this.splitContainer.Panel2.ResumeLayout(false);
             this.splitContainer.Panel2.PerformLayout();
             this.splitContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).EndInit();
             this.tlp_proc.ResumeLayout(false);
             this.tlp_proc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -688,17 +785,6 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_Editar;
-        private System.Windows.Forms.BindingNavigator bindingnavigator;
-        private System.Windows.Forms.BindingSource bindingsource;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.DataGridView datagridview;
         private System.Windows.Forms.DataGridViewTextBoxColumn factDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uactDataGridViewTextBoxColumn;
@@ -711,11 +797,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn factDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn uactDataGridViewTextBoxColumn1;
         private DevExpress.XtraEditors.TextEdit txt_buscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.TableLayoutPanel tlp_proc;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private System.Windows.Forms.BindingSource bindingsource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tamanioCaracteresDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mascaraDataGridViewTextBoxColumn;
+        private DevExpress.XtraEditors.SpinEdit spinEdit1;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
+        private System.Windows.Forms.BindingNavigator bindingnavigator;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
     }
 }

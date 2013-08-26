@@ -99,6 +99,24 @@
     <Compile Include="forms\ca_expedientes.Designer.cs">
       <DependentUpon>ca_expedientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\ca_campostrazables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ca_campostrazables.Designer.cs">
+      <DependentUpon>ca_campostrazables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ca_clasificaciontramites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ca_clasificaciontramites.Designer.cs">
+      <DependentUpon>ca_clasificaciontramites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ca_tramites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ca_tramites.Designer.cs">
+      <DependentUpon>ca_tramites.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frm_hook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +172,15 @@
     <EmbeddedResource Include="forms\ca_expedientes.resx">
       <DependentUpon>ca_expedientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\ca_campostrazables.resx">
+      <DependentUpon>ca_campostrazables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ca_clasificaciontramites.resx">
+      <DependentUpon>ca_clasificaciontramites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ca_tramites.resx">
+      <DependentUpon>ca_tramites.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_hook.resx">
       <DependentUpon>frm_hook.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,7 +221,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\thumbnail.data_members.ca_campostrazables.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.ca_clasificaciontramites.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_expedientes.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.ca_tramites.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_CampostrazablesActivosporExpedienteResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult.datasource" />
     <None Include="Properties\Settings.settings">
@@ -306,6 +335,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\imgs\16x16\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\imgs\16x16\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

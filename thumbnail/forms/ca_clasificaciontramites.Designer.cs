@@ -1,6 +1,6 @@
 ﻿namespace thumbnail.forms
 {
-    partial class ca_expedientes
+    partial class ca_clasificaciontramites
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label label1;
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ca_expedientes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ca_clasificaciontramites));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -100,9 +100,9 @@
             descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descripcionLabel.Location = new System.Drawing.Point(9, 71);
             descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(90, 18);
+            descripcionLabel.Size = new System.Drawing.Size(185, 18);
             descripcionLabel.TabIndex = 10;
-            descripcionLabel.Text = "Expediente";
+            descripcionLabel.Text = "Clasificación de trámite";
             // 
             // label1
             // 
@@ -303,7 +303,7 @@
             // 
             // bindingsource
             // 
-            this.bindingsource.DataSource = typeof(thumbnail.data_members.ca_expedientes);
+            this.bindingsource.DataSource = typeof(thumbnail.data_members.ca_clasificaciontramites);
             // 
             // shapeContainer1
             // 
@@ -322,8 +322,8 @@
             this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lineShape2.BorderWidth = 2;
             this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 649;
-            this.lineShape2.X2 = 1329;
+            this.lineShape2.X1 = 632;
+            this.lineShape2.X2 = 1312;
             this.lineShape2.Y1 = 61;
             this.lineShape2.Y2 = 61;
             // 
@@ -394,7 +394,7 @@
             this.bindingnavigator.Name = "bindingnavigator";
             this.bindingnavigator.PositionItem = this.bindingNavigatorPositionItem;
             this.bindingnavigator.Size = new System.Drawing.Size(1006, 25);
-            this.bindingnavigator.TabIndex = 21;
+            this.bindingnavigator.TabIndex = 23;
             this.bindingnavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
@@ -527,7 +527,7 @@
             // 
             this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Clasificación";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -638,17 +638,19 @@
             // 
             this.dxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
             // 
-            // ca_expedientes
+            // ca_clasificaciontramites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.splitContainer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1024, 768);
-            this.Name = "ca_expedientes";
+            this.Name = "ca_clasificaciontramites";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Expedientes";
+            this.Text = "Clasificación de trámites";
             this.Load += new System.EventHandler(this.ca_template_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ca_clasificaciontramites_Paint);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel1.PerformLayout();
             this.splitContainer.Panel2.ResumeLayout(false);
@@ -688,17 +690,6 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_Editar;
-        private System.Windows.Forms.BindingNavigator bindingnavigator;
-        private System.Windows.Forms.BindingSource bindingsource;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.DataGridView datagridview;
         private System.Windows.Forms.DataGridViewTextBoxColumn factDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uactDataGridViewTextBoxColumn;
@@ -711,11 +702,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn factDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn uactDataGridViewTextBoxColumn1;
         private DevExpress.XtraEditors.TextEdit txt_buscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.TableLayoutPanel tlp_proc;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
+        private System.Windows.Forms.BindingSource bindingsource;
+        private System.Windows.Forms.BindingNavigator bindingnavigator;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
     }
 }
