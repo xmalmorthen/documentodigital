@@ -205,14 +205,8 @@ namespace thumbnail.forms
             try
             {
                 List<thumbnail.data_members.ca_expedientes> valores = (from expediente in lista
-                                                                       where expediente.Descripcion.ToString().Contains(txt_buscar.Text.ToString())
-                                                                       select new thumbnail.data_members.ca_expedientes()
-                                                                       {
-                                                                           id = expediente.id,
-                                                                           Descripcion = expediente.Descripcion,
-                                                                           re_expedientes_campostrazables = expediente.re_expedientes_campostrazables,
-                                                                           re_expedientes_tramites = expediente.re_expedientes_tramites
-                                                                       }).ToList();
+                                                                       where expediente.Descripcion.ToString().ToLower().Contains(txt_buscar.Text.ToString().ToLower())
+                                                                       select expediente).ToList();
                 bindingsource.DataSource = valores;
                 datagridview.Update();
             }

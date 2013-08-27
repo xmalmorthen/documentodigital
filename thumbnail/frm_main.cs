@@ -199,5 +199,23 @@ namespace thumbnail
             this.Cursor = Cursors.Default;
         }
 
+        private void asignarCamposTrazablesAUnExpedienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            thumbnail.forms.re_expedientes_campostrazables frm = new forms.re_expedientes_campostrazables();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+            
+        }
+
     }
 }

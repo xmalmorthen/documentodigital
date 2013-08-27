@@ -423,6 +423,20 @@ namespace thumbnail.data_members
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_tramite, id_origen);
 			return ((ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_CampostrazablesporExpediente")]
+		public ISingleResult<pa_CampostrazablesporExpedienteResult> pa_CampostrazablesporExpediente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_expediente)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_expediente);
+			return ((ISingleResult<pa_CampostrazablesporExpedienteResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_CampostrazablesNoEnlazadosporExpediente")]
+		public ISingleResult<pa_CampostrazablesNoEnlazadosporExpedienteResult> pa_CampostrazablesNoEnlazadosporExpediente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_expediente)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_expediente);
+			return ((ISingleResult<pa_CampostrazablesNoEnlazadosporExpedienteResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_ListaTramitesActivos")]
@@ -7615,6 +7629,238 @@ namespace thumbnail.data_members
 				if ((this._Descripcion_estatus != value))
 				{
 					this._Descripcion_estatus = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_CampostrazablesporExpedienteResult
+	{
+		
+		private int _id_re_expedientes_campostrazables;
+		
+		private int _id_campotrazable;
+		
+		private string _Nombre;
+		
+		private int _Tamanio_Caracteres;
+		
+		private int _id_estatus;
+		
+		private string _Mascara;
+		
+		private bool _es_principal;
+		
+		private System.Nullable<int> _estatus;
+		
+		public pa_CampostrazablesporExpedienteResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_expedientes_campostrazables", DbType="Int NOT NULL")]
+		public int id_re_expedientes_campostrazables
+		{
+			get
+			{
+				return this._id_re_expedientes_campostrazables;
+			}
+			set
+			{
+				if ((this._id_re_expedientes_campostrazables != value))
+				{
+					this._id_re_expedientes_campostrazables = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_campotrazable", DbType="Int NOT NULL")]
+		public int id_campotrazable
+		{
+			get
+			{
+				return this._id_campotrazable;
+			}
+			set
+			{
+				if ((this._id_campotrazable != value))
+				{
+					this._id_campotrazable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tamanio_Caracteres", DbType="Int NOT NULL")]
+		public int Tamanio_Caracteres
+		{
+			get
+			{
+				return this._Tamanio_Caracteres;
+			}
+			set
+			{
+				if ((this._Tamanio_Caracteres != value))
+				{
+					this._Tamanio_Caracteres = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus", DbType="Int NOT NULL")]
+		public int id_estatus
+		{
+			get
+			{
+				return this._id_estatus;
+			}
+			set
+			{
+				if ((this._id_estatus != value))
+				{
+					this._id_estatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mascara", DbType="VarChar(200)")]
+		public string Mascara
+		{
+			get
+			{
+				return this._Mascara;
+			}
+			set
+			{
+				if ((this._Mascara != value))
+				{
+					this._Mascara = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_es_principal", DbType="Bit NOT NULL")]
+		public bool es_principal
+		{
+			get
+			{
+				return this._es_principal;
+			}
+			set
+			{
+				if ((this._es_principal != value))
+				{
+					this._es_principal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estatus", DbType="Int")]
+		public System.Nullable<int> estatus
+		{
+			get
+			{
+				return this._estatus;
+			}
+			set
+			{
+				if ((this._estatus != value))
+				{
+					this._estatus = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_CampostrazablesNoEnlazadosporExpedienteResult
+	{
+		
+		private int _ID;
+		
+		private string _NOMBRE;
+		
+		private int _TAMANIO_CARACTERES;
+		
+		private string _MASCARA;
+		
+		public pa_CampostrazablesNoEnlazadosporExpedienteResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string NOMBRE
+		{
+			get
+			{
+				return this._NOMBRE;
+			}
+			set
+			{
+				if ((this._NOMBRE != value))
+				{
+					this._NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAMANIO_CARACTERES", DbType="Int NOT NULL")]
+		public int TAMANIO_CARACTERES
+		{
+			get
+			{
+				return this._TAMANIO_CARACTERES;
+			}
+			set
+			{
+				if ((this._TAMANIO_CARACTERES != value))
+				{
+					this._TAMANIO_CARACTERES = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MASCARA", DbType="VarChar(200)")]
+		public string MASCARA
+		{
+			get
+			{
+				return this._MASCARA;
+			}
+			set
+			{
+				if ((this._MASCARA != value))
+				{
+					this._MASCARA = value;
 				}
 			}
 		}

@@ -381,4 +381,26 @@
       <Column Name="Descripcion_estatus" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.pa_CampostrazablesporExpediente" Method="pa_CampostrazablesporExpediente">
+    <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_CampostrazablesporExpedienteResult">
+      <Column Name="id_re_expedientes_campostrazables" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_campotrazable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Tamanio_Caracteres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mascara" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="es_principal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_CampostrazablesNoEnlazadosporExpediente" Method="pa_CampostrazablesNoEnlazadosporExpediente">
+    <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_CampostrazablesNoEnlazadosporExpedienteResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TAMANIO_CARACTERES" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MASCARA" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

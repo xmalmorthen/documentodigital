@@ -225,7 +225,7 @@ namespace thumbnail.forms
             try
             {
                 List<thumbnail.data_members.ca_tramites> valores = (from query in lista
-                                                                    where query.Nombre.ToString().Contains(txt_buscar.Text.ToString())
+                                                                    where query.Nombre.ToString().ToLower().Contains(txt_buscar.Text.ToString().ToLower())
                                                                     select query).ToList();
                 bindingsource.DataSource = valores;
                 datagridview.Update();

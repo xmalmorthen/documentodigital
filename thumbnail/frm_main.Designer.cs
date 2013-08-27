@@ -122,6 +122,7 @@
             this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem.Name = "asignarCamposTrazablesAUnExpedienteToolStripMenuItem";
             this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem.Size = new System.Drawing.Size(358, 24);
             this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem.Text = "Asignar campos trazables a un expediente";
+            this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem.Click += new System.EventHandler(this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 

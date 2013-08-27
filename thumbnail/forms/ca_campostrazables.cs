@@ -209,14 +209,8 @@ namespace thumbnail.forms
             try
             {
                 List<thumbnail.data_members.ca_campostrazables> valores = (from query in lista
-                                                                           where query.Nombre.ToString().Contains(txt_buscar.Text.ToString())
-                                                                           select new thumbnail.data_members.ca_campostrazables()
-                                                                       {
-                                                                           id = query.id,
-                                                                           Nombre = query.Nombre,
-                                                                           re_expedientes_campostrazables = query.re_expedientes_campostrazables,
-                                                                           Tamanio_Caracteres = query.Tamanio_Caracteres
-                                                                       }).ToList();
+                                                                           where query.Nombre.ToString().ToLower().Contains(txt_buscar.Text.ToString().ToLower())
+                                                                           select query).ToList();
                 bindingsource.DataSource = valores;
                 datagridview.Update();
             }
