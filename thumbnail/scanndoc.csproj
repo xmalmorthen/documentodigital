@@ -274,54 +274,6 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\imgs\16x16\scanner.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\32x32\externo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\32x32\interno.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\32x32\proveedor.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\32x32\users.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\16x16\gestion.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\16x16\notepad.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\16x16\app_window.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\16x16\info.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\16x16\wrench_plus.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\48x48\clock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\32x32\fit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\32x32\zoomin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\32x32\zoomorigin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\32x32\zoomout.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\48x48\doc_plus.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
@@ -334,10 +286,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\imgs\16x16\edit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="assets\imgs\16x16\plus.png" />
+    <Folder Include="assets\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
