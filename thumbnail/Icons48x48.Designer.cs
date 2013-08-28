@@ -63,6 +63,16 @@ namespace thumbnail {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap attention {
+            get {
+                object obj = ResourceManager.GetObject("attention", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap checkbox_checked {
             get {
                 object obj = ResourceManager.GetObject("checkbox_checked", resourceCulture);

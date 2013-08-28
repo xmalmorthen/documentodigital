@@ -85,6 +85,8 @@ namespace thumbnail.forms
             {
                 campostrazables = Program.Bd_Exp_Transportes.pa_CampostrazablesporExpediente(id_expediente).ToList();
                 bindingsource.DataSource = campostrazables;
+
+                txt_buscarcampotrazable.Text = "";
             }
             catch (Exception)
             {
@@ -102,6 +104,7 @@ namespace thumbnail.forms
 		        throw;
 	        }            
             Form_Mode = form_mode.agregar;
+            timer.Enabled = true;
         }
 
         //limpiar controles
@@ -163,6 +166,15 @@ namespace thumbnail.forms
                                                                     select query).ToList();
                 bindingsource_ca_expedientes.DataSource = valores;
                 datagridview.Update();
+
+                if (valores.Count == 0)
+                {
+                    timer.Enabled = false;
+                    actualiza_re_expedientes_campostrazables(0);
+                }
+                else {
+                    if (!timer.Enabled) timer.Enabled = true;
+                }
             }
             catch (Exception)
             {
@@ -232,13 +244,15 @@ namespace thumbnail.forms
 
                     checkEdit1.Checked = false;
                     checkEdit2.Checked = true;
+                    txt_buscarcampotrazable.Text = "";
                 }
             }
             catch (Exception)
 	        {		
 		        throw;
 	        }
-            bindingsource_CurrentItemChanged(null, null);
+            lookUpEdit_CamposTrazables.EditValue = null;
+            bindingsource_CurrentItemChanged(null, null);            
         }
 
         private bool valida_esprincipal()
@@ -261,9 +275,15 @@ namespace thumbnail.forms
             if (dxValidationProvider.GetInvalidControls().Count() != 0) return false;
             return true;
         }
-        
-        private void bindingsource_CurrentItemChanged(object sender, EventArgs e)
+
+        public struct oldspositions
         {
+            public int oldbindingsource_ca_expedientes_position;
+            public int rowgrid;
+        };
+        public oldspositions positions; //variable global para los tag de los items
+        private void bindingsource_CurrentItemChanged(object sender, EventArgs e)
+        {   
             try
             {
                 actualiza_lista_campostrazables((bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id);
@@ -273,6 +293,16 @@ namespace thumbnail.forms
             {
                 actualiza_re_expedientes_campostrazables(0);
             }
+        }
+
+        private Boolean valida_existe_campoprincipal()
+        {
+            foreach (DataGridViewRow row in dataGridViewCamposTrazables.Rows)
+            {
+                if ((Boolean)row.Cells["esprincipalDataGridViewCheckBoxColumn"].Value == true)
+                    return true;
+            }
+            return false;
         }
 
         //buscar en grid de campos trazables
@@ -290,6 +320,15 @@ namespace thumbnail.forms
                                                                                               select query).ToList();
                 bindingsource.DataSource = valores;
                 dataGridViewCamposTrazables.Update();
+
+                if (!string.IsNullOrEmpty(txt_buscarcampotrazable.Text))
+                {
+                    timer.Enabled = false;
+                }
+                else {
+                    if (!timer.Enabled) timer.Enabled = true;
+                }
+
             }
             catch (Exception)
             {
@@ -359,7 +398,7 @@ namespace thumbnail.forms
                         item.es_principal = false;
                     else
                     {
-                        if (!valida_esprincipal_engrid())
+                        if (!valida_esprincipal_engrid(e.RowIndex))
                         {
                             item.es_principal = true;
                         }
@@ -379,16 +418,41 @@ namespace thumbnail.forms
             }
         }
 
-        private bool valida_esprincipal_engrid()
+        private bool valida_esprincipal_engrid(int ignore_row)
         {
-            foreach (DataGridViewRow row in dataGridViewCamposTrazables.Rows)
+            data_members.re_expedientes_campostrazables item = Program.Bd_Exp_Transportes.re_expedientes_campostrazables.SingleOrDefault(query => query.es_principal == true && query.id_expediente == (bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id);
+            if (item != null)
             {
-                if ((Boolean)row.Cells["esprincipalDataGridViewCheckBoxColumn"].Value == true) {
-                    MessageBox.Show(this, "Ya se encuentra un campo trazable principal, favor de revisar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return true;
-                }                
+                MessageBox.Show(this, "Ya se encuentra un campo trazable principal, favor de revisar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
             }
             return false;
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            timer.Enabled = false;
+            try
+            {
+                Boolean result = valida_existe_campoprincipal();
+                if (datagridview.Enabled != result)
+                {
+                    datagridview.Enabled = result;
+                    bindingNavigator_ca_expedientes.Enabled = result;
+                    btn_refrescar.Enabled = result;
+                    txt_buscar.Enabled = result;
+                    btn_cerrar.Enabled = result;
+                    tlp_warning.Visible = !result;
+                }
+            }
+            catch (Exception)
+            {
+            }
+            timer.Enabled = true;
+        }
+
+        private void re_expedientes_campostrazables_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
        
     }
