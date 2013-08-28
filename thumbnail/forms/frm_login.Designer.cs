@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_login));
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.dxErrorProvider = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_contrasenia = new System.Windows.Forms.TextBox();
             this.btn_aceptar = new System.Windows.Forms.Button();
@@ -115,8 +114,9 @@
             this.AcceptButton = this.btn_aceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.btn_cancelar;
-            this.ClientSize = new System.Drawing.Size(335, 175);
+            this.ClientSize = new System.Drawing.Size(345, 181);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.label2);

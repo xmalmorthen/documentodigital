@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label4;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(re_expedientes_campostrazables));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,22 +38,56 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(re_expedientes_campostrazables));
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txt_buscarcampotrazable = new DevExpress.XtraEditors.TextEdit();
-            this.btn_EliminarCampoTrazable = new System.Windows.Forms.Button();
-            this.bindingNavigator_campostrazables = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigator_campostrazables = new System.Windows.Forms.BindingNavigator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridViewCamposTrazables = new System.Windows.Forms.DataGridView();
+            this.estatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
+            this.lookUpEdit_CamposTrazables = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNOMBRE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTAMANIO_CARACTERES = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMASCARA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.bindingNavigator_ca_expedientes = new System.Windows.Forms.BindingNavigator();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.datagridview = new System.Windows.Forms.DataGridView();
+            this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.toolTip = new System.Windows.Forms.ToolTip();
+            this.ca_expedientesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.timer = new System.Windows.Forms.Timer();
+            this.tlp_warning = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_EliminarCampoTrazable = new System.Windows.Forms.Button();
+            this.bindingsource = new System.Windows.Forms.BindingSource();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.idreexpedientescampostrazablesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idcampotrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.esprincipalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -63,76 +95,49 @@
             this.tamanioCaracteresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idestatusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mascaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
-            this.lookUpEdit_CamposTrazables = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bindingSource_campostrazables = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNOMBRE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTAMANIO_CARACTERES = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMASCARA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.bindingSource_campostrazables = new System.Windows.Forms.BindingSource();
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.btn_cerrar = new System.Windows.Forms.Button();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.bindingnavigator_ca_expedientes = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingsource_ca_expedientes = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.datagridview = new System.Windows.Forms.DataGridView();
+            this.bindingsource_ca_expedientes = new System.Windows.Forms.BindingSource();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_refrescar = new System.Windows.Forms.Button();
             this.pbfind = new System.Windows.Forms.PictureBox();
-            this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.ca_expedientesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscarcampotrazable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_campostrazables)).BeginInit();
             this.bindingNavigator_campostrazables.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamposTrazables)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_CamposTrazables.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_campostrazables)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             this.tlp_proc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator_ca_expedientes)).BeginInit();
-            this.bindingnavigator_ca_expedientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_expedientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_ca_expedientes)).BeginInit();
+            this.bindingNavigator_ca_expedientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbfind)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
+            this.tlp_warning.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_campostrazables)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_expedientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbfind)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
@@ -177,6 +182,7 @@
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.AutoScroll = true;
+            this.splitContainer.Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.splitContainer.Panel1.Controls.Add(this.pictureBox2);
             this.splitContainer.Panel1.Controls.Add(this.txt_buscarcampotrazable);
             this.splitContainer.Panel1.Controls.Add(this.btn_EliminarCampoTrazable);
@@ -195,8 +201,10 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.AutoScroll = true;
+            this.splitContainer.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.splitContainer.Panel2.Controls.Add(this.tlp_warning);
             this.splitContainer.Panel2.Controls.Add(this.tlp_proc);
-            this.splitContainer.Panel2.Controls.Add(this.bindingnavigator_ca_expedientes);
+            this.splitContainer.Panel2.Controls.Add(this.bindingNavigator_ca_expedientes);
             this.splitContainer.Panel2.Controls.Add(this.datagridview);
             this.splitContainer.Panel2.Controls.Add(this.btn_refrescar);
             this.splitContainer.Panel2.Controls.Add(this.pbfind);
@@ -206,17 +214,6 @@
             this.splitContainer.Size = new System.Drawing.Size(1008, 730);
             this.splitContainer.SplitterDistance = 411;
             this.splitContainer.TabIndex = 16;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::thumbnail.Icons16x16.zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(624, 103);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 36;
-            this.pictureBox2.TabStop = false;
             // 
             // txt_buscarcampotrazable
             // 
@@ -231,25 +228,6 @@
             this.txt_buscarcampotrazable.TabIndex = 35;
             this.txt_buscarcampotrazable.Tag = "0";
             this.txt_buscarcampotrazable.EditValueChanged += new System.EventHandler(this.txt_buscarcampotrazable_EditValueChanged);
-            // 
-            // btn_EliminarCampoTrazable
-            // 
-            this.btn_EliminarCampoTrazable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_EliminarCampoTrazable.AutoSize = true;
-            this.btn_EliminarCampoTrazable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_EliminarCampoTrazable.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_EliminarCampoTrazable.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_EliminarCampoTrazable.FlatAppearance.BorderSize = 0;
-            this.btn_EliminarCampoTrazable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.btn_EliminarCampoTrazable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EliminarCampoTrazable.Image = global::thumbnail.Icons16x16.trash;
-            this.btn_EliminarCampoTrazable.Location = new System.Drawing.Point(972, 359);
-            this.btn_EliminarCampoTrazable.Name = "btn_EliminarCampoTrazable";
-            this.btn_EliminarCampoTrazable.Size = new System.Drawing.Size(22, 22);
-            this.btn_EliminarCampoTrazable.TabIndex = 31;
-            this.toolTip.SetToolTip(this.btn_EliminarCampoTrazable, "Eliminar");
-            this.btn_EliminarCampoTrazable.UseVisualStyleBackColor = false;
-            this.btn_EliminarCampoTrazable.Click += new System.EventHandler(this.btn_EliminarCampoTrazable_Click);
             // 
             // bindingNavigator_campostrazables
             // 
@@ -279,34 +257,12 @@
             this.bindingNavigator_campostrazables.TabIndex = 34;
             this.bindingNavigator_campostrazables.Text = "bindingNavigator1";
             // 
-            // bindingsource
-            // 
-            this.bindingsource.DataSource = typeof(thumbnail.data_members.pa_CampostrazablesporExpedienteResult);
-            // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(37, 22);
             this.toolStripLabel1.Text = "de {0}";
             this.toolStripLabel1.ToolTipText = "Número total de elementos";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Mover primero";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "Mover anterior";
             // 
             // toolStripSeparator1
             // 
@@ -326,24 +282,6 @@
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "Mover siguiente";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "Mover último";
             // 
             // toolStripSeparator3
             // 
@@ -387,7 +325,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewCamposTrazables.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewCamposTrazables.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridViewCamposTrazables.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dataGridViewCamposTrazables.EnableHeadersVisualStyles = false;
             this.dataGridViewCamposTrazables.Location = new System.Drawing.Point(12, 124);
             this.dataGridViewCamposTrazables.MultiSelect = false;
@@ -405,59 +343,6 @@
             this.dataGridViewCamposTrazables.Size = new System.Drawing.Size(952, 257);
             this.dataGridViewCamposTrazables.TabIndex = 33;
             this.dataGridViewCamposTrazables.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCamposTrazables_CellValueChanged);
-            // 
-            // idreexpedientescampostrazablesDataGridViewTextBoxColumn
-            // 
-            this.idreexpedientescampostrazablesDataGridViewTextBoxColumn.DataPropertyName = "id_re_expedientes_campostrazables";
-            this.idreexpedientescampostrazablesDataGridViewTextBoxColumn.HeaderText = "id_re_expedientes_campostrazables";
-            this.idreexpedientescampostrazablesDataGridViewTextBoxColumn.Name = "idreexpedientescampostrazablesDataGridViewTextBoxColumn";
-            this.idreexpedientescampostrazablesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idcampotrazableDataGridViewTextBoxColumn
-            // 
-            this.idcampotrazableDataGridViewTextBoxColumn.DataPropertyName = "id_campotrazable";
-            this.idcampotrazableDataGridViewTextBoxColumn.HeaderText = "id_campotrazable";
-            this.idcampotrazableDataGridViewTextBoxColumn.Name = "idcampotrazableDataGridViewTextBoxColumn";
-            this.idcampotrazableDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // esprincipalDataGridViewCheckBoxColumn
-            // 
-            this.esprincipalDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.esprincipalDataGridViewCheckBoxColumn.DataPropertyName = "es_principal";
-            this.esprincipalDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.esprincipalDataGridViewCheckBoxColumn.HeaderText = "Es principal";
-            this.esprincipalDataGridViewCheckBoxColumn.Name = "esprincipalDataGridViewCheckBoxColumn";
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Campo trazable";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tamanioCaracteresDataGridViewTextBoxColumn
-            // 
-            this.tamanioCaracteresDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tamanioCaracteresDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres";
-            this.tamanioCaracteresDataGridViewTextBoxColumn.HeaderText = "Tamaño de caractéres";
-            this.tamanioCaracteresDataGridViewTextBoxColumn.Name = "tamanioCaracteresDataGridViewTextBoxColumn";
-            this.tamanioCaracteresDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idestatusDataGridViewTextBoxColumn1
-            // 
-            this.idestatusDataGridViewTextBoxColumn1.DataPropertyName = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn1.HeaderText = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn1.Name = "idestatusDataGridViewTextBoxColumn1";
-            this.idestatusDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // mascaraDataGridViewTextBoxColumn
-            // 
-            this.mascaraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mascaraDataGridViewTextBoxColumn.DataPropertyName = "Mascara";
-            this.mascaraDataGridViewTextBoxColumn.HeaderText = "Máscara";
-            this.mascaraDataGridViewTextBoxColumn.Name = "mascaraDataGridViewTextBoxColumn";
-            this.mascaraDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // estatus
             // 
@@ -500,18 +385,16 @@
             this.lookUpEdit_CamposTrazables.Properties.ImmediatePopup = true;
             this.lookUpEdit_CamposTrazables.Properties.LookAndFeel.SkinName = "VS2010";
             this.lookUpEdit_CamposTrazables.Properties.NullText = "";
-            this.lookUpEdit_CamposTrazables.Properties.PopupFormSize = new System.Drawing.Size(790, 0);
+            this.lookUpEdit_CamposTrazables.Properties.PopupFormSize = new System.Drawing.Size(790, 150);
             this.lookUpEdit_CamposTrazables.Properties.ValueMember = "ID";
             this.lookUpEdit_CamposTrazables.Properties.View = this.gridView1;
             this.lookUpEdit_CamposTrazables.Size = new System.Drawing.Size(763, 24);
             this.lookUpEdit_CamposTrazables.TabIndex = 29;
+            conditionValidationRule1.CaseSensitive = true;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Falta indicar el valor";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider.SetValidationRule(this.lookUpEdit_CamposTrazables, conditionValidationRule1);
-            // 
-            // bindingSource_campostrazables
-            // 
-            this.bindingSource_campostrazables.DataSource = typeof(thumbnail.data_members.pa_CampostrazablesNoEnlazadosporExpedienteResult);
             // 
             // gridView1
             // 
@@ -572,44 +455,6 @@
             this.checkEdit1.Size = new System.Drawing.Size(140, 28);
             this.checkEdit1.TabIndex = 26;
             // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Agregar.AutoSize = true;
-            this.btn_Agregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_Agregar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Agregar.FlatAppearance.BorderSize = 0;
-            this.btn_Agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Agregar.Image = global::thumbnail.Icons48x48.doc_plus;
-            this.btn_Agregar.Location = new System.Drawing.Point(851, 16);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(54, 54);
-            this.btn_Agregar.TabIndex = 6;
-            this.toolTip.SetToolTip(this.btn_Agregar, "Agregar");
-            this.btn_Agregar.UseVisualStyleBackColor = false;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
-            // 
-            // btn_cerrar
-            // 
-            this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cerrar.AutoSize = true;
-            this.btn_cerrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_cerrar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cerrar.FlatAppearance.BorderSize = 0;
-            this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
-            this.btn_cerrar.Location = new System.Drawing.Point(941, 16);
-            this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
-            this.btn_cerrar.TabIndex = 12;
-            this.toolTip.SetToolTip(this.btn_cerrar, "Cerrar");
-            this.btn_cerrar.UseVisualStyleBackColor = false;
-            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
-            // 
             // shapeContainer1
             // 
             this.shapeContainer1.AutoScroll = true;
@@ -641,7 +486,7 @@
             this.tlp_proc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlp_proc.Controls.Add(this.pictureBox1, 0, 0);
             this.tlp_proc.Controls.Add(this.label2, 1, 0);
-            this.tlp_proc.Location = new System.Drawing.Point(799, 251);
+            this.tlp_proc.Location = new System.Drawing.Point(799, 252);
             this.tlp_proc.Name = "tlp_proc";
             this.tlp_proc.RowCount = 1;
             this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -649,17 +494,6 @@
             this.tlp_proc.Size = new System.Drawing.Size(195, 50);
             this.tlp_proc.TabIndex = 22;
             this.tlp_proc.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -674,101 +508,64 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Favor de esperar";
             // 
-            // bindingnavigator_ca_expedientes
+            // bindingNavigator_ca_expedientes
             // 
-            this.bindingnavigator_ca_expedientes.AddNewItem = null;
-            this.bindingnavigator_ca_expedientes.BindingSource = this.bindingsource_ca_expedientes;
-            this.bindingnavigator_ca_expedientes.CountItem = this.bindingNavigatorCountItem;
-            this.bindingnavigator_ca_expedientes.DeleteItem = null;
-            this.bindingnavigator_ca_expedientes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bindingnavigator_ca_expedientes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2});
-            this.bindingnavigator_ca_expedientes.Location = new System.Drawing.Point(0, 288);
-            this.bindingnavigator_ca_expedientes.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingnavigator_ca_expedientes.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingnavigator_ca_expedientes.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingnavigator_ca_expedientes.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingnavigator_ca_expedientes.Name = "bindingnavigator_ca_expedientes";
-            this.bindingnavigator_ca_expedientes.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingnavigator_ca_expedientes.Size = new System.Drawing.Size(1006, 25);
-            this.bindingnavigator_ca_expedientes.TabIndex = 2;
-            this.bindingnavigator_ca_expedientes.Text = "bindingNavigator1";
+            this.bindingNavigator_ca_expedientes.AddNewItem = null;
+            this.bindingNavigator_ca_expedientes.BindingSource = this.bindingsource_ca_expedientes;
+            this.bindingNavigator_ca_expedientes.CountItem = this.toolStripLabel2;
+            this.bindingNavigator_ca_expedientes.DeleteItem = null;
+            this.bindingNavigator_ca_expedientes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingNavigator_ca_expedientes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton5,
+            this.toolStripButton6,
+            this.toolStripSeparator4,
+            this.toolStripTextBox2,
+            this.toolStripLabel2,
+            this.toolStripSeparator5,
+            this.toolStripButton7,
+            this.toolStripButton8,
+            this.toolStripSeparator6});
+            this.bindingNavigator_ca_expedientes.Location = new System.Drawing.Point(0, 288);
+            this.bindingNavigator_ca_expedientes.MoveFirstItem = this.toolStripButton5;
+            this.bindingNavigator_ca_expedientes.MoveLastItem = this.toolStripButton8;
+            this.bindingNavigator_ca_expedientes.MoveNextItem = this.toolStripButton7;
+            this.bindingNavigator_ca_expedientes.MovePreviousItem = this.toolStripButton6;
+            this.bindingNavigator_ca_expedientes.Name = "bindingNavigator_ca_expedientes";
+            this.bindingNavigator_ca_expedientes.PositionItem = this.toolStripTextBox2;
+            this.bindingNavigator_ca_expedientes.Size = new System.Drawing.Size(1006, 25);
+            this.bindingNavigator_ca_expedientes.TabIndex = 35;
+            this.bindingNavigator_ca_expedientes.Text = "bindingNavigator1";
             // 
-            // bindingsource_ca_expedientes
+            // toolStripLabel2
             // 
-            this.bindingsource_ca_expedientes.DataSource = typeof(thumbnail.data_members.ca_expedientes);
-            this.bindingsource_ca_expedientes.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(37, 22);
+            this.toolStripLabel2.Text = "de {0}";
+            this.toolStripLabel2.ToolTipText = "Número total de elementos";
             // 
-            // bindingNavigatorCountItem
+            // toolStripSeparator4
             // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorMoveFirstItem
+            // toolStripTextBox2
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
+            this.toolStripTextBox2.AccessibleName = "Posición";
+            this.toolStripTextBox2.AutoSize = false;
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.Size = new System.Drawing.Size(50, 23);
+            this.toolStripTextBox2.Text = "0";
+            this.toolStripTextBox2.ToolTipText = "Posición actual";
             // 
-            // bindingNavigatorMovePreviousItem
+            // toolStripSeparator5
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorSeparator
+            // toolStripSeparator6
             // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
             // 
             // datagridview
             // 
@@ -820,52 +617,6 @@
             this.datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datagridview.Size = new System.Drawing.Size(980, 250);
             this.datagridview.TabIndex = 1;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Expediente";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // btn_refrescar
-            // 
-            this.btn_refrescar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_refrescar.AutoSize = true;
-            this.btn_refrescar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_refrescar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_refrescar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_refrescar.FlatAppearance.BorderSize = 0;
-            this.btn_refrescar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btn_refrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_refrescar.Image = global::thumbnail.Icons16x16.reload;
-            this.btn_refrescar.Location = new System.Drawing.Point(972, 10);
-            this.btn_refrescar.Name = "btn_refrescar";
-            this.btn_refrescar.Size = new System.Drawing.Size(22, 22);
-            this.btn_refrescar.TabIndex = 17;
-            this.toolTip.SetToolTip(this.btn_refrescar, "Recargar lista de registros");
-            this.btn_refrescar.UseVisualStyleBackColor = false;
-            this.btn_refrescar.Click += new System.EventHandler(this.btn_refrescar_Click);
-            // 
-            // pbfind
-            // 
-            this.pbfind.BackColor = System.Drawing.Color.Transparent;
-            this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
-            this.pbfind.Location = new System.Drawing.Point(563, 16);
-            this.pbfind.Name = "pbfind";
-            this.pbfind.Size = new System.Drawing.Size(16, 16);
-            this.pbfind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbfind.TabIndex = 16;
-            this.pbfind.TabStop = false;
             // 
             // txt_buscar
             // 
@@ -944,6 +695,317 @@
             // 
             this.dxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
             // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // tlp_warning
+            // 
+            this.tlp_warning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlp_warning.BackColor = System.Drawing.Color.Transparent;
+            this.tlp_warning.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlp_warning.ColumnCount = 2;
+            this.tlp_warning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_warning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_warning.Controls.Add(this.pictureBox3, 0, 0);
+            this.tlp_warning.Controls.Add(this.label3, 1, 0);
+            this.tlp_warning.Location = new System.Drawing.Point(238, 138);
+            this.tlp_warning.Name = "tlp_warning";
+            this.tlp_warning.RowCount = 1;
+            this.tlp_warning.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlp_warning.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_warning.Size = new System.Drawing.Size(558, 50);
+            this.tlp_warning.TabIndex = 36;
+            this.tlp_warning.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
+            this.label3.Location = new System.Drawing.Point(50, 1);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label3.Size = new System.Drawing.Size(500, 35);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Antes de continuar, debe asignar un campo trazable principal";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::thumbnail.Icons16x16.zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(624, 103);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(16, 16);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 36;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btn_EliminarCampoTrazable
+            // 
+            this.btn_EliminarCampoTrazable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_EliminarCampoTrazable.AutoSize = true;
+            this.btn_EliminarCampoTrazable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_EliminarCampoTrazable.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_EliminarCampoTrazable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_EliminarCampoTrazable.FlatAppearance.BorderSize = 0;
+            this.btn_EliminarCampoTrazable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btn_EliminarCampoTrazable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_EliminarCampoTrazable.Image = global::thumbnail.Icons16x16.trash;
+            this.btn_EliminarCampoTrazable.Location = new System.Drawing.Point(972, 359);
+            this.btn_EliminarCampoTrazable.Name = "btn_EliminarCampoTrazable";
+            this.btn_EliminarCampoTrazable.Size = new System.Drawing.Size(22, 22);
+            this.btn_EliminarCampoTrazable.TabIndex = 31;
+            this.toolTip.SetToolTip(this.btn_EliminarCampoTrazable, "Eliminar");
+            this.btn_EliminarCampoTrazable.UseVisualStyleBackColor = false;
+            this.btn_EliminarCampoTrazable.Click += new System.EventHandler(this.btn_EliminarCampoTrazable_Click);
+            // 
+            // bindingsource
+            // 
+            this.bindingsource.DataSource = typeof(thumbnail.data_members.pa_CampostrazablesporExpedienteResult);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "Mover primero";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "Mover anterior";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "Mover siguiente";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Text = "Mover último";
+            // 
+            // idreexpedientescampostrazablesDataGridViewTextBoxColumn
+            // 
+            this.idreexpedientescampostrazablesDataGridViewTextBoxColumn.DataPropertyName = "id_re_expedientes_campostrazables";
+            this.idreexpedientescampostrazablesDataGridViewTextBoxColumn.HeaderText = "id_re_expedientes_campostrazables";
+            this.idreexpedientescampostrazablesDataGridViewTextBoxColumn.Name = "idreexpedientescampostrazablesDataGridViewTextBoxColumn";
+            this.idreexpedientescampostrazablesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idcampotrazableDataGridViewTextBoxColumn
+            // 
+            this.idcampotrazableDataGridViewTextBoxColumn.DataPropertyName = "id_campotrazable";
+            this.idcampotrazableDataGridViewTextBoxColumn.HeaderText = "id_campotrazable";
+            this.idcampotrazableDataGridViewTextBoxColumn.Name = "idcampotrazableDataGridViewTextBoxColumn";
+            this.idcampotrazableDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // esprincipalDataGridViewCheckBoxColumn
+            // 
+            this.esprincipalDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.esprincipalDataGridViewCheckBoxColumn.DataPropertyName = "es_principal";
+            this.esprincipalDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.esprincipalDataGridViewCheckBoxColumn.HeaderText = "Es principal";
+            this.esprincipalDataGridViewCheckBoxColumn.Name = "esprincipalDataGridViewCheckBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Campo trazable";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tamanioCaracteresDataGridViewTextBoxColumn
+            // 
+            this.tamanioCaracteresDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tamanioCaracteresDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.HeaderText = "Tamaño de caractéres";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.Name = "tamanioCaracteresDataGridViewTextBoxColumn";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idestatusDataGridViewTextBoxColumn1
+            // 
+            this.idestatusDataGridViewTextBoxColumn1.DataPropertyName = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn1.HeaderText = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn1.Name = "idestatusDataGridViewTextBoxColumn1";
+            this.idestatusDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // mascaraDataGridViewTextBoxColumn
+            // 
+            this.mascaraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mascaraDataGridViewTextBoxColumn.DataPropertyName = "Mascara";
+            this.mascaraDataGridViewTextBoxColumn.HeaderText = "Máscara";
+            this.mascaraDataGridViewTextBoxColumn.Name = "mascaraDataGridViewTextBoxColumn";
+            this.mascaraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bindingSource_campostrazables
+            // 
+            this.bindingSource_campostrazables.DataSource = typeof(thumbnail.data_members.pa_CampostrazablesNoEnlazadosporExpedienteResult);
+            // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Agregar.AutoSize = true;
+            this.btn_Agregar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Agregar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Agregar.FlatAppearance.BorderSize = 0;
+            this.btn_Agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Agregar.Image = global::thumbnail.Icons48x48.doc_plus;
+            this.btn_Agregar.Location = new System.Drawing.Point(851, 16);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(54, 54);
+            this.btn_Agregar.TabIndex = 6;
+            this.toolTip.SetToolTip(this.btn_Agregar, "Agregar");
+            this.btn_Agregar.UseVisualStyleBackColor = false;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            // 
+            // btn_cerrar
+            // 
+            this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cerrar.AutoSize = true;
+            this.btn_cerrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_cerrar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cerrar.FlatAppearance.BorderSize = 0;
+            this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cerrar.Location = new System.Drawing.Point(941, 16);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
+            this.btn_cerrar.TabIndex = 12;
+            this.toolTip.SetToolTip(this.btn_cerrar, "Cerrar");
+            this.btn_cerrar.UseVisualStyleBackColor = false;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::thumbnail.Icons48x48.attention;
+            this.pictureBox3.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // bindingsource_ca_expedientes
+            // 
+            this.bindingsource_ca_expedientes.AllowNew = false;
+            this.bindingsource_ca_expedientes.DataSource = typeof(thumbnail.data_members.ca_expedientes);
+            this.bindingsource_ca_expedientes.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton5.Text = "Mover primero";
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton6.Text = "Mover anterior";
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton7.Text = "Mover siguiente";
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.RightToLeftAutoMirrorImage = true;
+            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton8.Text = "Mover último";
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Expediente";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // btn_refrescar
+            // 
+            this.btn_refrescar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_refrescar.AutoSize = true;
+            this.btn_refrescar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_refrescar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_refrescar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_refrescar.FlatAppearance.BorderSize = 0;
+            this.btn_refrescar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_refrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_refrescar.Image = global::thumbnail.Icons16x16.reload;
+            this.btn_refrescar.Location = new System.Drawing.Point(972, 10);
+            this.btn_refrescar.Name = "btn_refrescar";
+            this.btn_refrescar.Size = new System.Drawing.Size(22, 22);
+            this.btn_refrescar.TabIndex = 17;
+            this.toolTip.SetToolTip(this.btn_refrescar, "Recargar lista de registros");
+            this.btn_refrescar.UseVisualStyleBackColor = false;
+            this.btn_refrescar.Click += new System.EventHandler(this.btn_refrescar_Click);
+            // 
+            // pbfind
+            // 
+            this.pbfind.BackColor = System.Drawing.Color.Transparent;
+            this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
+            this.pbfind.Location = new System.Drawing.Point(563, 16);
+            this.pbfind.Name = "pbfind";
+            this.pbfind.Size = new System.Drawing.Size(16, 16);
+            this.pbfind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbfind.TabIndex = 16;
+            this.pbfind.TabStop = false;
+            // 
             // re_expedientes_campostrazables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -955,36 +1017,40 @@
             this.Name = "re_expedientes_campostrazables";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asignar campos trazables a un expediente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.re_expedientes_campostrazables_FormClosing);
             this.Load += new System.EventHandler(this.re_expedientes_campostrazables_Load);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel1.PerformLayout();
             this.splitContainer.Panel2.ResumeLayout(false);
             this.splitContainer.Panel2.PerformLayout();
             this.splitContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscarcampotrazable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_campostrazables)).EndInit();
             this.bindingNavigator_campostrazables.ResumeLayout(false);
             this.bindingNavigator_campostrazables.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamposTrazables)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_CamposTrazables.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_campostrazables)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             this.tlp_proc.ResumeLayout(false);
             this.tlp_proc.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator_ca_expedientes)).EndInit();
-            this.bindingnavigator_ca_expedientes.ResumeLayout(false);
-            this.bindingnavigator_ca_expedientes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_expedientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_ca_expedientes)).EndInit();
+            this.bindingNavigator_ca_expedientes.ResumeLayout(false);
+            this.bindingNavigator_ca_expedientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbfind)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
+            this.tlp_warning.ResumeLayout(false);
+            this.tlp_warning.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_campostrazables)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_expedientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbfind)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1016,16 +1082,6 @@
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
         private System.Windows.Forms.BindingSource bindingsource_ca_expedientes;
-        private System.Windows.Forms.BindingNavigator bindingnavigator_ca_expedientes;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private System.Windows.Forms.Button btn_EliminarCampoTrazable;
         private DevExpress.XtraEditors.CheckEdit checkEdit2;
@@ -1061,5 +1117,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idestatusDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn mascaraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn estatus;
+        private System.Windows.Forms.BindingNavigator bindingNavigator_ca_expedientes;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.TableLayoutPanel tlp_warning;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label3;
     }
 }

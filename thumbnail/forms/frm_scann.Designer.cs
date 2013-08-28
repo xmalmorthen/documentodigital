@@ -29,13 +29,12 @@ namespace thumbnail.forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_scann));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.cntmnuListViewEnlace = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cntmnuListViewEnlace = new System.Windows.Forms.ContextMenuStrip();
             this.tsmnuitemlstvwenlaceabrir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwenlaceeliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwenlaceseparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -45,7 +44,7 @@ namespace thumbnail.forms
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmnuitemlstvwenlacegirarderecha = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwenlacegirarizquierda = new System.Windows.Forms.ToolStripMenuItem();
-            this.cntmnuListViewScann = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cntmnuListViewScann = new System.Windows.Forms.ContextMenuStrip();
             this.tsmnuitemlstvwscannabrir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwscanneliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwscannseparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -58,8 +57,8 @@ namespace thumbnail.forms
             this.tsmnuitemlstvwscannseltodo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwscannrotarderecha = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwscannrotarizquierda = new System.Windows.Forms.ToolStripMenuItem();
-            this.imglsttabs = new System.Windows.Forms.ImageList(this.components);
-            this.tooltipBtnMnuOptions = new System.Windows.Forms.ToolTip(this.components);
+            this.imglsttabs = new System.Windows.Forms.ImageList();
+            this.tooltipBtnMnuOptions = new System.Windows.Forms.ToolTip();
             this.btn_limpiarcontroles = new System.Windows.Forms.Button();
             this.btn_abririmagen = new System.Windows.Forms.Button();
             this.btn_scanear = new System.Windows.Forms.Button();
@@ -91,7 +90,7 @@ namespace thumbnail.forms
             this.esprincipalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.col_valor_trazable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_re_expedientes_campostrazables = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paCampostrazablesActivosporExpedienteResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.paCampostrazablesActivosporExpedienteResultBindingSource = new System.Windows.Forms.BindingSource();
             this.tbctrl = new System.Windows.Forms.TabControl();
             this.tabpgeUsuario = new System.Windows.Forms.TabPage();
             this.tab0_tbllytpnldocumentos = new System.Windows.Forms.TableLayoutPanel();
@@ -182,7 +181,7 @@ namespace thumbnail.forms
             // 
             // tsmnuitemlstvwenlaceabrir
             // 
-            this.tsmnuitemlstvwenlaceabrir.Image = Icons16x16.view;
+            this.tsmnuitemlstvwenlaceabrir.Image = global::thumbnail.Icons16x16.view;
             this.tsmnuitemlstvwenlaceabrir.Name = "tsmnuitemlstvwenlaceabrir";
             this.tsmnuitemlstvwenlaceabrir.Size = new System.Drawing.Size(211, 26);
             this.tsmnuitemlstvwenlaceabrir.Text = "Abrir";
@@ -190,7 +189,7 @@ namespace thumbnail.forms
             // 
             // tsmnuitemlstvwenlaceeliminar
             // 
-            this.tsmnuitemlstvwenlaceeliminar.Image = Icons16x16.trash;
+            this.tsmnuitemlstvwenlaceeliminar.Image = global::thumbnail.Icons16x16.trash;
             this.tsmnuitemlstvwenlaceeliminar.Name = "tsmnuitemlstvwenlaceeliminar";
             this.tsmnuitemlstvwenlaceeliminar.Size = new System.Drawing.Size(211, 26);
             this.tsmnuitemlstvwenlaceeliminar.Text = "Eliminar";
@@ -207,7 +206,7 @@ namespace thumbnail.forms
             this.tsmnuitemlstvwenlacedesenlazar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmnuitemlstvwenlacedesenlazarseleccionado,
             this.tsmnuitemlstvwenlacedesenlazartodo});
-            this.tsmnuitemlstvwenlacedesenlazar.Image = Icons16x16.desenlazar;
+            this.tsmnuitemlstvwenlacedesenlazar.Image = global::thumbnail.Icons16x16.desenlazar;
             this.tsmnuitemlstvwenlacedesenlazar.Name = "tsmnuitemlstvwenlacedesenlazar";
             this.tsmnuitemlstvwenlacedesenlazar.Size = new System.Drawing.Size(211, 26);
             this.tsmnuitemlstvwenlacedesenlazar.Text = "Desenlazar";
@@ -269,7 +268,7 @@ namespace thumbnail.forms
             // 
             // tsmnuitemlstvwscannabrir
             // 
-            this.tsmnuitemlstvwscannabrir.Image = Icons16x16.view;
+            this.tsmnuitemlstvwscannabrir.Image = global::thumbnail.Icons16x16.view;
             this.tsmnuitemlstvwscannabrir.Name = "tsmnuitemlstvwscannabrir";
             this.tsmnuitemlstvwscannabrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.tsmnuitemlstvwscannabrir.Size = new System.Drawing.Size(285, 26);
@@ -278,7 +277,7 @@ namespace thumbnail.forms
             // 
             // tsmnuitemlstvwscanneliminar
             // 
-            this.tsmnuitemlstvwscanneliminar.Image = Icons16x16.trash;
+            this.tsmnuitemlstvwscanneliminar.Image = global::thumbnail.Icons16x16.trash;
             this.tsmnuitemlstvwscanneliminar.Name = "tsmnuitemlstvwscanneliminar";
             this.tsmnuitemlstvwscanneliminar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
             this.tsmnuitemlstvwscanneliminar.Size = new System.Drawing.Size(285, 26);
@@ -645,11 +644,11 @@ namespace thumbnail.forms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEdit_Tramites.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_tramite", "id_tramite", 110, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nombre_tramite", "Nombre_tramite", 168, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nombre_tramite", "Trámite", 168, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_clasificaciontramite", "id_clasificaciontramite", 227, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Descripcion_clasificaciontramite", "Descripcion_clasificaciontramite", 320, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Descripcion_clasificaciontramite", "Clasificación del trámite", 320, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id_expediente", "id_expediente", 158, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Descripcion_Expediente", "Descripcion_Expediente", 239, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Descripcion_Expediente", "Expediente", 239, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)});
             this.lookUpEdit_Tramites.Properties.ImmediatePopup = true;
             this.lookUpEdit_Tramites.Properties.LookAndFeel.SkinName = "VS2010";
             this.lookUpEdit_Tramites.Properties.NullText = "";

@@ -36,6 +36,11 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.lookUpEdit_ClasificacionDocumento = new DevExpress.XtraEditors.GridLookUpEdit();
             this.lookUpEditClasificacionDocumentoView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.toolTip = new System.Windows.Forms.ToolTip();
+            this.btn_aceptar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.dxValidationProvider_lookUpEdit_ClasificacionDocumento = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.dxValidationProvider_Valor = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             this.colid_documento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNombre = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colObligatorio = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,11 +69,6 @@
             this.colPolitica = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_estatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcion_estatus = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.toolTip = new System.Windows.Forms.ToolTip();
-            this.btn_aceptar = new System.Windows.Forms.Button();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.dxValidationProvider_lookUpEdit_ClasificacionDocumento = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
-            this.dxValidationProvider_Valor = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             ((System.ComponentModel.ISupportInitialize)(this.txtvalortrazable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_ClasificacionDocumento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditClasificacionDocumentoView)).BeginInit();
@@ -144,6 +144,8 @@
             this.lookUpEdit_ClasificacionDocumento.Properties.ImmediatePopup = true;
             this.lookUpEdit_ClasificacionDocumento.Properties.LookAndFeel.SkinName = "VS2010";
             this.lookUpEdit_ClasificacionDocumento.Properties.NullText = "";
+            this.lookUpEdit_ClasificacionDocumento.Properties.PopupFormSize = new System.Drawing.Size(700, 0);
+            this.lookUpEdit_ClasificacionDocumento.Properties.PopupResizeMode = DevExpress.XtraEditors.Controls.ResizeMode.LiveResize;
             this.lookUpEdit_ClasificacionDocumento.Properties.ValueMember = "id_documento";
             this.lookUpEdit_ClasificacionDocumento.Properties.View = this.lookUpEditClasificacionDocumentoView;
             this.lookUpEdit_ClasificacionDocumento.Size = new System.Drawing.Size(576, 30);
@@ -200,6 +202,53 @@
             this.lookUpEditClasificacionDocumentoView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDescripcion_clasificaciondocumento, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
+            // btn_aceptar
+            // 
+            this.btn_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_aceptar.AutoSize = true;
+            this.btn_aceptar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_aceptar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_aceptar.FlatAppearance.BorderSize = 0;
+            this.btn_aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_aceptar.Image = global::thumbnail.Icons48x48.checkbox_checked;
+            this.btn_aceptar.Location = new System.Drawing.Point(464, 139);
+            this.btn_aceptar.Name = "btn_aceptar";
+            this.btn_aceptar.Size = new System.Drawing.Size(54, 54);
+            this.btn_aceptar.TabIndex = 2;
+            this.toolTip.SetToolTip(this.btn_aceptar, "Vincular documento");
+            this.btn_aceptar.UseVisualStyleBackColor = false;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cancelar.AutoSize = true;
+            this.btn_cancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_cancelar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cancelar.Location = new System.Drawing.Point(533, 139);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(54, 54);
+            this.btn_cancelar.TabIndex = 3;
+            this.toolTip.SetToolTip(this.btn_cancelar, "Cancelar vinculación de documento");
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // dxValidationProvider_lookUpEdit_ClasificacionDocumento
+            // 
+            this.dxValidationProvider_lookUpEdit_ClasificacionDocumento.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
+            // 
+            // dxValidationProvider_Valor
+            // 
+            this.dxValidationProvider_Valor.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
+            // 
             // colid_documento
             // 
             this.colid_documento.FieldName = "id_documento";
@@ -219,7 +268,7 @@
             this.colObligatorio.FieldName = "Obligatorio";
             this.colObligatorio.Name = "colObligatorio";
             this.colObligatorio.Visible = true;
-            this.colObligatorio.VisibleIndex = 4;
+            this.colObligatorio.VisibleIndex = 2;
             // 
             // colDescripcion_clasificaciondocumento
             // 
@@ -242,16 +291,12 @@
             this.colTamanio_Caracteres_Trazables.Caption = "Tamaño de caractéres trazables";
             this.colTamanio_Caracteres_Trazables.FieldName = "Tamanio_Caracteres_Trazables";
             this.colTamanio_Caracteres_Trazables.Name = "colTamanio_Caracteres_Trazables";
-            this.colTamanio_Caracteres_Trazables.Visible = true;
-            this.colTamanio_Caracteres_Trazables.VisibleIndex = 2;
             // 
             // colMascara_Trazable
             // 
             this.colMascara_Trazable.Caption = "Mascara trazable";
             this.colMascara_Trazable.FieldName = "Mascara_Trazable";
             this.colMascara_Trazable.Name = "colMascara_Trazable";
-            this.colMascara_Trazable.Visible = true;
-            this.colMascara_Trazable.VisibleIndex = 3;
             // 
             // colid_re_tramites_re_clasificaciondocumentos_documentos
             // 
@@ -358,58 +403,12 @@
             this.colDescripcion_estatus.FieldName = "Descripcion_estatus";
             this.colDescripcion_estatus.Name = "colDescripcion_estatus";
             // 
-            // btn_aceptar
-            // 
-            this.btn_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_aceptar.AutoSize = true;
-            this.btn_aceptar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_aceptar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_aceptar.FlatAppearance.BorderSize = 0;
-            this.btn_aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_aceptar.Image = global::thumbnail.Icons48x48.checkbox_checked;
-            this.btn_aceptar.Location = new System.Drawing.Point(464, 139);
-            this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(54, 54);
-            this.btn_aceptar.TabIndex = 2;
-            this.toolTip.SetToolTip(this.btn_aceptar, "Vincular documento");
-            this.btn_aceptar.UseVisualStyleBackColor = false;
-            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cancelar.AutoSize = true;
-            this.btn_cancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_cancelar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_cancelar.FlatAppearance.BorderSize = 0;
-            this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancelar.Image = global::thumbnail.Icons48x48.close;
-            this.btn_cancelar.Location = new System.Drawing.Point(533, 139);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(54, 54);
-            this.btn_cancelar.TabIndex = 3;
-            this.toolTip.SetToolTip(this.btn_cancelar, "Cancelar vinculación de documento");
-            this.btn_cancelar.UseVisualStyleBackColor = false;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
-            // 
-            // dxValidationProvider_lookUpEdit_ClasificacionDocumento
-            // 
-            this.dxValidationProvider_lookUpEdit_ClasificacionDocumento.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
-            // 
-            // dxValidationProvider_Valor
-            // 
-            this.dxValidationProvider_Valor.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
-            // 
             // frm_hook
             // 
             this.AcceptButton = this.btn_aceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.btn_cancelar;
             this.ClientSize = new System.Drawing.Size(600, 202);
             this.Controls.Add(this.btn_cancelar);

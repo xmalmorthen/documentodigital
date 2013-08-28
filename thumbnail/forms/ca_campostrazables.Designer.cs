@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label3;
@@ -40,7 +39,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
-            this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingsource = new System.Windows.Forms.BindingSource();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.btn_Editar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
@@ -55,7 +54,7 @@
             this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.bindingnavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingnavigator = new System.Windows.Forms.BindingNavigator();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -75,13 +74,13 @@
             this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip();
             this.ca_expedientesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -132,7 +131,7 @@
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(177, 18);
             label3.TabIndex = 19;
-            label3.Text = "Tamaño de caracteres";
+            label3.Text = "Tamaño de caractéres";
             // 
             // label4
             // 
@@ -155,6 +154,7 @@
             // 
             // splitContainer.Panel1
             // 
+            this.splitContainer.Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.splitContainer.Panel1.Controls.Add(this.spinEdit1);
             this.splitContainer.Panel1.Controls.Add(label4);
             this.splitContainer.Panel1.Controls.Add(this.textEdit2);
@@ -174,6 +174,7 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.AutoScroll = true;
+            this.splitContainer.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.splitContainer.Panel2.Controls.Add(this.tlp_proc);
             this.splitContainer.Panel2.Controls.Add(this.bindingnavigator);
             this.splitContainer.Panel2.Controls.Add(this.datagridview);
