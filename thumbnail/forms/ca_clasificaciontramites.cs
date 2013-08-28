@@ -208,7 +208,10 @@ namespace thumbnail.forms
                 case form_mode.editar:
                     editar_registro();
                     break;
-            }            
+            }
+            txt_buscar.EditValueChanged -= new EventHandler(txt_buscar_EditValueChanged);
+            txt_buscar.Text = "";
+            txt_buscar.EditValueChanged += new EventHandler(txt_buscar_EditValueChanged);
         }
 
         //boton cerrar
@@ -311,7 +314,7 @@ namespace thumbnail.forms
 
         private bool buscar_si_existe()
         {
-            data_members.ca_clasificaciontramites filtro = Program.Bd_Exp_Transportes.ca_clasificaciontramites.SingleOrDefault(query => query.Descripcion == catalogo.Descripcion);
+            data_members.ca_clasificaciontramites filtro = Program.Bd_Exp_Transportes.ca_clasificaciontramites.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == catalogo.Descripcion.ToString().ToLower());
             if ( filtro != null ) {
                 MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;

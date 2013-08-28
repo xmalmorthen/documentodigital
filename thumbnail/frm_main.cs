@@ -213,8 +213,42 @@ namespace thumbnail
             Application.DoEvents();
 
             tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;            
+        }
+
+        private void clasificaciónDeDocumentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            thumbnail.forms.ca_clasificaciondocumentos frm = new forms.ca_clasificaciondocumentos();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
             this.Cursor = Cursors.Default;
             
+        }
+
+        private void documentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            thumbnail.forms.ca_documentos frm = new forms.ca_documentos();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
         }
 
     }

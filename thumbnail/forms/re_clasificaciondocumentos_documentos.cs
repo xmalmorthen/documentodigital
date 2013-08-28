@@ -10,7 +10,7 @@ using thumbnail.data_members;
 
 namespace thumbnail.forms
 {
-    public partial class re_expedientes_campostrazables : Form
+    public partial class re_clasificaciondocumentos_documentos : Form
     {
         //enumeracion para el control del estado de la forma
         public enum form_mode
@@ -31,71 +31,67 @@ namespace thumbnail.forms
             set
             {
                 _frm_mode = value;
-                enabledisablecontrols();
                 delete_validation_sumary();
             }
         }
 
         private void delete_validation_sumary()
         {
-            dxValidationProvider.RemoveControlError(lookUpEdit_CamposTrazables);
-        }
-
-        //funcion para 
-        private void enabledisablecontrols()
-        {
+            dxValidationProvider.RemoveControlError(lookUpEdit_Documentos);
         }
 
         //lista con contenido de los registros
-        private List<data_members.ca_expedientes> lista_expedientes;
-        private List<data_members.pa_CampostrazablesNoEnlazadosporExpedienteResult> lista_campostrazables;
-        private List<data_members.pa_CampostrazablesporExpedienteResult> campostrazables;
-        private data_members.re_expedientes_campostrazables catalogo;
+        private List<data_members.ca_clasificaciondocumentos> lista_clasificaciondocumentos;
+        private List<data_members.pa_DocumentosNoEnlazadosporClasificacionDocumentoResult> lista_documentos;
+        private List<data_members.pa_DocumentosporClasificacionDocumentoResult> documentos;
+        private data_members.re_clasificaciondocumentos_documentos catalogo;
 
-        public re_expedientes_campostrazables()
+        public re_clasificaciondocumentos_documentos()
         {
             InitializeComponent();
         }
 
-        private void actualiza_lista_expedientes() {
-            try
-            {
-                lista_expedientes = Program.Bd_Exp_Transportes.GetTable<data_members.ca_expedientes>().ToList();
-                bindingsource_ca_expedientes.DataSource = lista_expedientes;
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void actualiza_lista_campostrazables(int? id_expediente)
+        private void actualiza_lista_clasificaciondocumentos()
         {
             try
             {
-                lista_campostrazables = Program.Bd_Exp_Transportes.pa_CampostrazablesNoEnlazadosporExpediente(id_expediente).ToList();
-                bindingSource_campostrazables.DataSource = lista_campostrazables;
+                lista_clasificaciondocumentos = Program.Bd_Exp_Transportes.GetTable<data_members.ca_clasificaciondocumentos>().ToList();
+                bindingsource_ca_clasificaciondocumentos.DataSource = lista_clasificaciondocumentos;
             }
             catch (Exception)
             {
             }
         }
 
-        private void actualiza_re_expedientes_campostrazables(int ?id_expediente) {
+        private void actualiza_lista_documentos(int? id_clasificaciondocumento)
+        {
             try
             {
-                campostrazables = Program.Bd_Exp_Transportes.pa_CampostrazablesporExpediente(id_expediente).ToList();
-                bindingsource.DataSource = campostrazables;
+                lista_documentos = Program.Bd_Exp_Transportes.pa_DocumentosNoEnlazadosporClasificacionDocumento(id_clasificaciondocumento).ToList();
+                bindingSource_documentos.DataSource = lista_documentos;
             }
             catch (Exception)
             {
             }
         }
 
-        private void re_expedientes_campostrazables_Load(object sender, EventArgs e)
+        private void actualiza_re_clasificaciondocumentos_documentos(int? id_clasificaciondocumento)
+        {
+            try
+            {
+                documentos = Program.Bd_Exp_Transportes.pa_DocumentosporClasificacionDocumento(id_clasificaciondocumento).ToList();
+                bindingsource.DataSource = documentos;
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void re_clasificaciondocumentos_documentos_Load(object sender, EventArgs e)
         {
             try 
 	        {
-                actualiza_lista_expedientes();
+                actualiza_lista_clasificaciondocumentos();
 	        }
 	        catch (Exception)
 	        {		
@@ -111,11 +107,10 @@ namespace thumbnail.forms
 	        {
                 bindingsource.CancelEdit();
                 bindingsource.AddNew();
-                (bindingsource.Current as data_members.re_expedientes_campostrazables).id_estatus = 1;
-                lookUpEdit_CamposTrazables.EditValue = 0;
-                checkEdit1.Checked = false;
+                (bindingsource.Current as data_members.re_clasificaciondocumentos_documentos).id_estatus = 1;
+                lookUpEdit_Documentos.EditValue = null;
                 checkEdit2.Checked = true;
-                txt_buscarcampotrazable.Text = "";
+                txt_buscardocumento.Text = "";
 	        }
 	        catch (Exception)
 	        {
@@ -158,10 +153,10 @@ namespace thumbnail.forms
 
             try
             {
-                List<thumbnail.data_members.ca_expedientes> valores = (from query in lista_expedientes
+                List<thumbnail.data_members.ca_clasificaciondocumentos> valores = (from query in lista_clasificaciondocumentos
                                                                     where query.Descripcion.ToString().ToLower().Contains(txt_buscar.Text.ToString().ToLower())
                                                                     select query).ToList();
-                bindingsource_ca_expedientes.DataSource = valores;
+                bindingsource_ca_clasificaciondocumentos.DataSource = valores;
                 datagridview.Update();
             }
             catch (Exception)
@@ -182,7 +177,7 @@ namespace thumbnail.forms
 
             Application.DoEvents();
 
-            actualiza_lista_expedientes();
+            actualiza_lista_clasificaciondocumentos();
 
             Application.DoEvents();
 
@@ -196,10 +191,10 @@ namespace thumbnail.forms
             try 
 	        {
                 if (valida()) {
-                    data_members.re_expedientes_campostrazables item = new data_members.re_expedientes_campostrazables();
+                    data_members.re_clasificaciondocumentos_documentos item = new data_members.re_clasificaciondocumentos_documentos();
 
-                    item.id_expediente = (bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id;
-                    item.id_campotrazable = (int)lookUpEdit_CamposTrazables.EditValue;
+                    item.id_clasificaciondocumento = (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_expedientes).id;
+                    item.id_documento = (int)lookUpEdit_Documentos.EditValue;
 
                     if (checkEdit2.Checked)
                     {
@@ -207,7 +202,7 @@ namespace thumbnail.forms
                     }
                     else
                     {
-                        if (MessageBox.Show(this, "Esta a punto de agregar un campo trazable inactivo, confirma la acción", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                        if (MessageBox.Show(this, "Esta a punto de clasificar un documento inactivo, confirma la acción", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
                         {
                             item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
                         }
@@ -217,20 +212,9 @@ namespace thumbnail.forms
                         }
                     }
 
-                    if (!valida_esprincipal())
-                    {
-                        item.es_principal = checkEdit1.Checked;
-                    }
-                    else 
-                    {
-                        MessageBox.Show(this, "Ya se encuentra un campo trazable principal, favor de revisar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    Program.Bd_Exp_Transportes.re_expedientes_campostrazables.InsertOnSubmit(item);
+                    Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.InsertOnSubmit(item);
                     Program.Bd_Exp_Transportes.SubmitChanges();
 
-                    checkEdit1.Checked = false;
                     checkEdit2.Checked = true;
                 }
             }
@@ -239,19 +223,6 @@ namespace thumbnail.forms
 		        throw;
 	        }
             bindingsource_CurrentItemChanged(null, null);
-        }
-
-        private bool valida_esprincipal()
-        {
-            if (checkEdit1.Checked)
-            {
-                data_members.re_expedientes_campostrazables item = Program.Bd_Exp_Transportes.re_expedientes_campostrazables.SingleOrDefault(query => query.es_principal == true && query.id_expediente == (bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id);
-                if (item != null)
-                {
-                    return true;
-                }
-            }
-            return false;
         }
 
         private bool valida()
@@ -266,17 +237,17 @@ namespace thumbnail.forms
         {
             try
             {
-                actualiza_lista_campostrazables((bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id);
-                actualiza_re_expedientes_campostrazables((bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id);
+                actualiza_lista_documentos((bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_expedientes).id);
+                actualiza_re_clasificaciondocumentos_documentos((bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_expedientes).id);
             }
             catch (Exception)
             {
-                actualiza_re_expedientes_campostrazables(0);
+                actualiza_re_clasificaciondocumentos_documentos(0);
             }
         }
 
         //buscar en grid de campos trazables
-        private void txt_buscarcampotrazable_EditValueChanged(object sender, EventArgs e)
+        private void txt_buscardocumento_EditValueChanged(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
             tlp_proc.Visible = true;
@@ -285,8 +256,8 @@ namespace thumbnail.forms
 
             try
             {
-                List<thumbnail.data_members.pa_CampostrazablesporExpedienteResult> valores = (from query in campostrazables
-                                                                                              where query.Nombre.ToString().ToLower().Contains(txt_buscarcampotrazable.Text.ToString().ToLower())
+                List<thumbnail.data_members.pa_DocumentosporClasificacionDocumentoResult> valores = (from query in documentos
+                                                                                              where query.Nombre.ToString().ToLower().Contains(txt_buscardocumento.Text.ToString().ToLower())
                                                                                               select query).ToList();
                 bindingsource.DataSource = valores;
                 dataGridViewCamposTrazables.Update();
@@ -302,14 +273,14 @@ namespace thumbnail.forms
         }
         
         //boton eliminar en grid
-        private void btn_EliminarCampoTrazable_Click(object sender, EventArgs e)
+        private void btn_EliminarDocumento_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
             tlp_proc.Visible = true;
 
             Application.DoEvents();
 
-            if (MessageBox.Show(this, "Eliminar campo trazable", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            if (MessageBox.Show(this, "Eliminar documento", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
             {
                 eliminar_registro();    
             }
@@ -325,18 +296,18 @@ namespace thumbnail.forms
         {
             try
             {
-                int id = (bindingsource.Current as data_members.pa_CampostrazablesporExpedienteResult).id_re_expedientes_campostrazables;
-                data_members.re_expedientes_campostrazables item = Program.Bd_Exp_Transportes.re_expedientes_campostrazables.SingleOrDefault(query => query.id == id);
+                int id = (bindingsource.Current as data_members.pa_DocumentosporClasificacionDocumentoResult).id_re_clasificaciondocumento_documento;
+                data_members.re_clasificaciondocumentos_documentos item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(query => query.id == id);
 
                 if (item != null)
                 {
-                    Program.Bd_Exp_Transportes.re_expedientes_campostrazables.DeleteOnSubmit(item);
+                    Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.DeleteOnSubmit(item);
                     Program.Bd_Exp_Transportes.SubmitChanges();
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show(this, "El campo trazable está en uso", "Imposible eliminar", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show(this, "El documento está en uso", "Imposible eliminar", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             bindingsource_CurrentItemChanged(null, null);
         }
@@ -350,7 +321,7 @@ namespace thumbnail.forms
                     Boolean newvalue_esprincipal = (Boolean)dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["esprincipalDataGridViewCheckBoxColumn"].Value;
                     int newvalue_avtivo = dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["estatus"].Value == null ? 0 : 1;
 
-                    int id_re_expedientes_campostrazables = (bindingsource.Current as data_members.pa_CampostrazablesporExpedienteResult).id_re_expedientes_campostrazables;
+                    int id_re_clasificaciondocumentos_documentos = (bindingsource.Current as data_members.pa_CampostrazablesporExpedienteResult).id_re_expedientes_campostrazables;
 
                     data_members.re_expedientes_campostrazables item = Program.Bd_Exp_Transportes.re_expedientes_campostrazables.SingleOrDefault(
                         query => query.id == id_re_expedientes_campostrazables);

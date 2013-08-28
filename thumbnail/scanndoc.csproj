@@ -117,6 +117,24 @@
     <Compile Include="forms\ca_tramites.Designer.cs">
       <DependentUpon>ca_tramites.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\ca_clasificaciondocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ca_clasificaciondocumentos.Designer.cs">
+      <DependentUpon>ca_clasificaciondocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ca_documentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ca_documentos.Designer.cs">
+      <DependentUpon>ca_documentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\re_clasificaciondocumentos_documentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\re_clasificaciondocumentos_documentos.Designer.cs">
+      <DependentUpon>re_clasificaciondocumentos_documentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\re_expedientes_campostrazables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +205,15 @@
     <EmbeddedResource Include="forms\ca_tramites.resx">
       <DependentUpon>ca_tramites.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\ca_clasificaciondocumentos.resx">
+      <DependentUpon>ca_clasificaciondocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ca_documentos.resx">
+      <DependentUpon>ca_documentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\re_clasificaciondocumentos_documentos.resx">
+      <DependentUpon>re_clasificaciondocumentos_documentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\re_expedientes_campostrazables.resx">
       <DependentUpon>re_expedientes_campostrazables.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,12 +257,16 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\thumbnail.data_members.ca_campostrazables.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.ca_clasificaciondocumentos.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_clasificaciontramites.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.ca_documentos.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_expedientes.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.ca_formatos.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_tramites.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_CampostrazablesActivosporExpedienteResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_CampostrazablesNoEnlazadosporExpedienteResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_CampostrazablesporExpedienteResult.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.pa_DocumentosNoEnlazadosporClasificacionDocumentoResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.re_expedientes_campostrazables.datasource" />
     <None Include="Properties\Settings.settings">

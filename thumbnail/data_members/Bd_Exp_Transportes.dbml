@@ -45,24 +45,6 @@
       <Association Name="ca_clasificaciontramites_ca_tramites" Member="ca_tramites" ThisKey="id" OtherKey="id_ClasificacionTramite" Type="ca_tramites" />
     </Type>
   </Table>
-  <Table Name="dbo.ca_documentos" Member="ca_documentos">
-    <Type Name="ca_documentos">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="id_Formato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="No_Hojas" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="No_Caras" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="Estado" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="Resguardo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Tiempo_Resguardo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="Trazabilidad" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Tamanio_Caracteres_Trazables" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="Mascara_Trazable" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="Politica" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Association Name="ca_documentos_re_clasificaciondocumentos_documentos" Member="re_clasificaciondocumentos_documentos" ThisKey="id" OtherKey="id_documento" Type="re_clasificaciondocumentos_documentos" />
-      <Association Name="ca_formatos_ca_documentos" Member="ca_formatos" ThisKey="id_Formato" OtherKey="id" Type="ca_formatos" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.ca_estatus" Member="ca_estatus">
     <Type Name="ca_estatus">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -237,8 +219,8 @@
       <Association Name="re_clasificaciondocumentos_documentos_de_digital" Member="de_digital" ThisKey="id" OtherKey="id_re_clasificaciondocumento_documento" Type="de_digital" />
       <Association Name="re_clasificaciondocumentos_documentos_re_tramites_re_clasificaciondocumentos_documentos" Member="re_tramites_re_clasificaciondocumentos_documentos" ThisKey="id" OtherKey="re_clasificaciondocumento_documento" Type="re_tramites_re_clasificaciondocumentos_documentos" />
       <Association Name="ca_clasificaciondocumentos_re_clasificaciondocumentos_documentos" Member="ca_clasificaciondocumentos" ThisKey="id_clasificaciondocumento" OtherKey="id" Type="ca_clasificaciondocumentos" IsForeignKey="true" />
-      <Association Name="ca_documentos_re_clasificaciondocumentos_documentos" Member="ca_documentos" ThisKey="id_documento" OtherKey="id" Type="ca_documentos" IsForeignKey="true" />
       <Association Name="ca_estatus_re_clasificaciondocumentos_documentos" Member="ca_estatus" ThisKey="id_estatus" OtherKey="id" Type="ca_estatus" IsForeignKey="true" />
+      <Association Name="ca_documentos_re_clasificaciondocumentos_documentos" Member="ca_documentos" ThisKey="id_documento" OtherKey="id" Type="ca_documentos" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.re_expedientes_campostrazables" Member="re_expedientes_campostrazables">
@@ -314,6 +296,24 @@
       <Column Name="Tamanio_Caracteres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Mascara" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Association Name="ca_campostrazables_re_expedientes_campostrazables" Member="re_expedientes_campostrazables" ThisKey="id" OtherKey="id_campotrazable" Type="re_expedientes_campostrazables" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ca_documentos" Member="ca_documentos">
+    <Type Name="ca_documentos">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="id_Formato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="No_Hojas" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="No_Caras" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Resguardo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tiempo_Resguardo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Trazabilidad" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tamanio_Caracteres_Trazables" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Mascara_Trazable" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Politica" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="ca_documentos_re_clasificaciondocumentos_documentos" Member="re_clasificaciondocumentos_documentos" ThisKey="id" OtherKey="id_documento" Type="re_clasificaciondocumentos_documentos" />
+      <Association Name="ca_formatos_ca_documentos" Member="ca_formatos" ThisKey="id_Formato" OtherKey="id" Type="ca_formatos" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.pa_obtener_fecha" Method="pa_obtener_fecha">
@@ -401,6 +401,47 @@
       <Column Name="NOMBRE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="TAMANIO_CARACTERES" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="MASCARA" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_DocumentosNoEnlazadosporClasificacionDocumento" Method="pa_DocumentosNoEnlazadosporClasificacionDocumento">
+    <Parameter Name="id_clasificacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_DocumentosNoEnlazadosporClasificacionDocumentoResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_FORMATO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FORMATO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NO_HOJAS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="NO_CARAS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ESTADO" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCIONESTADO" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="RESGUARDO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TIEMPO_RESGUARDO" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TRAZABILIDAD" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TAMANIO_CARACTERES_TRAZABLES" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MASCARA_TRAZABLE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="POLITICA" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_DocumentosporClasificacionDocumento" Method="pa_DocumentosporClasificacionDocumento">
+    <Parameter Name="id_clasificaciondocumento" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_DocumentosporClasificacionDocumentoResult">
+      <Column Name="id_re_clasificaciondocumento_documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="id_Formato" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionFormato" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="No_Hojas" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="No_Caras" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCIONESTADO" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Resguardo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tiempo_Resguardo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Trazabilidad" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tamanio_Caracteres_Trazables" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Mascara_Trazable" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Politica" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

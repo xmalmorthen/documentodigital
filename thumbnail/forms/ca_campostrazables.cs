@@ -52,7 +52,7 @@ namespace thumbnail.forms
             //editar
             btn_Editar.Enabled = Form_Mode == form_mode.normal ? true : false;
             //limpiar
-            btn_Limpiar.Enabled = ( Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar ) ? true : false;
+            btn_Limpiar.Enabled = ( Form_Mode == form_mode.agregar ) ? true : false;
             //cancelar
             btn_cancelar.Enabled = ( Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar ) ? true : false;
             //guardar
@@ -185,7 +185,10 @@ namespace thumbnail.forms
                 case form_mode.editar:
                     editar_registro();
                     break;
-            }           
+            }
+            txt_buscar.EditValueChanged -= new EventHandler(txt_buscar_EditValueChanged);
+            txt_buscar.Text = "";
+            txt_buscar.EditValueChanged += new EventHandler(txt_buscar_EditValueChanged);
         }
 
         //boton cerrar
@@ -281,7 +284,7 @@ namespace thumbnail.forms
 
         private bool buscar_si_existe()
         {
-            data_members.ca_campostrazables filtro = Program.Bd_Exp_Transportes.ca_campostrazables.SingleOrDefault(query => query.Nombre == catalogo.Nombre);
+            data_members.ca_campostrazables filtro = Program.Bd_Exp_Transportes.ca_campostrazables.SingleOrDefault(query => query.Nombre.ToString().ToLower() == catalogo.Nombre.ToString().ToLower());
             if (filtro != null)
             {
                 MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -28,7 +28,7 @@ namespace thumbnail.forms
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-            thumbnail.data_members.ca_usuarios usuario = Program.Bd_Exp_Transportes.ca_usuarios.SingleOrDefault(c => c.usuario == txt_usuario.Text);
+            thumbnail.data_members.ca_usuarios usuario = Program.Bd_Exp_Transportes.ca_usuarios.SingleOrDefault(c => c.usuario.ToString().ToLower() == txt_usuario.Text.ToString().ToLower());
             try
             {
                 if (!convert_md5.verifyMd5Hash(txt_contrasenia.Text, usuario.contrasenia))
