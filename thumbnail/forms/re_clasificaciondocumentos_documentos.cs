@@ -318,27 +318,14 @@ namespace thumbnail.forms
             {
                 try
                 {
-                    Boolean newvalue_esprincipal = (Boolean)dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["esprincipalDataGridViewCheckBoxColumn"].Value;
-                    int newvalue_avtivo = dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["estatus"].Value == null ? 0 : 1;
+                    int newvalue_activo = dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["estatus"].Value == null ? 0 : 1;
 
-                    int id_re_clasificaciondocumentos_documentos = (bindingsource.Current as data_members.pa_CampostrazablesporExpedienteResult).id_re_expedientes_campostrazables;
+                    int id_re_clasificaciondocumentos_documentos = (bindingsource.Current as data_members.pa_DocumentosporClasificacionDocumentoResult).id_re_clasificaciondocumento_documento;
 
-                    data_members.re_expedientes_campostrazables item = Program.Bd_Exp_Transportes.re_expedientes_campostrazables.SingleOrDefault(
-                        query => query.id == id_re_expedientes_campostrazables);
+                    data_members.re_clasificaciondocumentos_documentos item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
+                        query => query.id == id_re_clasificaciondocumentos_documentos);
 
-                    if (newvalue_esprincipal == false)
-                        item.es_principal = false;
-                    else
-                    {
-                        if (!valida_esprincipal_engrid())
-                        {
-                            item.es_principal = true;
-                        }
-                        else {
-                            dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["esprincipalDataGridViewCheckBoxColumn"].Value = false;
-                        }                        
-                    }
-                    if (newvalue_avtivo == 0)
+                    if (newvalue_activo == 0)
                         item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
                     else
                         item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
@@ -349,18 +336,5 @@ namespace thumbnail.forms
                 }
             }
         }
-
-        private bool valida_esprincipal_engrid()
-        {
-            foreach (DataGridViewRow row in dataGridViewCamposTrazables.Rows)
-            {
-                if ((Boolean)row.Cells["esprincipalDataGridViewCheckBoxColumn"].Value == true) {
-                    MessageBox.Show(this, "Ya se encuentra un campo trazable principal, favor de revisar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return true;
-                }                
-            }
-            return false;
-        }
-       
     }
 }

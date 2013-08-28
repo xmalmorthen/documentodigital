@@ -267,7 +267,9 @@
     <None Include="Properties\DataSources\thumbnail.data_members.pa_CampostrazablesNoEnlazadosporExpedienteResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_CampostrazablesporExpedienteResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_DocumentosNoEnlazadosporClasificacionDocumentoResult.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.pa_DocumentosporClasificacionDocumentoResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.re_clasificaciondocumentos_documentos.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.re_expedientes_campostrazables.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -328,9 +330,8 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="assets\imgs\48x48\attention.png" />
+    <Folder Include="assets\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
