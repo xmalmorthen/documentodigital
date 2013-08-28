@@ -438,18 +438,18 @@ namespace thumbnail.data_members
 			return ((ISingleResult<pa_CampostrazablesNoEnlazadosporExpedienteResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_DocumentosNoEnlazadosporClasificacionDocumento")]
-		public ISingleResult<pa_DocumentosNoEnlazadosporClasificacionDocumentoResult> pa_DocumentosNoEnlazadosporClasificacionDocumento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_clasificacion)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_clasificacion);
-			return ((ISingleResult<pa_DocumentosNoEnlazadosporClasificacionDocumentoResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_DocumentosporClasificacionDocumento")]
 		public ISingleResult<pa_DocumentosporClasificacionDocumentoResult> pa_DocumentosporClasificacionDocumento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_clasificaciondocumento)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_clasificaciondocumento);
 			return ((ISingleResult<pa_DocumentosporClasificacionDocumentoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_DocumentosNoEnlazadosporClasificacionDocumento")]
+		public ISingleResult<pa_DocumentosNoEnlazadosporClasificacionDocumentoResult> pa_DocumentosNoEnlazadosporClasificacionDocumento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_clasificacion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_clasificacion);
+			return ((ISingleResult<pa_DocumentosNoEnlazadosporClasificacionDocumentoResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -7880,266 +7880,6 @@ namespace thumbnail.data_members
 		}
 	}
 	
-	public partial class pa_DocumentosNoEnlazadosporClasificacionDocumentoResult
-	{
-		
-		private int _ID;
-		
-		private string _NOMBRE;
-		
-		private int _ID_FORMATO;
-		
-		private string _FORMATO;
-		
-		private short _NO_HOJAS;
-		
-		private short _NO_CARAS;
-		
-		private short _ESTADO;
-		
-		private string _DESCRIPCIONESTADO;
-		
-		private bool _RESGUARDO;
-		
-		private System.Nullable<short> _TIEMPO_RESGUARDO;
-		
-		private bool _TRAZABILIDAD;
-		
-		private System.Nullable<short> _TAMANIO_CARACTERES_TRAZABLES;
-		
-		private string _MASCARA_TRAZABLE;
-		
-		private string _POLITICA;
-		
-		public pa_DocumentosNoEnlazadosporClasificacionDocumentoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this._ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string NOMBRE
-		{
-			get
-			{
-				return this._NOMBRE;
-			}
-			set
-			{
-				if ((this._NOMBRE != value))
-				{
-					this._NOMBRE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_FORMATO", DbType="Int NOT NULL")]
-		public int ID_FORMATO
-		{
-			get
-			{
-				return this._ID_FORMATO;
-			}
-			set
-			{
-				if ((this._ID_FORMATO != value))
-				{
-					this._ID_FORMATO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FORMATO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string FORMATO
-		{
-			get
-			{
-				return this._FORMATO;
-			}
-			set
-			{
-				if ((this._FORMATO != value))
-				{
-					this._FORMATO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NO_HOJAS", DbType="SmallInt NOT NULL")]
-		public short NO_HOJAS
-		{
-			get
-			{
-				return this._NO_HOJAS;
-			}
-			set
-			{
-				if ((this._NO_HOJAS != value))
-				{
-					this._NO_HOJAS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NO_CARAS", DbType="SmallInt NOT NULL")]
-		public short NO_CARAS
-		{
-			get
-			{
-				return this._NO_CARAS;
-			}
-			set
-			{
-				if ((this._NO_CARAS != value))
-				{
-					this._NO_CARAS = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="SmallInt NOT NULL")]
-		public short ESTADO
-		{
-			get
-			{
-				return this._ESTADO;
-			}
-			set
-			{
-				if ((this._ESTADO != value))
-				{
-					this._ESTADO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRIPCIONESTADO", DbType="VarChar(8)")]
-		public string DESCRIPCIONESTADO
-		{
-			get
-			{
-				return this._DESCRIPCIONESTADO;
-			}
-			set
-			{
-				if ((this._DESCRIPCIONESTADO != value))
-				{
-					this._DESCRIPCIONESTADO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RESGUARDO", DbType="Bit NOT NULL")]
-		public bool RESGUARDO
-		{
-			get
-			{
-				return this._RESGUARDO;
-			}
-			set
-			{
-				if ((this._RESGUARDO != value))
-				{
-					this._RESGUARDO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIEMPO_RESGUARDO", DbType="SmallInt")]
-		public System.Nullable<short> TIEMPO_RESGUARDO
-		{
-			get
-			{
-				return this._TIEMPO_RESGUARDO;
-			}
-			set
-			{
-				if ((this._TIEMPO_RESGUARDO != value))
-				{
-					this._TIEMPO_RESGUARDO = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRAZABILIDAD", DbType="Bit NOT NULL")]
-		public bool TRAZABILIDAD
-		{
-			get
-			{
-				return this._TRAZABILIDAD;
-			}
-			set
-			{
-				if ((this._TRAZABILIDAD != value))
-				{
-					this._TRAZABILIDAD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAMANIO_CARACTERES_TRAZABLES", DbType="SmallInt")]
-		public System.Nullable<short> TAMANIO_CARACTERES_TRAZABLES
-		{
-			get
-			{
-				return this._TAMANIO_CARACTERES_TRAZABLES;
-			}
-			set
-			{
-				if ((this._TAMANIO_CARACTERES_TRAZABLES != value))
-				{
-					this._TAMANIO_CARACTERES_TRAZABLES = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MASCARA_TRAZABLE", DbType="VarChar(200)")]
-		public string MASCARA_TRAZABLE
-		{
-			get
-			{
-				return this._MASCARA_TRAZABLE;
-			}
-			set
-			{
-				if ((this._MASCARA_TRAZABLE != value))
-				{
-					this._MASCARA_TRAZABLE = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_POLITICA", DbType="VarChar(MAX)")]
-		public string POLITICA
-		{
-			get
-			{
-				return this._POLITICA;
-			}
-			set
-			{
-				if ((this._POLITICA != value))
-				{
-					this._POLITICA = value;
-				}
-			}
-		}
-	}
-	
 	public partial class pa_DocumentosporClasificacionDocumentoResult
 	{
 		
@@ -8449,6 +8189,266 @@ namespace thumbnail.data_members
 				if ((this._estatus != value))
 				{
 					this._estatus = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_DocumentosNoEnlazadosporClasificacionDocumentoResult
+	{
+		
+		private int _ID;
+		
+		private string _NOMBRE;
+		
+		private int _ID_FORMATO;
+		
+		private string _FORMATO;
+		
+		private short _NO_HOJAS;
+		
+		private short _NO_CARAS;
+		
+		private short _ESTADO;
+		
+		private string _DESCRIPCIONESTADO;
+		
+		private bool _RESGUARDO;
+		
+		private System.Nullable<short> _TIEMPO_RESGUARDO;
+		
+		private bool _TRAZABILIDAD;
+		
+		private System.Nullable<short> _TAMANIO_CARACTERES_TRAZABLES;
+		
+		private string _MASCARA_TRAZABLE;
+		
+		private string _POLITICA;
+		
+		public pa_DocumentosNoEnlazadosporClasificacionDocumentoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOMBRE", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string NOMBRE
+		{
+			get
+			{
+				return this._NOMBRE;
+			}
+			set
+			{
+				if ((this._NOMBRE != value))
+				{
+					this._NOMBRE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_FORMATO", DbType="Int NOT NULL")]
+		public int ID_FORMATO
+		{
+			get
+			{
+				return this._ID_FORMATO;
+			}
+			set
+			{
+				if ((this._ID_FORMATO != value))
+				{
+					this._ID_FORMATO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FORMATO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string FORMATO
+		{
+			get
+			{
+				return this._FORMATO;
+			}
+			set
+			{
+				if ((this._FORMATO != value))
+				{
+					this._FORMATO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NO_HOJAS", DbType="SmallInt NOT NULL")]
+		public short NO_HOJAS
+		{
+			get
+			{
+				return this._NO_HOJAS;
+			}
+			set
+			{
+				if ((this._NO_HOJAS != value))
+				{
+					this._NO_HOJAS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NO_CARAS", DbType="SmallInt NOT NULL")]
+		public short NO_CARAS
+		{
+			get
+			{
+				return this._NO_CARAS;
+			}
+			set
+			{
+				if ((this._NO_CARAS != value))
+				{
+					this._NO_CARAS = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="SmallInt NOT NULL")]
+		public short ESTADO
+		{
+			get
+			{
+				return this._ESTADO;
+			}
+			set
+			{
+				if ((this._ESTADO != value))
+				{
+					this._ESTADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DESCRIPCIONESTADO", DbType="VarChar(8)")]
+		public string DESCRIPCIONESTADO
+		{
+			get
+			{
+				return this._DESCRIPCIONESTADO;
+			}
+			set
+			{
+				if ((this._DESCRIPCIONESTADO != value))
+				{
+					this._DESCRIPCIONESTADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RESGUARDO", DbType="Bit NOT NULL")]
+		public bool RESGUARDO
+		{
+			get
+			{
+				return this._RESGUARDO;
+			}
+			set
+			{
+				if ((this._RESGUARDO != value))
+				{
+					this._RESGUARDO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIEMPO_RESGUARDO", DbType="SmallInt")]
+		public System.Nullable<short> TIEMPO_RESGUARDO
+		{
+			get
+			{
+				return this._TIEMPO_RESGUARDO;
+			}
+			set
+			{
+				if ((this._TIEMPO_RESGUARDO != value))
+				{
+					this._TIEMPO_RESGUARDO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRAZABILIDAD", DbType="Bit NOT NULL")]
+		public bool TRAZABILIDAD
+		{
+			get
+			{
+				return this._TRAZABILIDAD;
+			}
+			set
+			{
+				if ((this._TRAZABILIDAD != value))
+				{
+					this._TRAZABILIDAD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAMANIO_CARACTERES_TRAZABLES", DbType="SmallInt")]
+		public System.Nullable<short> TAMANIO_CARACTERES_TRAZABLES
+		{
+			get
+			{
+				return this._TAMANIO_CARACTERES_TRAZABLES;
+			}
+			set
+			{
+				if ((this._TAMANIO_CARACTERES_TRAZABLES != value))
+				{
+					this._TAMANIO_CARACTERES_TRAZABLES = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MASCARA_TRAZABLE", DbType="VarChar(200)")]
+		public string MASCARA_TRAZABLE
+		{
+			get
+			{
+				return this._MASCARA_TRAZABLE;
+			}
+			set
+			{
+				if ((this._MASCARA_TRAZABLE != value))
+				{
+					this._MASCARA_TRAZABLE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_POLITICA", DbType="VarChar(MAX)")]
+		public string POLITICA
+		{
+			get
+			{
+				return this._POLITICA;
+			}
+			set
+			{
+				if ((this._POLITICA != value))
+				{
+					this._POLITICA = value;
 				}
 			}
 		}

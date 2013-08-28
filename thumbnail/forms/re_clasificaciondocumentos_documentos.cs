@@ -193,7 +193,7 @@ namespace thumbnail.forms
                 if (valida()) {
                     data_members.re_clasificaciondocumentos_documentos item = new data_members.re_clasificaciondocumentos_documentos();
 
-                    item.id_clasificaciondocumento = (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_expedientes).id;
+                    item.id_clasificaciondocumento = (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id;
                     item.id_documento = (int)lookUpEdit_Documentos.EditValue;
 
                     if (checkEdit2.Checked)
@@ -237,8 +237,8 @@ namespace thumbnail.forms
         {
             try
             {
-                actualiza_lista_documentos((bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_expedientes).id);
-                actualiza_re_clasificaciondocumentos_documentos((bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_expedientes).id);
+                actualiza_lista_documentos((bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id);
+                actualiza_re_clasificaciondocumentos_documentos((bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id);
             }
             catch (Exception)
             {

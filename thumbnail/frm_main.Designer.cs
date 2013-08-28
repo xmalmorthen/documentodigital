@@ -177,6 +177,7 @@
             this.clasificarDocumentosToolStripMenuItem.Name = "clasificarDocumentosToolStripMenuItem";
             this.clasificarDocumentosToolStripMenuItem.Size = new System.Drawing.Size(404, 24);
             this.clasificarDocumentosToolStripMenuItem.Text = "Clasificar documentos";
+            this.clasificarDocumentosToolStripMenuItem.Click += new System.EventHandler(this.clasificarDocumentosToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 

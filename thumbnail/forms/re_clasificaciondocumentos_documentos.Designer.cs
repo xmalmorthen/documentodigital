@@ -33,19 +33,18 @@
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label4;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(re_clasificaciondocumentos_documentos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txt_buscardocumento = new DevExpress.XtraEditors.TextEdit();
             this.btn_EliminarDocumento = new System.Windows.Forms.Button();
             this.bindingNavigator_campostrazables = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -56,27 +55,8 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridViewCamposTrazables = new System.Windows.Forms.DataGridView();
-            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iddocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idFormatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionFormatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noHojasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noCarasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dESCRIPCIONESTADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resguardoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tiempoResguardoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trazabilidadDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mascaraTrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.politicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
             this.lookUpEdit_Documentos = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bindingSource_documentos = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNOMBRE = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -110,9 +90,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.datagridview = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingsource_ca_clasificaciondocumentos = new System.Windows.Forms.BindingSource(this.components);
             this.btn_refrescar = new System.Windows.Forms.Button();
             this.pbfind = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
@@ -125,6 +102,29 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.estatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
+            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iddocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idFormatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionFormatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noHojasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noCarasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resguardoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tiempoResguardoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trazabilidadDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mascaraTrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.politicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSource_documentos = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingsource_ca_clasificaciondocumentos = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
@@ -135,22 +135,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscardocumento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_campostrazables)).BeginInit();
             this.bindingNavigator_campostrazables.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamposTrazables)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Documentos.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_documentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator_ca_expedientes)).BeginInit();
             this.bindingnavigator_ca_expedientes.SuspendLayout();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_clasificaciondocumentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_documentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_clasificaciondocumentos)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
@@ -214,8 +214,8 @@
             // 
             this.splitContainer.Panel2.AutoScroll = true;
             this.splitContainer.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.splitContainer.Panel2.Controls.Add(this.bindingnavigator_ca_expedientes);
             this.splitContainer.Panel2.Controls.Add(this.tlp_proc);
+            this.splitContainer.Panel2.Controls.Add(this.bindingnavigator_ca_expedientes);
             this.splitContainer.Panel2.Controls.Add(this.datagridview);
             this.splitContainer.Panel2.Controls.Add(this.btn_refrescar);
             this.splitContainer.Panel2.Controls.Add(this.pbfind);
@@ -298,10 +298,6 @@
             this.bindingNavigator_campostrazables.TabIndex = 34;
             this.bindingNavigator_campostrazables.Text = "bindingNavigator1";
             // 
-            // bindingsource
-            // 
-            this.bindingsource.DataSource = typeof(thumbnail.data_members.pa_DocumentosporClasificacionDocumentoResult);
-            // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
@@ -380,18 +376,19 @@
             this.dataGridViewCamposTrazables.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCamposTrazables.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewCamposTrazables.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCamposTrazables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCamposTrazables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewCamposTrazables.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn,
             this.iddocumentoDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
+            this.estatus,
             this.idFormatoDataGridViewTextBoxColumn,
             this.descripcionFormatoDataGridViewTextBoxColumn,
             this.noHojasDataGridViewTextBoxColumn,
@@ -405,169 +402,38 @@
             this.mascaraTrazableDataGridViewTextBoxColumn,
             this.politicaDataGridViewTextBoxColumn,
             this.idestatusDataGridViewTextBoxColumn,
-            this.estatusDataGridViewTextBoxColumn,
-            this.estatus});
+            this.estatusDataGridViewTextBoxColumn});
             this.dataGridViewCamposTrazables.DataSource = this.bindingsource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewCamposTrazables.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewCamposTrazables.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewCamposTrazables.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridViewCamposTrazables.EnableHeadersVisualStyles = false;
             this.dataGridViewCamposTrazables.Location = new System.Drawing.Point(12, 124);
             this.dataGridViewCamposTrazables.MultiSelect = false;
             this.dataGridViewCamposTrazables.Name = "dataGridViewCamposTrazables";
             this.dataGridViewCamposTrazables.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCamposTrazables.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCamposTrazables.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewCamposTrazables.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewCamposTrazables.Size = new System.Drawing.Size(952, 257);
             this.dataGridViewCamposTrazables.TabIndex = 33;
             this.dataGridViewCamposTrazables.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCamposTrazables_CellValueChanged);
             // 
-            // idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn
-            // 
-            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.DataPropertyName = "id_re_clasificaciondocumento_documento";
-            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.HeaderText = "id_re_clasificaciondocumento_documento";
-            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.Name = "idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn";
-            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iddocumentoDataGridViewTextBoxColumn
-            // 
-            this.iddocumentoDataGridViewTextBoxColumn.DataPropertyName = "id_documento";
-            this.iddocumentoDataGridViewTextBoxColumn.HeaderText = "id_documento";
-            this.iddocumentoDataGridViewTextBoxColumn.Name = "iddocumentoDataGridViewTextBoxColumn";
-            this.iddocumentoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Documento";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // idFormatoDataGridViewTextBoxColumn
-            // 
-            this.idFormatoDataGridViewTextBoxColumn.DataPropertyName = "id_Formato";
-            this.idFormatoDataGridViewTextBoxColumn.HeaderText = "id_Formato";
-            this.idFormatoDataGridViewTextBoxColumn.Name = "idFormatoDataGridViewTextBoxColumn";
-            this.idFormatoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // descripcionFormatoDataGridViewTextBoxColumn
-            // 
-            this.descripcionFormatoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionFormatoDataGridViewTextBoxColumn.DataPropertyName = "DescripcionFormato";
-            this.descripcionFormatoDataGridViewTextBoxColumn.HeaderText = "Formato";
-            this.descripcionFormatoDataGridViewTextBoxColumn.Name = "descripcionFormatoDataGridViewTextBoxColumn";
-            // 
-            // noHojasDataGridViewTextBoxColumn
-            // 
-            this.noHojasDataGridViewTextBoxColumn.DataPropertyName = "No_Hojas";
-            this.noHojasDataGridViewTextBoxColumn.HeaderText = "No_Hojas";
-            this.noHojasDataGridViewTextBoxColumn.Name = "noHojasDataGridViewTextBoxColumn";
-            this.noHojasDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // noCarasDataGridViewTextBoxColumn
-            // 
-            this.noCarasDataGridViewTextBoxColumn.DataPropertyName = "No_Caras";
-            this.noCarasDataGridViewTextBoxColumn.HeaderText = "No_Caras";
-            this.noCarasDataGridViewTextBoxColumn.Name = "noCarasDataGridViewTextBoxColumn";
-            this.noCarasDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dESCRIPCIONESTADODataGridViewTextBoxColumn
-            // 
-            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.DataPropertyName = "DESCRIPCIONESTADO";
-            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.Name = "dESCRIPCIONESTADODataGridViewTextBoxColumn";
-            // 
-            // resguardoDataGridViewCheckBoxColumn
-            // 
-            this.resguardoDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.resguardoDataGridViewCheckBoxColumn.DataPropertyName = "Resguardo";
-            this.resguardoDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resguardoDataGridViewCheckBoxColumn.HeaderText = "Resguardo";
-            this.resguardoDataGridViewCheckBoxColumn.Name = "resguardoDataGridViewCheckBoxColumn";
-            // 
-            // tiempoResguardoDataGridViewTextBoxColumn
-            // 
-            this.tiempoResguardoDataGridViewTextBoxColumn.DataPropertyName = "Tiempo_Resguardo";
-            this.tiempoResguardoDataGridViewTextBoxColumn.HeaderText = "Tiempo_Resguardo";
-            this.tiempoResguardoDataGridViewTextBoxColumn.Name = "tiempoResguardoDataGridViewTextBoxColumn";
-            this.tiempoResguardoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // trazabilidadDataGridViewCheckBoxColumn
-            // 
-            this.trazabilidadDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.trazabilidadDataGridViewCheckBoxColumn.DataPropertyName = "Trazabilidad";
-            this.trazabilidadDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.trazabilidadDataGridViewCheckBoxColumn.HeaderText = "Requiere trazabilidad";
-            this.trazabilidadDataGridViewCheckBoxColumn.Name = "trazabilidadDataGridViewCheckBoxColumn";
-            // 
-            // tamanioCaracteresTrazablesDataGridViewTextBoxColumn
-            // 
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres_Trazables";
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.HeaderText = "Tamanio_Caracteres_Trazables";
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.Name = "tamanioCaracteresTrazablesDataGridViewTextBoxColumn";
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // mascaraTrazableDataGridViewTextBoxColumn
-            // 
-            this.mascaraTrazableDataGridViewTextBoxColumn.DataPropertyName = "Mascara_Trazable";
-            this.mascaraTrazableDataGridViewTextBoxColumn.HeaderText = "Mascara_Trazable";
-            this.mascaraTrazableDataGridViewTextBoxColumn.Name = "mascaraTrazableDataGridViewTextBoxColumn";
-            this.mascaraTrazableDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // politicaDataGridViewTextBoxColumn
-            // 
-            this.politicaDataGridViewTextBoxColumn.DataPropertyName = "Politica";
-            this.politicaDataGridViewTextBoxColumn.HeaderText = "Politica";
-            this.politicaDataGridViewTextBoxColumn.Name = "politicaDataGridViewTextBoxColumn";
-            this.politicaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idestatusDataGridViewTextBoxColumn
-            // 
-            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
-            this.idestatusDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // estatusDataGridViewTextBoxColumn
-            // 
-            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "estatus";
-            this.estatusDataGridViewTextBoxColumn.HeaderText = "estatus";
-            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
-            this.estatusDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // estatus
-            // 
-            this.estatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.estatus.DataPropertyName = "estatus";
-            this.estatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.estatus.HeaderText = "Activo";
-            this.estatus.Name = "estatus";
-            this.estatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.estatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // checkEdit2
             // 
+            this.checkEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkEdit2.EditValue = true;
             this.checkEdit2.Location = new System.Drawing.Point(704, 60);
             this.checkEdit2.Name = "checkEdit2";
@@ -603,13 +469,9 @@
             this.lookUpEdit_Documentos.Properties.View = this.gridView1;
             this.lookUpEdit_Documentos.Size = new System.Drawing.Size(773, 24);
             this.lookUpEdit_Documentos.TabIndex = 29;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Falta indicar el valor";
-            this.dxValidationProvider.SetValidationRule(this.lookUpEdit_Documentos, conditionValidationRule2);
-            // 
-            // bindingSource_documentos
-            // 
-            this.bindingSource_documentos.DataSource = typeof(thumbnail.data_members.pa_DocumentosNoEnlazadosporClasificacionDocumentoResult);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Falta indicar el valor";
+            this.dxValidationProvider.SetValidationRule(this.lookUpEdit_Documentos, conditionValidationRule1);
             // 
             // gridView1
             // 
@@ -784,7 +646,7 @@
             // bindingnavigator_ca_expedientes
             // 
             this.bindingnavigator_ca_expedientes.AddNewItem = null;
-            this.bindingnavigator_ca_expedientes.BindingSource = this.bindingsource;
+            this.bindingnavigator_ca_expedientes.BindingSource = this.bindingsource_ca_clasificaciondocumentos;
             this.bindingnavigator_ca_expedientes.CountItem = this.toolStripLabel2;
             this.bindingnavigator_ca_expedientes.DeleteItem = null;
             this.bindingnavigator_ca_expedientes.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -929,26 +791,26 @@
             this.datagridview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.datagridview.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.datagridview.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.datagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn});
             this.datagridview.DataSource = this.bindingsource_ca_clasificaciondocumentos;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridview.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridview.DefaultCellStyle = dataGridViewCellStyle5;
             this.datagridview.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.datagridview.EnableHeadersVisualStyles = false;
             this.datagridview.Location = new System.Drawing.Point(12, 38);
@@ -956,39 +818,18 @@
             this.datagridview.Name = "datagridview";
             this.datagridview.ReadOnly = true;
             this.datagridview.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datagridview.Size = new System.Drawing.Size(980, 250);
             this.datagridview.TabIndex = 1;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Clasificación de documento";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bindingsource_ca_clasificaciondocumentos
-            // 
-            this.bindingsource_ca_clasificaciondocumentos.DataSource = typeof(thumbnail.data_members.ca_clasificaciontramites);
-            this.bindingsource_ca_clasificaciondocumentos.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
             // 
             // btn_refrescar
             // 
@@ -1097,6 +938,171 @@
             // 
             this.dxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
             // 
+            // estatus
+            // 
+            this.estatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.estatus.DataPropertyName = "estatus";
+            this.estatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.estatus.HeaderText = "Activo";
+            this.estatus.Name = "estatus";
+            this.estatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // bindingsource
+            // 
+            this.bindingsource.DataSource = typeof(thumbnail.data_members.pa_DocumentosporClasificacionDocumentoResult);
+            // 
+            // idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn
+            // 
+            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.DataPropertyName = "id_re_clasificaciondocumento_documento";
+            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.HeaderText = "id_re_clasificaciondocumento_documento";
+            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.Name = "idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn";
+            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iddocumentoDataGridViewTextBoxColumn
+            // 
+            this.iddocumentoDataGridViewTextBoxColumn.DataPropertyName = "id_documento";
+            this.iddocumentoDataGridViewTextBoxColumn.HeaderText = "id_documento";
+            this.iddocumentoDataGridViewTextBoxColumn.Name = "iddocumentoDataGridViewTextBoxColumn";
+            this.iddocumentoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Documento";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idFormatoDataGridViewTextBoxColumn
+            // 
+            this.idFormatoDataGridViewTextBoxColumn.DataPropertyName = "id_Formato";
+            this.idFormatoDataGridViewTextBoxColumn.HeaderText = "id_Formato";
+            this.idFormatoDataGridViewTextBoxColumn.Name = "idFormatoDataGridViewTextBoxColumn";
+            this.idFormatoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descripcionFormatoDataGridViewTextBoxColumn
+            // 
+            this.descripcionFormatoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionFormatoDataGridViewTextBoxColumn.DataPropertyName = "DescripcionFormato";
+            this.descripcionFormatoDataGridViewTextBoxColumn.HeaderText = "Formato";
+            this.descripcionFormatoDataGridViewTextBoxColumn.Name = "descripcionFormatoDataGridViewTextBoxColumn";
+            this.descripcionFormatoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // noHojasDataGridViewTextBoxColumn
+            // 
+            this.noHojasDataGridViewTextBoxColumn.DataPropertyName = "No_Hojas";
+            this.noHojasDataGridViewTextBoxColumn.HeaderText = "No_Hojas";
+            this.noHojasDataGridViewTextBoxColumn.Name = "noHojasDataGridViewTextBoxColumn";
+            this.noHojasDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // noCarasDataGridViewTextBoxColumn
+            // 
+            this.noCarasDataGridViewTextBoxColumn.DataPropertyName = "No_Caras";
+            this.noCarasDataGridViewTextBoxColumn.HeaderText = "No_Caras";
+            this.noCarasDataGridViewTextBoxColumn.Name = "noCarasDataGridViewTextBoxColumn";
+            this.noCarasDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dESCRIPCIONESTADODataGridViewTextBoxColumn
+            // 
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.DataPropertyName = "DESCRIPCIONESTADO";
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.Name = "dESCRIPCIONESTADODataGridViewTextBoxColumn";
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // resguardoDataGridViewCheckBoxColumn
+            // 
+            this.resguardoDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.resguardoDataGridViewCheckBoxColumn.DataPropertyName = "Resguardo";
+            this.resguardoDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resguardoDataGridViewCheckBoxColumn.HeaderText = "Resguardo";
+            this.resguardoDataGridViewCheckBoxColumn.Name = "resguardoDataGridViewCheckBoxColumn";
+            this.resguardoDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // tiempoResguardoDataGridViewTextBoxColumn
+            // 
+            this.tiempoResguardoDataGridViewTextBoxColumn.DataPropertyName = "Tiempo_Resguardo";
+            this.tiempoResguardoDataGridViewTextBoxColumn.HeaderText = "Tiempo_Resguardo";
+            this.tiempoResguardoDataGridViewTextBoxColumn.Name = "tiempoResguardoDataGridViewTextBoxColumn";
+            this.tiempoResguardoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // trazabilidadDataGridViewCheckBoxColumn
+            // 
+            this.trazabilidadDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.trazabilidadDataGridViewCheckBoxColumn.DataPropertyName = "Trazabilidad";
+            this.trazabilidadDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.trazabilidadDataGridViewCheckBoxColumn.HeaderText = "Requiere trazabilidad";
+            this.trazabilidadDataGridViewCheckBoxColumn.Name = "trazabilidadDataGridViewCheckBoxColumn";
+            this.trazabilidadDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // tamanioCaracteresTrazablesDataGridViewTextBoxColumn
+            // 
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres_Trazables";
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.HeaderText = "Tamanio_Caracteres_Trazables";
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.Name = "tamanioCaracteresTrazablesDataGridViewTextBoxColumn";
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // mascaraTrazableDataGridViewTextBoxColumn
+            // 
+            this.mascaraTrazableDataGridViewTextBoxColumn.DataPropertyName = "Mascara_Trazable";
+            this.mascaraTrazableDataGridViewTextBoxColumn.HeaderText = "Mascara_Trazable";
+            this.mascaraTrazableDataGridViewTextBoxColumn.Name = "mascaraTrazableDataGridViewTextBoxColumn";
+            this.mascaraTrazableDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // politicaDataGridViewTextBoxColumn
+            // 
+            this.politicaDataGridViewTextBoxColumn.DataPropertyName = "Politica";
+            this.politicaDataGridViewTextBoxColumn.HeaderText = "Politica";
+            this.politicaDataGridViewTextBoxColumn.Name = "politicaDataGridViewTextBoxColumn";
+            this.politicaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idestatusDataGridViewTextBoxColumn
+            // 
+            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
+            this.idestatusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "estatus";
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            this.estatusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // bindingSource_documentos
+            // 
+            this.bindingSource_documentos.DataSource = typeof(thumbnail.data_members.pa_DocumentosNoEnlazadosporClasificacionDocumentoResult);
+            // 
+            // bindingsource_ca_clasificaciondocumentos
+            // 
+            this.bindingsource_ca_clasificaciondocumentos.DataSource = typeof(thumbnail.data_members.ca_clasificaciontramites);
+            this.bindingsource_ca_clasificaciondocumentos.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Clasificación de documento";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // re_clasificaciondocumentos_documentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1119,11 +1125,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_campostrazables)).EndInit();
             this.bindingNavigator_campostrazables.ResumeLayout(false);
             this.bindingNavigator_campostrazables.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamposTrazables)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Documentos.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_documentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator_ca_expedientes)).EndInit();
             this.bindingnavigator_ca_expedientes.ResumeLayout(false);
@@ -1132,11 +1136,13 @@
             this.tlp_proc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_clasificaciondocumentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_documentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_clasificaciondocumentos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1217,6 +1223,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iddocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn estatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn idFormatoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionFormatoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn noHojasDataGridViewTextBoxColumn;
@@ -1231,6 +1238,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn politicaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idestatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn estatus;
     }
 }

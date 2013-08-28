@@ -251,5 +251,23 @@ namespace thumbnail
             this.Cursor = Cursors.Default;
         }
 
+        private void clasificarDocumentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            thumbnail.forms.re_clasificaciondocumentos_documentos frm = new forms.re_clasificaciondocumentos_documentos();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+            
+        }
+
     }
 }

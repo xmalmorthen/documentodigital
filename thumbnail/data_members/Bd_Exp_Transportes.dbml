@@ -403,25 +403,6 @@
       <Column Name="MASCARA" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_DocumentosNoEnlazadosporClasificacionDocumento" Method="pa_DocumentosNoEnlazadosporClasificacionDocumento">
-    <Parameter Name="id_clasificacion" Type="System.Int32" DbType="Int" />
-    <ElementType Name="pa_DocumentosNoEnlazadosporClasificacionDocumentoResult">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="ID_FORMATO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FORMATO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NO_HOJAS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="NO_CARAS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="ESTADO" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="DESCRIPCIONESTADO" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
-      <Column Name="RESGUARDO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="TIEMPO_RESGUARDO" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="TRAZABILIDAD" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="TAMANIO_CARACTERES_TRAZABLES" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="MASCARA_TRAZABLE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="POLITICA" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.pa_DocumentosporClasificacionDocumento" Method="pa_DocumentosporClasificacionDocumento">
     <Parameter Name="id_clasificaciondocumento" Type="System.Int32" DbType="Int" />
     <ElementType Name="pa_DocumentosporClasificacionDocumentoResult">
@@ -442,6 +423,25 @@
       <Column Name="Politica" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_DocumentosNoEnlazadosporClasificacionDocumento" Method="pa_DocumentosNoEnlazadosporClasificacionDocumento">
+    <Parameter Name="id_clasificacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_DocumentosNoEnlazadosporClasificacionDocumentoResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_FORMATO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FORMATO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NO_HOJAS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="NO_CARAS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="ESTADO" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCIONESTADO" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="RESGUARDO" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TIEMPO_RESGUARDO" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="TRAZABILIDAD" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TAMANIO_CARACTERES_TRAZABLES" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MASCARA_TRAZABLE" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="POLITICA" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
