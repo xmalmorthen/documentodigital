@@ -269,5 +269,10 @@ namespace thumbnail
             
         }
 
+        private void asignarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -189,6 +189,7 @@
             this.asignarToolStripMenuItem.Name = "asignarToolStripMenuItem";
             this.asignarToolStripMenuItem.Size = new System.Drawing.Size(404, 24);
             this.asignarToolStripMenuItem.Text = "Asignar clasificación de documentos a un trámite";
+            this.asignarToolStripMenuItem.Click += new System.EventHandler(this.asignarToolStripMenuItem_Click);
             // 
             // papelToolStripMenuItem
             // 

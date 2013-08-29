@@ -262,6 +262,7 @@
     <None Include="Properties\DataSources\thumbnail.data_members.ca_documentos.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_expedientes.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_formatos.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.ca_origenes.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_tramites.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_CampostrazablesActivosporExpedienteResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_CampostrazablesNoEnlazadosporExpedienteResult.datasource" />

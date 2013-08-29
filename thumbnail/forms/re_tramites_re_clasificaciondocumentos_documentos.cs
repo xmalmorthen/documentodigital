@@ -10,7 +10,7 @@ using thumbnail.data_members;
 
 namespace thumbnail.forms
 {
-    public partial class re_clasificaciondocumentos_documentos : Form
+    public partial class re_tramites_re_clasificaciondocumentos_documentos : Form
     {
         //enumeracion para el control del estado de la forma
         public enum form_mode
@@ -42,12 +42,11 @@ namespace thumbnail.forms
 
         //lista con contenido de los registros
         private List<data_members.ca_clasificaciondocumentos> lista_clasificaciondocumentos;
-        private List<data_members.ca_origenes> lista_origenes;
         private List<data_members.pa_DocumentosNoEnlazadosporClasificacionDocumentoResult> lista_documentos;
         private List<data_members.pa_DocumentosporClasificacionDocumentoResult> documentos;
         private data_members.re_clasificaciondocumentos_documentos catalogo;
 
-        public re_clasificaciondocumentos_documentos()
+        public re_tramites_re_clasificaciondocumentos_documentos()
         {
             InitializeComponent();
         }
@@ -57,44 +56,11 @@ namespace thumbnail.forms
             try
             {
                 lista_clasificaciondocumentos = Program.Bd_Exp_Transportes.GetTable<data_members.ca_clasificaciondocumentos>().ToList();
-                bindingsource_ca_clasificaciondocumentos.DataSource = lista_clasificaciondocumentos;
+                bindingsource_ca_tramites.DataSource = lista_clasificaciondocumentos;
             }
             catch (Exception)
             {
             }
-        }
-
-        private void actualiza_lista_origenes() { 
-            try
-            {
-                lista_origenes = Program.Bd_Exp_Transportes.GetTable<data_members.ca_origenes>().ToList();
-                bindingsource_origen.DataSource = lista_origenes;
-            }
-            catch (Exception)
-            {
-            }
-            
-        }
-
-
-        struct struct_orden
-        {
-            private short _orden;
-            public short orden { get { return _orden; } set { _orden = value; } }
-        }
-        private void obten_listaorden()
-        {
-            List<struct_orden> orden = new List<struct_orden>();
-            for (short i = 1; i < bindingsource.Count+1; i++)
-			{
-                struct_orden ord = new struct_orden();
-                ord.orden = i;
-			    orden.Add (ord); 
-			}
-            bindingsource_Orden.DataSource = orden;
-            colorden.DataSource = bindingsource_Orden;
-            colorden.DisplayMember = "orden";
-            colorden.ValueMember = "orden";
         }
 
         private void actualiza_lista_documentos(int? id_clasificaciondocumento)
@@ -102,7 +68,7 @@ namespace thumbnail.forms
             try
             {
                 lista_documentos = Program.Bd_Exp_Transportes.pa_DocumentosNoEnlazadosporClasificacionDocumento(id_clasificaciondocumento).ToList();
-                bindingSource_documentos.DataSource = lista_documentos;
+                bindingsource_clasificaciondocumentos.DataSource = lista_documentos;
             }
             catch (Exception)
             {
@@ -126,7 +92,6 @@ namespace thumbnail.forms
             try 
 	        {
                 actualiza_lista_clasificaciondocumentos();
-                actualiza_lista_origenes();
 	        }
 	        catch (Exception)
 	        {		
@@ -144,6 +109,7 @@ namespace thumbnail.forms
                 bindingsource.AddNew();
                 (bindingsource.Current as data_members.re_clasificaciondocumentos_documentos).id_estatus = 1;
                 lookUpEdit_Documentos.EditValue = null;
+                checkEdit2.Checked = true;
                 txt_buscardocumento.Text = "";
 	        }
 	        catch (Exception)
@@ -190,7 +156,7 @@ namespace thumbnail.forms
                 List<thumbnail.data_members.ca_clasificaciondocumentos> valores = (from query in lista_clasificaciondocumentos
                                                                     where query.Descripcion.ToString().ToLower().Contains(txt_buscar.Text.ToString().ToLower())
                                                                     select query).ToList();
-                bindingsource_ca_clasificaciondocumentos.DataSource = valores;
+                bindingsource_ca_tramites.DataSource = valores;
                 datagridview.Update();
             }
             catch (Exception)
@@ -227,13 +193,29 @@ namespace thumbnail.forms
                 if (valida()) {
                     data_members.re_clasificaciondocumentos_documentos item = new data_members.re_clasificaciondocumentos_documentos();
 
-                    item.id_clasificaciondocumento = (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id;
+                    item.id_clasificaciondocumento = (bindingsource_ca_tramites.Current as data_members.ca_clasificaciondocumentos).id;
                     item.id_documento = (int)lookUpEdit_Documentos.EditValue;
-                    item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
-                    item.obligatorio = true;
+
+                    if (checkEdit2.Checked)
+                    {
+                        item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+                    }
+                    else
+                    {
+                        if (MessageBox.Show(this, "Esta a punto de clasificar un documento inactivo, confirma la acción", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
 
                     Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.InsertOnSubmit(item);
                     Program.Bd_Exp_Transportes.SubmitChanges();
+
+                    checkEdit2.Checked = true;
                 }
             }
             catch (Exception)
@@ -255,8 +237,8 @@ namespace thumbnail.forms
         {
             try
             {
-                actualiza_lista_documentos((bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id);
-                actualiza_re_clasificaciondocumentos_documentos((bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id);
+                actualiza_lista_documentos((bindingsource_ca_tramites.Current as data_members.ca_clasificaciondocumentos).id);
+                actualiza_re_clasificaciondocumentos_documentos((bindingsource_ca_tramites.Current as data_members.ca_clasificaciondocumentos).id);
             }
             catch (Exception)
             {
@@ -334,57 +316,25 @@ namespace thumbnail.forms
         {
             if (dataGridViewCamposTrazables.IsCurrentCellInEditMode)
             {
-                this.Cursor = Cursors.WaitCursor;
-                tlp_proc.Visible = true;
-
-                Application.DoEvents();
-
                 try
                 {
+                    int newvalue_activo = dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["estatus"].Value == null ? 0 : 1;
+
                     int id_re_clasificaciondocumentos_documentos = (bindingsource.Current as data_members.pa_DocumentosporClasificacionDocumentoResult).id_re_clasificaciondocumento_documento;
 
                     data_members.re_clasificaciondocumentos_documentos item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
                         query => query.id == id_re_clasificaciondocumentos_documentos);
 
-                    //orden
-                    short orden = Int16.Parse(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["colorden"].Value.ToString());
-                    item.orden = orden;
-
-                    //activo
-                    int newvalue_activo = dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["estatus"].Value == null ? 0 : 1;
                     if (newvalue_activo == 0)
                         item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
                     else
                         item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
-
-                    //obligatorio
-                    Boolean newvalue_obligatorio = Convert.ToBoolean(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["obligatorio"].Value);
-                    item.obligatorio = newvalue_obligatorio;
-
-                    //origen
-                    int newvalue_origen = int.Parse(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["origen"].Value.ToString());
-                    item.id_origen = newvalue_origen;
-
-                    Program.Bd_Exp_Transportes.SubmitChanges();                    
+                    Program.Bd_Exp_Transportes.SubmitChanges();
                 }
                 catch (Exception)
                 {
                 }
-                actualiza_re_clasificaciondocumentos_documentos((bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id);
-
-                txt_buscardocumento.Text = "";
-
-                Application.DoEvents();
-
-                tlp_proc.Visible = false;
-                this.Cursor = Cursors.Default; 
             }
         }
-
-        private void bindingsource_CurrentItemChanged_1(object sender, EventArgs e)
-        {
-            obten_listaorden();
-        }
-
     }
 }

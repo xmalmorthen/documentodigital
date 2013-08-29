@@ -44,7 +44,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txt_buscardocumento = new DevExpress.XtraEditors.TextEdit();
             this.btn_EliminarDocumento = new System.Windows.Forms.Button();
-            this.bindingNavigator_campostrazables = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -55,7 +55,6 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridViewCamposTrazables = new System.Windows.Forms.DataGridView();
-            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
             this.lookUpEdit_Documentos = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -76,7 +75,10 @@
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.bindingnavigator_ca_expedientes = new System.Windows.Forms.BindingNavigator(this.components);
+            this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.bindingnavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
@@ -86,9 +88,6 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.datagridview = new System.Windows.Forms.DataGridView();
             this.btn_refrescar = new System.Windows.Forms.Button();
             this.pbfind = new System.Windows.Forms.PictureBox();
@@ -102,11 +101,20 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.estatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingsource_origen = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource_documentos = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingsource_ca_clasificaciondocumentos = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingsource_Orden = new System.Windows.Forms.BindingSource(this.components);
             this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iddocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colorden = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.estatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.obligatorio = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.origen = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.idFormatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionFormatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noHojasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,10 +129,7 @@
             this.politicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSource_documentos = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingsource_ca_clasificaciondocumentos = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
@@ -133,24 +138,25 @@
             this.splitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscardocumento.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_campostrazables)).BeginInit();
-            this.bindingNavigator_campostrazables.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
+            this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamposTrazables)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Documentos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator_ca_expedientes)).BeginInit();
-            this.bindingnavigator_ca_expedientes.SuspendLayout();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator2)).BeginInit();
+            this.bindingnavigator2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_origen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_documentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_clasificaciondocumentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_Orden)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
@@ -177,7 +183,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(11, 103);
+            label4.Location = new System.Drawing.Point(11, 100);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(199, 18);
             label4.TabIndex = 21;
@@ -199,9 +205,8 @@
             this.splitContainer.Panel1.Controls.Add(this.pictureBox2);
             this.splitContainer.Panel1.Controls.Add(this.txt_buscardocumento);
             this.splitContainer.Panel1.Controls.Add(this.btn_EliminarDocumento);
-            this.splitContainer.Panel1.Controls.Add(this.bindingNavigator_campostrazables);
+            this.splitContainer.Panel1.Controls.Add(this.bindingNavigator1);
             this.splitContainer.Panel1.Controls.Add(this.dataGridViewCamposTrazables);
-            this.splitContainer.Panel1.Controls.Add(this.checkEdit2);
             this.splitContainer.Panel1.Controls.Add(this.lookUpEdit_Documentos);
             this.splitContainer.Panel1.Controls.Add(label4);
             this.splitContainer.Panel1.Controls.Add(this.btn_Agregar);
@@ -215,7 +220,7 @@
             this.splitContainer.Panel2.AutoScroll = true;
             this.splitContainer.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.splitContainer.Panel2.Controls.Add(this.tlp_proc);
-            this.splitContainer.Panel2.Controls.Add(this.bindingnavigator_ca_expedientes);
+            this.splitContainer.Panel2.Controls.Add(this.bindingnavigator2);
             this.splitContainer.Panel2.Controls.Add(this.datagridview);
             this.splitContainer.Panel2.Controls.Add(this.btn_refrescar);
             this.splitContainer.Panel2.Controls.Add(this.pbfind);
@@ -230,7 +235,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::thumbnail.Icons16x16.zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(566, 103);
+            this.pictureBox2.Location = new System.Drawing.Point(946, 102);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(16, 16);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -239,7 +244,7 @@
             // 
             // txt_buscardocumento
             // 
-            this.txt_buscardocumento.Location = new System.Drawing.Point(216, 101);
+            this.txt_buscardocumento.Location = new System.Drawing.Point(596, 100);
             this.txt_buscardocumento.Name = "txt_buscardocumento";
             this.txt_buscardocumento.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txt_buscardocumento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
@@ -270,14 +275,14 @@
             this.btn_EliminarDocumento.UseVisualStyleBackColor = false;
             this.btn_EliminarDocumento.Click += new System.EventHandler(this.btn_EliminarDocumento_Click);
             // 
-            // bindingNavigator_campostrazables
+            // bindingNavigator1
             // 
-            this.bindingNavigator_campostrazables.AddNewItem = null;
-            this.bindingNavigator_campostrazables.BindingSource = this.bindingsource;
-            this.bindingNavigator_campostrazables.CountItem = this.toolStripLabel1;
-            this.bindingNavigator_campostrazables.DeleteItem = null;
-            this.bindingNavigator_campostrazables.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bindingNavigator_campostrazables.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.BindingSource = this.bindingsource;
+            this.bindingNavigator1.CountItem = this.toolStripLabel1;
+            this.bindingNavigator1.DeleteItem = null;
+            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
             this.toolStripSeparator1,
@@ -287,16 +292,16 @@
             this.toolStripButton3,
             this.toolStripButton4,
             this.toolStripSeparator3});
-            this.bindingNavigator_campostrazables.Location = new System.Drawing.Point(0, 384);
-            this.bindingNavigator_campostrazables.MoveFirstItem = this.toolStripButton1;
-            this.bindingNavigator_campostrazables.MoveLastItem = this.toolStripButton4;
-            this.bindingNavigator_campostrazables.MoveNextItem = this.toolStripButton3;
-            this.bindingNavigator_campostrazables.MovePreviousItem = this.toolStripButton2;
-            this.bindingNavigator_campostrazables.Name = "bindingNavigator_campostrazables";
-            this.bindingNavigator_campostrazables.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator_campostrazables.Size = new System.Drawing.Size(1006, 25);
-            this.bindingNavigator_campostrazables.TabIndex = 34;
-            this.bindingNavigator_campostrazables.Text = "bindingNavigator1";
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 384);
+            this.bindingNavigator1.MoveFirstItem = this.toolStripButton1;
+            this.bindingNavigator1.MoveLastItem = this.toolStripButton4;
+            this.bindingNavigator1.MoveNextItem = this.toolStripButton3;
+            this.bindingNavigator1.MovePreviousItem = this.toolStripButton2;
+            this.bindingNavigator1.Name = "bindingNavigator1";
+            this.bindingNavigator1.PositionItem = this.toolStripTextBox1;
+            this.bindingNavigator1.Size = new System.Drawing.Size(1006, 25);
+            this.bindingNavigator1.TabIndex = 34;
+            this.bindingNavigator1.Text = "bindingNavigator1";
             // 
             // toolStripLabel1
             // 
@@ -367,6 +372,7 @@
             // 
             // dataGridViewCamposTrazables
             // 
+            this.dataGridViewCamposTrazables.AllowDrop = true;
             this.dataGridViewCamposTrazables.AllowUserToAddRows = false;
             this.dataGridViewCamposTrazables.AllowUserToDeleteRows = false;
             this.dataGridViewCamposTrazables.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -388,7 +394,10 @@
             this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn,
             this.iddocumentoDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
+            this.colorden,
             this.estatus,
+            this.obligatorio,
+            this.origen,
             this.idFormatoDataGridViewTextBoxColumn,
             this.descripcionFormatoDataGridViewTextBoxColumn,
             this.noHojasDataGridViewTextBoxColumn,
@@ -402,7 +411,8 @@
             this.mascaraTrazableDataGridViewTextBoxColumn,
             this.politicaDataGridViewTextBoxColumn,
             this.idestatusDataGridViewTextBoxColumn,
-            this.estatusDataGridViewTextBoxColumn});
+            this.estatusDataGridViewTextBoxColumn,
+            this.id_origen});
             this.dataGridViewCamposTrazables.DataSource = this.bindingsource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -414,7 +424,7 @@
             this.dataGridViewCamposTrazables.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewCamposTrazables.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridViewCamposTrazables.EnableHeadersVisualStyles = false;
-            this.dataGridViewCamposTrazables.Location = new System.Drawing.Point(12, 124);
+            this.dataGridViewCamposTrazables.Location = new System.Drawing.Point(12, 122);
             this.dataGridViewCamposTrazables.MultiSelect = false;
             this.dataGridViewCamposTrazables.Name = "dataGridViewCamposTrazables";
             this.dataGridViewCamposTrazables.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -427,23 +437,9 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCamposTrazables.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewCamposTrazables.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridViewCamposTrazables.Size = new System.Drawing.Size(952, 257);
+            this.dataGridViewCamposTrazables.Size = new System.Drawing.Size(952, 259);
             this.dataGridViewCamposTrazables.TabIndex = 33;
             this.dataGridViewCamposTrazables.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCamposTrazables_CellValueChanged);
-            // 
-            // checkEdit2
-            // 
-            this.checkEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkEdit2.EditValue = true;
-            this.checkEdit2.Location = new System.Drawing.Point(704, 60);
-            this.checkEdit2.Name = "checkEdit2";
-            this.checkEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.checkEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.checkEdit2.Properties.Appearance.Options.UseFont = true;
-            this.checkEdit2.Properties.Appearance.Options.UseForeColor = true;
-            this.checkEdit2.Properties.Caption = "Activo";
-            this.checkEdit2.Size = new System.Drawing.Size(81, 28);
-            this.checkEdit2.TabIndex = 30;
             // 
             // lookUpEdit_Documentos
             // 
@@ -643,14 +639,56 @@
             this.lineShape2.Y1 = 75;
             this.lineShape2.Y2 = 75;
             // 
-            // bindingnavigator_ca_expedientes
+            // tlp_proc
             // 
-            this.bindingnavigator_ca_expedientes.AddNewItem = null;
-            this.bindingnavigator_ca_expedientes.BindingSource = this.bindingsource_ca_clasificaciondocumentos;
-            this.bindingnavigator_ca_expedientes.CountItem = this.toolStripLabel2;
-            this.bindingnavigator_ca_expedientes.DeleteItem = null;
-            this.bindingnavigator_ca_expedientes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bindingnavigator_ca_expedientes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlp_proc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlp_proc.BackColor = System.Drawing.Color.Transparent;
+            this.tlp_proc.ColumnCount = 2;
+            this.tlp_proc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_proc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_proc.Controls.Add(this.pictureBox1, 0, 0);
+            this.tlp_proc.Controls.Add(this.label2, 1, 0);
+            this.tlp_proc.Location = new System.Drawing.Point(799, 251);
+            this.tlp_proc.Name = "tlp_proc";
+            this.tlp_proc.RowCount = 1;
+            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_proc.Size = new System.Drawing.Size(195, 50);
+            this.tlp_proc.TabIndex = 22;
+            this.tlp_proc.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(48, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label2.Size = new System.Drawing.Size(145, 35);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Favor de esperar";
+            // 
+            // bindingnavigator2
+            // 
+            this.bindingnavigator2.AddNewItem = null;
+            this.bindingnavigator2.BindingSource = this.bindingsource_ca_clasificaciondocumentos;
+            this.bindingnavigator2.CountItem = this.toolStripLabel2;
+            this.bindingnavigator2.DeleteItem = null;
+            this.bindingnavigator2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingnavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton5,
             this.toolStripButton6,
             this.toolStripSeparator4,
@@ -660,16 +698,16 @@
             this.toolStripButton7,
             this.toolStripButton8,
             this.toolStripSeparator6});
-            this.bindingnavigator_ca_expedientes.Location = new System.Drawing.Point(0, 288);
-            this.bindingnavigator_ca_expedientes.MoveFirstItem = this.toolStripButton5;
-            this.bindingnavigator_ca_expedientes.MoveLastItem = this.toolStripButton8;
-            this.bindingnavigator_ca_expedientes.MoveNextItem = this.toolStripButton7;
-            this.bindingnavigator_ca_expedientes.MovePreviousItem = this.toolStripButton6;
-            this.bindingnavigator_ca_expedientes.Name = "bindingnavigator_ca_expedientes";
-            this.bindingnavigator_ca_expedientes.PositionItem = this.toolStripTextBox2;
-            this.bindingnavigator_ca_expedientes.Size = new System.Drawing.Size(1006, 25);
-            this.bindingnavigator_ca_expedientes.TabIndex = 35;
-            this.bindingnavigator_ca_expedientes.Text = "bindingNavigator1";
+            this.bindingnavigator2.Location = new System.Drawing.Point(0, 288);
+            this.bindingnavigator2.MoveFirstItem = this.toolStripButton5;
+            this.bindingnavigator2.MoveLastItem = this.toolStripButton8;
+            this.bindingnavigator2.MoveNextItem = this.toolStripButton7;
+            this.bindingnavigator2.MovePreviousItem = this.toolStripButton6;
+            this.bindingnavigator2.Name = "bindingnavigator2";
+            this.bindingnavigator2.PositionItem = this.toolStripTextBox2;
+            this.bindingnavigator2.Size = new System.Drawing.Size(1006, 25);
+            this.bindingnavigator2.TabIndex = 35;
+            this.bindingnavigator2.Text = "bindingNavigator1";
             // 
             // toolStripLabel2
             // 
@@ -737,48 +775,6 @@
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tlp_proc
-            // 
-            this.tlp_proc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlp_proc.BackColor = System.Drawing.Color.Transparent;
-            this.tlp_proc.ColumnCount = 2;
-            this.tlp_proc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlp_proc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlp_proc.Controls.Add(this.pictureBox1, 0, 0);
-            this.tlp_proc.Controls.Add(this.label2, 1, 0);
-            this.tlp_proc.Location = new System.Drawing.Point(799, 251);
-            this.tlp_proc.Name = "tlp_proc";
-            this.tlp_proc.RowCount = 1;
-            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tlp_proc.Size = new System.Drawing.Size(195, 50);
-            this.tlp_proc.TabIndex = 22;
-            this.tlp_proc.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(48, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.label2.Size = new System.Drawing.Size(145, 35);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Favor de esperar";
             // 
             // datagridview
             // 
@@ -938,19 +934,39 @@
             // 
             this.dxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
             // 
-            // estatus
-            // 
-            this.estatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.estatus.DataPropertyName = "estatus";
-            this.estatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.estatus.HeaderText = "Activo";
-            this.estatus.Name = "estatus";
-            this.estatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.estatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // bindingsource
             // 
             this.bindingsource.DataSource = typeof(thumbnail.data_members.pa_DocumentosporClasificacionDocumentoResult);
+            this.bindingsource.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged_1);
+            // 
+            // bindingsource_origen
+            // 
+            this.bindingsource_origen.DataSource = typeof(thumbnail.data_members.ca_origenes);
+            // 
+            // bindingSource_documentos
+            // 
+            this.bindingSource_documentos.DataSource = typeof(thumbnail.data_members.pa_DocumentosNoEnlazadosporClasificacionDocumentoResult);
+            // 
+            // bindingsource_ca_clasificaciondocumentos
+            // 
+            this.bindingsource_ca_clasificaciondocumentos.DataSource = typeof(thumbnail.data_members.ca_clasificaciontramites);
+            this.bindingsource_ca_clasificaciondocumentos.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Clasificación de documento";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn
             // 
@@ -974,6 +990,50 @@
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // colorden
+            // 
+            this.colorden.DataPropertyName = "orden";
+            this.colorden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colorden.HeaderText = "Orden";
+            this.colorden.Name = "colorden";
+            this.colorden.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colorden.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // estatus
+            // 
+            this.estatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.estatus.DataPropertyName = "estatus";
+            this.estatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.estatus.HeaderText = "Activo";
+            this.estatus.Name = "estatus";
+            this.estatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // obligatorio
+            // 
+            this.obligatorio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.obligatorio.DataPropertyName = "obligatorio";
+            this.obligatorio.FalseValue = "false";
+            this.obligatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.obligatorio.HeaderText = "Es obligatorio";
+            this.obligatorio.Name = "obligatorio";
+            this.obligatorio.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.obligatorio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.obligatorio.TrueValue = "true";
+            // 
+            // origen
+            // 
+            this.origen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.origen.DataPropertyName = "id_origen";
+            this.origen.DataSource = this.bindingsource_origen;
+            this.origen.DisplayMember = "Descripcion";
+            this.origen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.origen.HeaderText = "Origen";
+            this.origen.Name = "origen";
+            this.origen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.origen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.origen.ValueMember = "id";
+            // 
             // idFormatoDataGridViewTextBoxColumn
             // 
             this.idFormatoDataGridViewTextBoxColumn.DataPropertyName = "id_Formato";
@@ -988,6 +1048,7 @@
             this.descripcionFormatoDataGridViewTextBoxColumn.HeaderText = "Formato";
             this.descripcionFormatoDataGridViewTextBoxColumn.Name = "descripcionFormatoDataGridViewTextBoxColumn";
             this.descripcionFormatoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionFormatoDataGridViewTextBoxColumn.Visible = false;
             // 
             // noHojasDataGridViewTextBoxColumn
             // 
@@ -1017,6 +1078,7 @@
             this.dESCRIPCIONESTADODataGridViewTextBoxColumn.HeaderText = "Estado";
             this.dESCRIPCIONESTADODataGridViewTextBoxColumn.Name = "dESCRIPCIONESTADODataGridViewTextBoxColumn";
             this.dESCRIPCIONESTADODataGridViewTextBoxColumn.ReadOnly = true;
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.Visible = false;
             // 
             // resguardoDataGridViewCheckBoxColumn
             // 
@@ -1026,6 +1088,7 @@
             this.resguardoDataGridViewCheckBoxColumn.HeaderText = "Resguardo";
             this.resguardoDataGridViewCheckBoxColumn.Name = "resguardoDataGridViewCheckBoxColumn";
             this.resguardoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.resguardoDataGridViewCheckBoxColumn.Visible = false;
             // 
             // tiempoResguardoDataGridViewTextBoxColumn
             // 
@@ -1042,6 +1105,7 @@
             this.trazabilidadDataGridViewCheckBoxColumn.HeaderText = "Requiere trazabilidad";
             this.trazabilidadDataGridViewCheckBoxColumn.Name = "trazabilidadDataGridViewCheckBoxColumn";
             this.trazabilidadDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.trazabilidadDataGridViewCheckBoxColumn.Visible = false;
             // 
             // tamanioCaracteresTrazablesDataGridViewTextBoxColumn
             // 
@@ -1078,30 +1142,12 @@
             this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
             this.estatusDataGridViewTextBoxColumn.Visible = false;
             // 
-            // bindingSource_documentos
+            // id_origen
             // 
-            this.bindingSource_documentos.DataSource = typeof(thumbnail.data_members.pa_DocumentosNoEnlazadosporClasificacionDocumentoResult);
-            // 
-            // bindingsource_ca_clasificaciondocumentos
-            // 
-            this.bindingsource_ca_clasificaciondocumentos.DataSource = typeof(thumbnail.data_members.ca_clasificaciontramites);
-            this.bindingsource_ca_clasificaciondocumentos.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Clasificación de documento";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.id_origen.DataPropertyName = "id_origen";
+            this.id_origen.HeaderText = "id_origen";
+            this.id_origen.Name = "id_origen";
+            this.id_origen.Visible = false;
             // 
             // re_clasificaciondocumentos_documentos
             // 
@@ -1122,27 +1168,28 @@
             this.splitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscardocumento.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_campostrazables)).EndInit();
-            this.bindingNavigator_campostrazables.ResumeLayout(false);
-            this.bindingNavigator_campostrazables.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
+            this.bindingNavigator1.ResumeLayout(false);
+            this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamposTrazables)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Documentos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator_ca_expedientes)).EndInit();
-            this.bindingnavigator_ca_expedientes.ResumeLayout(false);
-            this.bindingnavigator_ca_expedientes.PerformLayout();
             this.tlp_proc.ResumeLayout(false);
             this.tlp_proc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator2)).EndInit();
+            this.bindingnavigator2.ResumeLayout(false);
+            this.bindingnavigator2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_origen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_documentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_clasificaciondocumentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_Orden)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1175,11 +1222,10 @@
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
         private System.Windows.Forms.BindingSource bindingsource_ca_clasificaciondocumentos;
         private System.Windows.Forms.Button btn_EliminarDocumento;
-        private DevExpress.XtraEditors.CheckEdit checkEdit2;
         private DevExpress.XtraEditors.GridLookUpEdit lookUpEdit_Documentos;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.DataGridView dataGridViewCamposTrazables;
-        private System.Windows.Forms.BindingNavigator bindingNavigator_campostrazables;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.BindingSource bindingSource_documentos;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
@@ -1194,7 +1240,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private DevExpress.XtraEditors.TextEdit txt_buscardocumento;
         private System.Windows.Forms.DataGridView datagridview;
-        private System.Windows.Forms.BindingNavigator bindingnavigator_ca_expedientes;
+        private System.Windows.Forms.BindingNavigator bindingnavigator2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
@@ -1220,10 +1266,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPOLITICA;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bindingsource_origen;
+        private System.Windows.Forms.BindingSource bindingsource_Orden;
         private System.Windows.Forms.DataGridViewTextBoxColumn idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iddocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colorden;
         private System.Windows.Forms.DataGridViewCheckBoxColumn estatus;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn obligatorio;
+        private System.Windows.Forms.DataGridViewComboBoxColumn origen;
         private System.Windows.Forms.DataGridViewTextBoxColumn idFormatoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionFormatoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn noHojasDataGridViewTextBoxColumn;
@@ -1238,5 +1289,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn politicaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idestatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_origen;
     }
 }
