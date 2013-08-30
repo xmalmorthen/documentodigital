@@ -85,7 +85,7 @@ namespace thumbnail.forms
         private void obten_listaorden()
         {
             List<struct_orden> orden = new List<struct_orden>();
-            for (short i = 1; i < bindingsource.Count+1; i++)
+            for (short i = 0; i < bindingsource.Count+1; i++)
 			{
                 struct_orden ord = new struct_orden();
                 ord.orden = i;
@@ -231,7 +231,13 @@ namespace thumbnail.forms
                     item.id_documento = (int)lookUpEdit_Documentos.EditValue;
                     item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
                     item.obligatorio = true;
+                    item.id_origen = (int)gridLookUpEdit1.EditValue;
 
+                    item.orden = Convert.ToInt16( Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.OrderByDescending(order => order.orden).FirstOrDefault(
+                                    query => query.id_clasificaciondocumento == item.id_clasificaciondocumento
+                                    && query.id_origen == item.id_origen
+                                    ).orden + 1);
+                    
                     Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.InsertOnSubmit(item);
                     Program.Bd_Exp_Transportes.SubmitChanges();
                 }
@@ -241,6 +247,7 @@ namespace thumbnail.forms
 		        throw;
 	        }
             bindingsource_CurrentItemChanged(null, null);
+            
         }
 
         private bool valida()
@@ -341,31 +348,99 @@ namespace thumbnail.forms
 
                 try
                 {
-                    int id_re_clasificaciondocumentos_documentos = (bindingsource.Current as data_members.pa_DocumentosporClasificacionDocumentoResult).id_re_clasificaciondocumento_documento;
+                    int new_valorden = int.Parse(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["colorden"].Value.ToString());
+                    int id_re_clasificaciondocumentos_documentos =  (bindingsource.Current as data_members.pa_DocumentosporClasificacionDocumentoResult).id_re_clasificaciondocumento_documento;
+                    if (val_ordenantiguo == new_valorden) {
+                        data_members.re_clasificaciondocumentos_documentos item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
+                            query => query.id == id_re_clasificaciondocumentos_documentos);
+                        //activo
+                        int newvalue_activo = dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["estatus"].Value == null ? 0 : 1;
+                        if (newvalue_activo == 0)
+                            item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
+                        else
+                            item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
 
-                    data_members.re_clasificaciondocumentos_documentos item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
-                        query => query.id == id_re_clasificaciondocumentos_documentos);
+                        //obligatorio
+                        Boolean newvalue_obligatorio = Convert.ToBoolean(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["obligatorio"].Value);
+                        item.obligatorio = newvalue_obligatorio;
 
-                    //orden
-                    short orden = Int16.Parse(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["colorden"].Value.ToString());
-                    item.orden = orden;
+                        //origen
+                        int newvalue_origen = int.Parse(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["origen"].Value.ToString());
+                        if (val_origen != newvalue_origen)
+                        {
+                            item.id_origen = newvalue_origen;
 
-                    //activo
-                    int newvalue_activo = dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["estatus"].Value == null ? 0 : 1;
-                    if (newvalue_activo == 0)
-                        item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
-                    else
-                        item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+                            short orden = 1;
+                            try
+                            {
+                                orden = Convert.ToInt16(Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.OrderByDescending(order => order.orden).FirstOrDefault(
+                                        query => query.id_clasificaciondocumento == item.id_clasificaciondocumento
+                                        && query.id_origen == item.id_origen
+                                        ).orden + 1);
+                            }
+                            catch (Exception)
+                            {
+                            }
+                            item.orden = orden;                            
+                        }
 
-                    //obligatorio
-                    Boolean newvalue_obligatorio = Convert.ToBoolean(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["obligatorio"].Value);
-                    item.obligatorio = newvalue_obligatorio;
+                        Program.Bd_Exp_Transportes.SubmitChanges();
+                    } else {
+                        int id_clasificaciondocumentos = (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id;
+                        if (val_ordenantiguo > new_valorden)
+                        {
+                            data_members.re_clasificaciondocumentos_documentos item =
+                                Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
+                                    query => query.id_clasificaciondocumento == id_clasificaciondocumentos
+                                    && query.orden == val_ordenantiguo
+                                    && query.id_origen == val_origen);
+                            item.orden = 0;
+                            Program.Bd_Exp_Transportes.SubmitChanges();
+                            for (int i = val_ordenantiguo - 1; i >= new_valorden; i--)
+                            {
+                                item = null;
+                                item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
+                                    query => query.id_clasificaciondocumento == id_clasificaciondocumentos
+                                    && query.orden == i
+                                    && query.id_origen == val_origen);
+                                item.orden = Convert.ToInt16(item.orden + 1);
+                                Program.Bd_Exp_Transportes.SubmitChanges();
+                            }
 
-                    //origen
-                    int newvalue_origen = int.Parse(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["origen"].Value.ToString());
-                    item.id_origen = newvalue_origen;
+                            item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
+                                    query => query.id_clasificaciondocumento == id_clasificaciondocumentos
+                                    && query.orden == 0
+                                    && query.id_origen == val_origen);
+                            item.orden = Convert.ToInt16(new_valorden);
+                            Program.Bd_Exp_Transportes.SubmitChanges();
+                        }
+                        else {
+                            data_members.re_clasificaciondocumentos_documentos item =
+                                Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
+                                    query => query.id_clasificaciondocumento == id_clasificaciondocumentos
+                                    && query.orden == val_ordenantiguo
+                                    && query.id_origen == val_origen);
+                            item.orden = 0;
+                            Program.Bd_Exp_Transportes.SubmitChanges();
+                            for (int i = val_ordenantiguo+1; i <= new_valorden; i++)
+                            {
+                                item = null;
+                                item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
+                                    query => query.id_clasificaciondocumento == id_clasificaciondocumentos
+                                    && query.orden == i
+                                    && query.id_origen == val_origen);
+                                item.orden = Convert.ToInt16(item.orden - 1);
+                                Program.Bd_Exp_Transportes.SubmitChanges();
+                            }
 
-                    Program.Bd_Exp_Transportes.SubmitChanges();                    
+                            item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
+                                    query => query.id_clasificaciondocumento == id_clasificaciondocumentos
+                                    && query.orden == 0
+                                    && query.id_origen == val_origen);
+                            item.orden = Convert.ToInt16(new_valorden);
+                            Program.Bd_Exp_Transportes.SubmitChanges();
+                        }   
+                    }
                 }
                 catch (Exception)
                 {
@@ -384,6 +459,21 @@ namespace thumbnail.forms
         private void bindingsource_CurrentItemChanged_1(object sender, EventArgs e)
         {
             obten_listaorden();
+        }
+
+        int val_ordenantiguo;
+        int ?val_origen;
+        private void dataGridViewCamposTrazables_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {            
+            try
+            {
+                val_ordenantiguo = int.Parse(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["colorden"].Value.ToString());
+                val_origen = int.Parse(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["origen"].Value.ToString());
+            }
+            catch (Exception)
+            {
+                val_origen = null;
+            }            
         }
 
     }

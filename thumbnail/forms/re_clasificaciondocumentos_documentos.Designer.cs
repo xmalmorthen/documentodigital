@@ -36,15 +36,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.Windows.Forms.Label label3;
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txt_buscardocumento = new DevExpress.XtraEditors.TextEdit();
             this.btn_EliminarDocumento = new System.Windows.Forms.Button();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -55,7 +58,31 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridViewCamposTrazables = new System.Windows.Forms.DataGridView();
+            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iddocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colorden = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.estatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.obligatorio = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.origen = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.bindingsource_origen = new System.Windows.Forms.BindingSource(this.components);
+            this.idFormatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionFormatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noHojasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noCarasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resguardoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tiempoResguardoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trazabilidadDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mascaraTrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.politicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookUpEdit_Documentos = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bindingSource_documentos = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNOMBRE = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -79,6 +106,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bindingnavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingsource_ca_clasificaciondocumentos = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
@@ -89,6 +117,8 @@
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.datagridview = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_refrescar = new System.Windows.Forms.Button();
             this.pbfind = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
@@ -101,38 +131,15 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingsource_origen = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource_documentos = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingsource_ca_clasificaciondocumentos = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingsource_Orden = new System.Windows.Forms.BindingSource(this.components);
-            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iddocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colorden = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.estatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.obligatorio = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.origen = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.idFormatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionFormatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noHojasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noCarasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dESCRIPCIONESTADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resguardoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tiempoResguardoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trazabilidadDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mascaraTrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.politicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
@@ -140,23 +147,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscardocumento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamposTrazables)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_origen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Documentos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_documentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator2)).BeginInit();
             this.bindingnavigator2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_clasificaciondocumentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_origen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_documentos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_clasificaciondocumentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingsource_Orden)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
@@ -183,7 +192,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(11, 100);
+            label4.Location = new System.Drawing.Point(11, 87);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(199, 18);
             label4.TabIndex = 21;
@@ -202,6 +211,8 @@
             // 
             this.splitContainer.Panel1.AutoScroll = true;
             this.splitContainer.Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.splitContainer.Panel1.Controls.Add(this.gridLookUpEdit1);
+            this.splitContainer.Panel1.Controls.Add(label3);
             this.splitContainer.Panel1.Controls.Add(this.pictureBox2);
             this.splitContainer.Panel1.Controls.Add(this.txt_buscardocumento);
             this.splitContainer.Panel1.Controls.Add(this.btn_EliminarDocumento);
@@ -235,7 +246,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::thumbnail.Icons16x16.zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(946, 102);
+            this.pictureBox2.Location = new System.Drawing.Point(946, 89);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(16, 16);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -244,7 +255,7 @@
             // 
             // txt_buscardocumento
             // 
-            this.txt_buscardocumento.Location = new System.Drawing.Point(596, 100);
+            this.txt_buscardocumento.Location = new System.Drawing.Point(596, 87);
             this.txt_buscardocumento.Name = "txt_buscardocumento";
             this.txt_buscardocumento.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txt_buscardocumento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
@@ -302,6 +313,11 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(1006, 25);
             this.bindingNavigator1.TabIndex = 34;
             this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // bindingsource
+            // 
+            this.bindingsource.DataSource = typeof(thumbnail.data_members.pa_DocumentosporClasificacionDocumentoResult);
+            this.bindingsource.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged_1);
             // 
             // toolStripLabel1
             // 
@@ -424,7 +440,7 @@
             this.dataGridViewCamposTrazables.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewCamposTrazables.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridViewCamposTrazables.EnableHeadersVisualStyles = false;
-            this.dataGridViewCamposTrazables.Location = new System.Drawing.Point(12, 122);
+            this.dataGridViewCamposTrazables.Location = new System.Drawing.Point(12, 113);
             this.dataGridViewCamposTrazables.MultiSelect = false;
             this.dataGridViewCamposTrazables.Name = "dataGridViewCamposTrazables";
             this.dataGridViewCamposTrazables.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -437,9 +453,195 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCamposTrazables.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewCamposTrazables.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridViewCamposTrazables.Size = new System.Drawing.Size(952, 259);
+            this.dataGridViewCamposTrazables.Size = new System.Drawing.Size(952, 268);
             this.dataGridViewCamposTrazables.TabIndex = 33;
+            this.dataGridViewCamposTrazables.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridViewCamposTrazables_CellBeginEdit);
             this.dataGridViewCamposTrazables.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCamposTrazables_CellValueChanged);
+            // 
+            // idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn
+            // 
+            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.DataPropertyName = "id_re_clasificaciondocumento_documento";
+            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.HeaderText = "id_re_clasificaciondocumento_documento";
+            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.Name = "idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn";
+            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iddocumentoDataGridViewTextBoxColumn
+            // 
+            this.iddocumentoDataGridViewTextBoxColumn.DataPropertyName = "id_documento";
+            this.iddocumentoDataGridViewTextBoxColumn.HeaderText = "id_documento";
+            this.iddocumentoDataGridViewTextBoxColumn.Name = "iddocumentoDataGridViewTextBoxColumn";
+            this.iddocumentoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Documento";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // colorden
+            // 
+            this.colorden.DataPropertyName = "orden";
+            this.colorden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colorden.HeaderText = "Orden";
+            this.colorden.Name = "colorden";
+            this.colorden.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colorden.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // estatus
+            // 
+            this.estatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.estatus.DataPropertyName = "estatus";
+            this.estatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.estatus.HeaderText = "Activo";
+            this.estatus.Name = "estatus";
+            this.estatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // obligatorio
+            // 
+            this.obligatorio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.obligatorio.DataPropertyName = "obligatorio";
+            this.obligatorio.FalseValue = "false";
+            this.obligatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.obligatorio.HeaderText = "Es obligatorio";
+            this.obligatorio.Name = "obligatorio";
+            this.obligatorio.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.obligatorio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.obligatorio.TrueValue = "true";
+            // 
+            // origen
+            // 
+            this.origen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.origen.DataPropertyName = "id_origen";
+            this.origen.DataSource = this.bindingsource_origen;
+            this.origen.DisplayMember = "Descripcion";
+            this.origen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.origen.HeaderText = "Origen";
+            this.origen.Name = "origen";
+            this.origen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.origen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.origen.ValueMember = "id";
+            // 
+            // bindingsource_origen
+            // 
+            this.bindingsource_origen.DataSource = typeof(thumbnail.data_members.ca_origenes);
+            // 
+            // idFormatoDataGridViewTextBoxColumn
+            // 
+            this.idFormatoDataGridViewTextBoxColumn.DataPropertyName = "id_Formato";
+            this.idFormatoDataGridViewTextBoxColumn.HeaderText = "id_Formato";
+            this.idFormatoDataGridViewTextBoxColumn.Name = "idFormatoDataGridViewTextBoxColumn";
+            this.idFormatoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descripcionFormatoDataGridViewTextBoxColumn
+            // 
+            this.descripcionFormatoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionFormatoDataGridViewTextBoxColumn.DataPropertyName = "DescripcionFormato";
+            this.descripcionFormatoDataGridViewTextBoxColumn.HeaderText = "Formato";
+            this.descripcionFormatoDataGridViewTextBoxColumn.Name = "descripcionFormatoDataGridViewTextBoxColumn";
+            this.descripcionFormatoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descripcionFormatoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // noHojasDataGridViewTextBoxColumn
+            // 
+            this.noHojasDataGridViewTextBoxColumn.DataPropertyName = "No_Hojas";
+            this.noHojasDataGridViewTextBoxColumn.HeaderText = "No_Hojas";
+            this.noHojasDataGridViewTextBoxColumn.Name = "noHojasDataGridViewTextBoxColumn";
+            this.noHojasDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // noCarasDataGridViewTextBoxColumn
+            // 
+            this.noCarasDataGridViewTextBoxColumn.DataPropertyName = "No_Caras";
+            this.noCarasDataGridViewTextBoxColumn.HeaderText = "No_Caras";
+            this.noCarasDataGridViewTextBoxColumn.Name = "noCarasDataGridViewTextBoxColumn";
+            this.noCarasDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dESCRIPCIONESTADODataGridViewTextBoxColumn
+            // 
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.DataPropertyName = "DESCRIPCIONESTADO";
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.Name = "dESCRIPCIONESTADODataGridViewTextBoxColumn";
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.ReadOnly = true;
+            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.Visible = false;
+            // 
+            // resguardoDataGridViewCheckBoxColumn
+            // 
+            this.resguardoDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.resguardoDataGridViewCheckBoxColumn.DataPropertyName = "Resguardo";
+            this.resguardoDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resguardoDataGridViewCheckBoxColumn.HeaderText = "Resguardo";
+            this.resguardoDataGridViewCheckBoxColumn.Name = "resguardoDataGridViewCheckBoxColumn";
+            this.resguardoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.resguardoDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // tiempoResguardoDataGridViewTextBoxColumn
+            // 
+            this.tiempoResguardoDataGridViewTextBoxColumn.DataPropertyName = "Tiempo_Resguardo";
+            this.tiempoResguardoDataGridViewTextBoxColumn.HeaderText = "Tiempo_Resguardo";
+            this.tiempoResguardoDataGridViewTextBoxColumn.Name = "tiempoResguardoDataGridViewTextBoxColumn";
+            this.tiempoResguardoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // trazabilidadDataGridViewCheckBoxColumn
+            // 
+            this.trazabilidadDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.trazabilidadDataGridViewCheckBoxColumn.DataPropertyName = "Trazabilidad";
+            this.trazabilidadDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.trazabilidadDataGridViewCheckBoxColumn.HeaderText = "Requiere trazabilidad";
+            this.trazabilidadDataGridViewCheckBoxColumn.Name = "trazabilidadDataGridViewCheckBoxColumn";
+            this.trazabilidadDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.trazabilidadDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // tamanioCaracteresTrazablesDataGridViewTextBoxColumn
+            // 
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres_Trazables";
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.HeaderText = "Tamanio_Caracteres_Trazables";
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.Name = "tamanioCaracteresTrazablesDataGridViewTextBoxColumn";
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // mascaraTrazableDataGridViewTextBoxColumn
+            // 
+            this.mascaraTrazableDataGridViewTextBoxColumn.DataPropertyName = "Mascara_Trazable";
+            this.mascaraTrazableDataGridViewTextBoxColumn.HeaderText = "Mascara_Trazable";
+            this.mascaraTrazableDataGridViewTextBoxColumn.Name = "mascaraTrazableDataGridViewTextBoxColumn";
+            this.mascaraTrazableDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // politicaDataGridViewTextBoxColumn
+            // 
+            this.politicaDataGridViewTextBoxColumn.DataPropertyName = "Politica";
+            this.politicaDataGridViewTextBoxColumn.HeaderText = "Politica";
+            this.politicaDataGridViewTextBoxColumn.Name = "politicaDataGridViewTextBoxColumn";
+            this.politicaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idestatusDataGridViewTextBoxColumn
+            // 
+            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
+            this.idestatusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "estatus";
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            this.estatusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // id_origen
+            // 
+            this.id_origen.DataPropertyName = "id_origen";
+            this.id_origen.HeaderText = "id_origen";
+            this.id_origen.Name = "id_origen";
+            this.id_origen.Visible = false;
             // 
             // lookUpEdit_Documentos
             // 
@@ -463,11 +665,15 @@
             this.lookUpEdit_Documentos.Properties.PopupFormSize = new System.Drawing.Size(790, 0);
             this.lookUpEdit_Documentos.Properties.ValueMember = "ID";
             this.lookUpEdit_Documentos.Properties.View = this.gridView1;
-            this.lookUpEdit_Documentos.Size = new System.Drawing.Size(773, 24);
+            this.lookUpEdit_Documentos.Size = new System.Drawing.Size(498, 24);
             this.lookUpEdit_Documentos.TabIndex = 29;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Falta indicar el valor";
-            this.dxValidationProvider.SetValidationRule(this.lookUpEdit_Documentos, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Falta indicar el valor";
+            this.dxValidationProvider.SetValidationRule(this.lookUpEdit_Documentos, conditionValidationRule2);
+            // 
+            // bindingSource_documentos
+            // 
+            this.bindingSource_documentos.DataSource = typeof(thumbnail.data_members.pa_DocumentosNoEnlazadosporClasificacionDocumentoResult);
             // 
             // gridView1
             // 
@@ -709,6 +915,11 @@
             this.bindingnavigator2.TabIndex = 35;
             this.bindingnavigator2.Text = "bindingNavigator1";
             // 
+            // bindingsource_ca_clasificaciondocumentos
+            // 
+            this.bindingsource_ca_clasificaciondocumentos.DataSource = typeof(thumbnail.data_members.ca_clasificaciontramites);
+            this.bindingsource_ca_clasificaciondocumentos.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
+            // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
@@ -827,6 +1038,22 @@
             this.datagridview.Size = new System.Drawing.Size(980, 250);
             this.datagridview.TabIndex = 1;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Clasificación de documento";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // btn_refrescar
             // 
             this.btn_refrescar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -934,220 +1161,72 @@
             // 
             this.dxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
             // 
-            // bindingsource
+            // gridLookUpEdit1
             // 
-            this.bindingsource.DataSource = typeof(thumbnail.data_members.pa_DocumentosporClasificacionDocumentoResult);
-            this.bindingsource.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged_1);
+            this.gridLookUpEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridLookUpEdit1.Location = new System.Drawing.Point(516, 30);
+            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
+            this.gridLookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.gridLookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.gridLookUpEdit1.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.gridLookUpEdit1.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.gridLookUpEdit1.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+            this.gridLookUpEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit1.Properties.DataSource = this.bindingsource_origen;
+            this.gridLookUpEdit1.Properties.DisplayMember = "Descripcion";
+            this.gridLookUpEdit1.Properties.ImmediatePopup = true;
+            this.gridLookUpEdit1.Properties.LookAndFeel.SkinName = "VS2010";
+            this.gridLookUpEdit1.Properties.NullText = "";
+            this.gridLookUpEdit1.Properties.PopupFormSize = new System.Drawing.Size(790, 0);
+            this.gridLookUpEdit1.Properties.ValueMember = "id";
+            this.gridLookUpEdit1.Properties.View = this.gridView2;
+            this.gridLookUpEdit1.Size = new System.Drawing.Size(258, 24);
+            this.gridLookUpEdit1.TabIndex = 38;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Falta indicar el valor";
+            this.dxValidationProvider.SetValidationRule(this.gridLookUpEdit1, conditionValidationRule1);
             // 
-            // bindingsource_origen
+            // gridView2
             // 
-            this.bindingsource_origen.DataSource = typeof(thumbnail.data_members.ca_origenes);
+            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridView2.Appearance.Row.Options.UseFont = true;
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid1,
+            this.colDescripcion});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.GroupFormat = "[#image]{1} {2}";
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.AutoExpandAllGroups = true;
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // bindingSource_documentos
+            // label3
             // 
-            this.bindingSource_documentos.DataSource = typeof(thumbnail.data_members.pa_DocumentosNoEnlazadosporClasificacionDocumentoResult);
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label3.Location = new System.Drawing.Point(513, 9);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(58, 18);
+            label3.TabIndex = 37;
+            label3.Text = "Origen";
             // 
-            // bindingsource_ca_clasificaciondocumentos
+            // colid1
             // 
-            this.bindingsource_ca_clasificaciondocumentos.DataSource = typeof(thumbnail.data_members.ca_clasificaciontramites);
-            this.bindingsource_ca_clasificaciondocumentos.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
+            this.colid1.FieldName = "id";
+            this.colid1.Name = "colid1";
             // 
-            // idDataGridViewTextBoxColumn
+            // colDescripcion
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Clasificación de documento";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn
-            // 
-            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.DataPropertyName = "id_re_clasificaciondocumento_documento";
-            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.HeaderText = "id_re_clasificaciondocumento_documento";
-            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.Name = "idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn";
-            this.idreclasificaciondocumentodocumentoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iddocumentoDataGridViewTextBoxColumn
-            // 
-            this.iddocumentoDataGridViewTextBoxColumn.DataPropertyName = "id_documento";
-            this.iddocumentoDataGridViewTextBoxColumn.HeaderText = "id_documento";
-            this.iddocumentoDataGridViewTextBoxColumn.Name = "iddocumentoDataGridViewTextBoxColumn";
-            this.iddocumentoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Documento";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // colorden
-            // 
-            this.colorden.DataPropertyName = "orden";
-            this.colorden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colorden.HeaderText = "Orden";
-            this.colorden.Name = "colorden";
-            this.colorden.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colorden.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // estatus
-            // 
-            this.estatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.estatus.DataPropertyName = "estatus";
-            this.estatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.estatus.HeaderText = "Activo";
-            this.estatus.Name = "estatus";
-            this.estatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.estatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // obligatorio
-            // 
-            this.obligatorio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.obligatorio.DataPropertyName = "obligatorio";
-            this.obligatorio.FalseValue = "false";
-            this.obligatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.obligatorio.HeaderText = "Es obligatorio";
-            this.obligatorio.Name = "obligatorio";
-            this.obligatorio.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.obligatorio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.obligatorio.TrueValue = "true";
-            // 
-            // origen
-            // 
-            this.origen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.origen.DataPropertyName = "id_origen";
-            this.origen.DataSource = this.bindingsource_origen;
-            this.origen.DisplayMember = "Descripcion";
-            this.origen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.origen.HeaderText = "Origen";
-            this.origen.Name = "origen";
-            this.origen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.origen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.origen.ValueMember = "id";
-            // 
-            // idFormatoDataGridViewTextBoxColumn
-            // 
-            this.idFormatoDataGridViewTextBoxColumn.DataPropertyName = "id_Formato";
-            this.idFormatoDataGridViewTextBoxColumn.HeaderText = "id_Formato";
-            this.idFormatoDataGridViewTextBoxColumn.Name = "idFormatoDataGridViewTextBoxColumn";
-            this.idFormatoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // descripcionFormatoDataGridViewTextBoxColumn
-            // 
-            this.descripcionFormatoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionFormatoDataGridViewTextBoxColumn.DataPropertyName = "DescripcionFormato";
-            this.descripcionFormatoDataGridViewTextBoxColumn.HeaderText = "Formato";
-            this.descripcionFormatoDataGridViewTextBoxColumn.Name = "descripcionFormatoDataGridViewTextBoxColumn";
-            this.descripcionFormatoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionFormatoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // noHojasDataGridViewTextBoxColumn
-            // 
-            this.noHojasDataGridViewTextBoxColumn.DataPropertyName = "No_Hojas";
-            this.noHojasDataGridViewTextBoxColumn.HeaderText = "No_Hojas";
-            this.noHojasDataGridViewTextBoxColumn.Name = "noHojasDataGridViewTextBoxColumn";
-            this.noHojasDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // noCarasDataGridViewTextBoxColumn
-            // 
-            this.noCarasDataGridViewTextBoxColumn.DataPropertyName = "No_Caras";
-            this.noCarasDataGridViewTextBoxColumn.HeaderText = "No_Caras";
-            this.noCarasDataGridViewTextBoxColumn.Name = "noCarasDataGridViewTextBoxColumn";
-            this.noCarasDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // dESCRIPCIONESTADODataGridViewTextBoxColumn
-            // 
-            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.DataPropertyName = "DESCRIPCIONESTADO";
-            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.Name = "dESCRIPCIONESTADODataGridViewTextBoxColumn";
-            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.ReadOnly = true;
-            this.dESCRIPCIONESTADODataGridViewTextBoxColumn.Visible = false;
-            // 
-            // resguardoDataGridViewCheckBoxColumn
-            // 
-            this.resguardoDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.resguardoDataGridViewCheckBoxColumn.DataPropertyName = "Resguardo";
-            this.resguardoDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resguardoDataGridViewCheckBoxColumn.HeaderText = "Resguardo";
-            this.resguardoDataGridViewCheckBoxColumn.Name = "resguardoDataGridViewCheckBoxColumn";
-            this.resguardoDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.resguardoDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // tiempoResguardoDataGridViewTextBoxColumn
-            // 
-            this.tiempoResguardoDataGridViewTextBoxColumn.DataPropertyName = "Tiempo_Resguardo";
-            this.tiempoResguardoDataGridViewTextBoxColumn.HeaderText = "Tiempo_Resguardo";
-            this.tiempoResguardoDataGridViewTextBoxColumn.Name = "tiempoResguardoDataGridViewTextBoxColumn";
-            this.tiempoResguardoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // trazabilidadDataGridViewCheckBoxColumn
-            // 
-            this.trazabilidadDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.trazabilidadDataGridViewCheckBoxColumn.DataPropertyName = "Trazabilidad";
-            this.trazabilidadDataGridViewCheckBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.trazabilidadDataGridViewCheckBoxColumn.HeaderText = "Requiere trazabilidad";
-            this.trazabilidadDataGridViewCheckBoxColumn.Name = "trazabilidadDataGridViewCheckBoxColumn";
-            this.trazabilidadDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.trazabilidadDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // tamanioCaracteresTrazablesDataGridViewTextBoxColumn
-            // 
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres_Trazables";
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.HeaderText = "Tamanio_Caracteres_Trazables";
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.Name = "tamanioCaracteresTrazablesDataGridViewTextBoxColumn";
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // mascaraTrazableDataGridViewTextBoxColumn
-            // 
-            this.mascaraTrazableDataGridViewTextBoxColumn.DataPropertyName = "Mascara_Trazable";
-            this.mascaraTrazableDataGridViewTextBoxColumn.HeaderText = "Mascara_Trazable";
-            this.mascaraTrazableDataGridViewTextBoxColumn.Name = "mascaraTrazableDataGridViewTextBoxColumn";
-            this.mascaraTrazableDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // politicaDataGridViewTextBoxColumn
-            // 
-            this.politicaDataGridViewTextBoxColumn.DataPropertyName = "Politica";
-            this.politicaDataGridViewTextBoxColumn.HeaderText = "Politica";
-            this.politicaDataGridViewTextBoxColumn.Name = "politicaDataGridViewTextBoxColumn";
-            this.politicaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idestatusDataGridViewTextBoxColumn
-            // 
-            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
-            this.idestatusDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // estatusDataGridViewTextBoxColumn
-            // 
-            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "estatus";
-            this.estatusDataGridViewTextBoxColumn.HeaderText = "estatus";
-            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
-            this.estatusDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // id_origen
-            // 
-            this.id_origen.DataPropertyName = "id_origen";
-            this.id_origen.HeaderText = "id_origen";
-            this.id_origen.Name = "id_origen";
-            this.id_origen.Visible = false;
+            this.colDescripcion.Caption = "Origen";
+            this.colDescripcion.FieldName = "Descripcion";
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.Visible = true;
+            this.colDescripcion.VisibleIndex = 0;
             // 
             // re_clasificaciondocumentos_documentos
             // 
@@ -1171,8 +1250,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamposTrazables)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_origen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Documentos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_documentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.tlp_proc.ResumeLayout(false);
             this.tlp_proc.PerformLayout();
@@ -1180,16 +1262,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingnavigator2)).EndInit();
             this.bindingnavigator2.ResumeLayout(false);
             this.bindingnavigator2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_clasificaciondocumentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_origen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_documentos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_clasificaciondocumentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingsource_Orden)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1290,5 +1371,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idestatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_origen;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colid1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescripcion;
     }
 }
