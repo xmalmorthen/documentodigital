@@ -140,11 +140,8 @@ namespace thumbnail.forms
         {
             try 
 	        {
-                bindingsource.CancelEdit();
-                bindingsource.AddNew();
-                (bindingsource.Current as data_members.re_clasificaciondocumentos_documentos).id_estatus = 1;
                 lookUpEdit_Documentos.EditValue = null;
-                txt_buscardocumento.Text = "";
+                gridLookUpEdit1.EditValue = null;
 	        }
 	        catch (Exception)
 	        {
@@ -233,21 +230,29 @@ namespace thumbnail.forms
                     item.obligatorio = true;
                     item.id_origen = (int)gridLookUpEdit1.EditValue;
 
-                    item.orden = Convert.ToInt16( Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.OrderByDescending(order => order.orden).FirstOrDefault(
+                    try
+                    {
+                        item.orden = Convert.ToInt16(Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.OrderByDescending(order => order.orden).FirstOrDefault(
                                     query => query.id_clasificaciondocumento == item.id_clasificaciondocumento
                                     && query.id_origen == item.id_origen
                                     ).orden + 1);
+                    }
+                    catch (Exception)
+                    {
+                        item.orden = 1;                        
+                    }                    
                     
                     Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.InsertOnSubmit(item);
                     Program.Bd_Exp_Transportes.SubmitChanges();
+
+                    limpiar_controles();
                 }
             }
             catch (Exception)
 	        {		
 		        throw;
 	        }
-            bindingsource_CurrentItemChanged(null, null);
-            
+            bindingsource_CurrentItemChanged(null, null);            
         }
 
         private bool valida()
@@ -364,81 +369,35 @@ namespace thumbnail.forms
                         Boolean newvalue_obligatorio = Convert.ToBoolean(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["obligatorio"].Value);
                         item.obligatorio = newvalue_obligatorio;
 
+                        Program.Bd_Exp_Transportes.SubmitChanges();
+
                         //origen
                         int newvalue_origen = int.Parse(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["origen"].Value.ToString());
                         if (val_origen != newvalue_origen)
                         {
-                            item.id_origen = newvalue_origen;
+                            Program.Bd_Exp_Transportes.pa_ordenaporcambiodeorigen(
+                                (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id, 
+                                val_origen, 
+                                val_ordenantiguo, 
+                                newvalue_origen);
+                        }                       
 
-                            short orden = 1;
-                            try
-                            {
-                                orden = Convert.ToInt16(Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.OrderByDescending(order => order.orden).FirstOrDefault(
-                                        query => query.id_clasificaciondocumento == item.id_clasificaciondocumento
-                                        && query.id_origen == item.id_origen
-                                        ).orden + 1);
-                            }
-                            catch (Exception)
-                            {
-                            }
-                            item.orden = orden;                            
-                        }
-
-                        Program.Bd_Exp_Transportes.SubmitChanges();
                     } else {
                         int id_clasificaciondocumentos = (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id;
                         if (val_ordenantiguo > new_valorden)
                         {
-                            data_members.re_clasificaciondocumentos_documentos item =
-                                Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
-                                    query => query.id_clasificaciondocumento == id_clasificaciondocumentos
-                                    && query.orden == val_ordenantiguo
-                                    && query.id_origen == val_origen);
-                            item.orden = 0;
-                            Program.Bd_Exp_Transportes.SubmitChanges();
-                            for (int i = val_ordenantiguo - 1; i >= new_valorden; i--)
-                            {
-                                item = null;
-                                item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
-                                    query => query.id_clasificaciondocumento == id_clasificaciondocumentos
-                                    && query.orden == i
-                                    && query.id_origen == val_origen);
-                                item.orden = Convert.ToInt16(item.orden + 1);
-                                Program.Bd_Exp_Transportes.SubmitChanges();
-                            }
-
-                            item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
-                                    query => query.id_clasificaciondocumento == id_clasificaciondocumentos
-                                    && query.orden == 0
-                                    && query.id_origen == val_origen);
-                            item.orden = Convert.ToInt16(new_valorden);
-                            Program.Bd_Exp_Transportes.SubmitChanges();
+                            Program.Bd_Exp_Transportes.pa_ordenaporordenmenor(
+                                (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id,
+                                val_origen,
+                                new_valorden,
+                                val_ordenantiguo);
                         }
                         else {
-                            data_members.re_clasificaciondocumentos_documentos item =
-                                Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
-                                    query => query.id_clasificaciondocumento == id_clasificaciondocumentos
-                                    && query.orden == val_ordenantiguo
-                                    && query.id_origen == val_origen);
-                            item.orden = 0;
-                            Program.Bd_Exp_Transportes.SubmitChanges();
-                            for (int i = val_ordenantiguo+1; i <= new_valorden; i++)
-                            {
-                                item = null;
-                                item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
-                                    query => query.id_clasificaciondocumento == id_clasificaciondocumentos
-                                    && query.orden == i
-                                    && query.id_origen == val_origen);
-                                item.orden = Convert.ToInt16(item.orden - 1);
-                                Program.Bd_Exp_Transportes.SubmitChanges();
-                            }
-
-                            item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
-                                    query => query.id_clasificaciondocumento == id_clasificaciondocumentos
-                                    && query.orden == 0
-                                    && query.id_origen == val_origen);
-                            item.orden = Convert.ToInt16(new_valorden);
-                            Program.Bd_Exp_Transportes.SubmitChanges();
+                            Program.Bd_Exp_Transportes.pa_ordenaporordenmayor(
+                                (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id,
+                                val_origen,
+                                val_ordenantiguo,
+                                new_valorden);
                         }   
                     }
                 }
@@ -474,6 +433,21 @@ namespace thumbnail.forms
             {
                 val_origen = null;
             }            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            actualiza_re_clasificaciondocumentos_documentos((bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id);
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default; 
         }
 
     }

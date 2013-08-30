@@ -359,13 +359,6 @@
       <Column Name="estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_ClasificacionDocumentosporTramite" Method="pa_ClasificacionDocumentosporTramite">
-    <Parameter Name="id_tramite" Type="System.Int32" DbType="Int" />
-    <ElementType Name="pa_ClasificacionDocumentosporTramiteResult">
-      <Column Name="id_clasificaciondocumento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.pa_DocumentosNoEnlazadosporClasificacionDocumento" Method="pa_DocumentosNoEnlazadosporClasificacionDocumento">
     <Parameter Name="id_clasificacion" Type="System.Int32" DbType="Int" />
     <ElementType Name="pa_DocumentosNoEnlazadosporClasificacionDocumentoResult">
@@ -433,6 +426,42 @@
       <Column Name="origen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="orden" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="obligatorio" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_ordenaporordenmayor" Method="pa_ordenaporordenmayor">
+    <Parameter Name="ID_CLASIFICACIONDOCUMENTO" Parameter="iD_CLASIFICACIONDOCUMENTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_ORIGEN" Parameter="iD_ORIGEN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ORDENDEPARTIDA" Parameter="oRDENDEPARTIDA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ORDENDEFIN" Parameter="oRDENDEFIN" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.pa_ordenaporordenmenor" Method="pa_ordenaporordenmenor">
+    <Parameter Name="ID_CLASIFICACIONDOCUMENTO" Parameter="iD_CLASIFICACIONDOCUMENTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_ORIGEN" Parameter="iD_ORIGEN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ORDENDEPARTIDA" Parameter="oRDENDEPARTIDA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ORDENDEFIN" Parameter="oRDENDEFIN" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.pa_ordenaporcambiodeorigen" Method="pa_ordenaporcambiodeorigen">
+    <Parameter Name="ID_CLASIFICACIONDOCUMENTO" Parameter="iD_CLASIFICACIONDOCUMENTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_ORIGEN" Parameter="iD_ORIGEN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ORDENDEPARTIDA" Parameter="oRDENDEPARTIDA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_NUEVOORIGEN" Parameter="iD_NUEVOORIGEN" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.pa_ClasificacionDocumentosporTramite" Method="pa_ClasificacionDocumentosporTramite">
+    <Parameter Name="id_tramite" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_ClasificacionDocumentosporTramiteResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_clasificaciondocumento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_ClasificacionDocumentosNoEnlazadosporTramite" Method="pa_ClasificacionDocumentosNoEnlazadosporTramite">
+    <Parameter Name="id_tramite" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_ClasificacionDocumentosNoEnlazadosporTramiteResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

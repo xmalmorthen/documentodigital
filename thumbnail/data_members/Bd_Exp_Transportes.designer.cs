@@ -417,13 +417,6 @@ namespace thumbnail.data_members
 			return ((ISingleResult<pa_CampostrazablesporExpedienteResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ClasificacionDocumentosporTramite")]
-		public ISingleResult<pa_ClasificacionDocumentosporTramiteResult> pa_ClasificacionDocumentosporTramite([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tramite)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_tramite);
-			return ((ISingleResult<pa_ClasificacionDocumentosporTramiteResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_DocumentosNoEnlazadosporClasificacionDocumento")]
 		public ISingleResult<pa_DocumentosNoEnlazadosporClasificacionDocumentoResult> pa_DocumentosNoEnlazadosporClasificacionDocumento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_clasificacion)
 		{
@@ -457,6 +450,41 @@ namespace thumbnail.data_members
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_clasificaciondocumento);
 			return ((ISingleResult<pa_DocumentosporClasificacionDocumentoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ordenaporordenmayor")]
+		public int pa_ordenaporordenmayor([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_CLASIFICACIONDOCUMENTO", DbType="Int")] System.Nullable<int> iD_CLASIFICACIONDOCUMENTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ORIGEN", DbType="Int")] System.Nullable<int> iD_ORIGEN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ORDENDEPARTIDA", DbType="Int")] System.Nullable<int> oRDENDEPARTIDA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ORDENDEFIN", DbType="Int")] System.Nullable<int> oRDENDEFIN)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_CLASIFICACIONDOCUMENTO, iD_ORIGEN, oRDENDEPARTIDA, oRDENDEFIN);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ordenaporordenmenor")]
+		public int pa_ordenaporordenmenor([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_CLASIFICACIONDOCUMENTO", DbType="Int")] System.Nullable<int> iD_CLASIFICACIONDOCUMENTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ORIGEN", DbType="Int")] System.Nullable<int> iD_ORIGEN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ORDENDEPARTIDA", DbType="Int")] System.Nullable<int> oRDENDEPARTIDA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ORDENDEFIN", DbType="Int")] System.Nullable<int> oRDENDEFIN)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_CLASIFICACIONDOCUMENTO, iD_ORIGEN, oRDENDEPARTIDA, oRDENDEFIN);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ordenaporcambiodeorigen")]
+		public int pa_ordenaporcambiodeorigen([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_CLASIFICACIONDOCUMENTO", DbType="Int")] System.Nullable<int> iD_CLASIFICACIONDOCUMENTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ORIGEN", DbType="Int")] System.Nullable<int> iD_ORIGEN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ORDENDEPARTIDA", DbType="Int")] System.Nullable<int> oRDENDEPARTIDA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_NUEVOORIGEN", DbType="Int")] System.Nullable<int> iD_NUEVOORIGEN)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_CLASIFICACIONDOCUMENTO, iD_ORIGEN, oRDENDEPARTIDA, iD_NUEVOORIGEN);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ClasificacionDocumentosporTramite")]
+		public ISingleResult<pa_ClasificacionDocumentosporTramiteResult> pa_ClasificacionDocumentosporTramite([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tramite)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_tramite);
+			return ((ISingleResult<pa_ClasificacionDocumentosporTramiteResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ClasificacionDocumentosNoEnlazadosporTramite")]
+		public ISingleResult<pa_ClasificacionDocumentosNoEnlazadosporTramiteResult> pa_ClasificacionDocumentosNoEnlazadosporTramite([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tramite)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_tramite);
+			return ((ISingleResult<pa_ClasificacionDocumentosNoEnlazadosporTramiteResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -7321,50 +7349,6 @@ namespace thumbnail.data_members
 		}
 	}
 	
-	public partial class pa_ClasificacionDocumentosporTramiteResult
-	{
-		
-		private int _id_clasificaciondocumento;
-		
-		private string _Descripcion;
-		
-		public pa_ClasificacionDocumentosporTramiteResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_clasificaciondocumento", DbType="Int NOT NULL")]
-		public int id_clasificaciondocumento
-		{
-			get
-			{
-				return this._id_clasificaciondocumento;
-			}
-			set
-			{
-				if ((this._id_clasificaciondocumento != value))
-				{
-					this._id_clasificaciondocumento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Descripcion
-		{
-			get
-			{
-				return this._Descripcion;
-			}
-			set
-			{
-				if ((this._Descripcion != value))
-				{
-					this._Descripcion = value;
-				}
-			}
-		}
-	}
-	
 	public partial class pa_DocumentosNoEnlazadosporClasificacionDocumentoResult
 	{
 		
@@ -8210,6 +8194,112 @@ namespace thumbnail.data_members
 				if ((this._obligatorio != value))
 				{
 					this._obligatorio = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_ClasificacionDocumentosporTramiteResult
+	{
+		
+		private int _id;
+		
+		private int _id_clasificaciondocumento;
+		
+		private string _Descripcion;
+		
+		public pa_ClasificacionDocumentosporTramiteResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_clasificaciondocumento", DbType="Int NOT NULL")]
+		public int id_clasificaciondocumento
+		{
+			get
+			{
+				return this._id_clasificaciondocumento;
+			}
+			set
+			{
+				if ((this._id_clasificaciondocumento != value))
+				{
+					this._id_clasificaciondocumento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_ClasificacionDocumentosNoEnlazadosporTramiteResult
+	{
+		
+		private int _id;
+		
+		private string _Descripcion;
+		
+		public pa_ClasificacionDocumentosNoEnlazadosporTramiteResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
 				}
 			}
 		}

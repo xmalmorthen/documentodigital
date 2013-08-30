@@ -271,7 +271,20 @@ namespace thumbnail
 
         private void asignarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
 
+            Application.DoEvents();
+
+            thumbnail.forms.re_tramites_clasificaciondocumentos frm = new forms.re_tramites_clasificaciondocumentos();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+            
         }
 
     }
