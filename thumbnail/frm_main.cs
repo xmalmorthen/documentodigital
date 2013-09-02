@@ -287,5 +287,24 @@ namespace thumbnail
             
         }
 
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            thumbnail.forms.ca_usuarios frm = new forms.ca_usuarios();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+
+            
+        }
+
     }
 }

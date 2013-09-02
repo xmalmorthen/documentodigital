@@ -260,6 +260,7 @@
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.usuariosToolStripMenuItem.Tag = "3,2";
             this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
