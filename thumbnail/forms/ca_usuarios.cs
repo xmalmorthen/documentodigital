@@ -307,21 +307,19 @@ namespace thumbnail.forms
         {
             List<data_members.re_usuarios_roles_permisos> detalles = new List<re_usuarios_roles_permisos>();
 
-            rolesBindingSource.MoveFirst();
-            while (rolesBindingSource.Current != null)
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                data_members.pa_RolesporIdUsuarioResult item = ((data_members.pa_RolesporIdUsuarioResult)rolesBindingSource.Current);
-                if (item.ENLAZADO == 1) {
+                int valor = (int)row.Cells["EnlazadoColumns"].Value;
+                if (valor == 1) {
                     data_members.re_usuarios_roles_permisos detalle = new re_usuarios_roles_permisos();
 
                     detalle.id_usuario = id_usuario;
-                    detalle.id_rol = item.ID;
+                    detalle.id_rol = (int)row.Cells["iDDataGridViewTextBoxColumn1"].Value;
 
                     detalles.Add(detalle);
 
-                    detalle = null;
+                    detalle = null; 
                 }
-                rolesBindingSource.MoveNext();
             }
 
             if (detalles.Count > 0)

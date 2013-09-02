@@ -109,7 +109,7 @@
             this.apellido2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eNLAZADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.EnlazadoColumns = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dESCRIPCIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -347,7 +347,7 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn1,
-            this.eNLAZADODataGridViewTextBoxColumn,
+            this.EnlazadoColumns,
             this.dESCRIPCIONDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.rolesBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -961,6 +961,7 @@
             // 
             // rolesBindingSource
             // 
+            this.rolesBindingSource.AllowNew = false;
             this.rolesBindingSource.DataSource = typeof(thumbnail.data_members.pa_RolesporIdUsuarioResult);
             // 
             // bindingsource
@@ -1039,19 +1040,19 @@
             this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
             this.iDDataGridViewTextBoxColumn1.Visible = false;
             // 
-            // eNLAZADODataGridViewTextBoxColumn
+            // EnlazadoColumns
             // 
-            this.eNLAZADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.eNLAZADODataGridViewTextBoxColumn.DataPropertyName = "ENLAZADO";
-            this.eNLAZADODataGridViewTextBoxColumn.FalseValue = "0";
-            this.eNLAZADODataGridViewTextBoxColumn.FillWeight = 71.06599F;
-            this.eNLAZADODataGridViewTextBoxColumn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eNLAZADODataGridViewTextBoxColumn.HeaderText = "";
-            this.eNLAZADODataGridViewTextBoxColumn.Name = "eNLAZADODataGridViewTextBoxColumn";
-            this.eNLAZADODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.eNLAZADODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.eNLAZADODataGridViewTextBoxColumn.TrueValue = "1";
-            this.eNLAZADODataGridViewTextBoxColumn.Width = 50;
+            this.EnlazadoColumns.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.EnlazadoColumns.DataPropertyName = "ENLAZADO";
+            this.EnlazadoColumns.FalseValue = "0";
+            this.EnlazadoColumns.FillWeight = 71.06599F;
+            this.EnlazadoColumns.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EnlazadoColumns.HeaderText = "";
+            this.EnlazadoColumns.Name = "EnlazadoColumns";
+            this.EnlazadoColumns.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EnlazadoColumns.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.EnlazadoColumns.TrueValue = "1";
+            this.EnlazadoColumns.Width = 50;
             // 
             // dESCRIPCIONDataGridViewTextBoxColumn
             // 
@@ -1171,7 +1172,7 @@
         private System.Windows.Forms.BindingSource re_usuarios_roles_permisosBindingSource;
         private System.Windows.Forms.BindingSource rolesBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn eNLAZADODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn EnlazadoColumns;
         private System.Windows.Forms.DataGridViewTextBoxColumn dESCRIPCIONDataGridViewTextBoxColumn;
     }
 }
