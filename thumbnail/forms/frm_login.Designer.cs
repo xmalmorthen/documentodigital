@@ -34,11 +34,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_aceptar = new System.Windows.Forms.Button();
-            this.btn_cancelar = new System.Windows.Forms.Button();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.txt_usuario = new DevExpress.XtraEditors.TextEdit();
             this.txt_contrasenia = new DevExpress.XtraEditors.TextEdit();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_aceptar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_usuario.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_contrasenia.Properties)).BeginInit();
@@ -64,31 +64,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Contraseña";
             // 
-            // btn_aceptar
-            // 
-            this.btn_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_aceptar.Location = new System.Drawing.Point(113, 127);
-            this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(102, 32);
-            this.btn_aceptar.TabIndex = 2;
-            this.btn_aceptar.Text = "Aceptar";
-            this.btn_aceptar.UseVisualStyleBackColor = true;
-            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelar.Location = new System.Drawing.Point(221, 127);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(102, 32);
-            this.btn_cancelar.TabIndex = 3;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
-            // 
             // dxValidationProvider
             // 
             this.dxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
@@ -103,7 +78,7 @@
             this.txt_usuario.Properties.Appearance.Options.UseFont = true;
             this.txt_usuario.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txt_usuario.Properties.MaxLength = 30;
-            this.txt_usuario.Size = new System.Drawing.Size(311, 24);
+            this.txt_usuario.Size = new System.Drawing.Size(321, 24);
             this.txt_usuario.TabIndex = 0;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Falta indicar el valor";
@@ -120,11 +95,48 @@
             this.txt_contrasenia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txt_contrasenia.Properties.MaxLength = 30;
             this.txt_contrasenia.Properties.PasswordChar = '?';
-            this.txt_contrasenia.Size = new System.Drawing.Size(311, 24);
+            this.txt_contrasenia.Size = new System.Drawing.Size(321, 24);
             this.txt_contrasenia.TabIndex = 1;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "Falta indicar el valor";
             this.dxValidationProvider.SetValidationRule(this.txt_contrasenia, conditionValidationRule2);
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cancelar.AutoSize = true;
+            this.btn_cancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_cancelar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cancelar.Location = new System.Drawing.Point(279, 120);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(54, 54);
+            this.btn_cancelar.TabIndex = 5;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // btn_aceptar
+            // 
+            this.btn_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_aceptar.AutoSize = true;
+            this.btn_aceptar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_aceptar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_aceptar.FlatAppearance.BorderSize = 0;
+            this.btn_aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_aceptar.Image = global::thumbnail.Icons48x48.checkbox_checked;
+            this.btn_aceptar.Location = new System.Drawing.Point(219, 120);
+            this.btn_aceptar.Name = "btn_aceptar";
+            this.btn_aceptar.Size = new System.Drawing.Size(54, 54);
+            this.btn_aceptar.TabIndex = 4;
+            this.btn_aceptar.UseVisualStyleBackColor = false;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
             // frm_login
             // 
@@ -134,10 +146,10 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.btn_cancelar;
             this.ClientSize = new System.Drawing.Size(345, 181);
-            this.Controls.Add(this.txt_contrasenia);
-            this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_aceptar);
+            this.Controls.Add(this.txt_contrasenia);
+            this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -161,10 +173,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn_aceptar;
-        private System.Windows.Forms.Button btn_cancelar;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
         private DevExpress.XtraEditors.TextEdit txt_contrasenia;
         private DevExpress.XtraEditors.TextEdit txt_usuario;
+        private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btn_aceptar;
     }
 }

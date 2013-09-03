@@ -47,7 +47,7 @@ namespace thumbnail.forms
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("Usuario y/o contraseña no válidos", "Error de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

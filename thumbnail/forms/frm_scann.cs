@@ -609,7 +609,7 @@ namespace thumbnail.forms
         private bool hocking()
         {
             int tramite = lookUpEdit_Tramites_selected.id_tramite; //obtener el id del tramite a partir del combo de tramites
-            int origen = tbctrl.SelectedIndex + 1; //obtener el origen a partir del tab seleccionado
+            int origen = Convert.ToInt32(tbctrl.SelectedTab.Tag.ToString()); //obtener el origen a partir del tab seleccionado
 
             frm.inicializa(tramite, origen, sources_digital);
 
@@ -1074,6 +1074,11 @@ namespace thumbnail.forms
         void txt_validator_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
         {            
             MessageBox.Show("error en mascara");
+        }
+
+        private void tabpgeInterno_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

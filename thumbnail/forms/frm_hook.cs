@@ -20,8 +20,6 @@ namespace thumbnail.forms
         public thumbnail.models.digital source = new thumbnail.models.digital(); //instancia a modelo principal para el guardado de la información
         public List<thumbnail.models.digital> sources = new List<thumbnail.models.digital>();
 
-        BindingSource BindingSource_ClasificacionDocumento; //variable binding para lista de clasificacion de documentos
-
         //constructor
         public frm_hook()
         {
@@ -71,11 +69,8 @@ namespace thumbnail.forms
         //funcion para popular combo de clasificacion de documentos
         private void populate_lookUpEdit_ClasificacionDocumento()
         {
-            this.BindingSource_ClasificacionDocumento = new BindingSource(); //instanciar
-            this.BindingSource_ClasificacionDocumento.DataSource = Program.Bd_Exp_Transportes.pa_ObtenerDocumentosporTramiteyOrigen(Tramite,Origen).ToList(); //obtener la lista de documentos por tramite y origen
-            this.lookUpEdit_ClasificacionDocumento.Properties.DataSource = this.BindingSource_ClasificacionDocumento; //asignar datasourse al combo
-            this.lookUpEdit_ClasificacionDocumento.Properties.DisplayMember = "Nombre"; //establecer el campo a mostrar en combo
-            this.lookUpEdit_ClasificacionDocumento.Properties.ValueMember = "id_documento"; //establecer valor a manejar en combo
+            this.bindingsource.DataSource = Program.Bd_Exp_Transportes.pa_ObtenerDocumentosporTramiteyOrigen(Tramite,Origen).ToList(); //obtener la lista de documentos por tramite y origen
+            this.lookUpEdit_ClasificacionDocumento.Properties.DataSource = this.bindingsource; //asignar datasourse al combo
         }
 
         //acualizar datos para la introducción de mascaras
@@ -99,6 +94,8 @@ namespace thumbnail.forms
         //al seleccionar item del combo
         private void lookUpEditCamposTrazables_EditValueChanged(object sender, EventArgs e)
         {
+            dxValidationProvider_lookUpEdit_ClasificacionDocumento.RemoveControlError(lookUpEdit_ClasificacionDocumento);
+            dxValidationProvider_Valor.RemoveControlError(txtvalortrazable);
             /*
              * obtener los valores de las columnas a partir del item seleccionado del combo
              */ 
@@ -109,7 +106,7 @@ namespace thumbnail.forms
             object _id_documento = view.GetRowCellValue(view.FocusedRowHandle, "id_documento");
             object _clasificaciondocumento = view.GetRowCellValue(view.FocusedRowHandle, "Descripcion_clasificaciondocumento");
             object _documento = view.GetRowCellValue(view.FocusedRowHandle, "Nombre");
-            object _id_re_clasificaciondocumento_documento = view.GetRowCellValue(view.FocusedRowHandle, "re_clasificaciondocumento_documento");
+            object _id_re_clasificaciondocumento_documento = view.GetRowCellValue(view.FocusedRowHandle, "id_re_clasificaciondocumentos_documentos");
             
             if (_id_documento == null) return;
 

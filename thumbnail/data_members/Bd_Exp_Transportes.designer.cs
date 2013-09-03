@@ -427,13 +427,6 @@ namespace thumbnail.data_members
 			return ((ISingleResult<pa_obtener_horaResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen")]
-		public ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult> pa_ObtenerDocumentosporTramiteyOrigen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tramite, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_origen)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_tramite, id_origen);
-			return ((ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_DocumentosporClasificacionDocumento")]
 		public ISingleResult<pa_DocumentosporClasificacionDocumentoResult> pa_DocumentosporClasificacionDocumento([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_clasificaciondocumento)
 		{
@@ -488,6 +481,13 @@ namespace thumbnail.data_members
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_rol);
 			return ((ISingleResult<pa_ModulosporIdRolResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen")]
+		public ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult> pa_ObtenerDocumentosporTramiteyOrigen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tramite, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_origen)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_tramite, id_origen);
+			return ((ISingleResult<pa_ObtenerDocumentosporTramiteyOrigenResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -7509,158 +7509,6 @@ namespace thumbnail.data_members
 		}
 	}
 	
-	public partial class pa_ObtenerDocumentosporTramiteyOrigenResult
-	{
-		
-		private int _id_re_clasificaciondocumentos_documentos;
-		
-		private int _id_clasificaciondocumento;
-		
-		private string _Descripcion_clasificaciondocumento;
-		
-		private int _id_documento;
-		
-		private string _Nombre;
-		
-		private bool _Trazabilidad;
-		
-		private System.Nullable<bool> _obligatorio;
-		
-		private System.Nullable<short> _orden;
-		
-		public pa_ObtenerDocumentosporTramiteyOrigenResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_clasificaciondocumentos_documentos", DbType="Int NOT NULL")]
-		public int id_re_clasificaciondocumentos_documentos
-		{
-			get
-			{
-				return this._id_re_clasificaciondocumentos_documentos;
-			}
-			set
-			{
-				if ((this._id_re_clasificaciondocumentos_documentos != value))
-				{
-					this._id_re_clasificaciondocumentos_documentos = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_clasificaciondocumento", DbType="Int NOT NULL")]
-		public int id_clasificaciondocumento
-		{
-			get
-			{
-				return this._id_clasificaciondocumento;
-			}
-			set
-			{
-				if ((this._id_clasificaciondocumento != value))
-				{
-					this._id_clasificaciondocumento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_clasificaciondocumento", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Descripcion_clasificaciondocumento
-		{
-			get
-			{
-				return this._Descripcion_clasificaciondocumento;
-			}
-			set
-			{
-				if ((this._Descripcion_clasificaciondocumento != value))
-				{
-					this._Descripcion_clasificaciondocumento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_documento", DbType="Int NOT NULL")]
-		public int id_documento
-		{
-			get
-			{
-				return this._id_documento;
-			}
-			set
-			{
-				if ((this._id_documento != value))
-				{
-					this._id_documento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Nombre
-		{
-			get
-			{
-				return this._Nombre;
-			}
-			set
-			{
-				if ((this._Nombre != value))
-				{
-					this._Nombre = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trazabilidad", DbType="Bit NOT NULL")]
-		public bool Trazabilidad
-		{
-			get
-			{
-				return this._Trazabilidad;
-			}
-			set
-			{
-				if ((this._Trazabilidad != value))
-				{
-					this._Trazabilidad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obligatorio", DbType="Bit")]
-		public System.Nullable<bool> obligatorio
-		{
-			get
-			{
-				return this._obligatorio;
-			}
-			set
-			{
-				if ((this._obligatorio != value))
-				{
-					this._obligatorio = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orden", DbType="SmallInt")]
-		public System.Nullable<short> orden
-		{
-			get
-			{
-				return this._orden;
-			}
-			set
-			{
-				if ((this._orden != value))
-				{
-					this._orden = value;
-				}
-			}
-		}
-	}
-	
 	public partial class pa_DocumentosporClasificacionDocumentoResult
 	{
 		
@@ -8308,6 +8156,194 @@ namespace thumbnail.data_members
 				if ((this._ENLAZADO != value))
 				{
 					this._ENLAZADO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_ObtenerDocumentosporTramiteyOrigenResult
+	{
+		
+		private int _id_re_clasificaciondocumentos_documentos;
+		
+		private int _id_clasificaciondocumento;
+		
+		private string _Descripcion_clasificaciondocumento;
+		
+		private int _id_documento;
+		
+		private string _Nombre;
+		
+		private bool _Trazabilidad;
+		
+		private bool _obligatorio;
+		
+		private short _orden;
+		
+		private System.Nullable<short> _Tamanio_Caracteres_Trazables;
+		
+		private string _Mascara_Trazable;
+		
+		public pa_ObtenerDocumentosporTramiteyOrigenResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_clasificaciondocumentos_documentos", DbType="Int NOT NULL")]
+		public int id_re_clasificaciondocumentos_documentos
+		{
+			get
+			{
+				return this._id_re_clasificaciondocumentos_documentos;
+			}
+			set
+			{
+				if ((this._id_re_clasificaciondocumentos_documentos != value))
+				{
+					this._id_re_clasificaciondocumentos_documentos = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_clasificaciondocumento", DbType="Int NOT NULL")]
+		public int id_clasificaciondocumento
+		{
+			get
+			{
+				return this._id_clasificaciondocumento;
+			}
+			set
+			{
+				if ((this._id_clasificaciondocumento != value))
+				{
+					this._id_clasificaciondocumento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_clasificaciondocumento", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Descripcion_clasificaciondocumento
+		{
+			get
+			{
+				return this._Descripcion_clasificaciondocumento;
+			}
+			set
+			{
+				if ((this._Descripcion_clasificaciondocumento != value))
+				{
+					this._Descripcion_clasificaciondocumento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_documento", DbType="Int NOT NULL")]
+		public int id_documento
+		{
+			get
+			{
+				return this._id_documento;
+			}
+			set
+			{
+				if ((this._id_documento != value))
+				{
+					this._id_documento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Trazabilidad", DbType="Bit NOT NULL")]
+		public bool Trazabilidad
+		{
+			get
+			{
+				return this._Trazabilidad;
+			}
+			set
+			{
+				if ((this._Trazabilidad != value))
+				{
+					this._Trazabilidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_obligatorio", DbType="Bit NOT NULL")]
+		public bool obligatorio
+		{
+			get
+			{
+				return this._obligatorio;
+			}
+			set
+			{
+				if ((this._obligatorio != value))
+				{
+					this._obligatorio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orden", DbType="SmallInt NOT NULL")]
+		public short orden
+		{
+			get
+			{
+				return this._orden;
+			}
+			set
+			{
+				if ((this._orden != value))
+				{
+					this._orden = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tamanio_Caracteres_Trazables", DbType="SmallInt")]
+		public System.Nullable<short> Tamanio_Caracteres_Trazables
+		{
+			get
+			{
+				return this._Tamanio_Caracteres_Trazables;
+			}
+			set
+			{
+				if ((this._Tamanio_Caracteres_Trazables != value))
+				{
+					this._Tamanio_Caracteres_Trazables = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mascara_Trazable", DbType="VarChar(200)")]
+		public string Mascara_Trazable
+		{
+			get
+			{
+				return this._Mascara_Trazable;
+			}
+			set
+			{
+				if ((this._Mascara_Trazable != value))
+				{
+					this._Mascara_Trazable = value;
 				}
 			}
 		}

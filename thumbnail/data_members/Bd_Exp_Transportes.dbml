@@ -380,20 +380,6 @@
       <Column Name="Hora" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen" Method="pa_ObtenerDocumentosporTramiteyOrigen">
-    <Parameter Name="id_tramite" Type="System.Int32" DbType="Int" />
-    <Parameter Name="id_origen" Type="System.Int32" DbType="Int" />
-    <ElementType Name="pa_ObtenerDocumentosporTramiteyOrigenResult">
-      <Column Name="id_re_clasificaciondocumentos_documentos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_clasificaciondocumento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion_clasificaciondocumento" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="id_documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Trazabilidad" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="obligatorio" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="orden" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.pa_DocumentosporClasificacionDocumento" Method="pa_DocumentosporClasificacionDocumento">
     <Parameter Name="id_clasificaciondocumento" Type="System.Int32" DbType="Int" />
     <ElementType Name="pa_DocumentosporClasificacionDocumentoResult">
@@ -472,6 +458,22 @@
       <Column Name="ID_MENU" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ID_SUBMENU" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ENLAZADO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_ObtenerDocumentosporTramiteyOrigen" Method="pa_ObtenerDocumentosporTramiteyOrigen">
+    <Parameter Name="id_tramite" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_origen" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_ObtenerDocumentosporTramiteyOrigenResult">
+      <Column Name="id_re_clasificaciondocumentos_documentos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_clasificaciondocumento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion_clasificaciondocumento" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="id_documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Trazabilidad" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="obligatorio" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="orden" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Tamanio_Caracteres_Trazables" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Mascara_Trazable" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
