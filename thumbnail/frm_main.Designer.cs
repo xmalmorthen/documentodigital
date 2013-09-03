@@ -125,6 +125,7 @@
             // 
             this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem.Name = "asignarCamposTrazablesAUnExpedienteToolStripMenuItem";
             this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem.Size = new System.Drawing.Size(404, 24);
+            this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem.Tag = "1,3";
             this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem.Text = "Asignar campos trazables a un expediente";
             this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem.Click += new System.EventHandler(this.asignarCamposTrazablesAUnExpedienteToolStripMenuItem_Click);
             // 
@@ -138,7 +139,7 @@
             // 
             this.clasificaciñonDeTramitesToolStripMenuItem.Name = "clasificaciñonDeTramitesToolStripMenuItem";
             this.clasificaciñonDeTramitesToolStripMenuItem.Size = new System.Drawing.Size(404, 24);
-            this.clasificaciñonDeTramitesToolStripMenuItem.Tag = "1,3";
+            this.clasificaciñonDeTramitesToolStripMenuItem.Tag = "1,4";
             this.clasificaciñonDeTramitesToolStripMenuItem.Text = "Clasificación de trámites";
             this.clasificaciñonDeTramitesToolStripMenuItem.Click += new System.EventHandler(this.clasificaciñonDeTramitesToolStripMenuItem_Click);
             // 
@@ -146,7 +147,7 @@
             // 
             this.tramitesToolStripMenuItem.Name = "tramitesToolStripMenuItem";
             this.tramitesToolStripMenuItem.Size = new System.Drawing.Size(404, 24);
-            this.tramitesToolStripMenuItem.Tag = "1,4";
+            this.tramitesToolStripMenuItem.Tag = "1,5";
             this.tramitesToolStripMenuItem.Text = "Trámites";
             this.tramitesToolStripMenuItem.Click += new System.EventHandler(this.tramitesToolStripMenuItem_Click);
             // 
@@ -160,7 +161,7 @@
             // 
             this.clasificaciónDeDocumentosToolStripMenuItem.Name = "clasificaciónDeDocumentosToolStripMenuItem";
             this.clasificaciónDeDocumentosToolStripMenuItem.Size = new System.Drawing.Size(404, 24);
-            this.clasificaciónDeDocumentosToolStripMenuItem.Tag = "1,5";
+            this.clasificaciónDeDocumentosToolStripMenuItem.Tag = "1,6";
             this.clasificaciónDeDocumentosToolStripMenuItem.Text = "Clasificación de documentos";
             this.clasificaciónDeDocumentosToolStripMenuItem.Click += new System.EventHandler(this.clasificaciónDeDocumentosToolStripMenuItem_Click);
             // 
@@ -168,7 +169,7 @@
             // 
             this.documentosToolStripMenuItem.Name = "documentosToolStripMenuItem";
             this.documentosToolStripMenuItem.Size = new System.Drawing.Size(404, 24);
-            this.documentosToolStripMenuItem.Tag = "1,6";
+            this.documentosToolStripMenuItem.Tag = "1,7";
             this.documentosToolStripMenuItem.Text = "Documentos";
             this.documentosToolStripMenuItem.Click += new System.EventHandler(this.documentosToolStripMenuItem_Click);
             // 
@@ -176,6 +177,7 @@
             // 
             this.clasificarDocumentosToolStripMenuItem.Name = "clasificarDocumentosToolStripMenuItem";
             this.clasificarDocumentosToolStripMenuItem.Size = new System.Drawing.Size(404, 24);
+            this.clasificarDocumentosToolStripMenuItem.Tag = "1,8";
             this.clasificarDocumentosToolStripMenuItem.Text = "Clasificar documentos";
             this.clasificarDocumentosToolStripMenuItem.Click += new System.EventHandler(this.clasificarDocumentosToolStripMenuItem_Click);
             // 
@@ -188,6 +190,7 @@
             // 
             this.asignarToolStripMenuItem.Name = "asignarToolStripMenuItem";
             this.asignarToolStripMenuItem.Size = new System.Drawing.Size(404, 24);
+            this.asignarToolStripMenuItem.Tag = "1,9";
             this.asignarToolStripMenuItem.Text = "Asignar clasificación de documentos a un trámite";
             this.asignarToolStripMenuItem.Click += new System.EventHandler(this.asignarToolStripMenuItem_Click);
             // 
@@ -252,6 +255,7 @@
             this.rolesToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.rolesToolStripMenuItem.Tag = "3,1";
             this.rolesToolStripMenuItem.Text = "Roles";
+            this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 

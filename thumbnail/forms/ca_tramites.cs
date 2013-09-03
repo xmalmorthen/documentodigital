@@ -276,6 +276,7 @@ namespace thumbnail.forms
                             Program.Bd_Exp_Transportes.SubmitChanges();
                             Form_Mode = form_mode.normal;
                             actualiza_lista();
+                            MessageBox.Show("Registro agregado con éxito", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -322,6 +323,7 @@ namespace thumbnail.forms
                             Program.Bd_Exp_Transportes.SubmitChanges();
                             Form_Mode = form_mode.normal;
                             actualiza_lista();
+                            MessageBox.Show("Registro modificado con éxito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
 	            }
@@ -342,6 +344,7 @@ namespace thumbnail.forms
                     catalogo = (data_members.ca_tramites)bindingsource.Current;
                     Program.Bd_Exp_Transportes.ca_tramites.DeleteOnSubmit(catalogo);
                     Program.Bd_Exp_Transportes.SubmitChanges();
+                    MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception)

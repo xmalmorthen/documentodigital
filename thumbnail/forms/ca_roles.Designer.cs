@@ -1,6 +1,6 @@
 ﻿namespace thumbnail.forms
 {
-    partial class ca_usuarios
+    partial class ca_roles
     {
         /// <summary>
         /// Required designer variable.
@@ -31,40 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label label1;
-            System.Windows.Forms.Label label3;
-            System.Windows.Forms.Label label4;
-            System.Windows.Forms.Label label5;
-            System.Windows.Forms.Label label6;
-            System.Windows.Forms.Label label7;
-            System.Windows.Forms.Label label8;
-            System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label10;
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule compareAgainstControlValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ca_usuarios));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ca_roles));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EnlazadoColumns = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dESCRIPCIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.modulosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_Editar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_Limpiar = new System.Windows.Forms.Button();
@@ -90,13 +69,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.datagridview = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contraseniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cURPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_refrescar = new System.Windows.Forms.Button();
             this.pbfind = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
@@ -109,31 +82,21 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.re_usuarios_roles_permisosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eNLAZADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.mODULODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDMENUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDSUBMENUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
-            label3 = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
-            label6 = new System.Windows.Forms.Label();
-            label7 = new System.Windows.Forms.Label();
-            label8 = new System.Windows.Forms.Label();
-            label9 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modulosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit.Properties)).BeginInit();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -144,20 +107,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.re_usuarios_roles_permisosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
             // 
-            descripcionLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             descripcionLabel.AutoSize = true;
             descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descripcionLabel.Location = new System.Drawing.Point(9, 71);
             descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(67, 18);
+            descripcionLabel.Size = new System.Drawing.Size(34, 18);
             descripcionLabel.TabIndex = 10;
-            descripcionLabel.Text = "Usuario";
+            descripcionLabel.Text = "Rol";
             // 
             // label1
             // 
@@ -169,117 +130,19 @@
             label1.TabIndex = 13;
             label1.Text = "Lista de registros";
             // 
-            // label3
-            // 
-            label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(9, 119);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(95, 18);
-            label3.TabIndex = 21;
-            label3.Text = "Contraseña";
-            // 
-            // label4
-            // 
-            label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label4.Location = new System.Drawing.Point(9, 167);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(151, 18);
-            label4.TabIndex = 23;
-            label4.Text = "Repetir contraseña";
-            // 
-            // label5
-            // 
-            label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.Location = new System.Drawing.Point(9, 215);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(121, 18);
-            label5.TabIndex = 25;
-            label5.Text = "Primer apellido";
-            // 
-            // label6
-            // 
-            label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label6.Location = new System.Drawing.Point(9, 263);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(137, 18);
-            label6.TabIndex = 27;
-            label6.Text = "Segundo apellido";
-            // 
-            // label7
-            // 
-            label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label7.AutoSize = true;
-            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label7.Location = new System.Drawing.Point(9, 311);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(89, 18);
-            label7.TabIndex = 29;
-            label7.Text = "Nombre(s)";
-            // 
-            // label8
-            // 
-            label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label8.AutoSize = true;
-            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label8.Location = new System.Drawing.Point(9, 359);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(55, 18);
-            label8.TabIndex = 31;
-            label8.Text = "CURP";
-            // 
-            // label9
-            // 
-            label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            label9.AutoSize = true;
-            label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label9.Location = new System.Drawing.Point(9, 407);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(74, 18);
-            label9.TabIndex = 33;
-            label9.Text = "Teléfono";
-            // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label10.Location = new System.Drawing.Point(544, 71);
+            label10.Location = new System.Drawing.Point(9, 119);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(52, 18);
+            label10.Size = new System.Drawing.Size(73, 18);
             label10.TabIndex = 35;
-            label10.Text = "Roles";
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "contrasenia", true));
-            this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(12, 140);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit1.Properties.MaxLength = 50;
-            this.textEdit1.Properties.PasswordChar = '*';
-            this.textEdit1.Size = new System.Drawing.Size(512, 24);
-            this.textEdit1.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Falta indicar el valor";
-            this.dxValidationProvider.SetValidationRule(this.textEdit1, conditionValidationRule1);
-            this.textEdit1.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
-            this.textEdit1.Click += new System.EventHandler(this.textEdit1_Click);
-            this.textEdit1.Enter += new System.EventHandler(this.textEdit1_Enter);
+            label10.Text = "Módulos";
             // 
             // bindingsource
             // 
-            this.bindingsource.DataSource = typeof(thumbnail.data_members.ca_usuarios);
+            this.bindingsource.DataSource = typeof(thumbnail.data_members.ca_roles);
             this.bindingsource.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
             // 
             // splitContainer
@@ -296,20 +159,6 @@
             this.splitContainer.Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.splitContainer.Panel1.Controls.Add(label10);
             this.splitContainer.Panel1.Controls.Add(this.dataGridView1);
-            this.splitContainer.Panel1.Controls.Add(label9);
-            this.splitContainer.Panel1.Controls.Add(this.textEdit7);
-            this.splitContainer.Panel1.Controls.Add(label8);
-            this.splitContainer.Panel1.Controls.Add(this.textEdit6);
-            this.splitContainer.Panel1.Controls.Add(label7);
-            this.splitContainer.Panel1.Controls.Add(this.textEdit5);
-            this.splitContainer.Panel1.Controls.Add(label6);
-            this.splitContainer.Panel1.Controls.Add(this.textEdit4);
-            this.splitContainer.Panel1.Controls.Add(label5);
-            this.splitContainer.Panel1.Controls.Add(this.textEdit3);
-            this.splitContainer.Panel1.Controls.Add(label4);
-            this.splitContainer.Panel1.Controls.Add(this.textEdit2);
-            this.splitContainer.Panel1.Controls.Add(label3);
-            this.splitContainer.Panel1.Controls.Add(this.textEdit1);
             this.splitContainer.Panel1.Controls.Add(this.btn_Editar);
             this.splitContainer.Panel1.Controls.Add(this.btn_cancelar);
             this.splitContainer.Panel1.Controls.Add(this.btn_Limpiar);
@@ -335,7 +184,7 @@
             this.splitContainer.Panel2.Controls.Add(label1);
             this.splitContainer.Panel2.Controls.Add(this.shapeContainer2);
             this.splitContainer.Size = new System.Drawing.Size(1008, 730);
-            this.splitContainer.SplitterDistance = 465;
+            this.splitContainer.SplitterDistance = 488;
             this.splitContainer.TabIndex = 16;
             // 
             // dataGridView1
@@ -359,9 +208,11 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn1,
-            this.EnlazadoColumns,
-            this.dESCRIPCIONDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.rolesBindingSource;
+            this.eNLAZADODataGridViewTextBoxColumn,
+            this.mODULODataGridViewTextBoxColumn,
+            this.iDMENUDataGridViewTextBoxColumn,
+            this.iDSUBMENUDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.modulosBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -372,7 +223,7 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(547, 92);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 140);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -387,136 +238,13 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(444, 360);
+            this.dataGridView1.Size = new System.Drawing.Size(979, 341);
             this.dataGridView1.TabIndex = 34;
             // 
-            // iDDataGridViewTextBoxColumn1
+            // modulosBindingSource
             // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
-            this.iDDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // EnlazadoColumns
-            // 
-            this.EnlazadoColumns.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.EnlazadoColumns.DataPropertyName = "ENLAZADO";
-            this.EnlazadoColumns.FalseValue = "0";
-            this.EnlazadoColumns.FillWeight = 71.06599F;
-            this.EnlazadoColumns.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EnlazadoColumns.HeaderText = "";
-            this.EnlazadoColumns.Name = "EnlazadoColumns";
-            this.EnlazadoColumns.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EnlazadoColumns.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.EnlazadoColumns.TrueValue = "1";
-            this.EnlazadoColumns.Width = 50;
-            // 
-            // dESCRIPCIONDataGridViewTextBoxColumn
-            // 
-            this.dESCRIPCIONDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dESCRIPCIONDataGridViewTextBoxColumn.DataPropertyName = "DESCRIPCION";
-            this.dESCRIPCIONDataGridViewTextBoxColumn.FillWeight = 128.934F;
-            this.dESCRIPCIONDataGridViewTextBoxColumn.HeaderText = "Rol";
-            this.dESCRIPCIONDataGridViewTextBoxColumn.Name = "dESCRIPCIONDataGridViewTextBoxColumn";
-            this.dESCRIPCIONDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // rolesBindingSource
-            // 
-            this.rolesBindingSource.AllowNew = false;
-            this.rolesBindingSource.DataSource = typeof(thumbnail.data_members.pa_RolesporIdUsuarioResult);
-            // 
-            // textEdit7
-            // 
-            this.textEdit7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textEdit7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Telefono", true));
-            this.textEdit7.Location = new System.Drawing.Point(12, 428);
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.textEdit7.Properties.Appearance.Options.UseFont = true;
-            this.textEdit7.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit7.Properties.Mask.BeepOnError = true;
-            this.textEdit7.Properties.Mask.EditMask = "(999)000-0000";
-            this.textEdit7.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
-            this.textEdit7.Size = new System.Drawing.Size(512, 24);
-            this.textEdit7.TabIndex = 7;
-            // 
-            // textEdit6
-            // 
-            this.textEdit6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textEdit6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "CURP", true));
-            this.textEdit6.Location = new System.Drawing.Point(12, 380);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.textEdit6.Properties.Appearance.Options.UseFont = true;
-            this.textEdit6.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit6.Properties.MaxLength = 18;
-            this.textEdit6.Size = new System.Drawing.Size(512, 24);
-            this.textEdit6.TabIndex = 6;
-            // 
-            // textEdit5
-            // 
-            this.textEdit5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textEdit5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Nombres", true));
-            this.textEdit5.Location = new System.Drawing.Point(12, 332);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.textEdit5.Properties.Appearance.Options.UseFont = true;
-            this.textEdit5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit5.Properties.MaxLength = 30;
-            this.textEdit5.Size = new System.Drawing.Size(512, 24);
-            this.textEdit5.TabIndex = 5;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Falta indicar el valor";
-            this.dxValidationProvider.SetValidationRule(this.textEdit5, conditionValidationRule2);
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textEdit4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Apellido2", true));
-            this.textEdit4.Location = new System.Drawing.Point(12, 284);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.textEdit4.Properties.Appearance.Options.UseFont = true;
-            this.textEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit4.Properties.MaxLength = 30;
-            this.textEdit4.Size = new System.Drawing.Size(512, 24);
-            this.textEdit4.TabIndex = 4;
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textEdit3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Apellido1", true));
-            this.textEdit3.Location = new System.Drawing.Point(12, 236);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.textEdit3.Properties.Appearance.Options.UseFont = true;
-            this.textEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit3.Properties.MaxLength = 30;
-            this.textEdit3.Size = new System.Drawing.Size(512, 24);
-            this.textEdit3.TabIndex = 3;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Falta indicar el valor";
-            this.dxValidationProvider.SetValidationRule(this.textEdit3, conditionValidationRule3);
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textEdit2.Location = new System.Drawing.Point(12, 188);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit2.Properties.MaxLength = 50;
-            this.textEdit2.Properties.PasswordChar = '*';
-            this.textEdit2.Size = new System.Drawing.Size(512, 24);
-            this.textEdit2.TabIndex = 2;
-            compareAgainstControlValidationRule1.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.Equals;
-            compareAgainstControlValidationRule1.Control = this.textEdit1;
-            compareAgainstControlValidationRule1.ErrorText = "Validacion de contraseña incorrecta";
-            compareAgainstControlValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.textEdit2, compareAgainstControlValidationRule1);
-            this.textEdit2.Click += new System.EventHandler(this.textEdit2_Click);
-            this.textEdit2.Enter += new System.EventHandler(this.textEdit2_Enter);
+            this.modulosBindingSource.AllowNew = false;
+            this.modulosBindingSource.DataSource = typeof(thumbnail.data_members.pa_ModulosporIdRolResult);
             // 
             // btn_Editar
             // 
@@ -653,19 +381,20 @@
             // 
             // textEdit
             // 
-            this.textEdit.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "usuario", true));
+            this.textEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEdit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Descripcion", true));
             this.textEdit.Location = new System.Drawing.Point(12, 92);
             this.textEdit.Name = "textEdit";
             this.textEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.textEdit.Properties.Appearance.Options.UseFont = true;
             this.textEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.textEdit.Properties.MaxLength = 30;
-            this.textEdit.Size = new System.Drawing.Size(512, 24);
+            this.textEdit.Size = new System.Drawing.Size(979, 24);
             this.textEdit.TabIndex = 0;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Falta indicar el valor";
-            this.dxValidationProvider.SetValidationRule(this.textEdit, conditionValidationRule4);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Falta indicar el valor";
+            this.dxValidationProvider.SetValidationRule(this.textEdit, conditionValidationRule1);
             // 
             // shapeContainer1
             // 
@@ -675,7 +404,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape2});
-            this.shapeContainer1.Size = new System.Drawing.Size(1006, 463);
+            this.shapeContainer1.Size = new System.Drawing.Size(1006, 486);
             this.shapeContainer1.TabIndex = 0;
             this.shapeContainer1.TabStop = false;
             // 
@@ -698,7 +427,7 @@
             this.tlp_proc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlp_proc.Controls.Add(this.pictureBox1, 0, 0);
             this.tlp_proc.Controls.Add(this.label2, 1, 0);
-            this.tlp_proc.Location = new System.Drawing.Point(799, 198);
+            this.tlp_proc.Location = new System.Drawing.Point(799, 175);
             this.tlp_proc.Name = "tlp_proc";
             this.tlp_proc.RowCount = 1;
             this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -748,7 +477,7 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2});
-            this.bindingnavigator.Location = new System.Drawing.Point(0, 234);
+            this.bindingnavigator.Location = new System.Drawing.Point(0, 211);
             this.bindingnavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingnavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingnavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -847,13 +576,7 @@
             this.datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.datagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.usuarioDataGridViewTextBoxColumn,
-            this.contraseniaDataGridViewTextBoxColumn,
-            this.cURPDataGridViewTextBoxColumn,
-            this.nombresDataGridViewTextBoxColumn,
-            this.apellido1DataGridViewTextBoxColumn,
-            this.apellido2DataGridViewTextBoxColumn,
-            this.telefonoDataGridViewTextBoxColumn});
+            this.descripcionDataGridViewTextBoxColumn1});
             this.datagridview.DataSource = this.bindingsource;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
@@ -880,7 +603,7 @@
             this.datagridview.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridview.Size = new System.Drawing.Size(979, 193);
+            this.datagridview.Size = new System.Drawing.Size(979, 170);
             this.datagridview.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -891,61 +614,13 @@
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Visible = false;
             // 
-            // usuarioDataGridViewTextBoxColumn
+            // descripcionDataGridViewTextBoxColumn1
             // 
-            this.usuarioDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "usuario";
-            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
-            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contraseniaDataGridViewTextBoxColumn
-            // 
-            this.contraseniaDataGridViewTextBoxColumn.DataPropertyName = "contrasenia";
-            this.contraseniaDataGridViewTextBoxColumn.HeaderText = "contrasenia";
-            this.contraseniaDataGridViewTextBoxColumn.Name = "contraseniaDataGridViewTextBoxColumn";
-            this.contraseniaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.contraseniaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // cURPDataGridViewTextBoxColumn
-            // 
-            this.cURPDataGridViewTextBoxColumn.DataPropertyName = "CURP";
-            this.cURPDataGridViewTextBoxColumn.HeaderText = "CURP";
-            this.cURPDataGridViewTextBoxColumn.Name = "cURPDataGridViewTextBoxColumn";
-            this.cURPDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cURPDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombresDataGridViewTextBoxColumn
-            // 
-            this.nombresDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombresDataGridViewTextBoxColumn.DataPropertyName = "Nombres";
-            this.nombresDataGridViewTextBoxColumn.HeaderText = "Nombre(s)";
-            this.nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
-            this.nombresDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // apellido1DataGridViewTextBoxColumn
-            // 
-            this.apellido1DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.apellido1DataGridViewTextBoxColumn.DataPropertyName = "Apellido1";
-            this.apellido1DataGridViewTextBoxColumn.HeaderText = "Primer apellido";
-            this.apellido1DataGridViewTextBoxColumn.Name = "apellido1DataGridViewTextBoxColumn";
-            this.apellido1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // apellido2DataGridViewTextBoxColumn
-            // 
-            this.apellido2DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.apellido2DataGridViewTextBoxColumn.DataPropertyName = "Apellido2";
-            this.apellido2DataGridViewTextBoxColumn.HeaderText = "Segundo apellido";
-            this.apellido2DataGridViewTextBoxColumn.Name = "apellido2DataGridViewTextBoxColumn";
-            this.apellido2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefonoDataGridViewTextBoxColumn.Visible = false;
+            this.descripcionDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionDataGridViewTextBoxColumn1.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn1.HeaderText = "Roles";
+            this.descripcionDataGridViewTextBoxColumn1.Name = "descripcionDataGridViewTextBoxColumn1";
+            this.descripcionDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // btn_refrescar
             // 
@@ -999,7 +674,7 @@
             this.shapeContainer2.Name = "shapeContainer2";
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(1006, 259);
+            this.shapeContainer2.Size = new System.Drawing.Size(1006, 236);
             this.shapeContainer2.TabIndex = 14;
             this.shapeContainer2.TabStop = false;
             // 
@@ -1054,16 +729,53 @@
             // 
             this.dxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
             // 
-            // dxValidationProvider1
-            // 
-            this.dxValidationProvider1.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
-            // 
             // re_usuarios_roles_permisosBindingSource
             // 
             this.re_usuarios_roles_permisosBindingSource.DataMember = "re_usuarios_roles_permisos";
             this.re_usuarios_roles_permisosBindingSource.DataSource = this.bindingsource;
             // 
-            // ca_usuarios
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // eNLAZADODataGridViewTextBoxColumn
+            // 
+            this.eNLAZADODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.eNLAZADODataGridViewTextBoxColumn.DataPropertyName = "ENLAZADO";
+            this.eNLAZADODataGridViewTextBoxColumn.FalseValue = "0";
+            this.eNLAZADODataGridViewTextBoxColumn.HeaderText = "";
+            this.eNLAZADODataGridViewTextBoxColumn.Name = "eNLAZADODataGridViewTextBoxColumn";
+            this.eNLAZADODataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.eNLAZADODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.eNLAZADODataGridViewTextBoxColumn.TrueValue = "1";
+            this.eNLAZADODataGridViewTextBoxColumn.Width = 60;
+            // 
+            // mODULODataGridViewTextBoxColumn
+            // 
+            this.mODULODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mODULODataGridViewTextBoxColumn.DataPropertyName = "MODULO";
+            this.mODULODataGridViewTextBoxColumn.HeaderText = "MODULO";
+            this.mODULODataGridViewTextBoxColumn.Name = "mODULODataGridViewTextBoxColumn";
+            this.mODULODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDMENUDataGridViewTextBoxColumn
+            // 
+            this.iDMENUDataGridViewTextBoxColumn.DataPropertyName = "ID_MENU";
+            this.iDMENUDataGridViewTextBoxColumn.HeaderText = "ID_MENU";
+            this.iDMENUDataGridViewTextBoxColumn.Name = "iDMENUDataGridViewTextBoxColumn";
+            this.iDMENUDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iDSUBMENUDataGridViewTextBoxColumn
+            // 
+            this.iDSUBMENUDataGridViewTextBoxColumn.DataPropertyName = "ID_SUBMENU";
+            this.iDSUBMENUDataGridViewTextBoxColumn.HeaderText = "ID_SUBMENU";
+            this.iDSUBMENUDataGridViewTextBoxColumn.Name = "iDSUBMENUDataGridViewTextBoxColumn";
+            this.iDSUBMENUDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ca_roles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1071,11 +783,10 @@
             this.Controls.Add(this.splitContainer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1024, 768);
-            this.Name = "ca_usuarios";
+            this.Name = "ca_roles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Usuarios";
+            this.Text = "Roles";
             this.Load += new System.EventHandler(this.ca_template_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel1.PerformLayout();
@@ -1083,13 +794,7 @@
             this.splitContainer.Panel2.PerformLayout();
             this.splitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modulosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit.Properties)).EndInit();
             this.tlp_proc.ResumeLayout(false);
             this.tlp_proc.PerformLayout();
@@ -1102,7 +807,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.re_usuarios_roles_permisosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1152,27 +856,15 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contraseniaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cURPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombresDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn apellido2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
-        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource re_usuarios_roles_permisosBindingSource;
-        private System.Windows.Forms.BindingSource rolesBindingSource;
+        private System.Windows.Forms.BindingSource modulosBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn EnlazadoColumns;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dESCRIPCIONDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn eNLAZADODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mODULODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDMENUDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDSUBMENUDataGridViewTextBoxColumn;
     }
 }

@@ -207,6 +207,7 @@ namespace thumbnail.forms
                     Program.Bd_Exp_Transportes.SubmitChanges();
 
                     limpiar_controles();
+                    MessageBox.Show("Registro agregado con éxito", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception)
@@ -294,6 +295,7 @@ namespace thumbnail.forms
                 {
                     Program.Bd_Exp_Transportes.re_tramites_clasificaciondocumentos.DeleteOnSubmit(item);
                     Program.Bd_Exp_Transportes.SubmitChanges();
+                    MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception)

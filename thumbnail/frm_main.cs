@@ -301,8 +301,24 @@ namespace thumbnail
             Application.DoEvents();
 
             tlp_proc.Visible = false;
-            this.Cursor = Cursors.Default;
+            this.Cursor = Cursors.Default;           
+        }
 
+        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            thumbnail.forms.ca_roles frm = new forms.ca_roles();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
             
         }
 

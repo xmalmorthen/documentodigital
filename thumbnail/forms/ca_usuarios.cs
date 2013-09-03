@@ -291,6 +291,7 @@ namespace thumbnail.forms
                             guarda_roles(id_usuario, rolesclon);
 
                             rolesclon = null;
+                            MessageBox.Show("Registro agregado con éxito", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -380,6 +381,7 @@ namespace thumbnail.forms
                         actualiza_lista();
                         
                         rolesclon = null;
+                        MessageBox.Show("Registro modificado con éxito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 	            }
                 catch (Exception)
@@ -454,6 +456,7 @@ namespace thumbnail.forms
                     Program.Bd_Exp_Transportes.ca_usuarios.DeleteOnSubmit(usuario);
                     
                     Program.Bd_Exp_Transportes.SubmitChanges();
+                    MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception)

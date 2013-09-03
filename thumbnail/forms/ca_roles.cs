@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using thumbnail.data_members;
+using thumbnail.classes;
 
 namespace thumbnail.forms
 {
-    public partial class ca_campostrazables : Form
+    public partial class ca_roles : Form
     {
         //enumeracion para el control del estado de la forma
         public enum form_mode
@@ -38,7 +39,7 @@ namespace thumbnail.forms
 
         private void delete_validation_sumary()
         {
-            dxValidationProvider.RemoveControlError(descripcionTextEdit);
+            dxValidationProvider.RemoveControlError(textEdit);
         }
 
         //funcion para 
@@ -52,7 +53,7 @@ namespace thumbnail.forms
             //editar
             btn_Editar.Enabled = Form_Mode == form_mode.normal ? true : false;
             //limpiar
-            btn_Limpiar.Enabled = ( Form_Mode == form_mode.agregar ) ? true : false;
+            btn_Limpiar.Enabled = ( Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar ) ? true : false;
             //cancelar
             btn_cancelar.Enabled = ( Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar ) ? true : false;
             //guardar
@@ -60,9 +61,8 @@ namespace thumbnail.forms
             //eliminar
             btn_eliminar.Enabled = Form_Mode == form_mode.normal ? true : false;
 
-            descripcionTextEdit.Enabled = (Form_Mode == form_mode.agregar) ? true : false;
-            spinEdit1.Enabled = (Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar) ? true : false;
-            textEdit2.Enabled = (Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar) ? true : false;
+            textEdit.Enabled = (Form_Mode == form_mode.agregar ) ? true : false;
+            dataGridView1.Enabled = (Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar) ? true : false;
 
             //limpiar controles
             if (Form_Mode == form_mode.agregar ) limpiar_controles();
@@ -81,10 +81,10 @@ namespace thumbnail.forms
         }
 
         //lista con contenido de los registros
-        private List<data_members.ca_campostrazables> lista;
-        private data_members.ca_campostrazables catalogo;
-
-        public ca_campostrazables()
+        private List<data_members.ca_roles> lista;
+        private List<data_members.pa_ModulosporIdRolResult> modulos;
+        private data_members.ca_roles rol;
+        public ca_roles()
         {
             InitializeComponent();
         }
@@ -92,13 +92,25 @@ namespace thumbnail.forms
         private void actualiza_lista() {
             try
             {
-                lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_campostrazables>().ToList();
+                lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_roles>().ToList();
                 bindingsource.DataSource = lista;
             }
             catch (Exception)
             {
             }
         }
+
+        private void obten_modulos(int ?id_rol) { 
+            try
+            {
+                modulos = Program.Bd_Exp_Transportes.pa_ModulosporIdRol(id_rol).ToList();
+                modulosBindingSource.DataSource = modulos;
+            }
+            catch (Exception)
+            {
+            }       
+        }
+
 
         private void ca_template_Load(object sender, EventArgs e)
         {
@@ -120,7 +132,6 @@ namespace thumbnail.forms
 	        {
                 bindingsource.CancelEdit();
                 bindingsource.AddNew();
-                (bindingsource.Current as data_members.ca_campostrazables).Tamanio_Caracteres = 1;
 	        }
 	        catch (Exception)
 	        {
@@ -132,34 +143,34 @@ namespace thumbnail.forms
         //boton de agregar
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            bindingsource.AddNew();
+            bindingsource.AddNew();          
             Form_Mode = form_mode.agregar;
-            limpiar_controles();
 
             //limpiar_controles();
-            descripcionTextEdit.Focus();
+            textEdit.Focus();
         }
 
         //boton editar
         private void btn_Editar_Click(object sender, EventArgs e)
         {
             Form_Mode = form_mode.editar;
-            catalogo = (data_members.ca_campostrazables)bindingsource.Current;
+            rol = (data_members.ca_roles)bindingsource.Current;
         }
 
         //boton cancelar
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            catalogo = null;
+            rol = null;
             bindingsource.CancelEdit();
             Form_Mode = form_mode.normal;
+            bindingsource_CurrentItemChanged(null, null);
         }
 
         //boton de limpiar
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             limpiar_controles(); //limpiar controles
-            descripcionTextEdit.Focus();
+            textEdit.Focus();
         }
 
         //boton de eliminar
@@ -211,9 +222,9 @@ namespace thumbnail.forms
 
             try
             {
-                List<thumbnail.data_members.ca_campostrazables> valores = (from query in lista
-                                                                           where query.Nombre.ToString().ToLower().Contains(txt_buscar.Text.ToString().ToLower())
-                                                                           select query).ToList();
+                List<thumbnail.data_members.ca_roles> valores = (from query in lista
+                                                                 where query.Descripcion.ToString().ToLower().Contains(txt_buscar.Text.ToString().ToLower())
+                                                                 select query).ToList();
                 bindingsource.DataSource = valores;
                 datagridview.Update();
             }
@@ -249,22 +260,28 @@ namespace thumbnail.forms
             try 
 	        {
                 if (bindingsource.DataSource != null) {
-                    catalogo = (data_members.ca_campostrazables)bindingsource.Current;
-
+                    rol = (data_members.ca_roles)bindingsource.Current;
                     if (valida())
                     {
                         if (!buscar_si_existe())
                         {
-                            Program.Bd_Exp_Transportes.ca_campostrazables.InsertOnSubmit(catalogo);
+                            List<data_members.pa_ModulosporIdRolResult> modulosclon = new List<pa_ModulosporIdRolResult>(modulos);
+                            Program.Bd_Exp_Transportes.ca_roles.InsertOnSubmit(rol);
                             Program.Bd_Exp_Transportes.SubmitChanges();
                             Form_Mode = form_mode.normal;
                             actualiza_lista();
-                            MessageBox.Show("Registro agregado con éxito", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            int id_rol = lista.SingleOrDefault(query => query.Descripcion == rol.Descripcion).id;
+                            guarda_modulos(id_rol, modulosclon);
+
+                            modulosclon = null;
+
+                            MessageBox.Show("Registro agregado con éxito", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            descripcionTextEdit.SelectAll();
-                            descripcionTextEdit.Focus();
+                            textEdit.SelectAll();
+                            textEdit.Focus();
                         }
                     }
 	            }
@@ -273,21 +290,48 @@ namespace thumbnail.forms
 	        {		
 		        throw;
 	        }
+            bindingsource_CurrentItemChanged(null, null);
+        }
+
+        private void guarda_modulos(int id_rol, List<data_members.pa_ModulosporIdRolResult> modulosclon)
+        {
+            List<data_members.re_roles_modulos> detalles = new List<re_roles_modulos>();
+
+            dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
+
+            foreach (data_members.pa_ModulosporIdRolResult item in modulosclon)
+            {
+                if (item.ENLAZADO == 1) {
+                    data_members.re_roles_modulos detalle = new re_roles_modulos();
+
+                    detalle.id_rol = id_rol;
+                    detalle.id_modulo = item.ID;
+
+                    detalles.Add(detalle);
+
+                    detalle = null; 
+                }
+            }
+
+            if (detalles.Count > 0)
+            {
+                Program.Bd_Exp_Transportes.re_roles_modulos.InsertAllOnSubmit(detalles);
+                Program.Bd_Exp_Transportes.SubmitChanges();
+            }
         }
 
         private bool valida()
         {
-            dxValidationProvider.RemoveControlError(descripcionTextEdit);
+            delete_validation_sumary();
             dxValidationProvider.Validate(); //lanzar validacion
-            if (dxValidationProvider.GetInvalidControls().Count() != 0 ) return false;
+            if (dxValidationProvider.GetInvalidControls().Count() != 0) return false;
             return true;
         }
 
         private bool buscar_si_existe()
         {
-            data_members.ca_campostrazables filtro = Program.Bd_Exp_Transportes.ca_campostrazables.SingleOrDefault(query => query.Nombre.ToString().ToLower() == catalogo.Nombre.ToString().ToLower());
-            if (filtro != null)
-            {
+            data_members.ca_roles filtro = Program.Bd_Exp_Transportes.ca_roles.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == rol.Descripcion.ToString().ToLower());
+            if ( filtro != null ) {
                 MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
             }
@@ -300,16 +344,73 @@ namespace thumbnail.forms
             if (bindingsource.DataSource != null) {
                 try 
 	            {
-                            Program.Bd_Exp_Transportes.SubmitChanges();
-                            Form_Mode = form_mode.normal;
-                            actualiza_lista();
-                            MessageBox.Show("Registro modificado con éxito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (valida())
+                    {
+                        List<data_members.pa_ModulosporIdRolResult> rolesclon = new List<pa_ModulosporIdRolResult>(modulos);
+                        edita_modulos(rol.id, rolesclon);
+
+                        Program.Bd_Exp_Transportes.SubmitChanges();
+                        Form_Mode = form_mode.normal;
+                        actualiza_lista();
+                        
+                        rolesclon = null;
+
+                        MessageBox.Show("Registro modificado con éxito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
 	            }
                 catch (Exception)
                 {
                     throw;
                 }
+                bindingsource_CurrentItemChanged(null, null);
             }            
+        }
+
+        private void edita_modulos(int id_rol, List<data_members.pa_ModulosporIdRolResult> rolesclon)
+        {
+            List<data_members.re_roles_modulos> deleteitems = new List<re_roles_modulos>();
+            List<data_members.re_roles_modulos> additems = new List<re_roles_modulos>();
+
+            foreach (data_members.pa_ModulosporIdRolResult item in rolesclon)
+            {
+                data_members.re_roles_modulos select = (from query in Program.Bd_Exp_Transportes.re_roles_modulos
+                                                        where query.id_rol == id_rol && query.id_modulo == item.ID
+                                                        select query).SingleOrDefault();
+
+                if (item.ENLAZADO == 0) 
+                {
+                    if (select != null)
+                    {
+                        deleteitems.Add(select);
+                    }
+
+                    select = null;
+                } 
+                else
+                {
+                    if (select == null)
+                    {
+                        data_members.re_roles_modulos detalle = new re_roles_modulos();
+
+                        detalle.id_rol = id_rol;
+                        detalle.id_modulo = item.ID;
+
+                        additems.Add(detalle);
+
+                        detalle = null;
+                    }
+                }
+            }
+
+            if (deleteitems.Count > 0)
+            {
+                Program.Bd_Exp_Transportes.re_roles_modulos.DeleteAllOnSubmit(deleteitems);
+            }
+            if (additems.Count > 0)
+            {
+                Program.Bd_Exp_Transportes.re_roles_modulos.InsertAllOnSubmit(additems);
+            }
+            
         }
                 
         //eliminar
@@ -319,17 +420,39 @@ namespace thumbnail.forms
             {
                 if (bindingsource.DataSource != null)
                 {
-                    catalogo = (data_members.ca_campostrazables)bindingsource.Current;
-                    Program.Bd_Exp_Transportes.ca_campostrazables.DeleteOnSubmit(catalogo);
+                    rol = (data_members.ca_roles)bindingsource.Current;
+
+                    //eliminar modulos
+                    elimina_modulos(rol.id);
+
+                    //eliminar rol
+                    Program.Bd_Exp_Transportes.ca_roles.DeleteOnSubmit(rol);
+                    
                     Program.Bd_Exp_Transportes.SubmitChanges();
-                    MessageBox.Show("Registro eliminado con éxito", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception)
             {
-                throw;
+                MessageBox.Show("No es posible borrar. El rol se encuentra vinculado a algún usuario", "Imposible borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
+        private void elimina_modulos(int id_modulo)
+        {
+            IEnumerable<data_members.re_roles_modulos> detalles = (from query in Program.Bd_Exp_Transportes.re_roles_modulos
+                                                                   where (query.id_rol == id_modulo)
+                                                                   select query).ToList();
+            Program.Bd_Exp_Transportes.re_roles_modulos.DeleteAllOnSubmit(detalles);
+        }
+
+        private void bindingsource_CurrentItemChanged(object sender, EventArgs e)
+        {
+            if (Form_Mode == form_mode.normal)
+            {
+                obten_modulos(((data_members.ca_roles)bindingsource.Current).id);
+            }
+        }
     }
 }

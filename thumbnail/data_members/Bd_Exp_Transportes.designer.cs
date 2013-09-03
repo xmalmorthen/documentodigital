@@ -482,6 +482,13 @@ namespace thumbnail.data_members
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_usuario);
 			return ((ISingleResult<pa_RolesporIdUsuarioResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ModulosporIdRol")]
+		public ISingleResult<pa_ModulosporIdRolResult> pa_ModulosporIdRol([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_rol)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_rol);
+			return ((ISingleResult<pa_ModulosporIdRolResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_ListaTramitesActivos")]
@@ -8187,6 +8194,104 @@ namespace thumbnail.data_members
 				if ((this._DESCRIPCION != value))
 				{
 					this._DESCRIPCION = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ENLAZADO", DbType="Int NOT NULL")]
+		public int ENLAZADO
+		{
+			get
+			{
+				return this._ENLAZADO;
+			}
+			set
+			{
+				if ((this._ENLAZADO != value))
+				{
+					this._ENLAZADO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_ModulosporIdRolResult
+	{
+		
+		private int _ID;
+		
+		private string _MODULO;
+		
+		private System.Nullable<int> _ID_MENU;
+		
+		private System.Nullable<int> _ID_SUBMENU;
+		
+		private int _ENLAZADO;
+		
+		public pa_ModulosporIdRolResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MODULO", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string MODULO
+		{
+			get
+			{
+				return this._MODULO;
+			}
+			set
+			{
+				if ((this._MODULO != value))
+				{
+					this._MODULO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_MENU", DbType="Int")]
+		public System.Nullable<int> ID_MENU
+		{
+			get
+			{
+				return this._ID_MENU;
+			}
+			set
+			{
+				if ((this._ID_MENU != value))
+				{
+					this._ID_MENU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_SUBMENU", DbType="Int")]
+		public System.Nullable<int> ID_SUBMENU
+		{
+			get
+			{
+				return this._ID_SUBMENU;
+			}
+			set
+			{
+				if ((this._ID_SUBMENU != value))
+				{
+					this._ID_SUBMENU = value;
 				}
 			}
 		}
