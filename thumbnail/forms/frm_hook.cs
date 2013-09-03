@@ -23,7 +23,7 @@ namespace thumbnail.forms
         //constructor
         public frm_hook()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
         //sobrecarga de constructor
         public frm_hook(int tramite, int origen, List<thumbnail.models.digital> _sources)
@@ -34,13 +34,15 @@ namespace thumbnail.forms
 
         //funcion para inicializar variables
         public void inicializa(int tramite, int origen, List<thumbnail.models.digital> _sources) {
+            formactivo = false;
+
             Tramite = tramite; //inicializar property tramite a partir de parametro
             Origen = origen; //inicializar property origen a partir de parametro
             sources = _sources;
             this.populate_lookUpEdit_ClasificacionDocumento(); //popular combo
-
+            
+            this.lookUpEdit_ClasificacionDocumento.EditValue = null; //establecer el tramite a seleccionar
             actualizainfomascara("", 0, "");
-            this.lookUpEdit_ClasificacionDocumento.EditValue = 1; //establecer el tramite a seleccionar
         }
 
         //validador de formulario
@@ -94,6 +96,8 @@ namespace thumbnail.forms
         //al seleccionar item del combo
         private void lookUpEditCamposTrazables_EditValueChanged(object sender, EventArgs e)
         {
+            if (!formactivo) return;
+
             dxValidationProvider_lookUpEdit_ClasificacionDocumento.RemoveControlError(lookUpEdit_ClasificacionDocumento);
             dxValidationProvider_Valor.RemoveControlError(txtvalortrazable);
             /*
@@ -168,6 +172,18 @@ namespace thumbnail.forms
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+        }
+
+        private Boolean formactivo;
+        private void frm_hook_Load(object sender, EventArgs e)
+        {            
+            this.Paint += frm_hook_Paint;
+        }
+
+        private void frm_hook_Paint(object sender, PaintEventArgs e)
+        {
+            formactivo = true;
+            this.Paint -= frm_hook_Paint;
         }
                 
     }
