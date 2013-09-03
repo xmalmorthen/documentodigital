@@ -156,7 +156,7 @@ namespace thumbnail.forms
         //boton de agregar
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            bindingsource.AddNew();
+            bindingsource.AddNew();          
             Form_Mode = form_mode.agregar;
 
             //limpiar_controles();
@@ -279,15 +279,18 @@ namespace thumbnail.forms
                     {
                         if (!buscar_si_existe())
                         {
-                            usuario.contrasenia = convert_md5.generate(usuario.contrasenia);
+                            List<data_members.pa_RolesporIdUsuarioResult> rolesclon = new List<pa_RolesporIdUsuarioResult>(roles);
 
-                            Program.Bd_Exp_Transportes.ca_usuarios.InsertOnSubmit(usuario);                            
+                            usuario.contrasenia = convert_md5.generate(usuario.contrasenia);
+                            Program.Bd_Exp_Transportes.ca_usuarios.InsertOnSubmit(usuario);
                             Program.Bd_Exp_Transportes.SubmitChanges();
                             Form_Mode = form_mode.normal;
                             actualiza_lista();
 
                             int id_usuario = lista.SingleOrDefault(query => query.usuario == usuario.usuario).id;
-                            guarda_roles(id_usuario);
+                            guarda_roles(id_usuario, rolesclon);
+
+                            rolesclon = null;
                         }
                         else
                         {
@@ -300,21 +303,23 @@ namespace thumbnail.forms
             catch (Exception)
 	        {		
 		        throw;
-	        }            
+	        }
+            bindingsource_CurrentItemChanged(null, null);
         }
 
-        private void guarda_roles(int id_usuario)
+        private void guarda_roles(int id_usuario, List<data_members.pa_RolesporIdUsuarioResult> rolesclon)
         {
             List<data_members.re_usuarios_roles_permisos> detalles = new List<re_usuarios_roles_permisos>();
 
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
+
+            foreach (data_members.pa_RolesporIdUsuarioResult item in rolesclon)
             {
-                int valor = (int)row.Cells["EnlazadoColumns"].Value;
-                if (valor == 1) {
+                if (item.ENLAZADO == 1) {
                     data_members.re_usuarios_roles_permisos detalle = new re_usuarios_roles_permisos();
 
                     detalle.id_usuario = id_usuario;
-                    detalle.id_rol = (int)row.Cells["iDDataGridViewTextBoxColumn1"].Value;
+                    detalle.id_rol = item.ID;
 
                     detalles.Add(detalle);
 
@@ -366,16 +371,70 @@ namespace thumbnail.forms
                         {
                             usuario.contrasenia = convert_md5.generate(usuario.contrasenia);
                         }
+
+                        List<data_members.pa_RolesporIdUsuarioResult> rolesclon = new List<pa_RolesporIdUsuarioResult>(roles);
+                        edita_roles(usuario.id, rolesclon);
+
                         Program.Bd_Exp_Transportes.SubmitChanges();
                         Form_Mode = form_mode.normal;
                         actualiza_lista();
+                        
+                        rolesclon = null;
                     }
 	            }
                 catch (Exception)
                 {
                     throw;
                 }
+                bindingsource_CurrentItemChanged(null, null);
             }            
+        }
+
+        private void edita_roles(int id_usuario,List<data_members.pa_RolesporIdUsuarioResult> rolesclon)
+        {
+            List<data_members.re_usuarios_roles_permisos> deleteitems = new List<re_usuarios_roles_permisos>();
+            List<data_members.re_usuarios_roles_permisos> additems = new List<re_usuarios_roles_permisos>();
+            
+            foreach (data_members.pa_RolesporIdUsuarioResult item in rolesclon)
+            {
+                data_members.re_usuarios_roles_permisos select = (from query in Program.Bd_Exp_Transportes.re_usuarios_roles_permisos
+                                                                  where query.id_usuario == id_usuario && query.id_rol == item.ID
+                                                                  select query).SingleOrDefault();
+
+                if (item.ENLAZADO == 0) 
+                {
+                    if (select != null)
+                    {
+                        deleteitems.Add(select);
+                    }
+
+                    select = null;
+                } 
+                else
+                {
+                    if (select == null)
+                    {
+                        data_members.re_usuarios_roles_permisos detalle = new re_usuarios_roles_permisos();
+
+                        detalle.id_usuario = id_usuario;
+                        detalle.id_rol = item.ID;
+
+                        additems.Add(detalle);
+
+                        detalle = null;
+                    }
+                }
+            }
+
+            if (deleteitems.Count > 0)
+            {
+                Program.Bd_Exp_Transportes.re_usuarios_roles_permisos.DeleteAllOnSubmit(deleteitems);
+            }
+            if (additems.Count > 0)
+            {
+                Program.Bd_Exp_Transportes.re_usuarios_roles_permisos.InsertAllOnSubmit(additems);
+            }
+            
         }
                 
         //eliminar
@@ -386,7 +445,14 @@ namespace thumbnail.forms
                 if (bindingsource.DataSource != null)
                 {
                     usuario = (data_members.ca_usuarios)bindingsource.Current;
+
+                    //eliminar reoles
+                    elimina_roles(usuario.id);
+
+                    //eliminar usuario
+                    usuario = (data_members.ca_usuarios)bindingsource.Current;
                     Program.Bd_Exp_Transportes.ca_usuarios.DeleteOnSubmit(usuario);
+                    
                     Program.Bd_Exp_Transportes.SubmitChanges();
                 }
             }
@@ -394,6 +460,14 @@ namespace thumbnail.forms
             {
                 throw;
             }
+        }
+
+        private void elimina_roles(int id_usuario)
+        {
+            IEnumerable<data_members.re_usuarios_roles_permisos> detalles = (from query in Program.Bd_Exp_Transportes.re_usuarios_roles_permisos
+                                                                             where (query.id_usuario == id_usuario)
+                                                                             select query).ToList();
+            Program.Bd_Exp_Transportes.re_usuarios_roles_permisos.DeleteAllOnSubmit(detalles);
         }
 
         private Boolean modificacontraseña;

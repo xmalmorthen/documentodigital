@@ -27,10 +27,11 @@ namespace thumbnail.forms
         }
 
         private void btn_aceptar_Click(object sender, EventArgs e)
-        {
-            thumbnail.data_members.ca_usuarios usuario = Program.Bd_Exp_Transportes.ca_usuarios.SingleOrDefault(c => c.usuario.ToString().ToLower() == txt_usuario.Text.ToString().ToLower());
+        {          
             try
             {
+                if (!valida()) return;
+                thumbnail.data_members.ca_usuarios usuario = Program.Bd_Exp_Transportes.ca_usuarios.SingleOrDefault(c => c.usuario.ToString().ToLower() == txt_usuario.Text.ToString().ToLower());
                 if (!convert_md5.verifyMd5Hash(txt_contrasenia.Text, usuario.contrasenia))
                 {
                     MessageBox.Show("Usuario y/o contraseña no válidos", "Error de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -48,6 +49,16 @@ namespace thumbnail.forms
             {
                 throw;
             }
+        }
+
+        private bool valida()
+        {
+            dxValidationProvider.RemoveControlError(txt_usuario);
+            dxValidationProvider.RemoveControlError(txt_contrasenia);
+            dxValidationProvider.Validate(); //lanzar validacion
+            if (dxValidationProvider.GetInvalidControls().Count() != 0) return false;
+
+            return true;
         }
 
         private bool Parse_data_user(thumbnail.data_members.ca_usuarios usuario)
