@@ -24,15 +24,48 @@ namespace thumbnail.forms
         #region enumss, propertys, variables, etc
 
         //enumeracion para el estado del formulario
-        public enum formmode
+        public enum form_mode
         {
             Add,
             Edit
         }
 
         //property para el control del estado del formulario
-        private formmode _formmode;
-        public formmode Form_Mode { get { return _formmode; } set { _formmode = value; } }
+        private form_mode _formmode;
+        public form_mode Form_Mode
+        {
+            get { return _formmode; }
+            set
+            {
+                _formmode = value;
+                enabledisablecontrols();
+                delete_validation_sumary();
+            }
+        }
+
+        private void delete_validation_sumary()
+        {
+
+        }
+
+        //funcion para 
+        private void enabledisablecontrols()
+        {
+            /*
+             * botonera
+             */       
+            //nuevo
+            btn_nuevo.Enabled = (Form_Mode == form_mode.Edit) ? true : false;
+            //editar
+            btn_editar.Enabled = (Form_Mode == form_mode.Add) ? true : false;
+
+            //guardar
+            btn_guardar.Enabled = (Form_Mode == form_mode.Add) ? true : false;
+            //limpiar
+            btn_limpiar.Enabled = (Form_Mode == form_mode.Add) ? true : false;
+
+            lookUpEdit_Tramites.Enabled = (Form_Mode == form_mode.Add) ? true : false;
+        }
 
         //lista de imagenes global
         private ImageList thumbnainlist = new ImageList();
@@ -68,12 +101,7 @@ namespace thumbnail.forms
                                           return swapdirectory + @"\" + Settings.Default.ScannFileName + Guid.NewGuid().ToString();
                                           }
                                     }
-
-        private BindingSource BindingSource_ListaTramites;
-        private BindingSource BindingSource_CamposTrazables;
-
-        private tramite_model tramite = new tramite_model();
-
+        
         #endregion enumss, propertys, variables, etc
 
         //contructor de clase
@@ -86,7 +114,7 @@ namespace thumbnail.forms
         //funcion de configuraciones iniciales
         private void Inicializa()
         {
-            Form_Mode = formmode.Add; //inicializar por default el formulario en modo add
+            Form_Mode = form_mode.Add; //inicializar por default el formulario en modo add
 
             populate_lookUpEdit_Tramites(); //popular combo de tramites
             selectdefaultitem_lookUpEdit_Tramites(); //seleccionar tramite por default
@@ -110,9 +138,6 @@ namespace thumbnail.forms
             tbctrl_SelectedIndexChanged(tbctrl, null);
 
             this.Paint += frm_scann_Paint;
-
-            tramite.imagenes_digital.Clear();
-            tramite.trazabilidad.Clear();
         }
 
         /*
@@ -133,16 +158,141 @@ namespace thumbnail.forms
         }
 
         #region botonera superior
+
         //guardar tramite
+        private tramite_model tramite;
         private void btn_guardar_Click(object sender, EventArgs e)
         {
+            tramite = new tramite_model();
+
             if (!this.colectar_campostrazables()) return;
             if (!this.colectar_archivosdigital()) return;
 
-            tramite.trazabilidad = sources_trazabilidad;
+            tramite.trazabilidad = new List<trazabilidad_tramite>(sources_trazabilidad);
+            tramite.imagenes_digital = new List<digital>(sources_digital);
 
-            /* if (expedientemode == __formmode.Add) crearexpediente();
-             else editarexpediente();*/
+            if (Form_Mode == form_mode.Add)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                tlp_proc.Visible = true;
+
+                Application.DoEvents();
+
+                crearexpediente();
+
+                Application.DoEvents();
+
+                tlp_proc.Visible = false;
+                this.Cursor = Cursors.Default;
+            }
+            else
+            {
+                this.Cursor = Cursors.WaitCursor;
+                tlp_proc.Visible = true;
+
+                Application.DoEvents();
+
+                editarexpediente();
+
+                Application.DoEvents();
+
+                tlp_proc.Visible = false;
+                this.Cursor = Cursors.Default;                
+            }
+            tramite = null;
+        }
+
+        private void editarexpediente()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void crearexpediente()
+        {
+            try
+            {
+                //inicializacion de valores
+                tramite.id_re_expediente_tramite = lookUpEdit_Tramites_selected.id_re_expedientes_tramites;
+                tramite.nota = "";
+                data_members.pa_obtener_fechahoraResult fechahora= Program.Bd_Exp_Transportes.pa_obtener_fechahora() as pa_obtener_fechahoraResult;
+                tramite.fecha_hora_bloqueo = DateTime.Now;
+                tramite.id_estatus = 4;
+
+                int id_ma_digital = match_ma_digital();
+
+                match_de_digital_campostrazables(id_ma_digital);
+
+                match_de_digital(id_ma_digital);
+
+                Program.Bd_Exp_Transportes.SubmitChanges();
+
+                Form_Mode = form_mode.Edit;
+            }
+            catch (Exception)
+            {                
+            }                
+        }
+
+        private void match_de_digital(int id_ma_digital)
+        {
+            List<data_members.de_digital> listainsertar = new List<data_members.de_digital>();
+            foreach (digital item in tramite.imagenes_digital)
+            {
+                data_members.de_digital de_digital = new data_members.de_digital();
+                de_digital.id_ma_digital = id_ma_digital;
+
+                byte[] file_byte_thumbnail = procesa_imagen.toByteArray(item.thumbnail);
+                System.Data.Linq.Binary file_binary_thumbnail = new System.Data.Linq.Binary(file_byte_thumbnail);
+                de_digital.thumbnail = file_binary_thumbnail;
+                file_byte_thumbnail = null;
+                file_binary_thumbnail = null;
+
+                de_digital.id_re_clasificaciondocumento_documento = item.id_re_clasificaciondocumento_documento;
+
+                byte[] file_byte_imagen = procesa_imagen.toByteArray(item.imagen);
+                System.Data.Linq.Binary file_binary_imagen = new System.Data.Linq.Binary(file_byte_imagen);
+                de_digital.imagen = file_binary_imagen;
+                file_byte_imagen = null;
+                file_binary_imagen = null;
+
+                de_digital.valor_trazable = item.valor_trazable;                
+                de_digital.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+                
+                listainsertar.Add(de_digital);
+                
+                de_digital = null;
+            }
+            Program.Bd_Exp_Transportes.de_digital.InsertAllOnSubmit(listainsertar);
+        }
+
+        private void match_de_digital_campostrazables(int id_ma_digital)
+        {
+            List<data_members.de_digital_campostrazables> listainsertar = new List<data_members.de_digital_campostrazables>();
+            foreach (trazabilidad_tramite item in tramite.trazabilidad)
+	        {
+                data_members.de_digital_campostrazables de_digital_campostrazables = new data_members.de_digital_campostrazables();
+                de_digital_campostrazables.id_ma_digital = id_ma_digital;
+                de_digital_campostrazables.id_re_expediente_campotrazable = item.id_re_expediente_campotrazable;
+                de_digital_campostrazables.valor_trazable = item.valor_trazable;
+                de_digital_campostrazables.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+                listainsertar.Add(de_digital_campostrazables);
+                de_digital_campostrazables = null;
+	        }
+            Program.Bd_Exp_Transportes.de_digital_campostrazables.InsertAllOnSubmit(listainsertar);
+        }
+
+        private int match_ma_digital()
+        {
+            data_members.ma_digital ma_digital = new data_members.ma_digital();
+            ma_digital.id_re_expediente_tramite = tramite.id_re_expediente_tramite;
+            data_members.pa_obtener_fechahoraResult fechahora = Program.Bd_Exp_Transportes.pa_obtener_fechahora() as pa_obtener_fechahoraResult;
+            ma_digital.nota = tramite.nota;
+            ma_digital.fecha_hora_bloqueo = tramite.fecha_hora_bloqueo;
+            ma_digital.id_estatus = tramite.id_estatus;
+
+            Program.Bd_Exp_Transportes.ma_digital.InsertOnSubmit(ma_digital);
+            Program.Bd_Exp_Transportes.SubmitChanges();
+            return ma_digital.id;
         }
 
         List<trazabilidad_tramite> sources_trazabilidad = new List<trazabilidad_tramite>();
@@ -170,24 +320,20 @@ namespace thumbnail.forms
                 {
                     MessageBox.Show("Se encontraron campos trazables sin valor, imposible procesar, favor de revisar", "Error en valores trazables", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     result = false;
-                    break;
                     source_trazabilidad.valor_trazable = null;
+                    break;                    
                 }                
-                source_trazabilidad.fecha = obtener.fecha();
-                source_trazabilidad.hora = obtener.hora();
-                sources_trazabilidad.Add(source_trazabilidad);
+                sources_trazabilidad.Add(source_trazabilidad);                
                 source_trazabilidad = null;
             }
             return result;
         }
 
         private Boolean colectar_archivosdigital() {
-            tramite.imagenes_digital.Clear();
             if (sources_digital.Count() == 0) {
                 MessageBox.Show("No se encontraron documentos enlazados, favor de revisar", "Documentos digitales", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
-            }
-            tramite.imagenes_digital = sources_digital;
+            }            
             return true;
         }
 
@@ -234,13 +380,13 @@ namespace thumbnail.forms
 
         #region lookUpEdit_Tramites
 
+
+        private List<data_members.vw_ListaTramitesActivos> lista_tramites = new List<vw_ListaTramitesActivos>();
         private void populate_lookUpEdit_Tramites()
         {
-            this.BindingSource_ListaTramites = new BindingSource(); //instanciar
-            this.BindingSource_ListaTramites.DataSource = Program.Bd_Exp_Transportes.vw_ListaTramitesActivos.ToList(); //obtener la lista de tramites y vincularla al bindingsource
+            lista_tramites = Program.Bd_Exp_Transportes.vw_ListaTramitesActivos.ToList(); //obtener la lista de tramites y vincularla al bindingsource
+            this.BindingSource_ListaTramites.DataSource = lista_tramites;
             this.lookUpEdit_Tramites.Properties.DataSource = this.BindingSource_ListaTramites; //asignar datasourse al combo
-            this.lookUpEdit_Tramites.Properties.DisplayMember = "Nombre_tramite"; //establecer el campo a mostrar en combo
-            this.lookUpEdit_Tramites.Properties.ValueMember = "id_tramite"; //establecer valor a manejar en combo
         }
 
         //seleccionar tramite por default
@@ -258,10 +404,18 @@ namespace thumbnail.forms
         //combo de tramites al cambiar item
         private thumbnail.data_members.vw_ListaTramitesActivos lookUpEdit_Tramites_selected;
         private void lookUpEdit_Tramites_EditValueChanged(object sender, EventArgs e)
-        {            
-            this.lookUpEdit_Tramites_selected = ((LookUpEdit)sender).Properties.GetDataSourceRowByKeyValue(((LookUpEdit)sender).EditValue) as thumbnail.data_members.vw_ListaTramitesActivos; //asignar la seleccion del combo
-            populate_dataGridView_campostrazables();
-            limpia_control_de_enlazados();
+        {
+            try
+            {
+                int id_tramite = (int)lookUpEdit_Tramites.EditValue;
+
+                lookUpEdit_Tramites_selected = lista_tramites.SingleOrDefault(query => query.id_tramite == id_tramite);
+                populate_dataGridView_campostrazables();
+                limpia_control_de_enlazados();
+            }
+            catch (Exception)
+            {                
+            }            
         }
 
         private void lookUpEdit_Tramites_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
@@ -306,7 +460,6 @@ namespace thumbnail.forms
         //popular grid
         private void populate_dataGridView_campostrazables()
         {
-            this.BindingSource_CamposTrazables = new BindingSource(); //instanciar
             /* obtener campos trazables ejecutando procedimiento almacenado mandando como parametro
              * el id de expediente obtenido de los datos de la seleccion del combo de tramites
              */
@@ -559,14 +712,13 @@ namespace thumbnail.forms
 
                         Image img = Image.FromFile(  ( (tagstrunct) current.Tag ).path_image.ToString()  );
                         source.imagen = img; //asignar imagen al colector principal
-                        img.Dispose();
+                        source.thumbnail = classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img);
+                        //img.Dispose();
                         source.id_re_clasificaciondocumento_documento = source_digital.id_re_clasificaciondocumento_documento;
                         source.valor_trazable = source_digital.valor_trazable;
                         source.clasificaciondocumento = source_digital.clasificaciondocumento;
                         source.documento = source_digital.documento;
                         source.guid = ((tagstrunct)current.Tag).guid.ToString();
-                        source.fecha = obtener.fecha(); //asignar fecha al colector principal
-                        source.hora = obtener.hora();//asignar hora al colector principal
 
                         try
                         {
@@ -779,14 +931,13 @@ namespace thumbnail.forms
 
                 Image img = Image.FromFile(((tagstrunct)item.Tag).path_image.ToString());
                 source.imagen = img; //asignar imagen al colector principal
-                img.Dispose();
+                source.thumbnail = classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img);
+                //img.Dispose();
                 source.id_re_clasificaciondocumento_documento = source_digital.id_re_clasificaciondocumento_documento;
                 source.valor_trazable = source_digital.valor_trazable;
                 source.clasificaciondocumento = source_digital.clasificaciondocumento;
                 source.documento = source_digital.documento;
                 source.guid = ((tagstrunct)item.Tag).guid.ToString();
-                source.fecha = obtener.fecha(); //asignar fecha al colector principal
-                source.hora = obtener.hora();//asignar hora al colector principal
 
                 item.Remove();
 
@@ -827,14 +978,13 @@ namespace thumbnail.forms
 
                 Image img = Image.FromFile(((tagstrunct)item.Tag).path_image.ToString());
                 source.imagen = img; //asignar imagen al colector principal
-                img.Dispose();
+                source.thumbnail = classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img);
+                //img.Dispose();
                 source.id_re_clasificaciondocumento_documento = source_digital.id_re_clasificaciondocumento_documento;
                 source.valor_trazable = source_digital.valor_trazable;
                 source.clasificaciondocumento = source_digital.clasificaciondocumento;
                 source.documento = source_digital.documento;
                 source.guid = ((tagstrunct)item.Tag).guid.ToString();
-                source.fecha = obtener.fecha(); //asignar fecha al colector principal
-                source.hora = obtener.hora();//asignar hora al colector principal
 
                 item.Remove();
 
@@ -1076,9 +1226,11 @@ namespace thumbnail.forms
             MessageBox.Show("error en mascara");
         }
 
-        private void tabpgeInterno_Click(object sender, EventArgs e)
-        {
-
+        private void btn_editar_Click(object sender, EventArgs e)
+        {           
+            frm_abrir_tramite frm = new frm_abrir_tramite();
+            DialogResult result = frm.ShowDialog(this);
+            frm.Dispose();
         }
 
     }

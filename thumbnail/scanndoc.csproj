@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="classes\convert_md5.cs" />
     <Compile Include="classes\obtener.cs" />
+    <Compile Include="classes\procesa_imagen.cs" />
     <Compile Include="classes\thumbnail.cs" />
     <Compile Include="data_members\Bd_Exp_Transportes.designer.cs">
       <AutoGen>True</AutoGen>
@@ -140,6 +141,12 @@
     </Compile>
     <Compile Include="forms\ca_usuarios.Designer.cs">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_abrir_tramite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_abrir_tramite.Designer.cs">
+      <DependentUpon>frm_abrir_tramite.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\re_tramites_clasificaciondocumentos.cs">
       <SubType>Form</SubType>
@@ -208,6 +215,7 @@
     <Compile Include="models\Usuario_Logueado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="assets\imgs\16x16\doc_new.png" />
     <None Include="data_members\Bd_Exp_Transportes.dbml.layout">
       <DependentUpon>Bd_Exp_Transportes.dbml</DependentUpon>
     </None>
@@ -234,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\ca_usuarios.resx">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_abrir_tramite.resx">
+      <DependentUpon>frm_abrir_tramite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\re_tramites_clasificaciondocumentos.resx">
       <DependentUpon>re_tramites_clasificaciondocumentos.cs</DependentUpon>
@@ -306,6 +317,7 @@
     <None Include="Properties\DataSources\thumbnail.data_members.re_clasificaciondocumentos_documentos.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.re_expedientes_campostrazables.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.re_tramites_clasificaciondocumentos.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.vw_ListaTramitesActivos.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -366,7 +378,67 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\" />
+    <Content Include="assets\imgs\100x100\users.fw.png" />
+    <Content Include="assets\imgs\16x16\app_window.png" />
+    <Content Include="assets\imgs\16x16\cancel.png" />
+    <Content Include="assets\imgs\16x16\delete.png" />
+    <Content Include="assets\imgs\16x16\desenlazar.png" />
+    <Content Include="assets\imgs\16x16\edit.png" />
+    <Content Include="assets\imgs\16x16\gestion.png" />
+    <Content Include="assets\imgs\16x16\get.png" />
+    <Content Include="assets\imgs\16x16\hook.png" />
+    <Content Include="assets\imgs\16x16\info.png" />
+    <Content Include="assets\imgs\16x16\notepad.png" />
+    <Content Include="assets\imgs\16x16\open.png" />
+    <Content Include="assets\imgs\16x16\plus.png" />
+    <Content Include="assets\imgs\16x16\redo.png" />
+    <Content Include="assets\imgs\16x16\reload.png" />
+    <Content Include="assets\imgs\16x16\rotate_left.png" />
+    <Content Include="assets\imgs\16x16\rotate_rigth.png" />
+    <Content Include="assets\imgs\16x16\scanner.png" />
+    <Content Include="assets\imgs\16x16\trash.png" />
+    <Content Include="assets\imgs\16x16\undo.png" />
+    <Content Include="assets\imgs\16x16\users.png" />
+    <Content Include="assets\imgs\16x16\view.png" />
+    <Content Include="assets\imgs\16x16\wrench_plus.png" />
+    <Content Include="assets\imgs\16x16\zoom.png" />
+    <Content Include="assets\imgs\32x32\attention.png" />
+    <Content Include="assets\imgs\32x32\externo.png" />
+    <Content Include="assets\imgs\32x32\fit.png" />
+    <Content Include="assets\imgs\32x32\interno.png" />
+    <Content Include="assets\imgs\32x32\proveedor.png" />
+    <Content Include="assets\imgs\32x32\users.png" />
+    <Content Include="assets\imgs\32x32\zoomin.png" />
+    <Content Include="assets\imgs\32x32\zoomorigin.png" />
+    <Content Include="assets\imgs\32x32\zoomout.png" />
+    <Content Include="assets\imgs\48x48\attention.png" />
+    <Content Include="assets\imgs\48x48\checkbox_checked.png" />
+    <Content Include="assets\imgs\48x48\checkmark.png" />
+    <Content Include="assets\imgs\48x48\clear.png" />
+    <Content Include="assets\imgs\48x48\clear_get.png" />
+    <Content Include="assets\imgs\48x48\clock.png" />
+    <Content Include="assets\imgs\48x48\close.png" />
+    <Content Include="assets\imgs\48x48\delete.png" />
+    <Content Include="assets\imgs\48x48\doc_plus.png" />
+    <Content Include="assets\imgs\48x48\fit.png" />
+    <Content Include="assets\imgs\48x48\flip_horizontal.png" />
+    <Content Include="assets\imgs\48x48\flip_vertically.png" />
+    <Content Include="assets\imgs\48x48\folder_open.png" />
+    <Content Include="assets\imgs\48x48\gestion.png" />
+    <Content Include="assets\imgs\48x48\get.png" />
+    <Content Include="assets\imgs\48x48\reset.png" />
+    <Content Include="assets\imgs\48x48\rotateder.png" />
+    <Content Include="assets\imgs\48x48\rotateizq.png" />
+    <Content Include="assets\imgs\48x48\save.png" />
+    <Content Include="assets\imgs\48x48\scanner.png" />
+    <Content Include="assets\imgs\48x48\users.png" />
+    <Content Include="assets\imgs\48x48\zoomin.png" />
+    <Content Include="assets\imgs\48x48\zoomorigin.png" />
+    <Content Include="assets\imgs\48x48\zoomout.png" />
+    <Content Include="assets\imgs\icons\catalogs.ico" />
+    <Content Include="assets\imgs\icons\fav-icon.ico" />
+    <Content Include="assets\imgs\icons\key.ico" />
+    <Content Include="assets\imgs\icons\main_form.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

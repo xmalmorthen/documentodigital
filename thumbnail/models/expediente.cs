@@ -7,6 +7,19 @@ using System.Text;
 namespace thumbnail.models
 {
     public class tramite_model {
+
+        private int _id_re_expediente_tramite;
+        public int id_re_expediente_tramite { get { return _id_re_expediente_tramite; } set { _id_re_expediente_tramite = value; } }
+
+        private string _nota;
+        public string nota { get { return _nota; } set { _nota = value; } }
+
+        private DateTime _fecha_hora_bloqueo;
+        public DateTime fecha_hora_bloqueo { get { return _fecha_hora_bloqueo; } set { _fecha_hora_bloqueo = value; } }
+
+        private int _id_estatus;
+        public int id_estatus { get { return _id_estatus; } set { _id_estatus = value; } }
+
         private List<trazabilidad_tramite> _trazabilidad = new List<trazabilidad_tramite>();
         public List<trazabilidad_tramite> trazabilidad
         {
@@ -61,32 +74,6 @@ namespace thumbnail.models
                 _valor_trazable = value;
             }
         }
-
-        private string _fecha;
-        public string fecha
-        {
-            get
-            {
-                return _fecha;
-            }
-            set
-            {
-                _fecha = value;
-            }
-        }
-
-        private string _hora;
-        public string hora
-        {
-            get
-            {
-                return _hora;
-            }
-            set
-            {
-                _hora = value;
-            }
-        }
     }
 
     public class digital
@@ -117,6 +104,19 @@ namespace thumbnail.models
             }
         }
 
+        private Image _thumbnail;
+        public Image thumbnail
+        {
+            get
+            {
+                return _thumbnail;
+            }
+            set
+            {
+                _thumbnail = value;
+            }
+        }
+
         private Image _imagen;
         public Image imagen
         {
@@ -127,32 +127,6 @@ namespace thumbnail.models
             set
             {
                 _imagen = value;
-            }
-        }
-
-        private string _fecha;
-        public string fecha
-        {
-            get
-            {
-                return _fecha;
-            }
-            set
-            {
-                _fecha = value;
-            }
-        }
-
-        private string _hora;
-        public string hora
-        {
-            get
-            {
-                return _hora;
-            }
-            set
-            {
-                _hora = value;
             }
         }
 
