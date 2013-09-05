@@ -57,14 +57,26 @@ namespace thumbnail.forms
             //nuevo
             btn_nuevo.Enabled = (Form_Mode == form_mode.Edit) ? true : false;
             //editar
-            btn_editar.Enabled = (Form_Mode == form_mode.Add) ? true : false;
+            //btn_editar.Enabled = (Form_Mode == form_mode.Add) ? true : false;
 
             //guardar
-            btn_guardar.Enabled = (Form_Mode == form_mode.Add) ? true : false;
+            //btn_guardar.Enabled = (Form_Mode == form_mode.Add) ? true : false;
             //limpiar
             btn_limpiar.Enabled = (Form_Mode == form_mode.Add) ? true : false;
 
             lookUpEdit_Tramites.Enabled = (Form_Mode == form_mode.Add) ? true : false;
+
+            /*
+             * si el modo es edicion se liga el datapropertyname del campo valor trazable
+             * para que al obtener los registros de la base de datos se presenten en el grid
+             * si el formulario esta en modo agregar no se enlaza a nada.
+             */ 
+            if (Form_Mode == form_mode.Add) {
+                col_valor_trazable.DataPropertyName =  null;
+            } else {
+                col_valor_trazable.DataPropertyName =  "valor_trazable";
+            }
+
         }
 
         //lista de imagenes global
@@ -1145,8 +1157,8 @@ namespace thumbnail.forms
             public string path_image;
             public string guid;
         };
-        public tagstrunct tag; //variable global para los tag de los items
-        
+        public tagstrunct tag; //variable global para los tag de los items               
+
         //metodo para generar thumbnail de imagen
         private void generatethumbnailimage(string file)
         {
@@ -1226,12 +1238,99 @@ namespace thumbnail.forms
             MessageBox.Show("error en mascara");
         }
 
+        int id_ma_digital_edit;
         private void btn_editar_Click(object sender, EventArgs e)
         {           
             frm_abrir_tramite frm = new frm_abrir_tramite();
             DialogResult result = frm.ShowDialog(this);
+            id_ma_digital_edit = 0;
+            if (result == System.Windows.Forms.DialogResult.OK) {
+                id_ma_digital_edit = (frm.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.Current as data_members.pa_ReferenciaExpedientesporValorTrazableResult).id_ma_digital;
+                Form_Mode = form_mode.Edit;
+            }
             frm.Dispose();
+
+            if (id_ma_digital_edit != 0) 
+            {
+                obtenerregistrosaeditar();
+            }
+
         }
+
+        private void obtenerregistrosaeditar()
+        {
+            obtenercampostrazablesaeditar();
+            obtenerarchivodigital();
+        }
+
+        private void obtenerarchivodigital()
+        {
+            sources_digital.Clear();
+
+            List<data_members.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult> imagenesdigitalregistradas =
+                new List<pa_RegistrosDigitalesRegistradosporId_ma_digitalResult>(Program.Bd_Exp_Transportes.pa_RegistrosDigitalesRegistradosporId_ma_digital(id_ma_digital_edit));
+
+            foreach (data_members.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult current in imagenesdigitalregistradas)
+            {
+                thumbnail.models.digital source = new thumbnail.models.digital();
+
+                Image img = procesa_imagen.ByteArrayToImage(current.thumbnail.ToArray());
+                source.thumbnail = img;
+                source.id_re_clasificaciondocumento_documento = current.id_re_clasificaciondocumento_documento;
+                source.valor_trazable = current.valor_trazable;
+                source.clasificaciondocumento = current.clasificaciondocumento;
+                source.documento = current.Documento;
+                source.guid = Guid.NewGuid().ToString();
+
+                thumbnainlist.Images.Add(img);
+                this.lstvwdocumentosenlazados.Items.Add("", (int)thumbnainlist.Images.Count - 1);
+
+                tagstrunct tagedit;
+                tagedit.path_image = "";
+                tagedit.guid = source.guid;
+
+                this.lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Tag = tagedit;
+
+                ListViewGroup _grupo = new ListViewGroup();
+                _grupo.Name = source.clasificaciondocumento; //obtener el nombre del grupo a partir de su clasificacion de documento
+                _grupo.Header = source.clasificaciondocumento + " [ " + source.documento + " ]"; //concatenar la clasificacion de documentos con el nombre del documento
+                _grupo.HeaderAlignment = HorizontalAlignment.Left;
+
+                Boolean existe = false;
+                foreach (ListViewGroup __grupo in lstvwdocumentosenlazados.Groups)
+                {
+                    if (__grupo.Name == _grupo.Name)
+                    {
+                        existe = true;
+                        break;
+                    }
+                }
+
+                int idxgroup = 0;
+                if (!existe)
+                {
+                    idxgroup = lstvwdocumentosenlazados.Groups.Add(_grupo); //agregar grupo
+                }
+                
+                lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];
+
+                sources_digital.Add(source);
+                source = null;
+            }
+
+        }
+
+        private void obtenercampostrazablesaeditar() { 
+            /* obtener campos trazables ejecutando procedimiento almacenado mandando como parametro
+             * el id de maestro digital
+             */
+            this.BindingSource_CamposTrazables.DataSource = Program.Bd_Exp_Transportes.pa_CampostrazablesRegistradosporId_ma_digital(id_ma_digital_edit);
+            this.dataGridView_CamposTrazables.DataSource = this.BindingSource_CamposTrazables;                        
+
+            this.formatear_celda_principal(); //dar formato a la fila del campo principal
+        }
+
+
 
     }
 }

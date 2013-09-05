@@ -495,4 +495,30 @@
       <Column Name="expediente" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.pa_CampostrazablesRegistradosporId_ma_digital" Method="pa_CampostrazablesRegistradosporId_ma_digital">
+    <Parameter Name="id_ma_digital" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_CampostrazablesRegistradosporId_ma_digitalResult">
+      <Column Name="id_re_expediente_campotrazable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_campotrazable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Tamanio_Caracteres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mascara" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="es_principal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="valor_trazable" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_RegistrosDigitalesRegistradosporId_ma_digital" Method="pa_RegistrosDigitalesRegistradosporId_ma_digital">
+    <Parameter Name="id_ma_digital" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_RegistrosDigitalesRegistradosporId_ma_digitalResult">
+      <Column Name="thumbnail" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+      <Column Name="id_re_clasificaciondocumento_documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="valor_trazable" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="clasificaciondocumento" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Documento" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="id_origen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Origen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

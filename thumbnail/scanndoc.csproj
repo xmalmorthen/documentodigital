@@ -313,6 +313,7 @@
     <None Include="Properties\DataSources\thumbnail.data_members.pa_DocumentosporClasificacionDocumentoResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_ModulosporIdRolResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.pa_ReferenciaExpedientesporValorTrazableResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_RolesporIdUsuarioResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.re_clasificaciondocumentos_documentos.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.re_expedientes_campostrazables.datasource" />
@@ -420,6 +421,7 @@
     <Content Include="assets\imgs\48x48\close.png" />
     <Content Include="assets\imgs\48x48\delete.png" />
     <Content Include="assets\imgs\48x48\doc_plus.png" />
+    <None Include="assets\imgs\48x48\find.png" />
     <Content Include="assets\imgs\48x48\fit.png" />
     <Content Include="assets\imgs\48x48\flip_horizontal.png" />
     <Content Include="assets\imgs\48x48\flip_vertically.png" />

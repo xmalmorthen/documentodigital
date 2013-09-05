@@ -16,9 +16,50 @@ namespace thumbnail.forms
     {
         Boolean valid = false;
 
+        //enumeracion para el estado del formulario
+        public enum form_mode
+        {
+            normal,
+            contenidobusqueda
+        }
+
+        //property para el control del estado del formulario
+        private form_mode _formmode;
+        public form_mode Form_Mode
+        {
+            get { return _formmode; }
+            set
+            {
+                _formmode = value;
+                enabledisablecontrols();
+                delete_validation_sumary();
+            }
+        }
+
+        private void delete_validation_sumary()
+        {
+            dxValidationProvider.RemoveControlError(txt);
+        }
+
+        //funcion para 
+        private void enabledisablecontrols()
+        {
+            /*
+             * botonera
+             */
+            //aceptar
+            btn_aceptar.Enabled = (Form_Mode == form_mode.contenidobusqueda) ? true : false;
+            //cancelar
+            //btn_cancelar.Enabled = (Form_Mode == form_mode.contenidobusqueda) ? true : false;
+
+            pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.Enabled = (Form_Mode == form_mode.contenidobusqueda) ? true : false;
+            dataGridView.Enabled = (Form_Mode == form_mode.contenidobusqueda) ? true : false;
+        }
+
         public frm_abrir_tramite()
         {
             InitializeComponent();
+            Form_Mode = form_mode.normal;
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -40,14 +81,14 @@ namespace thumbnail.forms
 
         private bool valida()
         {
-            dxValidationProvider.RemoveControlError(txt);
+            delete_validation_sumary();
             dxValidationProvider.Validate(); //lanzar validacion
             if (dxValidationProvider.GetInvalidControls().Count() != 0) return false;
 
             return true;
         }
 
-        private void btn_aceptar_Click(object sender, EventArgs e)
+        private void btn_buscar_Click(object sender, EventArgs e)
         {          
             try
             {
@@ -59,14 +100,11 @@ namespace thumbnail.forms
                 {
                     MessageBox.Show("No se encontró trámite para ese valor trazable", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if (tramites.Count > 1)
+                else
                 {
-                    MessageBox.Show("Se encontró más de un trámite para ese valor trazable", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else {
-                    MessageBox.Show("Se encontró un trámite para ese valor trazable", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                
+                    Form_Mode = form_mode.contenidobusqueda;
+                    dataGridView.Focus();
+                }                
             }
             catch (Exception)
             {                
@@ -84,6 +122,8 @@ namespace thumbnail.forms
                 Application.DoEvents();
 
                 tramites = new List<data_members.pa_ReferenciaExpedientesporValorTrazableResult>(Program.Bd_Exp_Transportes.pa_ReferenciaExpedientesporValorTrazable(txt.Text.ToString().ToLower()));
+
+                pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = tramites;
             }
             catch (Exception)
             {
@@ -92,6 +132,19 @@ namespace thumbnail.forms
 
             tlp_proc.Visible = false;
             this.Cursor = Cursors.Default;
+        }
+
+        private void btn_aceptar_Click(object sender, EventArgs e)
+        {
+            valid = true;
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+        }
+
+        private void btn_limpiar_Click(object sender, EventArgs e)
+        {
+            txt.Text = "";
+            pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = null;
+            Form_Mode = form_mode.normal;
         }
         
     }

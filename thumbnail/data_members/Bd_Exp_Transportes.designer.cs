@@ -503,6 +503,20 @@ namespace thumbnail.data_members
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor_trazable);
 			return ((ISingleResult<pa_ReferenciaExpedientesporValorTrazableResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_CampostrazablesRegistradosporId_ma_digital")]
+		public ISingleResult<pa_CampostrazablesRegistradosporId_ma_digitalResult> pa_CampostrazablesRegistradosporId_ma_digital([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_ma_digital)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_ma_digital);
+			return ((ISingleResult<pa_CampostrazablesRegistradosporId_ma_digitalResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_RegistrosDigitalesRegistradosporId_ma_digital")]
+		public ISingleResult<pa_RegistrosDigitalesRegistradosporId_ma_digitalResult> pa_RegistrosDigitalesRegistradosporId_ma_digital([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_ma_digital)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_ma_digital);
+			return ((ISingleResult<pa_RegistrosDigitalesRegistradosporId_ma_digitalResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ca_acciones")]
@@ -8587,6 +8601,310 @@ namespace thumbnail.data_members
 				if ((this._expediente != value))
 				{
 					this._expediente = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_CampostrazablesRegistradosporId_ma_digitalResult
+	{
+		
+		private int _id_re_expediente_campotrazable;
+		
+		private int _id_campotrazable;
+		
+		private string _Nombre;
+		
+		private int _Tamanio_Caracteres;
+		
+		private int _id_estatus;
+		
+		private string _Mascara;
+		
+		private bool _es_principal;
+		
+		private string _valor_trazable;
+		
+		public pa_CampostrazablesRegistradosporId_ma_digitalResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_expediente_campotrazable", DbType="Int NOT NULL")]
+		public int id_re_expediente_campotrazable
+		{
+			get
+			{
+				return this._id_re_expediente_campotrazable;
+			}
+			set
+			{
+				if ((this._id_re_expediente_campotrazable != value))
+				{
+					this._id_re_expediente_campotrazable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_campotrazable", DbType="Int NOT NULL")]
+		public int id_campotrazable
+		{
+			get
+			{
+				return this._id_campotrazable;
+			}
+			set
+			{
+				if ((this._id_campotrazable != value))
+				{
+					this._id_campotrazable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tamanio_Caracteres", DbType="Int NOT NULL")]
+		public int Tamanio_Caracteres
+		{
+			get
+			{
+				return this._Tamanio_Caracteres;
+			}
+			set
+			{
+				if ((this._Tamanio_Caracteres != value))
+				{
+					this._Tamanio_Caracteres = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus", DbType="Int NOT NULL")]
+		public int id_estatus
+		{
+			get
+			{
+				return this._id_estatus;
+			}
+			set
+			{
+				if ((this._id_estatus != value))
+				{
+					this._id_estatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mascara", DbType="VarChar(200)")]
+		public string Mascara
+		{
+			get
+			{
+				return this._Mascara;
+			}
+			set
+			{
+				if ((this._Mascara != value))
+				{
+					this._Mascara = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_es_principal", DbType="Bit NOT NULL")]
+		public bool es_principal
+		{
+			get
+			{
+				return this._es_principal;
+			}
+			set
+			{
+				if ((this._es_principal != value))
+				{
+					this._es_principal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_valor_trazable", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string valor_trazable
+		{
+			get
+			{
+				return this._valor_trazable;
+			}
+			set
+			{
+				if ((this._valor_trazable != value))
+				{
+					this._valor_trazable = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_RegistrosDigitalesRegistradosporId_ma_digitalResult
+	{
+		
+		private System.Data.Linq.Binary _thumbnail;
+		
+		private int _id_re_clasificaciondocumento_documento;
+		
+		private System.DateTime _fecha_hora_creacion;
+		
+		private string _valor_trazable;
+		
+		private string _clasificaciondocumento;
+		
+		private string _Documento;
+		
+		private System.Nullable<int> _id_origen;
+		
+		private string _Origen;
+		
+		public pa_RegistrosDigitalesRegistradosporId_ma_digitalResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thumbnail", DbType="Image NOT NULL", CanBeNull=false)]
+		public System.Data.Linq.Binary thumbnail
+		{
+			get
+			{
+				return this._thumbnail;
+			}
+			set
+			{
+				if ((this._thumbnail != value))
+				{
+					this._thumbnail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_clasificaciondocumento_documento", DbType="Int NOT NULL")]
+		public int id_re_clasificaciondocumento_documento
+		{
+			get
+			{
+				return this._id_re_clasificaciondocumento_documento;
+			}
+			set
+			{
+				if ((this._id_re_clasificaciondocumento_documento != value))
+				{
+					this._id_re_clasificaciondocumento_documento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_hora_creacion", DbType="DateTime NOT NULL")]
+		public System.DateTime fecha_hora_creacion
+		{
+			get
+			{
+				return this._fecha_hora_creacion;
+			}
+			set
+			{
+				if ((this._fecha_hora_creacion != value))
+				{
+					this._fecha_hora_creacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_valor_trazable", DbType="VarChar(200)")]
+		public string valor_trazable
+		{
+			get
+			{
+				return this._valor_trazable;
+			}
+			set
+			{
+				if ((this._valor_trazable != value))
+				{
+					this._valor_trazable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_clasificaciondocumento", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string clasificaciondocumento
+		{
+			get
+			{
+				return this._clasificaciondocumento;
+			}
+			set
+			{
+				if ((this._clasificaciondocumento != value))
+				{
+					this._clasificaciondocumento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Documento", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Documento
+		{
+			get
+			{
+				return this._Documento;
+			}
+			set
+			{
+				if ((this._Documento != value))
+				{
+					this._Documento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_origen", DbType="Int")]
+		public System.Nullable<int> id_origen
+		{
+			get
+			{
+				return this._id_origen;
+			}
+			set
+			{
+				if ((this._id_origen != value))
+				{
+					this._id_origen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Origen", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Origen
+		{
+			get
+			{
+				return this._Origen;
+			}
+			set
+			{
+				if ((this._Origen != value))
+				{
+					this._Origen = value;
 				}
 			}
 		}

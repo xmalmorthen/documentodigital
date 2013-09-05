@@ -30,20 +30,53 @@ namespace thumbnail.forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_scann));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cntmnuListViewEnlace = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmnuitemlstvwenlaceabrir = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmnuitemlstvwenlaceeliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwenlaceseparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmnuitemlstvwenlacedesenlazar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmnuitemlstvwenlacedesenlazarseleccionado = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmnuitemlstvwenlacedesenlazartodo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmnuitemlstvwenlacegirarderecha = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmnuitemlstvwenlacegirarizquierda = new System.Windows.Forms.ToolStripMenuItem();
             this.cntmnuListViewScann = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmnuitemlstvwscannabrir = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmnuitemlstvwscanneliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwscannseparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmnuitemlstvwscannenlazar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmnuitemlstvwscannenlazarsubmnutodo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwscannseparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmnuitemlstvwscannseltodo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmnuitemlstvwscannrotarderecha = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmnuitemlstvwscannrotarizquierda = new System.Windows.Forms.ToolStripMenuItem();
             this.imglsttabs = new System.Windows.Forms.ImageList(this.components);
             this.tooltipBtnMnuOptions = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_nuevo = new System.Windows.Forms.Button();
+            this.btn_editar = new System.Windows.Forms.Button();
+            this.btn_config_scann = new System.Windows.Forms.Button();
+            this.btn_limpiarcontroles = new System.Windows.Forms.Button();
+            this.btn_abririmagen = new System.Windows.Forms.Button();
+            this.btn_scanear = new System.Windows.Forms.Button();
+            this.tab0_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
+            this.tab0_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
+            this.tab1_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
+            this.tab1_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
+            this.tab2_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
+            this.tab2_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
+            this.tab3_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
+            this.tab3_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
+            this.btn_cerrar = new System.Windows.Forms.Button();
+            this.btn_limpiar = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
             this.ofdabrirarchivo = new System.Windows.Forms.OpenFileDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -87,6 +120,7 @@ namespace thumbnail.forms
             this.tab3_lstvwdocumentosescaneados = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
             this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.KDImage = new AxKDImageEditor.AxKDImage();
             this.lookUpEdit_Tramites = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -104,38 +138,7 @@ namespace thumbnail.forms
             this.colid_estatus_tramite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcion_estatus_tramite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_re_expedientes_tramites = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btn_nuevo = new System.Windows.Forms.Button();
-            this.btn_editar = new System.Windows.Forms.Button();
             this.BindingSource_ListaTramites = new System.Windows.Forms.BindingSource(this.components);
-            this.btn_config_scann = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_limpiarcontroles = new System.Windows.Forms.Button();
-            this.btn_abririmagen = new System.Windows.Forms.Button();
-            this.btn_scanear = new System.Windows.Forms.Button();
-            this.tsmnuitemlstvwenlaceabrir = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmnuitemlstvwenlaceeliminar = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmnuitemlstvwenlacedesenlazar = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmnuitemlstvwenlacedesenlazarseleccionado = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmnuitemlstvwenlacedesenlazartodo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmnuitemlstvwenlacegirarderecha = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmnuitemlstvwenlacegirarizquierda = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmnuitemlstvwscannabrir = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmnuitemlstvwscanneliminar = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmnuitemlstvwscannenlazar = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmnuitemlstvwscannenlazarsubmnutodo = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmnuitemlstvwscannrotarderecha = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmnuitemlstvwscannrotarizquierda = new System.Windows.Forms.ToolStripMenuItem();
-            this.tab0_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
-            this.tab0_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
-            this.tab1_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
-            this.tab1_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
-            this.tab2_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
-            this.tab2_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
-            this.tab3_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
-            this.tab3_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
             this.idcampotrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tamanioCaracteresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,11 +146,16 @@ namespace thumbnail.forms
             this.mascaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.esprincipalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BindingSource_CamposTrazables = new System.Windows.Forms.BindingSource(this.components);
-            this.btn_cerrar = new System.Windows.Forms.Button();
-            this.btn_limpiar = new System.Windows.Forms.Button();
-            this.btn_guardar = new System.Windows.Forms.Button();
             this.cntmnuListViewEnlace.SuspendLayout();
             this.cntmnuListViewScann.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosenlazados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosescaneados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosenlazados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosescaneados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab2_pblbldocumentosescaneados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab2_pblbldocumentosenlazados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosescaneados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosenlazados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposTrazables)).BeginInit();
             this.tbctrl.SuspendLayout();
             this.tabpgeUsuario.SuspendLayout();
@@ -167,19 +175,11 @@ namespace thumbnail.forms
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tlp_proc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KDImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Tramites.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource_ListaTramites)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosenlazados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosescaneados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosenlazados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosescaneados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab2_pblbldocumentosescaneados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab2_pblbldocumentosenlazados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosescaneados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosenlazados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource_CamposTrazables)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,15 +199,75 @@ namespace thumbnail.forms
             this.cntmnuListViewEnlace.Size = new System.Drawing.Size(212, 146);
             this.cntmnuListViewEnlace.Opening += new System.ComponentModel.CancelEventHandler(this.cntmnuListViewEnlace_Opening);
             // 
+            // tsmnuitemlstvwenlaceabrir
+            // 
+            this.tsmnuitemlstvwenlaceabrir.Image = global::thumbnail.Icons16x16.view;
+            this.tsmnuitemlstvwenlaceabrir.Name = "tsmnuitemlstvwenlaceabrir";
+            this.tsmnuitemlstvwenlaceabrir.Size = new System.Drawing.Size(211, 26);
+            this.tsmnuitemlstvwenlaceabrir.Text = "Abrir";
+            this.tsmnuitemlstvwenlaceabrir.Click += new System.EventHandler(this.tsmnuitemlstvwenlaceabrir_Click);
+            // 
+            // tsmnuitemlstvwenlaceeliminar
+            // 
+            this.tsmnuitemlstvwenlaceeliminar.Image = global::thumbnail.Icons16x16.trash;
+            this.tsmnuitemlstvwenlaceeliminar.Name = "tsmnuitemlstvwenlaceeliminar";
+            this.tsmnuitemlstvwenlaceeliminar.Size = new System.Drawing.Size(211, 26);
+            this.tsmnuitemlstvwenlaceeliminar.Text = "Eliminar";
+            this.tsmnuitemlstvwenlaceeliminar.Visible = false;
+            this.tsmnuitemlstvwenlaceeliminar.Click += new System.EventHandler(this.tsmnuitemlstvwenlaceeliminar_Click);
+            // 
             // tsmnuitemlstvwenlaceseparator1
             // 
             this.tsmnuitemlstvwenlaceseparator1.Name = "tsmnuitemlstvwenlaceseparator1";
             this.tsmnuitemlstvwenlaceseparator1.Size = new System.Drawing.Size(208, 6);
             // 
+            // tsmnuitemlstvwenlacedesenlazar
+            // 
+            this.tsmnuitemlstvwenlacedesenlazar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmnuitemlstvwenlacedesenlazarseleccionado,
+            this.tsmnuitemlstvwenlacedesenlazartodo});
+            this.tsmnuitemlstvwenlacedesenlazar.Image = global::thumbnail.Icons16x16.desenlazar;
+            this.tsmnuitemlstvwenlacedesenlazar.Name = "tsmnuitemlstvwenlacedesenlazar";
+            this.tsmnuitemlstvwenlacedesenlazar.Size = new System.Drawing.Size(211, 26);
+            this.tsmnuitemlstvwenlacedesenlazar.Text = "Desenlazar";
+            this.tsmnuitemlstvwenlacedesenlazar.Click += new System.EventHandler(this.tsmnuitemlstvwenlacedesenlazar_Click);
+            // 
+            // tsmnuitemlstvwenlacedesenlazarseleccionado
+            // 
+            this.tsmnuitemlstvwenlacedesenlazarseleccionado.Name = "tsmnuitemlstvwenlacedesenlazarseleccionado";
+            this.tsmnuitemlstvwenlacedesenlazarseleccionado.Size = new System.Drawing.Size(179, 26);
+            this.tsmnuitemlstvwenlacedesenlazarseleccionado.Text = "Seleccionado";
+            this.tsmnuitemlstvwenlacedesenlazarseleccionado.Visible = false;
+            this.tsmnuitemlstvwenlacedesenlazarseleccionado.Click += new System.EventHandler(this.tsmnuitemlstvwenlacedesenlazar_Click);
+            // 
+            // tsmnuitemlstvwenlacedesenlazartodo
+            // 
+            this.tsmnuitemlstvwenlacedesenlazartodo.Name = "tsmnuitemlstvwenlacedesenlazartodo";
+            this.tsmnuitemlstvwenlacedesenlazartodo.Size = new System.Drawing.Size(179, 26);
+            this.tsmnuitemlstvwenlacedesenlazartodo.Text = "Todo el enlace";
+            this.tsmnuitemlstvwenlacedesenlazartodo.Visible = false;
+            this.tsmnuitemlstvwenlacedesenlazartodo.Click += new System.EventHandler(this.tsmnuitemlstvwenlacedesenlazartodo_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(208, 6);
+            // 
+            // tsmnuitemlstvwenlacegirarderecha
+            // 
+            this.tsmnuitemlstvwenlacegirarderecha.Image = ((System.Drawing.Image)(resources.GetObject("tsmnuitemlstvwenlacegirarderecha.Image")));
+            this.tsmnuitemlstvwenlacegirarderecha.Name = "tsmnuitemlstvwenlacegirarderecha";
+            this.tsmnuitemlstvwenlacegirarderecha.Size = new System.Drawing.Size(211, 26);
+            this.tsmnuitemlstvwenlacegirarderecha.Text = "Girar a la derecha";
+            this.tsmnuitemlstvwenlacegirarderecha.Click += new System.EventHandler(this.tsmnuitemlstvwenlacegirarderecha_Click);
+            // 
+            // tsmnuitemlstvwenlacegirarizquierda
+            // 
+            this.tsmnuitemlstvwenlacegirarizquierda.Image = ((System.Drawing.Image)(resources.GetObject("tsmnuitemlstvwenlacegirarizquierda.Image")));
+            this.tsmnuitemlstvwenlacegirarizquierda.Name = "tsmnuitemlstvwenlacegirarizquierda";
+            this.tsmnuitemlstvwenlacegirarizquierda.Size = new System.Drawing.Size(211, 26);
+            this.tsmnuitemlstvwenlacegirarizquierda.Text = "Girar a la izquierda";
+            this.tsmnuitemlstvwenlacegirarizquierda.Click += new System.EventHandler(this.tsmnuitemlstvwenlacegirarizquierda_Click);
             // 
             // cntmnuListViewScann
             // 
@@ -226,10 +286,69 @@ namespace thumbnail.forms
             this.cntmnuListViewScann.Size = new System.Drawing.Size(286, 172);
             this.cntmnuListViewScann.Opening += new System.ComponentModel.CancelEventHandler(this.cntmnuListViewScann_Opening);
             // 
+            // tsmnuitemlstvwscannabrir
+            // 
+            this.tsmnuitemlstvwscannabrir.Image = global::thumbnail.Icons16x16.view;
+            this.tsmnuitemlstvwscannabrir.Name = "tsmnuitemlstvwscannabrir";
+            this.tsmnuitemlstvwscannabrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.tsmnuitemlstvwscannabrir.Size = new System.Drawing.Size(285, 26);
+            this.tsmnuitemlstvwscannabrir.Text = "Abrir";
+            this.tsmnuitemlstvwscannabrir.Click += new System.EventHandler(this.tsmnuitemlstvwscannabrir_Click);
+            // 
+            // tsmnuitemlstvwscanneliminar
+            // 
+            this.tsmnuitemlstvwscanneliminar.Image = global::thumbnail.Icons16x16.trash;
+            this.tsmnuitemlstvwscanneliminar.Name = "tsmnuitemlstvwscanneliminar";
+            this.tsmnuitemlstvwscanneliminar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
+            this.tsmnuitemlstvwscanneliminar.Size = new System.Drawing.Size(285, 26);
+            this.tsmnuitemlstvwscanneliminar.Text = "Eliminar";
+            this.tsmnuitemlstvwscanneliminar.Click += new System.EventHandler(this.tsmnuitemlstvwscanneliminar_Click);
+            // 
             // tsmnuitemlstvwscannseparator1
             // 
             this.tsmnuitemlstvwscannseparator1.Name = "tsmnuitemlstvwscannseparator1";
             this.tsmnuitemlstvwscannseparator1.Size = new System.Drawing.Size(282, 6);
+            // 
+            // tsmnuitemlstvwscannenlazar
+            // 
+            this.tsmnuitemlstvwscannenlazar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado,
+            this.toolStripSeparator2,
+            this.tsmnuitemlstvwscannenlazarsubmnutodo,
+            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar});
+            this.tsmnuitemlstvwscannenlazar.Image = ((System.Drawing.Image)(resources.GetObject("tsmnuitemlstvwscannenlazar.Image")));
+            this.tsmnuitemlstvwscannenlazar.Name = "tsmnuitemlstvwscannenlazar";
+            this.tsmnuitemlstvwscannenlazar.Size = new System.Drawing.Size(285, 26);
+            this.tsmnuitemlstvwscannenlazar.Text = "Enlazar";
+            this.tsmnuitemlstvwscannenlazar.Click += new System.EventHandler(this.tsmnuitemlstvwscannenlazar_Click);
+            // 
+            // tsmnuitemlstvwscannenlazarsubmnuseleccionado
+            // 
+            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado.Name = "tsmnuitemlstvwscannenlazarsubmnuseleccionado";
+            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Insert)));
+            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado.Size = new System.Drawing.Size(256, 26);
+            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado.Text = "Seleccionado";
+            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado.Click += new System.EventHandler(this.tsmnuitemlstvwscannenlazar_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(253, 6);
+            // 
+            // tsmnuitemlstvwscannenlazarsubmnutodo
+            // 
+            this.tsmnuitemlstvwscannenlazarsubmnutodo.Name = "tsmnuitemlstvwscannenlazarsubmnutodo";
+            this.tsmnuitemlstvwscannenlazarsubmnutodo.Size = new System.Drawing.Size(256, 26);
+            this.tsmnuitemlstvwscannenlazarsubmnutodo.Text = "Todo";
+            this.tsmnuitemlstvwscannenlazarsubmnutodo.Click += new System.EventHandler(this.tsmnuitemlstvwscannenlazarsubmnutodo_Click);
+            // 
+            // tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar
+            // 
+            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar.Name = "tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar";
+            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar.Size = new System.Drawing.Size(256, 26);
+            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar.Text = "Duplicar y Enlazar";
+            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar.Visible = false;
+            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar.Click += new System.EventHandler(this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar_Click);
             // 
             // tsmnuitemlstvwscannseparator2
             // 
@@ -243,6 +362,24 @@ namespace thumbnail.forms
             this.tsmnuitemlstvwscannseltodo.Text = "Seleccionar Todo";
             this.tsmnuitemlstvwscannseltodo.Click += new System.EventHandler(this.tsmnuitemlstvwscannseltodo_Click);
             // 
+            // tsmnuitemlstvwscannrotarderecha
+            // 
+            this.tsmnuitemlstvwscannrotarderecha.Image = ((System.Drawing.Image)(resources.GetObject("tsmnuitemlstvwscannrotarderecha.Image")));
+            this.tsmnuitemlstvwscannrotarderecha.Name = "tsmnuitemlstvwscannrotarderecha";
+            this.tsmnuitemlstvwscannrotarderecha.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Right)));
+            this.tsmnuitemlstvwscannrotarderecha.Size = new System.Drawing.Size(285, 26);
+            this.tsmnuitemlstvwscannrotarderecha.Text = "Girar a la derecha";
+            this.tsmnuitemlstvwscannrotarderecha.Click += new System.EventHandler(this.tsmnuitemlstvwscannrotarderecha_Click);
+            // 
+            // tsmnuitemlstvwscannrotarizquierda
+            // 
+            this.tsmnuitemlstvwscannrotarizquierda.Image = ((System.Drawing.Image)(resources.GetObject("tsmnuitemlstvwscannrotarizquierda.Image")));
+            this.tsmnuitemlstvwscannrotarizquierda.Name = "tsmnuitemlstvwscannrotarizquierda";
+            this.tsmnuitemlstvwscannrotarizquierda.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Left)));
+            this.tsmnuitemlstvwscannrotarizquierda.Size = new System.Drawing.Size(285, 26);
+            this.tsmnuitemlstvwscannrotarizquierda.Text = "Girar a la izquierda";
+            this.tsmnuitemlstvwscannrotarizquierda.Click += new System.EventHandler(this.tsmnuitemlstvwscannrotarizquierda_Click);
+            // 
             // imglsttabs
             // 
             this.imglsttabs.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imglsttabs.ImageStream")));
@@ -251,6 +388,281 @@ namespace thumbnail.forms
             this.imglsttabs.Images.SetKeyName(1, "interno.png");
             this.imglsttabs.Images.SetKeyName(2, "externo.png");
             this.imglsttabs.Images.SetKeyName(3, "proveedor.png");
+            // 
+            // btn_nuevo
+            // 
+            this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_nuevo.AutoSize = true;
+            this.btn_nuevo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_nuevo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_nuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_nuevo.FlatAppearance.BorderSize = 0;
+            this.btn_nuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nuevo.Image = global::thumbnail.Icons16x16.doc_new;
+            this.btn_nuevo.Location = new System.Drawing.Point(758, 7);
+            this.btn_nuevo.Name = "btn_nuevo";
+            this.btn_nuevo.Size = new System.Drawing.Size(22, 22);
+            this.btn_nuevo.TabIndex = 63;
+            this.tooltipBtnMnuOptions.SetToolTip(this.btn_nuevo, "Nuevo trámite");
+            this.btn_nuevo.UseVisualStyleBackColor = false;
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_editar.AutoSize = true;
+            this.btn_editar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_editar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_editar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_editar.FlatAppearance.BorderSize = 0;
+            this.btn_editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_editar.Image = global::thumbnail.Icons16x16.edit;
+            this.btn_editar.Location = new System.Drawing.Point(760, 35);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(22, 22);
+            this.btn_editar.TabIndex = 62;
+            this.tooltipBtnMnuOptions.SetToolTip(this.btn_editar, "Abrir trámite");
+            this.btn_editar.UseVisualStyleBackColor = false;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            // 
+            // btn_config_scann
+            // 
+            this.btn_config_scann.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_config_scann.AutoSize = true;
+            this.btn_config_scann.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_config_scann.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_config_scann.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_config_scann.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_config_scann.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_config_scann.Image = global::thumbnail.Icons16x16.scanner;
+            this.btn_config_scann.Location = new System.Drawing.Point(713, 275);
+            this.btn_config_scann.Name = "btn_config_scann";
+            this.btn_config_scann.Size = new System.Drawing.Size(24, 24);
+            this.btn_config_scann.TabIndex = 8;
+            this.tooltipBtnMnuOptions.SetToolTip(this.btn_config_scann, "Seleccionar scanner");
+            this.btn_config_scann.UseVisualStyleBackColor = false;
+            this.btn_config_scann.Click += new System.EventHandler(this.btn_config_scann_Click);
+            // 
+            // btn_limpiarcontroles
+            // 
+            this.btn_limpiarcontroles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_limpiarcontroles.AutoSize = true;
+            this.btn_limpiarcontroles.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_limpiarcontroles.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_limpiarcontroles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_limpiarcontroles.FlatAppearance.BorderSize = 0;
+            this.btn_limpiarcontroles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.btn_limpiarcontroles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_limpiarcontroles.Image = global::thumbnail.Icons48x48.clear_get;
+            this.btn_limpiarcontroles.Location = new System.Drawing.Point(946, 275);
+            this.btn_limpiarcontroles.Name = "btn_limpiarcontroles";
+            this.btn_limpiarcontroles.Size = new System.Drawing.Size(54, 54);
+            this.btn_limpiarcontroles.TabIndex = 5;
+            this.tooltipBtnMnuOptions.SetToolTip(this.btn_limpiarcontroles, "Limpiar documentos");
+            this.btn_limpiarcontroles.UseVisualStyleBackColor = false;
+            this.btn_limpiarcontroles.Click += new System.EventHandler(this.btn_limpiarcontroles_Click);
+            // 
+            // btn_abririmagen
+            // 
+            this.btn_abririmagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_abririmagen.AutoSize = true;
+            this.btn_abririmagen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_abririmagen.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_abririmagen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_abririmagen.FlatAppearance.BorderSize = 0;
+            this.btn_abririmagen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_abririmagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_abririmagen.Image = global::thumbnail.Icons48x48.folder_open;
+            this.btn_abririmagen.Location = new System.Drawing.Point(815, 275);
+            this.btn_abririmagen.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
+            this.btn_abririmagen.Name = "btn_abririmagen";
+            this.btn_abririmagen.Size = new System.Drawing.Size(54, 54);
+            this.btn_abririmagen.TabIndex = 4;
+            this.tooltipBtnMnuOptions.SetToolTip(this.btn_abririmagen, "Obtener de archivo");
+            this.btn_abririmagen.UseVisualStyleBackColor = false;
+            this.btn_abririmagen.Click += new System.EventHandler(this.btn_abririmagen_Click);
+            // 
+            // btn_scanear
+            // 
+            this.btn_scanear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_scanear.AutoSize = true;
+            this.btn_scanear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_scanear.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_scanear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_scanear.FlatAppearance.BorderSize = 0;
+            this.btn_scanear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_scanear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_scanear.Image = global::thumbnail.Icons48x48.get;
+            this.btn_scanear.Location = new System.Drawing.Point(743, 275);
+            this.btn_scanear.Name = "btn_scanear";
+            this.btn_scanear.Size = new System.Drawing.Size(54, 54);
+            this.btn_scanear.TabIndex = 3;
+            this.tooltipBtnMnuOptions.SetToolTip(this.btn_scanear, "Obtener de escaner");
+            this.btn_scanear.UseVisualStyleBackColor = false;
+            this.btn_scanear.Click += new System.EventHandler(this.btn_scanear_Click);
+            // 
+            // tab0_pblbldocumentosenlazados
+            // 
+            this.tab0_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tab0_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab0_pblbldocumentosenlazados.Image")));
+            this.tab0_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 0);
+            this.tab0_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab0_pblbldocumentosenlazados.Name = "tab0_pblbldocumentosenlazados";
+            this.tab0_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
+            this.tab0_pblbldocumentosenlazados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab0_pblbldocumentosenlazados.TabIndex = 19;
+            this.tab0_pblbldocumentosenlazados.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.tab0_pblbldocumentosenlazados, "Escanear documentos");
+            // 
+            // tab0_pblbldocumentosescaneados
+            // 
+            this.tab0_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tab0_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab0_pblbldocumentosescaneados.Image")));
+            this.tab0_pblbldocumentosescaneados.Location = new System.Drawing.Point(0, 0);
+            this.tab0_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab0_pblbldocumentosescaneados.Name = "tab0_pblbldocumentosescaneados";
+            this.tab0_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
+            this.tab0_pblbldocumentosescaneados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab0_pblbldocumentosescaneados.TabIndex = 16;
+            this.tab0_pblbldocumentosescaneados.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.tab0_pblbldocumentosescaneados, "Escanear documentos");
+            // 
+            // tab1_pblbldocumentosenlazados
+            // 
+            this.tab1_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tab1_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab1_pblbldocumentosenlazados.Image")));
+            this.tab1_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 0);
+            this.tab1_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab1_pblbldocumentosenlazados.Name = "tab1_pblbldocumentosenlazados";
+            this.tab1_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
+            this.tab1_pblbldocumentosenlazados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab1_pblbldocumentosenlazados.TabIndex = 19;
+            this.tab1_pblbldocumentosenlazados.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.tab1_pblbldocumentosenlazados, "Escanear documentos");
+            // 
+            // tab1_pblbldocumentosescaneados
+            // 
+            this.tab1_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tab1_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab1_pblbldocumentosescaneados.Image")));
+            this.tab1_pblbldocumentosescaneados.Location = new System.Drawing.Point(0, 0);
+            this.tab1_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab1_pblbldocumentosescaneados.Name = "tab1_pblbldocumentosescaneados";
+            this.tab1_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
+            this.tab1_pblbldocumentosescaneados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab1_pblbldocumentosescaneados.TabIndex = 16;
+            this.tab1_pblbldocumentosescaneados.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.tab1_pblbldocumentosescaneados, "Escanear documentos");
+            // 
+            // tab2_pblbldocumentosescaneados
+            // 
+            this.tab2_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tab2_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab2_pblbldocumentosescaneados.Image")));
+            this.tab2_pblbldocumentosescaneados.Location = new System.Drawing.Point(0, 0);
+            this.tab2_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab2_pblbldocumentosescaneados.Name = "tab2_pblbldocumentosescaneados";
+            this.tab2_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
+            this.tab2_pblbldocumentosescaneados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab2_pblbldocumentosescaneados.TabIndex = 10;
+            this.tab2_pblbldocumentosescaneados.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.tab2_pblbldocumentosescaneados, "Escanear documentos");
+            // 
+            // tab2_pblbldocumentosenlazados
+            // 
+            this.tab2_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tab2_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab2_pblbldocumentosenlazados.Image")));
+            this.tab2_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 0);
+            this.tab2_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab2_pblbldocumentosenlazados.Name = "tab2_pblbldocumentosenlazados";
+            this.tab2_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
+            this.tab2_pblbldocumentosenlazados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab2_pblbldocumentosenlazados.TabIndex = 10;
+            this.tab2_pblbldocumentosenlazados.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.tab2_pblbldocumentosenlazados, "Escanear documentos");
+            // 
+            // tab3_pblbldocumentosescaneados
+            // 
+            this.tab3_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tab3_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab3_pblbldocumentosescaneados.Image")));
+            this.tab3_pblbldocumentosescaneados.Location = new System.Drawing.Point(0, 0);
+            this.tab3_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab3_pblbldocumentosescaneados.Name = "tab3_pblbldocumentosescaneados";
+            this.tab3_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
+            this.tab3_pblbldocumentosescaneados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab3_pblbldocumentosescaneados.TabIndex = 10;
+            this.tab3_pblbldocumentosescaneados.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.tab3_pblbldocumentosescaneados, "Escanear documentos");
+            // 
+            // tab3_pblbldocumentosenlazados
+            // 
+            this.tab3_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tab3_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab3_pblbldocumentosenlazados.Image")));
+            this.tab3_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 0);
+            this.tab3_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
+            this.tab3_pblbldocumentosenlazados.Name = "tab3_pblbldocumentosenlazados";
+            this.tab3_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
+            this.tab3_pblbldocumentosenlazados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.tab3_pblbldocumentosenlazados.TabIndex = 10;
+            this.tab3_pblbldocumentosenlazados.TabStop = false;
+            this.tooltipBtnMnuOptions.SetToolTip(this.tab3_pblbldocumentosenlazados, "Escanear documentos");
+            // 
+            // btn_cerrar
+            // 
+            this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cerrar.AutoSize = true;
+            this.btn_cerrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_cerrar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cerrar.FlatAppearance.BorderSize = 0;
+            this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cerrar.Location = new System.Drawing.Point(946, 3);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
+            this.btn_cerrar.TabIndex = 9;
+            this.tooltipBtnMnuOptions.SetToolTip(this.btn_cerrar, "Cerrar sistema");
+            this.btn_cerrar.UseVisualStyleBackColor = false;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
+            // 
+            // btn_limpiar
+            // 
+            this.btn_limpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_limpiar.AutoSize = true;
+            this.btn_limpiar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_limpiar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_limpiar.FlatAppearance.BorderSize = 0;
+            this.btn_limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.btn_limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_limpiar.Image = global::thumbnail.Icons48x48.clear;
+            this.btn_limpiar.Location = new System.Drawing.Point(874, 3);
+            this.btn_limpiar.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
+            this.btn_limpiar.Name = "btn_limpiar";
+            this.btn_limpiar.Size = new System.Drawing.Size(54, 54);
+            this.btn_limpiar.TabIndex = 7;
+            this.tooltipBtnMnuOptions.SetToolTip(this.btn_limpiar, "Limpiar formato");
+            this.btn_limpiar.UseVisualStyleBackColor = false;
+            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_guardar.AutoSize = true;
+            this.btn_guardar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_guardar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_guardar.FlatAppearance.BorderSize = 0;
+            this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_guardar.Image = global::thumbnail.Icons48x48.save;
+            this.btn_guardar.Location = new System.Drawing.Point(802, 3);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(54, 54);
+            this.btn_guardar.TabIndex = 6;
+            this.tooltipBtnMnuOptions.SetToolTip(this.btn_guardar, "Guardar tramite");
+            this.btn_guardar.UseVisualStyleBackColor = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // ofdabrirarchivo
             // 
@@ -314,14 +726,14 @@ namespace thumbnail.forms
             this.dataGridView_CamposTrazables.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_CamposTrazables.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView_CamposTrazables.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CamposTrazables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CamposTrazables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_CamposTrazables.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idcampotrazableDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
@@ -332,28 +744,28 @@ namespace thumbnail.forms
             this.id_re_expedientes_campostrazables,
             this.col_valor_trazable});
             this.dataGridView_CamposTrazables.DataSource = this.BindingSource_CamposTrazables;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_CamposTrazables.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_CamposTrazables.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_CamposTrazables.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView_CamposTrazables.EnableHeadersVisualStyles = false;
             this.dataGridView_CamposTrazables.Location = new System.Drawing.Point(12, 101);
             this.dataGridView_CamposTrazables.MultiSelect = false;
             this.dataGridView_CamposTrazables.Name = "dataGridView_CamposTrazables";
             this.dataGridView_CamposTrazables.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CamposTrazables.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CamposTrazables.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView_CamposTrazables.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView_CamposTrazables.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView_CamposTrazables.Size = new System.Drawing.Size(988, 164);
@@ -876,6 +1288,17 @@ namespace thumbnail.forms
             this.tlp_proc.TabIndex = 58;
             this.tlp_proc.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -1030,374 +1453,9 @@ namespace thumbnail.forms
             this.colid_re_expedientes_tramites.FieldName = "id_re_expedientes_tramites";
             this.colid_re_expedientes_tramites.Name = "colid_re_expedientes_tramites";
             // 
-            // btn_nuevo
-            // 
-            this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_nuevo.AutoSize = true;
-            this.btn_nuevo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_nuevo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_nuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_nuevo.FlatAppearance.BorderSize = 0;
-            this.btn_nuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevo.Image = global::thumbnail.Icons16x16.doc_new;
-            this.btn_nuevo.Location = new System.Drawing.Point(758, 7);
-            this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(22, 22);
-            this.btn_nuevo.TabIndex = 63;
-            this.tooltipBtnMnuOptions.SetToolTip(this.btn_nuevo, "Nuevo trámite");
-            this.btn_nuevo.UseVisualStyleBackColor = false;
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_editar.AutoSize = true;
-            this.btn_editar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_editar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_editar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_editar.FlatAppearance.BorderSize = 0;
-            this.btn_editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_editar.Image = global::thumbnail.Icons16x16.edit;
-            this.btn_editar.Location = new System.Drawing.Point(760, 35);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(22, 22);
-            this.btn_editar.TabIndex = 62;
-            this.tooltipBtnMnuOptions.SetToolTip(this.btn_editar, "Abrir trámite");
-            this.btn_editar.UseVisualStyleBackColor = false;
-            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
-            // 
             // BindingSource_ListaTramites
             // 
             this.BindingSource_ListaTramites.DataSource = typeof(thumbnail.data_members.vw_ListaTramitesActivos);
-            // 
-            // btn_config_scann
-            // 
-            this.btn_config_scann.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_config_scann.AutoSize = true;
-            this.btn_config_scann.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_config_scann.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_config_scann.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_config_scann.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_config_scann.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_config_scann.Image = global::thumbnail.Icons16x16.scanner;
-            this.btn_config_scann.Location = new System.Drawing.Point(713, 275);
-            this.btn_config_scann.Name = "btn_config_scann";
-            this.btn_config_scann.Size = new System.Drawing.Size(24, 24);
-            this.btn_config_scann.TabIndex = 8;
-            this.tooltipBtnMnuOptions.SetToolTip(this.btn_config_scann, "Seleccionar scanner");
-            this.btn_config_scann.UseVisualStyleBackColor = false;
-            this.btn_config_scann.Click += new System.EventHandler(this.btn_config_scann_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btn_limpiarcontroles
-            // 
-            this.btn_limpiarcontroles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_limpiarcontroles.AutoSize = true;
-            this.btn_limpiarcontroles.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_limpiarcontroles.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_limpiarcontroles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_limpiarcontroles.FlatAppearance.BorderSize = 0;
-            this.btn_limpiarcontroles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
-            this.btn_limpiarcontroles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_limpiarcontroles.Image = global::thumbnail.Icons48x48.clear_get;
-            this.btn_limpiarcontroles.Location = new System.Drawing.Point(946, 275);
-            this.btn_limpiarcontroles.Name = "btn_limpiarcontroles";
-            this.btn_limpiarcontroles.Size = new System.Drawing.Size(54, 54);
-            this.btn_limpiarcontroles.TabIndex = 5;
-            this.tooltipBtnMnuOptions.SetToolTip(this.btn_limpiarcontroles, "Limpiar documentos");
-            this.btn_limpiarcontroles.UseVisualStyleBackColor = false;
-            this.btn_limpiarcontroles.Click += new System.EventHandler(this.btn_limpiarcontroles_Click);
-            // 
-            // btn_abririmagen
-            // 
-            this.btn_abririmagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_abririmagen.AutoSize = true;
-            this.btn_abririmagen.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_abririmagen.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_abririmagen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_abririmagen.FlatAppearance.BorderSize = 0;
-            this.btn_abririmagen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_abririmagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_abririmagen.Image = global::thumbnail.Icons48x48.folder_open;
-            this.btn_abririmagen.Location = new System.Drawing.Point(815, 275);
-            this.btn_abririmagen.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
-            this.btn_abririmagen.Name = "btn_abririmagen";
-            this.btn_abririmagen.Size = new System.Drawing.Size(54, 54);
-            this.btn_abririmagen.TabIndex = 4;
-            this.tooltipBtnMnuOptions.SetToolTip(this.btn_abririmagen, "Obtener de archivo");
-            this.btn_abririmagen.UseVisualStyleBackColor = false;
-            this.btn_abririmagen.Click += new System.EventHandler(this.btn_abririmagen_Click);
-            // 
-            // btn_scanear
-            // 
-            this.btn_scanear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_scanear.AutoSize = true;
-            this.btn_scanear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_scanear.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_scanear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_scanear.FlatAppearance.BorderSize = 0;
-            this.btn_scanear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_scanear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_scanear.Image = global::thumbnail.Icons48x48.get;
-            this.btn_scanear.Location = new System.Drawing.Point(743, 275);
-            this.btn_scanear.Name = "btn_scanear";
-            this.btn_scanear.Size = new System.Drawing.Size(54, 54);
-            this.btn_scanear.TabIndex = 3;
-            this.tooltipBtnMnuOptions.SetToolTip(this.btn_scanear, "Obtener de escaner");
-            this.btn_scanear.UseVisualStyleBackColor = false;
-            this.btn_scanear.Click += new System.EventHandler(this.btn_scanear_Click);
-            // 
-            // tsmnuitemlstvwenlaceabrir
-            // 
-            this.tsmnuitemlstvwenlaceabrir.Image = global::thumbnail.Icons16x16.view;
-            this.tsmnuitemlstvwenlaceabrir.Name = "tsmnuitemlstvwenlaceabrir";
-            this.tsmnuitemlstvwenlaceabrir.Size = new System.Drawing.Size(211, 26);
-            this.tsmnuitemlstvwenlaceabrir.Text = "Abrir";
-            this.tsmnuitemlstvwenlaceabrir.Click += new System.EventHandler(this.tsmnuitemlstvwenlaceabrir_Click);
-            // 
-            // tsmnuitemlstvwenlaceeliminar
-            // 
-            this.tsmnuitemlstvwenlaceeliminar.Image = global::thumbnail.Icons16x16.trash;
-            this.tsmnuitemlstvwenlaceeliminar.Name = "tsmnuitemlstvwenlaceeliminar";
-            this.tsmnuitemlstvwenlaceeliminar.Size = new System.Drawing.Size(211, 26);
-            this.tsmnuitemlstvwenlaceeliminar.Text = "Eliminar";
-            this.tsmnuitemlstvwenlaceeliminar.Visible = false;
-            this.tsmnuitemlstvwenlaceeliminar.Click += new System.EventHandler(this.tsmnuitemlstvwenlaceeliminar_Click);
-            // 
-            // tsmnuitemlstvwenlacedesenlazar
-            // 
-            this.tsmnuitemlstvwenlacedesenlazar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmnuitemlstvwenlacedesenlazarseleccionado,
-            this.tsmnuitemlstvwenlacedesenlazartodo});
-            this.tsmnuitemlstvwenlacedesenlazar.Image = global::thumbnail.Icons16x16.desenlazar;
-            this.tsmnuitemlstvwenlacedesenlazar.Name = "tsmnuitemlstvwenlacedesenlazar";
-            this.tsmnuitemlstvwenlacedesenlazar.Size = new System.Drawing.Size(211, 26);
-            this.tsmnuitemlstvwenlacedesenlazar.Text = "Desenlazar";
-            this.tsmnuitemlstvwenlacedesenlazar.Click += new System.EventHandler(this.tsmnuitemlstvwenlacedesenlazar_Click);
-            // 
-            // tsmnuitemlstvwenlacedesenlazarseleccionado
-            // 
-            this.tsmnuitemlstvwenlacedesenlazarseleccionado.Name = "tsmnuitemlstvwenlacedesenlazarseleccionado";
-            this.tsmnuitemlstvwenlacedesenlazarseleccionado.Size = new System.Drawing.Size(179, 26);
-            this.tsmnuitemlstvwenlacedesenlazarseleccionado.Text = "Seleccionado";
-            this.tsmnuitemlstvwenlacedesenlazarseleccionado.Visible = false;
-            this.tsmnuitemlstvwenlacedesenlazarseleccionado.Click += new System.EventHandler(this.tsmnuitemlstvwenlacedesenlazar_Click);
-            // 
-            // tsmnuitemlstvwenlacedesenlazartodo
-            // 
-            this.tsmnuitemlstvwenlacedesenlazartodo.Name = "tsmnuitemlstvwenlacedesenlazartodo";
-            this.tsmnuitemlstvwenlacedesenlazartodo.Size = new System.Drawing.Size(179, 26);
-            this.tsmnuitemlstvwenlacedesenlazartodo.Text = "Todo el enlace";
-            this.tsmnuitemlstvwenlacedesenlazartodo.Visible = false;
-            this.tsmnuitemlstvwenlacedesenlazartodo.Click += new System.EventHandler(this.tsmnuitemlstvwenlacedesenlazartodo_Click);
-            // 
-            // tsmnuitemlstvwenlacegirarderecha
-            // 
-            this.tsmnuitemlstvwenlacegirarderecha.Image = ((System.Drawing.Image)(resources.GetObject("tsmnuitemlstvwenlacegirarderecha.Image")));
-            this.tsmnuitemlstvwenlacegirarderecha.Name = "tsmnuitemlstvwenlacegirarderecha";
-            this.tsmnuitemlstvwenlacegirarderecha.Size = new System.Drawing.Size(211, 26);
-            this.tsmnuitemlstvwenlacegirarderecha.Text = "Girar a la derecha";
-            this.tsmnuitemlstvwenlacegirarderecha.Click += new System.EventHandler(this.tsmnuitemlstvwenlacegirarderecha_Click);
-            // 
-            // tsmnuitemlstvwenlacegirarizquierda
-            // 
-            this.tsmnuitemlstvwenlacegirarizquierda.Image = ((System.Drawing.Image)(resources.GetObject("tsmnuitemlstvwenlacegirarizquierda.Image")));
-            this.tsmnuitemlstvwenlacegirarizquierda.Name = "tsmnuitemlstvwenlacegirarizquierda";
-            this.tsmnuitemlstvwenlacegirarizquierda.Size = new System.Drawing.Size(211, 26);
-            this.tsmnuitemlstvwenlacegirarizquierda.Text = "Girar a la izquierda";
-            this.tsmnuitemlstvwenlacegirarizquierda.Click += new System.EventHandler(this.tsmnuitemlstvwenlacegirarizquierda_Click);
-            // 
-            // tsmnuitemlstvwscannabrir
-            // 
-            this.tsmnuitemlstvwscannabrir.Image = global::thumbnail.Icons16x16.view;
-            this.tsmnuitemlstvwscannabrir.Name = "tsmnuitemlstvwscannabrir";
-            this.tsmnuitemlstvwscannabrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.tsmnuitemlstvwscannabrir.Size = new System.Drawing.Size(285, 26);
-            this.tsmnuitemlstvwscannabrir.Text = "Abrir";
-            this.tsmnuitemlstvwscannabrir.Click += new System.EventHandler(this.tsmnuitemlstvwscannabrir_Click);
-            // 
-            // tsmnuitemlstvwscanneliminar
-            // 
-            this.tsmnuitemlstvwscanneliminar.Image = global::thumbnail.Icons16x16.trash;
-            this.tsmnuitemlstvwscanneliminar.Name = "tsmnuitemlstvwscanneliminar";
-            this.tsmnuitemlstvwscanneliminar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.tsmnuitemlstvwscanneliminar.Size = new System.Drawing.Size(285, 26);
-            this.tsmnuitemlstvwscanneliminar.Text = "Eliminar";
-            this.tsmnuitemlstvwscanneliminar.Click += new System.EventHandler(this.tsmnuitemlstvwscanneliminar_Click);
-            // 
-            // tsmnuitemlstvwscannenlazar
-            // 
-            this.tsmnuitemlstvwscannenlazar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado,
-            this.toolStripSeparator2,
-            this.tsmnuitemlstvwscannenlazarsubmnutodo,
-            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar});
-            this.tsmnuitemlstvwscannenlazar.Image = ((System.Drawing.Image)(resources.GetObject("tsmnuitemlstvwscannenlazar.Image")));
-            this.tsmnuitemlstvwscannenlazar.Name = "tsmnuitemlstvwscannenlazar";
-            this.tsmnuitemlstvwscannenlazar.Size = new System.Drawing.Size(285, 26);
-            this.tsmnuitemlstvwscannenlazar.Text = "Enlazar";
-            this.tsmnuitemlstvwscannenlazar.Click += new System.EventHandler(this.tsmnuitemlstvwscannenlazar_Click);
-            // 
-            // tsmnuitemlstvwscannenlazarsubmnuseleccionado
-            // 
-            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado.Name = "tsmnuitemlstvwscannenlazarsubmnuseleccionado";
-            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Insert)));
-            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado.Size = new System.Drawing.Size(256, 26);
-            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado.Text = "Seleccionado";
-            this.tsmnuitemlstvwscannenlazarsubmnuseleccionado.Click += new System.EventHandler(this.tsmnuitemlstvwscannenlazar_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(253, 6);
-            // 
-            // tsmnuitemlstvwscannenlazarsubmnutodo
-            // 
-            this.tsmnuitemlstvwscannenlazarsubmnutodo.Name = "tsmnuitemlstvwscannenlazarsubmnutodo";
-            this.tsmnuitemlstvwscannenlazarsubmnutodo.Size = new System.Drawing.Size(256, 26);
-            this.tsmnuitemlstvwscannenlazarsubmnutodo.Text = "Todo";
-            this.tsmnuitemlstvwscannenlazarsubmnutodo.Click += new System.EventHandler(this.tsmnuitemlstvwscannenlazarsubmnutodo_Click);
-            // 
-            // tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar
-            // 
-            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar.Name = "tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar";
-            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar.Size = new System.Drawing.Size(256, 26);
-            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar.Text = "Duplicar y Enlazar";
-            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar.Visible = false;
-            this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar.Click += new System.EventHandler(this.tsmnuitemlstvwscannenlazarsubmnuduplicaryenlazar_Click);
-            // 
-            // tsmnuitemlstvwscannrotarderecha
-            // 
-            this.tsmnuitemlstvwscannrotarderecha.Image = ((System.Drawing.Image)(resources.GetObject("tsmnuitemlstvwscannrotarderecha.Image")));
-            this.tsmnuitemlstvwscannrotarderecha.Name = "tsmnuitemlstvwscannrotarderecha";
-            this.tsmnuitemlstvwscannrotarderecha.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Right)));
-            this.tsmnuitemlstvwscannrotarderecha.Size = new System.Drawing.Size(285, 26);
-            this.tsmnuitemlstvwscannrotarderecha.Text = "Girar a la derecha";
-            this.tsmnuitemlstvwscannrotarderecha.Click += new System.EventHandler(this.tsmnuitemlstvwscannrotarderecha_Click);
-            // 
-            // tsmnuitemlstvwscannrotarizquierda
-            // 
-            this.tsmnuitemlstvwscannrotarizquierda.Image = ((System.Drawing.Image)(resources.GetObject("tsmnuitemlstvwscannrotarizquierda.Image")));
-            this.tsmnuitemlstvwscannrotarizquierda.Name = "tsmnuitemlstvwscannrotarizquierda";
-            this.tsmnuitemlstvwscannrotarizquierda.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Left)));
-            this.tsmnuitemlstvwscannrotarizquierda.Size = new System.Drawing.Size(285, 26);
-            this.tsmnuitemlstvwscannrotarizquierda.Text = "Girar a la izquierda";
-            this.tsmnuitemlstvwscannrotarizquierda.Click += new System.EventHandler(this.tsmnuitemlstvwscannrotarizquierda_Click);
-            // 
-            // tab0_pblbldocumentosenlazados
-            // 
-            this.tab0_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tab0_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab0_pblbldocumentosenlazados.Image")));
-            this.tab0_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 0);
-            this.tab0_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab0_pblbldocumentosenlazados.Name = "tab0_pblbldocumentosenlazados";
-            this.tab0_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
-            this.tab0_pblbldocumentosenlazados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab0_pblbldocumentosenlazados.TabIndex = 19;
-            this.tab0_pblbldocumentosenlazados.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.tab0_pblbldocumentosenlazados, "Escanear documentos");
-            // 
-            // tab0_pblbldocumentosescaneados
-            // 
-            this.tab0_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tab0_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab0_pblbldocumentosescaneados.Image")));
-            this.tab0_pblbldocumentosescaneados.Location = new System.Drawing.Point(0, 0);
-            this.tab0_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab0_pblbldocumentosescaneados.Name = "tab0_pblbldocumentosescaneados";
-            this.tab0_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
-            this.tab0_pblbldocumentosescaneados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab0_pblbldocumentosescaneados.TabIndex = 16;
-            this.tab0_pblbldocumentosescaneados.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.tab0_pblbldocumentosescaneados, "Escanear documentos");
-            // 
-            // tab1_pblbldocumentosenlazados
-            // 
-            this.tab1_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tab1_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab1_pblbldocumentosenlazados.Image")));
-            this.tab1_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 0);
-            this.tab1_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab1_pblbldocumentosenlazados.Name = "tab1_pblbldocumentosenlazados";
-            this.tab1_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
-            this.tab1_pblbldocumentosenlazados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab1_pblbldocumentosenlazados.TabIndex = 19;
-            this.tab1_pblbldocumentosenlazados.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.tab1_pblbldocumentosenlazados, "Escanear documentos");
-            // 
-            // tab1_pblbldocumentosescaneados
-            // 
-            this.tab1_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tab1_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab1_pblbldocumentosescaneados.Image")));
-            this.tab1_pblbldocumentosescaneados.Location = new System.Drawing.Point(0, 0);
-            this.tab1_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab1_pblbldocumentosescaneados.Name = "tab1_pblbldocumentosescaneados";
-            this.tab1_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
-            this.tab1_pblbldocumentosescaneados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab1_pblbldocumentosescaneados.TabIndex = 16;
-            this.tab1_pblbldocumentosescaneados.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.tab1_pblbldocumentosescaneados, "Escanear documentos");
-            // 
-            // tab2_pblbldocumentosescaneados
-            // 
-            this.tab2_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tab2_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab2_pblbldocumentosescaneados.Image")));
-            this.tab2_pblbldocumentosescaneados.Location = new System.Drawing.Point(0, 0);
-            this.tab2_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab2_pblbldocumentosescaneados.Name = "tab2_pblbldocumentosescaneados";
-            this.tab2_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
-            this.tab2_pblbldocumentosescaneados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab2_pblbldocumentosescaneados.TabIndex = 10;
-            this.tab2_pblbldocumentosescaneados.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.tab2_pblbldocumentosescaneados, "Escanear documentos");
-            // 
-            // tab2_pblbldocumentosenlazados
-            // 
-            this.tab2_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tab2_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab2_pblbldocumentosenlazados.Image")));
-            this.tab2_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 0);
-            this.tab2_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab2_pblbldocumentosenlazados.Name = "tab2_pblbldocumentosenlazados";
-            this.tab2_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
-            this.tab2_pblbldocumentosenlazados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab2_pblbldocumentosenlazados.TabIndex = 10;
-            this.tab2_pblbldocumentosenlazados.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.tab2_pblbldocumentosenlazados, "Escanear documentos");
-            // 
-            // tab3_pblbldocumentosescaneados
-            // 
-            this.tab3_pblbldocumentosescaneados.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tab3_pblbldocumentosescaneados.Image = ((System.Drawing.Image)(resources.GetObject("tab3_pblbldocumentosescaneados.Image")));
-            this.tab3_pblbldocumentosescaneados.Location = new System.Drawing.Point(0, 0);
-            this.tab3_pblbldocumentosescaneados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab3_pblbldocumentosescaneados.Name = "tab3_pblbldocumentosescaneados";
-            this.tab3_pblbldocumentosescaneados.Size = new System.Drawing.Size(21, 24);
-            this.tab3_pblbldocumentosescaneados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab3_pblbldocumentosescaneados.TabIndex = 10;
-            this.tab3_pblbldocumentosescaneados.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.tab3_pblbldocumentosescaneados, "Escanear documentos");
-            // 
-            // tab3_pblbldocumentosenlazados
-            // 
-            this.tab3_pblbldocumentosenlazados.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tab3_pblbldocumentosenlazados.Image = ((System.Drawing.Image)(resources.GetObject("tab3_pblbldocumentosenlazados.Image")));
-            this.tab3_pblbldocumentosenlazados.Location = new System.Drawing.Point(5, 0);
-            this.tab3_pblbldocumentosenlazados.Margin = new System.Windows.Forms.Padding(0);
-            this.tab3_pblbldocumentosenlazados.Name = "tab3_pblbldocumentosenlazados";
-            this.tab3_pblbldocumentosenlazados.Size = new System.Drawing.Size(23, 24);
-            this.tab3_pblbldocumentosenlazados.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.tab3_pblbldocumentosenlazados.TabIndex = 10;
-            this.tab3_pblbldocumentosenlazados.TabStop = false;
-            this.tooltipBtnMnuOptions.SetToolTip(this.tab3_pblbldocumentosenlazados, "Escanear documentos");
             // 
             // idcampotrazableDataGridViewTextBoxColumn
             // 
@@ -1416,8 +1474,8 @@ namespace thumbnail.forms
             // tamanioCaracteresDataGridViewTextBoxColumn
             // 
             this.tamanioCaracteresDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tamanioCaracteresDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tamanioCaracteresDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.tamanioCaracteresDataGridViewTextBoxColumn.HeaderText = "Tamaño de caracteres";
             this.tamanioCaracteresDataGridViewTextBoxColumn.Name = "tamanioCaracteresDataGridViewTextBoxColumn";
             this.tamanioCaracteresDataGridViewTextBoxColumn.ReadOnly = true;
@@ -1447,64 +1505,6 @@ namespace thumbnail.forms
             // BindingSource_CamposTrazables
             // 
             this.BindingSource_CamposTrazables.DataSource = typeof(thumbnail.data_members.pa_CampostrazablesActivosporExpedienteResult);
-            // 
-            // btn_cerrar
-            // 
-            this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cerrar.AutoSize = true;
-            this.btn_cerrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_cerrar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cerrar.FlatAppearance.BorderSize = 0;
-            this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
-            this.btn_cerrar.Location = new System.Drawing.Point(946, 3);
-            this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
-            this.btn_cerrar.TabIndex = 9;
-            this.tooltipBtnMnuOptions.SetToolTip(this.btn_cerrar, "Cerrar sistema");
-            this.btn_cerrar.UseVisualStyleBackColor = false;
-            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
-            // 
-            // btn_limpiar
-            // 
-            this.btn_limpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_limpiar.AutoSize = true;
-            this.btn_limpiar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_limpiar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_limpiar.FlatAppearance.BorderSize = 0;
-            this.btn_limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
-            this.btn_limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_limpiar.Image = global::thumbnail.Icons48x48.clear;
-            this.btn_limpiar.Location = new System.Drawing.Point(874, 3);
-            this.btn_limpiar.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
-            this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(54, 54);
-            this.btn_limpiar.TabIndex = 7;
-            this.tooltipBtnMnuOptions.SetToolTip(this.btn_limpiar, "Limpiar formato");
-            this.btn_limpiar.UseVisualStyleBackColor = false;
-            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
-            // 
-            // btn_guardar
-            // 
-            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_guardar.AutoSize = true;
-            this.btn_guardar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_guardar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_guardar.FlatAppearance.BorderSize = 0;
-            this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardar.Image = global::thumbnail.Icons48x48.save;
-            this.btn_guardar.Location = new System.Drawing.Point(802, 3);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(54, 54);
-            this.btn_guardar.TabIndex = 6;
-            this.tooltipBtnMnuOptions.SetToolTip(this.btn_guardar, "Guardar tramite");
-            this.btn_guardar.UseVisualStyleBackColor = false;
-            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // frm_scann
             // 
@@ -1540,6 +1540,14 @@ namespace thumbnail.forms
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frm_scann_Paint);
             this.cntmnuListViewEnlace.ResumeLayout(false);
             this.cntmnuListViewScann.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosenlazados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosescaneados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosenlazados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosescaneados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab2_pblbldocumentosescaneados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab2_pblbldocumentosenlazados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosescaneados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosenlazados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposTrazables)).EndInit();
             this.tbctrl.ResumeLayout(false);
             this.tabpgeUsuario.ResumeLayout(false);
@@ -1568,19 +1576,11 @@ namespace thumbnail.forms
             this.panel6.PerformLayout();
             this.tlp_proc.ResumeLayout(false);
             this.tlp_proc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KDImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Tramites.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource_ListaTramites)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosenlazados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosescaneados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosenlazados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab1_pblbldocumentosescaneados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab2_pblbldocumentosescaneados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab2_pblbldocumentosenlazados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosescaneados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosenlazados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource_CamposTrazables)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
