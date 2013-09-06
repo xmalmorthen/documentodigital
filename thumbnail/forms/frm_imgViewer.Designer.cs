@@ -121,7 +121,7 @@
             this.btn_borrar.Name = "btn_borrar";
             this.btn_borrar.Size = new System.Drawing.Size(54, 54);
             this.btn_borrar.TabIndex = 9;
-            this.ttimageviewer.SetToolTip(this.btn_borrar, "Eliminar imagen");
+            this.ttimageviewer.SetToolTip(this.btn_borrar, "Desenlazar imagen");
             this.btn_borrar.UseVisualStyleBackColor = false;
             this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
             // 
