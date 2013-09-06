@@ -56,14 +56,15 @@ namespace thumbnail.classes
 
                     using (Graphics g = Graphics.FromImage(thumb))
                     {
+                        g.FillRectangle(new SolidBrush(Color.White), 0, 0, g.VisibleClipBounds.Size.Width, g.VisibleClipBounds.Size.Height);
                         g.DrawImage(tmp, xoffset, yoffset, tmp.Width, tmp.Height);
                     }
                 }
             }
 
             using (Graphics g = Graphics.FromImage(thumb))
-            {
-                g.DrawRectangle(Pens.Green, 0, 0, thumb.Width - 1, thumb.Height - 1);
+            {                
+                g.DrawRectangle(Pens.Black, 0, 0, thumb.Width - 1, thumb.Height - 1);
             }
 
             return thumb;
@@ -72,6 +73,33 @@ namespace thumbnail.classes
         static private bool ThumbnailCallback()
         {
             return true;
+        }
+
+        public static Image CreateThumbnail(int width, Image i)
+        {
+            int dWidth = i.Width;
+            int dHeight = i.Height;
+            int dMaxSize = width;
+
+            if (dWidth > dMaxSize)
+            {
+                dHeight = (dHeight * dMaxSize) / dWidth;
+                dWidth = dMaxSize;
+            }
+            if (dHeight > dMaxSize)
+            {
+                dWidth = (dWidth * dMaxSize) / dHeight;
+                dHeight = dMaxSize;
+            }
+
+            Image img = i.GetThumbnailImage(dWidth, dHeight, delegate() { return false; }, IntPtr.Zero);
+
+            using (Graphics g = Graphics.FromImage(img))
+            {
+                g.DrawRectangle(Pens.Black, 0, 0, img.Width - 1, img.Height - 1);
+            }
+
+            return img;
         }
     }
 }

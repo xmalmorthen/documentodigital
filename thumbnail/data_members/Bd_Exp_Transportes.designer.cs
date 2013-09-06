@@ -8761,6 +8761,8 @@ namespace thumbnail.data_members
 	public partial class pa_RegistrosDigitalesRegistradosporId_ma_digitalResult
 	{
 		
+		private int _id;
+		
 		private System.Data.Linq.Binary _thumbnail;
 		
 		private int _id_re_clasificaciondocumento_documento;
@@ -8779,6 +8781,22 @@ namespace thumbnail.data_members
 		
 		public pa_RegistrosDigitalesRegistradosporId_ma_digitalResult()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thumbnail", DbType="Image NOT NULL", CanBeNull=false)]

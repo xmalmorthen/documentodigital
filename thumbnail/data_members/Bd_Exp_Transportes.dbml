@@ -511,6 +511,7 @@
   <Function Name="dbo.pa_RegistrosDigitalesRegistradosporId_ma_digital" Method="pa_RegistrosDigitalesRegistradosporId_ma_digital">
     <Parameter Name="id_ma_digital" Type="System.Int32" DbType="Int" />
     <ElementType Name="pa_RegistrosDigitalesRegistradosporId_ma_digitalResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="thumbnail" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
       <Column Name="id_re_clasificaciondocumento_documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />

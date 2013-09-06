@@ -81,14 +81,15 @@ namespace thumbnail.forms
             lblmascampotrazable.Text = mascara;
 
             txtvalortrazable.Text = "";
+            txtvalortrazable.Enabled = true;
             foreach (thumbnail.models.digital _source in sources)
             {
                 if (_source.clasificaciondocumento == clasificaciondocumento) {
                     txtvalortrazable.Text = _source.valor_trazable;
+                    txtvalortrazable.Enabled = false;
                 }
-            }
+            }            
             
-            txtvalortrazable.Enabled = true;
             txtvalortrazable.Properties.Mask.EditMask = mascara;
             txtvalortrazable.Properties.MaxLength = numcaracteres;
         }

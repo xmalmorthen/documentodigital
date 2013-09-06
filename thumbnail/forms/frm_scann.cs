@@ -196,6 +196,8 @@ namespace thumbnail.forms
 
                 tlp_proc.Visible = false;
                 this.Cursor = Cursors.Default;
+
+                MessageBox.Show("Trámite guardado con éxito", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -209,7 +211,9 @@ namespace thumbnail.forms
                 Application.DoEvents();
 
                 tlp_proc.Visible = false;
-                this.Cursor = Cursors.Default;                
+                this.Cursor = Cursors.Default;
+
+                MessageBox.Show("Trámite modificado con éxito", "Modificaco", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             tramite = null;
         }
@@ -226,9 +230,8 @@ namespace thumbnail.forms
                 //inicializacion de valores
                 tramite.id_re_expediente_tramite = lookUpEdit_Tramites_selected.id_re_expedientes_tramites;
                 tramite.nota = "";
-                data_members.pa_obtener_fechahoraResult fechahora= Program.Bd_Exp_Transportes.pa_obtener_fechahora() as pa_obtener_fechahoraResult;
                 tramite.fecha_hora_bloqueo = DateTime.Now;
-                tramite.id_estatus = 4;
+                tramite.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "desbloqueado").id;
 
                 int id_ma_digital = match_ma_digital();
 
@@ -238,7 +241,7 @@ namespace thumbnail.forms
 
                 Program.Bd_Exp_Transportes.SubmitChanges();
 
-                Form_Mode = form_mode.Edit;
+                Form_Mode = form_mode.Edit; //al guardar se cambia a modo edición
             }
             catch (Exception)
             {                
@@ -665,18 +668,7 @@ namespace thumbnail.forms
             {
                 if (e.Effect == DragDropEffects.Move)
                 {
-                    foreach (ListViewItem current in (ListView.SelectedListViewItemCollection)e.Data.GetData(typeof(ListView.SelectedListViewItemCollection)))
-                    {
-                        try
-                        {
-                            sources_digital.Remove(sources_digital.FirstOrDefault(c => c.guid == ((tagstrunct)current.Tag).guid.ToString()));
-
-                            this.removelistviewgroup(current); //eliminar grupo en caso de que este vacío
-                            lstvwdocumentosenlazados.Items.Remove(lstvwdocumentosenlazados.SelectedItems[0]);
-                        }
-                        catch (Exception) { }
-                        lstvwdocumentosescaneados.Items.Add((ListViewItem)current.Clone());                        
-                    }                    
+                    desenlazaitems((ListView.SelectedListViewItemCollection)e.Data.GetData(typeof(ListView.SelectedListViewItemCollection)));
                 }
                 else
                 {
@@ -714,55 +706,9 @@ namespace thumbnail.forms
 
             if (e.Data.GetDataPresent(typeof(ListView.SelectedListViewItemCollection)))
             {
-                if (!hocking()) return;
-
                 if (e.Effect == DragDropEffects.Move)
-                {
-                    foreach (ListViewItem current in (ListView.SelectedListViewItemCollection)e.Data.GetData(typeof(ListView.SelectedListViewItemCollection)))
-                    {
-                        thumbnail.models.digital source = new thumbnail.models.digital();
-
-                        Image img = Image.FromFile(  ( (tagstrunct) current.Tag ).path_image.ToString()  );
-                        source.imagen = img; //asignar imagen al colector principal
-                        source.thumbnail = classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img);
-                        //img.Dispose();
-                        source.id_re_clasificaciondocumento_documento = source_digital.id_re_clasificaciondocumento_documento;
-                        source.valor_trazable = source_digital.valor_trazable;
-                        source.clasificaciondocumento = source_digital.clasificaciondocumento;
-                        source.documento = source_digital.documento;
-                        source.guid = ((tagstrunct)current.Tag).guid.ToString();
-
-                        try
-                        {
-                            lstvwdocumentosescaneados.Items.Remove(lstvwdocumentosescaneados.SelectedItems[0]);
-                        }
-                        catch (Exception) { }
-                        
-                        lstvwdocumentosenlazados.Items.Add((ListViewItem)current.Clone());
-
-                        int idxgroup = 0;
-                        foreach (ListViewGroup grupo in lstvwdocumentosenlazados.Groups)
-                        {
-                            if (grupo.Name == source.clasificaciondocumento)
-                            {
-                                break;
-                            }
-                            idxgroup++;
-                        }
-
-                        lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];
-
-                        sources_digital.Add(source);
-                        source = null;
-                    }
-                }
-                else
-                {
-                    foreach (ListViewItem current in (ListView.SelectedListViewItemCollection)e.Data.GetData(typeof(ListView.SelectedListViewItemCollection)))
-                    {
-                        current.Remove();
-                        lstvwdocumentosenlazados.Items.Add((ListViewItem)current);
-                    }
+                {                    
+                    enlazaitems((ListView.SelectedListViewItemCollection)e.Data.GetData(typeof(ListView.SelectedListViewItemCollection)));
                 }
             }
         }
@@ -884,7 +830,7 @@ namespace thumbnail.forms
                 img.RotateFlip(rotacion);
                 this.thumbnainlist.Images[idx] = img;
 
-                string path_filename = ( (tagstrunct) item.Tag ).path_image.ToString();
+                string path_filename = ( (tagstruct) item.Tag ).path_image.ToString();
                 
                 double rotateangle = 0;
                 switch (rotacion)
@@ -932,33 +878,44 @@ namespace thumbnail.forms
             rotateimage(this.lstvwdocumentosescaneados, RotateFlipType.Rotate90FlipXY);
         }
 
-//boton de enlazar
-        private void tsmnuitemlstvwscannenlazar_Click(object sender, EventArgs e)
-        {
+        private void enlazaitems(System.Windows.Forms.ListView.SelectedListViewItemCollection Collection) {
             if (!hocking()) return;
-
-            foreach (ListViewItem item in lstvwdocumentosescaneados.SelectedItems)
+            foreach (ListViewItem item in Collection)
             {
                 thumbnail.models.digital source = new thumbnail.models.digital();
 
-                Image img = Image.FromFile(((tagstrunct)item.Tag).path_image.ToString());
-                source.imagen = img; //asignar imagen al colector principal
-                source.thumbnail = classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img);
-                //img.Dispose();
-                source.id_re_clasificaciondocumento_documento = source_digital.id_re_clasificaciondocumento_documento;
-                source.valor_trazable = source_digital.valor_trazable;
-                source.clasificaciondocumento = source_digital.clasificaciondocumento;
-                source.documento = source_digital.documento;
-                source.guid = ((tagstrunct)item.Tag).guid.ToString();
+                if (Form_Mode == form_mode.Add)
+                {
+                    source = new thumbnail.models.digital();
+
+                    Image img = Image.FromFile(((tagstruct)item.Tag).path_image.ToString());
+                    source.imagen = img; //asignar imagen al colector principal
+                    source.thumbnail = ((ListViewItem)item).ImageList.Images[((ListViewItem)item).ImageIndex];
+                    //img.Dispose();
+                    source.id_re_clasificaciondocumento_documento = source_digital.id_re_clasificaciondocumento_documento;
+                    source.valor_trazable = source_digital.valor_trazable;
+                    source.clasificaciondocumento = source_digital.clasificaciondocumento;
+                    source.documento = source_digital.documento;
+                    source.guid = ((tagstruct)item.Tag).guid.ToString();
+                }
+                else if (Form_Mode == form_mode.Edit)
+                {
+                    source = sources_digital.FirstOrDefault(c => c.guid == ((tagstruct)item.Tag).guid.ToString());
+                    source.id_re_clasificaciondocumento_documento = source_digital.id_re_clasificaciondocumento_documento;
+                    source.valor_trazable = source_digital.valor_trazable;
+                    source.clasificaciondocumento = source_digital.clasificaciondocumento;
+                    source.documento = source_digital.documento;
+                    source.enlazado = true;
+                }
 
                 item.Remove();
 
                 lstvwdocumentosenlazados.Items.Add((ListViewItem)item.Clone());
-                
+
                 int idxgroup = 0;
                 foreach (ListViewGroup grupo in lstvwdocumentosenlazados.Groups)
                 {
-                    if (grupo.Name == source_digital.clasificaciondocumento)
+                    if (grupo.Name == source.clasificaciondocumento)
                     {
                         break;
                     }
@@ -967,8 +924,18 @@ namespace thumbnail.forms
 
                 lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];
 
-                sources_digital.Add(source);                
+                if (Form_Mode == form_mode.Add)
+                {
+                    sources_digital.Add(source);
+                }
+                source = null;
             }
+        }
+
+//boton de enlazar
+        private void tsmnuitemlstvwscannenlazar_Click(object sender, EventArgs e)
+        {
+            enlazaitems(lstvwdocumentosescaneados.SelectedItems);
             cntmnuListViewScann.Hide();
             try
             {
@@ -982,40 +949,9 @@ namespace thumbnail.forms
 //boton submenu enlazar/todo
         private void tsmnuitemlstvwscannenlazarsubmnutodo_Click(object sender, EventArgs e)
         {
-            if (!hocking()) return;
-
             foreach (ListViewItem item in lstvwdocumentosescaneados.Items)
-            {
-                thumbnail.models.digital source = new thumbnail.models.digital();
-
-                Image img = Image.FromFile(((tagstrunct)item.Tag).path_image.ToString());
-                source.imagen = img; //asignar imagen al colector principal
-                source.thumbnail = classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img);
-                //img.Dispose();
-                source.id_re_clasificaciondocumento_documento = source_digital.id_re_clasificaciondocumento_documento;
-                source.valor_trazable = source_digital.valor_trazable;
-                source.clasificaciondocumento = source_digital.clasificaciondocumento;
-                source.documento = source_digital.documento;
-                source.guid = ((tagstrunct)item.Tag).guid.ToString();
-
-                item.Remove();
-
-                lstvwdocumentosenlazados.Items.Add((ListViewItem)item.Clone());
-
-                int idxgroup = 0;
-                foreach (ListViewGroup grupo in lstvwdocumentosenlazados.Groups)
-                {
-                    if (grupo.Name == source_digital.clasificaciondocumento)
-                    {
-                        break;
-                    }
-                    idxgroup++;
-                }
-
-                lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];
-
-                sources_digital.Add(source);
-            }
+                item.Selected = true;
+            enlazaitems(lstvwdocumentosescaneados.SelectedItems);
         }
 
 //boton submenu enlazar/duplicar y enlazar
@@ -1048,14 +984,14 @@ namespace thumbnail.forms
 //boton abrir
         private void tsmnuitemlstvwscannabrir_Click(object sender, EventArgs e)
         {
-            frmimgViewer testDialog = new frmimgViewer( ( (tagstrunct) lstvwdocumentosescaneados.SelectedItems[0].Tag ).path_image.ToString() );
+            frmimgViewer testDialog = new frmimgViewer( ( (tagstruct) lstvwdocumentosescaneados.SelectedItems[0].Tag ).path_image.ToString() );
 
             DialogResult result = testDialog.ShowDialog(this);
 
             int idx = lstvwdocumentosescaneados.SelectedItems[0].ImageIndex;
             if (result == DialogResult.Yes)
             {
-                Image img = Image.FromFile( ( (tagstrunct) lstvwdocumentosescaneados.SelectedItems[0].Tag ).path_image.ToString() );
+                Image img = Image.FromFile( ( (tagstruct) lstvwdocumentosescaneados.SelectedItems[0].Tag ).path_image.ToString() );
                 thumbnainlist.Images[idx] = classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img);
                 lstvwdocumentosescaneados.Refresh();
             }
@@ -1079,39 +1015,78 @@ namespace thumbnail.forms
             rotateimage(this.lstvwdocumentosenlazados, RotateFlipType.Rotate90FlipXY);
         }
 
-//boton desenlazar
-        private void tsmnuitemlstvwenlacedesenlazar_Click(object sender, EventArgs e)
+        private void desenlazaitems(System.Windows.Forms.ListView.SelectedListViewItemCollection Collection)
         {
-            foreach (ListViewItem item in lstvwdocumentosenlazados.SelectedItems)
+            foreach (ListViewItem item in Collection)
             {
                 try
                 {
-                    sources_digital.Remove(sources_digital.FirstOrDefault(c => c.guid == ((tagstrunct)item.Tag).guid.ToString()));
+                    if (Form_Mode == form_mode.Add)
+                    {
+                        sources_digital.Remove(sources_digital.FirstOrDefault(c => c.guid == ((tagstruct)item.Tag).guid.ToString()));
+                    }
+                    else if (Form_Mode == form_mode.Edit)
+                    {
+                        digital source = sources_digital.FirstOrDefault(c => c.guid == ((tagstruct)item.Tag).guid.ToString());
+                        source.enlazado = false;
+                    }
 
-                    this.removelistviewgroup(item);
-                    lstvwdocumentosenlazados.Items.Remove(item);
+                    this.removelistviewgroup(item); //eliminar grupo en caso de que este vacío
+                    lstvwdocumentosenlazados.Items.Remove(lstvwdocumentosenlazados.SelectedItems[0]);
                 }
-                catch (Exception)
-                {
-                }
+                catch (Exception) { }
                 lstvwdocumentosescaneados.Items.Add((ListViewItem)item.Clone());
-            }
-            cntmnuListViewEnlace.Hide();
-            
+            }          
+        }
+
+//boton desenlazar
+        private void tsmnuitemlstvwenlacedesenlazar_Click(object sender, EventArgs e)
+        {
+            desenlazaitems(lstvwdocumentosenlazados.SelectedItems);
+            cntmnuListViewEnlace.Hide();            
         }
 
 //boton abrir
         private void tsmnuitemlstvwenlaceabrir_Click(object sender, EventArgs e)
         {
-            frmimgViewer testDialog = new frmimgViewer(((tagstrunct)lstvwdocumentosenlazados.SelectedItems[0].Tag).path_image.ToString() );
+            frmimgViewer testDialog;
+            if (Form_Mode == form_mode.Add)
+            {
+                testDialog = new frmimgViewer(((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag).path_image.ToString());
+            }
+            else {
+                tagstruct edittag = ((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag);
+
+                if (edittag.path_image != null)
+                {
+                    testDialog = new frmimgViewer(edittag.path_image);
+                }
+                else
+                {
+                    testDialog = new frmimgViewer(((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag).id_ma_digital_edit,
+                                                   ((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag).id,
+                                                   ((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag).id_re_clasificaciondocumento_documento);
+                    edittag.path_image = testDialog.pathimageoriginal;
+                    lstvwdocumentosenlazados.SelectedItems[0].Tag = edittag;
+                }
+            }
 
             DialogResult result = testDialog.ShowDialog(this);
 
             int idx = lstvwdocumentosenlazados.SelectedItems[0].ImageIndex;
             if (result == DialogResult.Yes)
             {
-                Image img = Image.FromFile(((tagstrunct)lstvwdocumentosenlazados.SelectedItems[0].Tag).path_image.ToString());
+                Image img = null;
+                tagstruct sourcetag = ((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag);
+                img = Image.FromFile(sourcetag.path_image);
+                if (Form_Mode == form_mode.Edit)
+                {                    
+                    digital source = sources_digital.FirstOrDefault(c => c.guid == sourcetag.guid);
+                    source.editado = true;
+                }
+
                 thumbnainlist.Images[idx] = classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img);
+                img.Dispose();
                 lstvwdocumentosenlazados.Refresh();
             }
             else if (result == DialogResult.OK)
@@ -1142,7 +1117,7 @@ namespace thumbnail.forms
         private void deletethumbnailandimage(ListView obj) {
             foreach (ListViewItem item in obj.SelectedItems)
             {
-                string pathfiletodelete =  ((tagstrunct)item.Tag).path_image.ToString();
+                string pathfiletodelete =  ((tagstruct)item.Tag).path_image.ToString();
                 int idx = item.ImageIndex;
                 thumbnainlist.Images.RemoveAt(idx);
                 item.Remove();
@@ -1152,12 +1127,15 @@ namespace thumbnail.forms
         }
 
         //estructura para la informacion en tag
-        public struct tagstrunct
+        public struct tagstruct
         {
             public string path_image;
             public string guid;
+            public int id;
+            public int id_ma_digital_edit;
+            public int id_re_clasificaciondocumento_documento;
         };
-        public tagstrunct tag; //variable global para los tag de los items               
+        public tagstruct tag; //variable global para los tag de los items               
 
         //metodo para generar thumbnail de imagen
         private void generatethumbnailimage(string file)
@@ -1201,29 +1179,7 @@ namespace thumbnail.forms
                     if( (tamanioreal != 0) && (tamanioreal != tamaniocaracteres) )
                     {
                         dataGridView_CamposTrazables.Rows[e.RowIndex].ErrorText = "El valor trazable no cumple los criterios de longitud de la mascara, favor de revisar";                        
-                    }
-                    
-                    /*TextEdit txt_validator = new TextEdit();
-                    txt_validator.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
-                    txt_validator.Properties.Mask.EditMask = mascara;
-                    txt_validator.Properties.ValidateOnEnterKey = true;
-                    txt_validator.InvalidValue += txt_validator_InvalidValue;
-                    txt_validator.Validating += txt_validator_Validating;
-                    txt_validator.Properties.Mask.IgnoreMaskBlank = false;
-
-                    txt_validator.Properties.BeginInit();
-                    txt_validator.Properties.BeginUpdate();
-                    txt_validator.Text = e.FormattedValue.ToString();
-                    txt_validator.Properties.EndUpdate();
-                    txt_validator.Properties.EndInit();
-
-                    //txt_validator.Properties.va
-                    */
-
-                    
-
-                    //dataGridView_CamposTrazables.Rows[e.RowIndex].ErrorText = "El valor trazable no cumple los criterios de mascara, favor de revisar";
-                    //e.Cancel = true;
+                    }                                        
                 }
             }
         }
@@ -1252,7 +1208,24 @@ namespace thumbnail.forms
 
             if (id_ma_digital_edit != 0) 
             {
-                obtenerregistrosaeditar();
+                try
+                {
+                    this.Cursor = Cursors.WaitCursor;
+                    tlp_proc.Visible = true;
+
+                    Application.DoEvents();
+
+                    obtenerregistrosaeditar();
+
+                    Application.DoEvents();
+
+                    tlp_proc.Visible = false;
+                    this.Cursor = Cursors.Default;
+                }
+                catch (Exception)
+                {                    
+                    throw;
+                }                
             }
 
         }
@@ -1271,6 +1244,7 @@ namespace thumbnail.forms
             lstvwdocumentosenlazados.Clear();            
         }
 
+        //estructura para la informacion en tag        
         private void obtenerarchivodigital()
         {
             List<data_members.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult> imagenesdigitalregistradas =
@@ -1287,38 +1261,30 @@ namespace thumbnail.forms
                 source.clasificaciondocumento = current.clasificaciondocumento;
                 source.documento = current.Documento;
                 source.guid = Guid.NewGuid().ToString();
-
+                source.enlazado = true;
+                source.editado = false;
+                
                 thumbnainlist.Images.Add(img);
                 this.lstvwdocumentosenlazados.Items.Add("", (int)thumbnainlist.Images.Count - 1);
 
-                tagstrunct tagedit;
-                tagedit.path_image = "";
+                tagstruct tagedit = new tagstruct();
                 tagedit.guid = source.guid;
+                tagedit.id = current.id;
+                tagedit.id_ma_digital_edit = id_ma_digital_edit;
+                tagedit.id_re_clasificaciondocumento_documento = source.id_re_clasificaciondocumento_documento;
 
                 this.lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Tag = tagedit;
 
                 ListViewGroup _grupo = new ListViewGroup();
                 _grupo.Name = source.clasificaciondocumento; //obtener el nombre del grupo a partir de su clasificacion de documento
-                _grupo.Header = source.clasificaciondocumento + " [ " + source.documento + " ][ " + source_digital.valor_trazable + " ]"; //concatenar la clasificacion de documentos con el nombre del documento
+                _grupo.Header = source.clasificaciondocumento + " [ " + source.documento + " ][ " + source.valor_trazable + " ]"; //concatenar la clasificacion de documentos con el nombre del documento
                 _grupo.HeaderAlignment = HorizontalAlignment.Left;
 
-                Boolean existe = false;
-                foreach (ListViewGroup __grupo in lstvwdocumentosenlazados.Groups)
-                {
-                    if (__grupo.Name == _grupo.Name)
-                    {
-                        existe = true;
-                        break;
-                    }
-                }
+                Boolean existe = lstvwdocumentosenlazados.Groups.Contains(_grupo);
 
-                int idxgroup = 0;
-                if (!existe)
-                {
-                    idxgroup = lstvwdocumentosenlazados.Groups.Add(_grupo); //agregar grupo
-                }
-                
-                lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[idxgroup];
+                if (!existe) lstvwdocumentosenlazados.Groups.Add(_grupo); //agregar grupo
+
+                lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Group = lstvwdocumentosenlazados.Groups[_grupo.Name];
 
                 sources_digital.Add(source);
                 source = null;

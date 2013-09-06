@@ -100,6 +100,10 @@ namespace thumbnail.forms
                 {
                     MessageBox.Show("No se encontró trámite para ese valor trazable", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else if (tramites.Count == 1)
+                {
+                    btn_aceptar_Click(null, null);
+                } 
                 else
                 {
                     Form_Mode = form_mode.contenidobusqueda;

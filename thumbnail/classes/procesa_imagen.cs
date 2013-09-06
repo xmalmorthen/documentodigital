@@ -12,8 +12,8 @@ namespace thumbnail.classes
         public static byte[] toByteArray(System.Drawing.Image imageIn)
         {
             using (MemoryStream ms = new MemoryStream())
-            {
-                imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            {                
+                imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                 return ms.ToArray();
             }
         }

@@ -169,6 +169,32 @@ namespace thumbnail.models
                 _documento = value;
             }
         }
-        
+
+        private Boolean _enlazado;
+        public Boolean enlazado
+        {
+            get
+            {
+                return _enlazado;
+            }
+            set
+            {
+                _enlazado = value;
+            }
+        }
+
+        private Boolean _editado;
+        public Boolean editado
+        {
+            get
+            {
+                return _editado;
+            }
+            set
+            {
+                _editado = value;
+            }
+        }
+
     }
 }
