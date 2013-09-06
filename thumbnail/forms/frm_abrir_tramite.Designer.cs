@@ -56,18 +56,18 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btn_aceptar = new System.Windows.Forms.Button();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_buscar = new System.Windows.Forms.Button();
             this.idmadigitalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tramiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechahoracreacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.expedienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_aceptar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_buscar = new System.Windows.Forms.Button();
             this.btn_limpiar = new System.Windows.Forms.Button();
             this.tooltipBtnMnuOptions = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
@@ -334,6 +334,58 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(809, 200);
             this.dataGridView.TabIndex = 3;
+            this.dataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentDoubleClick);
+            // 
+            // idmadigitalDataGridViewTextBoxColumn
+            // 
+            this.idmadigitalDataGridViewTextBoxColumn.DataPropertyName = "id_ma_digital";
+            this.idmadigitalDataGridViewTextBoxColumn.HeaderText = "id_ma_digital";
+            this.idmadigitalDataGridViewTextBoxColumn.Name = "idmadigitalDataGridViewTextBoxColumn";
+            this.idmadigitalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idmadigitalDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idestatusDataGridViewTextBoxColumn
+            // 
+            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
+            this.idestatusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idestatusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tramiteDataGridViewTextBoxColumn
+            // 
+            this.tramiteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tramiteDataGridViewTextBoxColumn.DataPropertyName = "tramite";
+            this.tramiteDataGridViewTextBoxColumn.HeaderText = "Trámite";
+            this.tramiteDataGridViewTextBoxColumn.Name = "tramiteDataGridViewTextBoxColumn";
+            this.tramiteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // notaDataGridViewTextBoxColumn
+            // 
+            this.notaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.notaDataGridViewTextBoxColumn.DataPropertyName = "nota";
+            this.notaDataGridViewTextBoxColumn.HeaderText = "Nota";
+            this.notaDataGridViewTextBoxColumn.Name = "notaDataGridViewTextBoxColumn";
+            this.notaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechahoracreacionDataGridViewTextBoxColumn
+            // 
+            this.fechahoracreacionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fechahoracreacionDataGridViewTextBoxColumn.DataPropertyName = "fecha_hora_creacion";
+            dataGridViewCellStyle2.Format = "f";
+            dataGridViewCellStyle2.NullValue = null;
+            this.fechahoracreacionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.fechahoracreacionDataGridViewTextBoxColumn.HeaderText = "Fecha/Hora creación";
+            this.fechahoracreacionDataGridViewTextBoxColumn.Name = "fechahoracreacionDataGridViewTextBoxColumn";
+            this.fechahoracreacionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // expedienteDataGridViewTextBoxColumn
+            // 
+            this.expedienteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.expedienteDataGridViewTextBoxColumn.DataPropertyName = "expediente";
+            this.expedienteDataGridViewTextBoxColumn.HeaderText = "Expediente";
+            this.expedienteDataGridViewTextBoxColumn.Name = "expedienteDataGridViewTextBoxColumn";
+            this.expedienteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lineShape1
             // 
@@ -424,57 +476,6 @@
             this.tooltipBtnMnuOptions.SetToolTip(this.btn_buscar, "Buscar");
             this.btn_buscar.UseVisualStyleBackColor = false;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
-            // 
-            // idmadigitalDataGridViewTextBoxColumn
-            // 
-            this.idmadigitalDataGridViewTextBoxColumn.DataPropertyName = "id_ma_digital";
-            this.idmadigitalDataGridViewTextBoxColumn.HeaderText = "id_ma_digital";
-            this.idmadigitalDataGridViewTextBoxColumn.Name = "idmadigitalDataGridViewTextBoxColumn";
-            this.idmadigitalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idmadigitalDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idestatusDataGridViewTextBoxColumn
-            // 
-            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
-            this.idestatusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idestatusDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tramiteDataGridViewTextBoxColumn
-            // 
-            this.tramiteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tramiteDataGridViewTextBoxColumn.DataPropertyName = "tramite";
-            this.tramiteDataGridViewTextBoxColumn.HeaderText = "Trámite";
-            this.tramiteDataGridViewTextBoxColumn.Name = "tramiteDataGridViewTextBoxColumn";
-            this.tramiteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // notaDataGridViewTextBoxColumn
-            // 
-            this.notaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.notaDataGridViewTextBoxColumn.DataPropertyName = "nota";
-            this.notaDataGridViewTextBoxColumn.HeaderText = "Nota";
-            this.notaDataGridViewTextBoxColumn.Name = "notaDataGridViewTextBoxColumn";
-            this.notaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechahoracreacionDataGridViewTextBoxColumn
-            // 
-            this.fechahoracreacionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fechahoracreacionDataGridViewTextBoxColumn.DataPropertyName = "fecha_hora_creacion";
-            dataGridViewCellStyle2.Format = "f";
-            dataGridViewCellStyle2.NullValue = null;
-            this.fechahoracreacionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.fechahoracreacionDataGridViewTextBoxColumn.HeaderText = "Fecha/Hora creación";
-            this.fechahoracreacionDataGridViewTextBoxColumn.Name = "fechahoracreacionDataGridViewTextBoxColumn";
-            this.fechahoracreacionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // expedienteDataGridViewTextBoxColumn
-            // 
-            this.expedienteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.expedienteDataGridViewTextBoxColumn.DataPropertyName = "expediente";
-            this.expedienteDataGridViewTextBoxColumn.HeaderText = "Expediente";
-            this.expedienteDataGridViewTextBoxColumn.Name = "expedienteDataGridViewTextBoxColumn";
-            this.expedienteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // btn_limpiar
             // 

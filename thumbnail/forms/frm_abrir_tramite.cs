@@ -146,6 +146,11 @@ namespace thumbnail.forms
             pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = null;
             Form_Mode = form_mode.normal;
         }
+
+        private void dataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btn_aceptar_Click(null, null);
+        }
         
     }
 }

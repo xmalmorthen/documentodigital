@@ -803,7 +803,7 @@ namespace thumbnail.forms
         {
             ListViewGroup grupo = new ListViewGroup();
             grupo.Name = source_digital.clasificaciondocumento; //obtener el nombre del grupo a partir de su clasificacion de documento
-            grupo.Header = source_digital.clasificaciondocumento + " [ " + source_digital.documento + " ]"; //concatenar la clasificacion de documentos con el nombre del documento
+            grupo.Header = source_digital.clasificaciondocumento + " [ " + source_digital.documento + " ] [ " + source_digital.valor_trazable + " ]"; //concatenar la clasificacion de documentos con el nombre del documento
             grupo.HeaderAlignment = HorizontalAlignment.Left;
 
             Boolean existe = false;
@@ -1259,14 +1259,20 @@ namespace thumbnail.forms
 
         private void obtenerregistrosaeditar()
         {
+            inicializaedicion();
             obtenercampostrazablesaeditar();
             obtenerarchivodigital();
         }
 
+        private void inicializaedicion() {
+            sources_digital.Clear();
+            thumbnainlist.Images.Clear();
+            lstvwdocumentosenlazados.Groups.Clear();
+            lstvwdocumentosenlazados.Clear();            
+        }
+
         private void obtenerarchivodigital()
         {
-            sources_digital.Clear();
-
             List<data_members.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult> imagenesdigitalregistradas =
                 new List<pa_RegistrosDigitalesRegistradosporId_ma_digitalResult>(Program.Bd_Exp_Transportes.pa_RegistrosDigitalesRegistradosporId_ma_digital(id_ma_digital_edit));
 
@@ -1293,7 +1299,7 @@ namespace thumbnail.forms
 
                 ListViewGroup _grupo = new ListViewGroup();
                 _grupo.Name = source.clasificaciondocumento; //obtener el nombre del grupo a partir de su clasificacion de documento
-                _grupo.Header = source.clasificaciondocumento + " [ " + source.documento + " ]"; //concatenar la clasificacion de documentos con el nombre del documento
+                _grupo.Header = source.clasificaciondocumento + " [ " + source.documento + " ][ " + source_digital.valor_trazable + " ]"; //concatenar la clasificacion de documentos con el nombre del documento
                 _grupo.HeaderAlignment = HorizontalAlignment.Left;
 
                 Boolean existe = false;
