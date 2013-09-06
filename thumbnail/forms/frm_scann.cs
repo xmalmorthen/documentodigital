@@ -1091,7 +1091,7 @@ namespace thumbnail.forms
             }
             else if (result == DialogResult.OK)
             {
-                deletethumbnailandimage(lstvwdocumentosenlazados);
+                desenlazaitems(lstvwdocumentosenlazados.SelectedItems);
             }
 
             testDialog.Dispose();
