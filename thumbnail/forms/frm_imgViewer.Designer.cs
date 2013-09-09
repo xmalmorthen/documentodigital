@@ -295,6 +295,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Visualizador de Imagen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmimgViewer_FormClosing);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.KDImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zoomSlider.Properties)).EndInit();

@@ -196,5 +196,18 @@ namespace thumbnail.models
             }
         }
 
+        //utilizado para indicar si el documento fue añadido en tiempo de edicion
+        private Boolean _aniadido;
+        public Boolean aniadido
+        {
+            get
+            {
+                return _aniadido;
+            }
+            set
+            {
+                _aniadido = value;
+            }
+        }
     }
 }

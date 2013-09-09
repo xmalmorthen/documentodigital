@@ -346,14 +346,6 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		public System.Data.Linq.Table<vw_ListaTramitesActivos> vw_ListaTramitesActivos
-		{
-			get
-			{
-				return this.GetTable<vw_ListaTramitesActivos>();
-			}
-		}
-		
 		public System.Data.Linq.Table<ma_digital> ma_digital
 		{
 			get
@@ -375,6 +367,14 @@ namespace thumbnail.data_members
 			get
 			{
 				return this.GetTable<de_digital>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vw_ListaTramitesActivos> vw_ListaTramitesActivos
+		{
+			get
+			{
+				return this.GetTable<vw_ListaTramitesActivos>();
 			}
 		}
 		
@@ -448,13 +448,6 @@ namespace thumbnail.data_members
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ordenaporcambiodeorigen")]
-		public int pa_ordenaporcambiodeorigen([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_CLASIFICACIONDOCUMENTO", DbType="Int")] System.Nullable<int> iD_CLASIFICACIONDOCUMENTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ORIGEN", DbType="Int")] System.Nullable<int> iD_ORIGEN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ORDENDEPARTIDA", DbType="Int")] System.Nullable<int> oRDENDEPARTIDA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_NUEVOORIGEN", DbType="Int")] System.Nullable<int> iD_NUEVOORIGEN)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_CLASIFICACIONDOCUMENTO, iD_ORIGEN, oRDENDEPARTIDA, iD_NUEVOORIGEN);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ClasificacionDocumentosporTramite")]
 		public ISingleResult<pa_ClasificacionDocumentosporTramiteResult> pa_ClasificacionDocumentosporTramite([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_tramite)
 		{
@@ -516,6 +509,20 @@ namespace thumbnail.data_members
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_ma_digital);
 			return ((ISingleResult<pa_RegistrosDigitalesRegistradosporId_ma_digitalResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ordenaporborrado")]
+		public int pa_ordenaporborrado([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="Int")] System.Nullable<int> iD)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ordenaporcambiodeorigen")]
+		public int pa_ordenaporcambiodeorigen([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_CLASIFICACIONDOCUMENTO", DbType="Int")] System.Nullable<int> iD_CLASIFICACIONDOCUMENTO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_ORIGEN", DbType="Int")] System.Nullable<int> iD_ORIGEN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ORDENDEPARTIDA", DbType="Int")] System.Nullable<int> oRDENDEPARTIDA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID_NUEVOORIGEN", DbType="Int")] System.Nullable<int> iD_NUEVOORIGEN)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD_CLASIFICACIONDOCUMENTO, iD_ORIGEN, oRDENDEPARTIDA, iD_NUEVOORIGEN);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -5645,249 +5652,6 @@ namespace thumbnail.data_members
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_ListaTramitesActivos")]
-	public partial class vw_ListaTramitesActivos
-	{
-		
-		private int _id_expediente;
-		
-		private string _Descripcion_Expediente;
-		
-		private int _id_clasificaciontramite;
-		
-		private string _Descripcion_clasificaciontramite;
-		
-		private int _id_tramite;
-		
-		private string _Nombre_tramite;
-		
-		private string _Descripcion_tramite;
-		
-		private string _Descripcion_Breve_tramite;
-		
-		private string _Alcance_Inicial_tramite;
-		
-		private string _Alcance_Final_tramite;
-		
-		private int _id_estatus_tramite;
-		
-		private string _Descripcion_estatus_tramite;
-		
-		private int _id_re_expedientes_tramites;
-		
-		public vw_ListaTramitesActivos()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_expediente", DbType="Int NOT NULL")]
-		public int id_expediente
-		{
-			get
-			{
-				return this._id_expediente;
-			}
-			set
-			{
-				if ((this._id_expediente != value))
-				{
-					this._id_expediente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_Expediente", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Descripcion_Expediente
-		{
-			get
-			{
-				return this._Descripcion_Expediente;
-			}
-			set
-			{
-				if ((this._Descripcion_Expediente != value))
-				{
-					this._Descripcion_Expediente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_clasificaciontramite", DbType="Int NOT NULL")]
-		public int id_clasificaciontramite
-		{
-			get
-			{
-				return this._id_clasificaciontramite;
-			}
-			set
-			{
-				if ((this._id_clasificaciontramite != value))
-				{
-					this._id_clasificaciontramite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_clasificaciontramite", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Descripcion_clasificaciontramite
-		{
-			get
-			{
-				return this._Descripcion_clasificaciontramite;
-			}
-			set
-			{
-				if ((this._Descripcion_clasificaciontramite != value))
-				{
-					this._Descripcion_clasificaciontramite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tramite", DbType="Int NOT NULL")]
-		public int id_tramite
-		{
-			get
-			{
-				return this._id_tramite;
-			}
-			set
-			{
-				if ((this._id_tramite != value))
-				{
-					this._id_tramite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre_tramite", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Nombre_tramite
-		{
-			get
-			{
-				return this._Nombre_tramite;
-			}
-			set
-			{
-				if ((this._Nombre_tramite != value))
-				{
-					this._Nombre_tramite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_tramite", DbType="VarChar(MAX)")]
-		public string Descripcion_tramite
-		{
-			get
-			{
-				return this._Descripcion_tramite;
-			}
-			set
-			{
-				if ((this._Descripcion_tramite != value))
-				{
-					this._Descripcion_tramite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_Breve_tramite", DbType="VarChar(100)")]
-		public string Descripcion_Breve_tramite
-		{
-			get
-			{
-				return this._Descripcion_Breve_tramite;
-			}
-			set
-			{
-				if ((this._Descripcion_Breve_tramite != value))
-				{
-					this._Descripcion_Breve_tramite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Alcance_Inicial_tramite", DbType="VarChar(100)")]
-		public string Alcance_Inicial_tramite
-		{
-			get
-			{
-				return this._Alcance_Inicial_tramite;
-			}
-			set
-			{
-				if ((this._Alcance_Inicial_tramite != value))
-				{
-					this._Alcance_Inicial_tramite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Alcance_Final_tramite", DbType="VarChar(100)")]
-		public string Alcance_Final_tramite
-		{
-			get
-			{
-				return this._Alcance_Final_tramite;
-			}
-			set
-			{
-				if ((this._Alcance_Final_tramite != value))
-				{
-					this._Alcance_Final_tramite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus_tramite", DbType="Int NOT NULL")]
-		public int id_estatus_tramite
-		{
-			get
-			{
-				return this._id_estatus_tramite;
-			}
-			set
-			{
-				if ((this._id_estatus_tramite != value))
-				{
-					this._id_estatus_tramite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_estatus_tramite", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Descripcion_estatus_tramite
-		{
-			get
-			{
-				return this._Descripcion_estatus_tramite;
-			}
-			set
-			{
-				if ((this._Descripcion_estatus_tramite != value))
-				{
-					this._Descripcion_estatus_tramite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_expedientes_tramites", DbType="Int NOT NULL")]
-		public int id_re_expedientes_tramites
-		{
-			get
-			{
-				return this._id_re_expedientes_tramites;
-			}
-			set
-			{
-				if ((this._id_re_expedientes_tramites != value))
-				{
-					this._id_re_expedientes_tramites = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ma_digital")]
 	public partial class ma_digital : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -6862,6 +6626,321 @@ namespace thumbnail.data_members
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_ListaTramitesActivos")]
+	public partial class vw_ListaTramitesActivos
+	{
+		
+		private int _id_expediente;
+		
+		private string _Descripcion_Expediente;
+		
+		private int _id_clasificaciontramite;
+		
+		private string _Descripcion_clasificaciontramite;
+		
+		private int _id_tramite;
+		
+		private string _Nombre_tramite;
+		
+		private string _Descripcion_tramite;
+		
+		private string _Descripcion_Breve_tramite;
+		
+		private string _Alcance_Inicial_tramite;
+		
+		private string _Alcance_Final_tramite;
+		
+		private int _id_estatus_tramite;
+		
+		private string _Descripcion_estatus_tramite;
+		
+		private int _id_re_expedientes_tramites;
+		
+		private System.Nullable<int> _id_tipobloqueo;
+		
+		private string _descripcion_bloqueo;
+		
+		private System.Nullable<short> _no_horas_bloqueo;
+		
+		private System.Nullable<short> _no_dias_bloqueo;
+		
+		public vw_ListaTramitesActivos()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_expediente", DbType="Int NOT NULL")]
+		public int id_expediente
+		{
+			get
+			{
+				return this._id_expediente;
+			}
+			set
+			{
+				if ((this._id_expediente != value))
+				{
+					this._id_expediente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_Expediente", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Descripcion_Expediente
+		{
+			get
+			{
+				return this._Descripcion_Expediente;
+			}
+			set
+			{
+				if ((this._Descripcion_Expediente != value))
+				{
+					this._Descripcion_Expediente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_clasificaciontramite", DbType="Int NOT NULL")]
+		public int id_clasificaciontramite
+		{
+			get
+			{
+				return this._id_clasificaciontramite;
+			}
+			set
+			{
+				if ((this._id_clasificaciontramite != value))
+				{
+					this._id_clasificaciontramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_clasificaciontramite", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Descripcion_clasificaciontramite
+		{
+			get
+			{
+				return this._Descripcion_clasificaciontramite;
+			}
+			set
+			{
+				if ((this._Descripcion_clasificaciontramite != value))
+				{
+					this._Descripcion_clasificaciontramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tramite", DbType="Int NOT NULL")]
+		public int id_tramite
+		{
+			get
+			{
+				return this._id_tramite;
+			}
+			set
+			{
+				if ((this._id_tramite != value))
+				{
+					this._id_tramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre_tramite", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Nombre_tramite
+		{
+			get
+			{
+				return this._Nombre_tramite;
+			}
+			set
+			{
+				if ((this._Nombre_tramite != value))
+				{
+					this._Nombre_tramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_tramite", DbType="VarChar(MAX)")]
+		public string Descripcion_tramite
+		{
+			get
+			{
+				return this._Descripcion_tramite;
+			}
+			set
+			{
+				if ((this._Descripcion_tramite != value))
+				{
+					this._Descripcion_tramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_Breve_tramite", DbType="VarChar(100)")]
+		public string Descripcion_Breve_tramite
+		{
+			get
+			{
+				return this._Descripcion_Breve_tramite;
+			}
+			set
+			{
+				if ((this._Descripcion_Breve_tramite != value))
+				{
+					this._Descripcion_Breve_tramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Alcance_Inicial_tramite", DbType="VarChar(100)")]
+		public string Alcance_Inicial_tramite
+		{
+			get
+			{
+				return this._Alcance_Inicial_tramite;
+			}
+			set
+			{
+				if ((this._Alcance_Inicial_tramite != value))
+				{
+					this._Alcance_Inicial_tramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Alcance_Final_tramite", DbType="VarChar(100)")]
+		public string Alcance_Final_tramite
+		{
+			get
+			{
+				return this._Alcance_Final_tramite;
+			}
+			set
+			{
+				if ((this._Alcance_Final_tramite != value))
+				{
+					this._Alcance_Final_tramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus_tramite", DbType="Int NOT NULL")]
+		public int id_estatus_tramite
+		{
+			get
+			{
+				return this._id_estatus_tramite;
+			}
+			set
+			{
+				if ((this._id_estatus_tramite != value))
+				{
+					this._id_estatus_tramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_estatus_tramite", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Descripcion_estatus_tramite
+		{
+			get
+			{
+				return this._Descripcion_estatus_tramite;
+			}
+			set
+			{
+				if ((this._Descripcion_estatus_tramite != value))
+				{
+					this._Descripcion_estatus_tramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_expedientes_tramites", DbType="Int NOT NULL")]
+		public int id_re_expedientes_tramites
+		{
+			get
+			{
+				return this._id_re_expedientes_tramites;
+			}
+			set
+			{
+				if ((this._id_re_expedientes_tramites != value))
+				{
+					this._id_re_expedientes_tramites = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tipobloqueo", DbType="Int")]
+		public System.Nullable<int> id_tipobloqueo
+		{
+			get
+			{
+				return this._id_tipobloqueo;
+			}
+			set
+			{
+				if ((this._id_tipobloqueo != value))
+				{
+					this._id_tipobloqueo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descripcion_bloqueo", DbType="VarChar(MAX)")]
+		public string descripcion_bloqueo
+		{
+			get
+			{
+				return this._descripcion_bloqueo;
+			}
+			set
+			{
+				if ((this._descripcion_bloqueo != value))
+				{
+					this._descripcion_bloqueo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_no_horas_bloqueo", DbType="SmallInt")]
+		public System.Nullable<short> no_horas_bloqueo
+		{
+			get
+			{
+				return this._no_horas_bloqueo;
+			}
+			set
+			{
+				if ((this._no_horas_bloqueo != value))
+				{
+					this._no_horas_bloqueo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_no_dias_bloqueo", DbType="SmallInt")]
+		public System.Nullable<short> no_dias_bloqueo
+		{
+			get
+			{
+				return this._no_dias_bloqueo;
+			}
+			set
+			{
+				if ((this._no_dias_bloqueo != value))
+				{
+					this._no_dias_bloqueo = value;
+				}
 			}
 		}
 	}

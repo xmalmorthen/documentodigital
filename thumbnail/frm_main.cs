@@ -101,7 +101,8 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.frm_scann scann = new forms.frm_scann();
+            thumbnail.forms.frm_scann scann = new forms.frm_scann(modulos.Find(c => c.Modulo.ToString().ToLower() == "blquear/desbloquear") == null ? false : true);
+
             scann.MdiParent = this;
             scann.Show();
 

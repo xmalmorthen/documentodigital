@@ -49,6 +49,9 @@ namespace thumbnail.forms
         public frmimgViewer(int id_ma_digital_edit, int id, int id_re_clasificaciondocumento_documento)
         {
             InitializeComponent();
+
+            btn_borrar.Visible = false;
+
             string pathfilename = scannfilename + ".jpg";
 
             try
@@ -186,6 +189,12 @@ namespace thumbnail.forms
 //boton cerrar
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
+            this.Close();            
+        }
+#endregion botonera superior
+
+        private void frmimgViewer_FormClosing(object sender, FormClosingEventArgs e)
+        {
             if (KDImage.IsPictureChanged)
             {
                 switch (MessageBox.Show("Desea guardar los cambios", "Guardar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
@@ -210,11 +219,5 @@ namespace thumbnail.forms
                 this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             }
         }
-#endregion botonera superior
-
-        
-
-        
-
     }
 }

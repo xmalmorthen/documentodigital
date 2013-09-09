@@ -98,7 +98,7 @@ namespace thumbnail.forms
 
                 if (tramites == null || tramites.Count == 0)
                 {
-                    MessageBox.Show("No se encontró trámite para ese valor trazable", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se encontró trámite o podría estar bloqueado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (tramites.Count == 1)
                 {

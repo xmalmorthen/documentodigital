@@ -1,9 +1,7 @@
-Guardar en base de datos
-gurdar thumbnails de imagenes en base de datos
 incrustar marca de agua en imagenes
 agregar nota cuando el tramite queda sin bloquear
 ventana con lista de documentos de ayuda en ventana de escaneo antes de digitalizar
 title de ventana de escaneo trmiate+campotrazable
-Recuperar datos de base de datos
 control de errores, log envio de info de errores
 etiquetas en archivos de recursos
+bloquear/desbloquear trámite desde boton

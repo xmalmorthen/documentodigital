@@ -252,23 +252,6 @@
       <Association Name="ca_usuarios_re_usuarios_roles_permisos" Member="ca_usuarios" ThisKey="id_usuario" OtherKey="id" Type="ca_usuarios" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.vw_ListaTramitesActivos" Member="vw_ListaTramitesActivos">
-    <Type Name="vw_ListaTramitesActivos">
-      <Column Name="id_expediente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion_Expediente" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="id_clasificaciontramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion_clasificaciontramite" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre_tramite" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion_tramite" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Descripcion_Breve_tramite" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Alcance_Inicial_tramite" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Alcance_Final_tramite" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="id_estatus_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Descripcion_estatus_tramite" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="id_re_expedientes_tramites" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.ma_digital" Member="ma_digital">
     <Type Name="ma_digital">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -309,6 +292,27 @@
       <Association Name="ca_estatus_de_digital" Member="ca_estatus" ThisKey="id_estatus" OtherKey="id" Type="ca_estatus" IsForeignKey="true" />
       <Association Name="ma_digital_de_digital" Member="ma_digital" ThisKey="id_ma_digital" OtherKey="id" Type="ma_digital" IsForeignKey="true" />
       <Association Name="re_clasificaciondocumentos_documentos_de_digital" Member="re_clasificaciondocumentos_documentos" ThisKey="id_re_clasificaciondocumento_documento" OtherKey="id" Type="re_clasificaciondocumentos_documentos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_ListaTramitesActivos" Member="vw_ListaTramitesActivos">
+    <Type Name="vw_ListaTramitesActivos">
+      <Column Name="id_expediente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion_Expediente" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="id_clasificaciontramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion_clasificaciontramite" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre_tramite" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion_tramite" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Descripcion_Breve_tramite" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Alcance_Inicial_tramite" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Alcance_Final_tramite" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="id_estatus_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion_estatus_tramite" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="id_re_expedientes_tramites" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_tipobloqueo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcion_bloqueo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="no_horas_bloqueo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="no_dias_bloqueo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.pa_CampostrazablesActivosporExpediente" Method="pa_CampostrazablesActivosporExpediente">
@@ -423,13 +427,6 @@
     <Parameter Name="ORDENDEFIN" Parameter="oRDENDEFIN" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.pa_ordenaporcambiodeorigen" Method="pa_ordenaporcambiodeorigen">
-    <Parameter Name="ID_CLASIFICACIONDOCUMENTO" Parameter="iD_CLASIFICACIONDOCUMENTO" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ID_ORIGEN" Parameter="iD_ORIGEN" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ORDENDEPARTIDA" Parameter="oRDENDEPARTIDA" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ID_NUEVOORIGEN" Parameter="iD_NUEVOORIGEN" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.pa_ClasificacionDocumentosporTramite" Method="pa_ClasificacionDocumentosporTramite">
     <Parameter Name="id_tramite" Type="System.Int32" DbType="Int" />
     <ElementType Name="pa_ClasificacionDocumentosporTramiteResult">
@@ -521,5 +518,16 @@
       <Column Name="id_origen" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Origen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.pa_ordenaporborrado" Method="pa_ordenaporborrado">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.pa_ordenaporcambiodeorigen" Method="pa_ordenaporcambiodeorigen">
+    <Parameter Name="ID_CLASIFICACIONDOCUMENTO" Parameter="iD_CLASIFICACIONDOCUMENTO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_ORIGEN" Parameter="iD_ORIGEN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ORDENDEPARTIDA" Parameter="oRDENDEPARTIDA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ID_NUEVOORIGEN" Parameter="iD_NUEVOORIGEN" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

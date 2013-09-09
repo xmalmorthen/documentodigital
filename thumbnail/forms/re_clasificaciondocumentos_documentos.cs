@@ -332,8 +332,7 @@ namespace thumbnail.forms
 
                 if (item != null)
                 {
-                    Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.DeleteOnSubmit(item);
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                    Program.Bd_Exp_Transportes.pa_ordenaporborrado(item.id);
                     MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

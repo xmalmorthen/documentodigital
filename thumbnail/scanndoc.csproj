@@ -419,6 +419,7 @@
     <Content Include="assets\imgs\48x48\clear_get.png" />
     <Content Include="assets\imgs\48x48\clock.png" />
     <Content Include="assets\imgs\48x48\close.png" />
+    <None Include="assets\imgs\48x48\closed.png" />
     <Content Include="assets\imgs\48x48\delete.png" />
     <Content Include="assets\imgs\48x48\doc_plus.png" />
     <None Include="assets\imgs\48x48\find.png" />
@@ -428,6 +429,7 @@
     <Content Include="assets\imgs\48x48\folder_open.png" />
     <Content Include="assets\imgs\48x48\gestion.png" />
     <Content Include="assets\imgs\48x48\get.png" />
+    <None Include="assets\imgs\48x48\open.png" />
     <Content Include="assets\imgs\48x48\reset.png" />
     <Content Include="assets\imgs\48x48\rotateder.png" />
     <Content Include="assets\imgs\48x48\rotateizq.png" />
