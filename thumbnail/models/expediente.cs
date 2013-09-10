@@ -104,8 +104,8 @@ namespace thumbnail.models
             }
         }
 
-        private Image _thumbnail;
-        public Image thumbnail
+        private byte[] _thumbnail;
+        public byte[] thumbnail
         {
             get
             {
@@ -117,8 +117,8 @@ namespace thumbnail.models
             }
         }
 
-        private Image _imagen;
-        public Image imagen
+        private byte[] _imagen;
+        public byte[] imagen
         {
             get
             {
@@ -207,6 +207,19 @@ namespace thumbnail.models
             set
             {
                 _aniadido = value;
+            }
+        }
+
+        private int _id_de_digital;
+        public int id_de_digital
+        {
+            get
+            {
+                return _id_de_digital;
+            }
+            set
+            {
+                _id_de_digital = value;
             }
         }
     }

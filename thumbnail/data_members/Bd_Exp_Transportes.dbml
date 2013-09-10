@@ -258,7 +258,7 @@
       <Column Name="id_re_expediente_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="fecha_hora_creacion" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="fecha_hora_bloqueo" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_hora_bloqueo" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="true" />
       <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="ma_digital_de_digital_campostrazables" Member="de_digital_campostrazables" ThisKey="id" OtherKey="id_ma_digital" Type="de_digital_campostrazables" />
       <Association Name="ma_digital_de_digital" Member="de_digital" ThisKey="id" OtherKey="id_ma_digital" Type="de_digital" />

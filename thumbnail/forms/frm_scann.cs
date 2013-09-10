@@ -123,6 +123,7 @@ namespace thumbnail.forms
         {
             InitializeComponent();
             UsuarioPuedeBloquear = _UsuarioPuedeBloquear;
+
             Inicializa();
         }
 
@@ -176,8 +177,11 @@ namespace thumbnail.forms
 
         //guardar tramite
         private tramite_model tramite;
+        private Boolean exitoalguardar;
         private void btn_guardar_Click(object sender, EventArgs e)
         {
+            exitoalguardar = false;
+
             tramite = new tramite_model();
 
             if (!this.colectar_campostrazables()) return;
@@ -217,13 +221,30 @@ namespace thumbnail.forms
                 this.Cursor = Cursors.Default;
 
                 MessageBox.Show("Trámite modificado con éxito", "Modificaco", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                SeEdito = false;
             }
             tramite = null;
+
+            exitoalguardar = true;
         }
 
         private void editarexpediente()
         {
-            throw new NotImplementedException();
+            try
+            {                
+                tramite.nota = "";
+
+                match_de_digital_campostrazables(id_ma_digital_edit);
+
+                match_de_digital(id_ma_digital_edit);
+
+                Program.Bd_Exp_Transportes.SubmitChanges();
+
+            }
+            catch (Exception)
+            {
+            }        
         }
 
         private void crearexpediente()
@@ -232,8 +253,14 @@ namespace thumbnail.forms
             {
                 //inicializacion de valores
                 tramite.id_re_expediente_tramite = lookUpEdit_Tramites_selected.id_re_expedientes_tramites;
+
                 tramite.nota = "";
-                tramite.fecha_hora_bloqueo = DateTime.Now;
+
+                if ((BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).descripcion_bloqueo.ToString().ToLower() == "bloquear despues de determinado tiempo")
+                {
+                    tramite.fecha_hora_bloqueo = calculafechahorabloqueo();
+                }
+
                 tramite.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "desbloqueado").id;
 
                 int id_ma_digital = match_ma_digital();
@@ -250,53 +277,130 @@ namespace thumbnail.forms
             {                
             }                
         }
-
+       
         private void match_de_digital(int id_ma_digital)
         {
-            List<data_members.de_digital> listainsertar = new List<data_members.de_digital>();
-            foreach (digital item in tramite.imagenes_digital)
+            if (Form_Mode == form_mode.Add)
             {
-                data_members.de_digital de_digital = new data_members.de_digital();
-                de_digital.id_ma_digital = id_ma_digital;
+                List<data_members.de_digital> listainsertar = new List<data_members.de_digital>();
+                foreach (digital item in tramite.imagenes_digital)
+                {
+                    data_members.de_digital de_digital = new data_members.de_digital();
+                    de_digital.id_ma_digital = id_ma_digital;
 
-                byte[] file_byte_thumbnail = procesa_imagen.toByteArray(item.thumbnail);
-                System.Data.Linq.Binary file_binary_thumbnail = new System.Data.Linq.Binary(file_byte_thumbnail);
-                de_digital.thumbnail = file_binary_thumbnail;
-                file_byte_thumbnail = null;
-                file_binary_thumbnail = null;
+                    byte[] file_byte_thumbnail = item.thumbnail;
+                    System.Data.Linq.Binary file_binary_thumbnail = new System.Data.Linq.Binary(file_byte_thumbnail);
+                    de_digital.thumbnail = file_binary_thumbnail;
+                    file_byte_thumbnail = null;
+                    file_binary_thumbnail = null;
 
-                de_digital.id_re_clasificaciondocumento_documento = item.id_re_clasificaciondocumento_documento;
+                    de_digital.id_re_clasificaciondocumento_documento = item.id_re_clasificaciondocumento_documento;
 
-                byte[] file_byte_imagen = procesa_imagen.toByteArray(item.imagen);
-                System.Data.Linq.Binary file_binary_imagen = new System.Data.Linq.Binary(file_byte_imagen);
-                de_digital.imagen = file_binary_imagen;
-                file_byte_imagen = null;
-                file_binary_imagen = null;
+                    byte[] file_byte_imagen = item.imagen;
+                    System.Data.Linq.Binary file_binary_imagen = new System.Data.Linq.Binary(file_byte_imagen);
+                    de_digital.imagen = file_binary_imagen;
+                    file_byte_imagen = null;
+                    file_binary_imagen = null;
 
-                de_digital.valor_trazable = item.valor_trazable;                
-                de_digital.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
-                
-                listainsertar.Add(de_digital);
-                
-                de_digital = null;
+                    de_digital.valor_trazable = item.valor_trazable;
+                    de_digital.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+
+                    listainsertar.Add(de_digital);
+
+                    de_digital = null;
+                }
+                Program.Bd_Exp_Transportes.de_digital.InsertAllOnSubmit(listainsertar);
             }
-            Program.Bd_Exp_Transportes.de_digital.InsertAllOnSubmit(listainsertar);
+            else if (Form_Mode == form_mode.Edit && SeEdito)
+            {
+                foreach (digital item in tramite.imagenes_digital)
+                {
+                    if (item.aniadido) { //cuando fue agregada una imagen
+                        data_members.de_digital de_digital = new data_members.de_digital();
+                        de_digital.id_ma_digital = id_ma_digital;
+
+                        byte[] file_byte_thumbnail = item.thumbnail;
+                        System.Data.Linq.Binary file_binary_thumbnail = new System.Data.Linq.Binary(file_byte_thumbnail);
+                        de_digital.thumbnail = file_binary_thumbnail;
+                        file_byte_thumbnail = null;
+                        file_binary_thumbnail = null;
+
+                        de_digital.id_re_clasificaciondocumento_documento = item.id_re_clasificaciondocumento_documento;
+
+                        byte[] file_byte_imagen = item.imagen;
+                        System.Data.Linq.Binary file_binary_imagen = new System.Data.Linq.Binary(file_byte_imagen);
+                        de_digital.imagen = file_binary_imagen;
+                        file_byte_imagen = null;
+                        file_binary_imagen = null;
+
+                        de_digital.valor_trazable = item.valor_trazable;
+                        de_digital.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+
+                        Program.Bd_Exp_Transportes.de_digital.InsertOnSubmit(de_digital);
+
+                        de_digital = null;
+                    }
+                    else if (item.editado ) { //cuando se edito una imagen
+                        data_members.de_digital de_digital = Program.Bd_Exp_Transportes.de_digital.SingleOrDefault(
+                                        query => query.id == item.id_de_digital);
+
+                        byte[] file_byte_thumbnail = item.thumbnail;
+                        System.Data.Linq.Binary file_binary_thumbnail = new System.Data.Linq.Binary(file_byte_thumbnail);
+                        de_digital.thumbnail = file_binary_thumbnail;
+                        file_byte_thumbnail = null;
+                        file_binary_thumbnail = null;
+
+                        byte[] file_byte_imagen = item.imagen;
+                        System.Data.Linq.Binary file_binary_imagen = new System.Data.Linq.Binary(file_byte_imagen);
+                        de_digital.imagen = file_binary_imagen;
+                        file_byte_imagen = null;
+                        file_binary_imagen = null;
+
+                        de_digital.valor_trazable = item.valor_trazable;
+
+                        Program.Bd_Exp_Transportes.SubmitChanges();
+                    }
+                    else if (!item.enlazado) { //cuando se desenlazo una imagen guardada
+                        data_members.de_digital de_digital = Program.Bd_Exp_Transportes.de_digital.SingleOrDefault(
+                                        query => query.id == item.id_de_digital);
+                        de_digital.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
+                        Program.Bd_Exp_Transportes.SubmitChanges();
+                    }
+                }
+            }
         }
 
         private void match_de_digital_campostrazables(int id_ma_digital)
         {
-            List<data_members.de_digital_campostrazables> listainsertar = new List<data_members.de_digital_campostrazables>();
-            foreach (trazabilidad_tramite item in tramite.trazabilidad)
-	        {
-                data_members.de_digital_campostrazables de_digital_campostrazables = new data_members.de_digital_campostrazables();
-                de_digital_campostrazables.id_ma_digital = id_ma_digital;
-                de_digital_campostrazables.id_re_expediente_campotrazable = item.id_re_expediente_campotrazable;
-                de_digital_campostrazables.valor_trazable = item.valor_trazable;
-                de_digital_campostrazables.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
-                listainsertar.Add(de_digital_campostrazables);
-                de_digital_campostrazables = null;
-	        }
-            Program.Bd_Exp_Transportes.de_digital_campostrazables.InsertAllOnSubmit(listainsertar);
+            if (Form_Mode == form_mode.Add)
+            {
+                List<data_members.de_digital_campostrazables> listainsertar = new List<data_members.de_digital_campostrazables>();
+                foreach (trazabilidad_tramite item in tramite.trazabilidad)
+                {
+                    data_members.de_digital_campostrazables de_digital_campostrazables = new data_members.de_digital_campostrazables();
+                    de_digital_campostrazables.id_ma_digital = id_ma_digital;
+                    de_digital_campostrazables.id_re_expediente_campotrazable = item.id_re_expediente_campotrazable;
+                    de_digital_campostrazables.valor_trazable = item.valor_trazable;
+                    de_digital_campostrazables.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+                    listainsertar.Add(de_digital_campostrazables);
+                    de_digital_campostrazables = null;
+                }
+                Program.Bd_Exp_Transportes.de_digital_campostrazables.InsertAllOnSubmit(listainsertar);
+            }
+            else if (Form_Mode == form_mode.Edit && SeEdito)
+            {
+                foreach (trazabilidad_tramite item in tramite.trazabilidad)
+                {
+                    data_members.de_digital_campostrazables de_digital_campostrazables = Program.Bd_Exp_Transportes.de_digital_campostrazables.SingleOrDefault(
+                        query => query.id_ma_digital == id_ma_digital && query.id_re_expediente_campotrazable == item.id_re_expediente_campotrazable);
+
+                    if (de_digital_campostrazables.valor_trazable != item.valor_trazable)
+                    {
+                        de_digital_campostrazables.valor_trazable = item.valor_trazable;
+                        Program.Bd_Exp_Transportes.SubmitChanges();
+                    }
+                }                
+            }
         }
 
         private int match_ma_digital()
@@ -441,24 +545,27 @@ namespace thumbnail.forms
         {
             try
             {
-                if (lstvwdocumentosenlazados.Items.Count != 0)
+                if (Form_Mode == form_mode.Add)
                 {
-                    if (MessageBox.Show("Al cambiar el trámite se perderán los cambios realizados actualmente", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
+                    if (lstvwdocumentosenlazados.Items.Count != 0)
                     {
-                        e.Cancel = true;
-                    }
-                    else
-                    {
-                        /*
-                         * seleccionar todos los items, para posteriormente llamar al metodo
-                         * que mueve los elementos al otro control
-                         */ 
-                        foreach (ListViewItem item in lstvwdocumentosenlazados.Items)
+                        if (MessageBox.Show("Al cambiar el trámite se perderán los cambios realizados actualmente", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No)
                         {
-                            item.Selected = true;
+                            e.Cancel = true;
                         }
-                        tsmnuitemlstvwenlacedesenlazar_Click(null, null);
-                        sources_digital.Clear();
+                        else
+                        {
+                            /*
+                             * seleccionar todos los items, para posteriormente llamar al metodo
+                             * que mueve los elementos al otro control
+                             */
+                            foreach (ListViewItem item in lstvwdocumentosenlazados.Items)
+                            {
+                                item.Selected = true;
+                            }
+                            tsmnuitemlstvwenlacedesenlazar_Click(null, null);
+                            sources_digital.Clear();
+                        }
                     }
                 }
             }
@@ -819,8 +926,8 @@ namespace thumbnail.forms
             //tsmnuitemlstvwenlaceeliminar.Visible = (numItemsSelects >= 1 ? true : false);
             tsmnuitemlstvwenlacedesenlazar.Visible = (numItemsSelects >= 1 ? true : false);
             //tsmnuitemlstvwenlacedesenlazartodo.Visible = true;
-            tsmnuitemlstvwenlacegirarderecha.Visible = (numItemsSelects >= 1 ? true : false);
-            tsmnuitemlstvwenlacegirarizquierda.Visible = (numItemsSelects >= 1 ? true : false);
+            tsmnuitemlstvwenlacegirarderecha.Visible = (numItemsSelects >= 1 && Form_Mode == form_mode.Add ? true : false);
+            tsmnuitemlstvwenlacegirarizquierda.Visible = (numItemsSelects >= 1 && Form_Mode == form_mode.Add ? true : false);
         }
 
         //funcion generica para la rotacion de imagenes
@@ -833,7 +940,7 @@ namespace thumbnail.forms
                 Image img = item.ImageList.Images[idx];
                 img.RotateFlip(rotacion);
                 this.thumbnainlist.Images[idx] = img;
-
+                
                 string path_filename = ( (tagstruct) item.Tag ).path_image.ToString();
                 
                 double rotateangle = 0;
@@ -864,7 +971,21 @@ namespace thumbnail.forms
                 {
                     throw new Exception("Error :" + KDImage.GetErrorMsg(lvRet));
                 }
-                
+
+
+                tagstruct sourcetag = ((tagstruct)item.Tag);
+                digital source = sources_digital.FirstOrDefault(c => c.guid == sourcetag.guid);
+                if (source != null)
+                {                    
+                    img = Image.FromFile(sourcetag.path_image);
+                    source.imagen = procesa_imagen.toByteArray(img); //asignar imagen al colector principal
+                    img.Dispose();
+                    source.thumbnail = procesa_imagen.toByteArray(thumbnainlist.Images[idx]);
+                    source.editado = true;                    
+                    lstvwdocumentosenlazados.Refresh();
+                    SeEdito = true;
+                }
+
             }
             obj.Refresh();
         }
@@ -893,9 +1014,9 @@ namespace thumbnail.forms
                     source = new thumbnail.models.digital();
 
                     Image img = Image.FromFile(((tagstruct)item.Tag).path_image.ToString());
-                    source.imagen = img; //asignar imagen al colector principal
-                    source.thumbnail = ((ListViewItem)item).ImageList.Images[((ListViewItem)item).ImageIndex];
-                    //img.Dispose();
+                    source.imagen = procesa_imagen.toByteArray(img); //asignar imagen al colector principal
+                    img.Dispose();
+                    source.thumbnail = procesa_imagen.toByteArray( ((ListViewItem)item).ImageList.Images[((ListViewItem)item).ImageIndex] );
                     source.id_re_clasificaciondocumento_documento = source_digital.id_re_clasificaciondocumento_documento;
                     source.valor_trazable = source_digital.valor_trazable;
                     source.clasificaciondocumento = source_digital.clasificaciondocumento;
@@ -921,8 +1042,9 @@ namespace thumbnail.forms
                         source = new thumbnail.models.digital();
 
                         Image img = Image.FromFile(((tagstruct)item.Tag).path_image.ToString());
-                        source.imagen = img; //asignar imagen al colector principal
-                        source.thumbnail = ((ListViewItem)item).ImageList.Images[((ListViewItem)item).ImageIndex];
+                        source.imagen = procesa_imagen.toByteArray(img); //asignar imagen al colector principal
+                        img.Dispose();
+                        source.thumbnail = procesa_imagen.toByteArray( ((ListViewItem)item).ImageList.Images[((ListViewItem)item).ImageIndex] );
                         source.id_re_clasificaciondocumento_documento = source_digital.id_re_clasificaciondocumento_documento;
                         source.valor_trazable = source_digital.valor_trazable;
                         source.clasificaciondocumento = source_digital.clasificaciondocumento;
@@ -1018,6 +1140,7 @@ namespace thumbnail.forms
             {
                 Image img = Image.FromFile( ( (tagstruct) lstvwdocumentosescaneados.SelectedItems[0].Tag ).path_image.ToString() );
                 thumbnainlist.Images[idx] = classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img);
+                img.Dispose();
                 lstvwdocumentosescaneados.Refresh();
             }
             else if (result == DialogResult.OK) {
@@ -1088,7 +1211,6 @@ namespace thumbnail.forms
 
             Application.DoEvents();
             
-
             frmimgViewer testDialog;
             if (Form_Mode == form_mode.Add)
             {
@@ -1124,15 +1246,19 @@ namespace thumbnail.forms
                 Image img = null;
                 tagstruct sourcetag = ((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag);
                 img = Image.FromFile(sourcetag.path_image);
-                if (Form_Mode == form_mode.Edit)
-                {                    
-                    digital source = sources_digital.FirstOrDefault(c => c.guid == sourcetag.guid);
-                    source.editado = true;
-                }
 
                 thumbnainlist.Images[idx] = classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img);
+
+                digital source = sources_digital.FirstOrDefault(c => c.guid == sourcetag.guid);
+                if (source != null)
+                {
+                    source.imagen = procesa_imagen.toByteArray(img); //asignar imagen al colector principal
+                    source.thumbnail = procesa_imagen.toByteArray(thumbnainlist.Images[idx]);
+                    source.editado = true;
+                }                
                 img.Dispose();
                 lstvwdocumentosenlazados.Refresh();
+                SeEdito = true;
             }
             else if (result == DialogResult.OK)
             {
@@ -1187,7 +1313,7 @@ namespace thumbnail.forms
         {
             Image img = Image.FromFile(file);
             thumbnainlist.Images.Add(classes.thumbnail.getThumbnaiImage(thumbnainlist.ImageSize.Width, img));
-
+            img.Dispose();
             this.lstvwdocumentosescaneados.Items.Add("", (int)thumbnainlist.Images.Count - 1);
             
             tag.path_image = file.ToString();
@@ -1249,6 +1375,11 @@ namespace thumbnail.forms
                 id_ma_digital_edit = (frm.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.Current as data_members.pa_ReferenciaExpedientesporValorTrazableResult).id_ma_digital;
                 Form_Mode = form_mode.Edit;
                 SeEdito = false;
+
+                btn_bloquear.Visible = (BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).descripcion_bloqueo != null &&
+                                        (BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).descripcion_bloqueo.ToString().ToLower() == "bloquear manualmente" &&
+                                        UsuarioPuedeBloquear
+                                        ? true : false;
             }
             frm.Dispose();
 
@@ -1262,7 +1393,7 @@ namespace thumbnail.forms
                     Application.DoEvents();
 
                     obtenerregistrosaeditar();
-
+                                       
                     Application.DoEvents();
 
                     tlp_proc.Visible = false;
@@ -1285,6 +1416,14 @@ namespace thumbnail.forms
 
         private void inicializaedicion() {
             sources_digital.Clear();
+
+            thumbnainlistusuario.Images.Clear();
+            thumbnainlistinterno.Images.Clear();
+            thumbnainlistexterno.Images.Clear();
+            thumbnainlistproveedor.Images.Clear();
+
+            lstvwdocumentosescaneados.Clear();
+
             thumbnainlist.Images.Clear();
             lstvwdocumentosenlazados.Groups.Clear();
             lstvwdocumentosenlazados.Clear();            
@@ -1301,7 +1440,7 @@ namespace thumbnail.forms
                 thumbnail.models.digital source = new thumbnail.models.digital();
 
                 Image img = procesa_imagen.ByteArrayToImage(current.thumbnail.ToArray());
-                source.thumbnail = img;
+                source.thumbnail = current.thumbnail.ToArray();
                 source.id_re_clasificaciondocumento_documento = current.id_re_clasificaciondocumento_documento;
                 source.valor_trazable = current.valor_trazable;
                 source.clasificaciondocumento = current.clasificaciondocumento;
@@ -1310,6 +1449,7 @@ namespace thumbnail.forms
                 source.enlazado = true;
                 source.editado = false;
                 source.aniadido = false;
+                source.id_de_digital = current.id;
                 
                 thumbnainlist.Images.Add(img);
                 this.lstvwdocumentosenlazados.Items.Add("", (int)thumbnainlist.Images.Count - 1);
@@ -1343,9 +1483,10 @@ namespace thumbnail.forms
             /* obtener campos trazables ejecutando procedimiento almacenado mandando como parametro
              * el id de maestro digital
              */
-            this.BindingSource_CamposTrazables.DataSource = Program.Bd_Exp_Transportes.pa_CampostrazablesRegistradosporId_ma_digital(id_ma_digital_edit);
-            this.dataGridView_CamposTrazables.DataSource = this.BindingSource_CamposTrazables;                        
-
+            List<data_members.pa_CampostrazablesRegistradosporId_ma_digitalResult> listacamposaeditar = Program.Bd_Exp_Transportes.pa_CampostrazablesRegistradosporId_ma_digital(id_ma_digital_edit).ToList();
+            this.BindingSource_CamposTrazables.DataSource = listacamposaeditar;
+            this.dataGridView_CamposTrazables.DataSource = this.BindingSource_CamposTrazables;
+            id_re_expedientes_campostrazables.DataPropertyName = "id_re_expediente_campotrazable";
             this.formatear_celda_principal(); //dar formato a la fila del campo principal
         }
 
@@ -1368,6 +1509,7 @@ namespace thumbnail.forms
                         break;
                     case DialogResult.Yes:
                         btn_guardar_Click(null, null);
+                        if (!exitoalguardar) e.Cancel = true;
                         break;
                 }
             }
@@ -1380,19 +1522,84 @@ namespace thumbnail.forms
             if (Form_Mode == form_mode.Edit) SeEdito = true;
         }
 
+
+        Int16 ?no_horas_bloqueo;
+        Int16 ?no_dias_bloqueo;
         private void BindingSource_ListaTramites_CurrentItemChanged(object sender, EventArgs e)
-        {
-            btn_bloquear.Visible = (BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).descripcion_bloqueo != null &&
-                                   (BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).descripcion_bloqueo.ToString().ToLower() == "bloquear manualmente" &&
-                                   UsuarioPuedeBloquear
-                                   ?
-                                   true : false;
+        {            
+            no_horas_bloqueo = (BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).no_horas_bloqueo;
+            no_dias_bloqueo = (BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).no_dias_bloqueo;
         }
+
+        private DateTime calculafechahorabloqueo()
+        {           
+            no_dias_bloqueo = 1;
+            no_horas_bloqueo = 12;
+
+            DateTime fechahora = Program.Bd_Exp_Transportes.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
+
+            if (no_dias_bloqueo != null)
+            {
+                fechahora = fechahora.AddDays(Convert.ToDouble(no_dias_bloqueo));
+            }
+            if (no_horas_bloqueo != null)
+            {
+                fechahora = fechahora.AddHours(Convert.ToDouble(no_horas_bloqueo));
+            }
+
+            return fechahora;
+        }
+
 
         private void btn_bloquear_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
 
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            Boolean pregunta = false;
+            Boolean continuar = true;
+            if (Form_Mode == form_mode.Edit && SeEdito)
+            {
+                pregunta = true;
+            }
+
+            if (pregunta)
+            {
+                switch (MessageBox.Show("Desea guardar los cambios", "Guardar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
+                {
+                    case DialogResult.Cancel:
+                        return;
+                    case DialogResult.Yes:
+                        btn_guardar_Click(null, null);
+                        if (!exitoalguardar) continuar = true;
+                        break;
+                    case DialogResult.No:
+                        continuar = true;
+                        break;
+                }
+            }
+
+            if (continuar)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                tlp_proc.Visible = true;
+
+                Application.DoEvents();
+
+                lookUpEdit_Tramites.EditValue = null;
+                limpia_controles_digitales();
+                Inicializa();
+                limpia_contenido_grid_campostrazables();
+                lookUpEdit_Tramites.Focus();
+
+                Application.DoEvents();
+
+                tlp_proc.Visible = false;
+                this.Cursor = Cursors.Default;
+            }
+        }
+        
     }
 }

@@ -5666,7 +5666,7 @@ namespace thumbnail.data_members
 		
 		private string _nota;
 		
-		private System.DateTime _fecha_hora_bloqueo;
+		private System.Nullable<System.DateTime> _fecha_hora_bloqueo;
 		
 		private int _id_estatus;
 		
@@ -5690,7 +5690,7 @@ namespace thumbnail.data_members
     partial void Onfecha_hora_creacionChanged();
     partial void OnnotaChanging(string value);
     partial void OnnotaChanged();
-    partial void Onfecha_hora_bloqueoChanging(System.DateTime value);
+    partial void Onfecha_hora_bloqueoChanging(System.Nullable<System.DateTime> value);
     partial void Onfecha_hora_bloqueoChanged();
     partial void Onid_estatusChanging(int value);
     partial void Onid_estatusChanged();
@@ -5789,8 +5789,8 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_hora_bloqueo", DbType="DateTime NOT NULL")]
-		public System.DateTime fecha_hora_bloqueo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_hora_bloqueo", DbType="DateTime NOT NULL", IsDbGenerated=true)]
+		public System.Nullable<System.DateTime> fecha_hora_bloqueo
 		{
 			get
 			{
