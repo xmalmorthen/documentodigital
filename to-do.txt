@@ -5,3 +5,4 @@ title de ventana de escaneo trmiate+campotrazable
 control de errores, log envio de info de errores
 etiquetas en archivos de recursos
 bloquear/desbloquear trámite desde boton
+limpiar carpeta de swap de imagenes (colector de basuira)
