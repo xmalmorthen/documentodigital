@@ -859,6 +859,15 @@ namespace thumbnail.forms
             //int idx = lstvwdocumentosescaneados.SelectedItems[0].ImageIndex;
             if (result == DialogResult.OK)
             {
+
+                List<thumbnail.models.digital> _source = (from query in sources_digital
+                                                          where query.clasificaciondocumento == frm.source.clasificaciondocumento
+                                                          && query.enlazado == true
+                                                          select query).ToList();
+                if (_source.Count > 0)
+                    foreach (thumbnail.models.digital item in _source)
+                        item.valor_trazable = frm.source.valor_trazable; //se asigna el valor trazable retornado de la forma al colector principal
+
                 source_digital.id_re_clasificaciondocumento_documento = frm.source.id_re_clasificaciondocumento_documento; //se asigna el id del documento retornado de la forma al colector principal
                 source_digital.valor_trazable = frm.source.valor_trazable; //se asigna el valor trazable retornado de la forma al colector principal
                 source_digital.clasificaciondocumento = frm.source.clasificaciondocumento; //se asigna la clasificacion de documento retornado de la forma al colector principal
@@ -889,6 +898,7 @@ namespace thumbnail.forms
                 if (_grupo.Name == grupo.Name)
                 {
                     existe = true;
+                    _grupo.Header = grupo.Header;
                     break;
                 }
             }
@@ -1043,6 +1053,7 @@ namespace thumbnail.forms
                     source.documento = source_digital.documento;
                     source.guid = ((tagstruct)item.Tag).guid.ToString();
                     source.aniadido = false;
+                    source.enlazado = true;
                 }
                 else if (Form_Mode == form_mode.Edit)
                 {
