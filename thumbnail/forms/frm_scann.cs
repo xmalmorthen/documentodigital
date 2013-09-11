@@ -116,6 +116,8 @@ namespace thumbnail.forms
 
         public Boolean UsuarioPuedeBloquear {get; set;}
 
+        public frm_ListaDocumentosOrden frmListaDocumentosOrden = new frm_ListaDocumentosOrden();
+
         #endregion enumss, propertys, variables, etc
 
         //contructor de clase
@@ -123,6 +125,9 @@ namespace thumbnail.forms
         {
             InitializeComponent();
             UsuarioPuedeBloquear = _UsuarioPuedeBloquear;
+            
+            frmListaDocumentosOrden.Hide();
+            frmListaDocumentosOrden.Visible = false;
 
             Inicializa();
         }
@@ -555,6 +560,11 @@ namespace thumbnail.forms
                 populate_dataGridView_campostrazables();
 
                 limpia_control_de_enlazados();
+
+                frmListaDocumentosOrden.Owner = this;
+                frmListaDocumentosOrden.inicializa(lookUpEdit_Tramites_selected.id_tramite, Convert.ToInt32(tbctrl.SelectedTab.Tag.ToString()));
+                frmListaDocumentosOrden.Visible = true;
+                frmListaDocumentosOrden.Show(this);
             }
             catch (Exception)
             {                
@@ -1549,6 +1559,9 @@ namespace thumbnail.forms
                 }
             }
 
+            frmListaDocumentosOrden.Close();
+            frmListaDocumentosOrden.Dispose();
+            
             colectar_basura();
         }
 
@@ -1645,6 +1658,34 @@ namespace thumbnail.forms
                 tlp_proc.Visible = false;
                 this.Cursor = Cursors.Default;
             }
+        }
+
+        Boolean frmListaDocumentosOrdenvisible;
+        private void frm_scann_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                frmListaDocumentosOrdenvisible = frmListaDocumentosOrden.Visible;
+                frmListaDocumentosOrden.Visible = false;
+            }
+            else 
+            {
+                if (frmListaDocumentosOrdenvisible) {
+                    frmListaDocumentosOrden.Visible = true;
+                }
+                frmListaDocumentosOrdenvisible = frmListaDocumentosOrden.Visible;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmListaDocumentosOrden.Show(this);                
+            }
+            catch (Exception)
+            {}
+            frmListaDocumentosOrden.Visible = true;
         }
         
     }

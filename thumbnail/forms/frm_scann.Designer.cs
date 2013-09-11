@@ -31,10 +31,10 @@ namespace thumbnail.forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_scann));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cntmnuListViewEnlace = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmnuitemlstvwenlaceabrir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmnuitemlstvwenlaceeliminar = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +75,7 @@ namespace thumbnail.forms
             this.tab2_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
             this.tab3_pblbldocumentosescaneados = new System.Windows.Forms.PictureBox();
             this.tab3_pblbldocumentosenlazados = new System.Windows.Forms.PictureBox();
-            this.btn_cerrar = new System.Windows.Forms.Button();
+            this.btn_mostrarlistadedocumentos = new System.Windows.Forms.Button();
             this.btn_limpiar = new System.Windows.Forms.Button();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.ofdabrirarchivo = new System.Windows.Forms.OpenFileDialog();
@@ -84,6 +84,14 @@ namespace thumbnail.forms
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.dataGridView_CamposTrazables = new System.Windows.Forms.DataGridView();
+            this.idcampotrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tamanioCaracteresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mascaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.esprincipalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.id_re_expedientes_campostrazables = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_valor_trazable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BindingSource_CamposTrazables = new System.Windows.Forms.BindingSource(this.components);
             this.tbctrl = new System.Windows.Forms.TabControl();
             this.tabpgeUsuario = new System.Windows.Forms.TabPage();
@@ -139,14 +147,7 @@ namespace thumbnail.forms
             this.colid_estatus_tramite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcion_estatus_tramite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_re_expedientes_tramites = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.idcampotrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tamanioCaracteresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mascaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.esprincipalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.id_re_expedientes_campostrazables = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_valor_trazable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.cntmnuListViewEnlace.SuspendLayout();
             this.cntmnuListViewScann.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosenlazados)).BeginInit();
@@ -631,24 +632,24 @@ namespace thumbnail.forms
             this.tab3_pblbldocumentosenlazados.TabStop = false;
             this.tooltipBtnMnuOptions.SetToolTip(this.tab3_pblbldocumentosenlazados, "Escanear documentos");
             // 
-            // btn_cerrar
+            // btn_mostrarlistadedocumentos
             // 
-            this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cerrar.AutoSize = true;
-            this.btn_cerrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_cerrar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_cerrar.FlatAppearance.BorderSize = 0;
-            this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
-            this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
-            this.btn_cerrar.Location = new System.Drawing.Point(946, 3);
-            this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
-            this.btn_cerrar.TabIndex = 9;
-            this.tooltipBtnMnuOptions.SetToolTip(this.btn_cerrar, "Cerrar sistema");
-            this.btn_cerrar.UseVisualStyleBackColor = false;
-            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
+            this.btn_mostrarlistadedocumentos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_mostrarlistadedocumentos.AutoSize = true;
+            this.btn_mostrarlistadedocumentos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_mostrarlistadedocumentos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_mostrarlistadedocumentos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_mostrarlistadedocumentos.FlatAppearance.BorderSize = 0;
+            this.btn_mostrarlistadedocumentos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
+            this.btn_mostrarlistadedocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_mostrarlistadedocumentos.Image = global::thumbnail.Icons48x48.close;
+            this.btn_mostrarlistadedocumentos.Location = new System.Drawing.Point(946, 3);
+            this.btn_mostrarlistadedocumentos.Name = "btn_mostrarlistadedocumentos";
+            this.btn_mostrarlistadedocumentos.Size = new System.Drawing.Size(54, 54);
+            this.btn_mostrarlistadedocumentos.TabIndex = 9;
+            this.tooltipBtnMnuOptions.SetToolTip(this.btn_mostrarlistadedocumentos, "Cerrar sistema");
+            this.btn_mostrarlistadedocumentos.UseVisualStyleBackColor = false;
+            this.btn_mostrarlistadedocumentos.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
             // btn_limpiar
             // 
@@ -751,14 +752,14 @@ namespace thumbnail.forms
             this.dataGridView_CamposTrazables.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_CamposTrazables.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView_CamposTrazables.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CamposTrazables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CamposTrazables.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_CamposTrazables.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idcampotrazableDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
@@ -769,28 +770,28 @@ namespace thumbnail.forms
             this.id_re_expedientes_campostrazables,
             this.col_valor_trazable});
             this.dataGridView_CamposTrazables.DataSource = this.BindingSource_CamposTrazables;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_CamposTrazables.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_CamposTrazables.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView_CamposTrazables.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView_CamposTrazables.EnableHeadersVisualStyles = false;
             this.dataGridView_CamposTrazables.Location = new System.Drawing.Point(12, 101);
             this.dataGridView_CamposTrazables.MultiSelect = false;
             this.dataGridView_CamposTrazables.Name = "dataGridView_CamposTrazables";
             this.dataGridView_CamposTrazables.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_CamposTrazables.RowHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_CamposTrazables.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView_CamposTrazables.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView_CamposTrazables.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView_CamposTrazables.Size = new System.Drawing.Size(988, 164);
@@ -798,6 +799,66 @@ namespace thumbnail.forms
             this.dataGridView_CamposTrazables.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CamposTrazables_CellEndEdit);
             this.dataGridView_CamposTrazables.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridView_CamposTrazables_CellValidating);
             this.dataGridView_CamposTrazables.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CamposTrazables_RowEnter);
+            // 
+            // idcampotrazableDataGridViewTextBoxColumn
+            // 
+            this.idcampotrazableDataGridViewTextBoxColumn.DataPropertyName = "id_campotrazable";
+            this.idcampotrazableDataGridViewTextBoxColumn.HeaderText = "id_campotrazable";
+            this.idcampotrazableDataGridViewTextBoxColumn.Name = "idcampotrazableDataGridViewTextBoxColumn";
+            this.idcampotrazableDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Campo";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tamanioCaracteresDataGridViewTextBoxColumn
+            // 
+            this.tamanioCaracteresDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tamanioCaracteresDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.tamanioCaracteresDataGridViewTextBoxColumn.HeaderText = "Tamaño de caracteres";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.Name = "tamanioCaracteresDataGridViewTextBoxColumn";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idestatusDataGridViewTextBoxColumn
+            // 
+            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
+            this.idestatusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // mascaraDataGridViewTextBoxColumn
+            // 
+            this.mascaraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mascaraDataGridViewTextBoxColumn.DataPropertyName = "Mascara";
+            this.mascaraDataGridViewTextBoxColumn.HeaderText = "Mascara";
+            this.mascaraDataGridViewTextBoxColumn.Name = "mascaraDataGridViewTextBoxColumn";
+            this.mascaraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // esprincipalDataGridViewCheckBoxColumn
+            // 
+            this.esprincipalDataGridViewCheckBoxColumn.DataPropertyName = "es_principal";
+            this.esprincipalDataGridViewCheckBoxColumn.HeaderText = "Es principal";
+            this.esprincipalDataGridViewCheckBoxColumn.Name = "esprincipalDataGridViewCheckBoxColumn";
+            this.esprincipalDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // id_re_expedientes_campostrazables
+            // 
+            this.id_re_expedientes_campostrazables.DataPropertyName = "id_re_expedientes_campostrazables";
+            this.id_re_expedientes_campostrazables.HeaderText = "id_re_expedientes_campostrazables";
+            this.id_re_expedientes_campostrazables.Name = "id_re_expedientes_campostrazables";
+            this.id_re_expedientes_campostrazables.ReadOnly = true;
+            this.id_re_expedientes_campostrazables.Visible = false;
+            // 
+            // col_valor_trazable
+            // 
+            this.col_valor_trazable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_valor_trazable.HeaderText = "Valor Trazable";
+            this.col_valor_trazable.Name = "col_valor_trazable";
+            this.col_valor_trazable.ToolTipText = "Introdúzca el valor de la trazabilidad";
             // 
             // BindingSource_CamposTrazables
             // 
@@ -1299,7 +1360,7 @@ namespace thumbnail.forms
             this.tlp_proc.Name = "tlp_proc";
             this.tlp_proc.RowCount = 1;
             this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tlp_proc.Size = new System.Drawing.Size(199, 50);
             this.tlp_proc.TabIndex = 58;
             this.tlp_proc.Visible = false;
@@ -1475,65 +1536,24 @@ namespace thumbnail.forms
             this.colid_re_expedientes_tramites.FieldName = "id_re_expedientes_tramites";
             this.colid_re_expedientes_tramites.Name = "colid_re_expedientes_tramites";
             // 
-            // idcampotrazableDataGridViewTextBoxColumn
+            // button1
             // 
-            this.idcampotrazableDataGridViewTextBoxColumn.DataPropertyName = "id_campotrazable";
-            this.idcampotrazableDataGridViewTextBoxColumn.HeaderText = "id_campotrazable";
-            this.idcampotrazableDataGridViewTextBoxColumn.Name = "idcampotrazableDataGridViewTextBoxColumn";
-            this.idcampotrazableDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Campo";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tamanioCaracteresDataGridViewTextBoxColumn
-            // 
-            this.tamanioCaracteresDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tamanioCaracteresDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle30;
-            this.tamanioCaracteresDataGridViewTextBoxColumn.HeaderText = "Tamaño de caracteres";
-            this.tamanioCaracteresDataGridViewTextBoxColumn.Name = "tamanioCaracteresDataGridViewTextBoxColumn";
-            this.tamanioCaracteresDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idestatusDataGridViewTextBoxColumn
-            // 
-            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
-            this.idestatusDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // mascaraDataGridViewTextBoxColumn
-            // 
-            this.mascaraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mascaraDataGridViewTextBoxColumn.DataPropertyName = "Mascara";
-            this.mascaraDataGridViewTextBoxColumn.HeaderText = "Mascara";
-            this.mascaraDataGridViewTextBoxColumn.Name = "mascaraDataGridViewTextBoxColumn";
-            this.mascaraDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // esprincipalDataGridViewCheckBoxColumn
-            // 
-            this.esprincipalDataGridViewCheckBoxColumn.DataPropertyName = "es_principal";
-            this.esprincipalDataGridViewCheckBoxColumn.HeaderText = "Es principal";
-            this.esprincipalDataGridViewCheckBoxColumn.Name = "esprincipalDataGridViewCheckBoxColumn";
-            this.esprincipalDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // id_re_expedientes_campostrazables
-            // 
-            this.id_re_expedientes_campostrazables.DataPropertyName = "id_re_expedientes_campostrazables";
-            this.id_re_expedientes_campostrazables.HeaderText = "id_re_expedientes_campostrazables";
-            this.id_re_expedientes_campostrazables.Name = "id_re_expedientes_campostrazables";
-            this.id_re_expedientes_campostrazables.ReadOnly = true;
-            this.id_re_expedientes_campostrazables.Visible = false;
-            // 
-            // col_valor_trazable
-            // 
-            this.col_valor_trazable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_valor_trazable.HeaderText = "Valor Trazable";
-            this.col_valor_trazable.Name = "col_valor_trazable";
-            this.col_valor_trazable.ToolTipText = "Introdúzca el valor de la trazabilidad";
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.AutoSize = true;
+            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::thumbnail.Icons16x16.info;
+            this.button1.Location = new System.Drawing.Point(505, 297);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(22, 22);
+            this.button1.TabIndex = 65;
+            this.tooltipBtnMnuOptions.SetToolTip(this.button1, "Mostrar lista de documentos");
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frm_scann
             // 
@@ -1543,6 +1563,7 @@ namespace thumbnail.forms
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_bloquear);
             this.Controls.Add(this.btn_nuevo);
             this.Controls.Add(this.btn_editar);
@@ -1556,7 +1577,7 @@ namespace thumbnail.forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbctrl);
             this.Controls.Add(this.dataGridView_CamposTrazables);
-            this.Controls.Add(this.btn_cerrar);
+            this.Controls.Add(this.btn_mostrarlistadedocumentos);
             this.Controls.Add(this.btn_limpiar);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.label1);
@@ -1569,6 +1590,7 @@ namespace thumbnail.forms
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_scann_FormClosing);
             this.Load += new System.EventHandler(this.scann_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frm_scann_Paint);
+            this.Resize += new System.EventHandler(this.frm_scann_Resize);
             this.cntmnuListViewEnlace.ResumeLayout(false);
             this.cntmnuListViewScann.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosenlazados)).EndInit();
@@ -1651,7 +1673,7 @@ namespace thumbnail.forms
         private System.Windows.Forms.BindingSource vwCamposTrazablesBindingSource;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Button btn_limpiar;
-        private System.Windows.Forms.Button btn_cerrar;
+        private System.Windows.Forms.Button btn_mostrarlistadedocumentos;
         private System.Windows.Forms.Button btn_config_scann;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
@@ -1734,6 +1756,7 @@ namespace thumbnail.forms
         private System.Windows.Forms.DataGridViewCheckBoxColumn esprincipalDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_re_expedientes_campostrazables;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_valor_trazable;
+        private System.Windows.Forms.Button button1;
 
 
 
