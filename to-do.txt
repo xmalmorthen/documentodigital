@@ -3,3 +3,6 @@ ventana con lista de documentos de ayuda en ventana de escaneo antes de digitali
 control de errores, log envio de info de errores
 etiquetas en archivos de recursos
 bloquear/desbloquear trámite desde boton
+
+funcionalidad de Deshacer registro
+funcionalidad de Bloquear/Desbloquear
