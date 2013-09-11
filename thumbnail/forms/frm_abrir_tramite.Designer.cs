@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_abrir_tramite));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.txt = new DevExpress.XtraEditors.TextEdit();
@@ -43,7 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -56,12 +55,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.idmadigitalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tramiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechahoracreacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expedienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,14 +63,22 @@
             this.btn_buscar = new System.Windows.Forms.Button();
             this.btn_limpiar = new System.Windows.Forms.Button();
             this.tooltipBtnMnuOptions = new System.Windows.Forms.ToolTip(this.components);
+            this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idmadigitalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tramiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechahoracreacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expedienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt.Properties)).BeginInit();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator)).BeginInit();
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -124,7 +125,7 @@
             this.tlp_proc.Name = "tlp_proc";
             this.tlp_proc.RowCount = 1;
             this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tlp_proc.Size = new System.Drawing.Size(199, 50);
             this.tlp_proc.TabIndex = 59;
             this.tlp_proc.Visible = false;
@@ -192,10 +193,6 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
-            // pa_ReferenciaExpedientesporValorTrazableResultBindingSource
-            // 
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = typeof(thumbnail.data_members.pa_ReferenciaExpedientesporValorTrazableResult);
             // 
             // bindingNavigatorCountItem
             // 
@@ -292,30 +289,31 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idmadigitalDataGridViewTextBoxColumn,
+            this.id_tramite,
             this.idestatusDataGridViewTextBoxColumn,
             this.tramiteDataGridViewTextBoxColumn,
             this.notaDataGridViewTextBoxColumn,
             this.fechahoracreacionDataGridViewTextBoxColumn,
             this.expedienteDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView.EnableHeadersVisualStyles = false;
             this.dataGridView.Location = new System.Drawing.Point(12, 144);
@@ -323,70 +321,19 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(809, 200);
             this.dataGridView.TabIndex = 3;
             this.dataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentDoubleClick);
-            // 
-            // idmadigitalDataGridViewTextBoxColumn
-            // 
-            this.idmadigitalDataGridViewTextBoxColumn.DataPropertyName = "id_ma_digital";
-            this.idmadigitalDataGridViewTextBoxColumn.HeaderText = "id_ma_digital";
-            this.idmadigitalDataGridViewTextBoxColumn.Name = "idmadigitalDataGridViewTextBoxColumn";
-            this.idmadigitalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idmadigitalDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idestatusDataGridViewTextBoxColumn
-            // 
-            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
-            this.idestatusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idestatusDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // tramiteDataGridViewTextBoxColumn
-            // 
-            this.tramiteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tramiteDataGridViewTextBoxColumn.DataPropertyName = "tramite";
-            this.tramiteDataGridViewTextBoxColumn.HeaderText = "Trámite";
-            this.tramiteDataGridViewTextBoxColumn.Name = "tramiteDataGridViewTextBoxColumn";
-            this.tramiteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // notaDataGridViewTextBoxColumn
-            // 
-            this.notaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.notaDataGridViewTextBoxColumn.DataPropertyName = "nota";
-            this.notaDataGridViewTextBoxColumn.HeaderText = "Nota";
-            this.notaDataGridViewTextBoxColumn.Name = "notaDataGridViewTextBoxColumn";
-            this.notaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechahoracreacionDataGridViewTextBoxColumn
-            // 
-            this.fechahoracreacionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fechahoracreacionDataGridViewTextBoxColumn.DataPropertyName = "fecha_hora_creacion";
-            dataGridViewCellStyle10.Format = "f";
-            dataGridViewCellStyle10.NullValue = null;
-            this.fechahoracreacionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
-            this.fechahoracreacionDataGridViewTextBoxColumn.HeaderText = "Fecha/Hora creación";
-            this.fechahoracreacionDataGridViewTextBoxColumn.Name = "fechahoracreacionDataGridViewTextBoxColumn";
-            this.fechahoracreacionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // expedienteDataGridViewTextBoxColumn
-            // 
-            this.expedienteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.expedienteDataGridViewTextBoxColumn.DataPropertyName = "expediente";
-            this.expedienteDataGridViewTextBoxColumn.HeaderText = "Expediente";
-            this.expedienteDataGridViewTextBoxColumn.Name = "expedienteDataGridViewTextBoxColumn";
-            this.expedienteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lineShape1
             // 
@@ -497,6 +444,69 @@
             this.btn_limpiar.UseVisualStyleBackColor = false;
             this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
             // 
+            // pa_ReferenciaExpedientesporValorTrazableResultBindingSource
+            // 
+            this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = typeof(thumbnail.data_members.pa_ReferenciaExpedientesporValorTrazableResult);
+            // 
+            // idmadigitalDataGridViewTextBoxColumn
+            // 
+            this.idmadigitalDataGridViewTextBoxColumn.DataPropertyName = "id_ma_digital";
+            this.idmadigitalDataGridViewTextBoxColumn.HeaderText = "id_ma_digital";
+            this.idmadigitalDataGridViewTextBoxColumn.Name = "idmadigitalDataGridViewTextBoxColumn";
+            this.idmadigitalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idmadigitalDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // id_tramite
+            // 
+            this.id_tramite.DataPropertyName = "id_tramite";
+            this.id_tramite.HeaderText = "id_tramite";
+            this.id_tramite.Name = "id_tramite";
+            this.id_tramite.ReadOnly = true;
+            this.id_tramite.Visible = false;
+            // 
+            // idestatusDataGridViewTextBoxColumn
+            // 
+            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
+            this.idestatusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idestatusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tramiteDataGridViewTextBoxColumn
+            // 
+            this.tramiteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tramiteDataGridViewTextBoxColumn.DataPropertyName = "tramite";
+            this.tramiteDataGridViewTextBoxColumn.HeaderText = "Trámite";
+            this.tramiteDataGridViewTextBoxColumn.Name = "tramiteDataGridViewTextBoxColumn";
+            this.tramiteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // notaDataGridViewTextBoxColumn
+            // 
+            this.notaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.notaDataGridViewTextBoxColumn.DataPropertyName = "nota";
+            this.notaDataGridViewTextBoxColumn.HeaderText = "Nota";
+            this.notaDataGridViewTextBoxColumn.Name = "notaDataGridViewTextBoxColumn";
+            this.notaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechahoracreacionDataGridViewTextBoxColumn
+            // 
+            this.fechahoracreacionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fechahoracreacionDataGridViewTextBoxColumn.DataPropertyName = "fecha_hora_creacion";
+            dataGridViewCellStyle2.Format = "f";
+            dataGridViewCellStyle2.NullValue = null;
+            this.fechahoracreacionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.fechahoracreacionDataGridViewTextBoxColumn.HeaderText = "Fecha/Hora creación";
+            this.fechahoracreacionDataGridViewTextBoxColumn.Name = "fechahoracreacionDataGridViewTextBoxColumn";
+            this.fechahoracreacionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // expedienteDataGridViewTextBoxColumn
+            // 
+            this.expedienteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.expedienteDataGridViewTextBoxColumn.DataPropertyName = "expediente";
+            this.expedienteDataGridViewTextBoxColumn.HeaderText = "Expediente";
+            this.expedienteDataGridViewTextBoxColumn.Name = "expedienteDataGridViewTextBoxColumn";
+            this.expedienteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // frm_abrir_tramite
             // 
             this.AcceptButton = this.btn_buscar;
@@ -531,8 +541,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator)).EndInit();
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.ResumeLayout(false);
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -542,7 +552,6 @@
 
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
-        private DevExpress.XtraEditors.TextEdit txt;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_aceptar;
         private System.Windows.Forms.TableLayoutPanel tlp_proc;
@@ -565,15 +574,17 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_buscar;
+        private System.Windows.Forms.Button btn_limpiar;
+        private System.Windows.Forms.ToolTip tooltipBtnMnuOptions;
+        public System.Windows.Forms.BindingSource pa_ReferenciaExpedientesporValorTrazableResultBindingSource;
+        private System.Windows.Forms.BindingNavigator pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator;
         private System.Windows.Forms.DataGridViewTextBoxColumn idmadigitalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_tramite;
         private System.Windows.Forms.DataGridViewTextBoxColumn idestatusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tramiteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn notaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechahoracreacionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn expedienteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btn_limpiar;
-        private System.Windows.Forms.ToolTip tooltipBtnMnuOptions;
-        public System.Windows.Forms.BindingSource pa_ReferenciaExpedientesporValorTrazableResultBindingSource;
-        private System.Windows.Forms.BindingNavigator pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator;
+        public DevExpress.XtraEditors.TextEdit txt;
     }
 }

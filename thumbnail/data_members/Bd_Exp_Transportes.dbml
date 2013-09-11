@@ -481,17 +481,6 @@
       <Column Name="FechaHora" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_ReferenciaExpedientesporValorTrazable" Method="pa_ReferenciaExpedientesporValorTrazable">
-    <Parameter Name="valor_trazable" Type="System.String" DbType="VarChar(200)" />
-    <ElementType Name="pa_ReferenciaExpedientesporValorTrazableResult">
-      <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="tramite" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="expediente" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.pa_CampostrazablesRegistradosporId_ma_digital" Method="pa_CampostrazablesRegistradosporId_ma_digital">
     <Parameter Name="id_ma_digital" Type="System.Int32" DbType="Int" />
     <ElementType Name="pa_CampostrazablesRegistradosporId_ma_digitalResult">
@@ -529,5 +518,21 @@
     <Parameter Name="ORDENDEPARTIDA" Parameter="oRDENDEPARTIDA" Type="System.Int32" DbType="Int" />
     <Parameter Name="ID_NUEVOORIGEN" Parameter="iD_NUEVOORIGEN" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.pa_InactivaDe_DigitalporId" Method="pa_InactivaDe_DigitalporId">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.pa_ReferenciaExpedientesporValorTrazable" Method="pa_ReferenciaExpedientesporValorTrazable">
+    <Parameter Name="valor_trazable" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="pa_ReferenciaExpedientesporValorTrazableResult">
+      <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="tramite" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="expediente" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
   </Function>
 </Database>

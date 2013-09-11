@@ -208,6 +208,11 @@ namespace thumbnail.forms
             }
             else
             {
+                if (lstvwdocumentosescaneados.Items.Count > 0) {
+                    if (MessageBox.Show(this, "Se encontraron [ " + lstvwdocumentosescaneados.Items.Count + " ] documentos no enlazados, al guardar los cambios se desecharán, esta seguro continuar", "Atención",
+                         MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.No) return;
+                }
+
                 this.Cursor = Cursors.WaitCursor;
                 tlp_proc.Visible = true;
 
@@ -241,6 +246,7 @@ namespace thumbnail.forms
 
                 Program.Bd_Exp_Transportes.SubmitChanges();
 
+                obtenerregistrosaeditar();
             }
             catch (Exception)
             {
@@ -272,6 +278,10 @@ namespace thumbnail.forms
                 Program.Bd_Exp_Transportes.SubmitChanges();
 
                 Form_Mode = form_mode.Edit; //al guardar se cambia a modo edición
+
+                id_ma_digital_edit = id_ma_digital;
+
+                obtenerregistrosaeditar();
             }
             catch (Exception)
             {                
@@ -338,6 +348,10 @@ namespace thumbnail.forms
 
                         Program.Bd_Exp_Transportes.de_digital.InsertOnSubmit(de_digital);
 
+                        item.id_de_digital = de_digital.id;
+                        item.aniadido = false;
+                        item.enlazado = true;
+
                         de_digital = null;
                     }
                     else if (item.editado ) { //cuando se edito una imagen
@@ -359,12 +373,18 @@ namespace thumbnail.forms
                         de_digital.valor_trazable = item.valor_trazable;
 
                         Program.Bd_Exp_Transportes.SubmitChanges();
+
+                        item.editado = false;
                     }
                     else if (!item.enlazado) { //cuando se desenlazo una imagen guardada
-                        data_members.de_digital de_digital = Program.Bd_Exp_Transportes.de_digital.SingleOrDefault(
+                        Program.Bd_Exp_Transportes.pa_InactivaDe_DigitalporId(item.id_de_digital);
+                        
+
+                        //manera antigua de cambiar el estatus, mucho mas lento, deprecado
+                        /*data_members.de_digital de_digital = Program.Bd_Exp_Transportes.de_digital.SingleOrDefault(
                                         query => query.id == item.id_de_digital);
                         de_digital.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
-                        Program.Bd_Exp_Transportes.SubmitChanges();
+                        Program.Bd_Exp_Transportes.SubmitChanges();*/
                     }
                 }
             }
@@ -1373,6 +1393,10 @@ namespace thumbnail.forms
             id_ma_digital_edit = 0;
             if (result == System.Windows.Forms.DialogResult.OK) {
                 id_ma_digital_edit = (frm.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.Current as data_members.pa_ReferenciaExpedientesporValorTrazableResult).id_ma_digital;
+                lookUpEdit_Tramites.EditValue = (frm.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.Current as data_members.pa_ReferenciaExpedientesporValorTrazableResult).id_tramite;
+
+                this.Text = "Escaneo de Documentos - " + (frm.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.Current as data_members.pa_ReferenciaExpedientesporValorTrazableResult).tramite.ToString().ToUpper() + " [ " + frm.txt.Text.ToString().ToUpper() + " ]";
+
                 Form_Mode = form_mode.Edit;
                 SeEdito = false;
 
@@ -1514,6 +1538,15 @@ namespace thumbnail.forms
                 }
             }
 
+            colectar_basura();
+        }
+
+        private void colectar_basura()
+        {
+            foreach (string archivo in Directory.GetFiles(swapdirectory,"*.jpg"))
+	        {
+		        File.Delete(archivo);
+	        }
         }
 
         Boolean SeEdito;
@@ -1587,6 +1620,8 @@ namespace thumbnail.forms
                 tlp_proc.Visible = true;
 
                 Application.DoEvents();
+
+                this.Text = "Escaneo de Documentos";
 
                 lookUpEdit_Tramites.EditValue = null;
                 limpia_controles_digitales();

@@ -1,11 +1,5 @@
 incrustar marca de agua en imagenes
-agregar nota cuando el tramite queda sin bloquear
 ventana con lista de documentos de ayuda en ventana de escaneo antes de digitalizar
-title de ventana de escaneo trmiate+campotrazable
 control de errores, log envio de info de errores
 etiquetas en archivos de recursos
 bloquear/desbloquear trámite desde boton
-limpiar carpeta de swap de imagenes (colector de basuira)
-
-
-cuando se desenlace una imagen que sea el cambio de estatus por procedimiento almacenado
