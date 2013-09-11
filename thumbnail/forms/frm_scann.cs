@@ -116,7 +116,7 @@ namespace thumbnail.forms
 
         public Boolean UsuarioPuedeBloquear {get; set;}
 
-        public frm_ListaDocumentosOrden frmListaDocumentosOrden = new frm_ListaDocumentosOrden();
+        public frm_listadocumentosorden frmListaDocumentosOrden = new frm_listadocumentosorden();
 
         #endregion enumss, propertys, variables, etc
 
@@ -509,6 +509,7 @@ namespace thumbnail.forms
         //cerrar
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
+            frmListaDocumentosOrden.Owner = null;
             this.Close();
         }
 
@@ -561,13 +562,23 @@ namespace thumbnail.forms
 
                 limpia_control_de_enlazados();
 
-                frmListaDocumentosOrden.Owner = this;
-                frmListaDocumentosOrden.inicializa(lookUpEdit_Tramites_selected.id_tramite, Convert.ToInt32(tbctrl.SelectedTab.Tag.ToString()));
-                frmListaDocumentosOrden.Visible = true;
-                frmListaDocumentosOrden.Show(this);
+                actualizaventanadelistadedocumentos();
             }
             catch (Exception)
             {                
+            }            
+        }
+
+        private void actualizaventanadelistadedocumentos() {
+            frmListaDocumentosOrden.Owner = this;
+            frmListaDocumentosOrden.inicializa(lookUpEdit_Tramites_selected.id_tramite, Convert.ToInt32(tbctrl.SelectedTab.Tag.ToString()));
+            frmListaDocumentosOrden.Visible = true;
+            try
+            {
+                frmListaDocumentosOrden.Show(this);        
+            }
+            catch (Exception)
+            {
             }            
         }
 
@@ -736,6 +747,8 @@ namespace thumbnail.forms
         //asignador de lista de imagen al cambiar el tab
         private void tbctrl_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int id_tramiterespaldo = (int)lookUpEdit_Tramites.EditValue;
+
             switch (((TabControl)sender).SelectedIndex)
             {
                 case 0:
@@ -766,6 +779,17 @@ namespace thumbnail.forms
 
             this.lstvwdocumentosescaneados.Refresh();
             this.lstvwdocumentosenlazados.Refresh();
+
+            /*
+             * debido a un bug desconocido se pone esta linea
+             * se modifican los ids de tramite al cambiar de tab
+             * por lo tanto se vuelve a cargar
+             */
+            lookUpEdit_Tramites.EditValue = id_tramiterespaldo;
+            populate_lookUpEdit_Tramites();
+            lookUpEdit_Tramites.EditValue = id_tramiterespaldo;
+
+            actualizaventanadelistadedocumentos();
         }
         
         #endregion tabcontrol
