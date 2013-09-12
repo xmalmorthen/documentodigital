@@ -54,7 +54,7 @@ namespace thumbnail.forms
         }
 
         private void frm_ListaDocumentosOrden_FormClosing(object sender, FormClosingEventArgs e)
-        {            
+        {
             e.Cancel = true;
             this.Hide();
         }

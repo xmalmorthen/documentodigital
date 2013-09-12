@@ -176,6 +176,8 @@ namespace thumbnail.forms
         {
             this.WindowState = FormWindowState.Normal;
             this.lookUpEdit_Tramites.Focus(); //establecer el foco al combo de tramites al iniciar el form
+            frmListaDocumentosOrden.Visible = true;
+            //frmListaDocumentosOrden.Show(this);
         }
 
         #region botonera superior
@@ -571,15 +573,7 @@ namespace thumbnail.forms
 
         private void actualizaventanadelistadedocumentos() {
             frmListaDocumentosOrden.Owner = this;
-            frmListaDocumentosOrden.inicializa(lookUpEdit_Tramites_selected.id_tramite, Convert.ToInt32(tbctrl.SelectedTab.Tag.ToString()));
-            frmListaDocumentosOrden.Visible = true;
-            try
-            {
-                frmListaDocumentosOrden.Show(this);        
-            }
-            catch (Exception)
-            {
-            }            
+            frmListaDocumentosOrden.inicializa(lookUpEdit_Tramites_selected.id_tramite, Convert.ToInt32(tbctrl.SelectedTab.Tag.ToString()));            
         }
 
         private void lookUpEdit_Tramites_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
@@ -785,9 +779,15 @@ namespace thumbnail.forms
              * se modifican los ids de tramite al cambiar de tab
              * por lo tanto se vuelve a cargar
              */
+            lookUpEdit_Tramites.EditValueChanged -= new EventHandler(lookUpEdit_Tramites_EditValueChanged);
+            lookUpEdit_Tramites.EditValueChanging -= new DevExpress.XtraEditors.Controls.ChangingEventHandler(lookUpEdit_Tramites_EditValueChanging);
+
             lookUpEdit_Tramites.EditValue = id_tramiterespaldo;
             populate_lookUpEdit_Tramites();
             lookUpEdit_Tramites.EditValue = id_tramiterespaldo;
+
+            lookUpEdit_Tramites.EditValueChanged += new EventHandler(lookUpEdit_Tramites_EditValueChanged);
+            lookUpEdit_Tramites.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(lookUpEdit_Tramites_EditValueChanging);
 
             actualizaventanadelistadedocumentos();
         }
@@ -1684,7 +1684,7 @@ namespace thumbnail.forms
             }
         }
 
-        Boolean frmListaDocumentosOrdenvisible;
+        public Boolean frmListaDocumentosOrdenvisible=true;
         private void frm_scann_Resize(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Minimized)
