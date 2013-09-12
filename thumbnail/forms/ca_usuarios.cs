@@ -282,16 +282,29 @@ namespace thumbnail.forms
                             List<data_members.pa_RolesporIdUsuarioResult> rolesclon = new List<pa_RolesporIdUsuarioResult>(roles);
 
                             usuario.contrasenia = convert_md5.generate(usuario.contrasenia);
-                            Program.Bd_Exp_Transportes.ca_usuarios.InsertOnSubmit(usuario);
-                            Program.Bd_Exp_Transportes.SubmitChanges();
-                            Form_Mode = form_mode.normal;
-                            actualiza_lista();
 
-                            int id_usuario = lista.SingleOrDefault(query => query.usuario == usuario.usuario).id;
-                            guarda_roles(id_usuario, rolesclon);
+                            thumbnail.data_members.Bd_Exp_TransportesDataContext Bd = new Bd_Exp_TransportesDataContext();
+                            data_members.pa_CreateLoginandUserResult result = Bd.pa_CreateLoginandUser(usuario.usuario, usuario.contrasenia).Single();
+                            Bd.Dispose();
+                            
+                            if (result.StatusCode == 1)
+                            {
+                                Program.Bd_Exp_Transportes.ca_usuarios.InsertOnSubmit(usuario);
+                                Program.Bd_Exp_Transportes.SubmitChanges();
+                                Form_Mode = form_mode.normal;
+                                actualiza_lista();
 
-                            rolesclon = null;
-                            MessageBox.Show("Registro agregado con éxito", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                int id_usuario = lista.SingleOrDefault(query => query.usuario == usuario.usuario).id;
+                                guarda_roles(id_usuario, rolesclon);
+
+                                rolesclon = null;
+                                MessageBox.Show("Registro agregado con éxito", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else 
+                            {
+                                MessageBox.Show("Falló al intentar registrar el usuario de base de datos, favor de intentarlo de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                             
                         }
                         else
                         {
@@ -371,6 +384,16 @@ namespace thumbnail.forms
                         if (modificacontraseña)
                         {
                             usuario.contrasenia = convert_md5.generate(usuario.contrasenia);
+
+                            thumbnail.data_members.Bd_Exp_TransportesDataContext Bd = new Bd_Exp_TransportesDataContext();
+                            data_members.pa_ModifyPassUserSQLResult result = Bd.pa_ModifyPassUserSQL(usuario.usuario, usuario.contrasenia).Single();
+                            Bd.Dispose();
+
+                            if (result.StatusCode == 0)
+                            {
+                                MessageBox.Show("Falló al intentar modificar la contraseña del usuario de base de datos, favor de intentarlo de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
                         }
 
                         List<data_members.pa_RolesporIdUsuarioResult> rolesclon = new List<pa_RolesporIdUsuarioResult>(roles);
@@ -448,15 +471,28 @@ namespace thumbnail.forms
                 {
                     usuario = (data_members.ca_usuarios)bindingsource.Current;
 
-                    //eliminar reoles
-                    elimina_roles(usuario.id);
+                    thumbnail.data_members.Bd_Exp_TransportesDataContext Bd = new Bd_Exp_TransportesDataContext();
+                    data_members.pa_DeleteUserSQLResult result = Bd.pa_DeleteUserSQL(usuario.usuario).Single();
+                    Bd.Dispose();
 
-                    //eliminar usuario
-                    usuario = (data_members.ca_usuarios)bindingsource.Current;
-                    Program.Bd_Exp_Transportes.ca_usuarios.DeleteOnSubmit(usuario);
-                    
-                    Program.Bd_Exp_Transportes.SubmitChanges();
-                    MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (result.StatusCode == 1)
+                    {
+
+                        //eliminar reoles
+                        elimina_roles(usuario.id);
+
+                        //eliminar usuario
+                        usuario = (data_members.ca_usuarios)bindingsource.Current;
+                        Program.Bd_Exp_Transportes.ca_usuarios.DeleteOnSubmit(usuario);
+
+                        Program.Bd_Exp_Transportes.SubmitChanges();
+                        MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falló al intentar eliminar el usuario de base de datos, favor de intentarlo de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
             }
             catch (Exception)

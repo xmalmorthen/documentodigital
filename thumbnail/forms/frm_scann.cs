@@ -158,6 +158,10 @@ namespace thumbnail.forms
 
             tbctrl_SelectedIndexChanged(tbctrl, null);
 
+            btn_bloquear.Visible = false;
+
+            dataGridView_CamposTrazables.Cursor = Cursors.Arrow;
+
             this.Paint += frm_scann_Paint;
         }
 
@@ -371,11 +375,14 @@ namespace thumbnail.forms
                         file_byte_thumbnail = null;
                         file_binary_thumbnail = null;
 
-                        byte[] file_byte_imagen = item.imagen;
-                        System.Data.Linq.Binary file_binary_imagen = new System.Data.Linq.Binary(file_byte_imagen);
-                        de_digital.imagen = file_binary_imagen;
-                        file_byte_imagen = null;
-                        file_binary_imagen = null;
+                        if (item.imagen != null)
+                        {
+                            byte[] file_byte_imagen = item.imagen;
+                            System.Data.Linq.Binary file_binary_imagen = new System.Data.Linq.Binary(file_byte_imagen);
+                            de_digital.imagen = file_binary_imagen;
+                            file_byte_imagen = null;
+                            file_binary_imagen = null;
+                        }
 
                         de_digital.valor_trazable = item.valor_trazable;
 
@@ -383,9 +390,10 @@ namespace thumbnail.forms
 
                         item.editado = false;
                     }
-                    else if (!item.enlazado) { //cuando se desenlazo una imagen guardada
+                    else if (!item.enlazado)
+                    { //cuando se desenlazo una imagen guardada
                         Program.Bd_Exp_Transportes.pa_InactivaDe_DigitalporId(item.id_de_digital);
-                        
+
 
                         //manera antigua de cambiar el estatus, mucho mas lento, deprecado
                         /*data_members.de_digital de_digital = Program.Bd_Exp_Transportes.de_digital.SingleOrDefault(
@@ -492,7 +500,7 @@ namespace thumbnail.forms
         {
             if (MessageBox.Show("Confirma limpiar el formato", "Limpiar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
             {
-                limpia_controles_digitales();              
+                inicializaedicion();
                 Inicializa();
                 limpia_contenido_grid_campostrazables();
                 lookUpEdit_Tramites.Focus();
@@ -518,6 +526,9 @@ namespace thumbnail.forms
         //configurar scanner
         private void btn_config_scann_Click(object sender, EventArgs e)
         {
+            frmListaDocumentosOrdenvisible = frmListaDocumentosOrden.Visible;
+            frmListaDocumentosOrden.Visible = false;
+
             Int32 lvRet;
             Boolean lvUserCancel = false;
             lvRet = this.KDImage.ScannerSelect(ref lvUserCancel);
@@ -525,6 +536,8 @@ namespace thumbnail.forms
             {
                 throw new Exception("Error :" + KDImage.GetErrorMsg(lvRet));
             }
+
+            frmListaDocumentosOrden.Visible = frmListaDocumentosOrdenvisible;
         }
         #endregion botonera superior
 
@@ -670,6 +683,9 @@ namespace thumbnail.forms
         #region botonera de inferior de thumbnails
         private void btn_scanear_Click(object sender, EventArgs e)
         {
+            frmListaDocumentosOrdenvisible = frmListaDocumentosOrden.Visible;
+            frmListaDocumentosOrden.Visible = false;
+
             Int32 lvRet;
             Boolean lvUserCancel = false;
             lvRet = KDImage.ScannerAcquireMultiPages(ref lvUserCancel, -1);
@@ -677,6 +693,9 @@ namespace thumbnail.forms
             {
                 MessageBox.Show("Error: " + KDImage.GetErrorMsg(lvRet));
             }
+
+            frmListaDocumentosOrden.Visible = frmListaDocumentosOrdenvisible;
+            lstvwdocumentosescaneados.Focus();
         }
 
         private void ofdabrirarchivo_FileOk(object sender, CancelEventArgs e)
@@ -689,6 +708,9 @@ namespace thumbnail.forms
 
         private void btn_abririmagen_Click(object sender, EventArgs e)
         {
+            frmListaDocumentosOrdenvisible = frmListaDocumentosOrden.Visible;
+            frmListaDocumentosOrden.Visible = false;
+
             if (ofdabrirarchivo.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
             {
                 foreach (string file in ofdabrirarchivo.FileNames)
@@ -700,6 +722,9 @@ namespace thumbnail.forms
                 tlp_proc.Visible = false;
                 this.Cursor = Cursors.Default;
             }
+
+            frmListaDocumentosOrden.Visible = frmListaDocumentosOrdenvisible;
+            lstvwdocumentosescaneados.Focus();
         }
 
         private void btn_limpiarcontroles_Click(object sender, EventArgs e)
@@ -741,7 +766,15 @@ namespace thumbnail.forms
         //asignador de lista de imagen al cambiar el tab
         private void tbctrl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id_tramiterespaldo = (int)lookUpEdit_Tramites.EditValue;
+            int? id_tramiterespaldo = null;
+            try
+            {
+                 id_tramiterespaldo = (int)lookUpEdit_Tramites.EditValue;
+            }
+            catch (Exception)
+            {
+                id_tramiterespaldo = null;
+            }            
 
             switch (((TabControl)sender).SelectedIndex)
             {
@@ -900,7 +933,10 @@ namespace thumbnail.forms
                                                           select query).ToList();
                 if (_source.Count > 0)
                     foreach (thumbnail.models.digital item in _source)
+                    {
                         item.valor_trazable = frm.source.valor_trazable; //se asigna el valor trazable retornado de la forma al colector principal
+                        item.editado = true;
+                    }
 
                 source_digital.id_re_clasificaciondocumento_documento = frm.source.id_re_clasificaciondocumento_documento; //se asigna el id del documento retornado de la forma al colector principal
                 source_digital.valor_trazable = frm.source.valor_trazable; //se asigna el valor trazable retornado de la forma al colector principal
@@ -1101,6 +1137,7 @@ namespace thumbnail.forms
                         source.documento = source_digital.documento;
                         source.enlazado = true;
                         source.aniadido = false;
+                        source.editado = true;
                     }
                     else //si se trata de una imagen nueva opr insertar al tramite en edición
                     {
@@ -1432,7 +1469,10 @@ namespace thumbnail.forms
 
         int id_ma_digital_edit;
         private void btn_editar_Click(object sender, EventArgs e)
-        {           
+        {
+            frmListaDocumentosOrdenvisible = frmListaDocumentosOrden.Visible;
+            frmListaDocumentosOrden.Visible = false;
+
             frm_abrir_tramite frm = new frm_abrir_tramite();
             DialogResult result = frm.ShowDialog(this);
             id_ma_digital_edit = 0;
@@ -1474,6 +1514,8 @@ namespace thumbnail.forms
                 }                
             }
 
+            frmListaDocumentosOrden.Visible = frmListaDocumentosOrdenvisible;
+            dataGridView_CamposTrazables.Focus();
         }
 
         private void obtenerregistrosaeditar()
@@ -1491,11 +1533,21 @@ namespace thumbnail.forms
             thumbnainlistexterno.Images.Clear();
             thumbnainlistproveedor.Images.Clear();
 
-            lstvwdocumentosescaneados.Clear();
+            //documentos escaneados
+            tab0_lstvwdocumentosescaneados.Clear();
+            tab1_lstvwdocumentosescaneados.Clear();
+            tab2_lstvwdocumentosescaneados.Clear();
+            tab3_lstvwdocumentosescaneados.Clear();
 
-            thumbnainlist.Images.Clear();
-            lstvwdocumentosenlazados.Groups.Clear();
-            lstvwdocumentosenlazados.Clear();            
+            //documentos enlazados
+            tab0_lstvwdocumentosenlazados.Clear();
+            tab0_lstvwdocumentosenlazados.Groups.Clear();
+            tab1_lstvwdocumentosenlazados.Clear();
+            tab1_lstvwdocumentosenlazados.Groups.Clear();
+            tab2_lstvwdocumentosenlazados.Clear();
+            tab2_lstvwdocumentosenlazados.Groups.Clear();
+            tab3_lstvwdocumentosenlazados.Clear();
+            tab3_lstvwdocumentosenlazados.Groups.Clear();
         }
 
         //estructura para la informacion en tag        
@@ -1519,7 +1571,27 @@ namespace thumbnail.forms
                 source.editado = false;
                 source.aniadido = false;
                 source.id_de_digital = current.id;
-                
+
+                switch (current.Origen.ToString().ToLower())
+                {                    
+                    case "interno":
+                        thumbnainlist = thumbnainlistinterno;
+                        lstvwdocumentosenlazados = tab1_lstvwdocumentosenlazados;
+                    break;
+                    case "externo":
+                        thumbnainlist = thumbnainlistexterno;
+                        lstvwdocumentosenlazados = tab2_lstvwdocumentosenlazados;
+                    break;
+                    case "usuario":
+                        thumbnainlist = thumbnainlistusuario;
+                        lstvwdocumentosenlazados = tab0_lstvwdocumentosenlazados;
+                    break;
+                    case "proveedor":
+                        thumbnainlist = thumbnainlistproveedor;
+                        lstvwdocumentosenlazados = tab3_lstvwdocumentosenlazados; 
+                    break;
+                }
+
                 thumbnainlist.Images.Add(img);
                 this.lstvwdocumentosenlazados.Items.Add("", (int)thumbnainlist.Images.Count - 1);
 
@@ -1545,7 +1617,7 @@ namespace thumbnail.forms
                 sources_digital.Add(source);
                 source = null;
             }
-
+            tbctrl_SelectedIndexChanged(tbctrl, null);
         }
 
         private void obtenercampostrazablesaeditar() { 
@@ -1634,7 +1706,7 @@ namespace thumbnail.forms
 
         private void btn_bloquear_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
@@ -1672,7 +1744,7 @@ namespace thumbnail.forms
                 this.Text = "Escaneo de Documentos";
 
                 lookUpEdit_Tramites.EditValue = null;
-                limpia_controles_digitales();
+                inicializaedicion();
                 Inicializa();
                 limpia_contenido_grid_campostrazables();
                 lookUpEdit_Tramites.Focus();

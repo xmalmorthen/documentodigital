@@ -535,4 +535,27 @@
       <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.pa_CreateLoginandUser" Method="pa_CreateLoginandUser">
+    <Parameter Name="LOGIN" Parameter="lOGIN" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PASSWORD" Parameter="pASSWORD" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="pa_CreateLoginandUserResult">
+      <Column Name="StatusCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusDescripcion" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_ModifyPassUserSQL" Method="pa_ModifyPassUserSQL">
+    <Parameter Name="LOGIN" Parameter="lOGIN" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="PASSWORD" Parameter="pASSWORD" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="pa_ModifyPassUserSQLResult">
+      <Column Name="StatusCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusDescripcion" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_DeleteUserSQL" Method="pa_DeleteUserSQL">
+    <Parameter Name="LOGIN" Parameter="lOGIN" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="pa_DeleteUserSQLResult">
+      <Column Name="StatusCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StatusDescripcion" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

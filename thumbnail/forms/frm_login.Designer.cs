@@ -77,6 +77,8 @@
             this.txt_usuario.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.txt_usuario.Properties.Appearance.Options.UseFont = true;
             this.txt_usuario.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txt_usuario.Properties.Mask.EditMask = "[a-zA-Z0-9]+";
+            this.txt_usuario.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_usuario.Properties.MaxLength = 30;
             this.txt_usuario.Size = new System.Drawing.Size(321, 24);
             this.txt_usuario.TabIndex = 0;
@@ -93,6 +95,8 @@
             this.txt_contrasenia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
             this.txt_contrasenia.Properties.Appearance.Options.UseFont = true;
             this.txt_contrasenia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txt_contrasenia.Properties.Mask.EditMask = "[a-zA-Z0-9]+";
+            this.txt_contrasenia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txt_contrasenia.Properties.MaxLength = 30;
             this.txt_contrasenia.Properties.PasswordChar = '?';
             this.txt_contrasenia.Size = new System.Drawing.Size(321, 24);
@@ -161,6 +165,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de sesión";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_login_FormClosing);
+            this.Load += new System.EventHandler(this.frm_login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_usuario.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_contrasenia.Properties)).EndInit();

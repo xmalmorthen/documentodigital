@@ -531,6 +531,27 @@ namespace thumbnail.data_members
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor_trazable);
 			return ((ISingleResult<pa_ReferenciaExpedientesporValorTrazableResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_CreateLoginandUser")]
+		public ISingleResult<pa_CreateLoginandUserResult> pa_CreateLoginandUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LOGIN", DbType="VarChar(100)")] string lOGIN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PASSWORD", DbType="VarChar(100)")] string pASSWORD)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), lOGIN, pASSWORD);
+			return ((ISingleResult<pa_CreateLoginandUserResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ModifyPassUserSQL")]
+		public ISingleResult<pa_ModifyPassUserSQLResult> pa_ModifyPassUserSQL([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LOGIN", DbType="VarChar(100)")] string lOGIN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PASSWORD", DbType="VarChar(100)")] string pASSWORD)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), lOGIN, pASSWORD);
+			return ((ISingleResult<pa_ModifyPassUserSQLResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_DeleteUserSQL")]
+		public ISingleResult<pa_DeleteUserSQLResult> pa_DeleteUserSQL([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LOGIN", DbType="VarChar(100)")] string lOGIN)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), lOGIN);
+			return ((ISingleResult<pa_DeleteUserSQLResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ca_acciones")]
@@ -9027,6 +9048,138 @@ namespace thumbnail.data_members
 				if ((this._id_tramite != value))
 				{
 					this._id_tramite = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_CreateLoginandUserResult
+	{
+		
+		private int _StatusCode;
+		
+		private string _StatusDescripcion;
+		
+		public pa_CreateLoginandUserResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusCode", DbType="Int NOT NULL")]
+		public int StatusCode
+		{
+			get
+			{
+				return this._StatusCode;
+			}
+			set
+			{
+				if ((this._StatusCode != value))
+				{
+					this._StatusCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusDescripcion", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string StatusDescripcion
+		{
+			get
+			{
+				return this._StatusDescripcion;
+			}
+			set
+			{
+				if ((this._StatusDescripcion != value))
+				{
+					this._StatusDescripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_ModifyPassUserSQLResult
+	{
+		
+		private int _StatusCode;
+		
+		private string _StatusDescripcion;
+		
+		public pa_ModifyPassUserSQLResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusCode", DbType="Int NOT NULL")]
+		public int StatusCode
+		{
+			get
+			{
+				return this._StatusCode;
+			}
+			set
+			{
+				if ((this._StatusCode != value))
+				{
+					this._StatusCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusDescripcion", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string StatusDescripcion
+		{
+			get
+			{
+				return this._StatusDescripcion;
+			}
+			set
+			{
+				if ((this._StatusDescripcion != value))
+				{
+					this._StatusDescripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_DeleteUserSQLResult
+	{
+		
+		private int _StatusCode;
+		
+		private string _StatusDescripcion;
+		
+		public pa_DeleteUserSQLResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusCode", DbType="Int NOT NULL")]
+		public int StatusCode
+		{
+			get
+			{
+				return this._StatusCode;
+			}
+			set
+			{
+				if ((this._StatusCode != value))
+				{
+					this._StatusCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StatusDescripcion", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string StatusDescripcion
+		{
+			get
+			{
+				return this._StatusDescripcion;
+			}
+			set
+			{
+				if ((this._StatusDescripcion != value))
+				{
+					this._StatusDescripcion = value;
 				}
 			}
 		}

@@ -26,11 +26,30 @@ namespace thumbnail.forms
             this.Close();
         }
 
+        private string connectionstring(string usuario, string contrasenia) {
+            return "Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User ID=..Bd_Exp_Transportes_" + usuario + "..;Password=" + contrasenia;
+        }
+
         private void btn_aceptar_Click(object sender, EventArgs e)
         {          
             try
             {
                 if (!valida()) return;
+
+                try 
+	            {	        
+		            Program.Bd_Exp_Transportes = new data_members.Bd_Exp_TransportesDataContext(
+                                connectionstring(
+                                    txt_usuario.Text.ToString().ToLower(),
+                                    convert_md5.generate(txt_contrasenia.Text)
+                                )
+                    );
+	            }
+	            catch (Exception)
+	            {
+		            MessageBox.Show("Usuario y/o contraseña no válidos", "Error de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+	            }
+                               
                 thumbnail.data_members.ca_usuarios usuario = Program.Bd_Exp_Transportes.ca_usuarios.SingleOrDefault(c => c.usuario.ToString().ToLower() == txt_usuario.Text.ToString().ToLower());
                 if (!convert_md5.verifyMd5Hash(txt_contrasenia.Text, usuario.contrasenia))
                 {
@@ -82,6 +101,11 @@ namespace thumbnail.forms
             } else {
                 this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             }
+        }
+
+        private void frm_login_Load(object sender, EventArgs e)
+        {
+            //string user = Program.Bd_Exp_Transportes.ExecuteQuery<string>("SELECT USER").First();
         }
     }
 }

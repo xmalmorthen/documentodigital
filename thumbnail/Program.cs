@@ -21,7 +21,7 @@ namespace thumbnail
 
             //Application.Run(new frm_main());
 
-            Bd_Exp_Transportes = new data_members.Bd_Exp_TransportesDataContext();
+            //Bd_Exp_Transportes = new data_members.Bd_Exp_TransportesDataContext();
 
             frm_login login = new frm_login();
             frm_main main = new frm_main();

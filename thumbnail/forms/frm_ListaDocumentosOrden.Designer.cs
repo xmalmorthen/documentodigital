@@ -177,6 +177,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frm_listadocumentosorden";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de documentos a enlazar";
             this.TopMost = true;
             this.Activated += new System.EventHandler(this.frm_ListaDocumentosOrden_Activated);
