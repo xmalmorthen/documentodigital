@@ -558,4 +558,16 @@
       <Column Name="StatusDescripcion" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.pa_ReferenciaExpedientesporValorTrazableparaDeshacer" Method="pa_ReferenciaExpedientesporValorTrazableparaDeshacer">
+    <Parameter Name="valor_trazable" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult">
+      <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="tramite" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="expediente" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

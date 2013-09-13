@@ -227,6 +227,7 @@
             this.deshacerToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
             this.deshacerToolStripMenuItem.Tag = "2,2";
             this.deshacerToolStripMenuItem.Text = "Deshacer registro";
+            this.deshacerToolStripMenuItem.Click += new System.EventHandler(this.deshacerToolStripMenuItem_Click);
             // 
             // blquearDesbloquearToolStripMenuItem
             // 
@@ -333,7 +334,7 @@
             this.tlp_proc.Name = "tlp_proc";
             this.tlp_proc.RowCount = 1;
             this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tlp_proc.Size = new System.Drawing.Size(195, 50);
             this.tlp_proc.TabIndex = 1;
             this.tlp_proc.Visible = false;

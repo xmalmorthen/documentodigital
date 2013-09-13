@@ -1,8 +1,7 @@
-incrustar marca de agua en imagenes
-ventana con lista de documentos de ayuda en ventana de escaneo antes de digitalizar
-control de errores, log envio de info de errores
-etiquetas en archivos de recursos
-bloquear/desbloquear trámite desde boton
-
 funcionalidad de Deshacer registro
 funcionalidad de Bloquear/Desbloquear
+
+incrustar marca de agua en imagenes
+control de errores, log envio de info de errores
+etiquetas en archivos de recursos
+

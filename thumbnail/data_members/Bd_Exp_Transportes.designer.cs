@@ -552,6 +552,13 @@ namespace thumbnail.data_members
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), lOGIN);
 			return ((ISingleResult<pa_DeleteUserSQLResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ReferenciaExpedientesporValorTrazableparaDeshacer")]
+		public ISingleResult<pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult> pa_ReferenciaExpedientesporValorTrazableparaDeshacer([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string valor_trazable)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), valor_trazable);
+			return ((ISingleResult<pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ca_acciones")]
@@ -9180,6 +9187,140 @@ namespace thumbnail.data_members
 				if ((this._StatusDescripcion != value))
 				{
 					this._StatusDescripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult
+	{
+		
+		private int _id_ma_digital;
+		
+		private System.Nullable<int> _id_estatus;
+		
+		private System.DateTime _fecha_hora_creacion;
+		
+		private string _nota;
+		
+		private string _tramite;
+		
+		private string _expediente;
+		
+		private int _id_tramite;
+		
+		public pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_ma_digital", DbType="Int NOT NULL")]
+		public int id_ma_digital
+		{
+			get
+			{
+				return this._id_ma_digital;
+			}
+			set
+			{
+				if ((this._id_ma_digital != value))
+				{
+					this._id_ma_digital = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus", DbType="Int")]
+		public System.Nullable<int> id_estatus
+		{
+			get
+			{
+				return this._id_estatus;
+			}
+			set
+			{
+				if ((this._id_estatus != value))
+				{
+					this._id_estatus = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_hora_creacion", DbType="DateTime NOT NULL")]
+		public System.DateTime fecha_hora_creacion
+		{
+			get
+			{
+				return this._fecha_hora_creacion;
+			}
+			set
+			{
+				if ((this._fecha_hora_creacion != value))
+				{
+					this._fecha_hora_creacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nota", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string nota
+		{
+			get
+			{
+				return this._nota;
+			}
+			set
+			{
+				if ((this._nota != value))
+				{
+					this._nota = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tramite", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string tramite
+		{
+			get
+			{
+				return this._tramite;
+			}
+			set
+			{
+				if ((this._tramite != value))
+				{
+					this._tramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_expediente", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string expediente
+		{
+			get
+			{
+				return this._expediente;
+			}
+			set
+			{
+				if ((this._expediente != value))
+				{
+					this._expediente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tramite", DbType="Int NOT NULL")]
+		public int id_tramite
+		{
+			get
+			{
+				return this._id_tramite;
+			}
+			set
+			{
+				if ((this._id_tramite != value))
+				{
+					this._id_tramite = value;
 				}
 			}
 		}

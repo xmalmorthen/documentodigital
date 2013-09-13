@@ -830,15 +830,18 @@ namespace thumbnail.forms
         //permite establecer el cambio de color al control en donde se va arrastrar un objeto
         private void changedropcolor(System.Windows.Forms.ListView obj, string state)
         {
-            Color color = Color.WhiteSmoke;
-            switch (state)
+            if (!tramitebloqueado)
             {
-                case "droping":
-                    color = Color.Silver;
-                    break;
+                Color color = Color.WhiteSmoke;
+                switch (state)
+                {
+                    case "droping":
+                        color = Color.Silver;
+                        break;
+                }
+                obj.BackColor = color;
+                obj.Refresh();
             }
-            obj.BackColor = color;
-            obj.Refresh();
         }
 
         #region lstvwdocumentosescaneados drag and drop
@@ -1457,11 +1460,6 @@ namespace thumbnail.forms
             }
         }
 
-        void txt_validator_Validating(object sender, CancelEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         void txt_validator_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
         {            
             MessageBox.Show("error en mascara");
@@ -1548,6 +1546,43 @@ namespace thumbnail.forms
             tab2_lstvwdocumentosenlazados.Groups.Clear();
             tab3_lstvwdocumentosenlazados.Clear();
             tab3_lstvwdocumentosenlazados.Groups.Clear();
+
+            dataGridView_CamposTrazables.ReadOnly = false;
+            btn_config_scann.Enabled = true;
+            btn_scanear.Enabled = true;
+            btn_abririmagen.Enabled = true;
+            btn_limpiarcontroles.Enabled = true;
+            btn_bloquear.Enabled = true;
+            btn_guardar.Enabled = true;
+            btn_limpiar.Enabled = true;
+
+            tab0_lstvwdocumentosescaneados.ContextMenuStrip = cntmnuListViewScann;
+            tab1_lstvwdocumentosescaneados.ContextMenuStrip = cntmnuListViewScann;
+            tab2_lstvwdocumentosescaneados.ContextMenuStrip = cntmnuListViewScann;
+            tab3_lstvwdocumentosescaneados.ContextMenuStrip = cntmnuListViewScann;
+
+            tab0_lstvwdocumentosenlazados.ContextMenuStrip = cntmnuListViewEnlace;
+            tab1_lstvwdocumentosenlazados.ContextMenuStrip = cntmnuListViewEnlace;
+            tab2_lstvwdocumentosenlazados.ContextMenuStrip = cntmnuListViewEnlace;
+            tab3_lstvwdocumentosenlazados.ContextMenuStrip = cntmnuListViewEnlace;
+
+            tab0_lstvwdocumentosescaneados.AllowDrop = true;
+            tab1_lstvwdocumentosescaneados.AllowDrop = true;
+            tab2_lstvwdocumentosescaneados.AllowDrop = true;
+            tab3_lstvwdocumentosescaneados.AllowDrop = true;
+
+            tab0_lstvwdocumentosenlazados.AllowDrop = true;
+            tab1_lstvwdocumentosenlazados.AllowDrop = true;
+            tab2_lstvwdocumentosenlazados.AllowDrop = true;
+            tab3_lstvwdocumentosenlazados.AllowDrop = true;
+
+            lstvwdocumentosescaneados.ContextMenuStrip = cntmnuListViewScann;
+            lstvwdocumentosenlazados.ContextMenuStrip = cntmnuListViewEnlace;
+            
+            lstvwdocumentosenlazados.AllowDrop = true;
+            lstvwdocumentosescaneados.AllowDrop = true;
+
+            tramitebloqueado = false;
         }
 
         //estructura para la informacion en tag        
@@ -1706,7 +1741,107 @@ namespace thumbnail.forms
 
         private void btn_bloquear_Click(object sender, EventArgs e)
         {
-            
+            Boolean pregunta = false;
+            Boolean continua = false;
+            if (Form_Mode == form_mode.Add && sources_digital.Count > 0)
+            {
+                pregunta = true;
+            }
+            else if (Form_Mode == form_mode.Edit && SeEdito)
+            {
+                pregunta = true;
+            }
+
+            if (pregunta)
+            {
+                switch (MessageBox.Show("Desea guardar los cambios", "Guardar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1))
+                {
+                    case DialogResult.Cancel:
+                        MessageBox.Show("El trámite no fué bloqueado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    case DialogResult.Yes:
+                        btn_guardar_Click(null, null);
+                        if (!exitoalguardar)
+                        {
+                            MessageBox.Show("El trámite no puede ser bloqueado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                        continua = true;
+                        SeEdito = false;
+                        break;
+                    case DialogResult.No:
+                        obtenerregistrosaeditar();
+                        continua = true;
+                        SeEdito = false;
+                        break;
+                }
+            }
+            else {
+                continua = true;
+            }
+
+            if (continua)
+            {
+                switch (MessageBox.Show("Confirmar el bloqueo del trámite", "Bloquear", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                {
+                    case DialogResult.Yes:
+                        try
+                        {
+                            data_members.ma_digital registro = Program.Bd_Exp_Transportes.ma_digital.Single(query => query.id == id_ma_digital_edit);
+                            registro.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "bloqueado").id;
+                            Program.Bd_Exp_Transportes.SubmitChanges();
+                            bloqueacontroles();
+                            MessageBox.Show("Trámite bloqueado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+                        break;
+                }
+            }
+        }
+
+        Boolean tramitebloqueado = false;
+        private void bloqueacontroles()
+        {
+            //lookUpEdit_Tramites.Enabled
+            dataGridView_CamposTrazables.ReadOnly = true;
+            btn_config_scann.Enabled = false;
+            btn_scanear.Enabled = false;
+            btn_abririmagen.Enabled = false;
+            btn_limpiarcontroles.Enabled = false;
+            btn_bloquear.Enabled = false;
+            btn_guardar.Enabled = false;
+            btn_limpiar.Enabled = false;
+
+            tab0_lstvwdocumentosescaneados.ContextMenuStrip = null;
+            tab1_lstvwdocumentosescaneados.ContextMenuStrip = null;
+            tab2_lstvwdocumentosescaneados.ContextMenuStrip = null;
+            tab3_lstvwdocumentosescaneados.ContextMenuStrip = null;
+
+            tab0_lstvwdocumentosenlazados.ContextMenuStrip = null;
+            tab1_lstvwdocumentosenlazados.ContextMenuStrip = null;
+            tab2_lstvwdocumentosenlazados.ContextMenuStrip = null;
+            tab3_lstvwdocumentosenlazados.ContextMenuStrip = null;
+
+            tab0_lstvwdocumentosescaneados.AllowDrop = false;
+            tab1_lstvwdocumentosescaneados.AllowDrop = false;
+            tab2_lstvwdocumentosescaneados.AllowDrop = false;
+            tab3_lstvwdocumentosescaneados.AllowDrop = false;
+
+            tab0_lstvwdocumentosenlazados.AllowDrop = false;
+            tab1_lstvwdocumentosenlazados.AllowDrop = false;
+            tab2_lstvwdocumentosenlazados.AllowDrop = false;
+            tab3_lstvwdocumentosenlazados.AllowDrop = false;
+
+            lstvwdocumentosenlazados.ContextMenuStrip = null;
+            lstvwdocumentosescaneados.ContextMenuStrip = null;
+
+            lstvwdocumentosenlazados.AllowDrop = false;
+            lstvwdocumentosescaneados.AllowDrop = false;
+
+            tramitebloqueado = true;
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)

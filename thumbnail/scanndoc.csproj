@@ -142,6 +142,12 @@
     <Compile Include="forms\ca_usuarios.Designer.cs">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frm_deshacer_tramite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_deshacer_tramite.Designer.cs">
+      <DependentUpon>frm_deshacer_tramite.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frm_listadocumentosorden.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     <EmbeddedResource Include="forms\ca_usuarios.resx">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_deshacer_tramite.resx">
+      <DependentUpon>frm_deshacer_tramite.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_listadocumentosorden.resx">
       <DependentUpon>frm_listadocumentosorden.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +331,7 @@
     <None Include="Properties\DataSources\thumbnail.data_members.pa_DocumentosporClasificacionDocumentoResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_ModulosporIdRolResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_ReferenciaExpedientesporValorTrazableResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_RolesporIdUsuarioResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.re_clasificaciondocumentos_documentos.datasource" />
@@ -432,6 +442,7 @@
     <Content Include="assets\imgs\48x48\delete.png" />
     <Content Include="assets\imgs\48x48\doc_plus.png" />
     <None Include="assets\imgs\48x48\find.png" />
+    <None Include="assets\imgs\48x48\eye.png" />
     <Content Include="assets\imgs\48x48\fit.png" />
     <Content Include="assets\imgs\48x48\flip_horizontal.png" />
     <Content Include="assets\imgs\48x48\flip_vertically.png" />

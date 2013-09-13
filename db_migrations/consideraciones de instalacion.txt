@@ -1,0 +1,22 @@
+[base de datos]	
+	. base de datos
+		Bd_Exp_Transportes
+			. indices en tablas de base de datos
+	. usuario con privilegios
+		usuario: digitaldocs
+		contraseña: ..121212qw
+		Roles del servidor:
+			. public
+			. securityadmin
+			. sysadmin
+		Asignacion de usuarios:
+			. Bd_Exp_Transportes
+				Pertenencia al rol de la base de datos
+					. db_owner
+					. public	
+	. Agente de SQL Server
+		.Trabajos
+			.Bd_Exp_Transportes
+				. Propietario: usuario digitaldocs
+				. Pasos : Bloquear_Tramites
+				

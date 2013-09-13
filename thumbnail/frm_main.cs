@@ -323,5 +323,22 @@ namespace thumbnail
             
         }
 
+        private void deshacerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            thumbnail.forms.frm_deshacer_tramite frm = new forms.frm_deshacer_tramite();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+        }
+
     }
 }
