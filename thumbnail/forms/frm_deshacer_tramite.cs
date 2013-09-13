@@ -48,10 +48,9 @@ namespace thumbnail.forms
              * botonera
              */
             //aceptar
-            btn_aceptar.Enabled = (Form_Mode == form_mode.contenidobusqueda) ? true : false;
-            //cancelar
-            //btn_cancelar.Enabled = (Form_Mode == form_mode.contenidobusqueda) ? true : false;
-
+            btn_ver.Enabled = (Form_Mode == form_mode.contenidobusqueda) ? true : false;
+            //bloquear
+            btn_bloquear.Enabled = (Form_Mode == form_mode.contenidobusqueda) ? true : false;
             pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.Enabled = (Form_Mode == form_mode.contenidobusqueda) ? true : false;
             dataGridView.Enabled = (Form_Mode == form_mode.contenidobusqueda) ? true : false;
         }
@@ -138,12 +137,6 @@ namespace thumbnail.forms
             this.Cursor = Cursors.Default;
         }
 
-        private void btn_aceptar_Click(object sender, EventArgs e)
-        {
-            valid = true;
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
-        }
-
         private void btn_limpiar_Click(object sender, EventArgs e)
         {
             txt.Text = "";
@@ -155,6 +148,15 @@ namespace thumbnail.forms
         {
             btn_aceptar_Click(null, null);
         }
-        
+
+        private void btn_bloquear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_aceptar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
