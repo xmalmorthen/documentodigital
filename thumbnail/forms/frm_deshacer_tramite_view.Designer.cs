@@ -661,6 +661,7 @@ namespace thumbnail.forms
             this.Name = "frm_deshacer_tramite_view";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Escaneo de Documentos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_scann_FormClosing);
             this.Load += new System.EventHandler(this.scann_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frm_scann_Paint);
             this.cntmnuListViewEnlace.ResumeLayout(false);
