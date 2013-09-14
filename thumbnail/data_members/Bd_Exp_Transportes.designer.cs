@@ -93,9 +93,6 @@ namespace thumbnail.data_members
     partial void Insertre_expedientes_tramites(re_expedientes_tramites instance);
     partial void Updatere_expedientes_tramites(re_expedientes_tramites instance);
     partial void Deletere_expedientes_tramites(re_expedientes_tramites instance);
-    partial void Insertre_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos instance);
-    partial void Updatere_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos instance);
-    partial void Deletere_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos instance);
     partial void Insertre_roles_modulos(re_roles_modulos instance);
     partial void Updatere_roles_modulos(re_roles_modulos instance);
     partial void Deletere_roles_modulos(re_roles_modulos instance);
@@ -114,6 +111,9 @@ namespace thumbnail.data_members
     partial void Insertma_digital(ma_digital instance);
     partial void Updatema_digital(ma_digital instance);
     partial void Deletema_digital(ma_digital instance);
+    partial void Insertre_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos instance);
+    partial void Updatere_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos instance);
+    partial void Deletere_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos instance);
     #endregion
 		
 		public Bd_Exp_TransportesDataContext() : 
@@ -314,14 +314,6 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		public System.Data.Linq.Table<re_expedientestramites_tiposbloqueos> re_expedientestramites_tiposbloqueos
-		{
-			get
-			{
-				return this.GetTable<re_expedientestramites_tiposbloqueos>();
-			}
-		}
-		
 		public System.Data.Linq.Table<re_roles_modulos> re_roles_modulos
 		{
 			get
@@ -375,6 +367,14 @@ namespace thumbnail.data_members
 			get
 			{
 				return this.GetTable<ma_digital>();
+			}
+		}
+		
+		public System.Data.Linq.Table<re_expedientestramites_tiposbloqueos> re_expedientestramites_tiposbloqueos
+		{
+			get
+			{
+				return this.GetTable<re_expedientestramites_tiposbloqueos>();
 			}
 		}
 		
@@ -4642,9 +4642,9 @@ namespace thumbnail.data_members
 		
 		private int _id_tramite;
 		
-		private EntitySet<re_expedientestramites_tiposbloqueos> _re_expedientestramites_tiposbloqueos;
-		
 		private EntitySet<ma_digital> _ma_digital;
+		
+		private EntitySet<re_expedientestramites_tiposbloqueos> _re_expedientestramites_tiposbloqueos;
 		
 		private EntityRef<ca_expedientes> _ca_expedientes;
 		
@@ -4664,8 +4664,8 @@ namespace thumbnail.data_members
 		
 		public re_expedientes_tramites()
 		{
-			this._re_expedientestramites_tiposbloqueos = new EntitySet<re_expedientestramites_tiposbloqueos>(new Action<re_expedientestramites_tiposbloqueos>(this.attach_re_expedientestramites_tiposbloqueos), new Action<re_expedientestramites_tiposbloqueos>(this.detach_re_expedientestramites_tiposbloqueos));
 			this._ma_digital = new EntitySet<ma_digital>(new Action<ma_digital>(this.attach_ma_digital), new Action<ma_digital>(this.detach_ma_digital));
+			this._re_expedientestramites_tiposbloqueos = new EntitySet<re_expedientestramites_tiposbloqueos>(new Action<re_expedientestramites_tiposbloqueos>(this.attach_re_expedientestramites_tiposbloqueos), new Action<re_expedientestramites_tiposbloqueos>(this.detach_re_expedientestramites_tiposbloqueos));
 			this._ca_expedientes = default(EntityRef<ca_expedientes>);
 			this._ca_tramites = default(EntityRef<ca_tramites>);
 			OnCreated();
@@ -4739,19 +4739,6 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="re_expedientes_tramites_re_expedientestramites_tiposbloqueos", Storage="_re_expedientestramites_tiposbloqueos", ThisKey="id", OtherKey="id_re_expediente_tramite")]
-		public EntitySet<re_expedientestramites_tiposbloqueos> re_expedientestramites_tiposbloqueos
-		{
-			get
-			{
-				return this._re_expedientestramites_tiposbloqueos;
-			}
-			set
-			{
-				this._re_expedientestramites_tiposbloqueos.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="re_expedientes_tramites_ma_digital", Storage="_ma_digital", ThisKey="id", OtherKey="id_re_expediente_tramite")]
 		public EntitySet<ma_digital> ma_digital
 		{
@@ -4762,6 +4749,19 @@ namespace thumbnail.data_members
 			set
 			{
 				this._ma_digital.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="re_expedientes_tramites_re_expedientestramites_tiposbloqueos", Storage="_re_expedientestramites_tiposbloqueos", ThisKey="id", OtherKey="id_re_expediente_tramite")]
+		public EntitySet<re_expedientestramites_tiposbloqueos> re_expedientestramites_tiposbloqueos
+		{
+			get
+			{
+				return this._re_expedientestramites_tiposbloqueos;
+			}
+			set
+			{
+				this._re_expedientestramites_tiposbloqueos.Assign(value);
 			}
 		}
 		
@@ -4853,18 +4853,6 @@ namespace thumbnail.data_members
 			}
 		}
 		
-		private void attach_re_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos entity)
-		{
-			this.SendPropertyChanging();
-			entity.re_expedientes_tramites = this;
-		}
-		
-		private void detach_re_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos entity)
-		{
-			this.SendPropertyChanging();
-			entity.re_expedientes_tramites = null;
-		}
-		
 		private void attach_ma_digital(ma_digital entity)
 		{
 			this.SendPropertyChanging();
@@ -4876,245 +4864,17 @@ namespace thumbnail.data_members
 			this.SendPropertyChanging();
 			entity.re_expedientes_tramites = null;
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.re_expedientestramites_tiposbloqueos")]
-	public partial class re_expedientestramites_tiposbloqueos : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private int _id_re_expediente_tramite;
-		
-		private int _id_tipobloqueo;
-		
-		private System.Nullable<short> _no_horas;
-		
-		private System.Nullable<short> _no_dias;
-		
-		private EntityRef<ca_tiposbloqueos> _ca_tiposbloqueos;
-		
-		private EntityRef<re_expedientes_tramites> _re_expedientes_tramites;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void Onid_re_expediente_tramiteChanging(int value);
-    partial void Onid_re_expediente_tramiteChanged();
-    partial void Onid_tipobloqueoChanging(int value);
-    partial void Onid_tipobloqueoChanged();
-    partial void Onno_horasChanging(System.Nullable<short> value);
-    partial void Onno_horasChanged();
-    partial void Onno_diasChanging(System.Nullable<short> value);
-    partial void Onno_diasChanged();
-    #endregion
-		
-		public re_expedientestramites_tiposbloqueos()
+		private void attach_re_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos entity)
 		{
-			this._ca_tiposbloqueos = default(EntityRef<ca_tiposbloqueos>);
-			this._re_expedientes_tramites = default(EntityRef<re_expedientes_tramites>);
-			OnCreated();
+			this.SendPropertyChanging();
+			entity.re_expedientes_tramites = this;
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
+		private void detach_re_expedientestramites_tiposbloqueos(re_expedientestramites_tiposbloqueos entity)
 		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_expediente_tramite", DbType="Int NOT NULL")]
-		public int id_re_expediente_tramite
-		{
-			get
-			{
-				return this._id_re_expediente_tramite;
-			}
-			set
-			{
-				if ((this._id_re_expediente_tramite != value))
-				{
-					if (this._re_expedientes_tramites.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_re_expediente_tramiteChanging(value);
-					this.SendPropertyChanging();
-					this._id_re_expediente_tramite = value;
-					this.SendPropertyChanged("id_re_expediente_tramite");
-					this.Onid_re_expediente_tramiteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tipobloqueo", DbType="Int NOT NULL")]
-		public int id_tipobloqueo
-		{
-			get
-			{
-				return this._id_tipobloqueo;
-			}
-			set
-			{
-				if ((this._id_tipobloqueo != value))
-				{
-					if (this._ca_tiposbloqueos.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_tipobloqueoChanging(value);
-					this.SendPropertyChanging();
-					this._id_tipobloqueo = value;
-					this.SendPropertyChanged("id_tipobloqueo");
-					this.Onid_tipobloqueoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_no_horas", DbType="SmallInt")]
-		public System.Nullable<short> no_horas
-		{
-			get
-			{
-				return this._no_horas;
-			}
-			set
-			{
-				if ((this._no_horas != value))
-				{
-					this.Onno_horasChanging(value);
-					this.SendPropertyChanging();
-					this._no_horas = value;
-					this.SendPropertyChanged("no_horas");
-					this.Onno_horasChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_no_dias", DbType="SmallInt")]
-		public System.Nullable<short> no_dias
-		{
-			get
-			{
-				return this._no_dias;
-			}
-			set
-			{
-				if ((this._no_dias != value))
-				{
-					this.Onno_diasChanging(value);
-					this.SendPropertyChanging();
-					this._no_dias = value;
-					this.SendPropertyChanged("no_dias");
-					this.Onno_diasChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tiposbloqueos_re_expedientestramites_tiposbloqueos", Storage="_ca_tiposbloqueos", ThisKey="id_tipobloqueo", OtherKey="id", IsForeignKey=true)]
-		public ca_tiposbloqueos ca_tiposbloqueos
-		{
-			get
-			{
-				return this._ca_tiposbloqueos.Entity;
-			}
-			set
-			{
-				ca_tiposbloqueos previousValue = this._ca_tiposbloqueos.Entity;
-				if (((previousValue != value) 
-							|| (this._ca_tiposbloqueos.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ca_tiposbloqueos.Entity = null;
-						previousValue.re_expedientestramites_tiposbloqueos.Remove(this);
-					}
-					this._ca_tiposbloqueos.Entity = value;
-					if ((value != null))
-					{
-						value.re_expedientestramites_tiposbloqueos.Add(this);
-						this._id_tipobloqueo = value.id;
-					}
-					else
-					{
-						this._id_tipobloqueo = default(int);
-					}
-					this.SendPropertyChanged("ca_tiposbloqueos");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="re_expedientes_tramites_re_expedientestramites_tiposbloqueos", Storage="_re_expedientes_tramites", ThisKey="id_re_expediente_tramite", OtherKey="id", IsForeignKey=true)]
-		public re_expedientes_tramites re_expedientes_tramites
-		{
-			get
-			{
-				return this._re_expedientes_tramites.Entity;
-			}
-			set
-			{
-				re_expedientes_tramites previousValue = this._re_expedientes_tramites.Entity;
-				if (((previousValue != value) 
-							|| (this._re_expedientes_tramites.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._re_expedientes_tramites.Entity = null;
-						previousValue.re_expedientestramites_tiposbloqueos.Remove(this);
-					}
-					this._re_expedientes_tramites.Entity = value;
-					if ((value != null))
-					{
-						value.re_expedientestramites_tiposbloqueos.Add(this);
-						this._id_re_expediente_tramite = value.id;
-					}
-					else
-					{
-						this._id_re_expediente_tramite = default(int);
-					}
-					this.SendPropertyChanged("re_expedientes_tramites");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
+			this.SendPropertyChanging();
+			entity.re_expedientes_tramites = null;
 		}
 	}
 	
@@ -6984,6 +6744,246 @@ namespace thumbnail.data_members
 		{
 			this.SendPropertyChanging();
 			entity.ma_digital = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.re_expedientestramites_tiposbloqueos")]
+	public partial class re_expedientestramites_tiposbloqueos : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _id_re_expediente_tramite;
+		
+		private System.Nullable<int> _id_tipobloqueo;
+		
+		private System.Nullable<short> _no_horas;
+		
+		private System.Nullable<short> _no_dias;
+		
+		private EntityRef<ca_tiposbloqueos> _ca_tiposbloqueos;
+		
+		private EntityRef<re_expedientes_tramites> _re_expedientes_tramites;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onid_re_expediente_tramiteChanging(int value);
+    partial void Onid_re_expediente_tramiteChanged();
+    partial void Onid_tipobloqueoChanging(System.Nullable<int> value);
+    partial void Onid_tipobloqueoChanged();
+    partial void Onno_horasChanging(System.Nullable<short> value);
+    partial void Onno_horasChanged();
+    partial void Onno_diasChanging(System.Nullable<short> value);
+    partial void Onno_diasChanged();
+    #endregion
+		
+		public re_expedientestramites_tiposbloqueos()
+		{
+			this._ca_tiposbloqueos = default(EntityRef<ca_tiposbloqueos>);
+			this._re_expedientes_tramites = default(EntityRef<re_expedientes_tramites>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_expediente_tramite", DbType="Int NOT NULL")]
+		public int id_re_expediente_tramite
+		{
+			get
+			{
+				return this._id_re_expediente_tramite;
+			}
+			set
+			{
+				if ((this._id_re_expediente_tramite != value))
+				{
+					if (this._re_expedientes_tramites.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_re_expediente_tramiteChanging(value);
+					this.SendPropertyChanging();
+					this._id_re_expediente_tramite = value;
+					this.SendPropertyChanged("id_re_expediente_tramite");
+					this.Onid_re_expediente_tramiteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tipobloqueo", DbType="Int")]
+		public System.Nullable<int> id_tipobloqueo
+		{
+			get
+			{
+				return this._id_tipobloqueo;
+			}
+			set
+			{
+				if ((this._id_tipobloqueo != value))
+				{
+					if (this._ca_tiposbloqueos.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_tipobloqueoChanging(value);
+					this.SendPropertyChanging();
+					this._id_tipobloqueo = value;
+					this.SendPropertyChanged("id_tipobloqueo");
+					this.Onid_tipobloqueoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_no_horas", DbType="SmallInt")]
+		public System.Nullable<short> no_horas
+		{
+			get
+			{
+				return this._no_horas;
+			}
+			set
+			{
+				if ((this._no_horas != value))
+				{
+					this.Onno_horasChanging(value);
+					this.SendPropertyChanging();
+					this._no_horas = value;
+					this.SendPropertyChanged("no_horas");
+					this.Onno_horasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_no_dias", DbType="SmallInt")]
+		public System.Nullable<short> no_dias
+		{
+			get
+			{
+				return this._no_dias;
+			}
+			set
+			{
+				if ((this._no_dias != value))
+				{
+					this.Onno_diasChanging(value);
+					this.SendPropertyChanging();
+					this._no_dias = value;
+					this.SendPropertyChanged("no_dias");
+					this.Onno_diasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tiposbloqueos_re_expedientestramites_tiposbloqueos", Storage="_ca_tiposbloqueos", ThisKey="id_tipobloqueo", OtherKey="id", IsForeignKey=true)]
+		public ca_tiposbloqueos ca_tiposbloqueos
+		{
+			get
+			{
+				return this._ca_tiposbloqueos.Entity;
+			}
+			set
+			{
+				ca_tiposbloqueos previousValue = this._ca_tiposbloqueos.Entity;
+				if (((previousValue != value) 
+							|| (this._ca_tiposbloqueos.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ca_tiposbloqueos.Entity = null;
+						previousValue.re_expedientestramites_tiposbloqueos.Remove(this);
+					}
+					this._ca_tiposbloqueos.Entity = value;
+					if ((value != null))
+					{
+						value.re_expedientestramites_tiposbloqueos.Add(this);
+						this._id_tipobloqueo = value.id;
+					}
+					else
+					{
+						this._id_tipobloqueo = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("ca_tiposbloqueos");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="re_expedientes_tramites_re_expedientestramites_tiposbloqueos", Storage="_re_expedientes_tramites", ThisKey="id_re_expediente_tramite", OtherKey="id", IsForeignKey=true)]
+		public re_expedientes_tramites re_expedientes_tramites
+		{
+			get
+			{
+				return this._re_expedientes_tramites.Entity;
+			}
+			set
+			{
+				re_expedientes_tramites previousValue = this._re_expedientes_tramites.Entity;
+				if (((previousValue != value) 
+							|| (this._re_expedientes_tramites.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._re_expedientes_tramites.Entity = null;
+						previousValue.re_expedientestramites_tiposbloqueos.Remove(this);
+					}
+					this._re_expedientes_tramites.Entity = value;
+					if ((value != null))
+					{
+						value.re_expedientestramites_tiposbloqueos.Add(this);
+						this._id_re_expediente_tramite = value.id;
+					}
+					else
+					{
+						this._id_re_expediente_tramite = default(int);
+					}
+					this.SendPropertyChanged("re_expedientes_tramites");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	

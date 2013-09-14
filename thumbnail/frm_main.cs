@@ -347,7 +347,30 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.bloquear_desbloquear_tramite frm = new forms.bloquear_desbloquear_tramite();
+            thumbnail.forms.frm_bloquear_desbloquear_tramite frm = new forms.frm_bloquear_desbloquear_tramite();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+            
+        }
+
+        private void trámitePorDefectoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void planDeBloqueoEnTrámitesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            thumbnail.forms.frm_preferencias_tramitepordefecto frm = new forms.frm_preferencias_tramitepordefecto();
             frm.MdiParent = this;
             frm.Show();
 

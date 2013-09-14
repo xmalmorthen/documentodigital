@@ -1480,12 +1480,14 @@ namespace thumbnail.forms
 
                 this.Text = "Escaneo de Documentos - " + (frm.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.Current as data_members.pa_ReferenciaExpedientesporValorTrazableResult).tramite.ToString().ToUpper() + " [ " + frm.txt.Text.ToString().ToUpper() + " ]";
 
-                Form_Mode = form_mode.Edit;
+                Form_Mode = form_mode.Edit; 
                 SeEdito = false;
 
-                btn_bloquear.Visible = (BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).descripcion_bloqueo != null &&
-                                        (BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).descripcion_bloqueo.ToString().ToLower() == "bloquear manualmente" &&
-                                        UsuarioPuedeBloquear
+                string descripcion_bloqueo = Program.Bd_Exp_Transportes.vw_ListaTramitesActivos.SingleOrDefault(query => query.id_tramite == (int)lookUpEdit_Tramites.EditValue).descripcion_bloqueo;
+
+                btn_bloquear.Visible = descripcion_bloqueo != null &&
+                                       descripcion_bloqueo.ToString().ToLower() == "bloquear manualmente" &&
+                                       UsuarioPuedeBloquear
                                         ? true : false;
             }
             frm.Dispose();

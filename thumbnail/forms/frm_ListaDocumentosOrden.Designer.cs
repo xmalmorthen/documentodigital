@@ -65,6 +65,7 @@
             // 
             // gridView1
             // 
+            this.gridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid_re_clasificaciondocumentos_documentos,
             this.colid_clasificaciondocumento,

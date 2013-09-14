@@ -13,9 +13,9 @@ using thumbnail.Properties;
 
 namespace thumbnail.forms
 {
-    public partial class bloquear_desbloquear_tramite : Form
+    public partial class frm_bloquear_desbloquear_tramite : Form
     {
-        public bloquear_desbloquear_tramite()
+        public frm_bloquear_desbloquear_tramite()
         {
             InitializeComponent();
         }

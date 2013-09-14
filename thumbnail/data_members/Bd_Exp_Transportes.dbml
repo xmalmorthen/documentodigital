@@ -208,21 +208,10 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="id_expediente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="re_expedientes_tramites_re_expedientestramites_tiposbloqueos" Member="re_expedientestramites_tiposbloqueos" ThisKey="id" OtherKey="id_re_expediente_tramite" Type="re_expedientestramites_tiposbloqueos" />
       <Association Name="re_expedientes_tramites_ma_digital" Member="ma_digital" ThisKey="id" OtherKey="id_re_expediente_tramite" Type="ma_digital" />
+      <Association Name="re_expedientes_tramites_re_expedientestramites_tiposbloqueos" Member="re_expedientestramites_tiposbloqueos" ThisKey="id" OtherKey="id_re_expediente_tramite" Type="re_expedientestramites_tiposbloqueos" />
       <Association Name="ca_expedientes_re_expedientes_tramites" Member="ca_expedientes" ThisKey="id_expediente" OtherKey="id" Type="ca_expedientes" IsForeignKey="true" />
       <Association Name="ca_tramites_re_expedientes_tramites" Member="ca_tramites" ThisKey="id_tramite" OtherKey="id" Type="ca_tramites" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.re_expedientestramites_tiposbloqueos" Member="re_expedientestramites_tiposbloqueos">
-    <Type Name="re_expedientestramites_tiposbloqueos">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="id_re_expediente_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_tipobloqueo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="no_horas" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="no_dias" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Association Name="ca_tiposbloqueos_re_expedientestramites_tiposbloqueos" Member="ca_tiposbloqueos" ThisKey="id_tipobloqueo" OtherKey="id" Type="ca_tiposbloqueos" IsForeignKey="true" />
-      <Association Name="re_expedientes_tramites_re_expedientestramites_tiposbloqueos" Member="re_expedientes_tramites" ThisKey="id_re_expediente_tramite" OtherKey="id" Type="re_expedientes_tramites" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.re_roles_modulos" Member="re_roles_modulos">
@@ -313,6 +302,17 @@
       <Association Name="ma_digital_de_digital" Member="de_digital" ThisKey="id" OtherKey="id_ma_digital" Type="de_digital" />
       <Association Name="ca_estatus_ma_digital" Member="ca_estatus" ThisKey="id_estatus" OtherKey="id" Type="ca_estatus" IsForeignKey="true" />
       <Association Name="re_expedientes_tramites_ma_digital" Member="re_expedientes_tramites" ThisKey="id_re_expediente_tramite" OtherKey="id" Type="re_expedientes_tramites" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.re_expedientestramites_tiposbloqueos" Member="re_expedientestramites_tiposbloqueos">
+    <Type Name="re_expedientestramites_tiposbloqueos">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_re_expediente_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_tipobloqueo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="no_horas" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="no_dias" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="ca_tiposbloqueos_re_expedientestramites_tiposbloqueos" Member="ca_tiposbloqueos" ThisKey="id_tipobloqueo" OtherKey="id" Type="ca_tiposbloqueos" IsForeignKey="true" />
+      <Association Name="re_expedientes_tramites_re_expedientestramites_tiposbloqueos" Member="re_expedientes_tramites" ThisKey="id_re_expediente_tramite" OtherKey="id" Type="re_expedientes_tramites" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.pa_CampostrazablesActivosporExpediente" Method="pa_CampostrazablesActivosporExpediente">

@@ -142,11 +142,23 @@
     <Compile Include="forms\ca_usuarios.Designer.cs">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\bloquear_desbloquear_tramite.cs">
+    <Compile Include="forms\frm_tramites_view.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\bloquear_desbloquear_tramite.Designer.cs">
-      <DependentUpon>bloquear_desbloquear_tramite.cs</DependentUpon>
+    <Compile Include="forms\frm_tramites_view.Designer.cs">
+      <DependentUpon>frm_tramites_view.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_bloquear_desbloquear_tramite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_bloquear_desbloquear_tramite.Designer.cs">
+      <DependentUpon>frm_bloquear_desbloquear_tramite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_preferencias_tramitepordefecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_preferencias_tramitepordefecto.Designer.cs">
+      <DependentUpon>frm_preferencias_tramitepordefecto.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frm_deshacer_tramite_view_openimage.cs">
       <SubType>Form</SubType>
@@ -279,8 +291,14 @@
     <EmbeddedResource Include="forms\ca_usuarios.resx">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\bloquear_desbloquear_tramite.resx">
-      <DependentUpon>bloquear_desbloquear_tramite.cs</DependentUpon>
+    <EmbeddedResource Include="forms\frm_tramites_view.resx">
+      <DependentUpon>frm_tramites_view.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_bloquear_desbloquear_tramite.resx">
+      <DependentUpon>frm_bloquear_desbloquear_tramite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_preferencias_tramitepordefecto.resx">
+      <DependentUpon>frm_preferencias_tramitepordefecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_deshacer_tramite_view_openimage.resx">
       <DependentUpon>frm_deshacer_tramite_view_openimage.cs</DependentUpon>
@@ -356,6 +374,7 @@
     <None Include="Properties\DataSources\thumbnail.data_members.ca_formatos.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_origenes.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_roles.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.ca_tiposbloqueos.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_tramites.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_usuarios.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_CampostrazablesActivosporExpedienteResult.datasource" />

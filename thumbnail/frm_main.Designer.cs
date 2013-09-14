@@ -53,6 +53,8 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.preferenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trámitePorDefectoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.planDeBloqueoEnTrámitesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenarVentanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -277,11 +279,28 @@
             // 
             // preferenciasToolStripMenuItem
             // 
+            this.preferenciasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.trámitePorDefectoToolStripMenuItem,
+            this.planDeBloqueoEnTrámitesToolStripMenuItem});
             this.preferenciasToolStripMenuItem.Image = global::thumbnail.Icons16x16.wrench_plus;
             this.preferenciasToolStripMenuItem.Name = "preferenciasToolStripMenuItem";
             this.preferenciasToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.preferenciasToolStripMenuItem.Tag = "3,3";
             this.preferenciasToolStripMenuItem.Text = "Preferencias";
+            // 
+            // trámitePorDefectoToolStripMenuItem
+            // 
+            this.trámitePorDefectoToolStripMenuItem.Name = "trámitePorDefectoToolStripMenuItem";
+            this.trámitePorDefectoToolStripMenuItem.Size = new System.Drawing.Size(265, 24);
+            this.trámitePorDefectoToolStripMenuItem.Text = "Trámite por defecto";
+            this.trámitePorDefectoToolStripMenuItem.Click += new System.EventHandler(this.trámitePorDefectoToolStripMenuItem_Click);
+            // 
+            // planDeBloqueoEnTrámitesToolStripMenuItem
+            // 
+            this.planDeBloqueoEnTrámitesToolStripMenuItem.Name = "planDeBloqueoEnTrámitesToolStripMenuItem";
+            this.planDeBloqueoEnTrámitesToolStripMenuItem.Size = new System.Drawing.Size(265, 24);
+            this.planDeBloqueoEnTrámitesToolStripMenuItem.Text = "Plan de bloqueo en trámites";
+            this.planDeBloqueoEnTrámitesToolStripMenuItem.Click += new System.EventHandler(this.planDeBloqueoEnTrámitesToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -427,5 +446,7 @@
         private System.Windows.Forms.ToolStripMenuItem clasificarDocumentosToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem asignarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem trámitePorDefectoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem planDeBloqueoEnTrámitesToolStripMenuItem;
     }
 }

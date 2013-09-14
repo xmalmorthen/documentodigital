@@ -1,6 +1,6 @@
 ﻿namespace thumbnail.forms
 {
-    partial class bloquear_desbloquear_tramite
+    partial class frm_bloquear_desbloquear_tramite
     {
         /// <summary>
         /// Required designer variable.
@@ -29,47 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(bloquear_desbloquear_tramite));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_bloquear_desbloquear_tramite));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.BindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.cntmnu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmnuitemlstvwscannseparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tooltipBtnMnuOptions = new System.Windows.Forms.ToolTip(this.components);
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.rectangleShape3 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.btn_eliminaplan = new System.Windows.Forms.Button();
-            this.btn_planbloqueo = new System.Windows.Forms.Button();
-            this.pbfind = new System.Windows.Forms.PictureBox();
-            this.btn_desbloquear = new System.Windows.Forms.Button();
-            this.btn_bloquear = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.btn_ver = new System.Windows.Forms.Button();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valortrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,20 +60,40 @@
             this.idtramiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tramiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.expedienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cntmnu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmnuitemlstvwscannabrir = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmnuitemlstvwscannseparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.opcmnubloquear = new System.Windows.Forms.ToolStripMenuItem();
             this.opcmnudesbloquear = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.opcmnuplanbloqueo = new System.Windows.Forms.ToolStripMenuItem();
             this.opcmnueliminarplan = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tooltipBtnMnuOptions = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btn_eliminaplan = new System.Windows.Forms.Button();
+            this.btn_planbloqueo = new System.Windows.Forms.Button();
+            this.btn_desbloquear = new System.Windows.Forms.Button();
+            this.btn_bloquear = new System.Windows.Forms.Button();
+            this.btn_ver = new System.Windows.Forms.Button();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.rectangleShape3 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pbfind = new System.Windows.Forms.PictureBox();
             this.tlp_proc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingNavigator)).BeginInit();
             this.BindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.cntmnu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tlp_proc
@@ -114,6 +114,17 @@
             this.tlp_proc.Size = new System.Drawing.Size(199, 50);
             this.tlp_proc.TabIndex = 59;
             this.tlp_proc.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -156,12 +167,35 @@
             this.BindingNavigator.TabIndex = 4;
             this.BindingNavigator.Text = "bindingNavigator1";
             // 
+            // BindingSource
+            // 
+            this.BindingSource.DataSource = typeof(thumbnail.data_members.pa_ReferenciaExpedientesparaBloquearDesbloquearResult);
+            this.BindingSource.CurrentItemChanged += new System.EventHandler(this.BindingSource_CurrentItemChanged);
+            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
@@ -182,6 +216,24 @@
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
@@ -198,14 +250,14 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.notaDataGridViewTextBoxColumn,
@@ -219,14 +271,14 @@
             this.expedienteDataGridViewTextBoxColumn});
             this.dataGridView.ContextMenuStrip = this.cntmnu;
             this.dataGridView.DataSource = this.BindingSource;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView.EnableHeadersVisualStyles = false;
             this.dataGridView.Location = new System.Drawing.Point(12, 35);
@@ -234,19 +286,102 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(758, 333);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentDoubleClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // notaDataGridViewTextBoxColumn
+            // 
+            this.notaDataGridViewTextBoxColumn.DataPropertyName = "nota";
+            this.notaDataGridViewTextBoxColumn.HeaderText = "nota";
+            this.notaDataGridViewTextBoxColumn.Name = "notaDataGridViewTextBoxColumn";
+            this.notaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.notaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // valortrazableDataGridViewTextBoxColumn
+            // 
+            this.valortrazableDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.valortrazableDataGridViewTextBoxColumn.DataPropertyName = "valor_trazable";
+            this.valortrazableDataGridViewTextBoxColumn.HeaderText = "Valor trazable principal";
+            this.valortrazableDataGridViewTextBoxColumn.Name = "valortrazableDataGridViewTextBoxColumn";
+            this.valortrazableDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechahoracreacionDataGridViewTextBoxColumn
+            // 
+            this.fechahoracreacionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fechahoracreacionDataGridViewTextBoxColumn.DataPropertyName = "fecha_hora_creacion";
+            dataGridViewCellStyle2.Format = "f";
+            dataGridViewCellStyle2.NullValue = null;
+            this.fechahoracreacionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.fechahoracreacionDataGridViewTextBoxColumn.HeaderText = "Fecha/hora de creación";
+            this.fechahoracreacionDataGridViewTextBoxColumn.Name = "fechahoracreacionDataGridViewTextBoxColumn";
+            this.fechahoracreacionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechahorabloqueoDataGridViewTextBoxColumn
+            // 
+            this.fechahorabloqueoDataGridViewTextBoxColumn.DataPropertyName = "fecha_hora_bloqueo";
+            dataGridViewCellStyle3.Format = "f";
+            dataGridViewCellStyle3.NullValue = null;
+            this.fechahorabloqueoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.fechahorabloqueoDataGridViewTextBoxColumn.HeaderText = "Fecha/hora de bloqueo";
+            this.fechahorabloqueoDataGridViewTextBoxColumn.Name = "fechahorabloqueoDataGridViewTextBoxColumn";
+            this.fechahorabloqueoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idestatusDataGridViewTextBoxColumn
+            // 
+            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
+            this.idestatusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idestatusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "estatus";
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            this.estatusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estatusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idtramiteDataGridViewTextBoxColumn
+            // 
+            this.idtramiteDataGridViewTextBoxColumn.DataPropertyName = "id_tramite";
+            this.idtramiteDataGridViewTextBoxColumn.HeaderText = "id_tramite";
+            this.idtramiteDataGridViewTextBoxColumn.Name = "idtramiteDataGridViewTextBoxColumn";
+            this.idtramiteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idtramiteDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // tramiteDataGridViewTextBoxColumn
+            // 
+            this.tramiteDataGridViewTextBoxColumn.DataPropertyName = "tramite";
+            this.tramiteDataGridViewTextBoxColumn.HeaderText = "Trámite";
+            this.tramiteDataGridViewTextBoxColumn.Name = "tramiteDataGridViewTextBoxColumn";
+            this.tramiteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // expedienteDataGridViewTextBoxColumn
+            // 
+            this.expedienteDataGridViewTextBoxColumn.DataPropertyName = "expediente";
+            this.expedienteDataGridViewTextBoxColumn.HeaderText = "Expediente";
+            this.expedienteDataGridViewTextBoxColumn.Name = "expedienteDataGridViewTextBoxColumn";
+            this.expedienteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // cntmnu
             // 
@@ -264,10 +399,58 @@
             this.cntmnu.Size = new System.Drawing.Size(254, 146);
             this.cntmnu.Opening += new System.ComponentModel.CancelEventHandler(this.cntmnu_Opening);
             // 
+            // tsmnuitemlstvwscannabrir
+            // 
+            this.tsmnuitemlstvwscannabrir.Image = global::thumbnail.Icons16x16.view;
+            this.tsmnuitemlstvwscannabrir.Name = "tsmnuitemlstvwscannabrir";
+            this.tsmnuitemlstvwscannabrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.tsmnuitemlstvwscannabrir.Size = new System.Drawing.Size(253, 26);
+            this.tsmnuitemlstvwscannabrir.Text = "Abrir";
+            this.tsmnuitemlstvwscannabrir.Click += new System.EventHandler(this.btn_aceptar_Click);
+            // 
             // tsmnuitemlstvwscannseparator1
             // 
             this.tsmnuitemlstvwscannseparator1.Name = "tsmnuitemlstvwscannseparator1";
             this.tsmnuitemlstvwscannseparator1.Size = new System.Drawing.Size(250, 6);
+            // 
+            // opcmnubloquear
+            // 
+            this.opcmnubloquear.Image = global::thumbnail.Icons16x16.loock;
+            this.opcmnubloquear.Name = "opcmnubloquear";
+            this.opcmnubloquear.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
+            this.opcmnubloquear.Size = new System.Drawing.Size(253, 26);
+            this.opcmnubloquear.Text = "Bloquear";
+            this.opcmnubloquear.Click += new System.EventHandler(this.btn_bloquear_Click);
+            // 
+            // opcmnudesbloquear
+            // 
+            this.opcmnudesbloquear.Image = global::thumbnail.Icons16x16.unloock;
+            this.opcmnudesbloquear.Name = "opcmnudesbloquear";
+            this.opcmnudesbloquear.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Insert)));
+            this.opcmnudesbloquear.Size = new System.Drawing.Size(253, 26);
+            this.opcmnudesbloquear.Text = "Desbloquear";
+            this.opcmnudesbloquear.Click += new System.EventHandler(this.btn_desbloquear_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(250, 6);
+            // 
+            // opcmnuplanbloqueo
+            // 
+            this.opcmnuplanbloqueo.Image = global::thumbnail.Icons16x16.calendar;
+            this.opcmnuplanbloqueo.Name = "opcmnuplanbloqueo";
+            this.opcmnuplanbloqueo.Size = new System.Drawing.Size(253, 26);
+            this.opcmnuplanbloqueo.Text = "Plan de bloqueo";
+            this.opcmnuplanbloqueo.Click += new System.EventHandler(this.btn_planbloqueo_Click);
+            // 
+            // opcmnueliminarplan
+            // 
+            this.opcmnueliminarplan.Image = global::thumbnail.Icons16x16.calendar_none_red;
+            this.opcmnueliminarplan.Name = "opcmnueliminarplan";
+            this.opcmnueliminarplan.Size = new System.Drawing.Size(253, 26);
+            this.opcmnueliminarplan.Text = "Eliminar plan de bloqueo";
+            this.opcmnueliminarplan.Click += new System.EventHandler(this.btn_eliminaplan_Click);
             // 
             // label2
             // 
@@ -279,110 +462,6 @@
             this.label2.Size = new System.Drawing.Size(143, 20);
             this.label2.TabIndex = 63;
             this.label2.Text = "Lista de trámites";
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.rectangleShape3,
-            this.rectangleShape2,
-            this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(833, 432);
-            this.shapeContainer1.TabIndex = 65;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // rectangleShape1
-            // 
-            this.rectangleShape1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.rectangleShape1.BackColor = System.Drawing.Color.Silver;
-            this.rectangleShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShape1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.rectangleShape1.CornerRadius = 3;
-            this.rectangleShape1.Enabled = false;
-            this.rectangleShape1.Location = new System.Drawing.Point(12, 375);
-            this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(19, 19);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 379);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 13);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "Trámites bloqueados";
-            // 
-            // rectangleShape2
-            // 
-            this.rectangleShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.rectangleShape2.BackColor = System.Drawing.Color.Silver;
-            this.rectangleShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShape2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.rectangleShape2.CornerRadius = 3;
-            this.rectangleShape2.Enabled = false;
-            this.rectangleShape2.Location = new System.Drawing.Point(209, 375);
-            this.rectangleShape2.Name = "rectangleShape2";
-            this.rectangleShape2.Size = new System.Drawing.Size(19, 19);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(232, 379);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 13);
-            this.label4.TabIndex = 67;
-            this.label4.Text = "Trámites desbloqueados";
-            // 
-            // txt_buscar
-            // 
-            this.txt_buscar.Location = new System.Drawing.Point(392, 11);
-            this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txt_buscar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txt_buscar.Properties.Appearance.Options.UseBackColor = true;
-            this.txt_buscar.Properties.Appearance.Options.UseFont = true;
-            this.txt_buscar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txt_buscar.Size = new System.Drawing.Size(368, 20);
-            this.txt_buscar.TabIndex = 68;
-            this.txt_buscar.Tag = "0";
-            this.txt_buscar.EditValueChanged += new System.EventHandler(this.txt_buscar_EditValueChanged);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(250, 6);
-            // 
-            // rectangleShape3
-            // 
-            this.rectangleShape3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.rectangleShape3.BackColor = System.Drawing.Color.Silver;
-            this.rectangleShape3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShape3.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.rectangleShape3.CornerRadius = 3;
-            this.rectangleShape3.Enabled = false;
-            this.rectangleShape3.Location = new System.Drawing.Point(406, 375);
-            this.rectangleShape3.Name = "rectangleShape3";
-            this.rectangleShape3.Size = new System.Drawing.Size(19, 19);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(426, 379);
-            this.label5.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 13);
-            this.label5.TabIndex = 71;
-            this.label5.Text = "Trámites con plan de bloquéo";
             // 
             // btn_cancelar
             // 
@@ -447,17 +526,6 @@
             this.btn_planbloqueo.UseVisualStyleBackColor = false;
             this.btn_planbloqueo.Click += new System.EventHandler(this.btn_planbloqueo_Click);
             // 
-            // pbfind
-            // 
-            this.pbfind.BackColor = System.Drawing.Color.Transparent;
-            this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
-            this.pbfind.Location = new System.Drawing.Point(742, 13);
-            this.pbfind.Name = "pbfind";
-            this.pbfind.Size = new System.Drawing.Size(16, 16);
-            this.pbfind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbfind.TabIndex = 69;
-            this.pbfind.TabStop = false;
-            // 
             // btn_desbloquear
             // 
             this.btn_desbloquear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -502,58 +570,6 @@
             this.btn_bloquear.UseVisualStyleBackColor = false;
             this.btn_bloquear.Click += new System.EventHandler(this.btn_bloquear_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
-            this.pictureBox1.Location = new System.Drawing.Point(1, 1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // BindingSource
-            // 
-            this.BindingSource.DataSource = typeof(thumbnail.data_members.pa_ReferenciaExpedientesparaBloquearDesbloquearResult);
-            this.BindingSource.CurrentItemChanged += new System.EventHandler(this.BindingSource_CurrentItemChanged);
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
-            // 
             // btn_ver
             // 
             this.btn_ver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -573,133 +589,119 @@
             this.btn_ver.UseVisualStyleBackColor = false;
             this.btn_ver.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
-            // idDataGridViewTextBoxColumn
+            // shapeContainer1
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.rectangleShape3,
+            this.rectangleShape2,
+            this.rectangleShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(833, 432);
+            this.shapeContainer1.TabIndex = 65;
+            this.shapeContainer1.TabStop = false;
             // 
-            // notaDataGridViewTextBoxColumn
+            // rectangleShape3
             // 
-            this.notaDataGridViewTextBoxColumn.DataPropertyName = "nota";
-            this.notaDataGridViewTextBoxColumn.HeaderText = "nota";
-            this.notaDataGridViewTextBoxColumn.Name = "notaDataGridViewTextBoxColumn";
-            this.notaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.notaDataGridViewTextBoxColumn.Visible = false;
+            this.rectangleShape3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.rectangleShape3.BackColor = System.Drawing.Color.Silver;
+            this.rectangleShape3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShape3.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.rectangleShape3.CornerRadius = 3;
+            this.rectangleShape3.Enabled = false;
+            this.rectangleShape3.Location = new System.Drawing.Point(406, 375);
+            this.rectangleShape3.Name = "rectangleShape3";
+            this.rectangleShape3.Size = new System.Drawing.Size(19, 19);
             // 
-            // valortrazableDataGridViewTextBoxColumn
+            // rectangleShape2
             // 
-            this.valortrazableDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.valortrazableDataGridViewTextBoxColumn.DataPropertyName = "valor_trazable";
-            this.valortrazableDataGridViewTextBoxColumn.HeaderText = "Valor trazable principal";
-            this.valortrazableDataGridViewTextBoxColumn.Name = "valortrazableDataGridViewTextBoxColumn";
-            this.valortrazableDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rectangleShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.rectangleShape2.BackColor = System.Drawing.Color.Silver;
+            this.rectangleShape2.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShape2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.rectangleShape2.CornerRadius = 3;
+            this.rectangleShape2.Enabled = false;
+            this.rectangleShape2.Location = new System.Drawing.Point(209, 375);
+            this.rectangleShape2.Name = "rectangleShape2";
+            this.rectangleShape2.Size = new System.Drawing.Size(19, 19);
             // 
-            // fechahoracreacionDataGridViewTextBoxColumn
+            // rectangleShape1
             // 
-            this.fechahoracreacionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fechahoracreacionDataGridViewTextBoxColumn.DataPropertyName = "fecha_hora_creacion";
-            dataGridViewCellStyle9.Format = "f";
-            dataGridViewCellStyle9.NullValue = null;
-            this.fechahoracreacionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.fechahoracreacionDataGridViewTextBoxColumn.HeaderText = "Fecha/hora de creación";
-            this.fechahoracreacionDataGridViewTextBoxColumn.Name = "fechahoracreacionDataGridViewTextBoxColumn";
-            this.fechahoracreacionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rectangleShape1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.rectangleShape1.BackColor = System.Drawing.Color.Silver;
+            this.rectangleShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.rectangleShape1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.rectangleShape1.CornerRadius = 3;
+            this.rectangleShape1.Enabled = false;
+            this.rectangleShape1.Location = new System.Drawing.Point(12, 375);
+            this.rectangleShape1.Name = "rectangleShape1";
+            this.rectangleShape1.Size = new System.Drawing.Size(19, 19);
             // 
-            // fechahorabloqueoDataGridViewTextBoxColumn
+            // label1
             // 
-            this.fechahorabloqueoDataGridViewTextBoxColumn.DataPropertyName = "fecha_hora_bloqueo";
-            dataGridViewCellStyle10.Format = "f";
-            dataGridViewCellStyle10.NullValue = null;
-            this.fechahorabloqueoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
-            this.fechahorabloqueoDataGridViewTextBoxColumn.HeaderText = "Fecha/hora de bloqueo";
-            this.fechahorabloqueoDataGridViewTextBoxColumn.Name = "fechahorabloqueoDataGridViewTextBoxColumn";
-            this.fechahorabloqueoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(33, 379);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(124, 13);
+            this.label1.TabIndex = 66;
+            this.label1.Text = "Trámites bloqueados";
             // 
-            // idestatusDataGridViewTextBoxColumn
+            // label4
             // 
-            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
-            this.idestatusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idestatusDataGridViewTextBoxColumn.Visible = false;
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(232, 379);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(144, 13);
+            this.label4.TabIndex = 67;
+            this.label4.Text = "Trámites desbloqueados";
             // 
-            // estatusDataGridViewTextBoxColumn
+            // txt_buscar
             // 
-            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "estatus";
-            this.estatusDataGridViewTextBoxColumn.HeaderText = "estatus";
-            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
-            this.estatusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estatusDataGridViewTextBoxColumn.Visible = false;
+            this.txt_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_buscar.Location = new System.Drawing.Point(401, 11);
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_buscar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.txt_buscar.Properties.Appearance.Options.UseBackColor = true;
+            this.txt_buscar.Properties.Appearance.Options.UseFont = true;
+            this.txt_buscar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txt_buscar.Size = new System.Drawing.Size(368, 20);
+            this.txt_buscar.TabIndex = 68;
+            this.txt_buscar.Tag = "0";
+            this.txt_buscar.EditValueChanged += new System.EventHandler(this.txt_buscar_EditValueChanged);
             // 
-            // idtramiteDataGridViewTextBoxColumn
+            // label5
             // 
-            this.idtramiteDataGridViewTextBoxColumn.DataPropertyName = "id_tramite";
-            this.idtramiteDataGridViewTextBoxColumn.HeaderText = "id_tramite";
-            this.idtramiteDataGridViewTextBoxColumn.Name = "idtramiteDataGridViewTextBoxColumn";
-            this.idtramiteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idtramiteDataGridViewTextBoxColumn.Visible = false;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(426, 379);
+            this.label5.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(175, 13);
+            this.label5.TabIndex = 71;
+            this.label5.Text = "Trámites con plan de bloquéo";
             // 
-            // tramiteDataGridViewTextBoxColumn
+            // pbfind
             // 
-            this.tramiteDataGridViewTextBoxColumn.DataPropertyName = "tramite";
-            this.tramiteDataGridViewTextBoxColumn.HeaderText = "Trámite";
-            this.tramiteDataGridViewTextBoxColumn.Name = "tramiteDataGridViewTextBoxColumn";
-            this.tramiteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pbfind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbfind.BackColor = System.Drawing.Color.Transparent;
+            this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
+            this.pbfind.Location = new System.Drawing.Point(751, 13);
+            this.pbfind.Name = "pbfind";
+            this.pbfind.Size = new System.Drawing.Size(16, 16);
+            this.pbfind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbfind.TabIndex = 69;
+            this.pbfind.TabStop = false;
             // 
-            // expedienteDataGridViewTextBoxColumn
-            // 
-            this.expedienteDataGridViewTextBoxColumn.DataPropertyName = "expediente";
-            this.expedienteDataGridViewTextBoxColumn.HeaderText = "Expediente";
-            this.expedienteDataGridViewTextBoxColumn.Name = "expedienteDataGridViewTextBoxColumn";
-            this.expedienteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tsmnuitemlstvwscannabrir
-            // 
-            this.tsmnuitemlstvwscannabrir.Image = global::thumbnail.Icons16x16.view;
-            this.tsmnuitemlstvwscannabrir.Name = "tsmnuitemlstvwscannabrir";
-            this.tsmnuitemlstvwscannabrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.tsmnuitemlstvwscannabrir.Size = new System.Drawing.Size(253, 26);
-            this.tsmnuitemlstvwscannabrir.Text = "Abrir";
-            this.tsmnuitemlstvwscannabrir.Click += new System.EventHandler(this.btn_aceptar_Click);
-            // 
-            // opcmnubloquear
-            // 
-            this.opcmnubloquear.Image = global::thumbnail.Icons16x16.loock;
-            this.opcmnubloquear.Name = "opcmnubloquear";
-            this.opcmnubloquear.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
-            this.opcmnubloquear.Size = new System.Drawing.Size(253, 26);
-            this.opcmnubloquear.Text = "Bloquear";
-            this.opcmnubloquear.Click += new System.EventHandler(this.btn_bloquear_Click);
-            // 
-            // opcmnudesbloquear
-            // 
-            this.opcmnudesbloquear.Image = global::thumbnail.Icons16x16.unloock;
-            this.opcmnudesbloquear.Name = "opcmnudesbloquear";
-            this.opcmnudesbloquear.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Insert)));
-            this.opcmnudesbloquear.Size = new System.Drawing.Size(253, 26);
-            this.opcmnudesbloquear.Text = "Desbloquear";
-            this.opcmnudesbloquear.Click += new System.EventHandler(this.btn_desbloquear_Click);
-            // 
-            // opcmnuplanbloqueo
-            // 
-            this.opcmnuplanbloqueo.Image = global::thumbnail.Icons16x16.calendar;
-            this.opcmnuplanbloqueo.Name = "opcmnuplanbloqueo";
-            this.opcmnuplanbloqueo.Size = new System.Drawing.Size(253, 26);
-            this.opcmnuplanbloqueo.Text = "Plan de bloqueo";
-            this.opcmnuplanbloqueo.Click += new System.EventHandler(this.btn_planbloqueo_Click);
-            // 
-            // opcmnueliminarplan
-            // 
-            this.opcmnueliminarplan.Image = global::thumbnail.Icons16x16.calendar_none_red;
-            this.opcmnueliminarplan.Name = "opcmnueliminarplan";
-            this.opcmnueliminarplan.Size = new System.Drawing.Size(253, 26);
-            this.opcmnueliminarplan.Text = "Eliminar plan de bloqueo";
-            this.opcmnueliminarplan.Click += new System.EventHandler(this.btn_eliminaplan_Click);
-            // 
-            // bloquear_desbloquear_tramite
+            // frm_bloquear_desbloquear_tramite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -724,22 +726,22 @@
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "bloquear_desbloquear_tramite";
+            this.Name = "frm_bloquear_desbloquear_tramite";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bloquear/Desbloquear trámites";
             this.Load += new System.EventHandler(this.bloquear_desbloquear_tramite_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.bloquear_desbloquear_tramite_Paint);
             this.tlp_proc.ResumeLayout(false);
             this.tlp_proc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingNavigator)).EndInit();
             this.BindingNavigator.ResumeLayout(false);
             this.BindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.cntmnu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
