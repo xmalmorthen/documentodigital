@@ -1721,9 +1721,6 @@ namespace thumbnail.forms
 
         private DateTime calculafechahorabloqueo()
         {           
-            no_dias_bloqueo = 1;
-            no_horas_bloqueo = 12;
-
             DateTime fechahora = Program.Bd_Exp_Transportes.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
 
             if (no_dias_bloqueo != null)

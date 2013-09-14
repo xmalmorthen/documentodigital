@@ -142,6 +142,12 @@
     <Compile Include="forms\ca_usuarios.Designer.cs">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\bloquear_desbloquear_tramite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\bloquear_desbloquear_tramite.Designer.cs">
+      <DependentUpon>bloquear_desbloquear_tramite.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frm_deshacer_tramite_view_openimage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,12 @@
     </Compile>
     <Compile Include="forms\frm_abrir_tramite.Designer.cs">
       <DependentUpon>frm_abrir_tramite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_tramiteplanbloqueo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_tramiteplanbloqueo.Designer.cs">
+      <DependentUpon>frm_tramiteplanbloqueo.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\re_tramites_clasificaciondocumentos.cs">
       <SubType>Form</SubType>
@@ -267,6 +279,9 @@
     <EmbeddedResource Include="forms\ca_usuarios.resx">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\bloquear_desbloquear_tramite.resx">
+      <DependentUpon>bloquear_desbloquear_tramite.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_deshacer_tramite_view_openimage.resx">
       <DependentUpon>frm_deshacer_tramite_view_openimage.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_abrir_tramite.resx">
       <DependentUpon>frm_abrir_tramite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_tramiteplanbloqueo.resx">
+      <DependentUpon>frm_tramiteplanbloqueo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\re_tramites_clasificaciondocumentos.resx">
       <DependentUpon>re_tramites_clasificaciondocumentos.cs</DependentUpon>
@@ -349,6 +367,7 @@
     <None Include="Properties\DataSources\thumbnail.data_members.pa_DocumentosporClasificacionDocumentoResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_ModulosporIdRolResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult.datasource" />
+    <None Include="Properties\DataSources\thumbnail.data_members.pa_ReferenciaExpedientesparaBloquearDesbloquearResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_ReferenciaExpedientesporValorTrazableResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.pa_RolesporIdUsuarioResult.datasource" />
@@ -418,6 +437,8 @@
   <ItemGroup>
     <Content Include="assets\imgs\100x100\users.fw.png" />
     <Content Include="assets\imgs\16x16\app_window.png" />
+    <None Include="assets\imgs\16x16\calendar.png" />
+    <None Include="assets\imgs\16x16\calendar_none_red.png" />
     <Content Include="assets\imgs\16x16\cancel.png" />
     <Content Include="assets\imgs\16x16\delete.png" />
     <Content Include="assets\imgs\16x16\desenlazar.png" />
@@ -426,6 +447,7 @@
     <Content Include="assets\imgs\16x16\get.png" />
     <Content Include="assets\imgs\16x16\hook.png" />
     <Content Include="assets\imgs\16x16\info.png" />
+    <None Include="assets\imgs\16x16\loock.png" />
     <Content Include="assets\imgs\16x16\notepad.png" />
     <Content Include="assets\imgs\16x16\open.png" />
     <Content Include="assets\imgs\16x16\plus.png" />
@@ -436,6 +458,7 @@
     <Content Include="assets\imgs\16x16\scanner.png" />
     <Content Include="assets\imgs\16x16\trash.png" />
     <Content Include="assets\imgs\16x16\undo.png" />
+    <None Include="assets\imgs\16x16\unloock.png" />
     <Content Include="assets\imgs\16x16\users.png" />
     <Content Include="assets\imgs\16x16\view.png" />
     <Content Include="assets\imgs\16x16\wrench_plus.png" />
@@ -450,6 +473,8 @@
     <Content Include="assets\imgs\32x32\zoomorigin.png" />
     <Content Include="assets\imgs\32x32\zoomout.png" />
     <Content Include="assets\imgs\48x48\attention.png" />
+    <None Include="assets\imgs\48x48\calendar.png" />
+    <None Include="assets\imgs\48x48\calendar_none_red.png" />
     <Content Include="assets\imgs\48x48\checkbox_checked.png" />
     <Content Include="assets\imgs\48x48\checkmark.png" />
     <Content Include="assets\imgs\48x48\clear.png" />

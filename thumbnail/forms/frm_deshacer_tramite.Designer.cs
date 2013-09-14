@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_deshacer_tramite));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.txt = new DevExpress.XtraEditors.TextEdit();
@@ -42,10 +42,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -54,7 +52,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.idmadigitalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -114,9 +111,9 @@
             this.txt.Properties.MaxLength = 30;
             this.txt.Size = new System.Drawing.Size(809, 30);
             this.txt.TabIndex = 0;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Falta indicar el valor";
-            this.dxValidationProvider.SetValidationRule(this.txt, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Falta indicar el valor";
+            this.dxValidationProvider.SetValidationRule(this.txt, conditionValidationRule1);
             this.txt.EditValueChanged += new System.EventHandler(this.txt_EditValueChanged);
             // 
             // tlp_proc
@@ -164,10 +161,10 @@
             // 
             // pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator
             // 
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.AddNewItem = null;
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.BindingSource = this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource;
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.DeleteItem = null;
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -178,10 +175,7 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem});
+            this.bindingNavigatorSeparator2});
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.Location = new System.Drawing.Point(0, 407);
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -193,15 +187,6 @@
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.TabIndex = 7;
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
             // pa_ReferenciaExpedientesporValorTrazableResultBindingSource
             // 
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = typeof(thumbnail.data_members.pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult);
@@ -212,15 +197,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -282,15 +258,6 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem
-            // 
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.Enabled = false;
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.Image")));
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.Name = "pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem";
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.Text = "Guardar datos";
-            // 
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
@@ -301,14 +268,14 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idmadigitalDataGridViewTextBoxColumn,
             this.id_tramite,
@@ -319,14 +286,14 @@
             this.expedienteDataGridViewTextBoxColumn});
             this.dataGridView.ContextMenuStrip = this.cntmnu;
             this.dataGridView.DataSource = this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView.EnableHeadersVisualStyles = false;
             this.dataGridView.Location = new System.Drawing.Point(12, 144);
@@ -334,14 +301,14 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(749, 260);
@@ -394,9 +361,9 @@
             // 
             this.fechahoracreacionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.fechahoracreacionDataGridViewTextBoxColumn.DataPropertyName = "fecha_hora_creacion";
-            dataGridViewCellStyle6.Format = "f";
-            dataGridViewCellStyle6.NullValue = null;
-            this.fechahoracreacionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Format = "f";
+            dataGridViewCellStyle2.NullValue = null;
+            this.fechahoracreacionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.fechahoracreacionDataGridViewTextBoxColumn.HeaderText = "Fecha/Hora creación";
             this.fechahoracreacionDataGridViewTextBoxColumn.Name = "fechahoracreacionDataGridViewTextBoxColumn";
             this.fechahoracreacionDataGridViewTextBoxColumn.ReadOnly = true;
@@ -577,7 +544,7 @@
             this.btn_bloquear.Name = "btn_bloquear";
             this.btn_bloquear.Size = new System.Drawing.Size(54, 54);
             this.btn_bloquear.TabIndex = 5;
-            this.tooltipBtnMnuOptions.SetToolTip(this.btn_bloquear, "Bloquear trámite");
+            this.tooltipBtnMnuOptions.SetToolTip(this.btn_bloquear, "Deshacer trámite");
             this.btn_bloquear.UseVisualStyleBackColor = false;
             this.btn_bloquear.Click += new System.EventHandler(this.btn_bloquear_Click);
             // 
@@ -633,9 +600,7 @@
         private System.Windows.Forms.TableLayoutPanel tlp_proc;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -644,7 +609,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView dataGridView;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;

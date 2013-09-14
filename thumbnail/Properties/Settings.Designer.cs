@@ -12,7 +12,7 @@ namespace thumbnail.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "10.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -127,6 +127,42 @@ namespace thumbnail.Properties {
             }
             set {
                 this["CampoPrincipal_RowColorGrid"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DarkSalmon")]
+        public global::System.Drawing.Color CampoBloqueado_RowColorGrid {
+            get {
+                return ((global::System.Drawing.Color)(this["CampoBloqueado_RowColorGrid"]));
+            }
+            set {
+                this["CampoBloqueado_RowColorGrid"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Honeydew")]
+        public global::System.Drawing.Color CampoDesbloqueado_RowColorGrid {
+            get {
+                return ((global::System.Drawing.Color)(this["CampoDesbloqueado_RowColorGrid"]));
+            }
+            set {
+                this["CampoDesbloqueado_RowColorGrid"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("LightGray")]
+        public global::System.Drawing.Color CampoPlanBloqueo_RowColorGrid {
+            get {
+                return ((global::System.Drawing.Color)(this["CampoPlanBloqueo_RowColorGrid"]));
+            }
+            set {
+                this["CampoPlanBloqueo_RowColorGrid"] = value;
             }
         }
     }

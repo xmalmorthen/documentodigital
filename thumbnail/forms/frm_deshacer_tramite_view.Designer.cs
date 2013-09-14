@@ -720,7 +720,6 @@ namespace thumbnail.forms
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private AxKDImageEditor.AxKDImage KDImage;
-        private System.Windows.Forms.Button btn_deshacer;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcampotrazableDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tamanioCaracteresDataGridViewTextBoxColumn;
@@ -731,6 +730,7 @@ namespace thumbnail.forms
         private System.Windows.Forms.DataGridViewTextBoxColumn col_valor_trazable;
         private DevExpress.XtraEditors.TextEdit txt_tramite;
         private System.Windows.Forms.Button btn_ver;
+        public System.Windows.Forms.Button btn_deshacer;
 
 
 

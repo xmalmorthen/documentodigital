@@ -103,7 +103,7 @@ namespace thumbnail.forms
             id_ma_digital = Id_Ma_Digital;
 
             txt_tramite.Text = tramite;
-            this.Text = "Deshacer tramite - " + tramite + "[ " + valortrazable + " ]";
+            this.Text = "Deshacer tramite - " + tramite + " [ " + valortrazable + " ]";
             try
             {
                 this.Cursor = Cursors.WaitCursor;

@@ -34,5 +34,14 @@
     <Setting Name="CampoPrincipal_RowColorGrid" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">NavajoWhite</Value>
     </Setting>
+    <Setting Name="CampoBloqueado_RowColorGrid" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">DarkSalmon</Value>
+    </Setting>
+    <Setting Name="CampoDesbloqueado_RowColorGrid" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Honeydew</Value>
+    </Setting>
+    <Setting Name="CampoPlanBloqueo_RowColorGrid" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LightGray</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

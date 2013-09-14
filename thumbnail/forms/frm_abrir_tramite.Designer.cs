@@ -42,10 +42,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -54,7 +52,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.idmadigitalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_tramite = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -156,10 +153,10 @@
             // 
             // pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator
             // 
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.AddNewItem = null;
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.BindingSource = this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource;
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.DeleteItem = null;
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -170,10 +167,7 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem});
+            this.bindingNavigatorSeparator2});
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.Location = new System.Drawing.Point(0, 407);
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -185,15 +179,6 @@
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.TabIndex = 6;
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigator.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
-            // 
             // pa_ReferenciaExpedientesporValorTrazableResultBindingSource
             // 
             this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = typeof(thumbnail.data_members.pa_ReferenciaExpedientesporValorTrazableResult);
@@ -204,15 +189,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -273,15 +249,6 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem
-            // 
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.Enabled = false;
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.Image")));
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.Name = "pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem";
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem.Text = "Guardar datos";
             // 
             // dataGridView
             // 
@@ -557,9 +524,7 @@
         private System.Windows.Forms.TableLayoutPanel tlp_proc;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -568,7 +533,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton pa_ReferenciaExpedientesporValorTrazableResultBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView dataGridView;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
