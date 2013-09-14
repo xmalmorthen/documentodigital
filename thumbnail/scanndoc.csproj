@@ -142,6 +142,12 @@
     <Compile Include="forms\ca_usuarios.Designer.cs">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frm_deshacer_tramite_view_openimage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_deshacer_tramite_view_openimage.Designer.cs">
+      <DependentUpon>frm_deshacer_tramite_view_openimage.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frm_deshacer_tramite_view.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\ca_usuarios.resx">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_deshacer_tramite_view_openimage.resx">
+      <DependentUpon>frm_deshacer_tramite_view_openimage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_deshacer_tramite_view.resx">
       <DependentUpon>frm_deshacer_tramite_view.cs</DependentUpon>
@@ -459,6 +468,7 @@
     <Content Include="assets\imgs\48x48\gestion.png" />
     <Content Include="assets\imgs\48x48\get.png" />
     <None Include="assets\imgs\48x48\open.png" />
+    <None Include="assets\imgs\48x48\picture.png" />
     <Content Include="assets\imgs\48x48\reset.png" />
     <Content Include="assets\imgs\48x48\rotateder.png" />
     <Content Include="assets\imgs\48x48\rotateizq.png" />

@@ -97,12 +97,8 @@ namespace thumbnail.forms
 
                 if (tramites == null || tramites.Count == 0)
                 {
-                    MessageBox.Show("No se encontró trámite o podría estar bloqueado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se encontró trámite", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if (tramites.Count == 1)
-                {
-                    btn_aceptar_Click(null, null);
-                } 
                 else
                 {
                     Form_Mode = form_mode.contenidobusqueda;
@@ -151,12 +147,69 @@ namespace thumbnail.forms
 
         private void btn_bloquear_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Confirma deshacer el trámite","Deshacer", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+            {
+                deshacertramite();
+            }
         }
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
+            int Id_Ma_Digital = (pa_ReferenciaExpedientesporValorTrazableResultBindingSource.Current as data_members.pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult).id_ma_digital;
+            string tramite = (pa_ReferenciaExpedientesporValorTrazableResultBindingSource.Current as data_members.pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult).tramite;
 
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+            
+            frm_deshacer_tramite_view frm;
+            frm = new frm_deshacer_tramite_view(Id_Ma_Digital, txt.Text, tramite);
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+
+            DialogResult result = frm.ShowDialog(this);
+            switch (result)
+            {
+                case DialogResult.Yes:
+                    deshacertramite();      
+                break;
+            }
+        }
+
+        private void deshacertramite() { 
+            try
+            {
+                int Id_Ma_Digital = (pa_ReferenciaExpedientesporValorTrazableResultBindingSource.Current as data_members.pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult).id_ma_digital;
+                data_members.ma_digital registro = Program.Bd_Exp_Transportes.ma_digital.Single(query => query.id == Id_Ma_Digital);
+                registro.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "desechado").id;
+                Program.Bd_Exp_Transportes.SubmitChanges();
+                MessageBox.Show("Trámite deshecho", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                btn_limpiar_Click(null, null);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btn_aceptar_Click(null, null);
+        }
+
+        private void txt_EditValueChanged(object sender, EventArgs e)
+        {
+            this.AcceptButton = btn_buscar;
+        }
+
+        private void dataGridView_Enter(object sender, EventArgs e)
+        {
+            this.AcceptButton = btn_ver;
         }
     }
 }

@@ -210,8 +210,8 @@
             // registroYSeguimientoDeTramiteToolStripMenuItem
             // 
             this.registroYSeguimientoDeTramiteToolStripMenuItem.Name = "registroYSeguimientoDeTramiteToolStripMenuItem";
-            this.registroYSeguimientoDeTramiteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.registroYSeguimientoDeTramiteToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
+            this.registroYSeguimientoDeTramiteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.registroYSeguimientoDeTramiteToolStripMenuItem.Size = new System.Drawing.Size(281, 24);
             this.registroYSeguimientoDeTramiteToolStripMenuItem.Tag = "2,1";
             this.registroYSeguimientoDeTramiteToolStripMenuItem.Text = "Registro y seguimiento";
             this.registroYSeguimientoDeTramiteToolStripMenuItem.Click += new System.EventHandler(this.registroYSeguimientoDeTramiteToolStripMenuItem_Click);
@@ -219,12 +219,13 @@
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(280, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(278, 6);
             // 
             // deshacerToolStripMenuItem
             // 
             this.deshacerToolStripMenuItem.Name = "deshacerToolStripMenuItem";
-            this.deshacerToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
+            this.deshacerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.deshacerToolStripMenuItem.Size = new System.Drawing.Size(281, 24);
             this.deshacerToolStripMenuItem.Tag = "2,2";
             this.deshacerToolStripMenuItem.Text = "Deshacer registro";
             this.deshacerToolStripMenuItem.Click += new System.EventHandler(this.deshacerToolStripMenuItem_Click);
@@ -232,9 +233,11 @@
             // blquearDesbloquearToolStripMenuItem
             // 
             this.blquearDesbloquearToolStripMenuItem.Name = "blquearDesbloquearToolStripMenuItem";
-            this.blquearDesbloquearToolStripMenuItem.Size = new System.Drawing.Size(283, 24);
+            this.blquearDesbloquearToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
+            this.blquearDesbloquearToolStripMenuItem.Size = new System.Drawing.Size(281, 24);
             this.blquearDesbloquearToolStripMenuItem.Tag = "2,3";
             this.blquearDesbloquearToolStripMenuItem.Text = "Blquear/Desbloquear";
+            this.blquearDesbloquearToolStripMenuItem.Click += new System.EventHandler(this.blquearDesbloquearToolStripMenuItem_Click);
             // 
             // administracionToolStripMenuItem
             // 

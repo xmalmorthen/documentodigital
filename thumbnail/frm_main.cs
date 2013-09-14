@@ -340,5 +340,10 @@ namespace thumbnail
             this.Cursor = Cursors.Default;
         }
 
+        private void blquearDesbloquearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

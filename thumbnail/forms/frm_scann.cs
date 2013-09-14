@@ -962,7 +962,7 @@ namespace thumbnail.forms
         {
             ListViewGroup grupo = new ListViewGroup();
             grupo.Name = source_digital.clasificaciondocumento; //obtener el nombre del grupo a partir de su clasificacion de documento
-            grupo.Header = source_digital.clasificaciondocumento + " [ " + source_digital.documento + " ] [ " + source_digital.valor_trazable + " ]"; //concatenar la clasificacion de documentos con el nombre del documento
+            grupo.Header = source_digital.clasificaciondocumento + " [ " + source_digital.documento + " ] " + (!string.IsNullOrEmpty(source_digital.valor_trazable) ? "[ " + source_digital.valor_trazable + " ]" : ""); //concatenar la clasificacion de documentos con el nombre del documento)
             grupo.HeaderAlignment = HorizontalAlignment.Left;
 
             Boolean existe = false;

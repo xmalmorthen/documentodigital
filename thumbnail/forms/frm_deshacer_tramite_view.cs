@@ -94,6 +94,36 @@ namespace thumbnail.forms
             Inicializa();
         }
 
+        int id_ma_digital { get; set; }
+
+        public frm_deshacer_tramite_view(int Id_Ma_Digital, string valortrazable, string tramite)
+        {
+            InitializeComponent();
+            Inicializa();
+            id_ma_digital = Id_Ma_Digital;
+
+            txt_tramite.Text = tramite;
+            this.Text = "Deshacer tramite - " + tramite + "[ " + valortrazable + " ]";
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                tlp_proc.Visible = true;
+
+                Application.DoEvents();
+
+                obtenerregistrosaeditar();
+
+                Application.DoEvents();
+
+                tlp_proc.Visible = false;
+                this.Cursor = Cursors.Default;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         //funcion de configuraciones iniciales
         private void Inicializa()
         {
@@ -116,6 +146,8 @@ namespace thumbnail.forms
             this.thumbnainlist.ColorDepth = Settings.Default.ThumbNailColorDepth;
 
             dataGridView_CamposTrazables.Cursor = Cursors.Arrow;
+            dataGridView_CamposTrazables.ReadOnly = true;
+            
             this.Paint += frm_scann_Paint;
         }
 
@@ -138,7 +170,7 @@ namespace thumbnail.forms
         //cerrar
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
 
 #region dataGridView_campostrazables
@@ -202,28 +234,30 @@ namespace thumbnail.forms
             tlp_proc.Visible = true;
 
             Application.DoEvents();
-            
-            frmimgViewerDetalle testDialog;
+
+            frm_deshacer_tramite_view_openimage testDialog;
             
             tagstruct edittag = ((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag);
 
             if (edittag.path_image != null)
             {
-                testDialog = new frmimgViewerDetalle(edittag.path_image);
+                testDialog = new frm_deshacer_tramite_view_openimage(edittag.path_image);
             }
             else
             {
-                testDialog = new frmimgViewerDetalle(((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag).id_ma_digital_edit,
+                testDialog = new frm_deshacer_tramite_view_openimage(((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag).id_ma_digital_edit,
                                                 ((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag).id,
                                                 ((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag).id_re_clasificaciondocumento_documento);
                 edittag.path_image = testDialog.pathimageoriginal;
                 lstvwdocumentosenlazados.SelectedItems[0].Tag = edittag;
-            }
+            }           
 
             Application.DoEvents();
 
             tlp_proc.Visible = false;
             this.Cursor = Cursors.Default;
+
+            testDialog.ShowDialog(this);
 
             testDialog.Dispose();
         }
@@ -236,37 +270,7 @@ namespace thumbnail.forms
             public int id;
             public int id_ma_digital_edit;
             public int id_re_clasificaciondocumento_documento;
-        };
-        
-        int id_ma_digital {get; set;}
-
-        public frm_deshacer_tramite_view(int Id_Ma_Digital)
-        {
-            InitializeComponent();
-            Inicializa();
-            id_ma_digital = Id_Ma_Digital;
-
-//txt_tramite.Text =
-//this.Text = "Deshacer tramite - " + //concatenar tramite y valor trazable
-            try
-            {
-                this.Cursor = Cursors.WaitCursor;
-                tlp_proc.Visible = true;
-
-                Application.DoEvents();
-
-                obtenerregistrosaeditar();
-                                       
-                Application.DoEvents();
-
-                tlp_proc.Visible = false;
-                this.Cursor = Cursors.Default;
-            }
-            catch (Exception)
-            {                    
-                throw;
-            }
-        }
+        };                
 
         private void obtenerregistrosaeditar()
         {
@@ -329,7 +333,7 @@ namespace thumbnail.forms
 
                 ListViewGroup _grupo = new ListViewGroup();
                 _grupo.Name = source.clasificaciondocumento; //obtener el nombre del grupo a partir de su clasificacion de documento
-                _grupo.Header = source.clasificaciondocumento + " [ " + source.documento + " ][ " + source.valor_trazable + " ]"; //concatenar la clasificacion de documentos con el nombre del documento
+                _grupo.Header = source.clasificaciondocumento + " [ " + source.documento + " ] " + (!string.IsNullOrEmpty(source.valor_trazable) ? "[ " + source.valor_trazable + " ]" : ""); //concatenar la clasificacion de documentos con el nombre del documento
                 _grupo.HeaderAlignment = HorizontalAlignment.Left;
 
                 Boolean existe = lstvwdocumentosenlazados.Groups.Contains(_grupo);
@@ -368,27 +372,6 @@ namespace thumbnail.forms
 	        }
         }
 
-        private void btn_bloquear_Click(object sender, EventArgs e)
-        {
-            switch (MessageBox.Show("Confirma deshacer el trámite", "Deshacer", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
-            {
-                case DialogResult.Yes:
-                    try
-                    {
-                        data_members.ma_digital registro = Program.Bd_Exp_Transportes.ma_digital.Single(query => query.id == id_ma_digital);
-                        registro.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "deshecho").id;
-                        Program.Bd_Exp_Transportes.SubmitChanges();
-                        bloqueacontroles();
-                        MessageBox.Show("Trámite deshecho", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception)
-                    {
-                        throw;
-                    }
-                    break;
-            }
-        }
-
         Boolean tramitebloqueado = false;
         private void bloqueacontroles()
         {
@@ -411,6 +394,14 @@ namespace thumbnail.forms
             lstvwdocumentosenlazados.AllowDrop = false;
 
             tramitebloqueado = true;
+        }
+
+        private void btn_deshacer_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Confirma deshacer el trámite", "Deshacer", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+            {
+                this.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            }
         }
 
     }
