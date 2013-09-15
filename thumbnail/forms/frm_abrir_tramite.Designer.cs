@@ -276,6 +276,7 @@
             this.notaDataGridViewTextBoxColumn,
             this.fechahoracreacionDataGridViewTextBoxColumn,
             this.expedienteDataGridViewTextBoxColumn});
+            this.dataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView.DataSource = this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;

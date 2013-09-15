@@ -53,6 +53,7 @@
             // 
             // pa_ObtenerDocumentosporTramiteyOrigenResultGridControl
             // 
+            this.pa_ObtenerDocumentosporTramiteyOrigenResultGridControl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pa_ObtenerDocumentosporTramiteyOrigenResultGridControl.DataSource = this.bindingsource;
             this.pa_ObtenerDocumentosporTramiteyOrigenResultGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pa_ObtenerDocumentosporTramiteyOrigenResultGridControl.Location = new System.Drawing.Point(0, 0);

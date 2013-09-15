@@ -799,7 +799,7 @@
             this.tlp_proc.Name = "tlp_proc";
             this.tlp_proc.RowCount = 1;
             this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tlp_proc.Size = new System.Drawing.Size(195, 50);
             this.tlp_proc.TabIndex = 22;
             this.tlp_proc.Visible = false;
@@ -956,6 +956,7 @@
             this.mascaraTrazableDataGridViewTextBoxColumn,
             this.politicaDataGridViewTextBoxColumn,
             this.caformatosDataGridViewTextBoxColumn});
+            this.datagridview.Cursor = System.Windows.Forms.Cursors.Hand;
             this.datagridview.DataSource = this.bindingsource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;

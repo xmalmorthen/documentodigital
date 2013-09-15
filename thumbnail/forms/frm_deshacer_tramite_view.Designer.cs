@@ -258,6 +258,7 @@ namespace thumbnail.forms
             this.esprincipalDataGridViewCheckBoxColumn,
             this.id_re_expedientes_campostrazables,
             this.col_valor_trazable});
+            this.dataGridView_CamposTrazables.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView_CamposTrazables.DataSource = this.BindingSource_CamposTrazables;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;

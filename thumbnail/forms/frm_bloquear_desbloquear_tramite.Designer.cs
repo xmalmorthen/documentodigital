@@ -270,6 +270,7 @@
             this.tramiteDataGridViewTextBoxColumn,
             this.expedienteDataGridViewTextBoxColumn});
             this.dataGridView.ContextMenuStrip = this.cntmnu;
+            this.dataGridView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView.DataSource = this.BindingSource;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
