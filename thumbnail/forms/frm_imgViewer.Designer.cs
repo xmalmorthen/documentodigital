@@ -1,4 +1,4 @@
-﻿namespace thumbnail.forms
+﻿namespace scanndoc.forms
 {
     partial class frmimgViewer
     {
@@ -61,7 +61,7 @@
             this.btn_reestablecer.FlatAppearance.BorderSize = 0;
             this.btn_reestablecer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_reestablecer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reestablecer.Image = global::thumbnail.Icons48x48.reset;
+            this.btn_reestablecer.Image = global::scanndoc.Icons48x48.reset;
             this.btn_reestablecer.Location = new System.Drawing.Point(421, 7);
             this.btn_reestablecer.Name = "btn_reestablecer";
             this.btn_reestablecer.Size = new System.Drawing.Size(54, 54);
@@ -79,7 +79,7 @@
             this.btn_rotarizquierda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_rotarizquierda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_rotarizquierda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rotarizquierda.Image = global::thumbnail.Icons48x48.rotateizq;
+            this.btn_rotarizquierda.Image = global::scanndoc.Icons48x48.rotateizq;
             this.btn_rotarizquierda.Location = new System.Drawing.Point(289, 7);
             this.btn_rotarizquierda.Name = "btn_rotarizquierda";
             this.btn_rotarizquierda.Size = new System.Drawing.Size(56, 56);
@@ -97,7 +97,7 @@
             this.btn_rotarderecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_rotarderecha.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_rotarderecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rotarderecha.Image = global::thumbnail.Icons48x48.rotateder;
+            this.btn_rotarderecha.Image = global::scanndoc.Icons48x48.rotateder;
             this.btn_rotarderecha.Location = new System.Drawing.Point(229, 7);
             this.btn_rotarderecha.Name = "btn_rotarderecha";
             this.btn_rotarderecha.Size = new System.Drawing.Size(56, 56);
@@ -116,7 +116,7 @@
             this.btn_borrar.FlatAppearance.BorderSize = 0;
             this.btn_borrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btn_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_borrar.Image = global::thumbnail.Icons48x48.delete;
+            this.btn_borrar.Image = global::scanndoc.Icons48x48.delete;
             this.btn_borrar.Location = new System.Drawing.Point(572, 7);
             this.btn_borrar.Name = "btn_borrar";
             this.btn_borrar.Size = new System.Drawing.Size(54, 54);
@@ -135,7 +135,7 @@
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cerrar.Image = global::scanndoc.Icons48x48.close;
             this.btn_cerrar.Location = new System.Drawing.Point(718, 7);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
@@ -208,7 +208,7 @@
             this.btn_ajuste.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ajuste.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_ajuste.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ajuste.Image = global::thumbnail.Icons32x32.fit;
+            this.btn_ajuste.Image = global::scanndoc.Icons32x32.fit;
             this.btn_ajuste.Location = new System.Drawing.Point(140, 7);
             this.btn_ajuste.Name = "btn_ajuste";
             this.btn_ajuste.Size = new System.Drawing.Size(40, 40);
@@ -225,7 +225,7 @@
             this.btn_tamaniooriginal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_tamaniooriginal.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_tamaniooriginal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_tamaniooriginal.Image = global::thumbnail.Icons32x32.zoomorigin;
+            this.btn_tamaniooriginal.Image = global::scanndoc.Icons32x32.zoomorigin;
             this.btn_tamaniooriginal.Location = new System.Drawing.Point(96, 7);
             this.btn_tamaniooriginal.Name = "btn_tamaniooriginal";
             this.btn_tamaniooriginal.Size = new System.Drawing.Size(40, 40);
@@ -242,7 +242,7 @@
             this.btn_zommmenos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_zommmenos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_zommmenos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_zommmenos.Image = global::thumbnail.Icons32x32.zoomout;
+            this.btn_zommmenos.Image = global::scanndoc.Icons32x32.zoomout;
             this.btn_zommmenos.Location = new System.Drawing.Point(8, 7);
             this.btn_zommmenos.Name = "btn_zommmenos";
             this.btn_zommmenos.Size = new System.Drawing.Size(40, 40);
@@ -259,7 +259,7 @@
             this.btn_zoommas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_zoommas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_zoommas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_zoommas.Image = global::thumbnail.Icons32x32.zoomin;
+            this.btn_zoommas.Image = global::scanndoc.Icons32x32.zoomin;
             this.btn_zoommas.Location = new System.Drawing.Point(52, 7);
             this.btn_zoommas.Name = "btn_zoommas";
             this.btn_zoommas.Size = new System.Drawing.Size(40, 40);

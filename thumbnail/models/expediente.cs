@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
-namespace thumbnail.models
+namespace scanndoc.models
 {
     public class tramite_model {
 

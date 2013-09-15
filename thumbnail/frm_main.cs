@@ -6,10 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using thumbnail.data_members;
-using thumbnail.models;
+using scanndoc.data_members;
+using scanndoc.models;
 
-namespace thumbnail
+namespace scanndoc
 {
     public partial class frm_main : Form
     {
@@ -101,7 +101,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.frm_scann scann = new forms.frm_scann(modulos.Find(c => c.Modulo.ToString().ToLower() == "blquear/desbloquear") == null ? false : true);
+            scanndoc.forms.frm_scann scann = new forms.frm_scann(modulos.Find(c => c.Modulo.ToString().ToLower() == "blquear/desbloquear") == null ? false : true);
 
             scann.MdiParent = this;
             scann.Show();
@@ -139,7 +139,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.ca_expedientes frm = new forms.ca_expedientes();
+            scanndoc.forms.ca_expedientes frm = new forms.ca_expedientes();
             frm.MdiParent = this;
             frm.Show();
 
@@ -156,7 +156,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.ca_campostrazables frm = new forms.ca_campostrazables();
+            scanndoc.forms.ca_campostrazables frm = new forms.ca_campostrazables();
             frm.MdiParent = this;
             frm.Show();
 
@@ -173,7 +173,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.ca_clasificaciontramites frm = new forms.ca_clasificaciontramites();
+            scanndoc.forms.ca_clasificaciontramites frm = new forms.ca_clasificaciontramites();
             frm.MdiParent = this;
             frm.Show();
 
@@ -190,7 +190,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.ca_tramites frm = new forms.ca_tramites();
+            scanndoc.forms.ca_tramites frm = new forms.ca_tramites();
             frm.MdiParent = this;
             frm.Show();
 
@@ -207,7 +207,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.re_expedientes_campostrazables frm = new forms.re_expedientes_campostrazables();
+            scanndoc.forms.re_expedientes_campostrazables frm = new forms.re_expedientes_campostrazables();
             frm.MdiParent = this;
             frm.Show();
 
@@ -224,7 +224,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.ca_clasificaciondocumentos frm = new forms.ca_clasificaciondocumentos();
+            scanndoc.forms.ca_clasificaciondocumentos frm = new forms.ca_clasificaciondocumentos();
             frm.MdiParent = this;
             frm.Show();
 
@@ -242,7 +242,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.ca_documentos frm = new forms.ca_documentos();
+            scanndoc.forms.ca_documentos frm = new forms.ca_documentos();
             frm.MdiParent = this;
             frm.Show();
 
@@ -259,7 +259,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.re_clasificaciondocumentos_documentos frm = new forms.re_clasificaciondocumentos_documentos();
+            scanndoc.forms.re_clasificaciondocumentos_documentos frm = new forms.re_clasificaciondocumentos_documentos();
             frm.MdiParent = this;
             frm.Show();
 
@@ -277,7 +277,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.re_tramites_clasificaciondocumentos frm = new forms.re_tramites_clasificaciondocumentos();
+            scanndoc.forms.re_tramites_clasificaciondocumentos frm = new forms.re_tramites_clasificaciondocumentos();
             frm.MdiParent = this;
             frm.Show();
 
@@ -295,7 +295,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.ca_usuarios frm = new forms.ca_usuarios();
+            scanndoc.forms.ca_usuarios frm = new forms.ca_usuarios();
             frm.MdiParent = this;
             frm.Show();
 
@@ -312,7 +312,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.ca_roles frm = new forms.ca_roles();
+            scanndoc.forms.ca_roles frm = new forms.ca_roles();
             frm.MdiParent = this;
             frm.Show();
 
@@ -330,7 +330,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.frm_deshacer_tramite frm = new forms.frm_deshacer_tramite();
+            scanndoc.forms.frm_deshacer_tramite frm = new forms.frm_deshacer_tramite();
             frm.MdiParent = this;
             frm.Show();
 
@@ -347,7 +347,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.frm_bloquear_desbloquear_tramite frm = new forms.frm_bloquear_desbloquear_tramite();
+            scanndoc.forms.frm_bloquear_desbloquear_tramite frm = new forms.frm_bloquear_desbloquear_tramite();
             frm.MdiParent = this;
             frm.Show();
 
@@ -370,7 +370,7 @@ namespace thumbnail
 
             Application.DoEvents();
 
-            thumbnail.forms.frm_preferencias_tramitepordefecto frm = new forms.frm_preferencias_tramitepordefecto();
+            scanndoc.forms.frm_preferencias_tramitepordefecto frm = new forms.frm_preferencias_tramitepordefecto();
             frm.MdiParent = this;
             frm.Show();
 

@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="pa_ClasificacionDocumentosNoEnlazadosporTramiteResult" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>thumbnail.data_members.pa_ClasificacionDocumentosNoEnlazadosporTramiteResult, data_members.Bd_Exp_Transportes.designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>scanndoc.data_members.pa_ClasificacionDocumentosNoEnlazadosporTramiteResult, data_members.Bd_Exp_Transportes.designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

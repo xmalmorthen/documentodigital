@@ -1,4 +1,4 @@
-﻿namespace thumbnail
+﻿namespace scanndoc
 {
     partial class frm_main
     {
@@ -101,7 +101,7 @@
             this.clasificarDocumentosToolStripMenuItem,
             this.toolStripMenuItem4,
             this.asignarToolStripMenuItem});
-            this.creaciónToolStripMenuItem.Image = global::thumbnail.Icons16x16.notepad;
+            this.creaciónToolStripMenuItem.Image = global::scanndoc.Icons16x16.notepad;
             this.creaciónToolStripMenuItem.Name = "creaciónToolStripMenuItem";
             this.creaciónToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
             this.creaciónToolStripMenuItem.Tag = "1";
@@ -203,7 +203,7 @@
             this.toolStripMenuItem3,
             this.deshacerToolStripMenuItem,
             this.blquearDesbloquearToolStripMenuItem});
-            this.papelToolStripMenuItem.Image = global::thumbnail.Icons16x16.hook;
+            this.papelToolStripMenuItem.Image = global::scanndoc.Icons16x16.hook;
             this.papelToolStripMenuItem.Name = "papelToolStripMenuItem";
             this.papelToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.papelToolStripMenuItem.Tag = "2";
@@ -248,7 +248,7 @@
             this.usuariosToolStripMenuItem,
             this.toolStripMenuItem5,
             this.preferenciasToolStripMenuItem});
-            this.administracionToolStripMenuItem.Image = global::thumbnail.Icons16x16.gestion;
+            this.administracionToolStripMenuItem.Image = global::scanndoc.Icons16x16.gestion;
             this.administracionToolStripMenuItem.Name = "administracionToolStripMenuItem";
             this.administracionToolStripMenuItem.Size = new System.Drawing.Size(137, 24);
             this.administracionToolStripMenuItem.Tag = "3";
@@ -256,7 +256,7 @@
             // 
             // rolesToolStripMenuItem
             // 
-            this.rolesToolStripMenuItem.Image = global::thumbnail.Icons16x16.view;
+            this.rolesToolStripMenuItem.Image = global::scanndoc.Icons16x16.view;
             this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
             this.rolesToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.rolesToolStripMenuItem.Tag = "3,1";
@@ -265,7 +265,7 @@
             // 
             // usuariosToolStripMenuItem
             // 
-            this.usuariosToolStripMenuItem.Image = global::thumbnail.Icons16x16.users;
+            this.usuariosToolStripMenuItem.Image = global::scanndoc.Icons16x16.users;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.usuariosToolStripMenuItem.Tag = "3,2";
@@ -282,7 +282,7 @@
             this.preferenciasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.trámitePorDefectoToolStripMenuItem,
             this.planDeBloqueoEnTrámitesToolStripMenuItem});
-            this.preferenciasToolStripMenuItem.Image = global::thumbnail.Icons16x16.wrench_plus;
+            this.preferenciasToolStripMenuItem.Image = global::scanndoc.Icons16x16.wrench_plus;
             this.preferenciasToolStripMenuItem.Name = "preferenciasToolStripMenuItem";
             this.preferenciasToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
             this.preferenciasToolStripMenuItem.Tag = "3,3";
@@ -305,7 +305,7 @@
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.acercaDeToolStripMenuItem.Image = global::thumbnail.Icons16x16.info;
+            this.acercaDeToolStripMenuItem.Image = global::scanndoc.Icons16x16.info;
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.acercaDeToolStripMenuItem.Text = "Acerca de...";
@@ -314,7 +314,7 @@
             // 
             this.ventanasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ordenarVentanasToolStripMenuItem});
-            this.ventanasToolStripMenuItem.Image = global::thumbnail.Icons16x16.app_window;
+            this.ventanasToolStripMenuItem.Image = global::scanndoc.Icons16x16.app_window;
             this.ventanasToolStripMenuItem.Name = "ventanasToolStripMenuItem";
             this.ventanasToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
             this.ventanasToolStripMenuItem.Text = "Ventanas";
@@ -336,7 +336,7 @@
             // 
             // salirToolStripMenuItem
             // 
-            this.salirToolStripMenuItem.Image = global::thumbnail.Icons16x16.delete;
+            this.salirToolStripMenuItem.Image = global::scanndoc.Icons16x16.delete;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.salirToolStripMenuItem.Text = "Salir";
@@ -363,7 +363,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Image = global::scanndoc.Icons48x48.clock;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";

@@ -1,4 +1,4 @@
-﻿namespace thumbnail.forms
+﻿namespace scanndoc.forms
 {
     partial class frm_tramites_view
     {
@@ -137,7 +137,7 @@
             // 
             // bindingsource
             // 
-            this.bindingsource.DataSource = typeof(thumbnail.data_members.ca_tramites);
+            this.bindingsource.DataSource = typeof(scanndoc.data_members.ca_tramites);
             // 
             // btn_cerrar
             // 
@@ -149,7 +149,7 @@
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cerrar.Image = global::scanndoc.Icons48x48.close;
             this.btn_cerrar.Location = new System.Drawing.Point(741, 12);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
@@ -319,7 +319,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Image = global::scanndoc.Icons48x48.clock;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";

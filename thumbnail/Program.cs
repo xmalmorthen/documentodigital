@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using thumbnail.forms;
+using scanndoc.forms;
 
-namespace thumbnail
+namespace scanndoc
 {
     static class Program
     {
-        public static thumbnail.data_members.Bd_Exp_TransportesDataContext Bd_Exp_Transportes;
+        public static scanndoc.data_members.Bd_Exp_TransportesDataContext Bd_Exp_Transportes;
 
         /// <summary>
         /// Punto de entrada principal para la aplicación.

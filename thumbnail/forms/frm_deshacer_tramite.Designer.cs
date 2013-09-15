@@ -1,4 +1,4 @@
-﻿namespace thumbnail.forms
+﻿namespace scanndoc.forms
 {
     partial class frm_deshacer_tramite
     {
@@ -137,7 +137,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Image = global::scanndoc.Icons48x48.clock;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
@@ -189,7 +189,7 @@
             // 
             // pa_ReferenciaExpedientesporValorTrazableResultBindingSource
             // 
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = typeof(thumbnail.data_members.pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult);
+            this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = typeof(scanndoc.data_members.pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult);
             // 
             // bindingNavigatorCountItem
             // 
@@ -391,7 +391,7 @@
             // 
             // tsmnuitemlstvwscannabrir
             // 
-            this.tsmnuitemlstvwscannabrir.Image = global::thumbnail.Icons16x16.view;
+            this.tsmnuitemlstvwscannabrir.Image = global::scanndoc.Icons16x16.view;
             this.tsmnuitemlstvwscannabrir.Name = "tsmnuitemlstvwscannabrir";
             this.tsmnuitemlstvwscannabrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.tsmnuitemlstvwscannabrir.Size = new System.Drawing.Size(223, 26);
@@ -405,7 +405,7 @@
             // 
             // tsmnuitemlstvwscanneliminar
             // 
-            this.tsmnuitemlstvwscanneliminar.Image = global::thumbnail.Icons16x16.trash;
+            this.tsmnuitemlstvwscanneliminar.Image = global::scanndoc.Icons16x16.trash;
             this.tsmnuitemlstvwscanneliminar.Name = "tsmnuitemlstvwscanneliminar";
             this.tsmnuitemlstvwscanneliminar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
             this.tsmnuitemlstvwscanneliminar.Size = new System.Drawing.Size(223, 26);
@@ -459,7 +459,7 @@
             this.btn_buscar.FlatAppearance.BorderSize = 0;
             this.btn_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscar.Image = global::thumbnail.Icons48x48.find;
+            this.btn_buscar.Image = global::scanndoc.Icons48x48.find;
             this.btn_buscar.Location = new System.Drawing.Point(767, 68);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(54, 54);
@@ -479,7 +479,7 @@
             this.btn_cancelar.FlatAppearance.BorderSize = 0;
             this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancelar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cancelar.Image = global::scanndoc.Icons48x48.close;
             this.btn_cancelar.Location = new System.Drawing.Point(767, 352);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(54, 54);
@@ -498,7 +498,7 @@
             this.btn_limpiar.FlatAppearance.BorderSize = 0;
             this.btn_limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_limpiar.Image = global::thumbnail.Icons16x16.app_window;
+            this.btn_limpiar.Image = global::scanndoc.Icons16x16.app_window;
             this.btn_limpiar.Location = new System.Drawing.Point(739, 100);
             this.btn_limpiar.Name = "btn_limpiar";
             this.btn_limpiar.Size = new System.Drawing.Size(22, 22);
@@ -517,7 +517,7 @@
             this.btn_ver.FlatAppearance.BorderSize = 0;
             this.btn_ver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ver.Image = global::thumbnail.Icons48x48.eye;
+            this.btn_ver.Image = global::scanndoc.Icons48x48.eye;
             this.btn_ver.Location = new System.Drawing.Point(767, 144);
             this.btn_ver.Name = "btn_ver";
             this.btn_ver.Size = new System.Drawing.Size(54, 54);
@@ -539,7 +539,7 @@
             this.btn_bloquear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_bloquear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btn_bloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_bloquear.Image = global::thumbnail.Icons48x48.delete_red;
+            this.btn_bloquear.Image = global::scanndoc.Icons48x48.delete_red;
             this.btn_bloquear.Location = new System.Drawing.Point(767, 204);
             this.btn_bloquear.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
             this.btn_bloquear.Name = "btn_bloquear";

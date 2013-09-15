@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using thumbnail.classes;
+using scanndoc.classes;
 using System.Collections;
-using thumbnail.models;
+using scanndoc.models;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class frm_login : Form
     {
@@ -50,7 +50,7 @@ namespace thumbnail.forms
 		            MessageBox.Show("Usuario y/o contraseña no válidos", "Error de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
 	            }
                                
-                thumbnail.data_members.ca_usuarios usuario = Program.Bd_Exp_Transportes.ca_usuarios.SingleOrDefault(c => c.usuario.ToString().ToLower() == txt_usuario.Text.ToString().ToLower());
+                scanndoc.data_members.ca_usuarios usuario = Program.Bd_Exp_Transportes.ca_usuarios.SingleOrDefault(c => c.usuario.ToString().ToLower() == txt_usuario.Text.ToString().ToLower());
                 if (!convert_md5.verifyMd5Hash(txt_contrasenia.Text, usuario.contrasenia))
                 {
                     MessageBox.Show("Usuario y/o contraseña no válidos", "Error de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -80,7 +80,7 @@ namespace thumbnail.forms
             return true;
         }
 
-        private bool Parse_data_user(thumbnail.data_members.ca_usuarios usuario)
+        private bool Parse_data_user(scanndoc.data_members.ca_usuarios usuario)
         {
             try 
 	        {

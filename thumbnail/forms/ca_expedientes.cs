@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using thumbnail.data_members;
+using scanndoc.data_members;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class ca_expedientes : Form
     {
@@ -207,7 +207,7 @@ namespace thumbnail.forms
 
             try
             {
-                List<thumbnail.data_members.ca_expedientes> valores = (from expediente in lista
+                List<scanndoc.data_members.ca_expedientes> valores = (from expediente in lista
                                                                        where expediente.Descripcion.ToString().ToLower().Contains(txt_buscar.Text.ToString().ToLower())
                                                                        select expediente).ToList();
                 bindingsource.DataSource = valores;

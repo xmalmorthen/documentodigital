@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Bd_Exp_Transportes" Class="Bd_Exp_TransportesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User ID=digitaldocs" SettingsObjectName="thumbnail.Properties.Settings" SettingsPropertyName="Bd_Exp_TransportesConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User ID=digitaldocs" SettingsObjectName="scanndoc.Properties.Settings" SettingsPropertyName="Bd_Exp_TransportesConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ca_acciones" Member="ca_acciones">
     <Type Name="ca_acciones">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace thumbnail.Properties {
+namespace scanndoc.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

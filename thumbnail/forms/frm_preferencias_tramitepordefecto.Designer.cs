@@ -1,4 +1,4 @@
-﻿namespace thumbnail.forms
+﻿namespace scanndoc.forms
 {
     partial class frm_preferencias_tramitepordefecto
     {
@@ -111,7 +111,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Image = global::scanndoc.Icons48x48.clock;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
@@ -163,7 +163,7 @@
             // 
             // BindingSource
             // 
-            this.BindingSource.DataSource = typeof(thumbnail.data_members.vw_ListaTramitesActivos);
+            this.BindingSource.DataSource = typeof(scanndoc.data_members.vw_ListaTramitesActivos);
             // 
             // bindingNavigatorCountItem
             // 
@@ -254,7 +254,7 @@
             this.btn_cancelar.FlatAppearance.BorderSize = 0;
             this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancelar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cancelar.Image = global::scanndoc.Icons48x48.close;
             this.btn_cancelar.Location = new System.Drawing.Point(776, 350);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(54, 54);
@@ -273,7 +273,7 @@
             this.btn_ver.FlatAppearance.BorderSize = 0;
             this.btn_ver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ver.Image = global::thumbnail.Icons48x48.eye;
+            this.btn_ver.Image = global::scanndoc.Icons48x48.eye;
             this.btn_ver.Location = new System.Drawing.Point(776, 35);
             this.btn_ver.Name = "btn_ver";
             this.btn_ver.Size = new System.Drawing.Size(54, 54);
@@ -485,7 +485,7 @@
             // 
             // bindingSource_tipobloqueos
             // 
-            this.bindingSource_tipobloqueos.DataSource = typeof(thumbnail.data_members.ca_tiposbloqueos);
+            this.bindingSource_tipobloqueos.DataSource = typeof(scanndoc.data_members.ca_tiposbloqueos);
             // 
             // nodiasbloqueoDataGridViewTextBoxColumn
             // 
@@ -517,7 +517,7 @@
             // 
             this.pbfind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbfind.BackColor = System.Drawing.Color.Transparent;
-            this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
+            this.pbfind.Image = global::scanndoc.Icons16x16.zoom;
             this.pbfind.Location = new System.Drawing.Point(752, 13);
             this.pbfind.Name = "pbfind";
             this.pbfind.Size = new System.Drawing.Size(16, 16);
@@ -527,11 +527,11 @@
             // 
             // bindingSource_NoDias
             // 
-            this.bindingSource_NoDias.DataSource = typeof(thumbnail.data_members.vw_ListaTramitesActivos);
+            this.bindingSource_NoDias.DataSource = typeof(scanndoc.data_members.vw_ListaTramitesActivos);
             // 
             // bindingSource_NoHoras
             // 
-            this.bindingSource_NoHoras.DataSource = typeof(thumbnail.data_members.vw_ListaTramitesActivos);
+            this.bindingSource_NoHoras.DataSource = typeof(scanndoc.data_members.vw_ListaTramitesActivos);
             // 
             // frm_preferencias_tramitepordefecto
             // 

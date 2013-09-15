@@ -1,4 +1,4 @@
-﻿namespace thumbnail.forms
+﻿namespace scanndoc.forms
 {
     partial class ca_roles
     {
@@ -142,7 +142,7 @@
             // 
             // bindingsource
             // 
-            this.bindingsource.DataSource = typeof(thumbnail.data_members.ca_roles);
+            this.bindingsource.DataSource = typeof(scanndoc.data_members.ca_roles);
             this.bindingsource.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
             // 
             // splitContainer
@@ -286,7 +286,7 @@
             // modulosBindingSource
             // 
             this.modulosBindingSource.AllowNew = false;
-            this.modulosBindingSource.DataSource = typeof(thumbnail.data_members.pa_ModulosporIdRolResult);
+            this.modulosBindingSource.DataSource = typeof(scanndoc.data_members.pa_ModulosporIdRolResult);
             // 
             // btn_Editar
             // 
@@ -298,7 +298,7 @@
             this.btn_Editar.FlatAppearance.BorderSize = 0;
             this.btn_Editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkOliveGreen;
             this.btn_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Editar.Image = global::thumbnail.Icons16x16.edit;
+            this.btn_Editar.Image = global::scanndoc.Icons16x16.edit;
             this.btn_Editar.Location = new System.Drawing.Point(782, 5);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.Size = new System.Drawing.Size(22, 22);
@@ -317,7 +317,7 @@
             this.btn_cancelar.FlatAppearance.BorderSize = 0;
             this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancelar.Image = global::thumbnail.Icons16x16.cancel;
+            this.btn_cancelar.Image = global::scanndoc.Icons16x16.cancel;
             this.btn_cancelar.Location = new System.Drawing.Point(782, 33);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(22, 22);
@@ -336,7 +336,7 @@
             this.btn_Limpiar.FlatAppearance.BorderSize = 0;
             this.btn_Limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.btn_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Limpiar.Image = global::thumbnail.Icons16x16.app_window;
+            this.btn_Limpiar.Image = global::scanndoc.Icons16x16.app_window;
             this.btn_Limpiar.Location = new System.Drawing.Point(811, 5);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(22, 22);
@@ -355,7 +355,7 @@
             this.btn_Agregar.FlatAppearance.BorderSize = 0;
             this.btn_Agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Agregar.Image = global::thumbnail.Icons48x48.doc_plus;
+            this.btn_Agregar.Image = global::scanndoc.Icons48x48.doc_plus;
             this.btn_Agregar.Location = new System.Drawing.Point(712, 3);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(54, 54);
@@ -374,7 +374,7 @@
             this.btn_eliminar.FlatAppearance.BorderSize = 0;
             this.btn_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_eliminar.Image = global::thumbnail.Icons16x16.trash;
+            this.btn_eliminar.Image = global::scanndoc.Icons16x16.trash;
             this.btn_eliminar.Location = new System.Drawing.Point(811, 33);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(22, 22);
@@ -393,7 +393,7 @@
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cerrar.Image = global::scanndoc.Icons48x48.close;
             this.btn_cerrar.Location = new System.Drawing.Point(940, 3);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
@@ -412,7 +412,7 @@
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardar.Image = global::thumbnail.Icons48x48.save;
+            this.btn_guardar.Image = global::scanndoc.Icons48x48.save;
             this.btn_guardar.Location = new System.Drawing.Point(856, 3);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(54, 54);
@@ -481,7 +481,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Image = global::scanndoc.Icons48x48.clock;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
@@ -676,7 +676,7 @@
             this.btn_refrescar.FlatAppearance.BorderSize = 0;
             this.btn_refrescar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_refrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_refrescar.Image = global::thumbnail.Icons16x16.reload;
+            this.btn_refrescar.Image = global::scanndoc.Icons16x16.reload;
             this.btn_refrescar.Location = new System.Drawing.Point(972, 10);
             this.btn_refrescar.Name = "btn_refrescar";
             this.btn_refrescar.Size = new System.Drawing.Size(22, 22);
@@ -688,7 +688,7 @@
             // pbfind
             // 
             this.pbfind.BackColor = System.Drawing.Color.Transparent;
-            this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
+            this.pbfind.Image = global::scanndoc.Icons16x16.zoom;
             this.pbfind.Location = new System.Drawing.Point(563, 16);
             this.pbfind.Name = "pbfind";
             this.pbfind.Size = new System.Drawing.Size(16, 16);

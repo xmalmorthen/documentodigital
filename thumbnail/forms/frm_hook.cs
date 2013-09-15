@@ -6,10 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using thumbnail.data_members;
-using thumbnail.models;
+using scanndoc.data_members;
+using scanndoc.models;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class frm_hook : Form
     {
@@ -17,8 +17,8 @@ namespace thumbnail.forms
         int Tramite { get; set; }
         int Origen { get; set; }
 
-        public thumbnail.models.digital source = new thumbnail.models.digital(); //instancia a modelo principal para el guardado de la información
-        public List<thumbnail.models.digital> sources = new List<thumbnail.models.digital>();
+        public scanndoc.models.digital source = new scanndoc.models.digital(); //instancia a modelo principal para el guardado de la información
+        public List<scanndoc.models.digital> sources = new List<scanndoc.models.digital>();
 
         //constructor
         public frm_hook()
@@ -26,14 +26,14 @@ namespace thumbnail.forms
             InitializeComponent();            
         }
         //sobrecarga de constructor
-        public frm_hook(int tramite, int origen, List<thumbnail.models.digital> _sources)
+        public frm_hook(int tramite, int origen, List<scanndoc.models.digital> _sources)
         {
             InitializeComponent();
             this.inicializa(tramite, origen, _sources);
         }
 
         //funcion para inicializar variables
-        public void inicializa(int tramite, int origen, List<thumbnail.models.digital> _sources) {
+        public void inicializa(int tramite, int origen, List<scanndoc.models.digital> _sources) {
             formactivo = false;
 
             Tramite = tramite; //inicializar property tramite a partir de parametro
@@ -91,7 +91,7 @@ namespace thumbnail.forms
 
             if (!string.IsNullOrEmpty(clasificaciondocumento))
             {
-                List<thumbnail.models.digital> _source = (from query in sources
+                List<scanndoc.models.digital> _source = (from query in sources
                                                           where query.clasificaciondocumento == clasificaciondocumento
                                                           && query.enlazado == true
                                                           select query).ToList();

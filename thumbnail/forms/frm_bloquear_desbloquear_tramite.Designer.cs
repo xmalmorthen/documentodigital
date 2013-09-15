@@ -1,4 +1,4 @@
-﻿namespace thumbnail.forms
+﻿namespace scanndoc.forms
 {
     partial class frm_bloquear_desbloquear_tramite
     {
@@ -117,7 +117,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Image = global::scanndoc.Icons48x48.clock;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
@@ -169,7 +169,7 @@
             // 
             // BindingSource
             // 
-            this.BindingSource.DataSource = typeof(thumbnail.data_members.pa_ReferenciaExpedientesparaBloquearDesbloquearResult);
+            this.BindingSource.DataSource = typeof(scanndoc.data_members.pa_ReferenciaExpedientesparaBloquearDesbloquearResult);
             this.BindingSource.CurrentItemChanged += new System.EventHandler(this.BindingSource_CurrentItemChanged);
             // 
             // bindingNavigatorCountItem
@@ -402,7 +402,7 @@
             // 
             // tsmnuitemlstvwscannabrir
             // 
-            this.tsmnuitemlstvwscannabrir.Image = global::thumbnail.Icons16x16.view;
+            this.tsmnuitemlstvwscannabrir.Image = global::scanndoc.Icons16x16.view;
             this.tsmnuitemlstvwscannabrir.Name = "tsmnuitemlstvwscannabrir";
             this.tsmnuitemlstvwscannabrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.tsmnuitemlstvwscannabrir.Size = new System.Drawing.Size(253, 26);
@@ -416,7 +416,7 @@
             // 
             // opcmnubloquear
             // 
-            this.opcmnubloquear.Image = global::thumbnail.Icons16x16.loock;
+            this.opcmnubloquear.Image = global::scanndoc.Icons16x16.loock;
             this.opcmnubloquear.Name = "opcmnubloquear";
             this.opcmnubloquear.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
             this.opcmnubloquear.Size = new System.Drawing.Size(253, 26);
@@ -425,7 +425,7 @@
             // 
             // opcmnudesbloquear
             // 
-            this.opcmnudesbloquear.Image = global::thumbnail.Icons16x16.unloock;
+            this.opcmnudesbloquear.Image = global::scanndoc.Icons16x16.unloock;
             this.opcmnudesbloquear.Name = "opcmnudesbloquear";
             this.opcmnudesbloquear.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Insert)));
             this.opcmnudesbloquear.Size = new System.Drawing.Size(253, 26);
@@ -439,7 +439,7 @@
             // 
             // opcmnuplanbloqueo
             // 
-            this.opcmnuplanbloqueo.Image = global::thumbnail.Icons16x16.calendar;
+            this.opcmnuplanbloqueo.Image = global::scanndoc.Icons16x16.calendar;
             this.opcmnuplanbloqueo.Name = "opcmnuplanbloqueo";
             this.opcmnuplanbloqueo.Size = new System.Drawing.Size(253, 26);
             this.opcmnuplanbloqueo.Text = "Plan de bloqueo";
@@ -447,7 +447,7 @@
             // 
             // opcmnueliminarplan
             // 
-            this.opcmnueliminarplan.Image = global::thumbnail.Icons16x16.calendar_none_red;
+            this.opcmnueliminarplan.Image = global::scanndoc.Icons16x16.calendar_none_red;
             this.opcmnueliminarplan.Name = "opcmnueliminarplan";
             this.opcmnueliminarplan.Size = new System.Drawing.Size(253, 26);
             this.opcmnueliminarplan.Text = "Eliminar plan de bloqueo";
@@ -475,7 +475,7 @@
             this.btn_cancelar.FlatAppearance.BorderSize = 0;
             this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancelar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cancelar.Image = global::scanndoc.Icons48x48.close;
             this.btn_cancelar.Location = new System.Drawing.Point(776, 350);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(54, 54);
@@ -495,7 +495,7 @@
             this.btn_eliminaplan.FlatAppearance.BorderSize = 0;
             this.btn_eliminaplan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_eliminaplan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_eliminaplan.Image = global::thumbnail.Icons48x48.calendar_none_red;
+            this.btn_eliminaplan.Image = global::scanndoc.Icons48x48.calendar_none_red;
             this.btn_eliminaplan.Location = new System.Drawing.Point(776, 179);
             this.btn_eliminaplan.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
             this.btn_eliminaplan.Name = "btn_eliminaplan";
@@ -517,7 +517,7 @@
             this.btn_planbloqueo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_planbloqueo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btn_planbloqueo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_planbloqueo.Image = global::thumbnail.Icons48x48.calendar;
+            this.btn_planbloqueo.Image = global::scanndoc.Icons48x48.calendar;
             this.btn_planbloqueo.Location = new System.Drawing.Point(776, 179);
             this.btn_planbloqueo.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
             this.btn_planbloqueo.Name = "btn_planbloqueo";
@@ -539,7 +539,7 @@
             this.btn_desbloquear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_desbloquear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btn_desbloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_desbloquear.Image = global::thumbnail.Icons48x48.open;
+            this.btn_desbloquear.Image = global::scanndoc.Icons48x48.open;
             this.btn_desbloquear.Location = new System.Drawing.Point(776, 102);
             this.btn_desbloquear.Margin = new System.Windows.Forms.Padding(3, 15, 3, 15);
             this.btn_desbloquear.Name = "btn_desbloquear";
@@ -561,7 +561,7 @@
             this.btn_bloquear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_bloquear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btn_bloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_bloquear.Image = global::thumbnail.Icons48x48.closed;
+            this.btn_bloquear.Image = global::scanndoc.Icons48x48.closed;
             this.btn_bloquear.Location = new System.Drawing.Point(776, 102);
             this.btn_bloquear.Margin = new System.Windows.Forms.Padding(3, 15, 3, 15);
             this.btn_bloquear.Name = "btn_bloquear";
@@ -581,7 +581,7 @@
             this.btn_ver.FlatAppearance.BorderSize = 0;
             this.btn_ver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ver.Image = global::thumbnail.Icons48x48.eye;
+            this.btn_ver.Image = global::scanndoc.Icons48x48.eye;
             this.btn_ver.Location = new System.Drawing.Point(776, 35);
             this.btn_ver.Name = "btn_ver";
             this.btn_ver.Size = new System.Drawing.Size(54, 54);
@@ -694,7 +694,7 @@
             // 
             this.pbfind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbfind.BackColor = System.Drawing.Color.Transparent;
-            this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
+            this.pbfind.Image = global::scanndoc.Icons16x16.zoom;
             this.pbfind.Location = new System.Drawing.Point(751, 13);
             this.pbfind.Name = "pbfind";
             this.pbfind.Size = new System.Drawing.Size(16, 16);

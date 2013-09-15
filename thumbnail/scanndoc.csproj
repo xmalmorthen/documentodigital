@@ -8,8 +8,8 @@
     <ProjectGuid>{2F2D1FE2-64E6-4DF5-A1F1-BE32F20D0C76}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>thumbnail</RootNamespace>
-    <AssemblyName>thumbnail</AssemblyName>
+    <RootNamespace>scanndoc</RootNamespace>
+    <AssemblyName>scanndoc</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -49,7 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>thumbnail.Program</StartupObject>
+    <StartupObject>scanndoc.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>F4F7BFAC972DBDA3666A6AF537D8D3AB89788E87</ManifestCertificateThumbprint>

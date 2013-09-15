@@ -9,10 +9,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using thumbnail.Properties;
-using thumbnail.classes;
+using scanndoc.Properties;
+using scanndoc.classes;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class frmimgViewer : Form
     {

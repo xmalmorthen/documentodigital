@@ -6,10 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using thumbnail.data_members;
-using thumbnail.classes;
+using scanndoc.data_members;
+using scanndoc.classes;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class ca_usuarios : Form
     {
@@ -236,7 +236,7 @@ namespace thumbnail.forms
 
             try
             {
-                List<thumbnail.data_members.ca_usuarios> valores = (from query in lista
+                List<scanndoc.data_members.ca_usuarios> valores = (from query in lista
                                                                     where (query.Nombres + " " + query.Apellido1 + " " +query.Apellido2).ToString().ToLower().Contains(txt_buscar.Text.ToString().ToLower())
                                                                     select query).ToList();
                 bindingsource.DataSource = valores;
@@ -283,7 +283,7 @@ namespace thumbnail.forms
 
                             usuario.contrasenia = convert_md5.generate(usuario.contrasenia);
 
-                            thumbnail.data_members.Bd_Exp_TransportesDataContext Bd = new Bd_Exp_TransportesDataContext();
+                            scanndoc.data_members.Bd_Exp_TransportesDataContext Bd = new Bd_Exp_TransportesDataContext();
                             data_members.pa_CreateLoginandUserResult result = Bd.pa_CreateLoginandUser(usuario.usuario, usuario.contrasenia).Single();
                             Bd.Dispose();
                             
@@ -385,7 +385,7 @@ namespace thumbnail.forms
                         {
                             usuario.contrasenia = convert_md5.generate(usuario.contrasenia);
 
-                            thumbnail.data_members.Bd_Exp_TransportesDataContext Bd = new Bd_Exp_TransportesDataContext();
+                            scanndoc.data_members.Bd_Exp_TransportesDataContext Bd = new Bd_Exp_TransportesDataContext();
                             data_members.pa_ModifyPassUserSQLResult result = Bd.pa_ModifyPassUserSQL(usuario.usuario, usuario.contrasenia).Single();
                             Bd.Dispose();
 
@@ -471,7 +471,7 @@ namespace thumbnail.forms
                 {
                     usuario = (data_members.ca_usuarios)bindingsource.Current;
 
-                    thumbnail.data_members.Bd_Exp_TransportesDataContext Bd = new Bd_Exp_TransportesDataContext();
+                    scanndoc.data_members.Bd_Exp_TransportesDataContext Bd = new Bd_Exp_TransportesDataContext();
                     data_members.pa_DeleteUserSQLResult result = Bd.pa_DeleteUserSQL(usuario.usuario).Single();
                     Bd.Dispose();
 

@@ -1,4 +1,4 @@
-﻿namespace thumbnail.forms
+﻿namespace scanndoc.forms
 {
     partial class frm_abrir_tramite
     {
@@ -129,7 +129,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Image = global::scanndoc.Icons48x48.clock;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
@@ -181,7 +181,7 @@
             // 
             // pa_ReferenciaExpedientesporValorTrazableResultBindingSource
             // 
-            this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = typeof(thumbnail.data_members.pa_ReferenciaExpedientesporValorTrazableResult);
+            this.pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = typeof(scanndoc.data_members.pa_ReferenciaExpedientesporValorTrazableResult);
             // 
             // bindingNavigatorCountItem
             // 
@@ -408,7 +408,7 @@
             this.btn_aceptar.FlatAppearance.BorderSize = 0;
             this.btn_aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_aceptar.Image = global::thumbnail.Icons48x48.checkbox_checked;
+            this.btn_aceptar.Image = global::scanndoc.Icons48x48.checkbox_checked;
             this.btn_aceptar.Location = new System.Drawing.Point(707, 350);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(54, 54);
@@ -428,7 +428,7 @@
             this.btn_cancelar.FlatAppearance.BorderSize = 0;
             this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancelar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cancelar.Image = global::scanndoc.Icons48x48.close;
             this.btn_cancelar.Location = new System.Drawing.Point(767, 350);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(54, 54);
@@ -447,7 +447,7 @@
             this.btn_buscar.FlatAppearance.BorderSize = 0;
             this.btn_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscar.Image = global::thumbnail.Icons48x48.find;
+            this.btn_buscar.Image = global::scanndoc.Icons48x48.find;
             this.btn_buscar.Location = new System.Drawing.Point(767, 68);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(54, 54);
@@ -466,7 +466,7 @@
             this.btn_limpiar.FlatAppearance.BorderSize = 0;
             this.btn_limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_limpiar.Image = global::thumbnail.Icons16x16.app_window;
+            this.btn_limpiar.Image = global::scanndoc.Icons16x16.app_window;
             this.btn_limpiar.Location = new System.Drawing.Point(739, 100);
             this.btn_limpiar.Name = "btn_limpiar";
             this.btn_limpiar.Size = new System.Drawing.Size(22, 22);

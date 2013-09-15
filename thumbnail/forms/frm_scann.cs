@@ -7,17 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using thumbnail.Properties;
+using scanndoc.Properties;
 using System.Configuration;
-using thumbnail.data_members;
+using scanndoc.data_members;
 using DevExpress.XtraEditors;
-using thumbnail.models;
+using scanndoc.models;
 using DevExpress.XtraGrid.Views.Grid;
-using thumbnail.classes;
+using scanndoc.classes;
 using System.Collections;
 using System.Xml;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class frm_scann : Form
     {
@@ -560,12 +560,12 @@ namespace thumbnail.forms
              * el id correspondiente a la fila de la tabla de configuraciones se obtiene 
              * del valor Config_IdTramiteporDefault del archivo de configuraciones general del proyecto
              */
-            thumbnail.data_members.tbl_configuraciones Configs = Program.Bd_Exp_Transportes.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault);
+            scanndoc.data_members.tbl_configuraciones Configs = Program.Bd_Exp_Transportes.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault);
             this.lookUpEdit_Tramites.EditValue = int.Parse(Configs.Valor); //establecer el tramite a seleccionar
         }
 
         //combo de tramites al cambiar item
-        private thumbnail.data_members.vw_ListaTramitesActivos lookUpEdit_Tramites_selected;
+        private scanndoc.data_members.vw_ListaTramitesActivos lookUpEdit_Tramites_selected;
         private void lookUpEdit_Tramites_EditValueChanged(object sender, EventArgs e)
         {
             try
@@ -914,8 +914,8 @@ namespace thumbnail.forms
             }
         }
 
-        public List<thumbnail.models.digital> sources_digital = new List<thumbnail.models.digital>();
-        public thumbnail.models.digital source_digital = new thumbnail.models.digital(); //instancia a modelo principal para el guardado de la información
+        public List<scanndoc.models.digital> sources_digital = new List<scanndoc.models.digital>();
+        public scanndoc.models.digital source_digital = new scanndoc.models.digital(); //instancia a modelo principal para el guardado de la información
         frm_hook frm = new frm_hook(); //inicializar formulario
         private bool hocking()
         {
@@ -930,12 +930,12 @@ namespace thumbnail.forms
             if (result == DialogResult.OK)
             {
 
-                List<thumbnail.models.digital> _source = (from query in sources_digital
+                List<scanndoc.models.digital> _source = (from query in sources_digital
                                                           where query.clasificaciondocumento == frm.source.clasificaciondocumento
                                                           && query.enlazado == true
                                                           select query).ToList();
                 if (_source.Count > 0)
-                    foreach (thumbnail.models.digital item in _source)
+                    foreach (scanndoc.models.digital item in _source)
                     {
                         item.valor_trazable = frm.source.valor_trazable; //se asigna el valor trazable retornado de la forma al colector principal
                         item.editado = true;
@@ -1110,11 +1110,11 @@ namespace thumbnail.forms
             if (!hocking()) return;
             foreach (ListViewItem item in Collection)
             {
-                thumbnail.models.digital source = new thumbnail.models.digital();
+                scanndoc.models.digital source = new scanndoc.models.digital();
 
                 if (Form_Mode == form_mode.Add)
                 {
-                    source = new thumbnail.models.digital();
+                    source = new scanndoc.models.digital();
 
                     Image img = Image.FromFile(((tagstruct)item.Tag).path_image.ToString());
                     source.imagen = procesa_imagen.toByteArray(img); //asignar imagen al colector principal
@@ -1144,7 +1144,7 @@ namespace thumbnail.forms
                     }
                     else //si se trata de una imagen nueva opr insertar al tramite en edición
                     {
-                        source = new thumbnail.models.digital();
+                        source = new scanndoc.models.digital();
 
                         Image img = Image.FromFile(((tagstruct)item.Tag).path_image.ToString());
                         source.imagen = procesa_imagen.toByteArray(img); //asignar imagen al colector principal
@@ -1595,7 +1595,7 @@ namespace thumbnail.forms
 
             foreach (data_members.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult current in imagenesdigitalregistradas)
             {
-                thumbnail.models.digital source = new thumbnail.models.digital();
+                scanndoc.models.digital source = new scanndoc.models.digital();
 
                 Image img = procesa_imagen.ByteArrayToImage(current.thumbnail.ToArray());
                 source.thumbnail = current.thumbnail.ToArray();

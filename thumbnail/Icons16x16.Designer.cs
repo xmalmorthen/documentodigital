@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace thumbnail {
+namespace scanndoc {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace thumbnail {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("thumbnail.Icons16x16", typeof(Icons16x16).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("scanndoc.Icons16x16", typeof(Icons16x16).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

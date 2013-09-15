@@ -1,4 +1,4 @@
-﻿namespace thumbnail.forms
+﻿namespace scanndoc.forms
 {
     partial class frm_deshacer_tramite_view_openimage
     {
@@ -57,7 +57,7 @@
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cerrar.Image = global::scanndoc.Icons48x48.close;
             this.btn_cerrar.Location = new System.Drawing.Point(718, 7);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
@@ -130,7 +130,7 @@
             this.btn_ajuste.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ajuste.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_ajuste.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ajuste.Image = global::thumbnail.Icons32x32.fit;
+            this.btn_ajuste.Image = global::scanndoc.Icons32x32.fit;
             this.btn_ajuste.Location = new System.Drawing.Point(140, 7);
             this.btn_ajuste.Name = "btn_ajuste";
             this.btn_ajuste.Size = new System.Drawing.Size(40, 40);
@@ -147,7 +147,7 @@
             this.btn_tamaniooriginal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_tamaniooriginal.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_tamaniooriginal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_tamaniooriginal.Image = global::thumbnail.Icons32x32.zoomorigin;
+            this.btn_tamaniooriginal.Image = global::scanndoc.Icons32x32.zoomorigin;
             this.btn_tamaniooriginal.Location = new System.Drawing.Point(96, 7);
             this.btn_tamaniooriginal.Name = "btn_tamaniooriginal";
             this.btn_tamaniooriginal.Size = new System.Drawing.Size(40, 40);
@@ -164,7 +164,7 @@
             this.btn_zommmenos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_zommmenos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_zommmenos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_zommmenos.Image = global::thumbnail.Icons32x32.zoomout;
+            this.btn_zommmenos.Image = global::scanndoc.Icons32x32.zoomout;
             this.btn_zommmenos.Location = new System.Drawing.Point(8, 7);
             this.btn_zommmenos.Name = "btn_zommmenos";
             this.btn_zommmenos.Size = new System.Drawing.Size(40, 40);
@@ -181,7 +181,7 @@
             this.btn_zoommas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_zoommas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_zoommas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_zoommas.Image = global::thumbnail.Icons32x32.zoomin;
+            this.btn_zoommas.Image = global::scanndoc.Icons32x32.zoomin;
             this.btn_zoommas.Location = new System.Drawing.Point(52, 7);
             this.btn_zoommas.Name = "btn_zoommas";
             this.btn_zoommas.Size = new System.Drawing.Size(40, 40);

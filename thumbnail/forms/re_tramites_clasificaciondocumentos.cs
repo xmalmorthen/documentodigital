@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using thumbnail.data_members;
+using scanndoc.data_members;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class re_tramites_clasificaciondocumentos : Form
     {
@@ -157,7 +157,7 @@ namespace thumbnail.forms
 
             try
             {
-                List<thumbnail.data_members.ca_tramites> valores = (from query in lista_tramites
+                List<scanndoc.data_members.ca_tramites> valores = (from query in lista_tramites
                                                                     where query.Descripcion.ToString().ToLower().Contains(txt_buscar.Text.ToString().ToLower())
                                                                     select query).ToList();
                 bindingsource_ca_tramites.DataSource = valores;
@@ -248,7 +248,7 @@ namespace thumbnail.forms
 
             try
             {
-                List<thumbnail.data_members.pa_ClasificacionDocumentosporTramiteResult> valores = (from query in documentosclasificados
+                List<scanndoc.data_members.pa_ClasificacionDocumentosporTramiteResult> valores = (from query in documentosclasificados
                                                                                                    where query.Descripcion.ToString().ToLower().Contains(txt_buscarcampotrazable.Text.ToString().ToLower())
                                                                                                    select query).ToList();
                 bindingsource.DataSource = valores;

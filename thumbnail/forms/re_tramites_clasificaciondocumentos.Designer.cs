@@ -1,4 +1,4 @@
-﻿namespace thumbnail.forms
+﻿namespace scanndoc.forms
 {
     partial class re_tramites_clasificaciondocumentos
     {
@@ -207,7 +207,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::thumbnail.Icons16x16.zoom;
+            this.pictureBox2.Image = global::scanndoc.Icons16x16.zoom;
             this.pictureBox2.Location = new System.Drawing.Point(946, 103);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(16, 16);
@@ -239,7 +239,7 @@
             this.btn_EliminarCampo.FlatAppearance.BorderSize = 0;
             this.btn_EliminarCampo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.btn_EliminarCampo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EliminarCampo.Image = global::thumbnail.Icons16x16.trash;
+            this.btn_EliminarCampo.Image = global::scanndoc.Icons16x16.trash;
             this.btn_EliminarCampo.Location = new System.Drawing.Point(972, 359);
             this.btn_EliminarCampo.Name = "btn_EliminarCampo";
             this.btn_EliminarCampo.Size = new System.Drawing.Size(22, 22);
@@ -278,7 +278,7 @@
             // 
             // bindingsource
             // 
-            this.bindingsource.DataSource = typeof(thumbnail.data_members.pa_ClasificacionDocumentosporTramiteResult);
+            this.bindingsource.DataSource = typeof(scanndoc.data_members.pa_ClasificacionDocumentosporTramiteResult);
             // 
             // toolStripLabel1
             // 
@@ -451,7 +451,7 @@
             // 
             // bindingsource_ca_clasificaciondocumentos
             // 
-            this.bindingsource_ca_clasificaciondocumentos.DataSource = typeof(thumbnail.data_members.pa_ClasificacionDocumentosNoEnlazadosporTramiteResult);
+            this.bindingsource_ca_clasificaciondocumentos.DataSource = typeof(scanndoc.data_members.pa_ClasificacionDocumentosNoEnlazadosporTramiteResult);
             // 
             // gridView1
             // 
@@ -492,7 +492,7 @@
             this.btn_Agregar.FlatAppearance.BorderSize = 0;
             this.btn_Agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Agregar.Image = global::thumbnail.Icons48x48.doc_plus;
+            this.btn_Agregar.Image = global::scanndoc.Icons48x48.doc_plus;
             this.btn_Agregar.Location = new System.Drawing.Point(851, 16);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(54, 54);
@@ -511,7 +511,7 @@
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cerrar.Image = global::scanndoc.Icons48x48.close;
             this.btn_cerrar.Location = new System.Drawing.Point(941, 16);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
@@ -563,7 +563,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Image = global::scanndoc.Icons48x48.clock;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
@@ -616,7 +616,7 @@
             // bindingsource_ca_tramites
             // 
             this.bindingsource_ca_tramites.AllowNew = false;
-            this.bindingsource_ca_tramites.DataSource = typeof(thumbnail.data_members.ca_tramites);
+            this.bindingsource_ca_tramites.DataSource = typeof(scanndoc.data_members.ca_tramites);
             this.bindingsource_ca_tramites.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
             // 
             // toolStripLabel2
@@ -836,7 +836,7 @@
             this.btn_refrescar.FlatAppearance.BorderSize = 0;
             this.btn_refrescar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_refrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_refrescar.Image = global::thumbnail.Icons16x16.reload;
+            this.btn_refrescar.Image = global::scanndoc.Icons16x16.reload;
             this.btn_refrescar.Location = new System.Drawing.Point(972, 10);
             this.btn_refrescar.Name = "btn_refrescar";
             this.btn_refrescar.Size = new System.Drawing.Size(22, 22);
@@ -848,7 +848,7 @@
             // pbfind
             // 
             this.pbfind.BackColor = System.Drawing.Color.Transparent;
-            this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
+            this.pbfind.Image = global::scanndoc.Icons16x16.zoom;
             this.pbfind.Location = new System.Drawing.Point(563, 16);
             this.pbfind.Name = "pbfind";
             this.pbfind.Size = new System.Drawing.Size(16, 16);

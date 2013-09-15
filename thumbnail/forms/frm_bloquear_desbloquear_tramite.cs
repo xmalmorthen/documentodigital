@@ -6,12 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using thumbnail.classes;
+using scanndoc.classes;
 using System.Collections;
-using thumbnail.models;
-using thumbnail.Properties;
+using scanndoc.models;
+using scanndoc.Properties;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class frm_bloquear_desbloquear_tramite : Form
     {
@@ -246,7 +246,7 @@ namespace thumbnail.forms
 
             try
             {
-                List<thumbnail.data_members.pa_ReferenciaExpedientesparaBloquearDesbloquearResult> valores = (from query in tramites
+                List<scanndoc.data_members.pa_ReferenciaExpedientesparaBloquearDesbloquearResult> valores = (from query in tramites
                                                                                  where query.valor_trazable.ToString().ToLower().Contains(txt_buscar.Text.ToString().ToLower())
                                                                                  select query).ToList();
                 BindingSource.DataSource = valores;

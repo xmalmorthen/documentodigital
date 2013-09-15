@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using thumbnail.data_members;
+using scanndoc.data_members;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class frm_tramites_view : Form
     {

@@ -1,5 +1,5 @@
-﻿using thumbnail.data_members;
-namespace thumbnail.forms
+﻿using scanndoc.data_members;
+namespace scanndoc.forms
 {
     partial class frm_scann
     {
@@ -203,7 +203,7 @@ namespace thumbnail.forms
             // 
             // tsmnuitemlstvwenlaceabrir
             // 
-            this.tsmnuitemlstvwenlaceabrir.Image = global::thumbnail.Icons16x16.view;
+            this.tsmnuitemlstvwenlaceabrir.Image = global::scanndoc.Icons16x16.view;
             this.tsmnuitemlstvwenlaceabrir.Name = "tsmnuitemlstvwenlaceabrir";
             this.tsmnuitemlstvwenlaceabrir.Size = new System.Drawing.Size(211, 26);
             this.tsmnuitemlstvwenlaceabrir.Text = "Abrir";
@@ -211,7 +211,7 @@ namespace thumbnail.forms
             // 
             // tsmnuitemlstvwenlaceeliminar
             // 
-            this.tsmnuitemlstvwenlaceeliminar.Image = global::thumbnail.Icons16x16.trash;
+            this.tsmnuitemlstvwenlaceeliminar.Image = global::scanndoc.Icons16x16.trash;
             this.tsmnuitemlstvwenlaceeliminar.Name = "tsmnuitemlstvwenlaceeliminar";
             this.tsmnuitemlstvwenlaceeliminar.Size = new System.Drawing.Size(211, 26);
             this.tsmnuitemlstvwenlaceeliminar.Text = "Eliminar";
@@ -228,7 +228,7 @@ namespace thumbnail.forms
             this.tsmnuitemlstvwenlacedesenlazar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmnuitemlstvwenlacedesenlazarseleccionado,
             this.tsmnuitemlstvwenlacedesenlazartodo});
-            this.tsmnuitemlstvwenlacedesenlazar.Image = global::thumbnail.Icons16x16.desenlazar;
+            this.tsmnuitemlstvwenlacedesenlazar.Image = global::scanndoc.Icons16x16.desenlazar;
             this.tsmnuitemlstvwenlacedesenlazar.Name = "tsmnuitemlstvwenlacedesenlazar";
             this.tsmnuitemlstvwenlacedesenlazar.Size = new System.Drawing.Size(211, 26);
             this.tsmnuitemlstvwenlacedesenlazar.Text = "Desenlazar";
@@ -290,7 +290,7 @@ namespace thumbnail.forms
             // 
             // tsmnuitemlstvwscannabrir
             // 
-            this.tsmnuitemlstvwscannabrir.Image = global::thumbnail.Icons16x16.view;
+            this.tsmnuitemlstvwscannabrir.Image = global::scanndoc.Icons16x16.view;
             this.tsmnuitemlstvwscannabrir.Name = "tsmnuitemlstvwscannabrir";
             this.tsmnuitemlstvwscannabrir.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.tsmnuitemlstvwscannabrir.Size = new System.Drawing.Size(285, 26);
@@ -299,7 +299,7 @@ namespace thumbnail.forms
             // 
             // tsmnuitemlstvwscanneliminar
             // 
-            this.tsmnuitemlstvwscanneliminar.Image = global::thumbnail.Icons16x16.trash;
+            this.tsmnuitemlstvwscanneliminar.Image = global::scanndoc.Icons16x16.trash;
             this.tsmnuitemlstvwscanneliminar.Name = "tsmnuitemlstvwscanneliminar";
             this.tsmnuitemlstvwscanneliminar.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Delete)));
             this.tsmnuitemlstvwscanneliminar.Size = new System.Drawing.Size(285, 26);
@@ -403,7 +403,7 @@ namespace thumbnail.forms
             this.btn_bloquear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_bloquear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btn_bloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_bloquear.Image = global::thumbnail.Icons48x48.closed;
+            this.btn_bloquear.Image = global::scanndoc.Icons48x48.closed;
             this.btn_bloquear.Location = new System.Drawing.Point(657, 3);
             this.btn_bloquear.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
             this.btn_bloquear.Name = "btn_bloquear";
@@ -424,7 +424,7 @@ namespace thumbnail.forms
             this.btn_nuevo.FlatAppearance.BorderSize = 0;
             this.btn_nuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nuevo.Image = global::thumbnail.Icons16x16.doc_new;
+            this.btn_nuevo.Image = global::scanndoc.Icons16x16.doc_new;
             this.btn_nuevo.Location = new System.Drawing.Point(758, 7);
             this.btn_nuevo.Name = "btn_nuevo";
             this.btn_nuevo.Size = new System.Drawing.Size(22, 22);
@@ -443,7 +443,7 @@ namespace thumbnail.forms
             this.btn_editar.FlatAppearance.BorderSize = 0;
             this.btn_editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_editar.Image = global::thumbnail.Icons16x16.edit;
+            this.btn_editar.Image = global::scanndoc.Icons16x16.edit;
             this.btn_editar.Location = new System.Drawing.Point(760, 35);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Size = new System.Drawing.Size(22, 22);
@@ -461,7 +461,7 @@ namespace thumbnail.forms
             this.btn_config_scann.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_config_scann.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_config_scann.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_config_scann.Image = global::thumbnail.Icons16x16.scanner;
+            this.btn_config_scann.Image = global::scanndoc.Icons16x16.scanner;
             this.btn_config_scann.Location = new System.Drawing.Point(713, 275);
             this.btn_config_scann.Name = "btn_config_scann";
             this.btn_config_scann.Size = new System.Drawing.Size(24, 24);
@@ -480,7 +480,7 @@ namespace thumbnail.forms
             this.btn_limpiarcontroles.FlatAppearance.BorderSize = 0;
             this.btn_limpiarcontroles.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
             this.btn_limpiarcontroles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_limpiarcontroles.Image = global::thumbnail.Icons48x48.clear_get;
+            this.btn_limpiarcontroles.Image = global::scanndoc.Icons48x48.clear_get;
             this.btn_limpiarcontroles.Location = new System.Drawing.Point(946, 275);
             this.btn_limpiarcontroles.Name = "btn_limpiarcontroles";
             this.btn_limpiarcontroles.Size = new System.Drawing.Size(54, 54);
@@ -499,7 +499,7 @@ namespace thumbnail.forms
             this.btn_abririmagen.FlatAppearance.BorderSize = 0;
             this.btn_abririmagen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_abririmagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_abririmagen.Image = global::thumbnail.Icons48x48.folder_open;
+            this.btn_abririmagen.Image = global::scanndoc.Icons48x48.folder_open;
             this.btn_abririmagen.Location = new System.Drawing.Point(815, 275);
             this.btn_abririmagen.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
             this.btn_abririmagen.Name = "btn_abririmagen";
@@ -519,7 +519,7 @@ namespace thumbnail.forms
             this.btn_scanear.FlatAppearance.BorderSize = 0;
             this.btn_scanear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btn_scanear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_scanear.Image = global::thumbnail.Icons48x48.get;
+            this.btn_scanear.Image = global::scanndoc.Icons48x48.get;
             this.btn_scanear.Location = new System.Drawing.Point(743, 275);
             this.btn_scanear.Name = "btn_scanear";
             this.btn_scanear.Size = new System.Drawing.Size(54, 54);
@@ -642,7 +642,7 @@ namespace thumbnail.forms
             this.btn_mostrarlistadedocumentos.FlatAppearance.BorderSize = 0;
             this.btn_mostrarlistadedocumentos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btn_mostrarlistadedocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mostrarlistadedocumentos.Image = global::thumbnail.Icons48x48.close;
+            this.btn_mostrarlistadedocumentos.Image = global::scanndoc.Icons48x48.close;
             this.btn_mostrarlistadedocumentos.Location = new System.Drawing.Point(946, 3);
             this.btn_mostrarlistadedocumentos.Name = "btn_mostrarlistadedocumentos";
             this.btn_mostrarlistadedocumentos.Size = new System.Drawing.Size(54, 54);
@@ -661,7 +661,7 @@ namespace thumbnail.forms
             this.btn_limpiar.FlatAppearance.BorderSize = 0;
             this.btn_limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
             this.btn_limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_limpiar.Image = global::thumbnail.Icons48x48.clear;
+            this.btn_limpiar.Image = global::scanndoc.Icons48x48.clear;
             this.btn_limpiar.Location = new System.Drawing.Point(874, 3);
             this.btn_limpiar.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
             this.btn_limpiar.Name = "btn_limpiar";
@@ -681,7 +681,7 @@ namespace thumbnail.forms
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardar.Image = global::thumbnail.Icons48x48.save;
+            this.btn_guardar.Image = global::scanndoc.Icons48x48.save;
             this.btn_guardar.Location = new System.Drawing.Point(802, 3);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(54, 54);
@@ -700,7 +700,7 @@ namespace thumbnail.forms
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::thumbnail.Icons16x16.info;
+            this.button1.Image = global::scanndoc.Icons16x16.info;
             this.button1.Location = new System.Drawing.Point(505, 297);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(22, 22);
@@ -882,7 +882,7 @@ namespace thumbnail.forms
             // 
             // BindingSource_CamposTrazables
             // 
-            this.BindingSource_CamposTrazables.DataSource = typeof(thumbnail.data_members.pa_CampostrazablesActivosporExpedienteResult);
+            this.BindingSource_CamposTrazables.DataSource = typeof(scanndoc.data_members.pa_CampostrazablesActivosporExpedienteResult);
             // 
             // tbctrl
             // 
@@ -1387,7 +1387,7 @@ namespace thumbnail.forms
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Image = global::scanndoc.Icons48x48.clock;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
@@ -1453,7 +1453,7 @@ namespace thumbnail.forms
             // 
             // BindingSource_ListaTramites
             // 
-            this.BindingSource_ListaTramites.DataSource = typeof(thumbnail.data_members.vw_ListaTramitesActivos);
+            this.BindingSource_ListaTramites.DataSource = typeof(scanndoc.data_members.vw_ListaTramitesActivos);
             this.BindingSource_ListaTramites.CurrentItemChanged += new System.EventHandler(this.BindingSource_ListaTramites_CurrentItemChanged);
             // 
             // gridView1

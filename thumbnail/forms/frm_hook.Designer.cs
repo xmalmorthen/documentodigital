@@ -1,4 +1,4 @@
-﻿namespace thumbnail.forms
+﻿namespace scanndoc.forms
 {
     partial class frm_hook
     {
@@ -144,7 +144,7 @@
             // 
             // bindingsource
             // 
-            this.bindingsource.DataSource = typeof(thumbnail.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult);
+            this.bindingsource.DataSource = typeof(scanndoc.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult);
             // 
             // lookUpEditClasificacionDocumentoView
             // 
@@ -232,7 +232,7 @@
             this.btn_aceptar.FlatAppearance.BorderSize = 0;
             this.btn_aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_aceptar.Image = global::thumbnail.Icons48x48.checkbox_checked;
+            this.btn_aceptar.Image = global::scanndoc.Icons48x48.checkbox_checked;
             this.btn_aceptar.Location = new System.Drawing.Point(566, 153);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(54, 54);
@@ -252,7 +252,7 @@
             this.btn_cancelar.FlatAppearance.BorderSize = 0;
             this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancelar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cancelar.Image = global::scanndoc.Icons48x48.close;
             this.btn_cancelar.Location = new System.Drawing.Point(635, 153);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(54, 54);

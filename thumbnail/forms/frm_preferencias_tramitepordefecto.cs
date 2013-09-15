@@ -6,12 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using thumbnail.classes;
+using scanndoc.classes;
 using System.Collections;
-using thumbnail.models;
-using thumbnail.Properties;
+using scanndoc.models;
+using scanndoc.Properties;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class frm_preferencias_tramitepordefecto : Form
     {
@@ -99,7 +99,7 @@ namespace thumbnail.forms
 
             try
             {
-                List<thumbnail.data_members.vw_ListaTramitesActivos> valores = (from query in tramites
+                List<scanndoc.data_members.vw_ListaTramitesActivos> valores = (from query in tramites
                                                                                  where query.Nombre_tramite.ToString().ToLower().Contains(txt_buscar.Text.ToString().ToLower())
                                                                                  select query).ToList();
                 BindingSource.DataSource = valores;

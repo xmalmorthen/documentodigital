@@ -1,4 +1,4 @@
-﻿namespace thumbnail.forms
+﻿namespace scanndoc.forms
 {
     partial class re_clasificaciondocumentos_documentos
     {
@@ -264,7 +264,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::thumbnail.Icons16x16.reload;
+            this.button1.Image = global::scanndoc.Icons16x16.reload;
             this.button1.Location = new System.Drawing.Point(972, 331);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(22, 22);
@@ -303,7 +303,7 @@
             // 
             // bindingsource_origen
             // 
-            this.bindingsource_origen.DataSource = typeof(thumbnail.data_members.ca_origenes);
+            this.bindingsource_origen.DataSource = typeof(scanndoc.data_members.ca_origenes);
             // 
             // gridView2
             // 
@@ -337,7 +337,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::thumbnail.Icons16x16.zoom;
+            this.pictureBox2.Image = global::scanndoc.Icons16x16.zoom;
             this.pictureBox2.Location = new System.Drawing.Point(946, 89);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(16, 16);
@@ -369,7 +369,7 @@
             this.btn_EliminarDocumento.FlatAppearance.BorderSize = 0;
             this.btn_EliminarDocumento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.btn_EliminarDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EliminarDocumento.Image = global::thumbnail.Icons16x16.trash;
+            this.btn_EliminarDocumento.Image = global::scanndoc.Icons16x16.trash;
             this.btn_EliminarDocumento.Location = new System.Drawing.Point(972, 359);
             this.btn_EliminarDocumento.Name = "btn_EliminarDocumento";
             this.btn_EliminarDocumento.Size = new System.Drawing.Size(22, 22);
@@ -408,7 +408,7 @@
             // 
             // bindingsource
             // 
-            this.bindingsource.DataSource = typeof(thumbnail.data_members.pa_DocumentosporClasificacionDocumentoResult);
+            this.bindingsource.DataSource = typeof(scanndoc.data_members.pa_DocumentosporClasificacionDocumentoResult);
             this.bindingsource.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged_1);
             // 
             // toolStripLabel1
@@ -762,7 +762,7 @@
             // 
             // bindingSource_documentos
             // 
-            this.bindingSource_documentos.DataSource = typeof(thumbnail.data_members.pa_DocumentosNoEnlazadosporClasificacionDocumentoResult);
+            this.bindingSource_documentos.DataSource = typeof(scanndoc.data_members.pa_DocumentosNoEnlazadosporClasificacionDocumentoResult);
             // 
             // gridView1
             // 
@@ -884,7 +884,7 @@
             this.btn_Agregar.FlatAppearance.BorderSize = 0;
             this.btn_Agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Agregar.Image = global::thumbnail.Icons48x48.doc_plus;
+            this.btn_Agregar.Image = global::scanndoc.Icons48x48.doc_plus;
             this.btn_Agregar.Location = new System.Drawing.Point(851, 16);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(54, 54);
@@ -903,7 +903,7 @@
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Image = global::thumbnail.Icons48x48.close;
+            this.btn_cerrar.Image = global::scanndoc.Icons48x48.close;
             this.btn_cerrar.Location = new System.Drawing.Point(941, 16);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
@@ -955,7 +955,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Image = global::scanndoc.Icons48x48.clock;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
@@ -1007,7 +1007,7 @@
             // 
             // bindingsource_ca_clasificaciondocumentos
             // 
-            this.bindingsource_ca_clasificaciondocumentos.DataSource = typeof(thumbnail.data_members.ca_clasificaciontramites);
+            this.bindingsource_ca_clasificaciondocumentos.DataSource = typeof(scanndoc.data_members.ca_clasificaciontramites);
             this.bindingsource_ca_clasificaciondocumentos.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
             // 
             // toolStripLabel2
@@ -1155,7 +1155,7 @@
             this.btn_refrescar.FlatAppearance.BorderSize = 0;
             this.btn_refrescar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_refrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_refrescar.Image = global::thumbnail.Icons16x16.reload;
+            this.btn_refrescar.Image = global::scanndoc.Icons16x16.reload;
             this.btn_refrescar.Location = new System.Drawing.Point(972, 10);
             this.btn_refrescar.Name = "btn_refrescar";
             this.btn_refrescar.Size = new System.Drawing.Size(22, 22);
@@ -1167,7 +1167,7 @@
             // pbfind
             // 
             this.pbfind.BackColor = System.Drawing.Color.Transparent;
-            this.pbfind.Image = global::thumbnail.Icons16x16.zoom;
+            this.pbfind.Image = global::scanndoc.Icons16x16.zoom;
             this.pbfind.Location = new System.Drawing.Point(563, 16);
             this.pbfind.Name = "pbfind";
             this.pbfind.Size = new System.Drawing.Size(16, 16);

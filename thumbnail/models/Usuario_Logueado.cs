@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using thumbnail.data_members;
+using scanndoc.data_members;
 
-namespace thumbnail.models
+namespace scanndoc.models
 {
     public static class Usuario
     {

@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using thumbnail.classes;
+using scanndoc.classes;
 using System.Collections;
-using thumbnail.models;
+using scanndoc.models;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class frm_deshacer_tramite : Form
     {

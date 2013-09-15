@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class frm_listadocumentosorden : Form
     {

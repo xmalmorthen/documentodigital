@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using thumbnail.data_members;
+using scanndoc.data_members;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class re_expedientes_campostrazables : Form
     {
@@ -161,7 +161,7 @@ namespace thumbnail.forms
 
             try
             {
-                List<thumbnail.data_members.ca_expedientes> valores = (from query in lista_expedientes
+                List<scanndoc.data_members.ca_expedientes> valores = (from query in lista_expedientes
                                                                     where query.Descripcion.ToString().ToLower().Contains(txt_buscar.Text.ToString().ToLower())
                                                                     select query).ToList();
                 bindingsource_ca_expedientes.DataSource = valores;
@@ -317,7 +317,7 @@ namespace thumbnail.forms
 
             try
             {
-                List<thumbnail.data_members.pa_CampostrazablesporExpedienteResult> valores = (from query in campostrazables
+                List<scanndoc.data_members.pa_CampostrazablesporExpedienteResult> valores = (from query in campostrazables
                                                                                               where query.Nombre.ToString().ToLower().Contains(txt_buscarcampotrazable.Text.ToString().ToLower())
                                                                                               select query).ToList();
                 bindingsource.DataSource = valores;

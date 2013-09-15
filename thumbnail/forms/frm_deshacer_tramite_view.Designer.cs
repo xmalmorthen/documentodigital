@@ -1,5 +1,5 @@
-﻿using thumbnail.data_members;
-namespace thumbnail.forms
+﻿using scanndoc.data_members;
+namespace scanndoc.forms
 {
     partial class frm_deshacer_tramite_view
     {
@@ -105,7 +105,7 @@ namespace thumbnail.forms
             // 
             // tsmnuitemlstvwenlaceabrir
             // 
-            this.tsmnuitemlstvwenlaceabrir.Image = global::thumbnail.Icons16x16.view;
+            this.tsmnuitemlstvwenlaceabrir.Image = global::scanndoc.Icons16x16.view;
             this.tsmnuitemlstvwenlaceabrir.Name = "tsmnuitemlstvwenlaceabrir";
             this.tsmnuitemlstvwenlaceabrir.Size = new System.Drawing.Size(115, 26);
             this.tsmnuitemlstvwenlaceabrir.Text = "Abrir";
@@ -130,7 +130,7 @@ namespace thumbnail.forms
             this.btn_ver.FlatAppearance.BorderSize = 0;
             this.btn_ver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ver.Image = global::thumbnail.Icons48x48.picture;
+            this.btn_ver.Image = global::scanndoc.Icons48x48.picture;
             this.btn_ver.Location = new System.Drawing.Point(945, 237);
             this.btn_ver.Name = "btn_ver";
             this.btn_ver.Size = new System.Drawing.Size(54, 54);
@@ -151,7 +151,7 @@ namespace thumbnail.forms
             this.btn_deshacer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_deshacer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btn_deshacer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_deshacer.Image = global::thumbnail.Icons48x48.delete_red;
+            this.btn_deshacer.Image = global::scanndoc.Icons48x48.delete_red;
             this.btn_deshacer.Location = new System.Drawing.Point(858, 3);
             this.btn_deshacer.Margin = new System.Windows.Forms.Padding(15, 3, 15, 3);
             this.btn_deshacer.Name = "btn_deshacer";
@@ -171,7 +171,7 @@ namespace thumbnail.forms
             this.btn_mostrarlistadedocumentos.FlatAppearance.BorderSize = 0;
             this.btn_mostrarlistadedocumentos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.btn_mostrarlistadedocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mostrarlistadedocumentos.Image = global::thumbnail.Icons48x48.close;
+            this.btn_mostrarlistadedocumentos.Image = global::scanndoc.Icons48x48.close;
             this.btn_mostrarlistadedocumentos.Location = new System.Drawing.Point(946, 3);
             this.btn_mostrarlistadedocumentos.Name = "btn_mostrarlistadedocumentos";
             this.btn_mostrarlistadedocumentos.Size = new System.Drawing.Size(54, 54);
@@ -353,7 +353,7 @@ namespace thumbnail.forms
             // 
             // BindingSource_CamposTrazables
             // 
-            this.BindingSource_CamposTrazables.DataSource = typeof(thumbnail.data_members.pa_CampostrazablesActivosporExpedienteResult);
+            this.BindingSource_CamposTrazables.DataSource = typeof(scanndoc.data_members.pa_CampostrazablesActivosporExpedienteResult);
             // 
             // tbctrl
             // 
@@ -591,7 +591,7 @@ namespace thumbnail.forms
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::thumbnail.Icons48x48.clock;
+            this.pictureBox1.Image = global::scanndoc.Icons48x48.clock;
             this.pictureBox1.Location = new System.Drawing.Point(1, 1);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";

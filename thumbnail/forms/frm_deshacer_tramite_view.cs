@@ -7,17 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using thumbnail.Properties;
+using scanndoc.Properties;
 using System.Configuration;
-using thumbnail.data_members;
+using scanndoc.data_members;
 using DevExpress.XtraEditors;
-using thumbnail.models;
+using scanndoc.models;
 using DevExpress.XtraGrid.Views.Grid;
-using thumbnail.classes;
+using scanndoc.classes;
 using System.Collections;
 using System.Xml;
 
-namespace thumbnail.forms
+namespace scanndoc.forms
 {
     public partial class frm_deshacer_tramite_view : Form
     {
@@ -224,8 +224,8 @@ namespace thumbnail.forms
         }       
 #endregion tabcontrol
 
-        public List<thumbnail.models.digital> sources_digital = new List<thumbnail.models.digital>();
-        public thumbnail.models.digital source_digital = new thumbnail.models.digital(); //instancia a modelo principal para el guardado de la información
+        public List<scanndoc.models.digital> sources_digital = new List<scanndoc.models.digital>();
+        public scanndoc.models.digital source_digital = new scanndoc.models.digital(); //instancia a modelo principal para el guardado de la información
         
 //boton abrir
         private void tsmnuitemlstvwenlaceabrir_Click(object sender, EventArgs e)
@@ -286,7 +286,7 @@ namespace thumbnail.forms
 
             foreach (data_members.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult current in imagenesdigitalregistradas)
             {
-                thumbnail.models.digital source = new thumbnail.models.digital();
+                scanndoc.models.digital source = new scanndoc.models.digital();
 
                 Image img = procesa_imagen.ByteArrayToImage(current.thumbnail.ToArray());
                 source.thumbnail = current.thumbnail.ToArray();

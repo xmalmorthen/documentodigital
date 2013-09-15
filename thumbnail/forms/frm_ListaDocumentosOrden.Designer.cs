@@ -1,4 +1,4 @@
-﻿namespace thumbnail.forms
+﻿namespace scanndoc.forms
 {
     partial class frm_listadocumentosorden
     {
@@ -49,7 +49,7 @@
             // 
             // bindingsource
             // 
-            this.bindingsource.DataSource = typeof(thumbnail.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult);
+            this.bindingsource.DataSource = typeof(scanndoc.data_members.pa_ObtenerDocumentosporTramiteyOrigenResult);
             // 
             // pa_ObtenerDocumentosporTramiteyOrigenResultGridControl
             // 

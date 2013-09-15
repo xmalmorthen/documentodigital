@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace thumbnail.data_members
+namespace scanndoc.data_members
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -117,7 +117,7 @@ namespace thumbnail.data_members
     #endregion
 		
 		public Bd_Exp_TransportesDataContext() : 
-				base(global::thumbnail.Properties.Settings.Default.Bd_Exp_TransportesConnectionString, mappingSource)
+				base(global::scanndoc.Properties.Settings.Default.Bd_Exp_TransportesConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
