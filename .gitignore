@@ -55,3 +55,5 @@ _ReSharper*/
 
 #database_migrations
 !db_migrations/*.bak
+!/Setup/Release/
+!/Setup/Release/*.exe
