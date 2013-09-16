@@ -360,7 +360,20 @@ namespace scanndoc
 
         private void trámitePorDefectoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
 
+            Application.DoEvents();
+
+            scanndoc.forms.frm_tramitedefecto frm = new forms.frm_tramitedefecto();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+            
         }
 
         private void planDeBloqueoEnTrámitesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -378,7 +391,6 @@ namespace scanndoc
 
             tlp_proc.Visible = false;
             this.Cursor = Cursors.Default;
-            
         }
 
     }

@@ -158,6 +158,12 @@
     <Compile Include="forms\ca_usuarios.Designer.cs">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frm_tramitedefecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_tramitedefecto.Designer.cs">
+      <DependentUpon>frm_tramitedefecto.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frm_tramites_view.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\ca_usuarios.resx">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_tramitedefecto.resx">
+      <DependentUpon>frm_tramitedefecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_tramites_view.resx">
       <DependentUpon>frm_tramites_view.cs</DependentUpon>

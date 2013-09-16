@@ -550,6 +550,7 @@ namespace scanndoc.forms
             lista_tramites = Program.Bd_Exp_Transportes.vw_ListaTramitesActivos.ToList(); //obtener la lista de tramites y vincularla al bindingsource
             this.BindingSource_ListaTramites.DataSource = lista_tramites;
             this.lookUpEdit_Tramites.Properties.DataSource = this.BindingSource_ListaTramites; //asignar datasourse al combo
+            this.lookUpEdit_Tramites.EditValue = null;
         }
 
         //seleccionar tramite por default
@@ -562,6 +563,11 @@ namespace scanndoc.forms
              */
             scanndoc.data_members.tbl_configuraciones Configs = Program.Bd_Exp_Transportes.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault);
             this.lookUpEdit_Tramites.EditValue = int.Parse(Configs.Valor); //establecer el tramite a seleccionar
+
+            BindingSource_ListaTramites.MoveFirst();
+            while ((BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).id_tramite != int.Parse(Configs.Valor)) {
+                BindingSource_ListaTramites.MoveNext();
+            }
         }
 
         //combo de tramites al cambiar item
