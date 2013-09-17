@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\convert_md5.cs" />
+    <Compile Include="classes\errorlogs.cs" />
     <Compile Include="classes\obtener.cs" />
     <Compile Include="classes\procesa_imagen.cs" />
     <Compile Include="classes\thumbnail.cs" />
@@ -157,6 +158,12 @@
     </Compile>
     <Compile Include="forms\ca_usuarios.Designer.cs">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ca_cargopuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ca_cargopuesto.Designer.cs">
+      <DependentUpon>ca_cargopuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frm_tramitedefecto.cs">
       <SubType>Form</SubType>
@@ -313,6 +320,9 @@
     <EmbeddedResource Include="forms\ca_usuarios.resx">
       <DependentUpon>ca_usuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\ca_cargopuesto.resx">
+      <DependentUpon>ca_cargopuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_tramitedefecto.resx">
       <DependentUpon>frm_tramitedefecto.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,6 +402,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\scanndoc.data_members.ca_cargo_puesto.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_campostrazables.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_clasificaciondocumentos.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_clasificaciontramites.datasource" />

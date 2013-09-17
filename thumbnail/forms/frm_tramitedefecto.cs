@@ -45,9 +45,9 @@ namespace scanndoc.forms
                 BindingSource.DataSource = tramites;
                 datagridview.Update();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                scanndoc.classes.errorlogs.seterror(e);
             }
         }
 
@@ -66,8 +66,9 @@ namespace scanndoc.forms
                 BindingSource.DataSource = valores;
                 datagridview.Update();
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
 
             Application.DoEvents();
@@ -83,7 +84,15 @@ namespace scanndoc.forms
 
         short tramitepordefault;
         private short obtenertramitepordefault() {
-            return Convert.ToInt16(Program.Bd_Exp_Transportes.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault).Valor.ToString());
+            try
+            {
+                return Convert.ToInt16(Program.Bd_Exp_Transportes.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault).Valor.ToString());
+            }
+            catch (Exception e)
+            {
+                scanndoc.classes.errorlogs.seterror(e);
+            }
+            return 0;
         }
 
         private void formatear_celda_principal()
@@ -138,9 +147,9 @@ namespace scanndoc.forms
                 Program.Bd_Exp_Transportes.SubmitChanges();
                 datagridview.Rows[e.RowIndex].Cells["seleccion"].Value = true;
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw;
+                scanndoc.classes.errorlogs.seterror(err);
             }
 
             tramitepordefault = obtenertramitepordefault();

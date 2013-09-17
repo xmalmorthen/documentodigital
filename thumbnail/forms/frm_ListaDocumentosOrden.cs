@@ -20,12 +20,18 @@ namespace scanndoc.forms
         }
 
         public void inicializa(int Tramite, int Origen) {
-            tramite = Tramite;
-            origen = Origen;
-            this.bindingsource.DataSource = Program.Bd_Exp_Transportes.pa_ObtenerDocumentosporTramiteyOrigen(tramite, origen).ToList(); //obtener la lista de documentos por tramite y origen
-            pa_ObtenerDocumentosporTramiteyOrigenResultGridControl.DataSource = bindingsource;
-
-            this.Paint += new PaintEventHandler(frm_ListaDocumentosOrden_Paint);            
+            try
+            {
+                tramite = Tramite;
+                origen = Origen;
+                this.bindingsource.DataSource = Program.Bd_Exp_Transportes.pa_ObtenerDocumentosporTramiteyOrigen(tramite, origen).ToList(); //obtener la lista de documentos por tramite y origen
+                pa_ObtenerDocumentosporTramiteyOrigenResultGridControl.DataSource = bindingsource;
+            }
+            catch (Exception e)
+            {
+                scanndoc.classes.errorlogs.seterror(e);
+            }
+            this.Paint += new PaintEventHandler(frm_ListaDocumentosOrden_Paint);
         }
 
         void frm_ListaDocumentosOrden_Paint(object sender, PaintEventArgs e)
@@ -36,8 +42,9 @@ namespace scanndoc.forms
                 Point loc = new Point(((Form)this.Owner).ParentForm.Width - (this.Width + 40), ((Form)this.Owner).ParentForm.Height - (this.Height + 40));
                 this.Location = loc;
             }
-            catch (Exception)
+            catch (Exception err)
             {
+
             }
 
             this.Owner = null;

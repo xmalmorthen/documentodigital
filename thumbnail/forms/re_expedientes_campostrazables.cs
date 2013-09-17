@@ -63,8 +63,9 @@ namespace scanndoc.forms
                 lista_expedientes = Program.Bd_Exp_Transportes.GetTable<data_members.ca_expedientes>().ToList();
                 bindingsource_ca_expedientes.DataSource = lista_expedientes;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                scanndoc.classes.errorlogs.seterror(e);
             }
         }
 
@@ -75,8 +76,9 @@ namespace scanndoc.forms
                 lista_campostrazables = Program.Bd_Exp_Transportes.pa_CampostrazablesNoEnlazadosporExpediente(id_expediente).ToList();
                 bindingSource_campostrazables.DataSource = lista_campostrazables;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                scanndoc.classes.errorlogs.seterror(e);
             }
         }
 
@@ -88,21 +90,15 @@ namespace scanndoc.forms
 
                 txt_buscarcampotrazable.Text = "";
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                scanndoc.classes.errorlogs.seterror(e);
             }
         }
 
         private void re_expedientes_campostrazables_Load(object sender, EventArgs e)
         {
-            try 
-	        {
-                actualiza_lista_expedientes();
-	        }
-	        catch (Exception)
-	        {		
-		        throw;
-	        }            
+            actualiza_lista_expedientes();
             Form_Mode = form_mode.agregar;
             timer.Enabled = true;
         }
@@ -120,9 +116,9 @@ namespace scanndoc.forms
                 checkEdit2.Checked = true;
                 txt_buscarcampotrazable.Text = "";
 	        }
-	        catch (Exception)
+	        catch (Exception err)
 	        {
-		        throw;
+                scanndoc.classes.errorlogs.seterror(err);
 	        }
         }
 
@@ -176,8 +172,9 @@ namespace scanndoc.forms
                     if (!timer.Enabled) timer.Enabled = true;
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
 
             Application.DoEvents();
@@ -249,9 +246,9 @@ namespace scanndoc.forms
                     MessageBox.Show("Registro agregado con éxito", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception)
-	        {		
-		        throw;
+            catch (Exception e)
+	        {
+                scanndoc.classes.errorlogs.seterror(e);
 	        }
             lookUpEdit_CamposTrazables.EditValue = null;
             bindingsource_CurrentItemChanged(null, null);            
@@ -259,15 +256,23 @@ namespace scanndoc.forms
 
         private bool valida_esprincipal()
         {
-            if (checkEdit1.Checked)
+            try
             {
-                data_members.re_expedientes_campostrazables item = Program.Bd_Exp_Transportes.re_expedientes_campostrazables.SingleOrDefault(query => query.es_principal == true && query.id_expediente == (bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id);
-                if (item != null)
+                if (checkEdit1.Checked)
                 {
-                    return true;
+                    data_members.re_expedientes_campostrazables item = Program.Bd_Exp_Transportes.re_expedientes_campostrazables.SingleOrDefault(query => query.es_principal == true && query.id_expediente == (bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id);
+                    if (item != null)
+                    {
+                        return true;
+                    }
                 }
+                return false;
             }
-            return false;
+            catch (Exception e)
+            {
+                scanndoc.classes.errorlogs.seterror(e);
+            }
+            return true;
         }
 
         private bool valida()
@@ -332,8 +337,9 @@ namespace scanndoc.forms
                 }
 
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
 
             Application.DoEvents();
@@ -376,9 +382,9 @@ namespace scanndoc.forms
                     MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show(this, "El campo trazable está en uso", "Imposible eliminar", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                scanndoc.classes.errorlogs.seterror(e);
             }
             bindingsource_CurrentItemChanged(null, null);
         }
@@ -415,21 +421,30 @@ namespace scanndoc.forms
                         item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
                     Program.Bd_Exp_Transportes.SubmitChanges();
                 }
-                catch (Exception)
+                catch (Exception err)
                 {
+                    scanndoc.classes.errorlogs.seterror(err);
                 }
             }
         }
 
         private bool valida_esprincipal_engrid(int ignore_row)
         {
-            data_members.re_expedientes_campostrazables item = Program.Bd_Exp_Transportes.re_expedientes_campostrazables.SingleOrDefault(query => query.es_principal == true && query.id_expediente == (bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id);
-            if (item != null)
+            try
             {
-                MessageBox.Show(this, "Ya se encuentra un campo trazable principal, favor de revisar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return true;
+                data_members.re_expedientes_campostrazables item = Program.Bd_Exp_Transportes.re_expedientes_campostrazables.SingleOrDefault(query => query.es_principal == true && query.id_expediente == (bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id);
+                if (item != null)
+                {
+                    MessageBox.Show(this, "Ya se encuentra un campo trazable principal, favor de revisar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch (Exception e)
+            {
+                scanndoc.classes.errorlogs.seterror(e);
+            }
+            return true;
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -448,8 +463,9 @@ namespace scanndoc.forms
                     tlp_warning.Visible = !result;
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
             timer.Enabled = true;
         }

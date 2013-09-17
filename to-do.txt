@@ -1,7 +1,3 @@
-funcionalidad de Deshacer registro
-funcionalidad de Bloquear/Desbloquear
-
 incrustar marca de agua en imagenes
-control de errores, log envio de info de errores
-etiquetas en archivos de recursos
+
 

@@ -36,8 +36,9 @@ namespace scanndoc.forms
 
                 formatear_celda();
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                scanndoc.classes.errorlogs.seterror(e);
             }
             Application.DoEvents();
 
@@ -126,9 +127,9 @@ namespace scanndoc.forms
                 }
                 match_registros();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                scanndoc.classes.errorlogs.seterror(e);
             }
         }
 
@@ -252,8 +253,9 @@ namespace scanndoc.forms
                 BindingSource.DataSource = valores;
                 dataGridView.Update();
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
 
             formatear_celda();
@@ -284,10 +286,18 @@ namespace scanndoc.forms
 
         private DateTime calculafechahorabloqueo(int no_dias_bloqueo, int no_horas_bloqueo)
         {
-            DateTime fechahora = Program.Bd_Exp_Transportes.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
+            DateTime fechahora = DateTime.Now;
+            try
+            {
+                fechahora = Program.Bd_Exp_Transportes.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
 
-            fechahora = fechahora.AddDays(Convert.ToDouble(no_dias_bloqueo));
-            fechahora = fechahora.AddHours(Convert.ToDouble(no_horas_bloqueo));
+                fechahora = fechahora.AddDays(Convert.ToDouble(no_dias_bloqueo));
+                fechahora = fechahora.AddHours(Convert.ToDouble(no_horas_bloqueo));
+            }
+            catch (Exception e)
+            {
+                scanndoc.classes.errorlogs.seterror(e);
+            }
 
             return fechahora;
         }
@@ -303,9 +313,9 @@ namespace scanndoc.forms
                 MessageBox.Show("Plan de bloqueo establecido", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 match_registros();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                scanndoc.classes.errorlogs.seterror(e);
             }
         }
 
@@ -329,9 +339,9 @@ namespace scanndoc.forms
                 MessageBox.Show("Plan de bloqueo eliminado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 match_registros();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                scanndoc.classes.errorlogs.seterror(e);
             }
         }
     }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using scanndoc.data_members;
+using scanndoc.classes;
 
 namespace scanndoc.forms
 {
@@ -93,21 +94,15 @@ namespace scanndoc.forms
                 lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_expedientes>().ToList();
                 bindingsource.DataSource = lista;
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
         }
 
         private void ca_template_Load(object sender, EventArgs e)
         {
-            try 
-	        {
-                actualiza_lista();
-	        }
-	        catch (Exception)
-	        {		
-		        throw;
-	        }            
+            actualiza_lista();
             Form_Mode = form_mode.normal;
         }
 
@@ -119,9 +114,9 @@ namespace scanndoc.forms
                 bindingsource.CancelEdit();
                 bindingsource.AddNew();
 	        }
-	        catch (Exception)
+	        catch (Exception err)
 	        {
-		        throw;
+                scanndoc.classes.errorlogs.seterror(err);
 	        }
         }
 
@@ -213,8 +208,9 @@ namespace scanndoc.forms
                 bindingsource.DataSource = valores;
                 datagridview.Update();
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
 
             Application.DoEvents();
@@ -264,9 +260,9 @@ namespace scanndoc.forms
                     }
 	            }
             }
-            catch (Exception)
-	        {		
-		        throw;
+            catch (Exception err)
+	        {
+                scanndoc.classes.errorlogs.seterror(err);
 	        }            
         }
 
@@ -280,12 +276,21 @@ namespace scanndoc.forms
 
         private bool buscar_si_existe()
         {
-            data_members.ca_expedientes filtro = Program.Bd_Exp_Transportes.ca_expedientes.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == catalogo.Descripcion.ToString().ToLower());
-            if ( filtro != null ) {
-                MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return true;
+            try
+            {
+                data_members.ca_expedientes filtro = Program.Bd_Exp_Transportes.ca_expedientes.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == catalogo.Descripcion.ToString().ToLower());
+                if (filtro != null)
+                {
+                    MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch (Exception err)
+            {
+                scanndoc.classes.errorlogs.seterror(err);
+            }
+            return true;
         }
 
         //editar
@@ -305,9 +310,9 @@ namespace scanndoc.forms
                         }
                     }
 	            }
-                catch (Exception)
+                catch (Exception err)
                 {
-                    throw;
+                    scanndoc.classes.errorlogs.seterror(err);
                 }
             }            
         }
@@ -325,9 +330,9 @@ namespace scanndoc.forms
                     MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw;
+                scanndoc.classes.errorlogs.seterror(err);
             }
         }
 

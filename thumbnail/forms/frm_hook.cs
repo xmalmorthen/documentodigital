@@ -72,14 +72,21 @@ namespace scanndoc.forms
         List<pa_ObtenerDocumentosporTramiteyOrigenResult> ListaDocumentos = new List<pa_ObtenerDocumentosporTramiteyOrigenResult>();
         private void populate_lookUpEdit_ClasificacionDocumento()
         {
-            ListaDocumentos = Program.Bd_Exp_Transportes.pa_ObtenerDocumentosporTramiteyOrigen(Tramite, Origen).ToList(); //obtener la lista de documentos por tramite y origen
-            foreach (digital item in sources)
+            try
             {
-                ListaDocumentos.RemoveAll(query => query.id_re_clasificaciondocumentos_documentos != item.id_re_clasificaciondocumento_documento && query.Descripcion_clasificaciondocumento == item.clasificaciondocumento);
-            }
+                ListaDocumentos = Program.Bd_Exp_Transportes.pa_ObtenerDocumentosporTramiteyOrigen(Tramite, Origen).ToList(); //obtener la lista de documentos por tramite y origen
+                foreach (digital item in sources)
+                {
+                    ListaDocumentos.RemoveAll(query => query.id_re_clasificaciondocumentos_documentos != item.id_re_clasificaciondocumento_documento && query.Descripcion_clasificaciondocumento == item.clasificaciondocumento);
+                }
 
-            this.bindingsource.DataSource = ListaDocumentos;
-            this.lookUpEdit_ClasificacionDocumento.Properties.DataSource = this.bindingsource; //asignar datasourse al combo
+                this.bindingsource.DataSource = ListaDocumentos;
+                this.lookUpEdit_ClasificacionDocumento.Properties.DataSource = this.bindingsource; //asignar datasourse al combo
+            }
+            catch (Exception e)
+            {
+                scanndoc.classes.errorlogs.seterror(e);                
+            }            
         }
 
         //acualizar datos para la introducción de mascaras

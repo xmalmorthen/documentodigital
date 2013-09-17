@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using scanndoc.data_members;
+using scanndoc.classes;
 
 namespace scanndoc.forms
 {
@@ -107,13 +108,21 @@ namespace scanndoc.forms
                 lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_documentos>().ToList();
                 bindingsource.DataSource = lista;
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
         }
 
         private void actualiza_lista_formatos() {
-            bindingSource_ca_formatos.DataSource = Program.Bd_Exp_Transportes.GetTable<data_members.ca_formatos>().ToList();
+            try
+            {
+                bindingSource_ca_formatos.DataSource = Program.Bd_Exp_Transportes.GetTable<data_members.ca_formatos>().ToList();
+            }
+            catch (Exception err)
+            {
+                scanndoc.classes.errorlogs.seterror(err);
+            }
         }
 
         struct struct_estado
@@ -149,9 +158,9 @@ namespace scanndoc.forms
                 obten_estado();
                 actualiza_lista();
 	        }
-	        catch (Exception)
-	        {		
-		        throw;
+	        catch (Exception err)
+	        {
+                scanndoc.classes.errorlogs.seterror(err);
 	        }            
             Form_Mode = form_mode.normal;
         }
@@ -168,9 +177,9 @@ namespace scanndoc.forms
                 spinEdit1.Value = 1;
                 spinEdit2.Value = 1;
 	        }
-	        catch (Exception)
+	        catch (Exception err)
 	        {
-		        throw;
+                scanndoc.classes.errorlogs.seterror(err);
 	        }
         }
 
@@ -268,8 +277,9 @@ namespace scanndoc.forms
                 bindingsource.DataSource = valores;
                 datagridview.Update();
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
 
             Application.DoEvents();
@@ -320,9 +330,9 @@ namespace scanndoc.forms
                     }
 	            }
             }
-            catch (Exception)
-	        {		
-		        throw;
+            catch (Exception err)
+	        {
+                scanndoc.classes.errorlogs.seterror(err);
 	        }
         }
 
@@ -371,13 +381,21 @@ namespace scanndoc.forms
 
         private bool buscar_si_existe()
         {
-            data_members.ca_documentos filtro = Program.Bd_Exp_Transportes.ca_documentos.SingleOrDefault(query => query.Nombre.ToString().ToLower() == catalogo.Nombre.ToString().ToLower());
-            if (filtro != null)
+            try
             {
-                MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return true;
+                data_members.ca_documentos filtro = Program.Bd_Exp_Transportes.ca_documentos.SingleOrDefault(query => query.Nombre.ToString().ToLower() == catalogo.Nombre.ToString().ToLower());
+                if (filtro != null)
+                {
+                    MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch (Exception err)
+            {
+                scanndoc.classes.errorlogs.seterror(err);
+            }
+            return true;
         }
 
         //editar
@@ -395,9 +413,9 @@ namespace scanndoc.forms
                         MessageBox.Show("Registro modificado con éxito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 	            }
-                catch (Exception)
+                catch (Exception err)
                 {
-                    throw;
+                    scanndoc.classes.errorlogs.seterror(err);
                 }
             }            
         }
@@ -415,9 +433,9 @@ namespace scanndoc.forms
                     MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw;
+                scanndoc.classes.errorlogs.seterror(err);
             }
         }
 
@@ -429,8 +447,9 @@ namespace scanndoc.forms
                     lookUpEdit1.EditValue = ((data_members.ca_documentos)bindingsource.Current).id_Formato;
                     lookUpEdit2.EditValue = (int)((data_members.ca_documentos)bindingsource.Current).Estado;
                 }
-                catch (Exception)
+                catch (Exception err)
                 {
+                    scanndoc.classes.errorlogs.seterror(err);
                 }
             }
         }

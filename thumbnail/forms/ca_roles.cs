@@ -95,8 +95,9 @@ namespace scanndoc.forms
                 lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_roles>().ToList();
                 bindingsource.DataSource = lista;
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
         }
 
@@ -106,22 +107,16 @@ namespace scanndoc.forms
                 modulos = Program.Bd_Exp_Transportes.pa_ModulosporIdRol(id_rol).ToList();
                 modulosBindingSource.DataSource = modulos;
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }       
         }
 
 
         private void ca_template_Load(object sender, EventArgs e)
         {
-            try 
-	        {
-                actualiza_lista();
-	        }
-	        catch (Exception)
-	        {		
-		        throw;
-	        }            
+            actualiza_lista();
             Form_Mode = form_mode.normal;
         }
 
@@ -133,9 +128,9 @@ namespace scanndoc.forms
                 bindingsource.CancelEdit();
                 bindingsource.AddNew();
 	        }
-	        catch (Exception)
+	        catch (Exception err)
 	        {
-		        throw;
+                scanndoc.classes.errorlogs.seterror(err);
 	        }
         }
 
@@ -228,8 +223,9 @@ namespace scanndoc.forms
                 bindingsource.DataSource = valores;
                 datagridview.Update();
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
 
             Application.DoEvents();
@@ -286,9 +282,9 @@ namespace scanndoc.forms
                     }
 	            }
             }
-            catch (Exception)
-	        {		
-		        throw;
+            catch (Exception err)
+	        {
+                scanndoc.classes.errorlogs.seterror(err);
 	        }
             bindingsource_CurrentItemChanged(null, null);
         }
@@ -315,8 +311,15 @@ namespace scanndoc.forms
 
             if (detalles.Count > 0)
             {
-                Program.Bd_Exp_Transportes.re_roles_modulos.InsertAllOnSubmit(detalles);
-                Program.Bd_Exp_Transportes.SubmitChanges();
+                try
+                {
+                    Program.Bd_Exp_Transportes.re_roles_modulos.InsertAllOnSubmit(detalles);
+                    Program.Bd_Exp_Transportes.SubmitChanges();
+                }
+                catch (Exception err)
+                {
+                    scanndoc.classes.errorlogs.seterror(err);
+                }
             }
         }
 
@@ -330,12 +333,21 @@ namespace scanndoc.forms
 
         private bool buscar_si_existe()
         {
-            data_members.ca_roles filtro = Program.Bd_Exp_Transportes.ca_roles.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == rol.Descripcion.ToString().ToLower());
-            if ( filtro != null ) {
-                MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return true;
+            try
+            {
+                data_members.ca_roles filtro = Program.Bd_Exp_Transportes.ca_roles.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == rol.Descripcion.ToString().ToLower());
+                if (filtro != null)
+                {
+                    MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch (Exception err)
+            {
+                scanndoc.classes.errorlogs.seterror(err);
+            }
+            return true;
         }
 
         //editar
@@ -358,9 +370,9 @@ namespace scanndoc.forms
                         MessageBox.Show("Registro modificado con éxito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 	            }
-                catch (Exception)
+                catch (Exception err)
                 {
-                    throw;
+                    scanndoc.classes.errorlogs.seterror(err);
                 }
                 bindingsource_CurrentItemChanged(null, null);
             }            
@@ -370,45 +382,51 @@ namespace scanndoc.forms
         {
             List<data_members.re_roles_modulos> deleteitems = new List<re_roles_modulos>();
             List<data_members.re_roles_modulos> additems = new List<re_roles_modulos>();
-
-            foreach (data_members.pa_ModulosporIdRolResult item in rolesclon)
+            try
             {
-                data_members.re_roles_modulos select = (from query in Program.Bd_Exp_Transportes.re_roles_modulos
-                                                        where query.id_rol == id_rol && query.id_modulo == item.ID
-                                                        select query).SingleOrDefault();
-
-                if (item.ENLAZADO == 0) 
+                foreach (data_members.pa_ModulosporIdRolResult item in rolesclon)
                 {
-                    if (select != null)
+                    data_members.re_roles_modulos select = (from query in Program.Bd_Exp_Transportes.re_roles_modulos
+                                                            where query.id_rol == id_rol && query.id_modulo == item.ID
+                                                            select query).SingleOrDefault();
+
+                    if (item.ENLAZADO == 0) 
                     {
-                        deleteitems.Add(select);
-                    }
+                        if (select != null)
+                        {
+                            deleteitems.Add(select);
+                        }
 
-                    select = null;
-                } 
-                else
-                {
-                    if (select == null)
+                        select = null;
+                    } 
+                    else
                     {
-                        data_members.re_roles_modulos detalle = new re_roles_modulos();
+                        if (select == null)
+                        {
+                            data_members.re_roles_modulos detalle = new re_roles_modulos();
 
-                        detalle.id_rol = id_rol;
-                        detalle.id_modulo = item.ID;
+                            detalle.id_rol = id_rol;
+                            detalle.id_modulo = item.ID;
 
-                        additems.Add(detalle);
+                            additems.Add(detalle);
 
-                        detalle = null;
+                            detalle = null;
+                        }
                     }
                 }
-            }
 
-            if (deleteitems.Count > 0)
-            {
-                Program.Bd_Exp_Transportes.re_roles_modulos.DeleteAllOnSubmit(deleteitems);
+                if (deleteitems.Count > 0)
+                {
+                    Program.Bd_Exp_Transportes.re_roles_modulos.DeleteAllOnSubmit(deleteitems);
+                }
+                if (additems.Count > 0)
+                {
+                    Program.Bd_Exp_Transportes.re_roles_modulos.InsertAllOnSubmit(additems);
+                }
             }
-            if (additems.Count > 0)
+            catch (Exception err)
             {
-                Program.Bd_Exp_Transportes.re_roles_modulos.InsertAllOnSubmit(additems);
+                scanndoc.classes.errorlogs.seterror(err);
             }
             
         }
@@ -433,18 +451,25 @@ namespace scanndoc.forms
                     MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                MessageBox.Show("No es posible borrar. El rol se encuentra vinculado a algún usuario", "Imposible borrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                scanndoc.classes.errorlogs.seterror(err);
             }
         }
 
         private void elimina_modulos(int id_modulo)
         {
-            IEnumerable<data_members.re_roles_modulos> detalles = (from query in Program.Bd_Exp_Transportes.re_roles_modulos
-                                                                   where (query.id_rol == id_modulo)
-                                                                   select query).ToList();
-            Program.Bd_Exp_Transportes.re_roles_modulos.DeleteAllOnSubmit(detalles);
+            try
+            {
+                IEnumerable<data_members.re_roles_modulos> detalles = (from query in Program.Bd_Exp_Transportes.re_roles_modulos
+                                                                       where (query.id_rol == id_modulo)
+                                                                       select query).ToList();
+                Program.Bd_Exp_Transportes.re_roles_modulos.DeleteAllOnSubmit(detalles);
+            }
+            catch (Exception err)
+            {
+                scanndoc.classes.errorlogs.seterror(err);
+            }
         }
 
         private void bindingsource_CurrentItemChanged(object sender, EventArgs e)

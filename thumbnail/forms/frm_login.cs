@@ -45,9 +45,9 @@ namespace scanndoc.forms
                                 )
                     );
 	            }
-	            catch (Exception)
+	            catch (Exception err)
 	            {
-		            MessageBox.Show("Usuario y/o contraseña no válidos", "Error de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    scanndoc.classes.errorlogs.seterror(err);
 	            }
                                
                 scanndoc.data_members.ca_usuarios usuario = Program.Bd_Exp_Transportes.ca_usuarios.SingleOrDefault(c => c.usuario.ToString().ToLower() == txt_usuario.Text.ToString().ToLower());
@@ -64,9 +64,9 @@ namespace scanndoc.forms
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception _err)
             {
-                MessageBox.Show("Usuario y/o contraseña no válidos", "Error de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                scanndoc.classes.errorlogs.seterror(_err);                
             }
         }
 

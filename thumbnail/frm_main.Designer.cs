@@ -63,6 +63,8 @@
             this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cargoPuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.mnustrip_menuprincipal.SuspendLayout();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -244,6 +246,8 @@
             // administracionToolStripMenuItem
             // 
             this.administracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cargoPuestoToolStripMenuItem,
+            this.toolStripMenuItem6,
             this.rolesToolStripMenuItem,
             this.usuariosToolStripMenuItem,
             this.toolStripMenuItem5,
@@ -258,7 +262,7 @@
             // 
             this.rolesToolStripMenuItem.Image = global::scanndoc.Icons16x16.view;
             this.rolesToolStripMenuItem.Name = "rolesToolStripMenuItem";
-            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
+            this.rolesToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.rolesToolStripMenuItem.Tag = "3,1";
             this.rolesToolStripMenuItem.Text = "Roles";
             this.rolesToolStripMenuItem.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
@@ -267,7 +271,7 @@
             // 
             this.usuariosToolStripMenuItem.Image = global::scanndoc.Icons16x16.users;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.usuariosToolStripMenuItem.Tag = "3,2";
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
@@ -275,7 +279,7 @@
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(155, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(169, 6);
             // 
             // preferenciasToolStripMenuItem
             // 
@@ -284,7 +288,7 @@
             this.planDeBloqueoEnTrámitesToolStripMenuItem});
             this.preferenciasToolStripMenuItem.Image = global::scanndoc.Icons16x16.wrench_plus;
             this.preferenciasToolStripMenuItem.Name = "preferenciasToolStripMenuItem";
-            this.preferenciasToolStripMenuItem.Size = new System.Drawing.Size(158, 24);
+            this.preferenciasToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
             this.preferenciasToolStripMenuItem.Tag = "3,3";
             this.preferenciasToolStripMenuItem.Text = "Preferencias";
             // 
@@ -385,6 +389,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Favor de esperar";
             // 
+            // cargoPuestoToolStripMenuItem
+            // 
+            this.cargoPuestoToolStripMenuItem.Name = "cargoPuestoToolStripMenuItem";
+            this.cargoPuestoToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
+            this.cargoPuestoToolStripMenuItem.Tag = "3,4";
+            this.cargoPuestoToolStripMenuItem.Text = " Cargo/Puesto";
+            this.cargoPuestoToolStripMenuItem.Click += new System.EventHandler(this.cargoPuestoToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(169, 6);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,5 +465,7 @@
         private System.Windows.Forms.ToolStripMenuItem asignarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trámitePorDefectoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planDeBloqueoEnTrámitesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cargoPuestoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
     }
 }

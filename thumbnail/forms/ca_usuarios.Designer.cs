@@ -40,13 +40,15 @@
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label10;
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.Windows.Forms.Label label11;
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule compareAgainstControlValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule compareAgainstControlValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ca_usuarios));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -54,6 +56,9 @@
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.lookUpEdit_cargopuesto = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.ca_cargo_puestoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EnlazadoColumns = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -111,6 +116,8 @@
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.re_usuarios_roles_permisosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -121,11 +128,15 @@
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
+            label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_cargopuesto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ca_cargo_puestoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
@@ -282,6 +293,16 @@
             this.bindingsource.DataSource = typeof(scanndoc.data_members.ca_usuarios);
             this.bindingsource.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label11.Location = new System.Drawing.Point(9, 22);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(122, 18);
+            label11.TabIndex = 36;
+            label11.Text = "Cargo / Puesto";
+            // 
             // splitContainer
             // 
             this.splitContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -294,6 +315,8 @@
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.splitContainer.Panel1.Controls.Add(this.lookUpEdit_cargopuesto);
+            this.splitContainer.Panel1.Controls.Add(label11);
             this.splitContainer.Panel1.Controls.Add(label10);
             this.splitContainer.Panel1.Controls.Add(this.dataGridView1);
             this.splitContainer.Panel1.Controls.Add(label9);
@@ -337,6 +360,55 @@
             this.splitContainer.Size = new System.Drawing.Size(1008, 730);
             this.splitContainer.SplitterDistance = 465;
             this.splitContainer.TabIndex = 16;
+            // 
+            // lookUpEdit_cargopuesto
+            // 
+            this.lookUpEdit_cargopuesto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lookUpEdit_cargopuesto.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingsource, "id_cargo", true));
+            this.lookUpEdit_cargopuesto.Location = new System.Drawing.Point(12, 44);
+            this.lookUpEdit_cargopuesto.Name = "lookUpEdit_cargopuesto";
+            this.lookUpEdit_cargopuesto.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.lookUpEdit_cargopuesto.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEdit_cargopuesto.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lookUpEdit_cargopuesto.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lookUpEdit_cargopuesto.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit;
+            this.lookUpEdit_cargopuesto.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lookUpEdit_cargopuesto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEdit_cargopuesto.Properties.DataSource = this.ca_cargo_puestoBindingSource;
+            this.lookUpEdit_cargopuesto.Properties.DisplayMember = "Descripcion";
+            this.lookUpEdit_cargopuesto.Properties.ImmediatePopup = true;
+            this.lookUpEdit_cargopuesto.Properties.LookAndFeel.SkinName = "VS2010";
+            this.lookUpEdit_cargopuesto.Properties.NullText = "";
+            this.lookUpEdit_cargopuesto.Properties.PopupFormSize = new System.Drawing.Size(790, 0);
+            this.lookUpEdit_cargopuesto.Properties.ValueMember = "id";
+            this.lookUpEdit_cargopuesto.Properties.View = this.gridView1;
+            this.lookUpEdit_cargopuesto.Size = new System.Drawing.Size(512, 24);
+            this.lookUpEdit_cargopuesto.TabIndex = 37;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Falta indicar el valor";
+            this.dxValidationProvider.SetValidationRule(this.lookUpEdit_cargopuesto, conditionValidationRule2);
+            // 
+            // ca_cargo_puestoBindingSource
+            // 
+            this.ca_cargo_puestoBindingSource.DataSource = typeof(scanndoc.data_members.ca_cargo_puesto);
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridView1.Appearance.Row.Options.UseFont = true;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.colDescripcion});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.GroupFormat = "[#image]{1} {2}";
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // dataGridView1
             // 
@@ -466,9 +538,9 @@
             this.textEdit5.Properties.MaxLength = 30;
             this.textEdit5.Size = new System.Drawing.Size(512, 24);
             this.textEdit5.TabIndex = 5;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Falta indicar el valor";
-            this.dxValidationProvider.SetValidationRule(this.textEdit5, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Falta indicar el valor";
+            this.dxValidationProvider.SetValidationRule(this.textEdit5, conditionValidationRule3);
             // 
             // textEdit4
             // 
@@ -495,9 +567,9 @@
             this.textEdit3.Properties.MaxLength = 30;
             this.textEdit3.Size = new System.Drawing.Size(512, 24);
             this.textEdit3.TabIndex = 3;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Falta indicar el valor";
-            this.dxValidationProvider.SetValidationRule(this.textEdit3, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Falta indicar el valor";
+            this.dxValidationProvider.SetValidationRule(this.textEdit3, conditionValidationRule4);
             // 
             // textEdit2
             // 
@@ -664,9 +736,9 @@
             this.textEdit.Properties.MaxLength = 30;
             this.textEdit.Size = new System.Drawing.Size(512, 24);
             this.textEdit.TabIndex = 0;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Falta indicar el valor";
-            this.dxValidationProvider.SetValidationRule(this.textEdit, conditionValidationRule4);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Falta indicar el valor";
+            this.dxValidationProvider.SetValidationRule(this.textEdit, conditionValidationRule5);
             // 
             // shapeContainer1
             // 
@@ -1066,6 +1138,19 @@
             this.re_usuarios_roles_permisosBindingSource.DataMember = "re_usuarios_roles_permisos";
             this.re_usuarios_roles_permisosBindingSource.DataSource = this.bindingsource;
             // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
+            // colDescripcion
+            // 
+            this.colDescripcion.Caption = "Cargo / Puesto";
+            this.colDescripcion.FieldName = "Descripcion";
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.Visible = true;
+            this.colDescripcion.VisibleIndex = 0;
+            // 
             // ca_usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1085,6 +1170,9 @@
             this.splitContainer.Panel2.ResumeLayout(false);
             this.splitContainer.Panel2.PerformLayout();
             this.splitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_cargopuesto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ca_cargo_puestoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
@@ -1177,5 +1265,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn EnlazadoColumns;
         private System.Windows.Forms.DataGridViewTextBoxColumn dESCRIPCIONDataGridViewTextBoxColumn;
+        private DevExpress.XtraEditors.GridLookUpEdit lookUpEdit_cargopuesto;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.BindingSource ca_cargo_puestoBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescripcion;
     }
 }

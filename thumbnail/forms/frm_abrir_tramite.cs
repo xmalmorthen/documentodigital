@@ -110,8 +110,9 @@ namespace scanndoc.forms
                     dataGridView.Focus();
                 }                
             }
-            catch (Exception)
-            {                
+            catch (Exception err)
+            {
+                scanndoc.classes.errorlogs.seterror(err);
             }
         }
 
@@ -129,8 +130,9 @@ namespace scanndoc.forms
 
                 pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = tramites;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                scanndoc.classes.errorlogs.seterror(e);
             }
             Application.DoEvents();
 

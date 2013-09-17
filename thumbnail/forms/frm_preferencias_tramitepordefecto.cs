@@ -28,9 +28,9 @@ namespace scanndoc.forms
                 tramites = Program.Bd_Exp_Transportes.GetTable<data_members.vw_ListaTramitesActivos>().ToList();
                 BindingSource.DataSource = tramites;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                scanndoc.classes.errorlogs.seterror(e);
             }
         }
 
@@ -74,9 +74,9 @@ namespace scanndoc.forms
             {
                 bindingSource_tipobloqueos.DataSource = Program.Bd_Exp_Transportes.GetTable<data_members.ca_tiposbloqueos>().ToList();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                scanndoc.classes.errorlogs.seterror(e);
             }
         }
 
@@ -105,8 +105,9 @@ namespace scanndoc.forms
                 BindingSource.DataSource = valores;
                 dataGridView.Update();
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
 
             Application.DoEvents();
@@ -146,26 +147,34 @@ namespace scanndoc.forms
 
         private void dataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            editado = false;
-
-            DataGridViewCell celltipobloqueo = dataGridView.Rows[e.RowIndex].Cells["descripcionbloqueoDataGridViewTextBoxColumn"];
-            DataGridViewCell celldias = dataGridView.Rows[e.RowIndex].Cells["nodiasbloqueoDataGridViewTextBoxColumn"];
-            DataGridViewCell cellhoras = dataGridView.Rows[e.RowIndex].Cells["nohorasbloqueoDataGridViewTextBoxColumn"];
-
-            if (celltipobloqueo.Value == null ||
-                Program.Bd_Exp_Transportes.ca_tiposbloqueos.Single(query => query.id == (int)celltipobloqueo.Value).Descripcion.ToString().ToLower() == "bloquear manualmente")
+            try
             {
-                celldias.ReadOnly = true;
-                cellhoras.ReadOnly = true;
-                celldias.Value = null;
-                cellhoras.Value = null;
-                bindingSource_NoDias.MoveFirst();
-                bindingSource_NoHoras.MoveFirst();
+                editado = false;
+
+                DataGridViewCell celltipobloqueo = dataGridView.Rows[e.RowIndex].Cells["descripcionbloqueoDataGridViewTextBoxColumn"];
+                DataGridViewCell celldias = dataGridView.Rows[e.RowIndex].Cells["nodiasbloqueoDataGridViewTextBoxColumn"];
+                DataGridViewCell cellhoras = dataGridView.Rows[e.RowIndex].Cells["nohorasbloqueoDataGridViewTextBoxColumn"];
+
+                if (celltipobloqueo.Value == null ||
+                    Program.Bd_Exp_Transportes.ca_tiposbloqueos.Single(query => query.id == (int)celltipobloqueo.Value).Descripcion.ToString().ToLower() == "bloquear manualmente")
+                {
+                    celldias.ReadOnly = true;
+                    cellhoras.ReadOnly = true;
+                    celldias.Value = null;
+                    cellhoras.Value = null;
+                    bindingSource_NoDias.MoveFirst();
+                    bindingSource_NoHoras.MoveFirst();
+                }
+                else
+                {
+                    celldias.ReadOnly = false;
+                    cellhoras.ReadOnly = false;
+                }
             }
-            else {
-                celldias.ReadOnly = false;
-                cellhoras.ReadOnly = false;
-            }
+            catch (Exception err)
+            {
+                scanndoc.classes.errorlogs.seterror(err);
+            }            
         }
         
         private void dataGridView_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
@@ -176,20 +185,28 @@ namespace scanndoc.forms
 
             dataGridView.Rows[e.RowIndex].ErrorText = "";
 
-            if (celltipobloqueo.Value != null &&
-                Program.Bd_Exp_Transportes.ca_tiposbloqueos.Single(query => query.id == (int)celltipobloqueo.Value).Descripcion.ToString().ToLower() == "bloquear despues de determinado tiempo")
+            try
             {
-                if (celldias.Value == null && cellhoras.Value == null)
+                if (celltipobloqueo.Value != null &&
+                Program.Bd_Exp_Transportes.ca_tiposbloqueos.Single(query => query.id == (int)celltipobloqueo.Value).Descripcion.ToString().ToLower() == "bloquear despues de determinado tiempo")
                 {
-                    e.Cancel = true;
-                    dataGridView.Rows[e.RowIndex].ErrorText = "Debe especificar al menos el día u hora de bloqueo.";
+                    if (celldias.Value == null && cellhoras.Value == null)
+                    {
+                        e.Cancel = true;
+                        dataGridView.Rows[e.RowIndex].ErrorText = "Debe especificar al menos el día u hora de bloqueo.";
+                    }
+                }
+                else
+                {
+                    celldias.Value = null;
+                    cellhoras.Value = null;
+                    bindingSource_NoDias.MoveFirst();
+                    bindingSource_NoHoras.MoveFirst();
                 }
             }
-            else {
-                celldias.Value = null;
-                cellhoras.Value = null;
-                bindingSource_NoDias.MoveFirst();
-                bindingSource_NoHoras.MoveFirst();
+            catch (Exception err)
+            {
+                scanndoc.classes.errorlogs.seterror(err);
             }
         }
 
@@ -262,9 +279,9 @@ namespace scanndoc.forms
                 tlp_proc.Visible = false;
                 this.Cursor = Cursors.Default;                
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                scanndoc.classes.errorlogs.seterror(e);
             }
             
         }

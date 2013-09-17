@@ -11,20 +11,36 @@ namespace scanndoc.classes
     {
         public static byte[] toByteArray(System.Drawing.Image imageIn)
         {
-            using (MemoryStream ms = new MemoryStream())
-            {                
-                imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                return ms.ToArray();
+            try
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    return ms.ToArray();
+                }
             }
+            catch (Exception e)
+            {
+                scanndoc.classes.errorlogs.seterror(e);
+            }
+            return null;
         }
 
         public static Image ByteArrayToImage(byte[] byteArrayIn)
         {
-            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            try
             {
-                Image returnImage = Image.FromStream(ms);
-                return returnImage;
+                using (MemoryStream ms = new MemoryStream(byteArrayIn))
+                {
+                    Image returnImage = Image.FromStream(ms);
+                    return returnImage;
+                }
             }
+            catch (Exception e)
+            {
+                scanndoc.classes.errorlogs.seterror(e);
+            }
+            return null;
         }
     }
 }

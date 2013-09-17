@@ -34,25 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_tramitedefecto));
             this.datagridview = new System.Windows.Forms.DataGridView();
-            this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.BindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btn_aceptar = new System.Windows.Forms.Button();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.pbfind = new System.Windows.Forms.PictureBox();
-            this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
-            this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.seleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.idexpedienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombretramiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +52,25 @@
             this.descripcionbloqueoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nohorasbloqueoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nodiasbloqueoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_aceptar = new System.Windows.Forms.Button();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.pbfind = new System.Windows.Forms.PictureBox();
+            this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
+            this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingNavigator)).BeginInit();
@@ -149,212 +149,6 @@
             this.datagridview.Size = new System.Drawing.Size(910, 263);
             this.datagridview.TabIndex = 1;
             this.datagridview.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridview_CellClick);
-            // 
-            // BindingSource
-            // 
-            this.BindingSource.DataSource = typeof(scanndoc.data_members.vw_ListaTramitesActivos);
-            // 
-            // BindingNavigator
-            // 
-            this.BindingNavigator.AddNewItem = null;
-            this.BindingNavigator.BindingSource = this.BindingSource;
-            this.BindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.BindingNavigator.DeleteItem = null;
-            this.BindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2});
-            this.BindingNavigator.Location = new System.Drawing.Point(0, 340);
-            this.BindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.BindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.BindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.BindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.BindingNavigator.Name = "BindingNavigator";
-            this.BindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.BindingNavigator.Size = new System.Drawing.Size(910, 25);
-            this.BindingNavigator.TabIndex = 3;
-            this.BindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btn_aceptar
-            // 
-            this.btn_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_aceptar.AutoSize = true;
-            this.btn_aceptar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_aceptar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_aceptar.FlatAppearance.BorderSize = 0;
-            this.btn_aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_aceptar.Image = global::scanndoc.Icons48x48.checkbox_checked;
-            this.btn_aceptar.Location = new System.Drawing.Point(844, 6);
-            this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(54, 54);
-            this.btn_aceptar.TabIndex = 2;
-            this.btn_aceptar.UseVisualStyleBackColor = false;
-            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lineShape2.BorderWidth = 2;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 787;
-            this.lineShape2.X2 = 1139;
-            this.lineShape2.Y1 = 62;
-            this.lineShape2.Y2 = 62;
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape2});
-            this.shapeContainer1.Size = new System.Drawing.Size(910, 365);
-            this.shapeContainer1.TabIndex = 6;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // pbfind
-            // 
-            this.pbfind.BackColor = System.Drawing.Color.Transparent;
-            this.pbfind.Image = global::scanndoc.Icons16x16.zoom;
-            this.pbfind.Location = new System.Drawing.Point(350, 50);
-            this.pbfind.Name = "pbfind";
-            this.pbfind.Size = new System.Drawing.Size(16, 16);
-            this.pbfind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pbfind.TabIndex = 18;
-            this.pbfind.TabStop = false;
-            // 
-            // txt_buscar
-            // 
-            this.txt_buscar.Location = new System.Drawing.Point(0, 48);
-            this.txt_buscar.Name = "txt_buscar";
-            this.txt_buscar.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txt_buscar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txt_buscar.Properties.Appearance.Options.UseBackColor = true;
-            this.txt_buscar.Properties.Appearance.Options.UseFont = true;
-            this.txt_buscar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txt_buscar.Size = new System.Drawing.Size(368, 20);
-            this.txt_buscar.TabIndex = 0;
-            this.txt_buscar.Tag = "0";
-            this.txt_buscar.EditValueChanged += new System.EventHandler(this.txt_buscar_EditValueChanged);
-            // 
-            // tlp_proc
-            // 
-            this.tlp_proc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlp_proc.BackColor = System.Drawing.Color.DimGray;
-            this.tlp_proc.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tlp_proc.ColumnCount = 2;
-            this.tlp_proc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlp_proc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlp_proc.Controls.Add(this.pictureBox1, 0, 0);
-            this.tlp_proc.Controls.Add(this.label2, 1, 0);
-            this.tlp_proc.Location = new System.Drawing.Point(703, 303);
-            this.tlp_proc.Name = "tlp_proc";
-            this.tlp_proc.RowCount = 1;
-            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tlp_proc.Size = new System.Drawing.Size(195, 50);
-            this.tlp_proc.TabIndex = 23;
-            this.tlp_proc.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::scanndoc.Icons48x48.clock;
-            this.pictureBox1.Location = new System.Drawing.Point(1, 1);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(50, 1);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.label2.Size = new System.Drawing.Size(145, 35);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Favor de esperar";
             // 
             // seleccion
             // 
@@ -498,6 +292,212 @@
             this.nodiasbloqueoDataGridViewTextBoxColumn.Name = "nodiasbloqueoDataGridViewTextBoxColumn";
             this.nodiasbloqueoDataGridViewTextBoxColumn.ReadOnly = true;
             this.nodiasbloqueoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // BindingSource
+            // 
+            this.BindingSource.DataSource = typeof(scanndoc.data_members.vw_ListaTramitesActivos);
+            // 
+            // BindingNavigator
+            // 
+            this.BindingNavigator.AddNewItem = null;
+            this.BindingNavigator.BindingSource = this.BindingSource;
+            this.BindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.BindingNavigator.DeleteItem = null;
+            this.BindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2});
+            this.BindingNavigator.Location = new System.Drawing.Point(0, 340);
+            this.BindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.BindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.BindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.BindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.BindingNavigator.Name = "BindingNavigator";
+            this.BindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.BindingNavigator.Size = new System.Drawing.Size(910, 25);
+            this.BindingNavigator.TabIndex = 3;
+            this.BindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Posición";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btn_aceptar
+            // 
+            this.btn_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_aceptar.AutoSize = true;
+            this.btn_aceptar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_aceptar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_aceptar.FlatAppearance.BorderSize = 0;
+            this.btn_aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_aceptar.Image = global::scanndoc.Icons48x48.close;
+            this.btn_aceptar.Location = new System.Drawing.Point(844, 6);
+            this.btn_aceptar.Name = "btn_aceptar";
+            this.btn_aceptar.Size = new System.Drawing.Size(54, 54);
+            this.btn_aceptar.TabIndex = 2;
+            this.btn_aceptar.UseVisualStyleBackColor = false;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lineShape2.BorderWidth = 2;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 787;
+            this.lineShape2.X2 = 1139;
+            this.lineShape2.Y1 = 62;
+            this.lineShape2.Y2 = 62;
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape2});
+            this.shapeContainer1.Size = new System.Drawing.Size(910, 365);
+            this.shapeContainer1.TabIndex = 6;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // pbfind
+            // 
+            this.pbfind.BackColor = System.Drawing.Color.Transparent;
+            this.pbfind.Image = global::scanndoc.Icons16x16.zoom;
+            this.pbfind.Location = new System.Drawing.Point(350, 50);
+            this.pbfind.Name = "pbfind";
+            this.pbfind.Size = new System.Drawing.Size(16, 16);
+            this.pbfind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbfind.TabIndex = 18;
+            this.pbfind.TabStop = false;
+            // 
+            // txt_buscar
+            // 
+            this.txt_buscar.Location = new System.Drawing.Point(0, 48);
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Properties.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_buscar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.txt_buscar.Properties.Appearance.Options.UseBackColor = true;
+            this.txt_buscar.Properties.Appearance.Options.UseFont = true;
+            this.txt_buscar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txt_buscar.Size = new System.Drawing.Size(368, 20);
+            this.txt_buscar.TabIndex = 0;
+            this.txt_buscar.Tag = "0";
+            this.txt_buscar.EditValueChanged += new System.EventHandler(this.txt_buscar_EditValueChanged);
+            // 
+            // tlp_proc
+            // 
+            this.tlp_proc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlp_proc.BackColor = System.Drawing.Color.DimGray;
+            this.tlp_proc.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlp_proc.ColumnCount = 2;
+            this.tlp_proc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_proc.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_proc.Controls.Add(this.pictureBox1, 0, 0);
+            this.tlp_proc.Controls.Add(this.label2, 1, 0);
+            this.tlp_proc.Location = new System.Drawing.Point(703, 303);
+            this.tlp_proc.Name = "tlp_proc";
+            this.tlp_proc.RowCount = 1;
+            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlp_proc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tlp_proc.Size = new System.Drawing.Size(195, 50);
+            this.tlp_proc.TabIndex = 23;
+            this.tlp_proc.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::scanndoc.Icons48x48.clock;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(50, 1);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label2.Size = new System.Drawing.Size(145, 35);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Favor de esperar";
             // 
             // frm_tramitedefecto
             // 

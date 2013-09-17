@@ -393,5 +393,22 @@ namespace scanndoc
             this.Cursor = Cursors.Default;
         }
 
+        private void cargoPuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            scanndoc.forms.ca_cargopuesto frm = new forms.ca_cargopuesto();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+        }
+
     }
 }

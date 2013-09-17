@@ -66,6 +66,7 @@ namespace scanndoc.forms
             //eliminar
             btn_eliminar.Enabled = Form_Mode == form_mode.normal ? true : false;
 
+            lookUpEdit_cargopuesto.Enabled = (Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar) ? true : false;
             textEdit.Enabled = (Form_Mode == form_mode.agregar ) ? true : false;
             textEdit1.Enabled = (Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar) ? true : false;
             textEdit2.Enabled = (Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar) ? true : false;
@@ -107,9 +108,23 @@ namespace scanndoc.forms
                 lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_usuarios>().ToList();
                 bindingsource.DataSource = lista;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                errorlogs.seterror(e);
             }
+        }
+
+        
+        private void obten_cargo_puesto() { 
+            try
+            {
+                ca_cargo_puestoBindingSource.DataSource = Program.Bd_Exp_Transportes.GetTable<ca_cargo_puesto>().ToList();
+                lookUpEdit_cargopuesto.Properties.DataSource = ca_cargo_puestoBindingSource;
+            }
+            catch (Exception e)
+            {
+                errorlogs.seterror(e);
+            }       
         }
 
         private void obten_roles(int ?id_usuario) { 
@@ -118,22 +133,17 @@ namespace scanndoc.forms
                 roles = Program.Bd_Exp_Transportes.pa_RolesporIdUsuario(id_usuario).ToList();
                 rolesBindingSource.DataSource = roles;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                errorlogs.seterror(e);
             }       
         }
 
 
         private void ca_template_Load(object sender, EventArgs e)
         {
-            try 
-	        {
-                actualiza_lista();
-	        }
-	        catch (Exception)
-	        {		
-		        throw;
-	        }            
+            obten_cargo_puesto();
+            actualiza_lista();
             Form_Mode = form_mode.normal;
         }
 
@@ -146,9 +156,9 @@ namespace scanndoc.forms
                 textEdit2.Text = "";
                 bindingsource.AddNew();
 	        }
-	        catch (Exception)
+	        catch (Exception e)
 	        {
-		        throw;
+                scanndoc.classes.errorlogs.seterror(e);
 	        }
         }
 
@@ -242,8 +252,9 @@ namespace scanndoc.forms
                 bindingsource.DataSource = valores;
                 datagridview.Update();
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
 
             Application.DoEvents();
@@ -314,9 +325,9 @@ namespace scanndoc.forms
                     }
 	            }
             }
-            catch (Exception)
-	        {		
-		        throw;
+            catch (Exception e)
+	        {
+                errorlogs.seterror(e);
 	        }
             bindingsource_CurrentItemChanged(null, null);
         }
@@ -343,8 +354,15 @@ namespace scanndoc.forms
 
             if (detalles.Count > 0)
             {
-                Program.Bd_Exp_Transportes.re_usuarios_roles_permisos.InsertAllOnSubmit(detalles);
-                Program.Bd_Exp_Transportes.SubmitChanges();
+                try
+                {
+                    Program.Bd_Exp_Transportes.re_usuarios_roles_permisos.InsertAllOnSubmit(detalles);
+                    Program.Bd_Exp_Transportes.SubmitChanges();
+                }
+                catch (Exception e)
+                {
+                    errorlogs.seterror(e);
+                }
             }
         }
 
@@ -365,12 +383,20 @@ namespace scanndoc.forms
 
         private bool buscar_si_existe()
         {
-            data_members.ca_usuarios filtro = Program.Bd_Exp_Transportes.ca_usuarios.SingleOrDefault(query => query.usuario.ToString().ToLower() == usuario.usuario.ToString().ToLower());
-            if ( filtro != null ) {
-                MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return true;
+            try
+            {
+                data_members.ca_usuarios filtro = Program.Bd_Exp_Transportes.ca_usuarios.SingleOrDefault(query => query.usuario.ToString().ToLower() == usuario.usuario.ToString().ToLower());
+                if (filtro != null)
+                {
+                    MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
             }
-            return false;
+            catch (Exception e)
+            {
+                errorlogs.seterror(e);                
+            }
+            return true;
         }
 
         //editar
@@ -407,9 +433,9 @@ namespace scanndoc.forms
                         MessageBox.Show("Registro modificado con éxito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 	            }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    throw;
+                    errorlogs.seterror(e);                
                 }
                 bindingsource_CurrentItemChanged(null, null);
             }            
@@ -419,45 +445,53 @@ namespace scanndoc.forms
         {
             List<data_members.re_usuarios_roles_permisos> deleteitems = new List<re_usuarios_roles_permisos>();
             List<data_members.re_usuarios_roles_permisos> additems = new List<re_usuarios_roles_permisos>();
-            
-            foreach (data_members.pa_RolesporIdUsuarioResult item in rolesclon)
+
+            try
             {
-                data_members.re_usuarios_roles_permisos select = (from query in Program.Bd_Exp_Transportes.re_usuarios_roles_permisos
-                                                                  where query.id_usuario == id_usuario && query.id_rol == item.ID
-                                                                  select query).SingleOrDefault();
-
-                if (item.ENLAZADO == 0) 
+                foreach (data_members.pa_RolesporIdUsuarioResult item in rolesclon)
                 {
-                    if (select != null)
+                    data_members.re_usuarios_roles_permisos select = (from query in Program.Bd_Exp_Transportes.re_usuarios_roles_permisos
+                                                                      where query.id_usuario == id_usuario && query.id_rol == item.ID
+                                                                      select query).SingleOrDefault();
+
+                    if (item.ENLAZADO == 0) 
                     {
-                        deleteitems.Add(select);
-                    }
+                        if (select != null)
+                        {
+                            deleteitems.Add(select);
+                        }
 
-                    select = null;
-                } 
-                else
-                {
-                    if (select == null)
+                        select = null;
+                    } 
+                    else
                     {
-                        data_members.re_usuarios_roles_permisos detalle = new re_usuarios_roles_permisos();
+                        if (select == null)
+                        {
+                            data_members.re_usuarios_roles_permisos detalle = new re_usuarios_roles_permisos();
 
-                        detalle.id_usuario = id_usuario;
-                        detalle.id_rol = item.ID;
+                            detalle.id_usuario = id_usuario;
+                            detalle.id_rol = item.ID;
 
-                        additems.Add(detalle);
+                            additems.Add(detalle);
 
-                        detalle = null;
+                            detalle = null;
+                        }
                     }
                 }
-            }
 
-            if (deleteitems.Count > 0)
-            {
-                Program.Bd_Exp_Transportes.re_usuarios_roles_permisos.DeleteAllOnSubmit(deleteitems);
+                if (deleteitems.Count > 0)
+                {
+                    Program.Bd_Exp_Transportes.re_usuarios_roles_permisos.DeleteAllOnSubmit(deleteitems);
+                }
+                if (additems.Count > 0)
+                {
+                    Program.Bd_Exp_Transportes.re_usuarios_roles_permisos.InsertAllOnSubmit(additems);
+                }
+
             }
-            if (additems.Count > 0)
+            catch (Exception e)
             {
-                Program.Bd_Exp_Transportes.re_usuarios_roles_permisos.InsertAllOnSubmit(additems);
+                errorlogs.seterror(e);
             }
             
         }
@@ -495,18 +529,25 @@ namespace scanndoc.forms
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                errorlogs.seterror(e);
             }
         }
 
         private void elimina_roles(int id_usuario)
         {
-            IEnumerable<data_members.re_usuarios_roles_permisos> detalles = (from query in Program.Bd_Exp_Transportes.re_usuarios_roles_permisos
-                                                                             where (query.id_usuario == id_usuario)
-                                                                             select query).ToList();
-            Program.Bd_Exp_Transportes.re_usuarios_roles_permisos.DeleteAllOnSubmit(detalles);
+            try
+            {
+                IEnumerable<data_members.re_usuarios_roles_permisos> detalles = (from query in Program.Bd_Exp_Transportes.re_usuarios_roles_permisos
+                                                                                 where (query.id_usuario == id_usuario)
+                                                                                 select query).ToList();
+                Program.Bd_Exp_Transportes.re_usuarios_roles_permisos.DeleteAllOnSubmit(detalles);
+            }
+            catch (Exception e)
+            {
+                errorlogs.seterror(e);
+            }
         }
 
         private Boolean modificacontraseña;

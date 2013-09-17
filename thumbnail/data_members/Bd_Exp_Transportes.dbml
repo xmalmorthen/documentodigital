@@ -139,20 +139,6 @@
       <Association Name="ca_estatus_ca_tramites" Member="ca_estatus" ThisKey="id_estatus" OtherKey="id" Type="ca_estatus" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ca_usuarios" Member="ca_usuarios">
-    <Type Name="ca_usuarios">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="usuario" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="contrasenia" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CURP" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
-      <Column Name="Nombres" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Apellido1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Apellido2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="ca_usuarios_hco_cambios" Member="hco_cambios" ThisKey="id" OtherKey="id_usuario" Type="hco_cambios" />
-      <Association Name="ca_usuarios_re_usuarios_roles_permisos" Member="re_usuarios_roles_permisos" ThisKey="id" OtherKey="id_usuario" Type="re_usuarios_roles_permisos" />
-    </Type>
-  </Table>
   <Table Name="dbo.de_acciones_modulo" Member="de_acciones_modulo">
     <Type Name="de_acciones_modulo">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -171,7 +157,6 @@
       <Column Name="valores" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Association Name="ca_acciones_hco_cambios" Member="ca_acciones" ThisKey="id_accion" OtherKey="id" Type="ca_acciones" IsForeignKey="true" />
       <Association Name="ca_tablas_hco_cambios" Member="ca_tablas" ThisKey="id_tabla" OtherKey="id" Type="ca_tablas" IsForeignKey="true" />
-      <Association Name="ca_usuarios_hco_cambios" Member="ca_usuarios" ThisKey="id_usuario" OtherKey="id" Type="ca_usuarios" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.re_clasificaciondocumentos_documentos" Member="re_clasificaciondocumentos_documentos">
@@ -313,6 +298,40 @@
       <Column Name="no_dias" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Association Name="ca_tiposbloqueos_re_expedientestramites_tiposbloqueos" Member="ca_tiposbloqueos" ThisKey="id_tipobloqueo" OtherKey="id" Type="ca_tiposbloqueos" IsForeignKey="true" />
       <Association Name="re_expedientes_tramites_re_expedientestramites_tiposbloqueos" Member="re_expedientes_tramites" ThisKey="id_re_expediente_tramite" OtherKey="id" Type="re_expedientes_tramites" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ca_cargo_puesto" Member="ca_cargo_puesto">
+    <Type Name="ca_cargo_puesto">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="ca_cargo_puesto_ca_usuarios" Member="ca_usuarios" ThisKey="id" OtherKey="id_cargo" Type="ca_usuarios" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ca_usuarios" Member="ca_usuarios">
+    <Type Name="ca_usuarios">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="usuario" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="contrasenia" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CURP" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_cargo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ca_usuarios_re_usuarios_roles_permisos" Member="re_usuarios_roles_permisos" ThisKey="id" OtherKey="id_usuario" Type="re_usuarios_roles_permisos" />
+      <Association Name="ca_cargo_puesto_ca_usuarios" Member="ca_cargo_puesto" ThisKey="id_cargo" OtherKey="id" Type="ca_cargo_puesto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_errorlogs" Member="tbl_errorlogs">
+    <Type Name="tbl_errorlogs">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fechahora" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="message" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="trace" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="host" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ip" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.pa_CampostrazablesActivosporExpediente" Method="pa_CampostrazablesActivosporExpediente">

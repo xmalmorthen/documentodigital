@@ -64,8 +64,9 @@ namespace scanndoc.forms
                 lista_tramites = Program.Bd_Exp_Transportes.GetTable<data_members.ca_tramites>().ToList();
                 bindingsource_ca_tramites.DataSource = lista_tramites;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                scanndoc.classes.errorlogs.seterror(e);
             }
         }
 
@@ -76,8 +77,9 @@ namespace scanndoc.forms
                 lista_clasificaciondocumentos = Program.Bd_Exp_Transportes.pa_ClasificacionDocumentosNoEnlazadosporTramite(id_tramite).ToList();
                 bindingsource_ca_clasificaciondocumentos.DataSource = lista_clasificaciondocumentos;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                scanndoc.classes.errorlogs.seterror(e);
             }
         }
 
@@ -90,21 +92,15 @@ namespace scanndoc.forms
 
                 txt_buscarcampotrazable.Text = "";
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                scanndoc.classes.errorlogs.seterror(e);
             }
         }
 
         private void re_expedientes_campostrazables_Load(object sender, EventArgs e)
         {
-            try 
-	        {
-                actualiza_lista_tramites();
-	        }
-	        catch (Exception)
-	        {		
-		        throw;
-	        }            
+            actualiza_lista_tramites();
             Form_Mode = form_mode.agregar;
         }
 
@@ -116,9 +112,9 @@ namespace scanndoc.forms
                 lookUpEdit.EditValue = null;
                 txt_buscarcampotrazable.Text = "";
 	        }
-	        catch (Exception)
+	        catch (Exception err)
 	        {
-		        throw;
+                scanndoc.classes.errorlogs.seterror(err);
 	        }
         }
 
@@ -166,8 +162,9 @@ namespace scanndoc.forms
                 if (valores.Count == 0)
                     actualiza_re_tramites_clasificaciondocumentos(0);
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
 
             Application.DoEvents();
@@ -210,9 +207,9 @@ namespace scanndoc.forms
                     MessageBox.Show("Registro agregado con éxito", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception)
-	        {		
-		        throw;
+            catch (Exception e)
+	        {
+                scanndoc.classes.errorlogs.seterror(e);
 	        }
             bindingsource_CurrentItemChanged(null, null);            
         }
@@ -254,8 +251,9 @@ namespace scanndoc.forms
                 bindingsource.DataSource = valores;
                 dataGridView2.Update();
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
 
             Application.DoEvents();
@@ -298,9 +296,10 @@ namespace scanndoc.forms
                     MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 MessageBox.Show(this, "La clasificación de documentos se encuentra en uso", "Imposible eliminar", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                scanndoc.classes.errorlogs.seterror(e);
             }
             bindingsource_CurrentItemChanged(null, null);
         }

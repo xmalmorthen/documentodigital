@@ -32,7 +32,14 @@ namespace scanndoc.forms
 
         private void frm_tramiteplanbloqueo_Load(object sender, EventArgs e)
         {
-            dateEdit.Properties.MinValue = Program.Bd_Exp_Transportes.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
+            try
+            {
+                dateEdit.Properties.MinValue = Program.Bd_Exp_Transportes.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
+            }
+            catch (Exception err)
+            {
+                scanndoc.classes.errorlogs.seterror(err);
+            }
         }
 
         private void btn_aceptar_Click(object sender, EventArgs e)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using scanndoc.data_members;
+using scanndoc.classes;
 
 namespace scanndoc.forms
 {
@@ -95,21 +96,15 @@ namespace scanndoc.forms
                 lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_campostrazables>().ToList();
                 bindingsource.DataSource = lista;
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
         }
 
         private void ca_template_Load(object sender, EventArgs e)
         {
-            try 
-	        {
-                actualiza_lista();
-	        }
-	        catch (Exception)
-	        {		
-		        throw;
-	        }            
+            actualiza_lista();
             Form_Mode = form_mode.normal;
         }
 
@@ -122,9 +117,9 @@ namespace scanndoc.forms
                 bindingsource.AddNew();
                 (bindingsource.Current as data_members.ca_campostrazables).Tamanio_Caracteres = 1;
 	        }
-	        catch (Exception)
+	        catch (Exception err)
 	        {
-		        throw;
+                scanndoc.classes.errorlogs.seterror(err);
 	        }
         }
 
@@ -217,8 +212,9 @@ namespace scanndoc.forms
                 bindingsource.DataSource = valores;
                 datagridview.Update();
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                scanndoc.classes.errorlogs.seterror(err);
             }
 
             Application.DoEvents();
@@ -269,9 +265,9 @@ namespace scanndoc.forms
                     }
 	            }
             }
-            catch (Exception)
-	        {		
-		        throw;
+            catch (Exception err)
+	        {
+                scanndoc.classes.errorlogs.seterror(err);
 	        }
         }
 
@@ -285,13 +281,21 @@ namespace scanndoc.forms
 
         private bool buscar_si_existe()
         {
-            data_members.ca_campostrazables filtro = Program.Bd_Exp_Transportes.ca_campostrazables.SingleOrDefault(query => query.Nombre.ToString().ToLower() == catalogo.Nombre.ToString().ToLower());
-            if (filtro != null)
+            try
             {
-                MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return true;
+                data_members.ca_campostrazables filtro = Program.Bd_Exp_Transportes.ca_campostrazables.SingleOrDefault(query => query.Nombre.ToString().ToLower() == catalogo.Nombre.ToString().ToLower());
+                if (filtro != null)
+                {
+                    MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch (Exception err)
+            {
+                scanndoc.classes.errorlogs.seterror(err);                
+            }
+            return true;
         }
 
         //editar
@@ -305,9 +309,9 @@ namespace scanndoc.forms
                             actualiza_lista();
                             MessageBox.Show("Registro modificado con éxito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
 	            }
-                catch (Exception)
+                catch (Exception err)
                 {
-                    throw;
+                    scanndoc.classes.errorlogs.seterror(err);
                 }
             }            
         }
@@ -325,9 +329,9 @@ namespace scanndoc.forms
                     MessageBox.Show("Registro eliminado con éxito", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                throw;
+                scanndoc.classes.errorlogs.seterror(err);
             }
         }
 

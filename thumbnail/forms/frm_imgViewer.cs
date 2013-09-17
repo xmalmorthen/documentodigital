@@ -73,9 +73,9 @@ namespace scanndoc.forms
                 pathimageoriginal = pathfilename;
                 this.initialize();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("Ocurrio un error al intentar obtener la imagen digitál, favor de intentarlo de nuevo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                scanndoc.classes.errorlogs.seterror(e);
             }            
         }
 

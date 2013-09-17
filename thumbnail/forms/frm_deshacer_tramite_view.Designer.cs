@@ -157,7 +157,7 @@ namespace scanndoc.forms
             this.btn_deshacer.Name = "btn_deshacer";
             this.btn_deshacer.Size = new System.Drawing.Size(54, 54);
             this.btn_deshacer.TabIndex = 64;
-            this.tooltipBtnMnuOptions.SetToolTip(this.btn_deshacer, "Bloquear trámite");
+            this.tooltipBtnMnuOptions.SetToolTip(this.btn_deshacer, "Deshacer trámite");
             this.btn_deshacer.UseVisualStyleBackColor = false;
             this.btn_deshacer.Click += new System.EventHandler(this.btn_deshacer_Click);
             // 
