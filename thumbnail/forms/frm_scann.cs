@@ -597,12 +597,16 @@ namespace scanndoc.forms
             try
             {
                 scanndoc.data_members.tbl_configuraciones Configs = Program.Bd_Exp_Transportes.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault);
-                this.lookUpEdit_Tramites.EditValue = int.Parse(Configs.Valor); //establecer el tramite a seleccionar
 
-                BindingSource_ListaTramites.MoveFirst();
-                while ((BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).id_tramite != int.Parse(Configs.Valor))
+                if (BindingSource_ListaTramites.Count > 0)
                 {
-                    BindingSource_ListaTramites.MoveNext();
+                    this.lookUpEdit_Tramites.EditValue = int.Parse(Configs.Valor); //establecer el tramite a seleccionar
+
+                    BindingSource_ListaTramites.MoveFirst();
+                    while ((BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).id_tramite != int.Parse(Configs.Valor))
+                    {
+                        BindingSource_ListaTramites.MoveNext();
+                    }
                 }
             }
             catch (Exception e)
@@ -632,8 +636,13 @@ namespace scanndoc.forms
         }
 
         private void actualizaventanadelistadedocumentos() {
-            frmListaDocumentosOrden.Owner = this;
-            frmListaDocumentosOrden.inicializa(lookUpEdit_Tramites_selected.id_tramite, Convert.ToInt32(tbctrl.SelectedTab.Tag.ToString()));            
+            try
+            {
+                frmListaDocumentosOrden.Owner = this;
+                frmListaDocumentosOrden.inicializa(lookUpEdit_Tramites_selected.id_tramite, Convert.ToInt32(tbctrl.SelectedTab.Tag.ToString()));            
+            }
+            catch (Exception)
+            {}            
         }
 
         private void lookUpEdit_Tramites_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)

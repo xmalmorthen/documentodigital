@@ -34,6 +34,13 @@ namespace scanndoc.forms
 
                 BindingSource.DataSource = tramites;
 
+                tlp_noregistros.Visible = (BindingSource.Count == 0);
+
+                btn_ver.Enabled = !(BindingSource.Count == 0);
+                btn_desbloquear.Enabled = !(BindingSource.Count == 0);
+                btn_eliminaplan.Enabled = !(BindingSource.Count == 0);
+                cntmnu.Enabled = !(BindingSource.Count == 0);
+
                 formatear_celda();
             }
             catch (Exception e)

@@ -77,6 +77,9 @@
             this.pbfind = new System.Windows.Forms.PictureBox();
             this.bindingSource_NoDias = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource_NoHoras = new System.Windows.Forms.BindingSource(this.components);
+            this.tlp_noregistros = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingNavigator)).BeginInit();
@@ -88,6 +91,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_NoDias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_NoHoras)).BeginInit();
+            this.tlp_noregistros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // tlp_proc
@@ -533,12 +538,56 @@
             // 
             this.bindingSource_NoHoras.DataSource = typeof(scanndoc.data_members.vw_ListaTramitesActivos);
             // 
+            // tlp_noregistros
+            // 
+            this.tlp_noregistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlp_noregistros.BackColor = System.Drawing.Color.Gainsboro;
+            this.tlp_noregistros.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlp_noregistros.ColumnCount = 2;
+            this.tlp_noregistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_noregistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_noregistros.Controls.Add(this.pictureBox3, 0, 0);
+            this.tlp_noregistros.Controls.Add(this.label1, 1, 0);
+            this.tlp_noregistros.Location = new System.Drawing.Point(247, 195);
+            this.tlp_noregistros.Name = "tlp_noregistros";
+            this.tlp_noregistros.RowCount = 1;
+            this.tlp_noregistros.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlp_noregistros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tlp_noregistros.Size = new System.Drawing.Size(283, 50);
+            this.tlp_noregistros.TabIndex = 70;
+            this.tlp_noregistros.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::scanndoc.Icons48x48.attention;
+            this.pictureBox3.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Maroon;
+            this.label1.Location = new System.Drawing.Point(50, 1);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label1.Size = new System.Drawing.Size(232, 35);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "No se encontraron registros";
+            // 
             // frm_preferencias_tramitepordefecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(833, 432);
+            this.Controls.Add(this.tlp_noregistros);
             this.Controls.Add(this.pbfind);
             this.Controls.Add(this.txt_buscar);
             this.Controls.Add(this.label2);
@@ -566,6 +615,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_NoDias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_NoHoras)).EndInit();
+            this.tlp_noregistros.ResumeLayout(false);
+            this.tlp_noregistros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -614,5 +666,8 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn nodiasbloqueoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn nohorasbloqueoDataGridViewTextBoxColumn;
         public System.Windows.Forms.BindingSource bindingSource_NoHoras;
+        private System.Windows.Forms.TableLayoutPanel tlp_noregistros;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label1;
     }
 }

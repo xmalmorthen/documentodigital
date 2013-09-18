@@ -27,6 +27,9 @@ namespace scanndoc.forms
             {
                 tramites = Program.Bd_Exp_Transportes.GetTable<data_members.vw_ListaTramitesActivos>().ToList();
                 BindingSource.DataSource = tramites;
+
+                tlp_noregistros.Visible = (BindingSource.Count == 0);
+                btn_ver.Enabled = !(BindingSource.Count == 0);
             }
             catch (Exception e)
             {

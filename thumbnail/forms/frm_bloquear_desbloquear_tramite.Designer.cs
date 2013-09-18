@@ -85,6 +85,9 @@
             this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
             this.label5 = new System.Windows.Forms.Label();
             this.pbfind = new System.Windows.Forms.PictureBox();
+            this.tlp_noregistros = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BindingNavigator)).BeginInit();
@@ -94,6 +97,8 @@
             this.cntmnu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).BeginInit();
+            this.tlp_noregistros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // tlp_proc
@@ -702,6 +707,49 @@
             this.pbfind.TabIndex = 69;
             this.pbfind.TabStop = false;
             // 
+            // tlp_noregistros
+            // 
+            this.tlp_noregistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlp_noregistros.BackColor = System.Drawing.Color.Gainsboro;
+            this.tlp_noregistros.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlp_noregistros.ColumnCount = 2;
+            this.tlp_noregistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_noregistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_noregistros.Controls.Add(this.pictureBox3, 0, 0);
+            this.tlp_noregistros.Controls.Add(this.label6, 1, 0);
+            this.tlp_noregistros.Location = new System.Drawing.Point(236, 181);
+            this.tlp_noregistros.Name = "tlp_noregistros";
+            this.tlp_noregistros.RowCount = 1;
+            this.tlp_noregistros.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlp_noregistros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tlp_noregistros.Size = new System.Drawing.Size(283, 50);
+            this.tlp_noregistros.TabIndex = 73;
+            this.tlp_noregistros.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::scanndoc.Icons48x48.attention;
+            this.pictureBox3.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Maroon;
+            this.label6.Location = new System.Drawing.Point(50, 1);
+            this.label6.Margin = new System.Windows.Forms.Padding(0);
+            this.label6.Name = "label6";
+            this.label6.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label6.Size = new System.Drawing.Size(232, 35);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "No se encontraron registros";
+            // 
             // frm_bloquear_desbloquear_tramite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -709,6 +757,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.btn_cancelar;
             this.ClientSize = new System.Drawing.Size(833, 432);
+            this.Controls.Add(this.tlp_noregistros);
             this.Controls.Add(this.btn_eliminaplan);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_planbloqueo);
@@ -743,6 +792,9 @@
             this.cntmnu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).EndInit();
+            this.tlp_noregistros.ResumeLayout(false);
+            this.tlp_noregistros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -800,5 +852,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_eliminaplan;
         private System.Windows.Forms.ToolStripMenuItem opcmnueliminarplan;
+        private System.Windows.Forms.TableLayoutPanel tlp_noregistros;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label6;
     }
 }

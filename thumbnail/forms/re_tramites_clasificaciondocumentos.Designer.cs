@@ -105,6 +105,9 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.tlp_noregistros = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
@@ -130,6 +133,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
+            this.tlp_noregistros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
@@ -933,11 +938,55 @@
             // 
             this.dxValidationProvider.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
             // 
+            // tlp_noregistros
+            // 
+            this.tlp_noregistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlp_noregistros.BackColor = System.Drawing.Color.Gainsboro;
+            this.tlp_noregistros.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlp_noregistros.ColumnCount = 2;
+            this.tlp_noregistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_noregistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_noregistros.Controls.Add(this.pictureBox3, 0, 0);
+            this.tlp_noregistros.Controls.Add(this.label3, 1, 0);
+            this.tlp_noregistros.Location = new System.Drawing.Point(363, 562);
+            this.tlp_noregistros.Name = "tlp_noregistros";
+            this.tlp_noregistros.RowCount = 1;
+            this.tlp_noregistros.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlp_noregistros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tlp_noregistros.Size = new System.Drawing.Size(283, 50);
+            this.tlp_noregistros.TabIndex = 39;
+            this.tlp_noregistros.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::scanndoc.Icons48x48.attention;
+            this.pictureBox3.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
+            this.label3.Location = new System.Drawing.Point(50, 1);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label3.Size = new System.Drawing.Size(232, 35);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "No se encontraron registros";
+            // 
             // re_tramites_clasificaciondocumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.tlp_noregistros);
             this.Controls.Add(this.splitContainer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1024, 768);
@@ -972,6 +1021,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
+            this.tlp_noregistros.ResumeLayout(false);
+            this.tlp_noregistros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1047,5 +1099,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idclasificaciondocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.TableLayoutPanel tlp_noregistros;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label3;
     }
 }

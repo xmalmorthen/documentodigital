@@ -39,8 +39,8 @@
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label10;
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.Windows.Forms.Label label11;
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -59,6 +59,8 @@
             this.lookUpEdit_cargopuesto = new DevExpress.XtraEditors.GridLookUpEdit();
             this.ca_cargo_puestoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EnlazadoColumns = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -116,8 +118,9 @@
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.re_usuarios_roles_permisosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tlp_noregistros = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -157,6 +160,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.re_usuarios_roles_permisosBindingSource)).BeginInit();
+            this.tlp_noregistros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
@@ -267,6 +272,16 @@
             label10.TabIndex = 35;
             label10.Text = "Roles";
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label11.Location = new System.Drawing.Point(9, 22);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(122, 18);
+            label11.TabIndex = 36;
+            label11.Text = "Cargo / Puesto";
+            // 
             // textEdit1
             // 
             this.textEdit1.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -292,16 +307,6 @@
             // 
             this.bindingsource.DataSource = typeof(scanndoc.data_members.ca_usuarios);
             this.bindingsource.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label11.Location = new System.Drawing.Point(9, 22);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(122, 18);
-            label11.TabIndex = 36;
-            label11.Text = "Cargo / Puesto";
             // 
             // splitContainer
             // 
@@ -409,6 +414,19 @@
             this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colid
+            // 
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
+            // 
+            // colDescripcion
+            // 
+            this.colDescripcion.Caption = "Cargo / Puesto";
+            this.colDescripcion.FieldName = "Descripcion";
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.Visible = true;
+            this.colDescripcion.VisibleIndex = 0;
             // 
             // dataGridView1
             // 
@@ -1138,24 +1156,55 @@
             this.re_usuarios_roles_permisosBindingSource.DataMember = "re_usuarios_roles_permisos";
             this.re_usuarios_roles_permisosBindingSource.DataSource = this.bindingsource;
             // 
-            // colid
+            // tlp_noregistros
             // 
-            this.colid.FieldName = "id";
-            this.colid.Name = "colid";
+            this.tlp_noregistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlp_noregistros.BackColor = System.Drawing.Color.Gainsboro;
+            this.tlp_noregistros.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlp_noregistros.ColumnCount = 2;
+            this.tlp_noregistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_noregistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_noregistros.Controls.Add(this.pictureBox3, 0, 0);
+            this.tlp_noregistros.Controls.Add(this.label12, 1, 0);
+            this.tlp_noregistros.Location = new System.Drawing.Point(363, 584);
+            this.tlp_noregistros.Name = "tlp_noregistros";
+            this.tlp_noregistros.RowCount = 1;
+            this.tlp_noregistros.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlp_noregistros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tlp_noregistros.Size = new System.Drawing.Size(283, 50);
+            this.tlp_noregistros.TabIndex = 39;
+            this.tlp_noregistros.Visible = false;
             // 
-            // colDescripcion
+            // pictureBox3
             // 
-            this.colDescripcion.Caption = "Cargo / Puesto";
-            this.colDescripcion.FieldName = "Descripcion";
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.Visible = true;
-            this.colDescripcion.VisibleIndex = 0;
+            this.pictureBox3.Image = global::scanndoc.Icons48x48.attention;
+            this.pictureBox3.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Maroon;
+            this.label12.Location = new System.Drawing.Point(50, 1);
+            this.label12.Margin = new System.Windows.Forms.Padding(0);
+            this.label12.Name = "label12";
+            this.label12.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label12.Size = new System.Drawing.Size(232, 35);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "No se encontraron registros";
             // 
             // ca_usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 730);
+            this.Controls.Add(this.tlp_noregistros);
             this.Controls.Add(this.splitContainer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1024, 768);
@@ -1195,6 +1244,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.re_usuarios_roles_permisosBindingSource)).EndInit();
+            this.tlp_noregistros.ResumeLayout(false);
+            this.tlp_noregistros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1270,5 +1322,8 @@
         private System.Windows.Forms.BindingSource ca_cargo_puestoBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colDescripcion;
+        private System.Windows.Forms.TableLayoutPanel tlp_noregistros;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label12;
     }
 }

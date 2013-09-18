@@ -62,6 +62,7 @@ namespace scanndoc.forms
             {
                 lista_expedientes = Program.Bd_Exp_Transportes.GetTable<data_members.ca_expedientes>().ToList();
                 bindingsource_ca_expedientes.DataSource = lista_expedientes;
+                tlp_noregistros.Visible = (bindingsource.Count == 0);
             }
             catch (Exception e)
             {
@@ -453,7 +454,7 @@ namespace scanndoc.forms
             try
             {
                 Boolean result = valida_existe_campoprincipal();
-                if (datagridview.Enabled != result)
+                if (datagridview.Enabled != result && !tlp_noregistros.Visible)
                 {
                     datagridview.Enabled = result;
                     bindingNavigator_ca_expedientes.Enabled = result;

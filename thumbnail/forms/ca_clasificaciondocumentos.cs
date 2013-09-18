@@ -112,6 +112,7 @@ namespace scanndoc.forms
             {
                 lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_clasificaciondocumentos>().ToList();
                 bindingsource.DataSource = lista;
+                tlp_noregistros.Visible = (bindingsource.Count == 0);
             }
             catch (Exception err)
             {

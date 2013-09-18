@@ -48,7 +48,14 @@ namespace scanndoc.classes
                     guardatrace = false;
                     break;
                 default:
-                    errorcode = (e as Win32Exception).ErrorCode.ToString();
+                    try
+                    {
+                        errorcode = (e as Win32Exception).ErrorCode.ToString();
+                    }
+                    catch (Exception)
+                    {                        
+                        throw;
+                    }                    
                     break;
             }
 

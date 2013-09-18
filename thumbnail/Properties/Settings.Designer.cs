@@ -95,17 +95,6 @@ namespace scanndoc.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Exp_Transportes;Persist Sec" +
-            "urity Info=True;User ID=digitaldocs;Password=..121212qw")]
-        public string Bd_Exp_TransportesConnectionString {
-            get {
-                return ((string)(this["Bd_Exp_TransportesConnectionString"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
@@ -163,6 +152,30 @@ namespace scanndoc.Properties {
             }
             set {
                 this["CampoPlanBloqueo_RowColorGrid"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User " +
+            "ID=..Bd_Exp_Transportes_#user#..;Password=#pass#")]
+        public string Bd_Exp_TransportesConnectionStringTemplate {
+            get {
+                return ((string)(this["Bd_Exp_TransportesConnectionStringTemplate"]));
+            }
+            set {
+                this["Bd_Exp_TransportesConnectionStringTemplate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User " +
+            "ID=digitaldocs;Password=..121212qw")]
+        public string Bd_Exp_TransportesConnectionString {
+            get {
+                return ((string)(this["Bd_Exp_TransportesConnectionString"]));
             }
         }
     }

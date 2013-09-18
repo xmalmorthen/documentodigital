@@ -110,6 +110,9 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.tlp_noregistros = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
@@ -139,6 +142,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
+            this.tlp_noregistros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
@@ -203,6 +208,7 @@
             // 
             this.splitContainer.Panel2.AutoScroll = true;
             this.splitContainer.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.splitContainer.Panel2.Controls.Add(this.tlp_noregistros);
             this.splitContainer.Panel2.Controls.Add(this.tlp_warning);
             this.splitContainer.Panel2.Controls.Add(this.tlp_proc);
             this.splitContainer.Panel2.Controls.Add(this.bindingNavigator_ca_expedientes);
@@ -1010,6 +1016,49 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // tlp_noregistros
+            // 
+            this.tlp_noregistros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlp_noregistros.BackColor = System.Drawing.Color.Gainsboro;
+            this.tlp_noregistros.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tlp_noregistros.ColumnCount = 2;
+            this.tlp_noregistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_noregistros.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlp_noregistros.Controls.Add(this.pictureBox4, 0, 0);
+            this.tlp_noregistros.Controls.Add(this.label5, 1, 0);
+            this.tlp_noregistros.Location = new System.Drawing.Point(362, 138);
+            this.tlp_noregistros.Name = "tlp_noregistros";
+            this.tlp_noregistros.RowCount = 1;
+            this.tlp_noregistros.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlp_noregistros.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tlp_noregistros.Size = new System.Drawing.Size(283, 50);
+            this.tlp_noregistros.TabIndex = 39;
+            this.tlp_noregistros.Visible = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::scanndoc.Icons48x48.attention;
+            this.pictureBox4.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Maroon;
+            this.label5.Location = new System.Drawing.Point(50, 1);
+            this.label5.Margin = new System.Windows.Forms.Padding(0);
+            this.label5.Name = "label5";
+            this.label5.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.label5.Size = new System.Drawing.Size(232, 35);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "No se encontraron registros";
+            // 
             // re_expedientes_campostrazables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1055,6 +1104,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ca_expedientesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
+            this.tlp_noregistros.ResumeLayout(false);
+            this.tlp_noregistros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1135,5 +1187,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TableLayoutPanel tlp_noregistros;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label5;
     }
 }

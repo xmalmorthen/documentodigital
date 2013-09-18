@@ -58,6 +58,7 @@ namespace scanndoc.forms
             {
                 lista_clasificaciondocumentos = Program.Bd_Exp_Transportes.GetTable<data_members.ca_clasificaciondocumentos>().ToList();
                 bindingsource_ca_clasificaciondocumentos.DataSource = lista_clasificaciondocumentos;
+                tlp_noregistros.Visible = (bindingsource.Count == 0);
             }
             catch (Exception e)
             {

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using scanndoc.classes;
 using System.Collections;
 using scanndoc.models;
+using scanndoc.Properties;
 
 namespace scanndoc.forms
 {
@@ -27,7 +28,10 @@ namespace scanndoc.forms
         }
 
         private string connectionstring(string usuario, string contrasenia) {
-            return "Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User ID=..Bd_Exp_Transportes_" + usuario + "..;Password=" + contrasenia;
+            string cnn = Settings.Default.Bd_Exp_TransportesConnectionStringTemplate;
+            cnn = cnn.Replace("#user#", usuario.Trim()).ToString();
+            cnn = cnn.Replace("#pass#", contrasenia.Trim()).ToString();
+            return cnn;
         }
 
         private void btn_aceptar_Click(object sender, EventArgs e)
