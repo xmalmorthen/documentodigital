@@ -49,6 +49,8 @@
             this.deshacerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blquearDesbloquearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cargoPuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
@@ -63,8 +65,6 @@
             this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cargoPuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripSeparator();
             this.mnustrip_menuprincipal.SuspendLayout();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -258,6 +258,19 @@
             this.administracionToolStripMenuItem.Tag = "3";
             this.administracionToolStripMenuItem.Text = "Administración";
             // 
+            // cargoPuestoToolStripMenuItem
+            // 
+            this.cargoPuestoToolStripMenuItem.Name = "cargoPuestoToolStripMenuItem";
+            this.cargoPuestoToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
+            this.cargoPuestoToolStripMenuItem.Tag = "3,4";
+            this.cargoPuestoToolStripMenuItem.Text = " Cargo/Puesto";
+            this.cargoPuestoToolStripMenuItem.Click += new System.EventHandler(this.cargoPuestoToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(169, 6);
+            // 
             // rolesToolStripMenuItem
             // 
             this.rolesToolStripMenuItem.Image = global::scanndoc.Icons16x16.view;
@@ -388,19 +401,6 @@
             this.label1.Size = new System.Drawing.Size(145, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "Favor de esperar";
-            // 
-            // cargoPuestoToolStripMenuItem
-            // 
-            this.cargoPuestoToolStripMenuItem.Name = "cargoPuestoToolStripMenuItem";
-            this.cargoPuestoToolStripMenuItem.Size = new System.Drawing.Size(172, 24);
-            this.cargoPuestoToolStripMenuItem.Tag = "3,4";
-            this.cargoPuestoToolStripMenuItem.Text = " Cargo/Puesto";
-            this.cargoPuestoToolStripMenuItem.Click += new System.EventHandler(this.cargoPuestoToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem6
-            // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(169, 6);
             // 
             // frm_main
             // 

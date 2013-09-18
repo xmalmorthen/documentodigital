@@ -321,7 +321,7 @@ namespace scanndoc.forms
 
                         de_digital.id_re_clasificaciondocumento_documento = item.id_re_clasificaciondocumento_documento;
 
-                        byte[] file_byte_imagen = item.imagen;
+                        byte[] file_byte_imagen = scanndoc.classes.WaterMark.generate(item.imagen);
                         System.Data.Linq.Binary file_binary_imagen = new System.Data.Linq.Binary(file_byte_imagen);
                         de_digital.imagen = file_binary_imagen;
                         file_byte_imagen = null;
@@ -352,7 +352,7 @@ namespace scanndoc.forms
 
                             de_digital.id_re_clasificaciondocumento_documento = item.id_re_clasificaciondocumento_documento;
 
-                            byte[] file_byte_imagen = item.imagen;
+                            byte[] file_byte_imagen = scanndoc.classes.WaterMark.generate(item.imagen);
                             System.Data.Linq.Binary file_binary_imagen = new System.Data.Linq.Binary(file_byte_imagen);
                             de_digital.imagen = file_binary_imagen;
                             file_byte_imagen = null;
@@ -381,7 +381,7 @@ namespace scanndoc.forms
 
                             if (item.imagen != null)
                             {
-                                byte[] file_byte_imagen = item.imagen;
+                                byte[] file_byte_imagen = scanndoc.classes.WaterMark.generate(item.imagen);
                                 System.Data.Linq.Binary file_binary_imagen = new System.Data.Linq.Binary(file_byte_imagen);
                                 de_digital.imagen = file_binary_imagen;
                                 file_byte_imagen = null;

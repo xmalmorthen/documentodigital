@@ -178,5 +178,17 @@ namespace scanndoc.Properties {
                 return ((string)(this["Bd_Exp_TransportesConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Documento digital trámites transportes")]
+        public string marca_de_gua {
+            get {
+                return ((string)(this["marca_de_gua"]));
+            }
+            set {
+                this["marca_de_gua"] = value;
+            }
+        }
     }
 }

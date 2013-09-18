@@ -106,6 +106,7 @@
     <Compile Include="classes\obtener.cs" />
     <Compile Include="classes\procesa_imagen.cs" />
     <Compile Include="classes\thumbnail.cs" />
+    <Compile Include="classes\watermark.cs" />
     <Compile Include="data_members\Bd_Exp_Transportes.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -498,6 +499,7 @@
   <ItemGroup>
     <Content Include="assets\imgs\100x100\users.fw.png" />
     <Content Include="assets\imgs\16x16\app_window.png" />
+    <None Include="assets\imgs\watermark.png" />
     <None Include="assets\imgs\16x16\calendar.png" />
     <None Include="assets\imgs\16x16\calendar_none_red.png" />
     <Content Include="assets\imgs\16x16\cancel.png" />

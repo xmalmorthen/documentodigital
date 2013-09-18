@@ -46,5 +46,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=.;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User ID=digitaldocs;Password=..121212qw</Value>
     </Setting>
+    <Setting Name="marca_de_gua" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Documento digital trámites transportes</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

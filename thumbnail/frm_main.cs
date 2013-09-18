@@ -410,5 +410,13 @@ namespace scanndoc
             this.Cursor = Cursors.Default;
         }
 
+        //codigo para probar la marca de agua, no invocable
+        private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Image img = Image.FromFile(@"D:\proyectos\visual_studio\csharp\documentodigital\thumbnail\bin\Debug\SwapGallery\Chrysanthemum.jpg");
+            byte[] byteimage = scanndoc.classes.procesa_imagen.toByteArray(img);
+            scanndoc.classes.WaterMark.generate(byteimage);
+        }
+
     }
 }
