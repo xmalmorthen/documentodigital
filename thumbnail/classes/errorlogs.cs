@@ -88,7 +88,7 @@ namespace scanndoc.classes
                     Bd.Dispose();
                 }
                 catch (Exception)
-                {}
+                {/*no debe llevar nada*/}
                 errlog = null;
             }
 

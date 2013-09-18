@@ -44,7 +44,7 @@ namespace scanndoc.forms
             }
             catch (Exception err)
             {
-
+                /*no debe llevar nada*/
             }
 
             this.Owner = null;

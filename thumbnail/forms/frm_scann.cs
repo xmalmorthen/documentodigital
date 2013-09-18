@@ -631,7 +631,7 @@ namespace scanndoc.forms
                 actualizaventanadelistadedocumentos();
             }
             catch (Exception err)
-            {
+            {/*no debe llevar nada*/
             }            
         }
 
@@ -642,7 +642,7 @@ namespace scanndoc.forms
                 frmListaDocumentosOrden.inicializa(lookUpEdit_Tramites_selected.id_tramite, Convert.ToInt32(tbctrl.SelectedTab.Tag.ToString()));            
             }
             catch (Exception)
-            {}            
+            {/*no debe llevar nada*/}            
         }
 
         private void lookUpEdit_Tramites_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
@@ -674,7 +674,7 @@ namespace scanndoc.forms
                 }
             }
             catch (Exception err)
-            {
+            {/*no debe llevar nada*/
             }
         }
 
@@ -819,7 +819,7 @@ namespace scanndoc.forms
                 sources_digital.Clear();
             }
             catch (Exception err)
-            {
+            {/*no debe llevar nada*/
             }
         }
 

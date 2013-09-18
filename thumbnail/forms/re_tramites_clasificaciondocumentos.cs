@@ -299,7 +299,6 @@ namespace scanndoc.forms
             }
             catch (Exception e)
             {
-                MessageBox.Show(this, "La clasificación de documentos se encuentra en uso", "Imposible eliminar", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 scanndoc.classes.errorlogs.seterror(e);
             }
             bindingsource_CurrentItemChanged(null, null);
