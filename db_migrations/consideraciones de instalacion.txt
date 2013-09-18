@@ -1,22 +1,17 @@
-[base de datos]	
-	. base de datos
-		Bd_Exp_Transportes
-			. indices en tablas de base de datos
-	. usuario con privilegios
-		usuario: digitaldocs
-		contraseña: ..121212qw
-		Roles del servidor:
-			. public
-			. securityadmin
-			. sysadmin
-		Asignacion de usuarios:
-			. Bd_Exp_Transportes
-				Pertenencia al rol de la base de datos
-					. db_owner
-					. public	
-	. Agente de SQL Server
-		.Trabajos
-			.Bd_Exp_Transportes
-				. Propietario: usuario digitaldocs
-				. Pasos : Bloquear_Tramites
-				
+[Reseta de Instalación de base de datos]
+	.Ececutar el script para generar la base de datos
+		.Step_1_Create_Bd_Exp_Transportes.sql
+	.Ejecutar el script para crear el super usuario de logueo y propietario de base de datos
+		.Step_2_Create_User_Login_and_Owner_DataBase.sql
+	.Ejecutar el script para generar las tablas, indices, triggers, procedimientos almacenados, vistas, prerellenar catalogos, etc...
+		.Step_3_Create_Tables_and_Data.sql
+
+[Catálogos prerellenados]
+	.ca_acciones					
+	.ca_estatus						[ids salteados]
+	.ca_modulos
+	.ca_origenes
+	.ca_tablas						[ids salteados]
+	.ca_tiposbloqueos				[ids salteados]
+	.tbl_configuraciones
+	
