@@ -1,55 +1,9 @@
-administrar catalogo de formatos
-
-Triggers
-	dbo.ca_campostrazables
-		insert
-		update
-		delete
-	dbo.ca_cargo_puesto
-		insert
-		update
-		delete
-	dbo.ca_clasificaciondocumentos
-		insert
-		update
-		delete
-	dbo.ca_clasificaciontramites
-		insert
-		update
-		delete
-	dbo.ca_documentos
-		insert
-		update
-		delete
-	dbo.ca_estatus
-		insert
-		update
-		delete
-	dbo.ca_expedientes
-		insert
-		update
-		delete
-	dbo.ca_formatos
-		insert
-		update
-		delete
+Triggers	
 	dbo.ca_modulos
 		insert
 		update
 		delete
-	dbo.ca_origenes
-		insert
-		update
-		delete
-	dbo.ca_roles
-		insert
-		update
-		delete
 	dbo.ca_tablas
-		insert
-		update
-		delete
-	dbo.ca_tiposbloqueos
 		insert
 		update
 		delete
