@@ -166,6 +166,12 @@
     <Compile Include="forms\ca_cargopuesto.Designer.cs">
       <DependentUpon>ca_cargopuesto.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\ca_formatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ca_formatos.Designer.cs">
+      <DependentUpon>ca_formatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frm_tramitedefecto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\ca_cargopuesto.resx">
       <DependentUpon>ca_cargopuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ca_formatos.resx">
+      <DependentUpon>ca_formatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_tramitedefecto.resx">
       <DependentUpon>frm_tramitedefecto.cs</DependentUpon>

@@ -418,5 +418,23 @@ namespace scanndoc
             scanndoc.classes.WaterMark.generate(byteimage);
         }
 
+        private void típoDeFormatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            scanndoc.forms.ca_formatos frm = new forms.ca_formatos();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+            
+        }
+
     }
 }

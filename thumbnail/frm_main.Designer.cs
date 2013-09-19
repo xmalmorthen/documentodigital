@@ -65,6 +65,7 @@
             this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.típoDeFormatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnustrip_menuprincipal.SuspendLayout();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -99,6 +100,7 @@
             this.tramitesToolStripMenuItem,
             this.toolStripMenuItem2,
             this.clasificaciónDeDocumentosToolStripMenuItem,
+            this.típoDeFormatosToolStripMenuItem,
             this.documentosToolStripMenuItem,
             this.clasificarDocumentosToolStripMenuItem,
             this.toolStripMenuItem4,
@@ -402,6 +404,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Favor de esperar";
             // 
+            // típoDeFormatosToolStripMenuItem
+            // 
+            this.típoDeFormatosToolStripMenuItem.Name = "típoDeFormatosToolStripMenuItem";
+            this.típoDeFormatosToolStripMenuItem.Size = new System.Drawing.Size(404, 24);
+            this.típoDeFormatosToolStripMenuItem.Tag = "1,10";
+            this.típoDeFormatosToolStripMenuItem.Text = "Típo de formatos para documentos";
+            this.típoDeFormatosToolStripMenuItem.Click += new System.EventHandler(this.típoDeFormatosToolStripMenuItem_Click);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,5 +477,6 @@
         private System.Windows.Forms.ToolStripMenuItem planDeBloqueoEnTrámitesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargoPuestoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem típoDeFormatosToolStripMenuItem;
     }
 }
