@@ -1,3 +1,5 @@
+administrar catalogo de formatos
+
 Triggers
 	dbo.ca_campostrazables
 		insert
