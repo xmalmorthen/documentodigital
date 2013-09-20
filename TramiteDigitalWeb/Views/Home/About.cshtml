@@ -1,10 +1,9 @@
 ﻿@{
-    ViewBag.Title = "Acerca de";
+    ViewBag.Title = "Acerca de...";
 }
 
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
+    <h1>@ViewBag.Title</h1><span style="font-weight:bold;margin-left:15px; ">[@ViewBag.Message]</span> 
 </hgroup>
 
 <article>
@@ -28,7 +27,5 @@
     </p>
     <ul>
         <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
     </ul>
 </aside>

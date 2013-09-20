@@ -12,7 +12,7 @@ namespace TramiteDigitalWeb.Controllers
         {
             ViewBag.Message = "Modifique esta plantilla para poner en marcha su aplicación ASP.NET MVC.";
 
-            return View();
+            return View("Login");
         }
 
         public ActionResult About()
