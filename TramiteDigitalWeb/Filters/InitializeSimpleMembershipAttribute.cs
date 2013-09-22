@@ -38,7 +38,7 @@ namespace TramiteDigitalWeb.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("Bd_Exp_TransportesConnectionString", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("Bd_Exp_TransportesConnectionString", "ca_usuarios", "id", "usuario", autoCreateTables: false);
                 }
                 catch (Exception ex)
                 {

@@ -8,25 +8,18 @@ namespace TramiteDigitalWeb.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize]
         public ActionResult Index()
-        {
-            ViewBag.Message = "Modifique esta plantilla para poner en marcha su aplicación ASP.NET MVC.";
-
-            return View("Login");
+        {            
+            return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Página de descripción de la aplicación.";
+            ViewBag.Message = "Acerca de...";
 
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Página de contacto.";
-
-            return View();
-        }
     }
 }

@@ -1,41 +1,104 @@
 ﻿@model TramiteDigitalWeb.Models.LoginModel
 
 @{
-    ViewBag.Title = "Iniciar sesión";
+    if (!Request.IsAuthenticated)
+    {
+        ViewBag.Title = "Iniciar sesión";
+    }
+    else
+    {
+        ViewBag.Title = "Bienvenido" + User.Identity.Name;
+    }
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-</hgroup>
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                Para obtener más información sobre ASP.NET MVC, visite
+                <a href="http://asp.net/mvc" title="Sitio web de ASP.NET MVC">http://asp.net/mvc</a>.
+                La página incluye <mark>vídeos, cursos y ejemplos</mark> para ayudarle a sacar el máximo partido a ASP.NET MVC.
+                Si tiene alguna pregunta relacionada con ASP.NET MVC, visite
+                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="Foro de ASP.NET MVC">nuestros foros</a>.
+            </p>
+        </div>
+    </section>
+}
 
-<section id="loginForm">
-<h2>Utilice una cuenta local para iniciar sesión.</h2>
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+@if (!Request.IsAuthenticated)
+{
+    <section id="loginForm">
+    @using (
+        Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Formulario de inicio de sesión</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-                @Html.ValidationMessageFor(m => m.UserName)
+        <fieldset>
+            <legend>Formulario de inicio de sesión</legend>
+            <ol>
+                <li>
+                    @Html.LabelFor(m => m.UserName)
+                    @Html.TextBoxFor(m => m.UserName, new { autofocus=""})
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password)
+                    @Html.ValidationMessageFor(m => m.Password)
+                </li>
+                <li>
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                </li>
+            </ol>
+            <input type="submit" value="Iniciar sesión" style="float: right;" />
+        </fieldset>
+    }
+    </section>
+    <section style="float: left; margin: 0 10px 0 10px; width:66%;" > 
+        <h3>Le sugerimos lo siguiente:</h3>
+        <ol class="round">
+            <li class="one">
+                <h5>Introducción</h5>
+                ASP.NET MVC ofrece una manera eficaz basada en patrones de crear sitios web dinámicos que
+                permite llevar a cabo una clara separación de aspectos y proporciona control sobre el marcado
+                para un desarrollo más ágil y atractivo. ASP.NET MVC incluye numerosas características que ofrecen
+                un entorno rápido y compatible con TDD para crear aplicaciones sofisticadas que utilicen
+                los estándares web más recientes.
+                <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Más información…</a>
             </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-                @Html.ValidationMessageFor(m => m.Password)
+
+            <li class="two">
+                <h5>Agregar paquetes NuGet y poner en marcha su codificación</h5>
+                NuGet facilita la instalación y actualización de herramientas y bibliotecas gratuitas.
+                <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Más información…</a>
             </li>
-            <li>
-                @Html.CheckBoxFor(m => m.RememberMe)
-                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+
+            <li class="three">
+                <h5>Buscar hospedaje web</h5>
+                Encuentre fácilmente empresas de alojamiento web que ofrezcan la mejor relación de características
+                y precio para sus aplicaciones.
+                <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Más información…</a>
             </li>
         </ol>
-        <input type="submit" value="Iniciar sesión" />
-    </fieldset>
+    </section>
 }
-</section>
+else
+{ 
+    <section id="loginForm">
+    Datos de usuario...
+    </section>
+    <section style="float: left; margin: 0 10px 0 10px" > 
+    Menu de opciones
+    </section>
+}
+
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

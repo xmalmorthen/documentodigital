@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using TramiteDigitalWeb.Filters;
 using TramiteDigitalWeb.Models;
+using scanndoc.classes;
 
 namespace TramiteDigitalWeb.Controllers
 {
@@ -23,6 +24,17 @@ namespace TramiteDigitalWeb.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            if (Request.IsAuthenticated) {
+                if (returnUrl != null)
+                {
+                    return RedirectToLocal(returnUrl);
+                }
+                else 
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -35,14 +47,45 @@ namespace TramiteDigitalWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            UsuarioLogeado usuario = new UsuarioLogeado();
+            if (!usuario.Valida(model.UserName, model.Password))
             {
-                return RedirectToLocal(returnUrl);
+                // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
+                ModelState.AddModelError("", "El nombre de usuario o la contraseña especificados son incorrectos.");
+                return View(model);
+            }
+            else
+            {
+                //verificar si tiene permisos de rol
+                DatosdeUsuario datosdeusuario = usuario.ObtenDatosdeUsuarioLogeado();
+
+                try
+                {
+                    ModulodeAcceso modulos = datosdeusuario.Modulos.Find(query => query.Modulo.ToString().ToLower() == "consulta local web" ||
+                                                                     query.Modulo.ToString().ToLower() == "consulta global web");
+                    if (modulos == null)
+                    {
+                        throw new Exception("No tiene permisos suficientes.");
+                    }
+
+                    string username = datosdeusuario.GetFullName;
+                    FormsAuthentication.SetAuthCookie(username, model.RememberMe);
+                    Session["usuariologeado"] = datosdeusuario;
+                    return RedirectToLocal(returnUrl);
+                }
+                catch (Exception)
+                {
+                    ModelState.AddModelError("", "No tiene permisos suficientes.");
+                    return View(model);
+                }
             }
 
-            // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
-            ModelState.AddModelError("", "El nombre de usuario o la contraseña especificados son incorrectos.");
-            return View(model);
+            /*if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            {
+                return RedirectToLocal(returnUrl);
+            }*/
+
+           
         }
 
         //
