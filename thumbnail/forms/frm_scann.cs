@@ -1990,17 +1990,24 @@ namespace scanndoc.forms
         public Boolean frmListaDocumentosOrdenvisible=true;
         private void frm_scann_Resize(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Minimized)
+            try
             {
-                frmListaDocumentosOrdenvisible = frmListaDocumentosOrden.Visible;
-                frmListaDocumentosOrden.Visible = false;
-            }
-            else 
-            {
-                if (frmListaDocumentosOrdenvisible) {
-                    frmListaDocumentosOrden.Visible = true;
+                if (WindowState == FormWindowState.Minimized)
+                {
+                    frmListaDocumentosOrdenvisible = frmListaDocumentosOrden.Visible;
+                    frmListaDocumentosOrden.Visible = false;
                 }
-                frmListaDocumentosOrdenvisible = frmListaDocumentosOrden.Visible;
+                else 
+                {
+                    if (frmListaDocumentosOrdenvisible) {
+                        frmListaDocumentosOrden.Visible = true;
+                    }
+                    frmListaDocumentosOrdenvisible = frmListaDocumentosOrden.Visible;
+                }
+            }
+            catch (Exception)
+            {
+                //no lleva nada
             }
         }
 
