@@ -1,0 +1,16 @@
+Error HTTP 500.21 IIS y ASP.NET
+Solución al error Error HTTP 500.21 - Internal Server Error El controlador "PageHandlerFactory-Integrated" tiene una condición previa incorrecta "ManagedPipelineHandler" en su lista de módulos        
+
+
+La solución es instalar el ASP.Net para la versión 4.0.
+
+Por lo tanto se debe realizar estos pasos ejecutando el cmd.exe como modo administrador
+
+aspnet_regiis.exe -i
+ 
+este lo encuentras en la carpeta
+
+c:\Windows\Microsoft.NET\Framework\v4.0.30319>aspnet_regiis.exe -i
+
+
+fuente http://www.compdigitec.com/labs/2010/07/12/solving-handler-pagehandlerfactory-integrated-has-a-bad-module-managedpipelinehandler-in-asp-net-4-0/
