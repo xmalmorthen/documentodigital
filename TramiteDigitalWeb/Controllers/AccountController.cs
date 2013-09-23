@@ -68,7 +68,7 @@ namespace TramiteDigitalWeb.Controllers
                         throw new Exception("No tiene permisos suficientes.");
                     }
 
-                    string username = datosdeusuario.GetFullName;
+                    string username = datosdeusuario.GetFullName.Trim() + "~" + datosdeusuario.Id;
                     FormsAuthentication.SetAuthCookie(username, model.RememberMe);
                     Session["usuariologeado"] = datosdeusuario;
                     return RedirectToLocal(returnUrl);

@@ -1,6 +1,10 @@
-﻿@if (Request.IsAuthenticated) {
+﻿@{
+    string[] UserParts = User.Identity.Name.Split('~');
+}
+
+@if (Request.IsAuthenticated) {
     <text>
-        ¡Hola, @User.Identity.Name &nbsp; |
+        ¡Hola, @UserParts[0] &nbsp; |
         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
             @Html.AntiForgeryToken()
             <a href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a>

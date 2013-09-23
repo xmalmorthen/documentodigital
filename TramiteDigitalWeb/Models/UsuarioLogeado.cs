@@ -64,6 +64,12 @@ namespace TramiteDigitalWeb.Models
             }
         }
 
+        public DatosdeUsuario ObtenDatosdeUsuarioLogeado(int id_usuario)
+        {
+            usuario = bd.ca_usuarios.SingleOrDefault(c => c.id == id_usuario);
+            return ObtenDatosdeUsuarioLogeado();
+        }
+
         public DatosdeUsuario ObtenDatosdeUsuarioLogeado() {
             DatosdeUsuario datos = new DatosdeUsuario();
             datos.Id = usuario.id;
@@ -85,5 +91,7 @@ namespace TramiteDigitalWeb.Models
 	        }
             return datos;
         } 
+    
+        
     }
 }
