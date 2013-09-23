@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TramiteDigitalWeb.data_members.pa_ConsultaTramitesporValorTrazableResult>
+
+@{
+    ViewBag.Title = "Consulta de trámites";
+}
+
+<h2>ConsultaTramitesporValorTrazable</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tramite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.expediente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_hora_creacion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tramite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.expediente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_hora_creacion)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.id_ma_digital }) |
+        </td>
+    </tr>
+}
+
+</table>

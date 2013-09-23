@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TramiteDigitalWeb.Models;
 
 namespace TramiteDigitalWeb.Controllers
 {
-    public class ConsultasController : Controller
-    {
-        [HttpPost]
+    public class ConsultaController : Controller
+    {        
         [Authorize]
-        public ActionResult Consulta()
+        public ActionResult TramitesporValorTrazable()
         {
-
+            ConsultaModels.ConsultaTramitesporValorTrazable("asd");
 
             return View();
         }
