@@ -8,14 +8,38 @@ using TramiteDigitalWeb.Models;
 namespace TramiteDigitalWeb.Controllers
 {
     public class HomeController : Controller
-    {
+    {        
         [Authorize]
         public ActionResult Index()
         {
-            UsuarioLogeado usuario = new UsuarioLogeado();
-            string[] UserParts = User.Identity.Name.Split('~');
-            DatosdeUsuario datos = usuario.ObtenDatosdeUsuarioLogeado(Convert.ToInt32(UserParts[1]));
-            return View(datos.Modulos);
+            CatalogsModel catalogos = new CatalogsModel();
+            List<data_members.vw_ListaExpedientes> lista = catalogos.ca_expedientes().ToList();
+            lista.Insert(0, new data_members.vw_ListaExpedientes() { id = 0, Descripcion = "Todos los Expedientes" });
+            ViewBag.Expedientes = lista as IEnumerable<data_members.vw_ListaExpedientes>;
+            return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(Models.ConsultasViewModels Form) {
+
+            if (!ModelState.IsValid)
+            {
+                CatalogsModel catalogos = new CatalogsModel();
+                ViewBag.Expedientes = catalogos.ca_expedientes();
+                return View(Form);
+            }
+
+            if (Form.ExpedienteSeleccionado == 0)
+            {
+                return View("TramitesporValorTrazable",ConsultaModels.ConsultaTramitesporValorTrazable(Form.Valor_Trazable));
+            }
+            else
+            {
+                //cambiar esta vista
+                return View("TramitesporValorTrazable", ConsultaModels.ConsultaTramitesporExpedienteyValorTrazable(Form.ExpedienteSeleccionado,Form.Valor_Trazable));
+            }
         }
 
         public ActionResult About()

@@ -1,4 +1,10 @@
+
 En nueva migracion
+	.Agregar vista [vw_ListaExpedientes]
+
+
+[valorar]
+	.Para permitir el acceso a usuarios desde sitio web...
 	.Agregar en ca_roles el rol de 
 		[ id 7 => "Consulta Web" ]
 	.Agregar en ca_modulos los modulos

@@ -336,6 +336,12 @@
       <Column Name="no_dias_bloqueo" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.vw_ListaExpedientes" Member="vw_ListaExpedientes">
+    <Type Name="vw_ListaExpedientes">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.pa_CampostrazablesActivosporExpediente" Method="pa_CampostrazablesActivosporExpediente">
     <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
     <ElementType Name="pa_CampostrazablesActivosporExpedienteResult">

@@ -1,6 +1,6 @@
-﻿@model List<TramiteDigitalWeb.Models.ModulodeAcceso>
+﻿@model TramiteDigitalWeb.Models.ConsultasViewModels
 @{
-    ViewBag.Title = "Menú principal";
+    ViewBag.Title = "Consulta de Trámites";
 }
 @section featured {
     <section class="featured">
@@ -16,20 +16,26 @@
     </section>
 }
 <div style="text-align:center;margin:50px 0">
-    @{
-        if (Model.Any(query => query.Modulo.ToString().ToLower() == "consulta local web")){
-            @Html.ActionLink(" ", "Consulta", "Consultas", new
-            {
-                style = "background: url('../../Content/images/buquedalocal.png') no-repeat center right;display: inline-block;height:127px; width:353px;margin: 0 20px;"
-            });
-        }
-        if (Model.Any(query => query.Modulo.ToString().ToLower() == "consulta global web"))
-        {
-           @Html.ActionLink(" ", "Consulta", "Consultas", new
-           {
-               style = "background: url('../../Content/images/buquedaglobal.png') no-repeat center right;display: inline-block;height:127px; width:353px;margin: 0 20px;"
-           });
-        }   
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Formulario de inicio de sesión</legend>
+            <ol>
+                <li>
+                    @Html.LabelFor(m=>m.ExpedienteSeleccionado)
+                    @Html.DropDownListFor(m => m.ExpedienteSeleccionado, new SelectList(ViewBag.Expedientes, "id", "Descripcion"), new { id = 0 })
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.Valor_Trazable)
+                    @Html.TextBoxFor(m => m.Valor_Trazable)
+                    @Html.ValidationMessageFor(m => m.Valor_Trazable)
+                </li>
+            </ol>
+            <input type="submit" value="Buscar" style="float: right;" />
+        </fieldset>
     }
 </div>
 

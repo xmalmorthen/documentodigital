@@ -9,6 +9,18 @@ namespace TramiteDigitalWeb
     {
         public static void Register(HttpConfiguration config)
         {
+            /*
+             * Catalogos
+             */
+            config.Routes.MapHttpRoute(
+                name: "Catálogo",
+                routeTemplate: "catalogo/{controller}",
+                defaults: null
+            );
+
+            /*
+             * Consultas
+             */ 
             config.Routes.MapHttpRoute(
                 name: "Bucar en cualquier Expediente",
                 routeTemplate: "consulta/{controller}/{campo_trazable}",

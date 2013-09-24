@@ -400,6 +400,14 @@ namespace TramiteDigitalWeb.data_members
 			}
 		}
 		
+		public System.Data.Linq.Table<vw_ListaExpedientes> vw_ListaExpedientes
+		{
+			get
+			{
+				return this.GetTable<vw_ListaExpedientes>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_CampostrazablesActivosporExpediente")]
 		public ISingleResult<pa_CampostrazablesActivosporExpedienteResult> pa_CampostrazablesActivosporExpediente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_expediente)
 		{
@@ -7406,6 +7414,51 @@ namespace TramiteDigitalWeb.data_members
 				if ((this._no_dias_bloqueo != value))
 				{
 					this._no_dias_bloqueo = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_ListaExpedientes")]
+	public partial class vw_ListaExpedientes
+	{
+		
+		private int _id;
+		
+		private string _Descripcion;
+		
+		public vw_ListaExpedientes()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
 				}
 			}
 		}

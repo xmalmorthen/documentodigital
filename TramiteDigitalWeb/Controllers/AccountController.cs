@@ -70,7 +70,6 @@ namespace TramiteDigitalWeb.Controllers
 
                     string username = datosdeusuario.GetFullName.Trim() + "~" + datosdeusuario.Id;
                     FormsAuthentication.SetAuthCookie(username, model.RememberMe);
-                    Session["usuariologeado"] = datosdeusuario;
                     return RedirectToLocal(returnUrl);
                 }
                 catch (Exception)
