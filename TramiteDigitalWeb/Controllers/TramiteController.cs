@@ -14,13 +14,14 @@ namespace TramiteDigitalWeb.Controllers
 
         // POST consulta/tramite/asd
         public IEnumerable<data_members.pa_ConsultaTramitesporValorTrazableResult> Post(string campo_trazable)
-        {
+        {            
             return consulta.ConsultaTramitesporValorTrazable(campo_trazable);
         }
 
         // POST consulta/tramite/1/asd
         public IEnumerable<data_members.pa_ConsultaTramitesporExpedienteyValorTrazableResult> Post(int id_expediente, string campo_trazable)
         {
+
             return consulta.ConsultaTramitesporExpedienteyValorTrazable(id_expediente, campo_trazable);
         }
        

@@ -12,9 +12,8 @@ namespace TramiteDigitalWeb.Controllers
         [Authorize]
         public ActionResult TramitesporValorTrazable()
         {
-            ConsultaModels.ConsultaTramitesporValorTrazable("asd");
-
-            return View();
+             
+            return View(ConsultaModels.ConsultaTramitesporValorTrazable("asd"));
         }
 
     }

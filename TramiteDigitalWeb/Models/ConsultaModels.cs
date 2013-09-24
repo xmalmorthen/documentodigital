@@ -4,14 +4,15 @@ using System.Linq;
 using System.Web;
 using RestSharp;
 using System.Configuration;
+using Newtonsoft.Json;
 
 namespace TramiteDigitalWeb.Models
 {
     public static class ConsultaModels
     {
         //public IEnumerable<data_members.pa_ConsultaTramitesporValorTrazableResult> ConsultaTramitesporValorTrazable(string valor_trazable)
-        public static void ConsultaTramitesporValorTrazable(string valor_trazable)
-        {
+        public static List<data_members.pa_ConsultaTramitesporValorTrazableResult> ConsultaTramitesporValorTrazable(string valor_trazable)
+        {            
             try
             {
                 string RESTWebApiUrl = TramiteDigitalWeb.Properties.Settings.Default.RESTApiWeb;
@@ -22,24 +23,20 @@ namespace TramiteDigitalWeb.Models
                 var request = new RestRequest("consulta/tramite/{valor_trazable}", Method.POST);
                 //request.AddParameter("name", "value"); // adds to POST or URL querystring based on Method
                 request.AddUrlSegment("valor_trazable", valor_trazable); // replaces matching token in request.Resource
+                request.RequestFormat = DataFormat.Xml;
 
                 // easily add HTTP Headers
-                request.AddHeader("Content-Type", "application/json");
-
-                // add files to upload (works with compatible verbs)
-                //request.AddFile(path);
+                request.AddHeader("Content-Type", "application/json; charset=utf-8");
+                request.AddHeader("Accept", "application/json");
 
                 // execute the request
-                RestResponse response = client.Execute(request) as RestResponse;
+                IRestResponse response = client.Execute(request);
                 var content = response.Content; // raw content as string
 
-                
+                List<data_members.pa_ConsultaTramitesporValorTrazableResult> items =
+                    JsonConvert.DeserializeObject<List<data_members.pa_ConsultaTramitesporValorTrazableResult>>(content);
 
-                // or automatically deserialize result
-                // return content type is sniffed but can be explicitly set via RestClient.AddHandler();
-                //RestResponse<data_members.pa_ConsultaTramitesporValorTrazableResult> response = client.Execute<data_members.pa_ConsultaTramitesporValorTrazableResult>(request) as RestResponse<data_members.pa_ConsultaTramitesporValorTrazableResult>;
-                
-                //return response;
+                return items;
             }
             catch (Exception)
             {
