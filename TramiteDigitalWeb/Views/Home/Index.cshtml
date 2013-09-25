@@ -38,4 +38,42 @@
         </fieldset>
     }
 </div>
+<div>
+    <table>
+        <tr>
+            <th>
+                Trámite
+            </th>
+            <th>
+                Expediente
+            </th>
+            <th>
+                Fecha/Hora de creación
+            </th>
+            <th></th>
+        </tr>
+    @{
+     if (ViewBag.Response != null)
+     {
+        foreach (TramiteDigitalWeb.data_members.pa_ConsultaTramitesporValorTrazableResult item in ViewBag.Response as IEnumerable<TramiteDigitalWeb.data_members.pa_ConsultaTramitesporValorTrazableResult>)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tramite)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.expediente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_hora_creacion)
+                </td>
+                <td>
+                    @Html.ActionLink("Abrir", "Details", new { id = item.id_ma_digital })
+                </td>
+            </tr>
+        }   
+     }
+    }
+    </table>
+</div>
 

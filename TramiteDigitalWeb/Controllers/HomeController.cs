@@ -9,13 +9,18 @@ namespace TramiteDigitalWeb.Controllers
 {
     public class HomeController : Controller
     {        
-        [Authorize]
-        public ActionResult Index()
-        {
+        private void InicializaVars(){
             CatalogsModel catalogos = new CatalogsModel();
             List<data_members.vw_ListaExpedientes> lista = catalogos.ca_expedientes().ToList();
             lista.Insert(0, new data_members.vw_ListaExpedientes() { id = 0, Descripcion = "Todos los Expedientes" });
             ViewBag.Expedientes = lista as IEnumerable<data_members.vw_ListaExpedientes>;
+            ViewBag.Response = null;
+        }
+
+        [Authorize]
+        public ActionResult Index()
+        {
+            InicializaVars();
             return View();
         }
 
@@ -24,22 +29,20 @@ namespace TramiteDigitalWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(Models.ConsultasViewModels Form) {
 
-            if (!ModelState.IsValid)
-            {
-                CatalogsModel catalogos = new CatalogsModel();
-                ViewBag.Expedientes = catalogos.ca_expedientes();
-                return View(Form);
-            }
+            InicializaVars();
 
-            if (Form.ExpedienteSeleccionado == 0)
+            if (ModelState.IsValid)
             {
-                return View("TramitesporValorTrazable",ConsultaModels.ConsultaTramitesporValorTrazable(Form.Valor_Trazable));
+                if (Form.ExpedienteSeleccionado == 0)
+                {
+                    ViewBag.Response = ConsultaModels.ConsultaTramitesporValorTrazable(Form.Valor_Trazable);
+                }
+                else
+                {
+                    ViewBag.Response = ConsultaModels.ConsultaTramitesporExpedienteyValorTrazable(Form.ExpedienteSeleccionado, Form.Valor_Trazable);
+                }
             }
-            else
-            {
-                //cambiar esta vista
-                return View("TramitesporValorTrazable", ConsultaModels.ConsultaTramitesporExpedienteyValorTrazable(Form.ExpedienteSeleccionado,Form.Valor_Trazable));
-            }
+            return View(Form);
         }
 
         public ActionResult About()
