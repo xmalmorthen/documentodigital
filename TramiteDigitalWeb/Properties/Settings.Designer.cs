@@ -25,7 +25,7 @@ namespace TramiteDigitalWeb.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://http://localhost:34879")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:34879")]
         public string RESTApiWeb {
             get {
                 return ((string)(this["RESTApiWeb"]));

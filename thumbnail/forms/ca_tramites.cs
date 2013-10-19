@@ -146,6 +146,7 @@ namespace scanndoc.forms
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             bindingsource.AddNew();
+
             Form_Mode = form_mode.agregar;
 
             //limpiar_controles();
@@ -324,13 +325,13 @@ namespace scanndoc.forms
 	            {
                     if (valida())
                     {
-                        if (!buscar_si_existe())
-                        {
+                        //if (!buscar_si_existe())
+                        //{
                             Program.Bd_Exp_Transportes.SubmitChanges();
                             Form_Mode = form_mode.normal;
                             actualiza_lista();
                             MessageBox.Show("Registro modificado con éxito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        //}
                     }
 	            }
                 catch (Exception err)

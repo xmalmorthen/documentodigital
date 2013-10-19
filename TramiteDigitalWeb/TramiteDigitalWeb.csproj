@@ -167,10 +167,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="classes\convert_md5.cs" />
-    <Compile Include="ControllersApiWeb\CatalogosController.cs" />
+    <Compile Include="ControllersApiWeb\CatalogosController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ControllersApiWeb\TramiteController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="ControllersApiWeb\TramiteController.cs" />
     <Compile Include="data_members\Bd_Exp_Transportes.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -357,7 +357,7 @@ namespace scanndoc.forms
             }
             else 
             {
-                catalogo.Tamanio_Caracteres_Trazables = Convert.ToInt16((int)spinEdit4.Value == 0 ? 1 : (int)spinEdit3.Value);
+                catalogo.Tamanio_Caracteres_Trazables = Convert.ToInt16((int)spinEdit4.Value == 0 ? 1 : (int)spinEdit4.Value);
                 catalogo.Mascara_Trazable = textEdit1.Text;
             }
         }

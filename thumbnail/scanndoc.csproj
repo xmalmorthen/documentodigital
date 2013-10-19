@@ -172,6 +172,12 @@
     <Compile Include="forms\ca_formatos.Designer.cs">
       <DependentUpon>ca_formatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\re_expedientes_tramites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\re_expedientes_tramites.Designer.cs">
+      <DependentUpon>re_expedientes_tramites.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frm_tramitedefecto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,9 @@
     <EmbeddedResource Include="forms\ca_formatos.resx">
       <DependentUpon>ca_formatos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\re_expedientes_tramites.resx">
+      <DependentUpon>re_expedientes_tramites.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_tramitedefecto.resx">
       <DependentUpon>frm_tramitedefecto.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,6 +422,8 @@
     </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\scanndoc.data_members.ca_cargo_puesto.datasource" />
+    <None Include="Properties\DataSources\scanndoc.data_members.pa_TramitesNoEnlazadosporExpedienteResult.datasource" />
+    <None Include="Properties\DataSources\scanndoc.data_members.pa_TramitesporExpedienteResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_campostrazables.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_clasificaciondocumentos.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_clasificaciontramites.datasource" />

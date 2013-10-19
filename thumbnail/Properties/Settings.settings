@@ -35,9 +35,6 @@
     <Setting Name="CampoPlanBloqueo_RowColorGrid" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">LightGray</Value>
     </Setting>
-    <Setting Name="Bd_Exp_TransportesConnectionStringTemplate" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User ID=..Bd_Exp_Transportes_#user#..;Password=#pass#</Value>
-    </Setting>
     <Setting Name="Bd_Exp_TransportesConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
@@ -48,6 +45,9 @@
     </Setting>
     <Setting Name="marca_de_gua" Type="System.String" Scope="User">
       <Value Profile="(Default)">Documento digital trámites transportes</Value>
+    </Setting>
+    <Setting Name="Bd_Exp_TransportesConnectionStringTemplate" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Exp_Transportes;Persist Security Info=True;User ID=..Bd_Exp_Transportes_#user#..;Password=#pass#</Value>
     </Setting>
   </Settings>
 </SettingsFile>

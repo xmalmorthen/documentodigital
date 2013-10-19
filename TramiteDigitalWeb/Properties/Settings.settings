@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="RESTApiWeb" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://http://localhost:34879</Value>
+      <Value Profile="(Default)">http://localhost:34879</Value>
     </Setting>
   </Settings>
 </SettingsFile>

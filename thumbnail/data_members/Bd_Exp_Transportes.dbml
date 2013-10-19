@@ -603,4 +603,21 @@
       <Column Name="expediente" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.pa_TramitesporExpediente" Method="pa_TramitesporExpediente">
+    <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_TramitesporExpedienteResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion_Breve" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_TramitesNoEnlazadosporExpediente" Method="pa_TramitesNoEnlazadosporExpediente">
+    <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_TramitesNoEnlazadosporExpedienteResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion_Breve" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

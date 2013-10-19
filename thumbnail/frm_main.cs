@@ -436,5 +436,22 @@ namespace scanndoc
             
         }
 
+        private void asignarTrámitesAExpedientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            scanndoc.forms.re_expedientes_tramites frm = new forms.re_expedientes_tramites();
+            frm.MdiParent = this;
+            frm.Show();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+        }
+
     }
 }

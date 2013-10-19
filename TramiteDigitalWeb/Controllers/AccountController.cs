@@ -15,7 +15,7 @@ using scanndoc.classes;
 namespace TramiteDigitalWeb.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
+    //[InitializeSimpleMembership]
     public class AccountController : Controller
     {
         //
@@ -69,6 +69,13 @@ namespace TramiteDigitalWeb.Controllers
                     }
 
                     string username = datosdeusuario.GetFullName.Trim() + "~" + datosdeusuario.Id;
+
+                    if (model.RememberMe)
+                    {
+                        HttpCookie authCookie = new HttpCookie("AuthAS5", username);
+                        authCookie.Expires = DateTime.Now.AddMinutes(1);
+                        Response.Cookies.Add(authCookie);
+                    }
                     FormsAuthentication.SetAuthCookie(username, model.RememberMe);
                     return RedirectToLocal(returnUrl);
                 }

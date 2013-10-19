@@ -989,10 +989,10 @@
             this.Controls.Add(this.tlp_noregistros);
             this.Controls.Add(this.splitContainer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1024, 768);
+            this.MinimumSize = new System.Drawing.Size(1024, 736);
             this.Name = "re_tramites_clasificaciondocumentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Asociar clasificación de documentos a un trámite";
+            this.Text = "Asignar clasificación de documentos a un trámite";
             this.Load += new System.EventHandler(this.re_expedientes_campostrazables_Load);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel1.PerformLayout();

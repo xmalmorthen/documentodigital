@@ -588,6 +588,20 @@ namespace scanndoc.data_members
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<pa_ReferenciaExpedientesparaBloquearDesbloquearResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_TramitesporExpediente")]
+		public ISingleResult<pa_TramitesporExpedienteResult> pa_TramitesporExpediente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_expediente)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_expediente);
+			return ((ISingleResult<pa_TramitesporExpedienteResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_TramitesNoEnlazadosporExpediente")]
+		public ISingleResult<pa_TramitesNoEnlazadosporExpedienteResult> pa_TramitesNoEnlazadosporExpediente([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_expediente)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_expediente);
+			return ((ISingleResult<pa_TramitesNoEnlazadosporExpedienteResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ca_acciones")]
@@ -9878,6 +9892,148 @@ namespace scanndoc.data_members
 				if ((this._expediente != value))
 				{
 					this._expediente = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_TramitesporExpedienteResult
+	{
+		
+		private int _id;
+		
+		private int _id_tramite;
+		
+		private string _Nombre;
+		
+		private string _Descripcion_Breve;
+		
+		public pa_TramitesporExpedienteResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_tramite", DbType="Int NOT NULL")]
+		public int id_tramite
+		{
+			get
+			{
+				return this._id_tramite;
+			}
+			set
+			{
+				if ((this._id_tramite != value))
+				{
+					this._id_tramite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_Breve", DbType="VarChar(100)")]
+		public string Descripcion_Breve
+		{
+			get
+			{
+				return this._Descripcion_Breve;
+			}
+			set
+			{
+				if ((this._Descripcion_Breve != value))
+				{
+					this._Descripcion_Breve = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_TramitesNoEnlazadosporExpedienteResult
+	{
+		
+		private int _id;
+		
+		private string _Nombre;
+		
+		private string _Descripcion_Breve;
+		
+		public pa_TramitesNoEnlazadosporExpedienteResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_Breve", DbType="VarChar(100)")]
+		public string Descripcion_Breve
+		{
+			get
+			{
+				return this._Descripcion_Breve;
+			}
+			set
+			{
+				if ((this._Descripcion_Breve != value))
+				{
+					this._Descripcion_Breve = value;
 				}
 			}
 		}
