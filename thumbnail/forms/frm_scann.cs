@@ -274,9 +274,13 @@ namespace scanndoc.forms
 
                 tramite.nota = "";
 
-                if ((BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).descripcion_bloqueo.ToString().ToLower() == "bloquear despues de determinado tiempo")
+                if ((BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).descripcion_bloqueo != null &&
+                    (BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).descripcion_bloqueo.ToString().ToLower() == "bloquear despues de determinado tiempo")
                 {
                     tramite.fecha_hora_bloqueo = calculafechahorabloqueo();
+                }
+                else {
+                    tramite.fecha_hora_bloqueo = null;
                 }
 
                 tramite.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "desbloqueado").id;
@@ -462,7 +466,7 @@ namespace scanndoc.forms
 
                 data_members.ma_digital ma_digital = new data_members.ma_digital();
                 ma_digital.id_re_expediente_tramite = tramite.id_re_expediente_tramite;
-                data_members.pa_obtener_fechahoraResult fechahora = Program.Bd_Exp_Transportes.pa_obtener_fechahora() as pa_obtener_fechahoraResult;
+                //data_members.pa_obtener_fechahoraResult fechahora = Program.Bd_Exp_Transportes.pa_obtener_fechahora() as pa_obtener_fechahoraResult;
                 ma_digital.nota = tramite.nota;
                 ma_digital.fecha_hora_bloqueo = tramite.fecha_hora_bloqueo;
                 ma_digital.id_estatus = tramite.id_estatus;
