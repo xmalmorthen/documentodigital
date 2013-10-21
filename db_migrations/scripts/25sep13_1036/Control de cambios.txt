@@ -1,0 +1,37 @@
+.Se agrego al catalogo de modulos el modulo de formatos
+.A la relacion de roles con modulos se agrego el modulo de formatos
+.A todas las tablas se le agregaron indices
+.Se añadio en fila ca_cargopuesto en ca_tablas
+.Triggers en catalogos
+	dbo.ca_acciones
+	dbo.ca_campostrazables
+	dbo.ca_cargo_puesto
+	dbo.ca_clasificaciondocumentos
+	dbo.ca_clasificaciontramites
+	dbo.ca_documentos
+	dbo.ca_estatus
+	dbo.ca_expedientes
+	dbo.ca_formatos
+	dbo.ca_origenes
+	dbo.ca_roles
+	dbo.ca_tiposbloqueos
+	dbo.ca_modulos
+	dbo.ca_tablas
+	dbo.ca_tramites
+	dbo.ca_usuarios
+	dbo.de_acciones_modulo
+	dbo.de_digital
+	dbo.de_digital_campostrazables	
+	dbo.ma_digital
+	dbo.re_clasificaciondocumentos_documentos
+	dbo.re_expedientes_campostrazables
+	dbo.re_expedientes_tramites
+	dbo.re_expedientestramites_tiposbloqueos
+	dbo.re_roles_modulos
+	dbo.re_tramites_clasificaciondocumentos
+	dbo.re_usuarios_roles_permisos
+	dbo.tbl_configuraciones
+.Procedimientos almacenados
+	.pa_ConsultaTramitesporValorTrazable
+	.pa_ConsultaTramitesporExpedienteyValorTrazable
+.Agregar vista [vw_ListaExpedientes]
