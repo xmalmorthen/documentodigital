@@ -10,8 +10,6 @@ En nueva migracion
 		.Agregar en re_roles_modulos
 			[ir_rol 1, id_modulo 18]
 			
-			
-	
 [valorar]
 	.Para permitir el acceso a usuarios desde sitio web...
 	.Agregar en ca_roles el rol de 
