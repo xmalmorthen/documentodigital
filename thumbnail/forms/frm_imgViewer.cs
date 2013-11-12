@@ -56,7 +56,7 @@ namespace scanndoc.forms
 
             try
             {
-                data_members.de_digital imagendigitalregistrada = Program.Bd_Exp_Transportes.de_digital.SingleOrDefault(
+                data_members.de_digital imagendigitalregistrada = Program.Bd_Expedientes_Digitales.de_digital.SingleOrDefault(
                 query => query.id_ma_digital == id_ma_digital_edit &&
                          query.id == id &&
                          query.id_re_clasificaciondocumento_documento == id_re_clasificaciondocumento_documento);

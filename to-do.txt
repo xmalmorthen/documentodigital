@@ -1,15 +1,3 @@
-En nueva migracion
-	.Agregar 
-		.vista 
-			[vw_ListaExpedientes]
-		.pa 
-			[pa_TramitesporExpediente]
-			[pa_TramitesNoEnlazadosporExpediente]
-		.Agregar en ca_modulos los modulos
-			[id 18 => "Asignar Trámites a Expedientes"]
-		.Agregar en re_roles_modulos
-			[ir_rol 1, id_modulo 18]
-			
 [valorar]
 	.Para permitir el acceso a usuarios desde sitio web...
 	.Agregar en ca_roles el rol de 

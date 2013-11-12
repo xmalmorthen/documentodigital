@@ -8,12 +8,12 @@ namespace scanndoc.classes
 {
     public static class obtener
     {
-        private static Bd_Exp_TransportesDataContext Bd_Exp_Transportes = new Bd_Exp_TransportesDataContext();
+        private static Bd_Expedientes_DigitalesDataContext Bd_Expedientes_Digitales = new Bd_Expedientes_DigitalesDataContext();
 
         public static string fecha (){
             try
             {
-                pa_obtener_fechaResult obj = Bd_Exp_Transportes.pa_obtener_fecha().SingleOrDefault();
+                pa_obtener_fechaResult obj = Bd_Expedientes_Digitales.pa_obtener_fecha().SingleOrDefault();
                 return obj.Fecha.ToString();
             }
             catch (Exception e)
@@ -26,7 +26,7 @@ namespace scanndoc.classes
         public static string hora (){
             try
             {
-                pa_obtener_horaResult obj = Bd_Exp_Transportes.pa_obtener_hora().SingleOrDefault();
+                pa_obtener_horaResult obj = Bd_Expedientes_Digitales.pa_obtener_hora().SingleOrDefault();
                 return obj.Hora.ToString();
             }
             catch (Exception e)

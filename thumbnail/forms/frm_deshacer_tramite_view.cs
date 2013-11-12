@@ -285,7 +285,7 @@ namespace scanndoc.forms
             {
             
                 List<data_members.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult> imagenesdigitalregistradas =
-                    new List<pa_RegistrosDigitalesRegistradosporId_ma_digitalResult>(Program.Bd_Exp_Transportes.pa_RegistrosDigitalesRegistradosporId_ma_digital(id_ma_digital));
+                    new List<pa_RegistrosDigitalesRegistradosporId_ma_digitalResult>(Program.Bd_Expedientes_Digitales.pa_RegistrosDigitalesRegistradosporId_ma_digital(id_ma_digital));
 
                 foreach (data_members.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult current in imagenesdigitalregistradas)
                 {
@@ -362,7 +362,7 @@ namespace scanndoc.forms
              */
             try
             {
-                List<data_members.pa_CampostrazablesRegistradosporId_ma_digitalResult> listacamposaeditar = Program.Bd_Exp_Transportes.pa_CampostrazablesRegistradosporId_ma_digital(id_ma_digital).ToList();
+                List<data_members.pa_CampostrazablesRegistradosporId_ma_digitalResult> listacamposaeditar = Program.Bd_Expedientes_Digitales.pa_CampostrazablesRegistradosporId_ma_digital(id_ma_digital).ToList();
                 this.BindingSource_CamposTrazables.DataSource = listacamposaeditar;
                 this.dataGridView_CamposTrazables.DataSource = this.BindingSource_CamposTrazables;
                 id_re_expedientes_campostrazables.DataPropertyName = "id_re_expediente_campotrazable";

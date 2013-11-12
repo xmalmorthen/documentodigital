@@ -15,5 +15,3 @@
 	.ca_tiposbloqueos				[ids salteados]
 	.tbl_configuraciones
 	
-[NOTA]
-	EL USUARIO DE BASE DE DATOS "DIGITALDOCS" DEBERA ASIGNARSELE EL ROL DE "SECURITYADMIN"

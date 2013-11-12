@@ -60,9 +60,9 @@ namespace scanndoc.forms
         private void actualiza_lista_expedientes() {
             try
             {
-                lista_expedientes = Program.Bd_Exp_Transportes.GetTable<data_members.ca_expedientes>().ToList();
+                lista_expedientes = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_expedientes>().ToList();
                 bindingsource_ca_expedientes.DataSource = lista_expedientes;
-                tlp_noregistros.Visible = (bindingsource_ca_expedientes.Count == 0);
+                tlp_noregistros.Visible = (bindingsource.Count == 0);
             }
             catch (Exception e)
             {
@@ -74,7 +74,7 @@ namespace scanndoc.forms
         {
             try
             {
-                lista_campostrazables = Program.Bd_Exp_Transportes.pa_CampostrazablesNoEnlazadosporExpediente(id_expediente).ToList();
+                lista_campostrazables = Program.Bd_Expedientes_Digitales.pa_CampostrazablesNoEnlazadosporExpediente(id_expediente).ToList();
                 bindingSource_campostrazables.DataSource = lista_campostrazables;
             }
             catch (Exception e)
@@ -86,7 +86,7 @@ namespace scanndoc.forms
         private void actualiza_re_expedientes_campostrazables(int ?id_expediente) {
             try
             {
-                campostrazables = Program.Bd_Exp_Transportes.pa_CampostrazablesporExpediente(id_expediente).ToList();
+                campostrazables = Program.Bd_Expedientes_Digitales.pa_CampostrazablesporExpediente(id_expediente).ToList();
                 bindingsource.DataSource = campostrazables;
 
                 txt_buscarcampotrazable.Text = "";
@@ -213,13 +213,13 @@ namespace scanndoc.forms
 
                     if (checkEdit2.Checked)
                     {
-                        item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+                        item.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
                     }
                     else
                     {
                         if (MessageBox.Show(this, "Esta a punto de agregar un campo trazable inactivo, confirma la acción", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
                         {
-                            item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
+                            item.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
                         }
                         else
                         {
@@ -237,8 +237,8 @@ namespace scanndoc.forms
                         return;
                     }
 
-                    Program.Bd_Exp_Transportes.re_expedientes_campostrazables.InsertOnSubmit(item);
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                    Program.Bd_Expedientes_Digitales.re_expedientes_campostrazables.InsertOnSubmit(item);
+                    Program.Bd_Expedientes_Digitales.SubmitChanges();
 
                     checkEdit1.Checked = false;
                     checkEdit2.Checked = true;
@@ -261,7 +261,7 @@ namespace scanndoc.forms
             {
                 if (checkEdit1.Checked)
                 {
-                    data_members.re_expedientes_campostrazables item = Program.Bd_Exp_Transportes.re_expedientes_campostrazables.SingleOrDefault(query => query.es_principal == true && query.id_expediente == (bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id);
+                    data_members.re_expedientes_campostrazables item = Program.Bd_Expedientes_Digitales.re_expedientes_campostrazables.SingleOrDefault(query => query.es_principal == true && query.id_expediente == (bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id);
                     if (item != null)
                     {
                         return true;
@@ -374,12 +374,12 @@ namespace scanndoc.forms
             try
             {
                 int id = (bindingsource.Current as data_members.pa_CampostrazablesporExpedienteResult).id_re_expedientes_campostrazables;
-                data_members.re_expedientes_campostrazables item = Program.Bd_Exp_Transportes.re_expedientes_campostrazables.SingleOrDefault(query => query.id == id);
+                data_members.re_expedientes_campostrazables item = Program.Bd_Expedientes_Digitales.re_expedientes_campostrazables.SingleOrDefault(query => query.id == id);
 
                 if (item != null)
                 {
-                    Program.Bd_Exp_Transportes.re_expedientes_campostrazables.DeleteOnSubmit(item);
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                    Program.Bd_Expedientes_Digitales.re_expedientes_campostrazables.DeleteOnSubmit(item);
+                    Program.Bd_Expedientes_Digitales.SubmitChanges();
                     MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -401,7 +401,7 @@ namespace scanndoc.forms
 
                     int id_re_expedientes_campostrazables = (bindingsource.Current as data_members.pa_CampostrazablesporExpedienteResult).id_re_expedientes_campostrazables;
 
-                    data_members.re_expedientes_campostrazables item = Program.Bd_Exp_Transportes.re_expedientes_campostrazables.SingleOrDefault(
+                    data_members.re_expedientes_campostrazables item = Program.Bd_Expedientes_Digitales.re_expedientes_campostrazables.SingleOrDefault(
                         query => query.id == id_re_expedientes_campostrazables);
 
                     if (newvalue_esprincipal == false)
@@ -417,10 +417,10 @@ namespace scanndoc.forms
                         }                        
                     }
                     if (newvalue_avtivo == 0)
-                        item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
+                        item.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
                     else
-                        item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                        item.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+                    Program.Bd_Expedientes_Digitales.SubmitChanges();
                 }
                 catch (Exception err)
                 {
@@ -433,7 +433,7 @@ namespace scanndoc.forms
         {
             try
             {
-                data_members.re_expedientes_campostrazables item = Program.Bd_Exp_Transportes.re_expedientes_campostrazables.SingleOrDefault(query => query.es_principal == true && query.id_expediente == (bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id);
+                data_members.re_expedientes_campostrazables item = Program.Bd_Expedientes_Digitales.re_expedientes_campostrazables.SingleOrDefault(query => query.es_principal == true && query.id_expediente == (bindingsource_ca_expedientes.Current as data_members.ca_expedientes).id);
                 if (item != null)
                 {
                     MessageBox.Show(this, "Ya se encuentra un campo trazable principal, favor de revisar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

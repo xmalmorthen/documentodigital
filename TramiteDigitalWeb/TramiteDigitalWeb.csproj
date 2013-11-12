@@ -167,27 +167,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="classes\convert_md5.cs" />
-    <Compile Include="ControllersApiWeb\CatalogosController.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ControllersApiWeb\TramiteController.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="data_members\Bd_Exp_Transportes.designer.cs">
+    <Compile Include="data_members\Bd_Expedientes_Web.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Bd_Exp_Transportes.dbml</DependentUpon>
+      <DependentUpon>Bd_Expedientes_Web.dbml</DependentUpon>
     </Compile>
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ModelsApiWeb\CatalogosApiWeb.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="ModelsApiWeb\ConsultasApiWeb.cs" />
     <Compile Include="Models\CatalogsModel.cs" />
+    <Compile Include="Models\classes\vw_ListaExpedientes.cs" />
     <Compile Include="Models\ConsultaModels.cs" />
     <Compile Include="Models\ConsultasViewModels.cs" />
     <Compile Include="Models\UsuarioLogeado.cs" />
@@ -321,9 +314,9 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="data_members\Bd_Exp_Transportes.dbml">
+    <None Include="data_members\Bd_Expedientes_Web.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Bd_Exp_Transportes.designer.cs</LastGenOutput>
+      <LastGenOutput>Bd_Expedientes_Web.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -335,8 +328,8 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="data_members\Bd_Exp_Transportes.dbml.layout">
-      <DependentUpon>Bd_Exp_Transportes.dbml</DependentUpon>
+    <None Include="data_members\Bd_Expedientes_Web.dbml.layout">
+      <DependentUpon>Bd_Expedientes_Web.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>

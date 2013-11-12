@@ -25,7 +25,7 @@ namespace scanndoc.forms
         {
             try
             {
-                tramites = Program.Bd_Exp_Transportes.GetTable<data_members.vw_ListaTramitesActivos>().ToList();
+                tramites = Program.Bd_Expedientes_Digitales.GetTable<data_members.vw_ListaTramitesActivos>().ToList();
                 BindingSource.DataSource = tramites;
 
                 tlp_noregistros.Visible = (BindingSource.Count == 0);
@@ -75,7 +75,7 @@ namespace scanndoc.forms
         private void lista_tiposdebloqueos() {
             try
             {
-                bindingSource_tipobloqueos.DataSource = Program.Bd_Exp_Transportes.GetTable<data_members.ca_tiposbloqueos>().ToList();
+                bindingSource_tipobloqueos.DataSource = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_tiposbloqueos>().ToList();
             }
             catch (Exception e)
             {
@@ -159,7 +159,7 @@ namespace scanndoc.forms
                 DataGridViewCell cellhoras = dataGridView.Rows[e.RowIndex].Cells["nohorasbloqueoDataGridViewTextBoxColumn"];
 
                 if (celltipobloqueo.Value == null ||
-                    Program.Bd_Exp_Transportes.ca_tiposbloqueos.Single(query => query.id == (int)celltipobloqueo.Value).Descripcion.ToString().ToLower() == "bloquear manualmente")
+                    Program.Bd_Expedientes_Digitales.ca_tiposbloqueos.Single(query => query.id == (int)celltipobloqueo.Value).Descripcion.ToString().ToLower() == "bloquear manualmente")
                 {
                     celldias.ReadOnly = true;
                     cellhoras.ReadOnly = true;
@@ -191,7 +191,7 @@ namespace scanndoc.forms
             try
             {
                 if (celltipobloqueo.Value != null &&
-                Program.Bd_Exp_Transportes.ca_tiposbloqueos.Single(query => query.id == (int)celltipobloqueo.Value).Descripcion.ToString().ToLower() == "bloquear despues de determinado tiempo")
+                Program.Bd_Expedientes_Digitales.ca_tiposbloqueos.Single(query => query.id == (int)celltipobloqueo.Value).Descripcion.ToString().ToLower() == "bloquear despues de determinado tiempo")
                 {
                     if (celldias.Value == null && cellhoras.Value == null)
                     {
@@ -229,7 +229,7 @@ namespace scanndoc.forms
                 int id_re_expediente_tramite = (BindingSource.Current as data_members.vw_ListaTramitesActivos).id_re_expedientes_tramites;
 
                 data_members.re_expedientestramites_tiposbloqueos tramite =
-                    Program.Bd_Exp_Transportes.re_expedientestramites_tiposbloqueos.SingleOrDefault(query => query.id_re_expediente_tramite == id_re_expediente_tramite);
+                    Program.Bd_Expedientes_Digitales.re_expedientestramites_tiposbloqueos.SingleOrDefault(query => query.id_re_expediente_tramite == id_re_expediente_tramite);
 
                 if (tramite != null) {
                     if (tramite.id_re_expediente_tramite != id_re_expediente_tramite) {
@@ -272,10 +272,10 @@ namespace scanndoc.forms
 
                 if (nuevo)
                 {
-                    Program.Bd_Exp_Transportes.re_expedientestramites_tiposbloqueos.InsertOnSubmit(tramite);
+                    Program.Bd_Expedientes_Digitales.re_expedientestramites_tiposbloqueos.InsertOnSubmit(tramite);
                 }
 
-                Program.Bd_Exp_Transportes.SubmitChanges();
+                Program.Bd_Expedientes_Digitales.SubmitChanges();
 
                 Application.DoEvents();
 

@@ -34,7 +34,7 @@ namespace scanndoc.forms
         {
             try
             {
-                dateEdit.Properties.MinValue = Program.Bd_Exp_Transportes.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
+                dateEdit.Properties.MinValue = Program.Bd_Expedientes_Digitales.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
             }
             catch (Exception err)
             {

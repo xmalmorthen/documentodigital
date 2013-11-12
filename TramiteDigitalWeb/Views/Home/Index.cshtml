@@ -22,13 +22,17 @@
         @Html.ValidationSummary(true)
 
         <fieldset>
-            <legend>Formulario de inicio de sesión</legend>
+            <legend>Formulario de búsqueda</legend>
             <ol>
                 <li>
-                    @Html.LabelFor(m=>m.ExpedienteSeleccionado)
-                    @Html.DropDownListFor(m => m.ExpedienteSeleccionado, new SelectList(ViewBag.Expedientes, "id", "Descripcion"), new { id = 0 })
+                    @Html.LabelFor(m=>m.NodoSeleccionado)
+                    @Html.DropDownListFor(m => m.NodoSeleccionado, new SelectList(ViewBag.Nodos, "id", "nodo"), new { id = "nodos" })
                 </li>
-                <li>
+                <li id="area_expedientes" style="display:none" >
+                    @Html.LabelFor(m=>m.ExpedienteSeleccionado)
+                    @Html.DropDownListFor(m => m.ExpedienteSeleccionado, Enumerable.Empty<SelectListItem>(), "-- Seleccione el Expediente --", new { id = "expedientes" })
+                </li>
+                <li id="area_valortrazable" style="display:none">
                     @Html.LabelFor(m => m.Valor_Trazable)
                     @Html.TextBoxFor(m => m.Valor_Trazable)
                     @Html.ValidationMessageFor(m => m.Valor_Trazable)
@@ -53,7 +57,7 @@
             <th></th>
         </tr>
     @{
-     if (ViewBag.Response != null)
+    /* if (ViewBag.Response != null)
      {
         foreach (TramiteDigitalWeb.data_members.pa_ConsultaTramitesporValorTrazableResult item in ViewBag.Response as IEnumerable<TramiteDigitalWeb.data_members.pa_ConsultaTramitesporValorTrazableResult>)
         {
@@ -72,8 +76,55 @@
                 </td>
             </tr>
         }   
-     }
+     }*/
     }
     </table>
 </div>
 
+<script type="text/javascript">
+    $(function () {
+        $("#nodos").change(function () {
+            var nodoseleccionado = $(this).val();
+            if (nodoseleccionado != null && nodoseleccionado != '' && nodoseleccionado != -1) {
+
+                $("#area_valortrazable").show();
+
+                var Expedientes = $('#expedientes');
+                Expedientes.empty();
+                Expedientes.append(
+                    $('<option/>', {
+                        value: -1,
+                        text: "Todos los Expedientes"
+                    })
+                );
+
+                if (nodoseleccionado == 0) {
+                    $("#area_expedientes").hide();
+                    return;
+                }
+
+                $.ajax({
+                    url: '@Url.Action("ObtenExpedientes")',
+                    type: 'GET',
+                    data: { id_nodo: nodoseleccionado },
+                    success: function (result) {
+                        $.each(result, function (index, item) {
+                            //console.log(item);
+                            Expedientes.append(
+                                $('<option/>', {
+                                    value: item.id,
+                                    text: item.Descripcion
+                                })
+                            );
+                            $("#area_expedientes").show();
+                        });
+                    }
+                });
+                
+            } else {
+                $("#area_expedientes").hide();
+                $("#area_valortrazable").hide();
+            }
+        });
+    });
+</script>

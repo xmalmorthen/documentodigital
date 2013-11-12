@@ -126,7 +126,7 @@ namespace scanndoc.forms
 
                 Application.DoEvents();
 
-                tramites = new List<data_members.pa_ReferenciaExpedientesporValorTrazableResult>(Program.Bd_Exp_Transportes.pa_ReferenciaExpedientesporValorTrazable(txt.Text.ToString().ToLower()));
+                tramites = new List<data_members.pa_ReferenciaExpedientesporValorTrazableResult>(Program.Bd_Expedientes_Digitales.pa_ReferenciaExpedientesporValorTrazable(txt.Text.ToString().ToLower()));
 
                 pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = tramites;
             }

@@ -62,7 +62,7 @@ namespace scanndoc
 
         private void configura_opciones_de_menu()
         {
-            modulos = Program.Bd_Exp_Transportes.pa_Permsos_Modulos(Usuario.Logeado.id).ToList();
+            modulos = Program.Bd_Expedientes_Digitales.pa_Permsos_Modulos(Usuario.Logeado.id).ToList();
 
             // recorrer las opciones del menú
             foreach (ToolStripMenuItem mnuitOpcion in this.mnustrip_menuprincipal.Items)
@@ -434,23 +434,6 @@ namespace scanndoc
             tlp_proc.Visible = false;
             this.Cursor = Cursors.Default;
             
-        }
-
-        private void asignarTrámitesAExpedientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.WaitCursor;
-            tlp_proc.Visible = true;
-
-            Application.DoEvents();
-
-            scanndoc.forms.re_expedientes_tramites frm = new forms.re_expedientes_tramites();
-            frm.MdiParent = this;
-            frm.Show();
-
-            Application.DoEvents();
-
-            tlp_proc.Visible = false;
-            this.Cursor = Cursors.Default;
         }
 
     }

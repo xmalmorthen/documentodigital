@@ -30,7 +30,7 @@ namespace scanndoc.forms
 
                 Application.DoEvents();
 
-                tramites = new List<data_members.pa_ReferenciaExpedientesparaBloquearDesbloquearResult>(Program.Bd_Exp_Transportes.pa_ReferenciaExpedientesparaBloquearDesbloquear());
+                tramites = new List<data_members.pa_ReferenciaExpedientesparaBloquearDesbloquearResult>(Program.Bd_Expedientes_Digitales.pa_ReferenciaExpedientesparaBloquearDesbloquear());
 
                 BindingSource.DataSource = tramites;
 
@@ -117,19 +117,19 @@ namespace scanndoc.forms
             try
             {
                 int Id_Ma_Digital = (BindingSource.Current as data_members.pa_ReferenciaExpedientesparaBloquearDesbloquearResult).id;
-                data_members.ma_digital registro = Program.Bd_Exp_Transportes.ma_digital.Single(query => query.id == Id_Ma_Digital);
+                data_members.ma_digital registro = Program.Bd_Expedientes_Digitales.ma_digital.Single(query => query.id == Id_Ma_Digital);
 
                 if (accion == 0)
                 {
-                    registro.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "bloqueado").id;
-                    registro.fecha_hora_bloqueo = Program.Bd_Exp_Transportes.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                    registro.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "bloqueado").id;
+                    registro.fecha_hora_bloqueo = Program.Bd_Expedientes_Digitales.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
+                    Program.Bd_Expedientes_Digitales.SubmitChanges();
                     MessageBox.Show("Trámite bloqueado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else {
-                    registro.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "desbloqueado").id;
+                    registro.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "desbloqueado").id;
                     registro.fecha_hora_bloqueo = null;
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                    Program.Bd_Expedientes_Digitales.SubmitChanges();
                     MessageBox.Show("Trámite desbloqueado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 match_registros();
@@ -296,7 +296,7 @@ namespace scanndoc.forms
             DateTime fechahora = DateTime.Now;
             try
             {
-                fechahora = Program.Bd_Exp_Transportes.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
+                fechahora = Program.Bd_Expedientes_Digitales.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
 
                 fechahora = fechahora.AddDays(Convert.ToDouble(no_dias_bloqueo));
                 fechahora = fechahora.AddHours(Convert.ToDouble(no_horas_bloqueo));
@@ -313,10 +313,10 @@ namespace scanndoc.forms
             try
             {
                 int Id_Ma_Digital = (BindingSource.Current as data_members.pa_ReferenciaExpedientesparaBloquearDesbloquearResult).id;
-                data_members.ma_digital registro = Program.Bd_Exp_Transportes.ma_digital.Single(query => query.id == Id_Ma_Digital);
+                data_members.ma_digital registro = Program.Bd_Expedientes_Digitales.ma_digital.Single(query => query.id == Id_Ma_Digital);
 
                 registro.fecha_hora_bloqueo = fechabloqueo;
-                Program.Bd_Exp_Transportes.SubmitChanges();
+                Program.Bd_Expedientes_Digitales.SubmitChanges();
                 MessageBox.Show("Plan de bloqueo establecido", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 match_registros();
             }
@@ -339,10 +339,10 @@ namespace scanndoc.forms
             try
             {
                 int Id_Ma_Digital = (BindingSource.Current as data_members.pa_ReferenciaExpedientesparaBloquearDesbloquearResult).id;
-                data_members.ma_digital registro = Program.Bd_Exp_Transportes.ma_digital.Single(query => query.id == Id_Ma_Digital);
+                data_members.ma_digital registro = Program.Bd_Expedientes_Digitales.ma_digital.Single(query => query.id == Id_Ma_Digital);
 
                 registro.fecha_hora_bloqueo = null;
-                Program.Bd_Exp_Transportes.SubmitChanges();
+                Program.Bd_Expedientes_Digitales.SubmitChanges();
                 MessageBox.Show("Plan de bloqueo eliminado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 match_registros();
             }

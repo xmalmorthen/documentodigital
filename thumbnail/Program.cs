@@ -8,7 +8,7 @@ namespace scanndoc
 {
     static class Program
     {
-        public static scanndoc.data_members.Bd_Exp_TransportesDataContext Bd_Exp_Transportes;
+        public static scanndoc.data_members.Bd_Expedientes_DigitalesDataContext Bd_Expedientes_Digitales;
 
         /// <summary>
         /// Punto de entrada principal para la aplicación.
@@ -21,7 +21,7 @@ namespace scanndoc
 
             //Application.Run(new frm_main());
 
-            //Bd_Exp_Transportes = new data_members.Bd_Exp_TransportesDataContext();
+            //Bd_Expedientes_Digitales = new data_members.Bd_Expedientes_DigitalesDataContext();
 
             frm_login login = new frm_login();
             frm_main main = new frm_main();

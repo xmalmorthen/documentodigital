@@ -92,7 +92,7 @@ namespace scanndoc.forms
         private void actualiza_lista() {
             try
             {
-                lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_roles>().ToList();
+                lista = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_roles>().ToList();
                 bindingsource.DataSource = lista;
                 tlp_noregistros.Visible = (bindingsource.Count == 0);
             }
@@ -105,7 +105,7 @@ namespace scanndoc.forms
         private void obten_modulos(int ?id_rol) { 
             try
             {
-                modulos = Program.Bd_Exp_Transportes.pa_ModulosporIdRol(id_rol).ToList();
+                modulos = Program.Bd_Expedientes_Digitales.pa_ModulosporIdRol(id_rol).ToList();
                 modulosBindingSource.DataSource = modulos;
             }
             catch (Exception err)
@@ -263,8 +263,8 @@ namespace scanndoc.forms
                         if (!buscar_si_existe())
                         {
                             List<data_members.pa_ModulosporIdRolResult> modulosclon = new List<pa_ModulosporIdRolResult>(modulos);
-                            Program.Bd_Exp_Transportes.ca_roles.InsertOnSubmit(rol);
-                            Program.Bd_Exp_Transportes.SubmitChanges();
+                            Program.Bd_Expedientes_Digitales.ca_roles.InsertOnSubmit(rol);
+                            Program.Bd_Expedientes_Digitales.SubmitChanges();
                             Form_Mode = form_mode.normal;
                             actualiza_lista();
 
@@ -314,8 +314,8 @@ namespace scanndoc.forms
             {
                 try
                 {
-                    Program.Bd_Exp_Transportes.re_roles_modulos.InsertAllOnSubmit(detalles);
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                    Program.Bd_Expedientes_Digitales.re_roles_modulos.InsertAllOnSubmit(detalles);
+                    Program.Bd_Expedientes_Digitales.SubmitChanges();
                 }
                 catch (Exception err)
                 {
@@ -336,7 +336,7 @@ namespace scanndoc.forms
         {
             try
             {
-                data_members.ca_roles filtro = Program.Bd_Exp_Transportes.ca_roles.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == rol.Descripcion.ToString().ToLower());
+                data_members.ca_roles filtro = Program.Bd_Expedientes_Digitales.ca_roles.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == rol.Descripcion.ToString().ToLower());
                 if (filtro != null)
                 {
                     MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -362,7 +362,7 @@ namespace scanndoc.forms
                         List<data_members.pa_ModulosporIdRolResult> rolesclon = new List<pa_ModulosporIdRolResult>(modulos);
                         edita_modulos(rol.id, rolesclon);
 
-                        Program.Bd_Exp_Transportes.SubmitChanges();
+                        Program.Bd_Expedientes_Digitales.SubmitChanges();
                         Form_Mode = form_mode.normal;
                         actualiza_lista();
                         
@@ -387,7 +387,7 @@ namespace scanndoc.forms
             {
                 foreach (data_members.pa_ModulosporIdRolResult item in rolesclon)
                 {
-                    data_members.re_roles_modulos select = (from query in Program.Bd_Exp_Transportes.re_roles_modulos
+                    data_members.re_roles_modulos select = (from query in Program.Bd_Expedientes_Digitales.re_roles_modulos
                                                             where query.id_rol == id_rol && query.id_modulo == item.ID
                                                             select query).SingleOrDefault();
 
@@ -418,11 +418,11 @@ namespace scanndoc.forms
 
                 if (deleteitems.Count > 0)
                 {
-                    Program.Bd_Exp_Transportes.re_roles_modulos.DeleteAllOnSubmit(deleteitems);
+                    Program.Bd_Expedientes_Digitales.re_roles_modulos.DeleteAllOnSubmit(deleteitems);
                 }
                 if (additems.Count > 0)
                 {
-                    Program.Bd_Exp_Transportes.re_roles_modulos.InsertAllOnSubmit(additems);
+                    Program.Bd_Expedientes_Digitales.re_roles_modulos.InsertAllOnSubmit(additems);
                 }
             }
             catch (Exception err)
@@ -445,9 +445,9 @@ namespace scanndoc.forms
                     elimina_modulos(rol.id);
 
                     //eliminar rol
-                    Program.Bd_Exp_Transportes.ca_roles.DeleteOnSubmit(rol);
+                    Program.Bd_Expedientes_Digitales.ca_roles.DeleteOnSubmit(rol);
                     
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                    Program.Bd_Expedientes_Digitales.SubmitChanges();
 
                     MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -462,10 +462,10 @@ namespace scanndoc.forms
         {
             try
             {
-                IEnumerable<data_members.re_roles_modulos> detalles = (from query in Program.Bd_Exp_Transportes.re_roles_modulos
+                IEnumerable<data_members.re_roles_modulos> detalles = (from query in Program.Bd_Expedientes_Digitales.re_roles_modulos
                                                                        where (query.id_rol == id_modulo)
                                                                        select query).ToList();
-                Program.Bd_Exp_Transportes.re_roles_modulos.DeleteAllOnSubmit(detalles);
+                Program.Bd_Expedientes_Digitales.re_roles_modulos.DeleteAllOnSubmit(detalles);
             }
             catch (Exception err)
             {

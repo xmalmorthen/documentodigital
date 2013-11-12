@@ -93,7 +93,7 @@ namespace scanndoc.forms
         private void actualiza_lista() {
             try
             {
-                lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_campostrazables>().ToList();
+                lista = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_campostrazables>().ToList();
                 bindingsource.DataSource = lista;
 
                 tlp_noregistros.Visible = (bindingsource.Count == 0);
@@ -253,8 +253,8 @@ namespace scanndoc.forms
                     {
                         if (!buscar_si_existe())
                         {
-                            Program.Bd_Exp_Transportes.ca_campostrazables.InsertOnSubmit(catalogo);
-                            Program.Bd_Exp_Transportes.SubmitChanges();
+                            Program.Bd_Expedientes_Digitales.ca_campostrazables.InsertOnSubmit(catalogo);
+                            Program.Bd_Expedientes_Digitales.SubmitChanges();
                             Form_Mode = form_mode.normal;
                             actualiza_lista();
                             MessageBox.Show("Registro agregado con éxito", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -285,7 +285,7 @@ namespace scanndoc.forms
         {
             try
             {
-                data_members.ca_campostrazables filtro = Program.Bd_Exp_Transportes.ca_campostrazables.SingleOrDefault(query => query.Nombre.ToString().ToLower() == catalogo.Nombre.ToString().ToLower());
+                data_members.ca_campostrazables filtro = Program.Bd_Expedientes_Digitales.ca_campostrazables.SingleOrDefault(query => query.Nombre.ToString().ToLower() == catalogo.Nombre.ToString().ToLower());
                 if (filtro != null)
                 {
                     MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -306,7 +306,7 @@ namespace scanndoc.forms
             if (bindingsource.DataSource != null) {
                 try 
 	            {
-                            Program.Bd_Exp_Transportes.SubmitChanges();
+                            Program.Bd_Expedientes_Digitales.SubmitChanges();
                             Form_Mode = form_mode.normal;
                             actualiza_lista();
                             MessageBox.Show("Registro modificado con éxito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -326,8 +326,8 @@ namespace scanndoc.forms
                 if (bindingsource.DataSource != null)
                 {
                     catalogo = (data_members.ca_campostrazables)bindingsource.Current;
-                    Program.Bd_Exp_Transportes.ca_campostrazables.DeleteOnSubmit(catalogo);
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                    Program.Bd_Expedientes_Digitales.ca_campostrazables.DeleteOnSubmit(catalogo);
+                    Program.Bd_Expedientes_Digitales.SubmitChanges();
                     MessageBox.Show("Registro eliminado con éxito", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

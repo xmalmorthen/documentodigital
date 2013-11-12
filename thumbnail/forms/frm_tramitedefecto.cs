@@ -41,7 +41,7 @@ namespace scanndoc.forms
         private void obtenerlistatramites() {
             try
             {
-                tramites = Program.Bd_Exp_Transportes.GetTable<data_members.vw_ListaTramitesActivos>().ToList();
+                tramites = Program.Bd_Expedientes_Digitales.GetTable<data_members.vw_ListaTramitesActivos>().ToList();
                 BindingSource.DataSource = tramites;
                 datagridview.Update();
             }
@@ -86,7 +86,7 @@ namespace scanndoc.forms
         private short obtenertramitepordefault() {
             try
             {
-                return Convert.ToInt16(Program.Bd_Exp_Transportes.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault).Valor.ToString());
+                return Convert.ToInt16(Program.Bd_Expedientes_Digitales.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault).Valor.ToString());
             }
             catch (Exception e)
             {
@@ -142,9 +142,9 @@ namespace scanndoc.forms
 
             try
             {
-                data_members.tbl_configuraciones configs = Program.Bd_Exp_Transportes.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault);
+                data_members.tbl_configuraciones configs = Program.Bd_Expedientes_Digitales.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault);
                 configs.Valor = newidtramte;
-                Program.Bd_Exp_Transportes.SubmitChanges();
+                Program.Bd_Expedientes_Digitales.SubmitChanges();
                 datagridview.Rows[e.RowIndex].Cells["seleccion"].Value = true;
             }
             catch (Exception err)

@@ -61,9 +61,9 @@ namespace scanndoc.forms
         {
             try
             {
-                lista_tramites = Program.Bd_Exp_Transportes.GetTable<data_members.ca_tramites>().ToList();
+                lista_tramites = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_tramites>().ToList();
                 bindingsource_ca_tramites.DataSource = lista_tramites;
-                tlp_noregistros.Visible = (bindingsource_ca_tramites.Count == 0);
+                tlp_noregistros.Visible = (bindingsource.Count == 0);
             }
             catch (Exception e)
             {
@@ -75,7 +75,7 @@ namespace scanndoc.forms
         {
             try
             {
-                lista_clasificaciondocumentos = Program.Bd_Exp_Transportes.pa_ClasificacionDocumentosNoEnlazadosporTramite(id_tramite).ToList();
+                lista_clasificaciondocumentos = Program.Bd_Expedientes_Digitales.pa_ClasificacionDocumentosNoEnlazadosporTramite(id_tramite).ToList();
                 bindingsource_ca_clasificaciondocumentos.DataSource = lista_clasificaciondocumentos;
             }
             catch (Exception e)
@@ -88,7 +88,7 @@ namespace scanndoc.forms
         {
             try
             {
-                documentosclasificados = Program.Bd_Exp_Transportes.pa_ClasificacionDocumentosporTramite(id_tramite).ToList();
+                documentosclasificados = Program.Bd_Expedientes_Digitales.pa_ClasificacionDocumentosporTramite(id_tramite).ToList();
                 bindingsource.DataSource = documentosclasificados;
 
                 txt_buscarcampotrazable.Text = "";
@@ -201,8 +201,8 @@ namespace scanndoc.forms
                     item.id_tramie = (bindingsource_ca_tramites.Current as data_members.ca_tramites).id;
                     item.id_clasificaciondocumento = (int)lookUpEdit.EditValue;
 
-                    Program.Bd_Exp_Transportes.re_tramites_clasificaciondocumentos.InsertOnSubmit(item);
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                    Program.Bd_Expedientes_Digitales.re_tramites_clasificaciondocumentos.InsertOnSubmit(item);
+                    Program.Bd_Expedientes_Digitales.SubmitChanges();
 
                     limpiar_controles();
                     MessageBox.Show("Registro agregado con éxito", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -288,12 +288,12 @@ namespace scanndoc.forms
             try
             {
                 int id = (bindingsource.Current as data_members.pa_ClasificacionDocumentosporTramiteResult).id;
-                data_members.re_tramites_clasificaciondocumentos item = Program.Bd_Exp_Transportes.re_tramites_clasificaciondocumentos.SingleOrDefault(query => query.id == id);
+                data_members.re_tramites_clasificaciondocumentos item = Program.Bd_Expedientes_Digitales.re_tramites_clasificaciondocumentos.SingleOrDefault(query => query.id == id);
 
                 if (item != null)
                 {
-                    Program.Bd_Exp_Transportes.re_tramites_clasificaciondocumentos.DeleteOnSubmit(item);
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                    Program.Bd_Expedientes_Digitales.re_tramites_clasificaciondocumentos.DeleteOnSubmit(item);
+                    Program.Bd_Expedientes_Digitales.SubmitChanges();
                     MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

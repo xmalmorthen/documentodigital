@@ -295,7 +295,7 @@
             this.textEdit1.Properties.MaxLength = 50;
             this.textEdit1.Properties.PasswordChar = '*';
             this.textEdit1.Size = new System.Drawing.Size(512, 24);
-            this.textEdit1.TabIndex = 2;
+            this.textEdit1.TabIndex = 1;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Falta indicar el valor";
             this.dxValidationProvider.SetValidationRule(this.textEdit1, conditionValidationRule1);
@@ -390,7 +390,7 @@
             this.lookUpEdit_cargopuesto.Properties.ValueMember = "id";
             this.lookUpEdit_cargopuesto.Properties.View = this.gridView1;
             this.lookUpEdit_cargopuesto.Size = new System.Drawing.Size(512, 24);
-            this.lookUpEdit_cargopuesto.TabIndex = 0;
+            this.lookUpEdit_cargopuesto.TabIndex = 37;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "Falta indicar el valor";
             this.dxValidationProvider.SetValidationRule(this.lookUpEdit_cargopuesto, conditionValidationRule2);
@@ -479,7 +479,7 @@
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(444, 360);
-            this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.TabIndex = 34;
             // 
             // iDDataGridViewTextBoxColumn1
             // 
@@ -529,7 +529,7 @@
             this.textEdit7.Properties.Mask.EditMask = "(999)000-0000";
             this.textEdit7.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.textEdit7.Size = new System.Drawing.Size(512, 24);
-            this.textEdit7.TabIndex = 8;
+            this.textEdit7.TabIndex = 7;
             // 
             // textEdit6
             // 
@@ -542,7 +542,7 @@
             this.textEdit6.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.textEdit6.Properties.MaxLength = 18;
             this.textEdit6.Size = new System.Drawing.Size(512, 24);
-            this.textEdit6.TabIndex = 7;
+            this.textEdit6.TabIndex = 6;
             // 
             // textEdit5
             // 
@@ -555,7 +555,7 @@
             this.textEdit5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.textEdit5.Properties.MaxLength = 30;
             this.textEdit5.Size = new System.Drawing.Size(512, 24);
-            this.textEdit5.TabIndex = 6;
+            this.textEdit5.TabIndex = 5;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "Falta indicar el valor";
             this.dxValidationProvider.SetValidationRule(this.textEdit5, conditionValidationRule3);
@@ -571,7 +571,7 @@
             this.textEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.textEdit4.Properties.MaxLength = 30;
             this.textEdit4.Size = new System.Drawing.Size(512, 24);
-            this.textEdit4.TabIndex = 5;
+            this.textEdit4.TabIndex = 4;
             // 
             // textEdit3
             // 
@@ -584,7 +584,7 @@
             this.textEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.textEdit3.Properties.MaxLength = 30;
             this.textEdit3.Size = new System.Drawing.Size(512, 24);
-            this.textEdit3.TabIndex = 4;
+            this.textEdit3.TabIndex = 3;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule4.ErrorText = "Falta indicar el valor";
             this.dxValidationProvider.SetValidationRule(this.textEdit3, conditionValidationRule4);
@@ -600,7 +600,7 @@
             this.textEdit2.Properties.MaxLength = 50;
             this.textEdit2.Properties.PasswordChar = '*';
             this.textEdit2.Size = new System.Drawing.Size(512, 24);
-            this.textEdit2.TabIndex = 3;
+            this.textEdit2.TabIndex = 2;
             compareAgainstControlValidationRule1.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.Equals;
             compareAgainstControlValidationRule1.Control = this.textEdit1;
             compareAgainstControlValidationRule1.ErrorText = "Validacion de contraseña incorrecta";
@@ -623,7 +623,7 @@
             this.btn_Editar.Location = new System.Drawing.Point(782, 5);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.Size = new System.Drawing.Size(22, 22);
-            this.btn_Editar.TabIndex = 11;
+            this.btn_Editar.TabIndex = 9;
             this.toolTip.SetToolTip(this.btn_Editar, "Editar");
             this.btn_Editar.UseVisualStyleBackColor = false;
             this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
@@ -642,7 +642,7 @@
             this.btn_cancelar.Location = new System.Drawing.Point(782, 33);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(22, 22);
-            this.btn_cancelar.TabIndex = 13;
+            this.btn_cancelar.TabIndex = 10;
             this.toolTip.SetToolTip(this.btn_cancelar, "Cancelar");
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
@@ -661,7 +661,7 @@
             this.btn_Limpiar.Location = new System.Drawing.Point(811, 5);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(22, 22);
-            this.btn_Limpiar.TabIndex = 12;
+            this.btn_Limpiar.TabIndex = 11;
             this.toolTip.SetToolTip(this.btn_Limpiar, "Limpiar formulario");
             this.btn_Limpiar.UseVisualStyleBackColor = false;
             this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
@@ -680,7 +680,7 @@
             this.btn_Agregar.Location = new System.Drawing.Point(712, 3);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(54, 54);
-            this.btn_Agregar.TabIndex = 10;
+            this.btn_Agregar.TabIndex = 8;
             this.toolTip.SetToolTip(this.btn_Agregar, "Agregar");
             this.btn_Agregar.UseVisualStyleBackColor = false;
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
@@ -699,7 +699,7 @@
             this.btn_eliminar.Location = new System.Drawing.Point(811, 33);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(22, 22);
-            this.btn_eliminar.TabIndex = 14;
+            this.btn_eliminar.TabIndex = 12;
             this.toolTip.SetToolTip(this.btn_eliminar, "Eliminar");
             this.btn_eliminar.UseVisualStyleBackColor = false;
             this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
@@ -718,7 +718,7 @@
             this.btn_cerrar.Location = new System.Drawing.Point(940, 3);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(54, 54);
-            this.btn_cerrar.TabIndex = 16;
+            this.btn_cerrar.TabIndex = 14;
             this.toolTip.SetToolTip(this.btn_cerrar, "Cerrar");
             this.btn_cerrar.UseVisualStyleBackColor = false;
             this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
@@ -737,7 +737,7 @@
             this.btn_guardar.Location = new System.Drawing.Point(856, 3);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(54, 54);
-            this.btn_guardar.TabIndex = 15;
+            this.btn_guardar.TabIndex = 13;
             this.toolTip.SetToolTip(this.btn_guardar, "Guardar");
             this.btn_guardar.UseVisualStyleBackColor = false;
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
@@ -753,7 +753,7 @@
             this.textEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.textEdit.Properties.MaxLength = 30;
             this.textEdit.Size = new System.Drawing.Size(512, 24);
-            this.textEdit.TabIndex = 1;
+            this.textEdit.TabIndex = 0;
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "Falta indicar el valor";
             this.dxValidationProvider.SetValidationRule(this.textEdit, conditionValidationRule5);
@@ -848,7 +848,7 @@
             this.bindingnavigator.Name = "bindingnavigator";
             this.bindingnavigator.PositionItem = this.bindingNavigatorPositionItem;
             this.bindingnavigator.Size = new System.Drawing.Size(1006, 25);
-            this.bindingnavigator.TabIndex = 2;
+            this.bindingnavigator.TabIndex = 3;
             this.bindingnavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
@@ -974,7 +974,7 @@
             this.datagridview.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.datagridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datagridview.Size = new System.Drawing.Size(979, 193);
-            this.datagridview.TabIndex = 1;
+            this.datagridview.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -1080,7 +1080,7 @@
             this.txt_buscar.Properties.Appearance.Options.UseFont = true;
             this.txt_buscar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txt_buscar.Size = new System.Drawing.Size(368, 20);
-            this.txt_buscar.TabIndex = 0;
+            this.txt_buscar.TabIndex = 2;
             this.txt_buscar.Tag = "0";
             this.txt_buscar.EditValueChanged += new System.EventHandler(this.txt_buscar_EditValueChanged);
             // 
@@ -1207,7 +1207,7 @@
             this.Controls.Add(this.tlp_noregistros);
             this.Controls.Add(this.splitContainer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1024, 736);
+            this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "ca_usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";

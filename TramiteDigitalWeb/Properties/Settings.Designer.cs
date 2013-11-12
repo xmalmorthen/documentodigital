@@ -22,14 +22,5 @@ namespace TramiteDigitalWeb.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:34879")]
-        public string RESTApiWeb {
-            get {
-                return ((string)(this["RESTApiWeb"]));
-            }
-        }
     }
 }

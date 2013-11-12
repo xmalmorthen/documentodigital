@@ -24,10 +24,6 @@ namespace TramiteDigitalWeb
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            var xml = System.Web.Http.GlobalConfiguration.Configuration.Formatters.XmlFormatter;
-            xml.Indent = true;
-
             AuthConfig.RegisterAuth();
         }
     }

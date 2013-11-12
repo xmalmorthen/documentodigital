@@ -28,7 +28,7 @@ namespace scanndoc.forms
         }
 
         private string connectionstring(string usuario, string contrasenia) {
-            string cnn = Settings.Default.Bd_Exp_TransportesConnectionStringTemplate;
+            string cnn = Settings.Default.Bd_Expedientes_DigitalesConnectionStringTemplate;
             cnn = cnn.Replace("#user#", usuario.Trim()).ToString();
             cnn = cnn.Replace("#pass#", contrasenia.Trim()).ToString();
             return cnn;
@@ -42,7 +42,7 @@ namespace scanndoc.forms
 
                 try 
 	            {	        
-		            Program.Bd_Exp_Transportes = new data_members.Bd_Exp_TransportesDataContext(
+		            Program.Bd_Expedientes_Digitales = new data_members.Bd_Expedientes_DigitalesDataContext(
                                 connectionstring(
                                     txt_usuario.Text.ToString().ToLower(),
                                     convert_md5.generate(txt_contrasenia.Text)
@@ -54,7 +54,7 @@ namespace scanndoc.forms
                     scanndoc.classes.errorlogs.seterror(err);
 	            }
                                
-                scanndoc.data_members.ca_usuarios usuario = Program.Bd_Exp_Transportes.ca_usuarios.SingleOrDefault(c => c.usuario.ToString().ToLower() == txt_usuario.Text.ToString().ToLower());
+                scanndoc.data_members.ca_usuarios usuario = Program.Bd_Expedientes_Digitales.ca_usuarios.SingleOrDefault(c => c.usuario.ToString().ToLower() == txt_usuario.Text.ToString().ToLower());
                 if (!convert_md5.verifyMd5Hash(txt_contrasenia.Text, usuario.contrasenia))
                 {
                     MessageBox.Show("Usuario y/o contraseña no válidos", "Error de sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -109,7 +109,7 @@ namespace scanndoc.forms
 
         private void frm_login_Load(object sender, EventArgs e)
         {
-            //string user = Program.Bd_Exp_Transportes.ExecuteQuery<string>("SELECT USER").First();
+            //string user = Program.Bd_Expedientes_Digitales.ExecuteQuery<string>("SELECT USER").First();
         }
     }
 }

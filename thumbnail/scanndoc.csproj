@@ -107,10 +107,10 @@
     <Compile Include="classes\procesa_imagen.cs" />
     <Compile Include="classes\thumbnail.cs" />
     <Compile Include="classes\watermark.cs" />
-    <Compile Include="data_members\Bd_Exp_Transportes.designer.cs">
+    <Compile Include="data_members\Bd_Expedientes_Digitales.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Bd_Exp_Transportes.dbml</DependentUpon>
+      <DependentUpon>Bd_Expedientes_Digitales.dbml</DependentUpon>
     </Compile>
     <Compile Include="forms\ca_expedientes.cs">
       <SubType>Form</SubType>
@@ -171,12 +171,6 @@
     </Compile>
     <Compile Include="forms\ca_formatos.Designer.cs">
       <DependentUpon>ca_formatos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\re_expedientes_tramites.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\re_expedientes_tramites.Designer.cs">
-      <DependentUpon>re_expedientes_tramites.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frm_tramitedefecto.cs">
       <SubType>Form</SubType>
@@ -306,8 +300,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="assets\imgs\16x16\doc_new.png" />
-    <None Include="data_members\Bd_Exp_Transportes.dbml.layout">
-      <DependentUpon>Bd_Exp_Transportes.dbml</DependentUpon>
+    <None Include="data_members\Bd_Expedientes_Digitales.dbml.layout">
+      <DependentUpon>Bd_Expedientes_Digitales.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="forms\ca_expedientes.resx">
       <DependentUpon>ca_expedientes.cs</DependentUpon>
@@ -338,9 +332,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\ca_formatos.resx">
       <DependentUpon>ca_formatos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\re_expedientes_tramites.resx">
-      <DependentUpon>re_expedientes_tramites.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_tramitedefecto.resx">
       <DependentUpon>frm_tramitedefecto.cs</DependentUpon>
@@ -415,15 +406,13 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="data_members\Bd_Exp_Transportes.dbml">
+    <None Include="data_members\Bd_Expedientes_Digitales.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>Bd_Exp_Transportes.designer.cs</LastGenOutput>
+      <LastGenOutput>Bd_Expedientes_Digitales.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\scanndoc.data_members.ca_cargo_puesto.datasource" />
-    <None Include="Properties\DataSources\scanndoc.data_members.pa_TramitesNoEnlazadosporExpedienteResult.datasource" />
-    <None Include="Properties\DataSources\scanndoc.data_members.pa_TramitesporExpedienteResult.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_campostrazables.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_clasificaciondocumentos.datasource" />
     <None Include="Properties\DataSources\thumbnail.data_members.ca_clasificaciontramites.datasource" />

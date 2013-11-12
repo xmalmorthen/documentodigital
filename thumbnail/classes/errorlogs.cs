@@ -82,7 +82,7 @@ namespace scanndoc.classes
                 
                 try
                 {
-                    scanndoc.data_members.Bd_Exp_TransportesDataContext Bd = new data_members.Bd_Exp_TransportesDataContext();
+                    scanndoc.data_members.Bd_Expedientes_DigitalesDataContext Bd = new data_members.Bd_Expedientes_DigitalesDataContext();
                     Bd.tbl_errorlogs.InsertOnSubmit(errlog);
                     Bd.SubmitChanges();
                     Bd.Dispose();

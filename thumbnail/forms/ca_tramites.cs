@@ -97,7 +97,7 @@ namespace scanndoc.forms
         private void actualiza_lista() {
             try
             {
-                lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_tramites>().ToList();
+                lista = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_tramites>().ToList();
                 bindingsource.DataSource = lista;
                 tlp_noregistros.Visible = (bindingsource.Count == 0);
             }
@@ -110,7 +110,7 @@ namespace scanndoc.forms
         private void obten_clasificacion_de_tramites() {
             try
             {
-                lookUpEdit_ClasificacionDocumento.Properties.DataSource = Program.Bd_Exp_Transportes.GetTable<data_members.ca_clasificaciontramites>().ToList();
+                lookUpEdit_ClasificacionDocumento.Properties.DataSource = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_clasificaciontramites>().ToList();
             }
             catch (Exception err)
             {
@@ -146,7 +146,6 @@ namespace scanndoc.forms
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             bindingsource.AddNew();
-
             Form_Mode = form_mode.agregar;
 
             //limpiar_controles();
@@ -270,8 +269,8 @@ namespace scanndoc.forms
                     {
                         if (!buscar_si_existe())
                         {
-                            Program.Bd_Exp_Transportes.ca_tramites.InsertOnSubmit(catalogo);
-                            Program.Bd_Exp_Transportes.SubmitChanges();
+                            Program.Bd_Expedientes_Digitales.ca_tramites.InsertOnSubmit(catalogo);
+                            Program.Bd_Expedientes_Digitales.SubmitChanges();
                             Form_Mode = form_mode.normal;
                             actualiza_lista();
                             MessageBox.Show("Registro agregado con éxito", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -302,7 +301,7 @@ namespace scanndoc.forms
         {
             try
             {
-                data_members.ca_tramites filtro = Program.Bd_Exp_Transportes.ca_tramites.SingleOrDefault(query => query.Nombre.ToString().ToLower() == catalogo.Nombre.ToString().ToLower());
+                data_members.ca_tramites filtro = Program.Bd_Expedientes_Digitales.ca_tramites.SingleOrDefault(query => query.Nombre.ToString().ToLower() == catalogo.Nombre.ToString().ToLower());
                 if (filtro != null)
                 {
                     MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -325,13 +324,13 @@ namespace scanndoc.forms
 	            {
                     if (valida())
                     {
-                        //if (!buscar_si_existe())
-                        //{
-                            Program.Bd_Exp_Transportes.SubmitChanges();
+                        if (!buscar_si_existe())
+                        {
+                            Program.Bd_Expedientes_Digitales.SubmitChanges();
                             Form_Mode = form_mode.normal;
                             actualiza_lista();
                             MessageBox.Show("Registro modificado con éxito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //}
+                        }
                     }
 	            }
                 catch (Exception err)
@@ -349,8 +348,8 @@ namespace scanndoc.forms
                 if (bindingsource.DataSource != null)
                 {
                     catalogo = (data_members.ca_tramites)bindingsource.Current;
-                    Program.Bd_Exp_Transportes.ca_tramites.DeleteOnSubmit(catalogo);
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                    Program.Bd_Expedientes_Digitales.ca_tramites.DeleteOnSubmit(catalogo);
+                    Program.Bd_Expedientes_Digitales.SubmitChanges();
                     MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -405,7 +404,7 @@ namespace scanndoc.forms
         {
             try
             {
-                lookUpEdit_ClasificacionDocumento.EditValue = Program.Bd_Exp_Transportes.ca_clasificaciontramites.OrderByDescending(p => p.id).FirstOrDefault().id;
+                lookUpEdit_ClasificacionDocumento.EditValue = Program.Bd_Expedientes_Digitales.ca_clasificaciontramites.OrderByDescending(p => p.id).FirstOrDefault().id;
             }
             catch (Exception err)
             {

@@ -105,7 +105,7 @@ namespace scanndoc.forms
         private void actualiza_lista() {
             try
             {
-                lista = Program.Bd_Exp_Transportes.GetTable<data_members.ca_documentos>().ToList();
+                lista = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_documentos>().ToList();
                 bindingsource.DataSource = lista;
                 tlp_noregistros.Visible = (bindingsource.Count == 0);
             }
@@ -118,7 +118,7 @@ namespace scanndoc.forms
         private void actualiza_lista_formatos() {
             try
             {
-                bindingSource_ca_formatos.DataSource = Program.Bd_Exp_Transportes.GetTable<data_members.ca_formatos>().ToList();
+                bindingSource_ca_formatos.DataSource = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_formatos>().ToList();
             }
             catch (Exception err)
             {
@@ -317,8 +317,8 @@ namespace scanndoc.forms
                         asignavalores();
                         if (!buscar_si_existe())
                         {
-                            Program.Bd_Exp_Transportes.ca_documentos.InsertOnSubmit(catalogo);
-                            Program.Bd_Exp_Transportes.SubmitChanges();
+                            Program.Bd_Expedientes_Digitales.ca_documentos.InsertOnSubmit(catalogo);
+                            Program.Bd_Expedientes_Digitales.SubmitChanges();
                             Form_Mode = form_mode.normal;
                             actualiza_lista();
                             MessageBox.Show("Registro agregado con éxito", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -357,7 +357,7 @@ namespace scanndoc.forms
             }
             else 
             {
-                catalogo.Tamanio_Caracteres_Trazables = Convert.ToInt16((int)spinEdit4.Value == 0 ? 1 : (int)spinEdit4.Value);
+                catalogo.Tamanio_Caracteres_Trazables = Convert.ToInt16((int)spinEdit4.Value == 0 ? 1 : (int)spinEdit3.Value);
                 catalogo.Mascara_Trazable = textEdit1.Text;
             }
         }
@@ -384,7 +384,7 @@ namespace scanndoc.forms
         {
             try
             {
-                data_members.ca_documentos filtro = Program.Bd_Exp_Transportes.ca_documentos.SingleOrDefault(query => query.Nombre.ToString().ToLower() == catalogo.Nombre.ToString().ToLower());
+                data_members.ca_documentos filtro = Program.Bd_Expedientes_Digitales.ca_documentos.SingleOrDefault(query => query.Nombre.ToString().ToLower() == catalogo.Nombre.ToString().ToLower());
                 if (filtro != null)
                 {
                     MessageBox.Show("El registro ya se encuentra", "Encontrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -408,7 +408,7 @@ namespace scanndoc.forms
                     if (valida())
                     {
                         asignavalores();
-                        Program.Bd_Exp_Transportes.SubmitChanges();
+                        Program.Bd_Expedientes_Digitales.SubmitChanges();
                         Form_Mode = form_mode.normal;
                         actualiza_lista();
                         MessageBox.Show("Registro modificado con éxito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -429,8 +429,8 @@ namespace scanndoc.forms
                 if (bindingsource.DataSource != null)
                 {
                     catalogo = (data_members.ca_documentos)bindingsource.Current;
-                    Program.Bd_Exp_Transportes.ca_documentos.DeleteOnSubmit(catalogo);
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                    Program.Bd_Expedientes_Digitales.ca_documentos.DeleteOnSubmit(catalogo);
+                    Program.Bd_Expedientes_Digitales.SubmitChanges();
                     MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

@@ -121,7 +121,7 @@ namespace scanndoc.forms
 
                 Application.DoEvents();
 
-                tramites = new List<data_members.pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult>(Program.Bd_Exp_Transportes.pa_ReferenciaExpedientesporValorTrazableparaDeshacer(txt.Text.ToString().ToLower()));
+                tramites = new List<data_members.pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult>(Program.Bd_Expedientes_Digitales.pa_ReferenciaExpedientesporValorTrazableparaDeshacer(txt.Text.ToString().ToLower()));
 
                 pa_ReferenciaExpedientesporValorTrazableResultBindingSource.DataSource = tramites;
             }
@@ -186,9 +186,9 @@ namespace scanndoc.forms
             try
             {
                 int Id_Ma_Digital = (pa_ReferenciaExpedientesporValorTrazableResultBindingSource.Current as data_members.pa_ReferenciaExpedientesporValorTrazableparaDeshacerResult).id_ma_digital;
-                data_members.ma_digital registro = Program.Bd_Exp_Transportes.ma_digital.Single(query => query.id == Id_Ma_Digital);
-                registro.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "desechado").id;
-                Program.Bd_Exp_Transportes.SubmitChanges();
+                data_members.ma_digital registro = Program.Bd_Expedientes_Digitales.ma_digital.Single(query => query.id == Id_Ma_Digital);
+                registro.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "desechado").id;
+                Program.Bd_Expedientes_Digitales.SubmitChanges();
                 MessageBox.Show("Trámite deshecho", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 btn_limpiar_Click(null, null);

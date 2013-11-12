@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Bd_Expedientes_Web">
+  <DataContextMoniker Name="/Bd_Expedientes_WebDataContext" />
+  <nestedChildShapes>
+    <classShape Id="188cf7bc-ef81-4293-a3bb-04164d7d83fa" absoluteBounds="0.75, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/Bd_Expedientes_WebDataContext/ca_nodos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17f22610-a16b-46e7-8bf5-e1421bb162f3" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d7a0fcda-6a3a-43c6-b3bf-aaedcc217c29" absoluteBounds="0.75, 3.375, 2, 2.9247054036458335">
+      <DataClassMoniker Name="/Bd_Expedientes_WebDataContext/ca_usuarios" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16d46375-9efa-459c-be86-765b65c572ca" absoluteBounds="0.765, 3.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c6a2a32-7072-4e6e-8c39-653478eb6cdd" absoluteBounds="3.5, 1.125, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/Bd_Expedientes_WebDataContext/re_nodos_usuarios" />
+      <nestedChildShapes>
+        <elementListCompartment Id="887262c4-f071-4ccb-a195-58cd08e7f5b6" absoluteBounds="3.515, 1.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.01044840494792); (3.5 : 2.01044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Expedientes_WebDataContext/ca_nodos/ca_nodos_re_nodos_usuarios" />
+      <nodes>
+        <classShapeMoniker Id="188cf7bc-ef81-4293-a3bb-04164d7d83fa" />
+        <classShapeMoniker Id="6c6a2a32-7072-4e6e-8c39-653478eb6cdd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.83735270182292); (4.5 : 4.83735270182292); (4.5 : 2.89589680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Bd_Expedientes_WebDataContext/ca_usuarios/ca_usuarios_re_nodos_usuarios" />
+      <nodes>
+        <classShapeMoniker Id="d7a0fcda-6a3a-43c6-b3bf-aaedcc217c29" />
+        <classShapeMoniker Id="6c6a2a32-7072-4e6e-8c39-653478eb6cdd" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

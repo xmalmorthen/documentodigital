@@ -24,7 +24,7 @@ namespace scanndoc.forms
             {
                 tramite = Tramite;
                 origen = Origen;
-                this.bindingsource.DataSource = Program.Bd_Exp_Transportes.pa_ObtenerDocumentosporTramiteyOrigen(tramite, origen).ToList(); //obtener la lista de documentos por tramite y origen
+                this.bindingsource.DataSource = Program.Bd_Expedientes_Digitales.pa_ObtenerDocumentosporTramiteyOrigen(tramite, origen).ToList(); //obtener la lista de documentos por tramite y origen
                 pa_ObtenerDocumentosporTramiteyOrigenResultGridControl.DataSource = bindingsource;
             }
             catch (Exception e)

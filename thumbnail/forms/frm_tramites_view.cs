@@ -35,7 +35,7 @@ namespace scanndoc.forms
 
             try
             {
-                bindingsource.DataSource = Program.Bd_Exp_Transportes.ca_tramites.Single(query => query.id == id_tramite);
+                bindingsource.DataSource = Program.Bd_Expedientes_Digitales.ca_tramites.Single(query => query.id == id_tramite);
             }
             catch (Exception err)
             {

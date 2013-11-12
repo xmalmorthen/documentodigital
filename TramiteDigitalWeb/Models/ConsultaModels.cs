@@ -10,7 +10,7 @@ namespace TramiteDigitalWeb.Models
 {
     public static class ConsultaModels
     {
-        //public IEnumerable<data_members.pa_ConsultaTramitesporValorTrazableResult> ConsultaTramitesporValorTrazable(string valor_trazable)
+       /* //public IEnumerable<data_members.pa_ConsultaTramitesporValorTrazableResult> ConsultaTramitesporValorTrazable(string valor_trazable)
         public static List<data_members.pa_ConsultaTramitesporValorTrazableResult> ConsultaTramitesporValorTrazable(string valor_trazable)
         {            
             try
@@ -75,6 +75,6 @@ namespace TramiteDigitalWeb.Models
             {
                 throw;
             }
-        }
+        }*/
     }
 }

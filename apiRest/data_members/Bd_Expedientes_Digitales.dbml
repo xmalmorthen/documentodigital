@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Bd_Expedientes_Digitales" Class="Bd_Expedientes_DigitalesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=Bd_Expedientes_Digitales;Persist Security Info=True;User ID=digitaldocs" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Bd_Expedientes_DigitalesConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.vw_ListaExpedientes" Member="vw_ListaExpedientes">
+    <Type Name="vw_ListaExpedientes">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.pa_ConsultaTramitesporValorTrazable" Method="pa_ConsultaTramitesporValorTrazable">
+    <Parameter Name="valor_trazable" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="pa_ConsultaTramitesporValorTrazableResult">
+      <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="tramite" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="expediente" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_ConsultaTramitesporExpedienteyValorTrazable" Method="pa_ConsultaTramitesporExpedienteyValorTrazable">
+    <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="valor_trazable" Type="System.String" DbType="VarChar(200)" />
+    <ElementType Name="pa_ConsultaTramitesporExpedienteyValorTrazableResult">
+      <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="tramite" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="expediente" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

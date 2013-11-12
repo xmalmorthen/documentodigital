@@ -255,7 +255,7 @@ namespace scanndoc.forms
 
                 match_de_digital(id_ma_digital_edit);
 
-                Program.Bd_Exp_Transportes.SubmitChanges();
+                Program.Bd_Expedientes_Digitales.SubmitChanges();
 
                 obtenerregistrosaeditar();
             }
@@ -274,16 +274,12 @@ namespace scanndoc.forms
 
                 tramite.nota = "";
 
-                if ((BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).descripcion_bloqueo != null &&
-                    (BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).descripcion_bloqueo.ToString().ToLower() == "bloquear despues de determinado tiempo")
+                if ((BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).descripcion_bloqueo.ToString().ToLower() == "bloquear despues de determinado tiempo")
                 {
                     tramite.fecha_hora_bloqueo = calculafechahorabloqueo();
                 }
-                else {
-                    tramite.fecha_hora_bloqueo = null;
-                }
 
-                tramite.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "desbloqueado").id;
+                tramite.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "desbloqueado").id;
 
                 int id_ma_digital = match_ma_digital();
 
@@ -291,7 +287,7 @@ namespace scanndoc.forms
 
                 match_de_digital(id_ma_digital);
 
-                Program.Bd_Exp_Transportes.SubmitChanges();
+                Program.Bd_Expedientes_Digitales.SubmitChanges();
 
                 Form_Mode = form_mode.Edit; //al guardar se cambia a modo edición
 
@@ -332,13 +328,13 @@ namespace scanndoc.forms
                         file_binary_imagen = null;
 
                         de_digital.valor_trazable = item.valor_trazable;
-                        de_digital.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+                        de_digital.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
 
                         listainsertar.Add(de_digital);
 
                         de_digital = null;
                     }
-                    Program.Bd_Exp_Transportes.de_digital.InsertAllOnSubmit(listainsertar);
+                    Program.Bd_Expedientes_Digitales.de_digital.InsertAllOnSubmit(listainsertar);
                 }
                 else if (Form_Mode == form_mode.Edit && SeEdito)
                 {
@@ -363,9 +359,9 @@ namespace scanndoc.forms
                             file_binary_imagen = null;
 
                             de_digital.valor_trazable = item.valor_trazable;
-                            de_digital.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+                            de_digital.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
 
-                            Program.Bd_Exp_Transportes.de_digital.InsertOnSubmit(de_digital);
+                            Program.Bd_Expedientes_Digitales.de_digital.InsertOnSubmit(de_digital);
 
                             item.id_de_digital = de_digital.id;
                             item.aniadido = false;
@@ -374,7 +370,7 @@ namespace scanndoc.forms
                             de_digital = null;
                         }
                         else if (item.editado ) { //cuando se edito una imagen
-                            data_members.de_digital de_digital = Program.Bd_Exp_Transportes.de_digital.SingleOrDefault(
+                            data_members.de_digital de_digital = Program.Bd_Expedientes_Digitales.de_digital.SingleOrDefault(
                                             query => query.id == item.id_de_digital);
 
                             byte[] file_byte_thumbnail = item.thumbnail;
@@ -394,20 +390,20 @@ namespace scanndoc.forms
 
                             de_digital.valor_trazable = item.valor_trazable;
 
-                            Program.Bd_Exp_Transportes.SubmitChanges();
+                            Program.Bd_Expedientes_Digitales.SubmitChanges();
 
                             item.editado = false;
                         }
                         else if (!item.enlazado)
                         { //cuando se desenlazo una imagen guardada
-                            Program.Bd_Exp_Transportes.pa_InactivaDe_DigitalporId(item.id_de_digital);
+                            Program.Bd_Expedientes_Digitales.pa_InactivaDe_DigitalporId(item.id_de_digital);
 
 
                             //manera antigua de cambiar el estatus, mucho mas lento, deprecado
-                            /*data_members.de_digital de_digital = Program.Bd_Exp_Transportes.de_digital.SingleOrDefault(
+                            /*data_members.de_digital de_digital = Program.Bd_Expedientes_Digitales.de_digital.SingleOrDefault(
                                             query => query.id == item.id_de_digital);
-                            de_digital.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
-                            Program.Bd_Exp_Transportes.SubmitChanges();*/
+                            de_digital.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
+                            Program.Bd_Expedientes_Digitales.SubmitChanges();*/
                         }
                     }
                 }
@@ -432,23 +428,23 @@ namespace scanndoc.forms
                         de_digital_campostrazables.id_ma_digital = id_ma_digital;
                         de_digital_campostrazables.id_re_expediente_campotrazable = item.id_re_expediente_campotrazable;
                         de_digital_campostrazables.valor_trazable = item.valor_trazable;
-                        de_digital_campostrazables.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+                        de_digital_campostrazables.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
                         listainsertar.Add(de_digital_campostrazables);
                         de_digital_campostrazables = null;
                     }
-                    Program.Bd_Exp_Transportes.de_digital_campostrazables.InsertAllOnSubmit(listainsertar);
+                    Program.Bd_Expedientes_Digitales.de_digital_campostrazables.InsertAllOnSubmit(listainsertar);
                 }
                 else if (Form_Mode == form_mode.Edit && SeEdito)
                 {
                     foreach (trazabilidad_tramite item in tramite.trazabilidad)
                     {
-                        data_members.de_digital_campostrazables de_digital_campostrazables = Program.Bd_Exp_Transportes.de_digital_campostrazables.SingleOrDefault(
+                        data_members.de_digital_campostrazables de_digital_campostrazables = Program.Bd_Expedientes_Digitales.de_digital_campostrazables.SingleOrDefault(
                             query => query.id_ma_digital == id_ma_digital && query.id_re_expediente_campotrazable == item.id_re_expediente_campotrazable);
 
                         if (de_digital_campostrazables.valor_trazable != item.valor_trazable)
                         {
                             de_digital_campostrazables.valor_trazable = item.valor_trazable;
-                            Program.Bd_Exp_Transportes.SubmitChanges();
+                            Program.Bd_Expedientes_Digitales.SubmitChanges();
                         }
                     }                
                 }
@@ -466,13 +462,13 @@ namespace scanndoc.forms
 
                 data_members.ma_digital ma_digital = new data_members.ma_digital();
                 ma_digital.id_re_expediente_tramite = tramite.id_re_expediente_tramite;
-                //data_members.pa_obtener_fechahoraResult fechahora = Program.Bd_Exp_Transportes.pa_obtener_fechahora() as pa_obtener_fechahoraResult;
+                data_members.pa_obtener_fechahoraResult fechahora = Program.Bd_Expedientes_Digitales.pa_obtener_fechahora() as pa_obtener_fechahoraResult;
                 ma_digital.nota = tramite.nota;
                 ma_digital.fecha_hora_bloqueo = tramite.fecha_hora_bloqueo;
                 ma_digital.id_estatus = tramite.id_estatus;
 
-                Program.Bd_Exp_Transportes.ma_digital.InsertOnSubmit(ma_digital);
-                Program.Bd_Exp_Transportes.SubmitChanges();
+                Program.Bd_Expedientes_Digitales.ma_digital.InsertOnSubmit(ma_digital);
+                Program.Bd_Expedientes_Digitales.SubmitChanges();
                 return ma_digital.id;
             }
             catch (Exception e)
@@ -579,7 +575,7 @@ namespace scanndoc.forms
         {
             try
             {
-                lista_tramites = Program.Bd_Exp_Transportes.vw_ListaTramitesActivos.ToList(); //obtener la lista de tramites y vincularla al bindingsource
+                lista_tramites = Program.Bd_Expedientes_Digitales.vw_ListaTramitesActivos.ToList(); //obtener la lista de tramites y vincularla al bindingsource
                 this.BindingSource_ListaTramites.DataSource = lista_tramites;
                 this.lookUpEdit_Tramites.Properties.DataSource = this.BindingSource_ListaTramites; //asignar datasourse al combo
                 this.lookUpEdit_Tramites.EditValue = null;
@@ -600,7 +596,7 @@ namespace scanndoc.forms
              */
             try
             {
-                scanndoc.data_members.tbl_configuraciones Configs = Program.Bd_Exp_Transportes.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault);
+                scanndoc.data_members.tbl_configuraciones Configs = Program.Bd_Expedientes_Digitales.tbl_configuraciones.SingleOrDefault(c => c.id == Settings.Default.Config_IdTramiteporDefault);
 
                 if (BindingSource_ListaTramites.Count > 0)
                 {
@@ -699,7 +695,7 @@ namespace scanndoc.forms
              */
             try
             {
-                this.BindingSource_CamposTrazables.DataSource = Program.Bd_Exp_Transportes.pa_CampostrazablesActivosporExpediente(lookUpEdit_Tramites_selected.id_expediente);
+                this.BindingSource_CamposTrazables.DataSource = Program.Bd_Expedientes_Digitales.pa_CampostrazablesActivosporExpediente(lookUpEdit_Tramites_selected.id_expediente);
                 this.dataGridView_CamposTrazables.DataSource = this.BindingSource_CamposTrazables;
 
                 this.formatear_celda_principal(); //dar formato a la fila del campo principal
@@ -1557,7 +1553,7 @@ namespace scanndoc.forms
                     Form_Mode = form_mode.Edit; 
                     SeEdito = false;
 
-                    string descripcion_bloqueo = Program.Bd_Exp_Transportes.vw_ListaTramitesActivos.SingleOrDefault(query => query.id_tramite == (int)lookUpEdit_Tramites.EditValue).descripcion_bloqueo;
+                    string descripcion_bloqueo = Program.Bd_Expedientes_Digitales.vw_ListaTramitesActivos.SingleOrDefault(query => query.id_tramite == (int)lookUpEdit_Tramites.EditValue).descripcion_bloqueo;
 
                     btn_bloquear.Visible = descripcion_bloqueo != null &&
                                            descripcion_bloqueo.ToString().ToLower() == "bloquear manualmente" &&
@@ -1672,7 +1668,7 @@ namespace scanndoc.forms
             try
             {
                 List<data_members.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult> imagenesdigitalregistradas =
-                    new List<pa_RegistrosDigitalesRegistradosporId_ma_digitalResult>(Program.Bd_Exp_Transportes.pa_RegistrosDigitalesRegistradosporId_ma_digital(id_ma_digital_edit));
+                    new List<pa_RegistrosDigitalesRegistradosporId_ma_digitalResult>(Program.Bd_Expedientes_Digitales.pa_RegistrosDigitalesRegistradosporId_ma_digital(id_ma_digital_edit));
 
                 foreach (data_members.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult current in imagenesdigitalregistradas)
                 {
@@ -1749,7 +1745,7 @@ namespace scanndoc.forms
              */
             try
             {
-                List<data_members.pa_CampostrazablesRegistradosporId_ma_digitalResult> listacamposaeditar = Program.Bd_Exp_Transportes.pa_CampostrazablesRegistradosporId_ma_digital(id_ma_digital_edit).ToList();
+                List<data_members.pa_CampostrazablesRegistradosporId_ma_digitalResult> listacamposaeditar = Program.Bd_Expedientes_Digitales.pa_CampostrazablesRegistradosporId_ma_digital(id_ma_digital_edit).ToList();
                 this.BindingSource_CamposTrazables.DataSource = listacamposaeditar;
                 this.dataGridView_CamposTrazables.DataSource = this.BindingSource_CamposTrazables;
                 id_re_expedientes_campostrazables.DataPropertyName = "id_re_expediente_campotrazable";
@@ -1819,7 +1815,7 @@ namespace scanndoc.forms
             DateTime fechahora = DateTime.Now;
             try
             {
-                fechahora = Program.Bd_Exp_Transportes.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
+                fechahora = Program.Bd_Expedientes_Digitales.ExecuteQuery<DateTime>("SELECT GETDATE()").First();
 
                 if (no_dias_bloqueo != null)
                 {
@@ -1887,9 +1883,9 @@ namespace scanndoc.forms
                     case DialogResult.Yes:
                         try
                         {
-                            data_members.ma_digital registro = Program.Bd_Exp_Transportes.ma_digital.Single(query => query.id == id_ma_digital_edit);
-                            registro.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "bloqueado").id;
-                            Program.Bd_Exp_Transportes.SubmitChanges();
+                            data_members.ma_digital registro = Program.Bd_Expedientes_Digitales.ma_digital.Single(query => query.id == id_ma_digital_edit);
+                            registro.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "bloqueado").id;
+                            Program.Bd_Expedientes_Digitales.SubmitChanges();
                             bloqueacontroles();
                             MessageBox.Show("Trámite bloqueado", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -2023,7 +2019,7 @@ namespace scanndoc.forms
             }
             catch (Exception err)
             {
-                //scanndoc.classes.errorlogs.seterror(err);
+                scanndoc.classes.errorlogs.seterror(err);
             }
             frmListaDocumentosOrden.Visible = true;
         }

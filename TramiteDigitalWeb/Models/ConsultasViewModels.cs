@@ -9,6 +9,10 @@ namespace TramiteDigitalWeb.Models
 {
     public class ConsultasViewModels
     {
+        [Display(Name = "Nodos", Description = "Lista de nodos")]
+        [Required(AllowEmptyStrings = true)]
+        public int NodoSeleccionado { get; set; }
+
         [Display(Name = "Expedientes", Description = "Lista de expedientes")]
         [Required(AllowEmptyStrings = true)]
         public int ExpedienteSeleccionado { get; set; }

@@ -15,7 +15,7 @@ using scanndoc.classes;
 namespace TramiteDigitalWeb.Controllers
 {
     [Authorize]
-    //[InitializeSimpleMembership]
+    [InitializeSimpleMembership]
     public class AccountController : Controller
     {
         //
@@ -58,24 +58,14 @@ namespace TramiteDigitalWeb.Controllers
             {
                 //verificar si tiene permisos de rol
                 DatosdeUsuario datosdeusuario = usuario.ObtenDatosdeUsuarioLogeado();
-
                 try
                 {
-                    ModulodeAcceso modulos = datosdeusuario.Modulos.Find(query => query.Modulo.ToString().ToLower() == "consulta local web" ||
-                                                                     query.Modulo.ToString().ToLower() == "consulta global web");
-                    if (modulos == null)
+                    if (!datosdeusuario.Activo)
                     {
                         throw new Exception("No tiene permisos suficientes.");
                     }
 
                     string username = datosdeusuario.GetFullName.Trim() + "~" + datosdeusuario.Id;
-
-                    if (model.RememberMe)
-                    {
-                        HttpCookie authCookie = new HttpCookie("AuthAS5", username);
-                        authCookie.Expires = DateTime.Now.AddMinutes(1);
-                        Response.Cookies.Add(authCookie);
-                    }
                     FormsAuthentication.SetAuthCookie(username, model.RememberMe);
                     return RedirectToLocal(returnUrl);
                 }
@@ -89,9 +79,7 @@ namespace TramiteDigitalWeb.Controllers
             /*if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
                 return RedirectToLocal(returnUrl);
-            }*/
-
-           
+            }*/           
         }
 
         //

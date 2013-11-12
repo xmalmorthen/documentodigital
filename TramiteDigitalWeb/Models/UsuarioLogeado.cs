@@ -3,18 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using scanndoc.classes;
+using TramiteDigitalWeb.data_members;
 
 namespace TramiteDigitalWeb.Models
 {
-    public class ModulodeAcceso
-    {
-        private int _id;
-        public int Id {get {return _id;} set{_id = value;}}
-
-        private string _modulo;
-        public string Modulo { get { return _modulo; } set { _modulo = value; } }
-    }
-
     public class DatosdeUsuario
     {
         private int _id;
@@ -37,14 +29,14 @@ namespace TramiteDigitalWeb.Models
 
         public string GetFullName {get {return Nombres + " " + Apellido1 + " " + Apellido2;}}
 
-        private List<ModulodeAcceso> _modulos = new List<ModulodeAcceso>();
-        public List<ModulodeAcceso> Modulos {get {return _modulos;} set{_modulos = value;}}
+        private Boolean _activo;
+        public Boolean Activo { get { return _activo; } set { _activo = value; } }
     }
 
     public class UsuarioLogeado
     {
-        private data_members.Bd_Exp_TransportesDataContext bd = new data_members.Bd_Exp_TransportesDataContext();
-        private data_members.ca_usuarios usuario = null;
+        private Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
+        private ca_usuarios usuario = null;
 
         public Boolean Valida(string Usuario, string Contrasenia)
         {
@@ -74,21 +66,11 @@ namespace TramiteDigitalWeb.Models
             DatosdeUsuario datos = new DatosdeUsuario();
             datos.Id = usuario.id;
             datos.Usuario = usuario.usuario;
-            datos.Nombres = usuario.Nombres;
-            datos.Apellido1 = usuario.Apellido1;
-            datos.Apellido2 = usuario.Apellido2;
-            datos.Cargo = usuario.ca_cargo_puesto.Descripcion;
-
-            foreach (data_members.re_usuarios_roles_permisos item in usuario.re_usuarios_roles_permisos)
-	        {
-                foreach (data_members.re_roles_modulos modulo in item.ca_roles.re_roles_modulos)
-                { 
-                    ModulodeAcceso mod = new ModulodeAcceso();
-                    mod.Id = modulo.ca_modulos.id;
-                    mod.Modulo = modulo.ca_modulos.Modulo;
-                    datos.Modulos.Add(mod);
-                }
-	        }
+            datos.Nombres = usuario.nombres;
+            datos.Apellido1 = usuario.apellido1;
+            datos.Apellido2 = usuario.apellido2;
+            datos.Cargo = usuario.cargo;
+            datos.Activo = usuario.activo;
             return datos;
         } 
     

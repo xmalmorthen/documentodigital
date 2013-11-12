@@ -56,9 +56,9 @@ namespace scanndoc.forms
         {
             try
             {
-                lista_clasificaciondocumentos = Program.Bd_Exp_Transportes.GetTable<data_members.ca_clasificaciondocumentos>().ToList();
+                lista_clasificaciondocumentos = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_clasificaciondocumentos>().ToList();
                 bindingsource_ca_clasificaciondocumentos.DataSource = lista_clasificaciondocumentos;
-                tlp_noregistros.Visible = (bindingsource_ca_clasificaciondocumentos.Count == 0);
+                tlp_noregistros.Visible = (bindingsource.Count == 0);
             }
             catch (Exception e)
             {
@@ -69,7 +69,7 @@ namespace scanndoc.forms
         private void actualiza_lista_origenes() { 
             try
             {
-                lista_origenes = Program.Bd_Exp_Transportes.GetTable<data_members.ca_origenes>().ToList();
+                lista_origenes = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_origenes>().ToList();
                 bindingsource_origen.DataSource = lista_origenes;
             }
             catch (Exception e)
@@ -104,7 +104,7 @@ namespace scanndoc.forms
         {
             try
             {
-                lista_documentos = Program.Bd_Exp_Transportes.pa_DocumentosNoEnlazadosporClasificacionDocumento(id_clasificaciondocumento).ToList();
+                lista_documentos = Program.Bd_Expedientes_Digitales.pa_DocumentosNoEnlazadosporClasificacionDocumento(id_clasificaciondocumento).ToList();
                 bindingSource_documentos.DataSource = lista_documentos;
             }
             catch (Exception e)
@@ -117,7 +117,7 @@ namespace scanndoc.forms
         {
             try
             {
-                documentos = Program.Bd_Exp_Transportes.pa_DocumentosporClasificacionDocumento(id_clasificaciondocumento).ToList();
+                documentos = Program.Bd_Expedientes_Digitales.pa_DocumentosporClasificacionDocumento(id_clasificaciondocumento).ToList();
                 bindingsource.DataSource = documentos;
             }
             catch (Exception e)
@@ -225,13 +225,13 @@ namespace scanndoc.forms
 
                     item.id_clasificaciondocumento = (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id;
                     item.id_documento = (int)lookUpEdit_Documentos.EditValue;
-                    item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+                    item.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
                     item.obligatorio = true;
                     item.id_origen = (int)gridLookUpEdit1.EditValue;
 
                     try
                     {
-                        item.orden = Convert.ToInt16(Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.OrderByDescending(order => order.orden).FirstOrDefault(
+                        item.orden = Convert.ToInt16(Program.Bd_Expedientes_Digitales.re_clasificaciondocumentos_documentos.OrderByDescending(order => order.orden).FirstOrDefault(
                                     query => query.id_clasificaciondocumento == item.id_clasificaciondocumento
                                     && query.id_origen == item.id_origen
                                     ).orden + 1);
@@ -241,8 +241,8 @@ namespace scanndoc.forms
                         item.orden = 1;                        
                     }                    
                     
-                    Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.InsertOnSubmit(item);
-                    Program.Bd_Exp_Transportes.SubmitChanges();
+                    Program.Bd_Expedientes_Digitales.re_clasificaciondocumentos_documentos.InsertOnSubmit(item);
+                    Program.Bd_Expedientes_Digitales.SubmitChanges();
 
                     limpiar_controles();
                     MessageBox.Show("Registro agregado con éxito", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -328,11 +328,11 @@ namespace scanndoc.forms
             try
             {
                 int id = (bindingsource.Current as data_members.pa_DocumentosporClasificacionDocumentoResult).id_re_clasificaciondocumento_documento;
-                data_members.re_clasificaciondocumentos_documentos item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(query => query.id == id);
+                data_members.re_clasificaciondocumentos_documentos item = Program.Bd_Expedientes_Digitales.re_clasificaciondocumentos_documentos.SingleOrDefault(query => query.id == id);
 
                 if (item != null)
                 {
-                    Program.Bd_Exp_Transportes.pa_ordenaporborrado(item.id);
+                    Program.Bd_Expedientes_Digitales.pa_ordenaporborrado(item.id);
                     MessageBox.Show("Registro eliminado con éxito", "Eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -357,26 +357,26 @@ namespace scanndoc.forms
                     int new_valorden = int.Parse(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["colorden"].Value.ToString());
                     int id_re_clasificaciondocumentos_documentos =  (bindingsource.Current as data_members.pa_DocumentosporClasificacionDocumentoResult).id_re_clasificaciondocumento_documento;
                     if (val_ordenantiguo == new_valorden) {
-                        data_members.re_clasificaciondocumentos_documentos item = Program.Bd_Exp_Transportes.re_clasificaciondocumentos_documentos.SingleOrDefault(
+                        data_members.re_clasificaciondocumentos_documentos item = Program.Bd_Expedientes_Digitales.re_clasificaciondocumentos_documentos.SingleOrDefault(
                             query => query.id == id_re_clasificaciondocumentos_documentos);
                         //activo
                         int newvalue_activo = dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["estatus"].Value == null ? 0 : 1;
                         if (newvalue_activo == 0)
-                            item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
+                            item.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "inactivo").id;
                         else
-                            item.id_estatus = Program.Bd_Exp_Transportes.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
+                            item.id_estatus = Program.Bd_Expedientes_Digitales.ca_estatus.SingleOrDefault(query => query.Descripcion.ToString().ToLower() == "activo").id;
 
                         //obligatorio
                         Boolean newvalue_obligatorio = Convert.ToBoolean(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["obligatorio"].Value);
                         item.obligatorio = newvalue_obligatorio;
 
-                        Program.Bd_Exp_Transportes.SubmitChanges();
+                        Program.Bd_Expedientes_Digitales.SubmitChanges();
 
                         //origen
                         int newvalue_origen = int.Parse(dataGridViewCamposTrazables.Rows[e.RowIndex].Cells["origen"].Value.ToString());
                         if (val_origen != newvalue_origen)
                         {
-                            Program.Bd_Exp_Transportes.pa_ordenaporcambiodeorigen(
+                            Program.Bd_Expedientes_Digitales.pa_ordenaporcambiodeorigen(
                                 (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id, 
                                 val_origen, 
                                 val_ordenantiguo, 
@@ -387,14 +387,14 @@ namespace scanndoc.forms
                         int id_clasificaciondocumentos = (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id;
                         if (val_ordenantiguo > new_valorden)
                         {
-                            Program.Bd_Exp_Transportes.pa_ordenaporordenmenor(
+                            Program.Bd_Expedientes_Digitales.pa_ordenaporordenmenor(
                                 (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id,
                                 val_origen,
                                 new_valorden,
                                 val_ordenantiguo);
                         }
                         else {
-                            Program.Bd_Exp_Transportes.pa_ordenaporordenmayor(
+                            Program.Bd_Expedientes_Digitales.pa_ordenaporordenmayor(
                                 (bindingsource_ca_clasificaciondocumentos.Current as data_members.ca_clasificaciondocumentos).id,
                                 val_origen,
                                 val_ordenantiguo,
