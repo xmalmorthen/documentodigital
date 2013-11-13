@@ -180,6 +180,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\CatalogsModel.cs" />
+    <Compile Include="Models\classes\ConsultaStructure.cs" />
     <Compile Include="Models\classes\vw_ListaExpedientes.cs" />
     <Compile Include="Models\ConsultaModels.cs" />
     <Compile Include="Models\ConsultasViewModels.cs" />
@@ -192,8 +193,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\images\buquedaglobal.png" />
-    <Content Include="Content\images\buquedalocal.png" />
+    <Content Include="Content\TableStyle.css" />
+    <Content Include="Content\HomeIndex.css" />
+    <Content Include="Content\images\first.png" />
+    <Content Include="Content\images\last.png" />
+    <Content Include="Content\images\next.png" />
+    <Content Include="Content\images\prev.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -256,6 +261,8 @@
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\jquery.tablesorter.pager.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
@@ -348,7 +355,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>34879</DevelopmentServerPort>
+          <DevelopmentServerPort>32086</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

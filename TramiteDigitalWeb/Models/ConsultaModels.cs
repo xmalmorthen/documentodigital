@@ -5,76 +5,114 @@ using System.Web;
 using RestSharp;
 using System.Configuration;
 using Newtonsoft.Json;
+using TramiteDigitalWeb.Models.classes;
+using System.Threading;
 
 namespace TramiteDigitalWeb.Models
 {
-    public static class ConsultaModels
+    public delegate void FncConsultaCallback(List<ConsultaStructure> result);
+
+    public class rest_consulta
     {
-       /* //public IEnumerable<data_members.pa_ConsultaTramitesporValorTrazableResult> ConsultaTramitesporValorTrazable(string valor_trazable)
-        public static List<data_members.pa_ConsultaTramitesporValorTrazableResult> ConsultaTramitesporValorTrazable(string valor_trazable)
-        {            
+        protected string _usuario;
+        protected string _contrasenia;
+        protected string _url_servicio_rest;
+        protected string _campo_trazable;
+        protected int? _expediente = null;
+
+        protected FncConsultaCallback _callback = null;
+
+        public rest_consulta(string usuario, string contrasenia, string url_servicio_rest, int? expediente, string campo_trazable, FncConsultaCallback callback)
+        {
+            this._usuario = usuario;
+            this._contrasenia = contrasenia;
+            this._url_servicio_rest = url_servicio_rest;
+            this._expediente = expediente;
+            byte[] toEncodeAsBytes = System.Text.ASCIIEncoding.ASCII.GetBytes(campo_trazable);
+            this._campo_trazable =  System.Convert.ToBase64String(toEncodeAsBytes);
+            this._callback = callback;
+        }
+
+        public void EjecutaRest_Consulta()
+        {
             try
             {
-                string RESTWebApiUrl = TramiteDigitalWeb.Properties.Settings.Default.RESTApiWeb;
+                string RESTWebApiUrl = this._url_servicio_rest;
+                //string RESTWebApiUrl = @"http://localhost:4334"; //url de servicio de prueba
+
+                string segments = "consulta/expediente" + (_expediente != null ? "/" + _expediente : string.Empty) + "/" + _campo_trazable;
 
                 var client = new RestClient(RESTWebApiUrl);
-                // client.Authenticator = new HttpBasicAuthenticator(username, password);
-
-                var request = new RestRequest("consulta/tramite/{valor_trazable}", Method.POST);
-                //request.AddParameter("name", "value"); // adds to POST or URL querystring based on Method
-                request.AddUrlSegment("valor_trazable", valor_trazable); // replaces matching token in request.Resource
-                request.RequestFormat = DataFormat.Xml;
-
-                // easily add HTTP Headers
-                request.AddHeader("Content-Type", "application/json; charset=utf-8");
-                request.AddHeader("Accept", "application/json");
-
+                //client.Authenticator = new HttpBasicAuthenticator(this._usuario, this._contrasenia);
+                var request = new RestRequest(segments, Method.POST);
+                request.AddHeader("Accept", "application/json");                
                 // execute the request
                 IRestResponse response = client.Execute(request);
                 var content = response.Content; // raw content as string
 
-                List<data_members.pa_ConsultaTramitesporValorTrazableResult> items =
-                    JsonConvert.DeserializeObject<List<data_members.pa_ConsultaTramitesporValorTrazableResult>>(content);
+                List<ConsultaStructure> items = JsonConvert.DeserializeObject<List<ConsultaStructure>>(content);
 
-                return items;
+                if (_callback != null) _callback(items);
             }
             catch (Exception)
             {
                 throw;
             }
         }
+    }
 
-        public static List<data_members.pa_ConsultaTramitesporExpedienteyValorTrazableResult> ConsultaTramitesporExpedienteyValorTrazable(int id_Expediente, string valor_trazable)
+    public static class ConsultaModels
+    {
+        private static CatalogsModel catalogos = new CatalogsModel();
+
+        public static List<ConsultaStructure> ConsultaTodosNodos(int id_usuario, string valor_trazable)
         {
-            try
+            response.Clear();
+
+            List<data_members.pa_obtener_nodosResult> nodos = new List<data_members.pa_obtener_nodosResult>(catalogos.nodos(id_usuario).ToList());
+            foreach (data_members.pa_obtener_nodosResult item in nodos)
             {
-                string RESTWebApiUrl = TramiteDigitalWeb.Properties.Settings.Default.RESTApiWeb;
-
-                var client = new RestClient(RESTWebApiUrl);
-                // client.Authenticator = new HttpBasicAuthenticator(username, password);
-
-                var request = new RestRequest("consulta/tramite/{id_expediente}/{valor_trazable}", Method.POST);
-                request.AddUrlSegment("id_expediente", id_Expediente.ToString()); // replaces matching token in request.Resource
-                request.AddUrlSegment("valor_trazable", valor_trazable); // replaces matching token in request.Resource
-                request.RequestFormat = DataFormat.Xml;
-
-                // easily add HTTP Headers
-                request.AddHeader("Content-Type", "application/json; charset=utf-8");
-                request.AddHeader("Accept", "application/json");
-
-                // execute the request
-                IRestResponse response = client.Execute(request);
-                var content = response.Content; // raw content as string
-
-                List<data_members.pa_ConsultaTramitesporExpedienteyValorTrazableResult> items =
-                    JsonConvert.DeserializeObject<List<data_members.pa_ConsultaTramitesporExpedienteyValorTrazableResult>>(content);
-
-                return items;
+                rest_consulta rest_cnfg = new rest_consulta(item.usuario, item.contrasenia, item.url_servicio_rest, null, valor_trazable, new FncConsultaCallback(ResultCallback));
+                Thread th = new Thread(new ThreadStart(rest_cnfg.EjecutaRest_Consulta));
+                th.Start();
+                th.Join();
             }
-            catch (Exception)
-            {
-                throw;
-            }
-        }*/
+
+            return response;
+        }
+
+        internal static dynamic ConsultaTodosExpedientes(int id_usuario, int id_nodo, string valor_trazable)
+        {
+            response.Clear();
+
+            data_members.pa_obtener_nodoResult nodo = catalogos.nodo(id_usuario,id_nodo);
+
+            rest_consulta rest_cnfg = new rest_consulta(nodo.usuario, nodo.contrasenia, nodo.url_servicio_rest, null, valor_trazable, new FncConsultaCallback(ResultCallback));
+            Thread th = new Thread(new ThreadStart(rest_cnfg.EjecutaRest_Consulta));
+            th.Start();
+            th.Join();
+            
+            return response;
+        }
+
+        internal static dynamic ConsultaExpediente(int id_usuario, int id_nodo, int expediente, string valor_trazable)
+        {
+            response.Clear();
+
+            data_members.pa_obtener_nodoResult nodo = catalogos.nodo(id_usuario, id_nodo);
+
+            rest_consulta rest_cnfg = new rest_consulta(nodo.usuario, nodo.contrasenia, nodo.url_servicio_rest, expediente, valor_trazable, new FncConsultaCallback(ResultCallback));
+            Thread th = new Thread(new ThreadStart(rest_cnfg.EjecutaRest_Consulta));
+            th.Start();
+            th.Join();
+
+            return response;
+        }
+
+        private static List<ConsultaStructure> response = new List<ConsultaStructure>();
+        private static void ResultCallback(List<ConsultaStructure> result)
+        {
+            response.AddRange(result);
+        }
     }
 }

@@ -69,6 +69,18 @@ namespace TramiteDigitalWeb.Models
             }
         }
 
+        public data_members.pa_obtener_nodoResult nodo(int id_usuario, int id_nodo)
+        {
+            try
+            {
+                return bd.pa_obtener_nodo(id_usuario, id_nodo).SingleOrDefault();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public List<vw_ListaExpedientes> obtenerExpedientes(int id_nodo, List<data_members.pa_obtener_nodosResult> nodos)
         {
             if (id_nodo == 0)

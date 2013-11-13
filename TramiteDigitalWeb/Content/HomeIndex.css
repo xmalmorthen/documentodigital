@@ -1,0 +1,78 @@
+﻿.bloque ol li
+{
+    display:inline-block;        
+}
+.bloque ol li label
+{
+    text-align:left;    
+}
+.bloque ol li span
+{
+    display:block;
+}
+
+#facebook{
+	/*margin-top:30px;*/
+	/*float:left;*/
+	display:inline-block;
+}
+.facebook_block{
+	background-color:#9FC0FF;
+	border:2px solid #3B5998;
+	float:left;
+	height:25px;
+	margin-left:5px;
+	width:8px;
+        opacity:0.1;
+	-webkit-transform:scale(0.7);
+	-webkit-animation-name: facebook;
+ 	-webkit-animation-duration: 1s;
+ 	-webkit-animation-iteration-count: infinite;
+ 	-webkit-animation-direction: linear;
+
+	}
+#block_1{
+ 	-webkit-animation-delay: .3s;
+ }
+#block_2{
+ 	-webkit-animation-delay: .4s;
+}
+#block_3{
+ 	-webkit-animation-delay: .5s;
+}
+@-webkit-keyframes facebook{
+	0%{-webkit-transform: scale(1.2);opacity:1;}
+	100%{-webkit-transform: scale(0.7);opacity:0.1;}
+}
+
+
+table { border-spacing:0; border:1px solid gray; width:100%;}
+table.tablesorter thead tr .header {
+    background-image: url(images/bg.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+}
+table.tablesorter tbody td {
+    color: #3D3D3D;
+    padding: 4px;
+    background-color: #FFF;
+    vertical-align: top;
+}
+table.tablesorter tbody tr.odd td {
+    background-color:#F0F0F6;
+}
+table.tablesorter thead tr .headerSortUp {
+    background-image: url(images/asc.png);
+}
+table.tablesorter thead tr .headerSortDown {
+    background-image: url(images/desc.png);
+}
+table th { width:150px; 
+           border:1px outset gray; 
+           background-color:#3C78B5; 
+           color:White; 
+           cursor:pointer;
+}
+table thead th:hover { background-color:Yellow; color:Black;}
+table td { width:150px; border:1px solid gray;}

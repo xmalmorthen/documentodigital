@@ -101,6 +101,13 @@ namespace TramiteDigitalWeb.data_members
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_usuario);
 			return ((ISingleResult<pa_obtener_nodosResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_obtener_nodo")]
+		public ISingleResult<pa_obtener_nodoResult> pa_obtener_nodo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_nodo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_usuario, id_nodo);
+			return ((ISingleResult<pa_obtener_nodoResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ca_nodos")]
@@ -923,6 +930,122 @@ namespace TramiteDigitalWeb.data_members
 		private string _contrasenia;
 		
 		public pa_obtener_nodosResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_activo", DbType="Bit NOT NULL")]
+		public bool activo
+		{
+			get
+			{
+				return this._activo;
+			}
+			set
+			{
+				if ((this._activo != value))
+				{
+					this._activo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nodo", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string nodo
+		{
+			get
+			{
+				return this._nodo;
+			}
+			set
+			{
+				if ((this._nodo != value))
+				{
+					this._nodo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_url_servicio_rest", DbType="VarChar(8000) NOT NULL", CanBeNull=false)]
+		public string url_servicio_rest
+		{
+			get
+			{
+				return this._url_servicio_rest;
+			}
+			set
+			{
+				if ((this._url_servicio_rest != value))
+				{
+					this._url_servicio_rest = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="VarChar(100)")]
+		public string usuario
+		{
+			get
+			{
+				return this._usuario;
+			}
+			set
+			{
+				if ((this._usuario != value))
+				{
+					this._usuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contrasenia", DbType="VarChar(100)")]
+		public string contrasenia
+		{
+			get
+			{
+				return this._contrasenia;
+			}
+			set
+			{
+				if ((this._contrasenia != value))
+				{
+					this._contrasenia = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_obtener_nodoResult
+	{
+		
+		private bool _activo;
+		
+		private int _id;
+		
+		private string _nodo;
+		
+		private string _url_servicio_rest;
+		
+		private string _usuario;
+		
+		private string _contrasenia;
+		
+		public pa_obtener_nodoResult()
 		{
 		}
 		

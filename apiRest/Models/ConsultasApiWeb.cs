@@ -13,7 +13,8 @@ namespace TramiteDigitalWeb.ModelsApiWeb
         public IEnumerable<pa_ConsultaTramitesporValorTrazableResult> ConsultaTramitesporValorTrazable(string valor_trazable) {
             try
             {
-                IEnumerable<pa_ConsultaTramitesporValorTrazableResult> response = bd.pa_ConsultaTramitesporValorTrazable(valor_trazable).ToList();
+                List<pa_ConsultaTramitesporValorTrazableResult> response = bd.pa_ConsultaTramitesporValorTrazable(valor_trazable).ToList();
+                //response.Add(new pa_ConsultaTramitesporValorTrazableResult() { expediente = "prueba", id_estatus = 666, id_ma_digital = 666, nota = "prueba", id_tramite = 666, tramite = "prueba" });
                 return response;
             }
             catch (Exception)
@@ -26,7 +27,8 @@ namespace TramiteDigitalWeb.ModelsApiWeb
         {
             try
             {
-                IEnumerable<pa_ConsultaTramitesporExpedienteyValorTrazableResult> response = bd.pa_ConsultaTramitesporExpedienteyValorTrazable(id_Expediente,valor_trazable).ToList();
+                List<pa_ConsultaTramitesporExpedienteyValorTrazableResult> response = bd.pa_ConsultaTramitesporExpedienteyValorTrazable(id_Expediente,valor_trazable).ToList();
+                //response.Add(new pa_ConsultaTramitesporExpedienteyValorTrazableResult() { expediente = "prueba", id_estatus = 666, id_ma_digital = 666, nota = "prueba", id_tramite = 666, tramite = "prueba" });
                 return response;
             }
             catch (Exception)
