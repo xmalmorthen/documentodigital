@@ -64,6 +64,7 @@
                     <tr>
                         <th>Trámite</th>
                         <th>Expediente</th>
+                        <th class=>Nodo</th>
                         <th>Fecha/Hora de creación</th>
                         <th></th>
                     </tr>
@@ -80,10 +81,13 @@
                                     @Html.DisplayFor(modelItem => item.expediente)
                                 </td>
                                 <td>
+                                    @Html.DisplayFor(modelItem => item.nodo)
+                                </td>
+                                <td>
                                     @Html.DisplayFor(modelItem => item.fecha_hora_creacion)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Abrir", "Details", new { id = item.id_ma_digital })
+                                    @Html.ActionLink("Abrir", "Details", new { id_ma_digital = item.id_ma_digital, id_nodo = item.id_nodo })
                                 </td>
                             </tr>
                         }
@@ -111,6 +115,7 @@
                             <option value="200">200</option>
                             <option value="500">500</option>
                         </select>
+                        <span style="float:right ;font-size: 16px;"><span style="font-size: 24px;font-weight: bold;">[<span style="color: #F00;font-size: 18px;padding:0 5px;">@data.Count()</span>]</span> registros encontrados</span>
                     </form>
                 </div>
         }
@@ -122,7 +127,7 @@
             widthFixed: true,
             sortList: [[0, 0]],
             headers: {
-                3: {
+                4: {
                     sorter: false
                    }
             }

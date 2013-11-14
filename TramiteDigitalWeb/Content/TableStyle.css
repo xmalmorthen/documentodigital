@@ -35,10 +35,10 @@ table thead th:hover { background-color:#CACACA; color:Black;}
 table td { width:150px; border:1px solid gray;}
 .pagedisplay
 {
-    width: 38px;
+    width: 50px;
     text-align: center;
 }
-.pager
+.pagesize
 {
-    position:initial !Important;    
+    width: 100px;
 }

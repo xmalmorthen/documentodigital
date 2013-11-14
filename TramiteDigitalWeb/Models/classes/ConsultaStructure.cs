@@ -21,6 +21,10 @@ namespace TramiteDigitalWeb.Models.classes
 		
 		private int _id_tramite;
 
+        private string _nodo;
+
+        private int _id_nodo;
+
         public ConsultaStructure()
 		{
 		}
@@ -129,6 +133,36 @@ namespace TramiteDigitalWeb.Models.classes
 				}
 			}
 		}
-        
+
+        public string nodo
+        {
+            get
+            {
+                return this._nodo;
+            }
+            set
+            {
+                if ((this._nodo != value))
+                {
+                    this._nodo = value;
+                }
+            }
+        }
+
+        public int id_nodo
+        {
+            get
+            {
+                return this._id_nodo;
+            }
+            set
+            {
+                if ((this._id_nodo != value))
+                {
+                    this._id_nodo = value;
+                }
+            }
+        }
+
     }
 }
