@@ -19,14 +19,18 @@ namespace TramiteDigitalWeb.Models
         protected string _url_servicio_rest;
         protected string _campo_trazable;
         protected int? _expediente = null;
+        protected int? _id_nodo = null;
+        protected string _nodo;
 
         protected FncConsultaCallback _callback = null;
 
-        public rest_consulta(string usuario, string contrasenia, string url_servicio_rest, int? expediente, string campo_trazable, FncConsultaCallback callback)
+        public rest_consulta(string usuario, string contrasenia, string url_servicio_rest, int id_nodo, string nodo, int? expediente, string campo_trazable, FncConsultaCallback callback)
         {
             this._usuario = usuario;
             this._contrasenia = contrasenia;
             this._url_servicio_rest = url_servicio_rest;
+            this._id_nodo = id_nodo;
+            this._nodo = nodo;
             this._expediente = expediente;
             byte[] toEncodeAsBytes = System.Text.ASCIIEncoding.ASCII.GetBytes(campo_trazable);
             this._campo_trazable =  System.Convert.ToBase64String(toEncodeAsBytes);
@@ -37,8 +41,8 @@ namespace TramiteDigitalWeb.Models
         {
             try
             {                
-                //string RESTWebApiUrl = this._url_servicio_rest;
-                string RESTWebApiUrl = @"http://localhost:32091"; //url de servicio de prueba
+                string RESTWebApiUrl = this._url_servicio_rest;
+                //string RESTWebApiUrl = @"http://localhost:32091"; //url de servicio de prueba
 
                 string segments = "consulta/expediente" + (_expediente != null ? "/" + _expediente : string.Empty) + "/" + _campo_trazable;
 
@@ -51,6 +55,11 @@ namespace TramiteDigitalWeb.Models
                 var content = response.Content; // raw content as string
 
                 List<ConsultaStructure> items = JsonConvert.DeserializeObject<List<ConsultaStructure>>(content);
+                foreach (ConsultaStructure item in items)
+                {
+                    item.id_nodo = (int)_id_nodo;
+                    item.nodo = _nodo;
+                }
 
                 if (_callback != null) _callback(items);
             }
@@ -72,7 +81,7 @@ namespace TramiteDigitalWeb.Models
             List<data_members.pa_obtener_nodosResult> nodos = new List<data_members.pa_obtener_nodosResult>(catalogos.nodos(id_usuario).ToList());
             foreach (data_members.pa_obtener_nodosResult item in nodos)
             {
-                rest_consulta rest_cnfg = new rest_consulta(item.usuario, item.contrasenia, item.url_servicio_rest, null, valor_trazable, new FncConsultaCallback(ResultCallback));
+                rest_consulta rest_cnfg = new rest_consulta(item.usuario, item.contrasenia, item.url_servicio_rest,item.id,item.nodo, null, valor_trazable, new FncConsultaCallback(ResultCallback));
                 Thread th = new Thread(new ThreadStart(rest_cnfg.EjecutaRest_Consulta));
                 th.Start();
                 th.Join();
@@ -87,7 +96,7 @@ namespace TramiteDigitalWeb.Models
 
             data_members.pa_obtener_nodoResult nodo = catalogos.nodo(id_usuario,id_nodo);
 
-            rest_consulta rest_cnfg = new rest_consulta(nodo.usuario, nodo.contrasenia, nodo.url_servicio_rest, null, valor_trazable, new FncConsultaCallback(ResultCallback));
+            rest_consulta rest_cnfg = new rest_consulta(nodo.usuario, nodo.contrasenia, nodo.url_servicio_rest,nodo.id,nodo.nodo, null, valor_trazable, new FncConsultaCallback(ResultCallback));
             Thread th = new Thread(new ThreadStart(rest_cnfg.EjecutaRest_Consulta));
             th.Start();
             th.Join();
@@ -101,7 +110,7 @@ namespace TramiteDigitalWeb.Models
 
             data_members.pa_obtener_nodoResult nodo = catalogos.nodo(id_usuario, id_nodo);
 
-            rest_consulta rest_cnfg = new rest_consulta(nodo.usuario, nodo.contrasenia, nodo.url_servicio_rest, expediente, valor_trazable, new FncConsultaCallback(ResultCallback));
+            rest_consulta rest_cnfg = new rest_consulta(nodo.usuario, nodo.contrasenia, nodo.url_servicio_rest,nodo.id,nodo.nodo, expediente, valor_trazable, new FncConsultaCallback(ResultCallback));
             Thread th = new Thread(new ThreadStart(rest_cnfg.EjecutaRest_Consulta));
             th.Start();
             th.Join();

@@ -34,6 +34,16 @@ namespace TramiteDigitalWeb.Controllers
         }
 
         [Authorize]
+        [HttpGet]
+        public ActionResult ObtenExpedientes(int id_nodo)
+        {
+            string[] UserParts = User.Identity.Name.Split('~');
+            List<vw_ListaExpedientes> lista_expedientes = catalogos.obtenerExpedientes(id_nodo, catalogos.nodos(int.Parse(UserParts[1])).ToList());
+            return Json(lista_expedientes, JsonRequestBehavior.AllowGet);
+        }
+
+
+        [Authorize]
         public ActionResult Index()
         {
             InicializaVars();
@@ -66,14 +76,11 @@ namespace TramiteDigitalWeb.Controllers
             return View(Form);
         }
 
-
         [Authorize]
-        [HttpGet]
-        public ActionResult ObtenExpedientes(int id_nodo) {
-            string[] UserParts = User.Identity.Name.Split('~');
-            List<vw_ListaExpedientes> lista_expedientes = catalogos.obtenerExpedientes(id_nodo,catalogos.nodos(int.Parse(UserParts[1])).ToList());
-            return Json( lista_expedientes, JsonRequestBehavior.AllowGet);
+        public ActionResult Details(int id_ma_digital, int id_nodo) {
+            return View();
         }
+
 
         public ActionResult About()
         {
