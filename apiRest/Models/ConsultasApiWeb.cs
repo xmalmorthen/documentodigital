@@ -16,13 +16,15 @@ namespace TramiteDigitalWeb.ModelsApiWeb
                 List<pa_ConsultaTramitesporValorTrazableResult> response = bd.pa_ConsultaTramitesporValorTrazable(valor_trazable).ToList();
 
                 //datos aleatorios de prueba                
+                string[] expedientes = new string[] { "Expediente 1", "Expediente 2", "Expediente 3" };
+
                 Random bucle = new Random();
                 for (int i = 0; i <= bucle.Next(10000); i++)
                 {
                     DateTime start = new DateTime(1995, 1, 1);
                     Random gen = new Random();
                     int range = (DateTime.Today - start).Days;
-                    response.Add(new pa_ConsultaTramitesporValorTrazableResult() { expediente = "prueba " + i.ToString(), id_estatus = i, id_ma_digital = i, nota = "prueba " + i.ToString(), id_tramite = i, tramite = "prueba " + i.ToString(), fecha_hora_creacion = start.AddDays(gen.Next(range)) });
+                    response.Add(new pa_ConsultaTramitesporValorTrazableResult() { expediente = expedientes[ new Random().Next(0,3) ], id_estatus = i, id_ma_digital = i, nota = "prueba " + i.ToString(), id_tramite = i, tramite = "prueba " + i.ToString(), fecha_hora_creacion = start.AddDays(gen.Next(range)) });
                 }
                 //*******************************
 
@@ -47,7 +49,7 @@ namespace TramiteDigitalWeb.ModelsApiWeb
                     DateTime start = new DateTime(1995, 1, 1);
                     Random gen = new Random();
                     int range = (DateTime.Today - start).Days;
-                    response.Add(new pa_ConsultaTramitesporExpedienteyValorTrazableResult() { expediente = "prueba " + i.ToString(), id_estatus = i, id_ma_digital = i, nota = "prueba " + i.ToString(), id_tramite = i, tramite = "prueba " + i.ToString(), fecha_hora_creacion = start.AddDays(gen.Next(range)) });
+                    response.Add(new pa_ConsultaTramitesporExpedienteyValorTrazableResult() { expediente = "Expediente Prueba", id_estatus = i, id_ma_digital = i, nota = "prueba " + i.ToString(), id_tramite = i, tramite = "prueba " + i.ToString(), fecha_hora_creacion = start.AddDays(gen.Next(range)) });
                 }
                 //*******************************
 
