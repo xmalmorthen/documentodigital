@@ -36,9 +36,9 @@ namespace TramiteDigitalWeb.Models
         public void EjecutaRest_Consulta()
         {
             try
-            {
-                string RESTWebApiUrl = this._url_servicio_rest;
-                //string RESTWebApiUrl = @"http://localhost:4334"; //url de servicio de prueba
+            {                
+                //string RESTWebApiUrl = this._url_servicio_rest;
+                string RESTWebApiUrl = @"http://localhost:32091"; //url de servicio de prueba
 
                 string segments = "consulta/expediente" + (_expediente != null ? "/" + _expediente : string.Empty) + "/" + _campo_trazable;
 

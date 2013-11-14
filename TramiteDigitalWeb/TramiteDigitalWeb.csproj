@@ -193,6 +193,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\zoom.png" />
     <Content Include="Content\TableStyle.css" />
     <Content Include="Content\HomeIndex.css" />
     <Content Include="Content\images\first.png" />
@@ -355,7 +356,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>32086</DevelopmentServerPort>
+          <DevelopmentServerPort>2400</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
