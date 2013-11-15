@@ -122,6 +122,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="classes\convert_md5.cs" />
+    <Compile Include="classes\procesa_imagen.cs" />
+    <Compile Include="Controllers\CamposTrazables.cs" />
+    <Compile Include="Controllers\RegistroDigital.cs" />
     <Compile Include="Controllers\ExpedientesController.cs" />
     <Compile Include="Controllers\ExpedienteController.cs" />
     <Compile Include="data_members\Bd_Expedientes_Digitales.cs">

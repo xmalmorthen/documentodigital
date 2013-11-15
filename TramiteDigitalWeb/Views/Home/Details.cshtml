@@ -1,5 +1,20 @@
-﻿@{
+﻿<link href="@Url.Content("~/Content/TableStyle.css")" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/jquery.tablesorter.pager.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.tablesorter.new.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.tablesorter.filter.js")" type="text/javascript"></script>
+
+@{
     ViewBag.Title = "Detalle de Trámite";
+    List<TramiteDigitalWeb.Models.classes.pa_CampostrazablesRegistradosporId_ma_digitalResult> campostrazables = ViewBag.CamposTrazables;
+    List<TramiteDigitalWeb.Models.classes.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult> registrosdigital = ViewBag.RegistrosDigital;
+
+    List<TramiteDigitalWeb.Models.classes.ErrorConsulta> errores = new List<TramiteDigitalWeb.Models.classes.ErrorConsulta>();
+    if (ViewBag.CamposTrazablesErrors != null){  
+        errores.AddRange(ViewBag.CamposTrazablesErrors);
+    }
+    if (ViewBag.RegistrosDigitalErrors != null)   {
+        errores.AddRange(ViewBag.RegistrosDigitalErrors);    
+    }
 }
 @section featured {
     <section class="featured">
@@ -8,9 +23,115 @@
                 <h1>@ViewBag.Title.</h1>
                 <h2>@ViewBag.Message</h2>
             </hgroup>
-            <p>
-                
-            </p>
+            <div>
+                <h2>Valores trazables</h2>
+                <table class="tablesorter_">
+                    <thead style="border-bottom: 1px solid #888;">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Tamanio_Caracteres</th>
+                            <th>Mascara</th>
+                            <th>Valor trazable</th>
+                        </tr>
+                    </thead>
+                    <tbody>                    
+                        @if (campostrazables.Count() > 0)
+                        {                            
+                            foreach (TramiteDigitalWeb.Models.classes.pa_CampostrazablesRegistradosporId_ma_digitalResult item in campostrazables)
+                            {
+                                string style = item.es_principal == true ? "background-color: whitesmoke;" : "";
+                                <tr style=@style>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nombre)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Tamanio_Caracteres)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Mascara)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.valor_trazable)
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    No se encontraron campos trazables...
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>            
+            </div>
         </div>
     </section>
 }
+<div>
+    <h2>Registros Digitales</h2>
+    <table class="tablesorter">
+        <thead>
+            <tr>
+                <th>Clasificación de documento</th>
+                <th>Documento</th>
+                <th>Origen</th>
+                <th>Fecha/Hora creación</th>
+                <th>Valor trazable</th>
+            </tr>
+        </thead>
+        <tbody>                    
+            @if (registrosdigital.Count() > 0)
+            {
+                foreach (TramiteDigitalWeb.Models.classes.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult item in registrosdigital)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.clasificaciondocumento)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Documento)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Origen)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.fecha_hora_creacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.valor_trazable)
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td>
+                        No se encontraron registros...
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>            
+</div>
+
+<a href="javascript:window.history.back()" />Regresar</a>
+
+
+<script type="text/javascript">
+    $(function () {
+        $("table.tablesorter").tablesorter({
+            widgets: ['zebra'],
+            widthFixed: true,
+            sortList: [[0, 0]],
+            headers: {
+                4: {
+                    sorter: false
+                }
+            }
+        });
+    });
+</script>

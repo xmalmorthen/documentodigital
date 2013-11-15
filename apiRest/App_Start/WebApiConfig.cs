@@ -30,9 +30,16 @@ namespace apiRest
 
             config.Routes.MapHttpRoute(
                 name: "Bucar en un Expediente",
-                routeTemplate: "consulta/{controller}/{id_expediente}/{campo_trazable}",
-                defaults: null
-                //constraints: new { id_expediente = @"^[0-9]+$", campo_trazable = @"^[a-z]+$" }
+                routeTemplate: "obten/{controller}/{id_ma_digital}",
+                defaults: null,
+                constraints: new { id_ma_digital = @"^[0-9]+$" }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "Obtener datos",
+                routeTemplate: "obten/{controller}/{id_ma_digital}",
+                defaults: null,
+                constraints: new { id_ma_digital = @"^[0-9]+$" }
             );
 
 

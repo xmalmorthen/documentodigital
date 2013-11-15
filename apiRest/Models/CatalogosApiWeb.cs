@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using apiRest.data_members;
 
-namespace TramiteDigitalWeb.ModelsApiWeb
+namespace apiRest.ModelsApiWeb
 {
     public class CatalogosApiWeb
     {

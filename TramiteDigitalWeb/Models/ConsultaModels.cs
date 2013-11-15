@@ -10,7 +10,8 @@ using System.Threading;
 
 namespace TramiteDigitalWeb.Models
 {
-    public delegate void FncConsultaCallback(List<ConsultaStructure> result);
+    public delegate void FncConsultaCallbackOk(List<ConsultaStructure> result);
+    public delegate void FncConsultaCallbackError(ErrorConsulta result);
 
     public class rest_consulta
     {
@@ -21,10 +22,10 @@ namespace TramiteDigitalWeb.Models
         protected int? _expediente = null;
         protected int? _id_nodo = null;
         protected string _nodo;
+        protected FncConsultaCallbackOk _callbackok = null;
+        protected FncConsultaCallbackError _error = null;
 
-        protected FncConsultaCallback _callback = null;
-
-        public rest_consulta(string usuario, string contrasenia, string url_servicio_rest, int id_nodo, string nodo, int? expediente, string campo_trazable, FncConsultaCallback callback)
+        public rest_consulta(string usuario, string contrasenia, string url_servicio_rest, int id_nodo, string nodo, int? expediente, string campo_trazable, FncConsultaCallbackOk callback, FncConsultaCallbackError error)
         {
             this._usuario = usuario;
             this._contrasenia = contrasenia;
@@ -34,7 +35,8 @@ namespace TramiteDigitalWeb.Models
             this._expediente = expediente;
             byte[] toEncodeAsBytes = System.Text.ASCIIEncoding.ASCII.GetBytes(campo_trazable);
             this._campo_trazable =  System.Convert.ToBase64String(toEncodeAsBytes);
-            this._callback = callback;
+            this._callbackok = callback;
+            this._error = error;
         }
 
         public void EjecutaRest_Consulta()
@@ -52,16 +54,22 @@ namespace TramiteDigitalWeb.Models
                 request.AddHeader("Accept", "application/json");                
                 // execute the request
                 IRestResponse response = client.Execute(request);
-                var content = response.Content; // raw content as string
-
-                List<ConsultaStructure> items = JsonConvert.DeserializeObject<List<ConsultaStructure>>(content);
-                foreach (ConsultaStructure item in items)
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    item.id_nodo = (int)_id_nodo;
-                    item.nodo = _nodo;
-                }
+                    var content = response.Content; // raw content as string
 
-                if (_callback != null) _callback(items);
+                    List<ConsultaStructure> items = JsonConvert.DeserializeObject<List<ConsultaStructure>>(content);
+                    foreach (ConsultaStructure item in items)
+                    {
+                        item.id_nodo = (int)_id_nodo;
+                        item.nodo = _nodo;
+                    }
+
+                    if (_callbackok != null) _callbackok(items);
+                }
+                else {
+                    if (_error != null) _error(new ErrorConsulta(_id_nodo, _nodo, response.StatusDescription.ToString(), response.StatusCode.ToString()));
+                }                
             }
             catch (Exception)
             {
@@ -77,11 +85,12 @@ namespace TramiteDigitalWeb.Models
         public static List<ConsultaStructure> ConsultaTodosNodos(int id_usuario, string valor_trazable)
         {
             response.Clear();
+            responseerrors.Clear();
 
             List<data_members.pa_obtener_nodosResult> nodos = new List<data_members.pa_obtener_nodosResult>(catalogos.nodos(id_usuario).ToList());
             foreach (data_members.pa_obtener_nodosResult item in nodos)
             {
-                rest_consulta rest_cnfg = new rest_consulta(item.usuario, item.contrasenia, item.url_servicio_rest,item.id,item.nodo, null, valor_trazable, new FncConsultaCallback(ResultCallback));
+                rest_consulta rest_cnfg = new rest_consulta(item.usuario, item.contrasenia, item.url_servicio_rest,item.id,item.nodo, null, valor_trazable, new FncConsultaCallbackOk(ResultCallback), new FncConsultaCallbackError(ErrorResult));
                 Thread th = new Thread(new ThreadStart(rest_cnfg.EjecutaRest_Consulta));
                 th.Start();
                 th.Join();
@@ -93,10 +102,11 @@ namespace TramiteDigitalWeb.Models
         internal static dynamic ConsultaTodosExpedientes(int id_usuario, int id_nodo, string valor_trazable)
         {
             response.Clear();
+            responseerrors.Clear();
 
             data_members.pa_obtener_nodoResult nodo = catalogos.nodo(id_usuario,id_nodo);
 
-            rest_consulta rest_cnfg = new rest_consulta(nodo.usuario, nodo.contrasenia, nodo.url_servicio_rest,nodo.id,nodo.nodo, null, valor_trazable, new FncConsultaCallback(ResultCallback));
+            rest_consulta rest_cnfg = new rest_consulta(nodo.usuario, nodo.contrasenia, nodo.url_servicio_rest, nodo.id, nodo.nodo, null, valor_trazable, new FncConsultaCallbackOk(ResultCallback), new FncConsultaCallbackError(ErrorResult));
             Thread th = new Thread(new ThreadStart(rest_cnfg.EjecutaRest_Consulta));
             th.Start();
             th.Join();
@@ -107,10 +117,11 @@ namespace TramiteDigitalWeb.Models
         internal static dynamic ConsultaExpediente(int id_usuario, int id_nodo, int expediente, string valor_trazable)
         {
             response.Clear();
+            responseerrors.Clear();
 
             data_members.pa_obtener_nodoResult nodo = catalogos.nodo(id_usuario, id_nodo);
 
-            rest_consulta rest_cnfg = new rest_consulta(nodo.usuario, nodo.contrasenia, nodo.url_servicio_rest,nodo.id,nodo.nodo, expediente, valor_trazable, new FncConsultaCallback(ResultCallback));
+            rest_consulta rest_cnfg = new rest_consulta(nodo.usuario, nodo.contrasenia, nodo.url_servicio_rest, nodo.id, nodo.nodo, expediente, valor_trazable, new FncConsultaCallbackOk(ResultCallback), new FncConsultaCallbackError(ErrorResult));
             Thread th = new Thread(new ThreadStart(rest_cnfg.EjecutaRest_Consulta));
             th.Start();
             th.Join();
@@ -122,6 +133,19 @@ namespace TramiteDigitalWeb.Models
         private static void ResultCallback(List<ConsultaStructure> result)
         {
             response.AddRange(result);
+        }
+
+        private static List<ErrorConsulta> responseerrors = new List<ErrorConsulta>();
+        public static List<ErrorConsulta> ResponseErrors
+        {
+            get
+            {
+                return responseerrors;
+            }
+        }
+        private static void ErrorResult(ErrorConsulta result)
+        {
+            responseerrors.Add(result);
         }
     }
 }

@@ -31,6 +31,7 @@ namespace TramiteDigitalWeb.Controllers
             }       
 
             ViewBag.Response = null;
+            ViewBag.ResponseErrors = null;
         }
 
         [Authorize]
@@ -72,15 +73,23 @@ namespace TramiteDigitalWeb.Controllers
                         ViewBag.Response = ConsultaModels.ConsultaExpediente(int.Parse(User.Identity.Name.Split('~')[1]),Form.NodoSeleccionado,Form.ExpedienteSeleccionado, Form.Valor_Trazable);
                     }
                 }
+
+                ViewBag.ResponseErrors = ConsultaModels.ResponseErrors.Count() > 0 ? ConsultaModels.ResponseErrors : null;
             }
+            
             return View(Form);
         }
 
         [Authorize]
         public ActionResult Details(int id_ma_digital, int id_nodo) {
+            ViewBag.CamposTrazables = ObtencionCamposTrazablesModels.CamposTrazables(int.Parse(User.Identity.Name.Split('~')[1]), id_nodo, id_ma_digital);
+            ViewBag.CamposTrazablesErrors = ObtencionCamposTrazablesModels.ResponseErrors.Count() > 0 ? ObtencionCamposTrazablesModels.ResponseErrors : null;
+
+            ViewBag.RegistrosDigital = ObtencionRegistroDigitalModels.RegistroDigital(int.Parse(User.Identity.Name.Split('~')[1]), id_nodo, id_ma_digital);
+            ViewBag.RegistrosDigitalErrors = ObtencionRegistroDigitalModels.ResponseErrors.Count() > 0 ? ObtencionRegistroDigitalModels.ResponseErrors : null;
+
             return View();
         }
-
 
         public ActionResult About()
         {

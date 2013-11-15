@@ -167,6 +167,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="classes\convert_md5.cs" />
+    <Compile Include="classes\procesa_imagen.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="data_members\Bd_Expedientes_Web.designer.cs">
@@ -181,9 +182,17 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\CatalogsModel.cs" />
     <Compile Include="Models\classes\ConsultaStructure.cs" />
+    <Compile Include="Models\classes\ErrorConsulta.cs" />
+    <Compile Include="Models\classes\RegistroDigital.cs" />
     <Compile Include="Models\classes\vw_ListaExpedientes.cs" />
     <Compile Include="Models\ConsultaModels.cs" />
     <Compile Include="Models\ConsultasViewModels.cs" />
+    <Compile Include="Models\ObtencionComposTrazables.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\ObtencionRegistroDigitalModels.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\UsuarioLogeado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -193,6 +202,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\folder.png" />
+    <Content Include="Content\Loaders.css" />
     <Content Include="Content\images\zoom.png" />
     <Content Include="Content\TableStyle.css" />
     <Content Include="Content\HomeIndex.css" />
@@ -263,6 +274,7 @@
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
     <Content Include="Scripts\jquery.tablesorter.min.js" />
+    <Content Include="Scripts\jquery.tablesorter.new.js" />
     <Content Include="Scripts\jquery.tablesorter.pager.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
@@ -274,6 +286,7 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\jquery.tablesorter.filter.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

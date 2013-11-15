@@ -1,7 +1,8 @@
 ﻿<link href="@Url.Content("~/Content/HomeIndex.css")" rel="stylesheet" type="text/css" />
 <link href="@Url.Content("~/Content/TableStyle.css")" rel="stylesheet" type="text/css" />
 <script src="@Url.Content("~/Scripts/jquery.tablesorter.pager.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/Scripts/jquery.tablesorter.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.tablesorter.new.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.tablesorter.filter.js")" type="text/javascript"></script>
 
 @model TramiteDigitalWeb.Models.ConsultasViewModels
 @{
@@ -22,12 +23,13 @@
     </section>
 }
 
+@Html.ValidationSummary(true)
+
 <div style="text-align:center;margin:50px 0">
-    @using (Html.BeginForm(FormMethod.Post))
+    @using (Html.BeginForm("Index","Home",FormMethod.Post, new { id = "formulario" }))
     {
         @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
-
+        
         <fieldset class="bloque">
             <legend>Formulario de búsqueda</legend>
             <ol>
@@ -57,20 +59,59 @@
         </fieldset>
     }
 </div>
+@if (ViewBag.ResponseErrors != null )
+{    
+    <fieldset style="border: 1px solid; padding:5px;">
+        <legend style="display:block;font-size:xx-large;">[<span style="color:Red;font-size:x-large; font-weight:bold;">Errores</span>]</legend>
+        <ol>
+            @foreach (TramiteDigitalWeb.Models.classes.ErrorConsulta item in ViewBag.ResponseErrors)
+            {
+                <li style="padding-left:15px;" >
+                    El nodo [<span style="padding: 0 3px;"><b>@item.nodo</b></span>] respondió lo siguiente:
+                    <div style="padding: 5px 50px;">                    
+                        <div style="display:block">
+                            <div style="width:150px; display:inline-block;">
+                                Código de estatus:
+                            </div>
+                            <div style="display:inline-block; font-weight:bold; color:Red;">
+                                @item.StatusCode
+                            </div>
+                        </div>
+                        <div style="display:block">
+                            <div style="width:150px; display:inline-block;">
+                                Descripción del estatus:
+                            </div>
+                            <div style="display:inline-block; font-weight:bold; color:Red;">
+                                @item.StatusDescription
+                            </div>
+                        </div>
+                    </div>
+                </li>                
+            }
+        </ol>
+    </fieldset>
+}
 <div>
-        @if (ViewBag.Response != null){
+        @if (ViewBag.Response != null)
+        { 
+            <div>
+                <span>Filtrar por tramite:</span>
+                <input name="filter" id="filter-box" value="" maxlength="30" size="30" type="text">
+                <input id="filter-clear-button" type="submit" value="Limpiar"/>
+            </div>
             <table class="tablesorter">
                 <thead>
                     <tr>
                         <th>Trámite</th>
                         <th>Expediente</th>
-                        <th class=>Nodo</th>
+                        <th>Nodo</th>
                         <th>Fecha/Hora de creación</th>
-                        <th></th>
+                        <th style="width:50px!Important;"></th>
                     </tr>
                 </thead>
                 <tbody>                    
-                    @if (data.Count() > 0){
+                    @if (data.Count() > 0)
+                    {
                         foreach (TramiteDigitalWeb.Models.classes.ConsultaStructure item in data)
                         {
                             <tr>
@@ -86,13 +127,16 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.fecha_hora_creacion)
                                 </td>
-                                <td>
-                                    @Html.ActionLink("Abrir", "Details", new { id_ma_digital = item.id_ma_digital, id_nodo = item.id_nodo })
+                                <td style="width:50px!Important;">
+                                    @Html.ActionLink(" ", "Details", 
+                                        new { id_ma_digital = item.id_ma_digital, id_nodo = item.id_nodo }, 
+                                        new { @class="abrirtramite", title="Abrir trámite", style = "margin:0 auto; background: url('" + Url.Content("~/Content/images/folder.png") + "') no-repeat center right; display:block; height:16px; width:16px;" })
                                 </td>
                             </tr>
                         }
                     }
-                    else {
+                    else
+                    {
                         <tr>
                             <td>
                                 No se encontraron registros...
@@ -101,40 +145,51 @@
                     }
                 </tbody>
             </table>
-                <div id="pager">
-                    <form>
-                        <img src="@Url.Content("~/Content/images/first.png")" class="first" />
-                        <img src="@Url.Content("~/Content/images/prev.png")" class="prev" />
-                        <input type="text" class="pagedisplay" readonly />
-                        <img src="@Url.Content("~/Content/images/next.png")" class="next" />
-                        <img src="@Url.Content("~/Content/images/last.png")" class="last" />
-                        <select class="pagesize">
-                            <option selected="selected" value="20">20</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                            <option value="200">200</option>
-                            <option value="500">500</option>
-                        </select>
-                        <span style="float:right ;font-size: 16px;"><span style="font-size: 24px;font-weight: bold;">[<span style="color: #F00;font-size: 18px;padding:0 5px;">@data.Count()</span>]</span> registros encontrados</span>
-                    </form>
-                </div>
+            <div id="pager">
+                <form>
+                    <img src="@Url.Content("~/Content/images/first.png")" class="first" />
+                    <img src="@Url.Content("~/Content/images/prev.png")" class="prev" />
+                    <input type="text" class="pagedisplay" readonly />
+                    <img src="@Url.Content("~/Content/images/next.png")" class="next" />
+                    <img src="@Url.Content("~/Content/images/last.png")" class="last" />
+                    <select class="pagesize">
+                        <option selected="selected" value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="500">500</option>
+                    </select>
+                    <span style="float:right ;font-size: 16px;"><span style="font-size: 24px;font-weight: bold;">[<span style="color: #F00;font-size: 18px;padding:0 5px;">@data.Count()</span>]</span> registros encontrados</span>
+                </form>
+            </div>
         }
 </div>
 
 <script type="text/javascript">
     $(function () {
         $("table.tablesorter").tablesorter({
+            widgets: ['zebra'],
             widthFixed: true,
             sortList: [[0, 0]],
             headers: {
                 4: {
                     sorter: false
-                   }
+                }
             }
         })
         .tablesorterPager({
-            container: $("#pager"), 
-            size: $(".pagesize option:selected").val() });
+            container: $("#pager"),
+            size: $(".pagesize option:selected").val()
+        })
+        .tablesorterFilter({
+            filterContainer: "#filter-box",
+            filterClearContainer: "#filter-clear-button",
+            filterColumns: [0]
+        });
+
+        $("#formulario").submit(function () {
+            $("#refresh_loader").show();
+        })
 
         $("#nodos").change(function () {
             var Loading = $('#facebook');
@@ -152,7 +207,7 @@
                         data: { id_nodo: nodoseleccionado },
                         beforeSend: function () {
                             Expedientes.hide();
-                            Loading.show();                            
+                            Loading.show();
                         },
                         success: function (result) {
                             $.each(result, function (index, item) {
@@ -195,8 +250,10 @@
                     }) // aregrar opcion todos los expedientes
                 );
             }
+        });
 
-
+        $(".abrirtramite").on("click", function () {
+            Loading.show();
         });
     });
 </script>
