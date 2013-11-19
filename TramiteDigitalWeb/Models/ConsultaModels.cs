@@ -44,9 +44,9 @@ namespace TramiteDigitalWeb.Models
             try
             {                
                 string RESTWebApiUrl = this._url_servicio_rest;
-                //string RESTWebApiUrl = @"http://localhost:32091"; //url de servicio de prueba
+                //string RESTWebApiUrl = @"http://localhost:8081"; //url de servicio de prueba
 
-                string segments = "consulta/expediente" + (_expediente != null ? "/" + _expediente : string.Empty) + "/" + _campo_trazable;
+                string segments = "consulta/Expediente" + (_expediente != null ? "/" + _expediente : string.Empty) + "/" + _campo_trazable;
 
                 var client = new RestClient(RESTWebApiUrl);
                 //client.Authenticator = new HttpBasicAuthenticator(this._usuario, this._contrasenia);

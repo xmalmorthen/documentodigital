@@ -33,7 +33,7 @@ namespace apiRest.data_members
     #endregion
 		
 		public Bd_Expedientes_DigitalesDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["Bd_Expedientes_DigitalesConnectionString1"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["Bd_Expedientes_DigitalesConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

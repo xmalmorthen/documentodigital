@@ -15,7 +15,7 @@ using scanndoc.classes;
 namespace TramiteDigitalWeb.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
+    //[InitializeSimpleMembership]
     public class AccountController : Controller
     {
         //
@@ -88,8 +88,9 @@ namespace TramiteDigitalWeb.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
-        {
-            WebSecurity.Logout();
+        {            
+            //WebSecurity.Logout();
+            FormsAuthentication.SignOut();
 
             return RedirectToAction("Index", "Home");
         }

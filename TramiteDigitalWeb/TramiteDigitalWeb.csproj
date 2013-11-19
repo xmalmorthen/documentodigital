@@ -202,6 +202,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\asc.gif" />
+    <Content Include="Content\images\asc.png" />
+    <Content Include="Content\images\bg.gif" />
+    <Content Include="Content\images\bg.png" />
+    <Content Include="Content\images\desc.gif" />
+    <Content Include="Content\images\desc.png" />
     <Content Include="Content\images\folder.png" />
     <Content Include="Content\Loaders.css" />
     <Content Include="Content\images\zoom.png" />
