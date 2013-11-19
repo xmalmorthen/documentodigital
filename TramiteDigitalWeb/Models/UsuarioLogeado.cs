@@ -31,6 +31,9 @@ namespace TramiteDigitalWeb.Models
 
         private Boolean _activo;
         public Boolean Activo { get { return _activo; } set { _activo = value; } }
+
+        private Boolean _esadministrador;
+        public Boolean EsAdministrador { get { return _esadministrador; } set { _esadministrador = value; } }
     }
 
     public class UsuarioLogeado
@@ -71,6 +74,7 @@ namespace TramiteDigitalWeb.Models
             datos.Apellido2 = usuario.apellido2;
             datos.Cargo = usuario.cargo;
             datos.Activo = usuario.activo;
+            datos.EsAdministrador = usuario.es_administrador;
             return datos;
         } 
     

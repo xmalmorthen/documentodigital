@@ -169,6 +169,7 @@
     <Compile Include="classes\convert_md5.cs" />
     <Compile Include="classes\procesa_imagen.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdministracionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="data_members\Bd_Expedientes_Web.designer.cs">
       <AutoGen>True</AutoGen>
@@ -187,6 +188,7 @@
     <Compile Include="Models\classes\vw_ListaExpedientes.cs" />
     <Compile Include="Models\ConsultaModels.cs" />
     <Compile Include="Models\ConsultasViewModels.cs" />
+    <Compile Include="Models\AdministracionModel.cs" />
     <Compile Include="Models\ObtencionComposTrazables.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -202,13 +204,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Create_User.css" />
     <Content Include="Content\images\asc.gif" />
     <Content Include="Content\images\asc.png" />
     <Content Include="Content\images\bg.gif" />
     <Content Include="Content\images\bg.png" />
+    <Content Include="Content\images\delete.png" />
     <Content Include="Content\images\desc.gif" />
     <Content Include="Content\images\desc.png" />
+    <Content Include="Content\images\detalle.png" />
+    <Content Include="Content\images\edit.png" />
     <Content Include="Content\images\folder.png" />
+    <Content Include="Content\images\usuario.png" />
     <Content Include="Content\Loaders.css" />
     <Content Include="Content\images\zoom.png" />
     <Content Include="Content\TableStyle.css" />
@@ -351,6 +358,10 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Administracion\Nodos.cshtml" />
+    <Content Include="Views\Administracion\usuarios_nodos.cshtml" />
+    <Content Include="Views\Administracion\Usuarios.cshtml" />
+    <Content Include="Views\Administracion\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

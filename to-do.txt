@@ -11,7 +11,9 @@
 		[ir_rol 7, id_modulo 17]
 		[id_rol 7, 18_modulo 18]
 
+/*******************************************************************/
 
-
+	. parametrizar web
+	. parametrizar escritorio
 
 

@@ -13,7 +13,7 @@
         <link href="@Url.Content("~/Content/Loaders.css")" rel="stylesheet" type="text/css" />
     </head>
     <body>    
-        <div id='refresh_loader' style="display:none;position: absolute;right: 50px;top: 50px;" >
+        <div id='refresh_loader' style="display:none;position: absolute;right: 50px;top: 50px; z-index:9999;" >
             <div id='refresh_block_1' class='refresh_block'></div>
             <div id='refresh_block_2' class='refresh_block'></div>
             <div id='refresh_block_3' class='refresh_block'></div>
@@ -29,13 +29,24 @@
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>
-                    <nav>
+                    @if (Request.IsAuthenticated)
+                    {
+                    <nav style="float:right;">
                         <ul id="menu">
-                            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                            @*<li>@Html.ActionLink("Contacto", "Contact", "Home")</li>*@
+                            <li>@Html.ActionLink("Buscar", "Index", "Home")</li>                            
+                            @if (Convert.ToBoolean(User.Identity.Name.Split('~')[2]))
+                            {
+                                <li>Administración
+                                    <ul>
+                                        <li>@Html.ActionLink("Usuarios", "usuarios", "administracion")</li>
+                                        <li>@Html.ActionLink("Nodos", "nodos", "administracion")</li>
+                                        <li style="border-top: 1px solid #888;">@Html.ActionLink("Asignar nodos a un usuario", "usuarios_nodos", "administracion")</li>
+                                    </ul>
+                                </li>
+                            }
                         </ul>
                     </nav>
+                    }
                 </div>
             </div>
         </header>
@@ -55,4 +66,20 @@
         
         @RenderSection("scripts", required: false)
     </body>
+
+<script type="text/javascript">
+    var loader = {
+        loaderobj: $("#refresh_loader"),
+        show: function() {
+            var newtop = $('body').scrollTop() + 50;
+            this.loaderobj.css({ top: newtop });
+            this.loaderobj.show();
+        },
+        hide: function() {
+            this.loaderobj.hide();
+        }
+    };
+</script>
+
+
 </html>

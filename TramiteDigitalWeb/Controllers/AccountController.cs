@@ -24,6 +24,8 @@ namespace TramiteDigitalWeb.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            //FormsAuthentication.SignOut();
+
             if (Request.IsAuthenticated) {
                 if (returnUrl != null)
                 {
@@ -36,6 +38,11 @@ namespace TramiteDigitalWeb.Controllers
             }
 
             ViewBag.ReturnUrl = returnUrl;
+            if (TempData["NoAdminPermissions"] != null)
+            {
+                ModelState.AddModelError("", TempData["NoAdminPermissions"].ToString());
+            }
+
             return View();
         }
 
@@ -65,7 +72,7 @@ namespace TramiteDigitalWeb.Controllers
                         throw new Exception("No tiene permisos suficientes.");
                     }
 
-                    string username = datosdeusuario.GetFullName.Trim() + "~" + datosdeusuario.Id;
+                    string username = datosdeusuario.GetFullName.Trim() + "~" + datosdeusuario.Id + "~" + datosdeusuario.EsAdministrador;
                     FormsAuthentication.SetAuthCookie(username, model.RememberMe);
                     return RedirectToLocal(returnUrl);
                 }
@@ -93,6 +100,16 @@ namespace TramiteDigitalWeb.Controllers
             FormsAuthentication.SignOut();
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult KillSession()
+        {
+            if (TempData["NoAdminPermissions"] != null) {
+                TempData["NoAdminPermissions"] = TempData["NoAdminPermissions"];                
+            }
+
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
         }
 
         //

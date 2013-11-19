@@ -12,7 +12,7 @@ namespace TramiteDigitalWeb.Controllers
     {        
         CatalogsModel catalogos = new CatalogsModel();
 
-        private void InicializaVars(int? nodoseleccionado = null){            
+        private void InicializaVars(int? nodoseleccionado = null){
             string[] UserParts = User.Identity.Name.Split('~');
             List<data_members.pa_obtener_nodosResult> nodos = new List<data_members.pa_obtener_nodosResult>();            
             nodos.AddRange (catalogos.nodos(int.Parse(UserParts[1])).ToList());

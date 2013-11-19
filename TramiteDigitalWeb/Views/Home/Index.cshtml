@@ -159,7 +159,7 @@
                         <option value="200">200</option>
                         <option value="500">500</option>
                     </select>
-                    <span style="float:right ;font-size: 16px;"><span style="font-size: 24px;font-weight: bold;">[<span style="color: #F00;font-size: 18px;padding:0 5px;">@data.Count()</span>]</span> registros encontrados</span>
+                    <span style="float:right ;font-size: 16px;"><span style="font-size: 24px;font-weight: bold;">[<span id="totalregistros" style="color: #F00;font-size: 18px;padding:0 5px;">@data.Count()</span>]</span> registro(s) encontrado(s)</span>
                 </form>
             </div>
         }
@@ -187,13 +187,16 @@
             filterColumns: [0]
         });
 
+        $("table.tablesorter").on("filterEnd", function () {
+            $("#totalregistros").html($("table.tablesorter tbody tr").length);
+        });
+
+
         $("#formulario").submit(function () {
-            $("#refresh_loader").show();
+            loader.show();
         })
 
         $("#nodos").change(function () {
-            var Loading = $('#facebook');
-
             var nodoseleccionado = $(this).val();
 
             var Expedientes = $('#expedientes'); //combo de espedientes
@@ -206,8 +209,9 @@
                         type: 'GET',
                         data: { id_nodo: nodoseleccionado },
                         beforeSend: function () {
-                            Expedientes.hide();
-                            Loading.show();
+                            Expedientes.prop("readOnly", true);
+                            $("#refresh_loader").show();
+                            loader.show();
                         },
                         success: function (result) {
                             $.each(result, function (index, item) {
@@ -227,8 +231,8 @@
                             );
                         },
                         complete: function () {
-                            Loading.hide();
-                            Expedientes.show();
+                            loader.hide();
+                            Expedientes.prop("readOnly", false);
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
                             alert(errorThrown);
@@ -253,7 +257,7 @@
         });
 
         $(".abrirtramite").on("click", function () {
-            Loading.show();
+            loader.show();
         });
     });
 </script>

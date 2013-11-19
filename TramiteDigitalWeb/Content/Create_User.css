@@ -1,0 +1,8 @@
+﻿.editor-field input
+{
+    width: 98%;    
+}
+.field-validation-error{
+    margin-bottom: 25px;
+    display: block;
+}
