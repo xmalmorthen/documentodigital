@@ -137,6 +137,44 @@ namespace apiRest.ModelsApiWeb
             }
         }
 
+        public pa_ImagenDigitalporId_de_digitalResult ImagenDigital(int id_de_digital)
+        {
+            try
+            {
+                pa_ImagenDigitalporId_de_digitalResult response = bd.pa_ImagenDigitalporId_de_digital(id_de_digital).SingleOrDefault();               
+
+                //datos aleatorios de prueba
+                if (response == null)
+                {
+                    response = new pa_ImagenDigitalporId_de_digitalResult();
+                    Random bucle = new Random();
+                    Image img = Image.FromFile(@"C:\Users\Public\Pictures\Sample Pictures\Koala.jpg");
+                    string[] clasificaciondocumento = new string[] { "Identificacion oficial", "CURP", "Clasificacion 1", "Clasificacion 2" };
+                    string[] origen = new string[] { "Interno", "Externo", "CUsuario", "Proveedor" };
+
+                    DateTime start = new DateTime(1995, 1, 1);
+                    Random gen = new Random();
+                    int range = (DateTime.Today - start).Days;
+                    int rnd = new Random().Next(0, 3);
+                    response.id_re_clasificaciondocumento_documento = rnd;
+                    response.clasificaciondocumento = clasificaciondocumento[rnd];
+                    response.Documento = "Documento";
+                    response.fecha_hora_creacion = new DateTime().AddDays(new Random().Next((DateTime.Today - new DateTime(1995, 1, 1)).Days));
+                    response.id_origen = new Random().Next(1, 100);
+                    response.Origen = origen[rnd];
+                    response.imagen = classes.procesa_imagen.toByteArray(img);
+                    response.valor_trazable = "Valor Trazable " + new Random().Next(1, 100);
+                }
+                //*******************************
+
+                return response;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
 
     }
 }

@@ -81,7 +81,36 @@ namespace TramiteDigitalWeb.Controllers
         }
 
         [Authorize]
+        [HttpGet]
         public ActionResult Details(int id_ma_digital, int id_nodo) {
+            ViewBag.CamposTrazables = ObtencionCamposTrazablesModels.CamposTrazables(int.Parse(User.Identity.Name.Split('~')[1]), id_nodo, id_ma_digital);
+            ViewBag.CamposTrazablesErrors = ObtencionCamposTrazablesModels.ResponseErrors.Count() > 0 ? ObtencionCamposTrazablesModels.ResponseErrors : null;
+
+            ViewBag.RegistrosDigital = ObtencionRegistroDigitalModels.RegistroDigital(int.Parse(User.Identity.Name.Split('~')[1]), id_nodo, id_ma_digital);
+            ViewBag.RegistrosDigitalErrors = ObtencionRegistroDigitalModels.ResponseErrors.Count() > 0 ? ObtencionRegistroDigitalModels.ResponseErrors : null;
+
+            ViewBag.IdNodo = id_nodo;
+
+            return View();
+        }
+
+        [Authorize]
+        [HttpGet]
+        public void OpenImage(int id_de_digital, int id_nodo)
+        {
+            pa_ImagenDigitalporId_de_digitalResult imagendigital = ObtencionimagendigitalModels.imagendigital(int.Parse(User.Identity.Name.Split('~')[1]), id_nodo, id_de_digital);
+
+            Response.Clear();
+            Response.BinaryWrite(imagendigital.imagen);
+            Response.ContentType = "image/jpeg";
+            Response.End();
+        }
+
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult Gallery(int id_ma_digital, int id_nodo)
+        {
             ViewBag.CamposTrazables = ObtencionCamposTrazablesModels.CamposTrazables(int.Parse(User.Identity.Name.Split('~')[1]), id_nodo, id_ma_digital);
             ViewBag.CamposTrazablesErrors = ObtencionCamposTrazablesModels.ResponseErrors.Count() > 0 ? ObtencionCamposTrazablesModels.ResponseErrors : null;
 
@@ -90,13 +119,5 @@ namespace TramiteDigitalWeb.Controllers
 
             return View();
         }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Acerca de...";
-
-            return View();
-        }
-
     }
 }

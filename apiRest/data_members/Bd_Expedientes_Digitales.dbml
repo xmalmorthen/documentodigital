@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Bd_Expedientes_Digitales" Class="Bd_Expedientes_DigitalesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Expedientes_Digitales;Persist Security Info=True;User ID=digitaldocs" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Bd_Expedientes_DigitalesConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=Bd_Expedientes_Digitales;Persist Security Info=True;User ID=digitaldocs" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Bd_Expedientes_DigitalesConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.vw_ListaExpedientes" Member="vw_ListaExpedientes">
     <Type Name="vw_ListaExpedientes">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
@@ -56,6 +56,19 @@
       <Column Name="Documento" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
       <Column Name="id_origen" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Origen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_ImagenDigitalporId_de_digital" Method="pa_ImagenDigitalporId_de_digital">
+    <Parameter Name="Id_de_digital" Parameter="id_de_digital" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_ImagenDigitalporId_de_digitalResult">
+      <Column Name="id_re_clasificaciondocumento_documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="valor_trazable" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="clasificaciondocumento" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Documento" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="id_origen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Origen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="imagen" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

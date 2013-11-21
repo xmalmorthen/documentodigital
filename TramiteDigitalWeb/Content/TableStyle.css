@@ -1,4 +1,4 @@
-﻿table { width:100%;border-spacing:0; border:1px solid gray; width:100%;}
+﻿table.tablesorter { width:100%;border-spacing:0; border:1px solid gray; width:100%;}
 table.tablesorter thead tr .header {
     background-image: url(images/bg.png);
     background-repeat: no-repeat;
@@ -20,14 +20,14 @@ table.tablesorter thead tr .headerSortUp {
 table.tablesorter thead tr .headerSortDown {
     background-image: url(images/desc.png);
 }
-table th { width:150px; 
+table.tablesorter th { width:150px; 
            border:1px outset gray; 
            background-color:#3C78B5; 
            color:White; 
            cursor:pointer;
 }
-table thead th:hover { background-color:Yellow; color:Black;}
-table td { width:150px; border:1px solid gray;}
+table.tablesorter thead th:hover { background-color:Yellow; color:Black;}
+table.tablesorter td { width:150px; border:1px solid gray;}
 
 
 table.tablesorter { border-spacing:0; border:1px solid gray; }

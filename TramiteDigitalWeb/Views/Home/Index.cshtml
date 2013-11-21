@@ -128,9 +128,12 @@
                                     @Html.DisplayFor(modelItem => item.fecha_hora_creacion)
                                 </td>
                                 <td style="width:50px!Important;">
-                                    @Html.ActionLink(" ", "Details", 
-                                        new { id_ma_digital = item.id_ma_digital, id_nodo = item.id_nodo }, 
-                                        new { @class="abrirtramite", title="Abrir trámite", style = "margin:0 auto; background: url('" + Url.Content("~/Content/images/folder.png") + "') no-repeat center right; display:block; height:16px; width:16px;" })
+                                    @Html.ActionLink(" ", "Details",
+                                        new { id_ma_digital = item.id_ma_digital, id_nodo = item.id_nodo },
+                                        new { @class = "abrirtramite", title = "Abrir trámite", style = "padding: 0 7px; background: url('" + Url.Content("~/Content/images/detalle.png") + "') no-repeat center right; display:inline-block; height:16px; width:16px;" })
+                                    @Html.ActionLink(" ", "Gallery",
+                                        new { id_ma_digital = item.id_ma_digital, id_nodo = item.id_nodo },
+                                        new { @class = "abrirtramite", title = "Abrir trámite", style = "padding: 0 7px; background: url('" + Url.Content("~/Content/images/picture.png") + "') no-repeat center right; display:inline-block; height:16px; width:16px;" })
                                 </td>
                             </tr>
                         }

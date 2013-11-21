@@ -33,7 +33,7 @@ namespace apiRest.data_members
     #endregion
 		
 		public Bd_Expedientes_DigitalesDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["Bd_Expedientes_DigitalesConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["Bd_Expedientes_DigitalesConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -96,6 +96,13 @@ namespace apiRest.data_members
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_ma_digital);
 			return ((ISingleResult<pa_RegistrosDigitalesRegistradosporId_ma_digitalResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_ImagenDigitalporId_de_digital")]
+		public ISingleResult<pa_ImagenDigitalporId_de_digitalResult> pa_ImagenDigitalporId_de_digital([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id_de_digital", DbType="Int")] System.Nullable<int> id_de_digital)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_de_digital);
+			return ((ISingleResult<pa_ImagenDigitalporId_de_digitalResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -729,6 +736,158 @@ namespace apiRest.data_members
 				if ((this._Origen != value))
 				{
 					this._Origen = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_ImagenDigitalporId_de_digitalResult
+	{
+		
+		private int _id_re_clasificaciondocumento_documento;
+		
+		private System.DateTime _fecha_hora_creacion;
+		
+		private string _valor_trazable;
+		
+		private string _clasificaciondocumento;
+		
+		private string _Documento;
+		
+		private System.Nullable<int> _id_origen;
+		
+		private string _Origen;
+		
+		private System.Data.Linq.Binary _imagen;
+		
+		public pa_ImagenDigitalporId_de_digitalResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_re_clasificaciondocumento_documento", DbType="Int NOT NULL")]
+		public int id_re_clasificaciondocumento_documento
+		{
+			get
+			{
+				return this._id_re_clasificaciondocumento_documento;
+			}
+			set
+			{
+				if ((this._id_re_clasificaciondocumento_documento != value))
+				{
+					this._id_re_clasificaciondocumento_documento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_hora_creacion", DbType="DateTime NOT NULL")]
+		public System.DateTime fecha_hora_creacion
+		{
+			get
+			{
+				return this._fecha_hora_creacion;
+			}
+			set
+			{
+				if ((this._fecha_hora_creacion != value))
+				{
+					this._fecha_hora_creacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_valor_trazable", DbType="VarChar(200)")]
+		public string valor_trazable
+		{
+			get
+			{
+				return this._valor_trazable;
+			}
+			set
+			{
+				if ((this._valor_trazable != value))
+				{
+					this._valor_trazable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_clasificaciondocumento", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string clasificaciondocumento
+		{
+			get
+			{
+				return this._clasificaciondocumento;
+			}
+			set
+			{
+				if ((this._clasificaciondocumento != value))
+				{
+					this._clasificaciondocumento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Documento", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string Documento
+		{
+			get
+			{
+				return this._Documento;
+			}
+			set
+			{
+				if ((this._Documento != value))
+				{
+					this._Documento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_origen", DbType="Int")]
+		public System.Nullable<int> id_origen
+		{
+			get
+			{
+				return this._id_origen;
+			}
+			set
+			{
+				if ((this._id_origen != value))
+				{
+					this._id_origen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Origen", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Origen
+		{
+			get
+			{
+				return this._Origen;
+			}
+			set
+			{
+				if ((this._Origen != value))
+				{
+					this._Origen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imagen", DbType="Image NOT NULL", CanBeNull=false)]
+		public System.Data.Linq.Binary imagen
+		{
+			get
+			{
+				return this._imagen;
+			}
+			set
+			{
+				if ((this._imagen != value))
+				{
+					this._imagen = value;
 				}
 			}
 		}

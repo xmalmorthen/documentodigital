@@ -189,6 +189,7 @@
     <Compile Include="Models\ConsultaModels.cs" />
     <Compile Include="Models\ConsultasViewModels.cs" />
     <Compile Include="Models\AdministracionModel.cs" />
+    <Compile Include="Models\ObtencionImagenDigitalModels.cs" />
     <Compile Include="Models\ObtencionComposTrazables.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -205,6 +206,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Create_User.css" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\lib\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\blank.gif" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\fancybox_loading%402x.gif" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\fancybox_loading.gif" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\fancybox_overlay.png" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\fancybox_sprite%402x.png" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\fancybox_sprite.png" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\helpers\fancybox_buttons.png" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\jquery.fancybox.css" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\jquery.fancybox.js" />
+    <Content Include="Content\fancyapps-fancyBox-18d1712\source\jquery.fancybox.pack.js" />
     <Content Include="Content\images\asc.gif" />
     <Content Include="Content\images\asc.png" />
     <Content Include="Content\images\bg.gif" />
@@ -215,6 +232,7 @@
     <Content Include="Content\images\detalle.png" />
     <Content Include="Content\images\edit.png" />
     <Content Include="Content\images\folder.png" />
+    <Content Include="Content\images\picture.png" />
     <Content Include="Content\images\usuario.png" />
     <Content Include="Content\Loaders.css" />
     <Content Include="Content\images\zoom.png" />

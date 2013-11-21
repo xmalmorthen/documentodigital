@@ -38,14 +38,14 @@ namespace apiRest
              * Obtencion
              */
             config.Routes.MapHttpRoute(
-                name: "Bucar en un Expediente",
+                name: "Obtener datos",
                 routeTemplate: "obten/{controller}/{id_ma_digital}",
                 defaults: null,
                 constraints: new { id_ma_digital = @"^[0-9]+$" }
             );
 
             config.Routes.MapHttpRoute(
-                name: "Obtener datos",
+                name: "Obtener imagen digiatal",
                 routeTemplate: "obten/{controller}/{id_ma_digital}",
                 defaults: null,
                 constraints: new { id_ma_digital = @"^[0-9]+$" }

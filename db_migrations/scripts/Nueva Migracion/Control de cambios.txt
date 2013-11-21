@@ -1,0 +1,2 @@
+.Nuevo procedimiento almacenado
+	.pa_ImagenDigitalporId_de_digital
