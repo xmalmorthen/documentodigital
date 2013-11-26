@@ -117,6 +117,8 @@ namespace TramiteDigitalWeb.Controllers
             ViewBag.RegistrosDigital = ObtencionRegistroDigitalModels.RegistroDigital(int.Parse(User.Identity.Name.Split('~')[1]), id_nodo, id_ma_digital);
             ViewBag.RegistrosDigitalErrors = ObtencionRegistroDigitalModels.ResponseErrors.Count() > 0 ? ObtencionRegistroDigitalModels.ResponseErrors : null;
 
+            ViewBag.IdNodo = id_nodo;
+
             return View();
         }
     }

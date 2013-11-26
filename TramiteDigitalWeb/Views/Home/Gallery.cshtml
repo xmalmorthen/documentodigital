@@ -113,80 +113,43 @@
 
 <a href="javascript:window.history.back()" style="float: right ;text-decoration: none;margin-top: 5px;background-color: lightcoral;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" >Regresar a lista</a>
 
-<div>
+<div style="margin-bottom: 50px;">
     <h2>Registros Digitales</h2>
-    <div>
-        <span>Filtrar por documento:</span>
-        <input name="filter" id="filter-box" value="" maxlength="30" size="30" type="text">
-        <input id="filter-clear-button" type="submit" value="Limpiar"/>
-    </div>
-    <table class="tablesorter">
-        <thead>
-            <tr>
-                <th>Clasificación de documento</th>
-                <th>Documento</th>
-                <th>Origen</th>
-                <th>Fecha/Hora creación</th>
-                <th>Valor trazable</th>
-                <th>Imagen</th>
-            </tr>
-        </thead>
-        <tbody>                    
-            @if (registrosdigital.Count() > 0)
+
+    <div style="margin-top: 50px;">
+        @if (registrosdigital.Count() > 0)
+        {
+            string origen = null;
+            foreach (TramiteDigitalWeb.Models.classes.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult item in registrosdigital)
             {
-                foreach (TramiteDigitalWeb.Models.classes.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult item in registrosdigital)
-                {
-                    <tr>
-                        <td style="vertical-align:middle;">
-                            @Html.DisplayFor(modelItem => item.clasificaciondocumento)
-                        </td>
-                        <td style="vertical-align:middle;">
-                            @Html.DisplayFor(modelItem => item.Documento)
-                        </td>
-                        <td style="vertical-align:middle;">
-                            @Html.DisplayFor(modelItem => item.Origen)
-                        </td>
-                        <td style="vertical-align:middle;">
-                            @Html.DisplayFor(modelItem => item.fecha_hora_creacion)
-                        </td>
-                        <td style="vertical-align:middle;">
-                            @Html.DisplayFor(modelItem => item.valor_trazable)
-                        </td>
-                        <td style="vertical-align:middle;text-align: center;">
-                            <a class="fancyframe" href="@Href("/Home/OpenImage",new { id_de_digital = @item.id, id_nodo = ViewBag.IdNodo })" title="@item.clasificaciondocumento|@item.Documento|@item.Origen|@item.fecha_hora_creacion|@item.valor_trazable">
-                                <img  src="data:image/jpg;base64,@(Convert.ToBase64String(item.thumbnail))" alt="@item.Documento" title="@item.Documento" width="100px" height="100px" />
-                            </a>
-                        </td>
-                    </tr>
+                if (origen != item.Origen) { 
+                    <div style="margin: 80px 0 10px 0;font-size: 24px;font-weight: bold;color: #5C5B5B;border-bottom: 1px solid #B6B6B6;width: 80%;">
+                        @item.Origen
+                    </div>                
                 }
+                
+                <div style="border: 1px solid #000;background-color: #DBDBDB;width: auto;height: auto;display: inline-block;padding: 5px;max-width: 502px;margin:5px">
+                    <a class="fancyframe" href="@Href("/Home/OpenImage",new { id_de_digital = @item.id, id_nodo = ViewBag.IdNodo })" title="@item.clasificaciondocumento|@item.Documento|@item.Origen|@item.fecha_hora_creacion|@item.valor_trazable">
+                        <img style="border: 1px solid #000;" src="data:image/jpg;base64,@(Convert.ToBase64String(item.thumbnail))" alt="@item.Documento" title="@item.Documento" width="450px" height="450px" />
+                    </a>
+                    <div>                    
+                        <div>
+                            <span style="font-size: 16px;font-weight: bold;"> @item.Documento </span>                    
+                            <span style="font-size: 16px;font-weight: bold;float:right"> [ <span style="font-size: 12px;font-weight: normal;color: #5A5A5A;"> @item.clasificaciondocumento </span> ] </span>
+                        </div>                    
+                        <div>
+                            <span style="font-size: 16px;font-weight: bold;"> [ <span style="font-size: 12px;font-weight: normal;color: #5A5A5A;"> @item.Origen </span> ] </span>
+                            <span style="font-size: 16px;font-weight: bold;"> [ <span style="font-size: 12px;font-weight: normal;color: #5A5A5A;"> @item.valor_trazable </span> ] </span>
+                        </div>
+                        <div>
+                            <span style="float:right;font-size: 12px;font-weight: bold;color:red;"> @item.fecha_hora_creacion </span>
+                        </div>
+                    </div>
+                </div>  
+                origen = item.Origen;
             }
-            else
-            {
-                <tr>
-                    <td>
-                        No se encontraron registros...
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table> 
-    <div id="pager">
-        <form>
-            <img src="@Url.Content("~/Content/images/first.png")" class="first" />
-            <img src="@Url.Content("~/Content/images/prev.png")" class="prev" />
-            <input type="text" class="pagedisplay" readonly />
-            <img src="@Url.Content("~/Content/images/next.png")" class="next" />
-            <img src="@Url.Content("~/Content/images/last.png")" class="last" />
-            <select class="pagesize">
-                <option selected="selected" value="20">20</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-                <option value="200">200</option>
-                <option value="500">500</option>
-            </select>
-            <span style="float:right ;font-size: 16px;"><span style="font-size: 24px;font-weight: bold;">[<span id="totalregistros" style="color: #F00;font-size: 18px;padding:0 5px;">@registrosdigital.Count()</span>]</span> registro(s) encontrado(s)</span>
-        </form>
-    </div>           
+        }
+    </div>
 </div>
 
 <a href="javascript:window.history.back()" style="float: right ;text-decoration: none;margin-top: 5px;background-color: lightcoral;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" >Regresar a lista</a>
@@ -194,31 +157,6 @@
 
 <script type="text/javascript">
     $(function () {
-        $("table.tablesorter").tablesorter({
-            widgets: ['zebra'],
-            widthFixed: true,
-            sortList: [[0, 0]],
-            headers: {
-                5: {
-                    sorter: false
-                }
-            }
-        })
-        .tablesorterPager({
-            container: $("#pager"),
-            size: $(".pagesize option:selected").val()
-        })
-        .tablesorterFilter({
-            filterContainer: "#filter-box",
-            filterClearContainer: "#filter-clear-button",
-            filterColumns: [1]
-        });
-
-        $("table.tablesorter").on("filterEnd", function () {
-            $("#totalregistros").html($("table.tablesorter tbody tr").length);
-        });
-
-
         $("#table_ct").tablesorter()
         .tablesorterPager({
             container: $("#pager_ct"),

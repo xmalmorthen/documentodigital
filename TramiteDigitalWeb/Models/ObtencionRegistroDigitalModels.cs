@@ -92,7 +92,9 @@ namespace TramiteDigitalWeb.Models
             th.Start();
             th.Join();
 
-            return response;
+            var ordered = response.OrderBy(p => p.id_origen).OrderBy(p => p.id_re_clasificaciondocumento_documento).ToList();
+
+            return ordered;
         }
 
         private static List<pa_RegistrosDigitalesRegistradosporId_ma_digitalResult> response = new List<pa_RegistrosDigitalesRegistradosporId_ma_digitalResult>();

@@ -380,6 +380,7 @@
     <Content Include="Views\Administracion\usuarios_nodos.cshtml" />
     <Content Include="Views\Administracion\Usuarios.cshtml" />
     <Content Include="Views\Administracion\Create.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
