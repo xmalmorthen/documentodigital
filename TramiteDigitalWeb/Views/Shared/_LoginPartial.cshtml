@@ -4,10 +4,15 @@
 
 @if (Request.IsAuthenticated) {
     <text>
-        ¡Hola, @UserParts[0] &nbsp; |
+        ¡Hola, @UserParts[0]
         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
             @Html.AntiForgeryToken()
-            <a href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a>
+            <div style="margin-top:3px;">
+                @Html.ActionLink(" ", "ChangePass","Account",
+                                      new { id_user = @UserParts[1] },
+                                      new { title = "Cambiar contraseña", style = "background: url('" + Url.Content("~/Content/images/key.png") + "') no-repeat center right; display:inline-block;" })
+                <a href="javascript:document.getElementById('logoutForm').submit()" title="Cerrar sesión" style = "background: url('@Url.Content("~/Content/images/on-off.png")') no-repeat center right; display:inline-block;" ></a>
+            </div>
         }
     </text>
 }

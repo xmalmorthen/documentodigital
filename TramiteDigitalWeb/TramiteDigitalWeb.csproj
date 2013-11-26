@@ -232,6 +232,8 @@
     <Content Include="Content\images\detalle.png" />
     <Content Include="Content\images\edit.png" />
     <Content Include="Content\images\folder.png" />
+    <Content Include="Content\images\key.png" />
+    <Content Include="Content\images\on-off.png" />
     <Content Include="Content\images\picture.png" />
     <Content Include="Content\images\usuario.png" />
     <Content Include="Content\Loaders.css" />
