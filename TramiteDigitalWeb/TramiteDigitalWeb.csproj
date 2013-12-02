@@ -205,6 +205,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Detalle_Usuario.css" />
     <Content Include="Content\Create_User.css" />
     <Content Include="Content\fancyapps-fancyBox-18d1712\lib\jquery.mousewheel-3.0.6.pack.js" />
     <Content Include="Content\fancyapps-fancyBox-18d1712\source\blank.gif" />
@@ -381,8 +382,11 @@
     <Content Include="Views\Administracion\Nodos.cshtml" />
     <Content Include="Views\Administracion\usuarios_nodos.cshtml" />
     <Content Include="Views\Administracion\Usuarios.cshtml" />
-    <Content Include="Views\Administracion\Create.cshtml" />
+    <Content Include="Views\Administracion\Crear_Usuario.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Administracion\Detalle_Usuario.cshtml" />
+    <Content Include="Views\Administracion\Edita_Usuario.cshtml" />
+    <Content Include="Views\Administracion\Cambia_Contrasenia_Usuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

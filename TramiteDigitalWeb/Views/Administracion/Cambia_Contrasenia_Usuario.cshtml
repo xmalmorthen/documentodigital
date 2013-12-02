@@ -1,0 +1,56 @@
+﻿<link href="@Url.Content("~/Content/Create_User.css")" rel="stylesheet" type="text/css" />
+
+@model TramiteDigitalWeb.data_members.ca_usuarios
+
+@{
+    ViewBag.Title = "Cambiar contraseña";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr style="width: 70%;float: left;display: block;"/>
+
+@using (Html.BeginForm("Cambia_Contrasenia_Usuario", "Administracion", FormMethod.Post, new { style = "clear: both;" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Usuario</legend>
+
+        @Html.HiddenFor(model => model.id)
+        @Html.HiddenFor(model => model.usuario)
+        @Html.HiddenFor(model => model.curp)
+        @Html.HiddenFor(model => model.nombres)
+        @Html.HiddenFor(model => model.apellido1)
+        @Html.HiddenFor(model => model.apellido2)
+        @Html.HiddenFor(model => model.telefono)
+        @Html.HiddenFor(model => model.cargo)
+        @Html.HiddenFor(model => model.activo)
+        @Html.HiddenFor(model => model.es_administrador)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.contrasenia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.contrasenia)
+            @Html.ValidationMessageFor(model => model.contrasenia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.repetircontrasenia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.repetircontrasenia)
+            @Html.ValidationMessageFor(model => model.repetircontrasenia)
+        </div>
+
+        <p>
+            <input type="submit" value="Guardar nueva contraseña" style="float:left;"  />
+            @Html.ActionLink("Cancelar", "Usuarios", null, new { style = "float:left;text-decoration: none;margin-top:5px;background-color: lightcoral;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" })            
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

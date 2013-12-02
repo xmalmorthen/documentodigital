@@ -9,6 +9,7 @@
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
         @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
         
         <link href="@Url.Content("~/Content/Loaders.css")" rel="stylesheet" type="text/css" />
     </head>
@@ -33,7 +34,7 @@
                     {
                     <nav style="float:right;">
                         <ul id="menu">
-                            <li>@Html.ActionLink("Buscar", "Index", "Home")</li>                            
+                            <li>@Html.ActionLink("Buscar", "Index", "Home")</li>
                             @if (Convert.ToBoolean(User.Identity.Name.Split('~')[2]))
                             {
                                 <li>Administración
@@ -80,14 +81,13 @@
         }
     };
 
-
     $(function () {
+
         $(window).scroll(function () {
             var newtop = $('body').scrollTop() + 50;
             loader.loaderobj.stop().animate({ 'top': newtop }, 200);
         });
     });
-
     
 </script>
 

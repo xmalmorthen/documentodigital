@@ -1,0 +1,22 @@
+﻿fieldset 
+{
+    border: 1px solid #CACACA;
+    padding: 5px 22px;  
+    clear:both;  
+}
+fieldset div 
+{
+    background-color: #DDD;
+    padding: 5px 15px;
+    margin: 5px 0;
+}
+.display-label
+{
+    font-size: 18px;
+    font-weight: bold;    
+}
+.display-field
+{
+    padding-left: 50px;
+    font-size: 16px;    
+}

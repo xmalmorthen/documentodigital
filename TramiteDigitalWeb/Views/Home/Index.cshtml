@@ -212,6 +212,7 @@
                         type: 'GET',
                         data: { id_nodo: nodoseleccionado },
                         beforeSend: function () {
+                            $(this).prop("readOnly", true);
                             Expedientes.prop("readOnly", true);
                             $("#refresh_loader").show();
                             loader.show();
@@ -236,6 +237,7 @@
                         complete: function () {
                             loader.hide();
                             Expedientes.prop("readOnly", false);
+                            $(this).prop("readOnly", false);
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
                             alert(errorThrown);

@@ -21,6 +21,7 @@ namespace TramiteDigitalWeb.Controllers
         }
 
         private void InicializaVars(){
+            
         }
 
         [Authorize]
@@ -35,27 +36,112 @@ namespace TramiteDigitalWeb.Controllers
 
         [Authorize]
         [HttpGet]
-        public ActionResult Create()
+        public ActionResult Crear_Usuario()
         {
             InicializaVars();
-            return View();
+            return View(new ca_usuarios() { activo = true });
         }
 
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ca_usuarios Form)
+        public ActionResult Crear_Usuario(ca_usuarios Form)
         {
             InicializaVars();
             if (ModelState.IsValid)
             {
-                if (AdministracionModel.CrearUsuario(Form))
-                    return RedirectToAction("Usuarios");
+                Boolean? response = AdministracionModel.CrearUsuario(Form);
+                if (response != null) {
+                    if (response == true) {
+                        return RedirectToAction("Usuarios");
+                    } else {
+                        ModelState.AddModelError("", "El usuario ya se encuentra registrado, favor de revisar");
+                    }
+                }
                 else
                     ModelState.AddModelError("", "Ocurrió un error al intentar agregar el usuario, favor de intentarlo de nuevo");
             }
             
             return View(Form);
+        }
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult Detalle_Usuario(int id_usuario)
+        {
+            InicializaVars();
+            return View(AdministracionModel.Get_Usuario(id_usuario));
+        }
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult Edita_Usuario(int id_usuario)
+        {
+            InicializaVars();
+
+            ca_usuarios usuario = AdministracionModel.Get_Usuario(id_usuario);
+            usuario.repetircontrasenia = usuario.contrasenia;
+            return View(usuario);
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edita_Usuario(ca_usuarios Form)
+        {
+            InicializaVars();
+            if (ModelState.IsValid)
+            {
+                if (AdministracionModel.Edita_Usuario(Form))
+                    return RedirectToAction("Usuarios");
+                else
+                    ModelState.AddModelError("", "Ocurrió un error al intentar editar el usuario, favor de intentarlo de nuevo");
+            }
+            return View(Form);
+        }
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult Cambia_Contrasenia_Usuario(int id_usuario)
+        {
+            InicializaVars();
+
+            ca_usuarios usuario = AdministracionModel.Get_Usuario(id_usuario);
+            usuario.contrasenia = null;
+            return View(usuario);
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Cambia_Contrasenia_Usuario(ca_usuarios Form)
+        {
+            InicializaVars();
+            if (ModelState.IsValid)
+            {
+                if (AdministracionModel.Cambia_Contrasenia(Form))
+                    return RedirectToAction("Usuarios");
+                else
+                    ModelState.AddModelError("", "Ocurrió un error al intentar cambiar contraseña del usuario, favor de intentarlo de nuevo");
+            }
+            return View(Form);
+        }
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult Eliminar_usuario(int id_usuario)
+        {
+            InicializaVars();
+
+            if (AdministracionModel.Elimina_Usuario(id_usuario))
+            {
+                ViewBag.Response = "Usuario eliminado con éxito";
+                if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account"); 
+            }
+            else
+                ViewBag.Response = "Ocurrió un error al intentar eliminar el usuario, favor de intentarlo de nuevo";
+
+            return RedirectToAction("Usuarios");
         }
 
 

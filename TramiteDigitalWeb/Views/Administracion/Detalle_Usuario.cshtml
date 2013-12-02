@@ -1,0 +1,98 @@
+﻿<link href="@Url.Content("~/Content/Detalle_Usuario.css")" rel="stylesheet" type="text/css" />
+
+@model TramiteDigitalWeb.data_members.ca_usuarios
+
+@{
+    ViewBag.Title = "Detalle de usuario";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr style="width: 70%;float: left;display: block;"/>
+
+<fieldset>
+    <legend>Usuario</legend>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.usuario)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.usuario)
+        </div>
+    </div>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.curp)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.curp)
+        </div>
+    </div>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.nombres)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.nombres)
+        </div>
+    </div>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.apellido1)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.apellido1)
+        </div>
+    </div>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.apellido2)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.apellido2)
+        </div>
+    </div>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.telefono)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.telefono)
+        </div>
+    </div>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.cargo)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.cargo)
+        </div>
+    </div>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.activo)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.activo)
+        </div>
+    </div>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.es_administrador)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.es_administrador)
+        </div>
+    </div>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.f_registro)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.f_registro)
+        </div>
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar usuario", "Edita_Usuario", new { id_usuario = Model.id }, new { style = "float:left;text-decoration: none;margin-top:5px;background-color: #D3DCE0;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" })
+    @Html.ActionLink("Regresar a lista de usuarios", "Usuarios", null, new { style = "float:left;text-decoration: none;margin-top:5px;background-color: lightcoral;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" })
+</p>

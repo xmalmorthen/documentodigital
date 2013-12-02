@@ -7,11 +7,17 @@
 
 @{
     ViewBag.Title = "Usuarios";
+    //ViewBag.Response
 }
+
+<div style="background-color: lightcoral;margin: 20px;padding: 15px;border: 1px solid #F00;">
+<img src="@Url.Content("~/Content/images/first.png")" class="first" />
+arradsasd adsasdlkjasd asda sda sdasdasd asdasdasd asdasdasd asd
+</div>
 
 <h2>Usuarios</h2>
 
-@Html.ActionLink(" ", "Create",null,new { @class = "realizaaccion", title = "Agregar usuario", style = "float:right; background: url('" + Url.Content("~/Content/images/usuario.png") + "') no-repeat center right; display:inline-block; height:48px; width:48px;" })
+@Html.ActionLink(" ", "Crear_Usuario", null, new { @class = "realizaaccion", title = "Agregar usuario", style = "float:right; background: url('" + Url.Content("~/Content/images/usuario.png") + "') no-repeat center right; display:inline-block; height:48px; width:48px;" })
 
 <div>
     <span>Filtrar por tramite:</span>
@@ -33,7 +39,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.f_registro)
             </th>        
-            <th style="width:100px!Important;"></th>
+            <th style="width:150px!Important;"></th>
         </tr>
     </thead>
     <tbody>
@@ -54,15 +60,18 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.f_registro)
                     </td>        
-                    <td style="width:100px!Important;">
-                        @Html.ActionLink(" ", "Details", 
-                            new { id_ma_digital = item.id },
+                    <td style="width:150px!Important;">
+                        @Html.ActionLink(" ", "Detalle_Usuario",
+                            new { id_usuario = item.id },
                             new { @class = "realizaaccion", title = "Detalles del usuario", style = "padding: 0 10px; background: url('" + Url.Content("~/Content/images/detalle.png") + "') no-repeat center right; display:inline-block; height:16px; width:16px;" })
-                        @Html.ActionLink(" ", "Edit", 
-                            new { id_ma_digital = item.id },
+                        @Html.ActionLink(" ", "Edita_Usuario",
+                            new { id_usuario = item.id },
                             new { @class = "realizaaccion", title = "Editar usuario", style = "padding: 0 10px; background: url('" + Url.Content("~/Content/images/edit.png") + "') no-repeat center right; display:inline-block; height:16px; width:16px;" })
-                        @Html.ActionLink(" ", "Delete", 
-                            new { id_ma_digital = item.id },
+                        @Html.ActionLink(" ", "Cambia_Contrasenia_Usuario",
+                            new { id_usuario = item.id },
+                            new { @class = "realizaaccion", title = "Cambiar contraseña", style = "padding: 0 10px; background: url('" + Url.Content("~/Content/images/key.png") + "') no-repeat center right; display:inline-block; height:16px; width:16px;" })
+                        @Html.ActionLink(" ", "Eliminar_usuario",
+                            new { id_usuario = item.id },
                             new { @class = "realizaaccion", title = "Eliminar usuario", style = "padding: 0 10px; background: url('" + Url.Content("~/Content/images/delete.png") + "') no-repeat center right; display:inline-block; height:16px; width:16px;" })
                     </td>
                 </tr>
