@@ -91,8 +91,63 @@
             @Html.DisplayFor(model => model.f_registro)
         </div>
     </div>
+    <div>
+        @Html.ActionLink("Agregar/Editar nodos", "Usuario_Nodos", new { id_usuario = Model.id }, new { style = "float:right;text-decoration: none;margin-top:5px;background-color: #D3DCE0;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" })
+        <div class="display-label">
+            Nodos asignados
+        </div>
+        @{
+            List<TramiteDigitalWeb.data_members.re_nodos_usuarios> nodos = ViewBag.nodos_usuario;
+        }
+        <div class="display-field">
+            <table id="table_ct" class="tablesorter_" style="width:100%;">
+                <thead style="border-bottom: 1px solid #888;">
+                    <tr>
+                        <th>Nodo</th>
+                        <th>Url</th>
+                        <th>Usuario</th>
+                        <th>Activo</th>
+                        <th>Fecha/Hora de registro</th>
+                    </tr>
+                </thead>
+                <tbody>
+            @if (nodos.Count() > 0)
+            {
+                foreach (TramiteDigitalWeb.data_members.re_nodos_usuarios item in nodos)
+                {                
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ca_nodos.nodo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ca_nodos.url_servicio_rest)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ca_nodos.usuario)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.activo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.f_registro)
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            { 
+                    <tr>
+                        <td>
+                            No se encontraron campos trazables...
+                        </td>
+                    </tr>
+            }
+                </tbody>
+            </table>            
+        </div>
+    </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Editar usuario", "Edita_Usuario", new { id_usuario = Model.id }, new { style = "float:left;text-decoration: none;margin-top:5px;background-color: #D3DCE0;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" })
+    @Html.ActionLink("Editar usuario", "Edita_Usuario", new { id_usuario = Model.id, returnUrl = Request.Url.PathAndQuery }, new { style = "float:left;text-decoration: none;margin-top:5px;background-color: #D3DCE0;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" })
     @Html.ActionLink("Regresar a lista de usuarios", "Usuarios", null, new { style = "float:left;text-decoration: none;margin-top:5px;background-color: lightcoral;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" })
 </p>

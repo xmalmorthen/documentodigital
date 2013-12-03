@@ -7,6 +7,7 @@
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/themes/base/css")
         @Scripts.Render("~/bundles/modernizr")
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/jqueryui")
@@ -34,14 +35,14 @@
                     {
                     <nav style="float:right;">
                         <ul id="menu">
-                            <li>@Html.ActionLink("Buscar", "Index", "Home")</li>
+                            <li onclick="opc_menu(1);">@Html.ActionLink("Buscar", "Index", "Home")</li>
                             @if (Convert.ToBoolean(User.Identity.Name.Split('~')[2]))
                             {
                                 <li>Administración
                                     <ul>
-                                        <li>@Html.ActionLink("Usuarios", "usuarios", "administracion")</li>
-                                        <li>@Html.ActionLink("Nodos", "nodos", "administracion")</li>
-                                        <li style="border-top: 1px solid #888;">@Html.ActionLink("Asignar nodos a un usuario", "usuarios_nodos", "administracion")</li>
+                                        <li onclick="opc_menu(2);">@Html.ActionLink("Usuarios", "usuarios", "administracion")</li>
+                                        <li onclick="opc_menu(3);">@Html.ActionLink("Nodos", "nodos", "administracion")</li>
+                                        <li onclick="opc_menu(4);" style="border-top: 1px solid #888;">@Html.ActionLink("Asignar nodos a un usuario", "usuarios_nodos", "administracion")</li>
                                     </ul>
                                 </li>
                             }
@@ -82,12 +83,22 @@
     };
 
     $(function () {
-
         $(window).scroll(function () {
             var newtop = $('body').scrollTop() + 50;
             loader.loaderobj.stop().animate({ 'top': newtop }, 200);
         });
     });
+
+    function opc_menu(opc) {
+        var redirect = null;
+        switch (opc) {
+            case 1: redirect = '@Url.Action("Index", "Home")'; break;
+            case 2: redirect = '@Url.Action("usuarios", "administracion")'; break;
+            case 3: redirect = '@Url.Action("nodos", "administracion")'; break;
+            case 4: redirect = '@Url.Action("usuarios_nodos", "administracion")'; break;
+        }
+        if (redirect != null) window.location.href = redirect;
+    }
     
 </script>
 

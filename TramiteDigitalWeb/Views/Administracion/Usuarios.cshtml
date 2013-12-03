@@ -7,19 +7,19 @@
 
 @{
     ViewBag.Title = "Usuarios";
-    //ViewBag.Response
 }
 
-<div style="background-color: lightcoral;margin: 20px;padding: 15px;border: 1px solid #F00;">
-<img src="@Url.Content("~/Content/images/first.png")" class="first" />
-arradsasd adsasdlkjasd asda sda sdasdasd asdasdasd asdasdasd asd
+<div class="notify_area" style="background-color: lightcoral;margin: 20px;padding: 15px;border: 1px solid #F00;display:none;">
+    <img src="@Url.Content("~/Content/images/close.png")" style="position: relative;float: right;right: -7px;float: right;top: -8px;" />
+    <span>@ViewBag.Response</span>
 </div>
 
 <h2>Usuarios</h2>
+<hr style="width: 70%;float: left;display: block;"/>
 
-@Html.ActionLink(" ", "Crear_Usuario", null, new { @class = "realizaaccion", title = "Agregar usuario", style = "float:right; background: url('" + Url.Content("~/Content/images/usuario.png") + "') no-repeat center right; display:inline-block; height:48px; width:48px;" })
+@Html.ActionLink(" ", "Crear_Usuario", null, new { @class = "realizaaccion", title = "Agregar usuario", style = "float:right; background: url('" + Url.Content("~/Content/images/usuario.png") + "') no-repeat center right; display:inline-block; height:48px; width:48px;top: 45px;position: relative;" })
 
-<div>
+<div style="clear:both;">
     <span>Filtrar por tramite:</span>
     <input name="filter" id="filter-box" value="" maxlength="30" size="30" type="text">
     <input id="filter-clear-button" type="submit" value="Limpiar"/>
@@ -39,7 +39,7 @@ arradsasd adsasdlkjasd asda sda sdasdasd asdasdasd asdasdasd asd
             <th>
                 @Html.DisplayNameFor(model => model.f_registro)
             </th>        
-            <th style="width:150px!Important;"></th>
+            <th style="width:170px!Important;"></th>
         </tr>
     </thead>
     <tbody>
@@ -60,7 +60,7 @@ arradsasd adsasdlkjasd asda sda sdasdasd asdasdasd asdasdasd asd
                     <td>
                         @Html.DisplayFor(modelItem => item.f_registro)
                     </td>        
-                    <td style="width:150px!Important;">
+                    <td style="width:170px!Important;">
                         @Html.ActionLink(" ", "Detalle_Usuario",
                             new { id_usuario = item.id },
                             new { @class = "realizaaccion", title = "Detalles del usuario", style = "padding: 0 10px; background: url('" + Url.Content("~/Content/images/detalle.png") + "') no-repeat center right; display:inline-block; height:16px; width:16px;" })
@@ -70,9 +70,12 @@ arradsasd adsasdlkjasd asda sda sdasdasd asdasdasd asdasdasd asd
                         @Html.ActionLink(" ", "Cambia_Contrasenia_Usuario",
                             new { id_usuario = item.id },
                             new { @class = "realizaaccion", title = "Cambiar contraseña", style = "padding: 0 10px; background: url('" + Url.Content("~/Content/images/key.png") + "') no-repeat center right; display:inline-block; height:16px; width:16px;" })
+                        @Html.ActionLink(" ", "Asigna_Nodo",
+                            new { id_usuario = item.id },
+                            new { @class = "realizaaccion", title = "Asignar nodos", style = "padding: 0 10px; background: url('" + Url.Content("~/Content/images/node.png") + "') no-repeat center right; display:inline-block; height:16px; width:16px;" })
                         @Html.ActionLink(" ", "Eliminar_usuario",
                             new { id_usuario = item.id },
-                            new { @class = "realizaaccion", title = "Eliminar usuario", style = "padding: 0 10px; background: url('" + Url.Content("~/Content/images/delete.png") + "') no-repeat center right; display:inline-block; height:16px; width:16px;" })
+                            new { @class = "realizaaccion eliminar", title = "Eliminar usuario", style = "padding: 0 10px; background: url('" + Url.Content("~/Content/images/delete.png") + "') no-repeat center right; display:inline-block; height:16px; width:16px;" })
                     </td>
                 </tr>
             }
@@ -84,7 +87,7 @@ arradsasd adsasdlkjasd asda sda sdasdasd asdasdasd asdasdasd asd
                     </td>
                 </tr>
         }        
-    <tbody>
+    </tbody>
 </table>
 <div id="pager">
     <form>
@@ -104,7 +107,19 @@ arradsasd adsasdlkjasd asda sda sdasdasd asdasdasd asdasdasd asd
     </form>
 </div>
 
+<div id="dialog" title="Eliminar">
+    <p style="font-size: 20px;font-weight: bold;">
+        ¿ Confirma eliminar el usuario ?
+    </p>    
+    <div style="float:right;">
+        <a href="#" onclick="eliminarusuario();" style = "float:left;text-decoration: none;margin-top:5px;background-color: #D3DCE0;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;">Eliminar</a>
+        <a href='#' onclick="cerrardialogo();" style = "float:left;text-decoration: none;margin-top:5px;background-color: lightcoral;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;">Cancelar</a>
+    </div>
+</div>
+
 <script type="text/javascript">
+    var uri_redirect_eliminar = null;
+
     $(function () {
         $("table.tablesorter").tablesorter({
             widgets: ['zebra'],
@@ -129,8 +144,37 @@ arradsasd adsasdlkjasd asda sda sdasdasd asdasdasd asdasdasd asd
         $("table.tablesorter").on("filterEnd", function () {
             $("#totalregistros").html($("table.tablesorter tbody tr").length);
         });
+
+        $(".notify_area > img").on('click', function () {
+            $(".notify_area").dequeue().fadeOut('slow');
+        })
+
+        var response = '@ViewBag.Response';
+        var tamanio = response.length;
+        if (tamanio > 0) {
+            var tiempo = tamanio * 90
+            $(".notify_area").fadeIn('fast').delay(tiempo).fadeOut('slow');
+        };
+
+        $("#dialog").dialog({ autoOpen: false, width: 400, maxWidth: 410, height: 170, maxHeight: 180 });
+
+        $('.eliminar').on('click', function (event) {
+            event.preventDefault();
+            uri_redirect_eliminar = $(this).attr('href');
+            $("#dialog").dialog("open");
+        });
+
     });
 
-    
+    function cerrardialogo() {
+        $("#dialog").dialog("close");
+    }
+
+    function eliminarusuario() {
+        var redirect = '@Request.Url.GetLeftPart(UriPartial.Authority)' + uri_redirect_eliminar;
+        //alert(redirect);
+        window.location.href = redirect
+        cerrardialogo();
+    }
 
 </script>

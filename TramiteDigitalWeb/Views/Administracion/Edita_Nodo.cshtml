@@ -1,0 +1,64 @@
+﻿<link href="@Url.Content("~/Content/Create_User.css")" rel="stylesheet" type="text/css" />
+
+@model TramiteDigitalWeb.data_members.ca_nodos
+
+@{
+    ViewBag.Title = "Edita nodo";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr style="width: 70%;float: left;display: block;"/>
+
+@using (Html.BeginForm("Edita_Nodo", "Administracion", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { style = "clear: both;" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Nodo</legend>
+
+        @Html.HiddenFor(model => model.id)
+        @Html.HiddenFor(model => model.nodo)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.url_servicio_rest)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.url_servicio_rest)
+            @Html.ValidationMessageFor(model => model.url_servicio_rest)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.usuario)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.usuario)
+            @Html.ValidationMessageFor(model => model.usuario)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.contrasenia)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.contrasenia)
+            @Html.ValidationMessageFor(model => model.contrasenia)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.activo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.activo)
+            @Html.ValidationMessageFor(model => model.activo)
+        </div>
+
+        <p>
+            <input type="submit" value="Guardar cambios" style="float:left;"  />
+            @Html.ActionLink("Cancelar", "Nodos", null, new { style = "float:left;text-decoration: none;margin-top:5px;background-color: lightcoral;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" })            
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

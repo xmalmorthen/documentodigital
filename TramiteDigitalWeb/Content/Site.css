@@ -213,6 +213,7 @@ ul#menu {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  z-index = 9999;
 }
 ul#menu li {
   font: bold 14px/18px sans-serif;
@@ -253,6 +254,7 @@ ul#menu li ul {
   -ms-transition: opacity 0.2s;
   -o-transition: opacity 0.2s;
   -transition: opacity 0.2s;
+  z-index : 9999;
 }
 ul#menu li ul li { 
   background: #cacaca; 

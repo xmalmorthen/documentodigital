@@ -227,6 +227,7 @@
     <Content Include="Content\images\asc.png" />
     <Content Include="Content\images\bg.gif" />
     <Content Include="Content\images\bg.png" />
+    <Content Include="Content\images\close.png" />
     <Content Include="Content\images\delete.png" />
     <Content Include="Content\images\desc.gif" />
     <Content Include="Content\images\desc.png" />
@@ -234,6 +235,8 @@
     <Content Include="Content\images\edit.png" />
     <Content Include="Content\images\folder.png" />
     <Content Include="Content\images\key.png" />
+    <Content Include="Content\images\node.png" />
+    <Content Include="Content\images\node48x48.png" />
     <Content Include="Content\images\on-off.png" />
     <Content Include="Content\images\picture.png" />
     <Content Include="Content\images\usuario.png" />
@@ -379,7 +382,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Views\Home\Details.cshtml" />
-    <Content Include="Views\Administracion\Nodos.cshtml" />
     <Content Include="Views\Administracion\usuarios_nodos.cshtml" />
     <Content Include="Views\Administracion\Usuarios.cshtml" />
     <Content Include="Views\Administracion\Crear_Usuario.cshtml" />
@@ -387,6 +389,10 @@
     <Content Include="Views\Administracion\Detalle_Usuario.cshtml" />
     <Content Include="Views\Administracion\Edita_Usuario.cshtml" />
     <Content Include="Views\Administracion\Cambia_Contrasenia_Usuario.cshtml" />
+    <Content Include="Views\Administracion\Nodos.cshtml" />
+    <Content Include="Views\Administracion\Crear_Nodo.cshtml" />
+    <Content Include="Views\Administracion\Detalle_Nodo.cshtml" />
+    <Content Include="Views\Administracion\Edita_Nodo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

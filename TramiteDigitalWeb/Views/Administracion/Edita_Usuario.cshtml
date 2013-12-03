@@ -9,7 +9,8 @@
 <h2>@ViewBag.Title</h2>
 <hr style="width: 70%;float: left;display: block;"/>
 
-@using (Html.BeginForm("Edita_Usuario", "Administracion", FormMethod.Post, new { style = "clear: both;" }))
+@using (
+    Html.BeginForm("Edita_Usuario", "Administracion", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { style = "clear: both;" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)

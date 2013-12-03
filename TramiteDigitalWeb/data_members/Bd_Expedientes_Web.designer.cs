@@ -129,8 +129,8 @@ namespace TramiteDigitalWeb.data_members
 		private string _contrasenia;
 		
 		private bool _activo;
-		
-		private System.DateTime _fecha_registro;
+
+        private System.DateTime _fecha_registro = default(System.DateTime);
 		
 		private EntitySet<re_nodos_usuarios> _re_nodos_usuarios;
 		
@@ -181,7 +181,9 @@ namespace TramiteDigitalWeb.data_members
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nodo", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string nodo
+        [Display(Name = "Nombre del nodo")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Campo requerido")]
+        public string nodo
 		{
 			get
 			{
@@ -201,7 +203,9 @@ namespace TramiteDigitalWeb.data_members
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_url_servicio_rest", DbType="VarChar(8000) NOT NULL", CanBeNull=false)]
-		public string url_servicio_rest
+        [Display(Name = "Ruta al servicio web del nodo")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Campo requerido")]
+        public string url_servicio_rest
 		{
 			get
 			{
@@ -221,7 +225,8 @@ namespace TramiteDigitalWeb.data_members
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string usuario
+        [Display(Name = "Nombre de usuario para ejecutar servicio web")]        
+        public string usuario
 		{
 			get
 			{
@@ -241,7 +246,9 @@ namespace TramiteDigitalWeb.data_members
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contrasenia", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string contrasenia
+        [Display(Name = "Contraseña para ejecutar servicio web")]
+        [DataType(DataType.Password)]
+        public string contrasenia
 		{
 			get
 			{
@@ -261,7 +268,8 @@ namespace TramiteDigitalWeb.data_members
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_activo", DbType="Bit NOT NULL")]
-		public bool activo
+        [Display(Name = "Nodo activo")]
+        public bool activo
 		{
 			get
 			{
@@ -279,9 +287,10 @@ namespace TramiteDigitalWeb.data_members
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_registro", DbType="DateTime NOT NULL")]
-		public System.DateTime fecha_registro
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_fecha_registro", DbType = "DateTime NOT NULL", IsDbGenerated = true, UpdateCheck = UpdateCheck.Never)]
+        [Display(Name = "Fecha/Hora de registro")]
+        public System.DateTime fecha_registro
 		{
 			get
 			{
