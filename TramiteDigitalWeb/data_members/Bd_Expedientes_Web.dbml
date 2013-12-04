@@ -63,4 +63,13 @@
       <Column Name="contrasenia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.pa_obtener_nodos_no_enlazados" Method="pa_obtener_nodos_no_enlazados">
+    <Parameter Name="id_usuario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_obtener_nodos_no_enlazadosResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nodo" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="url_servicio_rest" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_registro" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>

@@ -171,6 +171,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministracionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="data_members\Bd_Expedientes_Web.cs">
+      <DependentUpon>Bd_Expedientes_Web.dbml</DependentUpon>
+    </Compile>
     <Compile Include="data_members\Bd_Expedientes_Web.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -183,6 +186,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\CatalogsModel.cs" />
     <Compile Include="Models\classes\ConsultaStructure.cs" />
+    <Compile Include="Models\classes\Nodo_Structure.cs" />
     <Compile Include="Models\classes\ErrorConsulta.cs" />
     <Compile Include="Models\classes\RegistroDigital.cs" />
     <Compile Include="Models\classes\vw_ListaExpedientes.cs" />
@@ -205,6 +209,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\usuarios_nodos.css" />
     <Content Include="Content\Detalle_Usuario.css" />
     <Content Include="Content\Create_User.css" />
     <Content Include="Content\fancyapps-fancyBox-18d1712\lib\jquery.mousewheel-3.0.6.pack.js" />

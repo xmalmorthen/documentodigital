@@ -297,15 +297,81 @@ namespace TramiteDigitalWeb.Controllers
 
 
 #region usuarios_nodos
+
         [Authorize]
         [HttpGet]
-        public ActionResult usuarios_nodos()
+        public ActionResult usuarios_nodos(int? id_usuario, string returnUrl)
         {
             if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account");
 
-            InicializaVars();
+            InicializaVars(returnUrl);
+            ViewBag.Usuarios = null;
+            ViewBag.Nodos = null;
+
+            if (id_usuario == null)
+            {
+                ViewBag.Usuarios = Lista_de_Usuarios();
+            }
+            else {
+                ViewBag.Nodos = Lista_de_Nodos_No_Enlazados((int)id_usuario);
+            }
+
             return View();
         }
+
+        private List<ca_usuarios> Lista_de_Usuarios() {
+            List<ca_usuarios> lista = new List<ca_usuarios>();            
+            foreach (ca_usuarios item in AdministracionModel.ListadeUsuarios())
+            {
+                lista.Add(
+                    new ca_usuarios()
+                    {
+                        id = item.id,
+                        usuario = item.usuario + "   | " + item.apellido1.Trim() + " " + item.apellido2.Trim() + " " + item.nombres.Trim()
+                    }
+                );                
+            }
+            return lista;
+        }
+
+        private List<pa_obtener_nodos_no_enlazadosResult> Lista_de_Nodos_No_Enlazados(int id_usuario) {
+            return AdministracionModel.Lista_de_Nodos_No_Enlazados(id_usuario);
+        }
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult Lista_de_Nodos_No_Enlazados_Ajax(int id_usuario)
+        {
+            List<pa_obtener_nodos_no_enlazadosResult> lista = AdministracionModel.Lista_de_Nodos_No_Enlazados(id_usuario);
+            return Json(lista, JsonRequestBehavior.AllowGet);
+        }
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult Lista_de_Nodos_Enlazados_Ajax(int id_usuario)
+        {
+            ca_usuarios usuario = AdministracionModel.Get_Usuario(id_usuario);
+            
+            List<re_nodos_usuarios> nodos_usuario = new List<re_nodos_usuarios>(usuario.re_nodos_usuarios);
+
+            List<Nodo_Structure> nodos = new List<Nodo_Structure>();
+            foreach (re_nodos_usuarios item in nodos_usuario)
+	        {
+                nodos.Add( new Nodo_Structure() {
+                            activo = item.ca_nodos.activo,
+                            contrasenia = item.ca_nodos.contrasenia,
+                            fecha_registro = item.ca_nodos.fecha_registro.ToString(),
+                            id = item.ca_nodos.id,
+                            nodo = item.ca_nodos.nodo,
+                            url_servicio_rest = item.ca_nodos.url_servicio_rest,
+                            usuario = item.ca_nodos.usuario
+                           } 
+                        ) ;    
+	        }
+
+            return Json(nodos, JsonRequestBehavior.AllowGet);
+        }
+
 #endregion usuarios_nodos
 
 

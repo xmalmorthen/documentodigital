@@ -234,6 +234,8 @@ namespace TramiteDigitalWeb.Models
 
 #endregion Nodos
 
-
+        public static List<pa_obtener_nodos_no_enlazadosResult> Lista_de_Nodos_No_Enlazados(int id_usuario) {
+            return bd.pa_obtener_nodos_no_enlazados(id_usuario).ToList();
+        }
     }    
 }

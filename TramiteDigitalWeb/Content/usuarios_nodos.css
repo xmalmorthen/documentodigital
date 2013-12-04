@@ -1,0 +1,15 @@
+﻿.action
+{
+    padding: 0 10px;
+    display: inline-block;
+    height: 16px;
+    width: 16px;    
+}
+.detalle_icon
+{
+    background: url('/Content/images/detalle.png') no-repeat center right;    
+}
+.elimina_icon
+{
+    background: url('/Content/images/delete.png') no-repeat center right;    
+}
