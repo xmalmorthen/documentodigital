@@ -28,6 +28,10 @@
     List<TramiteDigitalWeb.data_members.ca_nodos> lista_nodos = ViewBag.Nodos;    
 }
 
+<div class="notify_area" style="background-color: lightcoral;margin: 20px;padding: 15px;border: 1px solid #F00;display:none;">
+    <img src="@Url.Content("~/Content/images/close.png")" style="position: relative;float: right;right: -7px;float: right;top: -8px;" />
+</div>
+
 <h2>@ViewBag.Title</h2>
 <hr style="width: 70%;float: left;display: block;"/>
 
@@ -91,8 +95,11 @@
             helpers: {
                 title: { type: 'none' }
             }
-        }); 
+        });
 
+        $(".notify_area > img").on('click', function () {
+            $(".notify_area").dequeue().fadeOut('slow');
+        })
 
         //codigo para el evento de cambio al seleccionar usuario en combo
         function change_event(val) {
@@ -150,7 +157,7 @@
                         $.each(result, function (index, item) {
                             var redirect = '@Request.Url.GetLeftPart(UriPartial.Authority)' + '/administracion/Detalle_Nodo?id_nodo=' + item.id + '&partial=true';
                             var actions = '<a href="' + redirect + '" class="fancyframe action detalle_icon"></a>' +
-                                          '<a href="#" class="action elimina_icon" title="Desasociar nodo"></a>';
+                                          '<a href="#" class="action elimina_icon" title="Desasociar nodo" onclick="elimina_nodo('+ item.id +')"></a>';
                             
                             tablearea.append('<tr><td>' + item.nodo +
                                              '</td><td>' + item.url_servicio_rest +
@@ -180,6 +187,32 @@
         $('#cmb_usuarios').on('change', function () {
             change_event(parseInt($(this).val()));
         });
-
     });
+
+    function elimina_nodo(nodo){
+        $.ajax({
+            url: '@Url.Action("Eliminar_nodo_Ajax")',
+            type: 'GET',
+            data: { id_nodo: nodo },
+            beforeSend: function () {
+                loader.show();
+            },
+            success: function (result) {
+                var notify = $(".notify_area");
+                $(".notify_area span").remove();
+                notify.append('<span>' + result + '</span>');
+                notify.has('img').on('click', function () {
+                    notify.dequeue().fadeOut('slow');
+                })
+                notify.fadeIn('fast').delay(result.length * 90).fadeOut('slow');
+            },
+            complete: function () {
+                loader.hide();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('Ocurrió un error al intentar eliminar el nodo, favor de intentarlo de nuevo');
+            }
+        });
+    }
+    
 </script>

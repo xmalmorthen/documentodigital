@@ -298,6 +298,25 @@ namespace TramiteDigitalWeb.Controllers
             return RedirectToAction("Nodos");
         }
 
+        [Authorize]
+        [HttpGet]
+        public ActionResult Eliminar_nodo_Ajax(int id_nodo)
+        {
+            string response = null;
+
+            if (!ValidaAcceso()) response = "Imposible eliminar, privilegios insuficientes";
+
+            InicializaVars();
+            if (true) //AdministracionModel.Elimina_Nodo(id_nodo))
+            {
+                response = "Nodo eliminado con éxito";
+            }
+            else
+                response = "Ocurrió un error al intentar eliminar el nodo, favor de intentarlo de nuevo";
+
+            return Json(response, JsonRequestBehavior.AllowGet);
+        }
+
 #endregion Nodos
 
 
