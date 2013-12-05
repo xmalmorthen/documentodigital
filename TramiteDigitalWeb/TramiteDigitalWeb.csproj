@@ -398,6 +398,8 @@
     <Content Include="Views\Administracion\Crear_Nodo.cshtml" />
     <Content Include="Views\Administracion\Detalle_Nodo.cshtml" />
     <Content Include="Views\Administracion\Edita_Nodo.cshtml" />
+    <Content Include="Views\Shared\_Partial_Blank.cshtml" />
+    <Content Include="Views\Administracion\Detalle_Nodo_Partial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

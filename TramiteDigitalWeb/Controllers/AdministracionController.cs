@@ -230,13 +230,18 @@ namespace TramiteDigitalWeb.Controllers
 
         [Authorize]
         [HttpGet]
-        public ActionResult Detalle_Nodo(int id_nodo)
+        public ActionResult Detalle_Nodo(int id_nodo, Boolean partial = false)
         {
             if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account"); 
 
             InicializaVars();
-            return View(AdministracionModel.Get_Nodo(id_nodo));
+
+            if (!partial) 
+                return View(AdministracionModel.Get_Nodo(id_nodo));
+            else
+                return View("Detalle_Nodo_Partial",AdministracionModel.Get_Nodo(id_nodo));
         }
+
 
         [Authorize]
         [HttpGet]
@@ -351,11 +356,13 @@ namespace TramiteDigitalWeb.Controllers
         public ActionResult Lista_de_Nodos_Enlazados_Ajax(int id_usuario)
         {
             ca_usuarios usuario = AdministracionModel.Get_Usuario(id_usuario);
-            
-            List<re_nodos_usuarios> nodos_usuario = new List<re_nodos_usuarios>(usuario.re_nodos_usuarios);
+
+            List<re_nodos_usuarios> data = new List<re_nodos_usuarios>();
+            data.AddRange(usuario.re_nodos_usuarios);
+            usuario = null;
 
             List<Nodo_Structure> nodos = new List<Nodo_Structure>();
-            foreach (re_nodos_usuarios item in nodos_usuario)
+            foreach (re_nodos_usuarios item in data)
 	        {
                 nodos.Add( new Nodo_Structure() {
                             activo = item.ca_nodos.activo,

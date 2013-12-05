@@ -1,0 +1,55 @@
+﻿<link href="@Url.Content("~/Content/Detalle_Usuario.css")" rel="stylesheet" type="text/css" />
+
+@model TramiteDigitalWeb.data_members.ca_nodos
+
+@{
+    Layout = "~/Views/Shared/_Partial_Blank.cshtml";
+    ViewBag.Title = "Detalle del nodo";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr style="width: 70%;float: left;display: block;"/>
+
+<fieldset>
+    <legend>Nodo</legend>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.nodo)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.nodo)
+        </div>
+    </div>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.url_servicio_rest)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.url_servicio_rest)
+        </div>
+    </div>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.usuario)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.usuario)
+        </div>
+    </div>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.activo)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.activo)
+        </div>
+    </div>
+    <div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.fecha_registro)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.fecha_registro)
+        </div>
+    </div>
+</fieldset>
