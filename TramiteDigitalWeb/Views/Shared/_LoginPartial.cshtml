@@ -8,8 +8,9 @@
         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
             @Html.AntiForgeryToken()
             <div style="margin-top:3px;">
-                @Html.ActionLink(" ", "ChangePass","Account",
-                                      new { id_user = @UserParts[1] },
+                @Html.ActionLink(" ", "Cambia_Contrasenia_Usuario", "Administracion",
+                                      new { id_usuario = UserParts[1],
+                                            ReturnUrl = Request.Url.PathAndQuery},
                                       new { title = "Cambiar contraseña", style = "background: url('" + Url.Content("~/Content/images/key.png") + "') no-repeat center right; display:inline-block;" })
                 <a href="javascript:document.getElementById('logoutForm').submit()" title="Cerrar sesión" style = "background: url('@Url.Content("~/Content/images/on-off.png")') no-repeat center right; display:inline-block;" ></a>
             </div>

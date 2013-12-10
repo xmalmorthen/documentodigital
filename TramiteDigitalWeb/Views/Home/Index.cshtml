@@ -212,8 +212,8 @@
                         type: 'GET',
                         data: { id_nodo: nodoseleccionado },
                         beforeSend: function () {
-                            $(this).prop("readOnly", true);
-                            Expedientes.prop("readOnly", true);
+                            $(this).attr('disabled', true).trigger("liszt:updated");
+                            Expedientes.attr('disabled', true).trigger("liszt:updated");
                             $("#refresh_loader").show();
                             loader.show();
                         },
@@ -235,8 +235,8 @@
                         },
                         complete: function () {
                             loader.hide();
-                            Expedientes.prop("readOnly", false);
-                            $(this).prop("readOnly", false);
+                            Expedientes.attr('disabled', false).trigger("liszt:updated");
+                            $(this).attr('disabled', false).trigger("liszt:updated");                            
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
                             alert(errorThrown);

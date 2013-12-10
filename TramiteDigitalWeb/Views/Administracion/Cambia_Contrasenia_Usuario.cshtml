@@ -9,7 +9,7 @@
 <h2>@ViewBag.Title</h2>
 <hr style="width: 70%;float: left;display: block;"/>
 
-@using (Html.BeginForm("Cambia_Contrasenia_Usuario", "Administracion", FormMethod.Post, new { style = "clear: both;" }))
+@using (Html.BeginForm("Cambia_Contrasenia_Usuario", "Administracion", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { style = "clear: both;" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
@@ -46,7 +46,12 @@
 
         <p>
             <input type="submit" value="Guardar nueva contraseña" style="float:left;"  />
-            @Html.ActionLink("Cancelar", "Usuarios", null, new { style = "float:left;text-decoration: none;margin-top:5px;background-color: lightcoral;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" })            
+            @if (ViewBag.ReturnUrl == null)
+            {
+                @Html.ActionLink("Cancelar", "Usuarios", null, new { style = "float:left;text-decoration: none;margin-top:5px;background-color: lightcoral;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" });
+            } else {
+                <a href="@ViewBag.ReturnUrl" style="float:left;text-decoration: none;margin-top:5px;background-color: lightcoral;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;">Cancelar</a>
+            }
         </p>
     </fieldset>
 }

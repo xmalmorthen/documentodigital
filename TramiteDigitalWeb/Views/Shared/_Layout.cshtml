@@ -3,7 +3,7 @@
     <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - Dir. Transportes</title>
+        <title>@ViewBag.Title - @System.Configuration.ConfigurationManager.AppSettings["Titulo_Web"]</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
@@ -24,10 +24,11 @@
 
         <header>
             <div class="content-wrapper">
-                <div class="float-left" style="width:50%;">
-                    <p class="site-title">Trámites digitales Dirección de Transportes</p>
+                <img class="float-left" src="@Url.Content("~/Content/images/" + System.Configuration.ConfigurationManager.AppSettings["LogoTitulo_Web"])" style="display: inline-table;height: 150px;max-width: 150px;" />
+                <div class="float-left site-title" style="width: 50%;max-height: 150px;padding: 0 0 0 5px;">
+                    @System.Configuration.ConfigurationManager.AppSettings["Titulo_Web"] 
                 </div>
-                <div class="float-right" style="margin-top: 30px;">
+                <div class="float-right" style="position: relative;top: 55px;">
                     <section id="login">
                         @Html.Partial("_LoginPartial")
                     </section>

@@ -12,14 +12,13 @@ using scanndoc.classes;
 
 namespace TramiteDigitalWeb.Models
 {
-    public static class AdministracionModel { 
-        
-        private static Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
-
+    public static class AdministracionModel {         
 #region Usuarios
 
-        public static Boolean ValidaPermisodeUsuario(int id_usuario){
+        public static Boolean ValidaPermisodeUsuario(int id_usuario){            
+            Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
             ca_usuarios usuario = bd.ca_usuarios.SingleOrDefault(query => query.id == id_usuario && query.es_administrador == true);
+            bd.Dispose();
             if (usuario != null)
                 return true;
             else
@@ -27,7 +26,10 @@ namespace TramiteDigitalWeb.Models
         }
 
         public static List<ca_usuarios> ListadeUsuarios() {
-            return bd.GetTable<ca_usuarios>().ToList();
+            Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
+            List<ca_usuarios> usuarios = bd.GetTable<ca_usuarios>().ToList();
+            bd.Dispose();
+            return usuarios;
         }
 
         public static Boolean? CrearUsuario(ca_usuarios data) {
@@ -38,8 +40,10 @@ namespace TramiteDigitalWeb.Models
                     if (verificacion == false)
                     {
                         data.contrasenia = convert_md5.generate(data.contrasenia);
+                        Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
                         bd.ca_usuarios.InsertOnSubmit(data);
                         bd.SubmitChanges();
+                        bd.Dispose();
                     }
                     else {
                         return false;
@@ -55,27 +59,34 @@ namespace TramiteDigitalWeb.Models
 
         private static bool? verifica_usuario(string usuario)
         {
+            Boolean? response = null;
+            Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
             try
-            {
+            {                
                 if (bd.ca_usuarios.Count(query => query.usuario == usuario) > 0)
                 {
-                    return true;
+                    response = true;
                 }
                 else 
                 {
-                    return false;
+                    response =  false;
                 }
             }
             catch (Exception)
             {
-                return null;
-            }    
+                response = null;
+            }
+            bd.Dispose();
+            return response;
         }
 
         public static ca_usuarios Get_Usuario(int id) {
             try
             {
-                return bd.ca_usuarios.SingleOrDefault(query => query.id == id);
+                Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
+                ca_usuarios usuario = bd.ca_usuarios.SingleOrDefault(query => query.id == id);
+                bd.Dispose();
+                return usuario;
             }
             catch (Exception)
             {
@@ -83,10 +94,44 @@ namespace TramiteDigitalWeb.Models
             }            
         }
 
+        public static List<Nodo_Structure> Get_NodosUsuario(int id_usuario)
+        {
+            try
+            {
+                Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
+                List<re_nodos_usuarios> nodos_usuarios = (from query in bd.re_nodos_usuarios
+                                                         where query.id_usuario == id_usuario && query.activo == true
+                                                         select query).ToList();
+
+                List<Nodo_Structure> nodos = new List<Nodo_Structure>();
+                foreach (re_nodos_usuarios item in nodos_usuarios)
+                {
+                    nodos.Add(new Nodo_Structure()
+                    {
+                        activo = item.ca_nodos.activo,
+                        contrasenia = item.ca_nodos.contrasenia,
+                        fecha_registro = item.ca_nodos.fecha_registro.ToString(),
+                        id = item.ca_nodos.id,
+                        nodo = item.ca_nodos.nodo,
+                        url_servicio_rest = item.ca_nodos.url_servicio_rest,
+                        usuario = item.ca_nodos.usuario
+                    });
+                };
+
+                bd.Dispose();
+                return nodos;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public static Boolean Edita_Usuario(ca_usuarios data) {
             try
             {
-                ca_usuarios usuario = bd.ca_usuarios.SingleOrDefault(query => query.id == data.id);
+                Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
+                ca_usuarios usuario = bd.ca_usuarios.SingleOrDefault(query => query.id == data.id);                
                 usuario.activo = data.activo;
                 usuario.apellido1 = data.apellido1;
                 usuario.apellido2 = data.apellido2;
@@ -96,6 +141,7 @@ namespace TramiteDigitalWeb.Models
                 usuario.nombres = data.nombres;
                 usuario.telefono = data.telefono;
                 bd.SubmitChanges();
+                bd.Dispose();
             }
             catch (Exception)
             {
@@ -108,9 +154,11 @@ namespace TramiteDigitalWeb.Models
         {
             try
             {
+                Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
                 ca_usuarios usuario = bd.ca_usuarios.SingleOrDefault(query => query.id == data.id);
                 usuario.contrasenia = data.contrasenia = convert_md5.generate(data.contrasenia);
                 bd.SubmitChanges();
+                bd.Dispose();
             }
             catch (Exception)
             {
@@ -123,9 +171,11 @@ namespace TramiteDigitalWeb.Models
         {
             try
             {
+                Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
                 ca_usuarios usuario = bd.ca_usuarios.SingleOrDefault(query => query.id == id_usuario);
                 bd.ca_usuarios.DeleteOnSubmit(usuario);
                 bd.SubmitChanges();
+                bd.Dispose();
             }
             catch (Exception)
             {
@@ -139,7 +189,10 @@ namespace TramiteDigitalWeb.Models
 #region Nodos
         public static List<ca_nodos> ListadeNodos()
         {
-            return bd.GetTable<ca_nodos>().ToList();
+            Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
+            List<ca_nodos> nodos = bd.GetTable<ca_nodos>().ToList();
+            bd.Dispose();
+            return nodos;
         }
 
         public static Boolean? CrearNodo(ca_nodos data)
@@ -152,8 +205,10 @@ namespace TramiteDigitalWeb.Models
                     if (verificacion == false)
                     {
                         data.contrasenia = !String.IsNullOrEmpty(data.contrasenia) ? convert_md5.generate(data.contrasenia) : null;
+                        Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
                         bd.ca_nodos.InsertOnSubmit(data);
                         bd.SubmitChanges();
+                        bd.Dispose();
                     }
                     else
                     {
@@ -170,28 +225,36 @@ namespace TramiteDigitalWeb.Models
 
         private static bool? verifica_nodo(string nodo)
         {
+            Boolean? response = null;
+            Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
             try
             {
+                
                 if (bd.ca_nodos.Count(query => query.nodo == nodo) > 0)
                 {
-                    return true;
+                    response = true;
                 }
                 else
                 {
-                    return false;
+                    response = false;
                 }
             }
             catch (Exception)
             {
-                return null;
+                response = null;
             }
+            bd.Dispose();
+            return response;
         }
 
         public static ca_nodos Get_Nodo(int id)
         {
             try
             {
-                return bd.ca_nodos.SingleOrDefault(query => query.id == id);
+                Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
+                ca_nodos nodo = bd.ca_nodos.SingleOrDefault(query => query.id == id);
+                bd.Dispose();
+                return nodo;
             }
             catch (Exception)
             {
@@ -203,12 +266,14 @@ namespace TramiteDigitalWeb.Models
         {
             try
             {
+                Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
                 ca_nodos nodo = bd.ca_nodos.SingleOrDefault(query => query.id == data.id);
                 nodo.activo = data.activo;
                 nodo.contrasenia = nodo.contrasenia != data.contrasenia ? convert_md5.generate(data.contrasenia) : nodo.contrasenia;
                 nodo.url_servicio_rest = data.url_servicio_rest;
                 nodo.usuario = data.usuario;
                 bd.SubmitChanges();
+                bd.Dispose();
             }
             catch (Exception)
             {
@@ -221,9 +286,56 @@ namespace TramiteDigitalWeb.Models
         {
             try
             {
+                Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
                 ca_nodos usuario = bd.ca_nodos.SingleOrDefault(query => query.id == id_nodo);
                 bd.ca_nodos.DeleteOnSubmit(usuario);
                 bd.SubmitChanges();
+                bd.Dispose();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static List<pa_obtener_nodos_no_enlazadosResult> Lista_de_Nodos_No_Enlazados(int id_usuario) {
+            Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
+            List<pa_obtener_nodos_no_enlazadosResult> nodos = bd.pa_obtener_nodos_no_enlazados(id_usuario).ToList();
+            bd.Dispose();
+            return nodos;
+        }
+
+        public static Boolean Asocia_Nodo(int id_usuario, int id_nodo)
+        {
+            try
+            {
+                re_nodos_usuarios asocia = new re_nodos_usuarios();
+                asocia.activo = true;
+                asocia.id_nodo = id_nodo;
+                asocia.id_usuario = id_usuario;
+                Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
+                bd.re_nodos_usuarios.InsertOnSubmit(asocia);
+                bd.SubmitChanges();
+                bd.Dispose();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static Boolean Desasocia_Nodo_Ajax(int id_usuario, int id_nodo)
+        {
+            try
+            {
+                re_nodos_usuarios asocia = new re_nodos_usuarios();
+                Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
+                asocia = bd.re_nodos_usuarios.SingleOrDefault(query => query.id_usuario == id_usuario && query.id_nodo == id_nodo && query.activo == true);
+                asocia.activo = false;
+                bd.SubmitChanges();
+                bd.Dispose();
             }
             catch (Exception)
             {
@@ -234,8 +346,5 @@ namespace TramiteDigitalWeb.Models
 
 #endregion Nodos
 
-        public static List<pa_obtener_nodos_no_enlazadosResult> Lista_de_Nodos_No_Enlazados(int id_usuario) {
-            return bd.pa_obtener_nodos_no_enlazados(id_usuario).ToList();
-        }
     }    
 }

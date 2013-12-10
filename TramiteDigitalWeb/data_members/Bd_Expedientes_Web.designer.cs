@@ -376,7 +376,7 @@ namespace TramiteDigitalWeb.data_members
 
         private bool _activo;
 
-        private System.DateTime _f_registro;
+        private System.DateTime _f_registro = default(System.DateTime);
 
         private EntityRef<ca_nodos> _ca_nodos;
 
@@ -495,7 +495,7 @@ namespace TramiteDigitalWeb.data_members
             }
         }
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_f_registro", DbType = "DateTime NOT NULL")]
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_f_registro", DbType = "DateTime NOT NULL", IsDbGenerated = true, UpdateCheck = UpdateCheck.Never)]
         public System.DateTime f_registro
         {
             get

@@ -12,6 +12,9 @@ namespace TramiteDigitalWeb.Controllers
     public class AdministracionController : Controller
     {
         private Boolean ValidaAcceso() {
+
+            
+
             if (!AdministracionModel.ValidaPermisodeUsuario(int.Parse(User.Identity.Name.Split('~')[1])))
             {
                 TempData["NoAdminPermissions"] = "Permisos insuficientes, favor de iniciar sesión con un usuario válido";
@@ -80,8 +83,7 @@ namespace TramiteDigitalWeb.Controllers
             InicializaVars();
 
             ca_usuarios usuario = AdministracionModel.Get_Usuario(id_usuario);
-            ViewBag.nodos_usuario = usuario.re_nodos_usuarios.ToList();
-
+            ViewBag.nodos_usuario = AdministracionModel.Get_NodosUsuario(id_usuario);
             return View(usuario);
         }
 
@@ -127,11 +129,11 @@ namespace TramiteDigitalWeb.Controllers
 
         [Authorize]
         [HttpGet]
-        public ActionResult Cambia_Contrasenia_Usuario(int id_usuario)
+        public ActionResult Cambia_Contrasenia_Usuario(int id_usuario, string returnUrl)
         {
-            if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account"); 
+            if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account");
 
-            InicializaVars();
+            InicializaVars(returnUrl);
 
             ca_usuarios usuario = AdministracionModel.Get_Usuario(id_usuario);
             usuario.contrasenia = null;
@@ -142,7 +144,7 @@ namespace TramiteDigitalWeb.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Cambia_Contrasenia_Usuario(ca_usuarios Form)
+        public ActionResult Cambia_Contrasenia_Usuario(ca_usuarios Form, string returnUrl)
         {
             if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account"); 
 
@@ -150,7 +152,16 @@ namespace TramiteDigitalWeb.Controllers
             if (ModelState.IsValid)
             {
                 if (AdministracionModel.Cambia_Contrasenia(Form))
-                    return RedirectToAction("Usuarios");
+                {
+                    if (returnUrl != null)
+                    {
+                        return RedirectToLocal(returnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Usuarios");
+                    }
+                }
                 else
                     ModelState.AddModelError("", "Ocurrió un error al intentar cambiar contraseña del usuario, favor de intentarlo de nuevo");
             }
@@ -307,7 +318,7 @@ namespace TramiteDigitalWeb.Controllers
             if (!ValidaAcceso()) response = "Imposible eliminar, privilegios insuficientes";
 
             InicializaVars();
-            if (true) //AdministracionModel.Elimina_Nodo(id_nodo))
+            if (AdministracionModel.Elimina_Nodo(id_nodo))
             {
                 response = "Nodo eliminado con éxito";
             }
@@ -337,6 +348,7 @@ namespace TramiteDigitalWeb.Controllers
                 ViewBag.Usuarios = Lista_de_Usuarios();
             }
             else {
+                ViewBag.Id_Usuario = id_usuario;
                 ViewBag.Nodos = Lista_de_Nodos_No_Enlazados((int)id_usuario);
             }
 
@@ -374,28 +386,44 @@ namespace TramiteDigitalWeb.Controllers
         [HttpGet]
         public ActionResult Lista_de_Nodos_Enlazados_Ajax(int id_usuario)
         {
-            ca_usuarios usuario = AdministracionModel.Get_Usuario(id_usuario);
+            return Json(AdministracionModel.Get_NodosUsuario(id_usuario), JsonRequestBehavior.AllowGet);
+        }
 
-            List<re_nodos_usuarios> data = new List<re_nodos_usuarios>();
-            data.AddRange(usuario.re_nodos_usuarios);
-            usuario = null;
+        [Authorize]
+        [HttpGet]
+        public ActionResult Asociar_Nodo_ajax(int id_usuario, int id_nodo) {
+            string response = null;
 
-            List<Nodo_Structure> nodos = new List<Nodo_Structure>();
-            foreach (re_nodos_usuarios item in data)
-	        {
-                nodos.Add( new Nodo_Structure() {
-                            activo = item.ca_nodos.activo,
-                            contrasenia = item.ca_nodos.contrasenia,
-                            fecha_registro = item.ca_nodos.fecha_registro.ToString(),
-                            id = item.ca_nodos.id,
-                            nodo = item.ca_nodos.nodo,
-                            url_servicio_rest = item.ca_nodos.url_servicio_rest,
-                            usuario = item.ca_nodos.usuario
-                           } 
-                        ) ;    
-	        }
+            if (!ValidaAcceso()) response = "Imposible asociar nodo, privilegios insuficientes";
 
-            return Json(nodos, JsonRequestBehavior.AllowGet);
+            InicializaVars();
+            if (AdministracionModel.Asocia_Nodo(id_usuario, id_nodo))
+            {
+                response = "Nodo asociado con éxito";
+            }
+            else
+                response = "Ocurrió un error al intentar asociar el nodo, favor de intentarlo de nuevo";
+
+            return Json(response, JsonRequestBehavior.AllowGet);
+        }
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult Desasocia_Nodo_Ajax(int id_usuario, int id_nodo)
+        {
+            string response = null;
+
+            if (!ValidaAcceso()) response = "Imposible desasociar nodo, privilegios insuficientes";
+
+            InicializaVars();
+            if (AdministracionModel.Desasocia_Nodo_Ajax(id_usuario, id_nodo))
+            {
+                response = "Nodo desasociaco con éxito";
+            }
+            else
+                response = "Ocurrió un error al intentar desasociar el nodo, favor de intentarlo de nuevo";
+
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
 #endregion usuarios_nodos

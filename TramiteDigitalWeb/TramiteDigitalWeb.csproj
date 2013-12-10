@@ -207,8 +207,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\logo.jpg" />
     <Content Include="Content\usuarios_nodos.css" />
     <Content Include="Content\Detalle_Usuario.css" />
     <Content Include="Content\Create_User.css" />

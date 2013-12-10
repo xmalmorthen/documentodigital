@@ -92,12 +92,12 @@
         </div>
     </div>
     <div>
-        @Html.ActionLink("Agregar/Editar nodos", "Usuario_Nodos", new { id_usuario = Model.id }, new { style = "float:right;text-decoration: none;margin-top:5px;background-color: #D3DCE0;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" })
+        @Html.ActionLink("Gestionar nodos", "usuarios_nodos", new { id_usuario = Model.id, ReturnUrl = Request.Url.PathAndQuery }, new { style = "float:right;text-decoration: none;margin-top:5px;background-color: #D3DCE0;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" })
         <div class="display-label">
             Nodos asignados
         </div>
         @{
-            List<TramiteDigitalWeb.data_members.re_nodos_usuarios> nodos = ViewBag.nodos_usuario;
+            List<TramiteDigitalWeb.Models.classes.Nodo_Structure> nodos = ViewBag.nodos_usuario;
         }
         <div class="display-field">
             <table id="table_ct" class="tablesorter_" style="width:100%;">
@@ -113,23 +113,23 @@
                 <tbody>
             @if (nodos.Count() > 0)
             {
-                foreach (TramiteDigitalWeb.data_members.re_nodos_usuarios item in nodos)
+                foreach (TramiteDigitalWeb.Models.classes.Nodo_Structure item in nodos)
                 {                
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.ca_nodos.nodo)
+                            @Html.DisplayFor(modelItem => item.nodo)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.ca_nodos.url_servicio_rest)
+                            @Html.DisplayFor(modelItem => item.url_servicio_rest)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.ca_nodos.usuario)
+                            @Html.DisplayFor(modelItem => item.usuario)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.activo)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.f_registro)
+                            @Html.DisplayFor(modelItem => item.fecha_registro)
                         </td>
                     </tr>
                 }
@@ -137,9 +137,7 @@
             else
             { 
                     <tr>
-                        <td>
-                            No se encontraron campos trazables...
-                        </td>
+                        <td colspan=5 style="text-align: center;font-size: 32px;font-weight: bold;">[<span style="text-align: center;font-size: 20px;font-weight: bold;color:lightcoral;">No se encontraron nodos asignados...</span>]</td>
                     </tr>
             }
                 </tbody>
