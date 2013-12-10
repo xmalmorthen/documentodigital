@@ -37,6 +37,8 @@ namespace TramiteDigitalWeb.Controllers
                 }
             }
 
+            ViewBag.AreaDescripcion = TramiteDigitalWeb.Properties.Settings.Default.Login_AreaDescripcion;
+
             ViewBag.ReturnUrl = returnUrl;
             if (TempData["NoAdminPermissions"] != null)
             {

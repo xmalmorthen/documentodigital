@@ -1,0 +1,20 @@
+﻿.bloque_simbologia{
+    margin-top: 30px;
+}
+.inline_simbologia
+{
+    display:inline;
+}
+.detalle_simbologia
+{
+    position: relative;
+    bottom: 4px;    
+}
+.item_simbologia
+{
+    margin: 5px 0 10px 20px;    
+}
+
+
+
+

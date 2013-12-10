@@ -14,11 +14,29 @@
         <div class="content-wrapper">
             <hgroup class="title">
                 <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
             </hgroup>
-            <p>
-                Consultas a los tramites digitales.
-            </p>
+
+            <ol class="round">
+                <li class="one">
+                    <h3>Seleccionar NODO</h3>
+                    El combo de NODOS muestra los repositorios de información en los cuales se puede consultar la información deseada. 
+                    Dicha lista se filtra únicamente con los nodos asignados al usuario sesionado.
+                    <br>
+                    Cuando se selecciona la opción "TODOS LOS NODOS", el sistema buscara en todos los repositorios que el usuario sesionado tenga vinculados.
+                </li>
+
+                <li class="two">
+                    <h3>Seleccionar EXPEDIENTE</h3>
+                    Al seleccionar un NODO el combo de EXPEDIENTES filtrará la lista de los mismos que se encuentren disponibles para su consulta. 
+                    Cuando se selecciona la opción "TODOS LOS EXPEDIENTES" y realizar la busqueda, el sitio obtendrá la información referentes a todos los expedientes 
+                    del o los repositorios segun la opción que se haya seleccionado en el combo de NODOS.
+                </li>
+
+                <li class="three">
+                    <h3>Valor trazable</h3>
+                    Corresponte al valor que identifica al tramite a buscar.
+                </li>
+            </ol>    
         </div>
     </section>
 }
@@ -42,11 +60,6 @@
                     @Html.LabelFor(m => m.ExpedienteSeleccionado)                    
                     @Html.DropDownListFor(m => m.ExpedienteSeleccionado, ViewBag.Expedientes != null ? new SelectList(ViewBag.Expedientes, "id", "descripcion") : Enumerable.Empty<SelectListItem>(), ViewBag.Expedientes != null ? null : "-- Seleccione expediente --", new { id = "expedientes" })
                     @Html.ValidationMessageFor(m => m.ExpedienteSeleccionado)
-                    <div id='facebook' style="display:none;" >
-                        <div id='block_1' class='facebook_block'></div>
-                        <div id='block_2' class='facebook_block'></div>
-                        <div id='block_3' class='facebook_block'></div>
-                    </div>
                 </li>
                 <li>
                     @Html.LabelFor(m => m.Valor_Trazable)
@@ -212,7 +225,7 @@
                         type: 'GET',
                         data: { id_nodo: nodoseleccionado },
                         beforeSend: function () {
-                            $(this).attr('disabled', true).trigger("liszt:updated");
+                            $("#nodos").attr('disabled', true).trigger("liszt:updated");
                             Expedientes.attr('disabled', true).trigger("liszt:updated");
                             $("#refresh_loader").show();
                             loader.show();
@@ -236,7 +249,7 @@
                         complete: function () {
                             loader.hide();
                             Expedientes.attr('disabled', false).trigger("liszt:updated");
-                            $(this).attr('disabled', false).trigger("liszt:updated");                            
+                            $("#nodos").attr('disabled', false).trigger("liszt:updated");                            
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
                             alert(errorThrown);

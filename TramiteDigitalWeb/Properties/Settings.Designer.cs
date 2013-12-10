@@ -22,5 +22,14 @@ namespace TramiteDigitalWeb.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Descripción del sistema aqui...")]
+        public string Login_AreaDescripcion {
+            get {
+                return ((string)(this["Login_AreaDescripcion"]));
+            }
+        }
     }
 }

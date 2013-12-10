@@ -39,8 +39,8 @@
                 <h2>@ViewBag.Message</h2>
             </hgroup>
             <div>
-                <h2>Valores trazables</h2>
-                <div>
+                <h3>Valores trazables</h3>
+                <div style="clear:both;">
                     <span>Filtrar por campo trazable:</span>
                     <input name="filter" id="filter-box_ct" value="" maxlength="30" size="30" type="text">
                     <input id="filter-clear-button_ct" type="submit" value="Limpiar"/>
@@ -49,8 +49,8 @@
                     <thead style="border-bottom: 1px solid #888;">
                         <tr>
                             <th>Campo trazable</th>
-                            <th>Tamanio_Caracteres</th>
-                            <th>Mascara</th>
+                            <th>Tamaño de caracteres</th>
+                            <th>Máscara</th>
                             <th>Valor trazable</th>
                         </tr>
                     </thead>
@@ -111,11 +111,13 @@
     </section>
 }
 
-<a href="javascript:window.history.back()" style="float: right ;text-decoration: none;margin-top: 5px;background-color: lightcoral;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" >Regresar a lista</a>
+
 
 <div>
+<a href="javascript:window.history.back()" style="float: right ;text-decoration: none;margin-top: 5px;background-color: lightcoral;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" >Regresar a lista</a>
     <h2>Registros Digitales</h2>
-    <div>
+    <hr style="width: 70%;float: left;display: block;">
+    <div style="clear:both;">
         <span>Filtrar por documento:</span>
         <input name="filter" id="filter-box" value="" maxlength="30" size="30" type="text">
         <input id="filter-clear-button" type="submit" value="Limpiar"/>

@@ -12,9 +12,6 @@ namespace TramiteDigitalWeb.Controllers
     public class AdministracionController : Controller
     {
         private Boolean ValidaAcceso() {
-
-            
-
             if (!AdministracionModel.ValidaPermisodeUsuario(int.Parse(User.Identity.Name.Split('~')[1])))
             {
                 TempData["NoAdminPermissions"] = "Permisos insuficientes, favor de iniciar sesión con un usuario válido";
