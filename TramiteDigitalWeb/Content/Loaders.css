@@ -1,34 +1,12 @@
 ﻿#refresh_loader{
-	display:none;
+	display:block;
     position: absolute;
     right: 50px;
     top: 50px; 
     z-index:9999;
 }
-.refresh_block{
-	background-color: #FF9F9F;
-    border: 2px solid #983B3B;
-	float:left;
-	height:200px;
-	margin-left:5px;
-	width:100px;
-    opacity:0.1;
-	-webkit-transform:scale(0.7);
-	-webkit-animation-name: facebook;
- 	-webkit-animation-duration: 1s;
- 	-webkit-animation-iteration-count: infinite;
- 	-webkit-animation-direction: linear;
-}
-#refresh_block_1{
- 	-webkit-animation-delay: .3s;
- }
-#refresh_block_2{
- 	-webkit-animation-delay: .4s;
-}
-#refresh_block_3{
- 	-webkit-animation-delay: .5s;
-}
-@-webkit-keyframes refresh_loader{
-	0%{-webkit-transform: scale(1.2);opacity:1;}
-	100%{-webkit-transform: scale(0.7);opacity:0.1;}
+#refresh_loader img
+{
+    width: 350px;
+    height: 350px;    
 }

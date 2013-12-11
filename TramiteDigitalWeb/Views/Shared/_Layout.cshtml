@@ -16,9 +16,7 @@
     </head>
     <body>    
         <div id='refresh_loader' >
-            <div id='refresh_block_1' class='refresh_block'></div>
-            <div id='refresh_block_2' class='refresh_block'></div>
-            <div id='refresh_block_3' class='refresh_block'></div>
+            <img class="float-left" src="@Url.Content("~/Content/images/ajax_loader_gray_512.gif")" />
         </div>
 
         <header>
@@ -87,6 +85,8 @@
             var newtop = $('body').scrollTop() + 50;
             loader.loaderobj.stop().animate({ 'top': newtop }, 200);
         });
+
+        loader.hide();
     });
 
 
