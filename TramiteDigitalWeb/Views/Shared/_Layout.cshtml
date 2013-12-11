@@ -73,6 +73,8 @@
             $('body').prepend(this.struct);
             $('#refresh_loader_back').addClass('refresh_loader_back').css({ width: window_width }).css({ height: window_height });
             this.loaderobj = $('#refresh_loader');
+            
+            alert('loader load');
         },
         show: function () {
             var newtop = $('body').scrollTop() + 50;
@@ -88,12 +90,13 @@
 
     $(function () {
         $(window).scroll(function () {
-            var newtop = $('body').scrollTop() + 50;                        
-            loader.loaderobj.stop().animate({ 'top': newtop }, 200);                        
+            var newtop = $('body').scrollTop() + 50;
+            loader.loaderobj.stop().animate({ 'top': newtop }, 200);
         });
 
-        
+
         loader.hide();
+        alert('hide loader');
     });
 
 
