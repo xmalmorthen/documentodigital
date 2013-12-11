@@ -155,7 +155,7 @@
                             @Html.DisplayFor(modelItem => item.valor_trazable)
                         </td>
                         <td style="vertical-align:middle;text-align: center;">
-                            <a class="fancyframe" href="@Href("/Home/OpenImage",new { id_de_digital = @item.id, id_nodo = ViewBag.IdNodo })" title="@item.clasificaciondocumento|@item.Documento|@item.Origen|@item.fecha_hora_creacion|@item.valor_trazable">
+                            <a class="fancyframe" href="@Url.Action("OpenImage", "Home",new { id_de_digital = @item.id, id_nodo = ViewBag.IdNodo })" title="@item.clasificaciondocumento|@item.Documento|@item.Origen|@item.fecha_hora_creacion|@item.valor_trazable">
                                 <img  src="data:image/jpg;base64,@(Convert.ToBase64String(item.thumbnail))" alt="@item.Documento" title="@item.Documento" width="100px" height="100px" />
                             </a>
                         </td>
