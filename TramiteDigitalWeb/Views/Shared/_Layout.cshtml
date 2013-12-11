@@ -80,12 +80,12 @@
         }
     };
 
-    $(function () {
-        $(window).scroll(function () {
-            var newtop = $('body').scrollTop() + 50;
-            loader.loaderobj.stop().animate({ 'top': newtop }, 200);
-        });
+    $(window).scroll(function () {
+        var newtop = $('body').scrollTop() + 50;
+        loader.loaderobj.stop().animate({ 'top': newtop }, 200);
+    });
 
+    $(function () {
         loader.hide();
     });
 
