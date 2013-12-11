@@ -13,6 +13,65 @@
         @Scripts.Render("~/bundles/jqueryui")
         
         <link href="@Url.Content("~/Content/Loaders.css")" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+            var loader = {
+                struct: '<div id="refresh_loader"><div id="refresh_loader_back"></div><img class="float-left" src="@Url.Content("~/Content/images/ajax_loader_gray_512.gif")" /><span class="float-left">Cargando, favor de esperar...</span></div>',
+                loaderobj: null,
+                init: function () {
+                    var window_width = $(window).width();
+                    var window_height = $(window).height();
+                    $('body').prepend(this.struct);
+                    $('#refresh_loader_back').addClass('refresh_loader_back').css({ width: window_width }).css({ height: window_height });
+                    this.loaderobj = $('#refresh_loader');
+
+                    //alert('loader load');
+                },
+                show: function () {
+                    var newtop = $('body').scrollTop() + 50;
+                    this.loaderobj.css({ top: newtop });
+                    this.loaderobj.show();
+                },
+                hide: function () {
+                    this.loaderobj.hide();
+                }
+            };
+
+            loader.init();
+
+            $(function () {
+                $(window).scroll(function () {
+                    var newtop = $('body').scrollTop() + 50;
+                    loader.loaderobj.stop().animate({ 'top': newtop }, 200);
+                });
+
+
+                loader.hide();
+                //alert('hide loader');
+            });
+
+
+            var redirigiendo = false;
+            function opc_menu(opc) {
+                if (redirigiendo) return null;
+
+                var redirect = null;
+                switch (opc) {
+                    case 1: redirect = '@Url.Action("Index", "Home")'; break;
+                    case 2: redirect = '@Url.Action("usuarios", "administracion")'; break;
+                    case 3: redirect = '@Url.Action("nodos", "administracion")'; break;
+                    case 4: redirect = '@Url.Action("usuarios_nodos", "administracion")'; break;
+                    case 5: redirect = '@Url.Action("Menu", "Home")'; break;
+                }
+                if (redirect != null) {
+                    redirigiendo = true;
+                    window.location.href = redirect;
+                }
+                return;
+            }
+    
+        </script>
+
     </head>
     <body>            
         <header>
@@ -62,64 +121,6 @@
         
         @RenderSection("scripts", required: false)
     </body>
-
-<script type="text/javascript">
-    var loader = {
-        struct: '<div id="refresh_loader"><div id="refresh_loader_back"></div><img class="float-left" src="@Url.Content("~/Content/images/ajax_loader_gray_512.gif")" /><span class="float-left">Cargando, favor de esperar...</span></div>',
-        loaderobj: null,
-        init: function () {
-            var window_width = $(window).width();
-            var window_height = $(window).height();
-            $('body').prepend(this.struct);
-            $('#refresh_loader_back').addClass('refresh_loader_back').css({ width: window_width }).css({ height: window_height });
-            this.loaderobj = $('#refresh_loader');
-            
-            //alert('loader load');
-        },
-        show: function () {
-            var newtop = $('body').scrollTop() + 50;
-            this.loaderobj.css({ top: newtop });
-            this.loaderobj.show();
-        },
-        hide: function () {
-            this.loaderobj.hide();
-        }
-    };
-
-    loader.init();
-
-    $(function () {
-        $(window).scroll(function () {
-            var newtop = $('body').scrollTop() + 50;
-            loader.loaderobj.stop().animate({ 'top': newtop }, 200);
-        });
-
-
-        loader.hide();
-        //alert('hide loader');
-    });
-
-
-    var redirigiendo = false;
-    function opc_menu(opc) {
-        if (redirigiendo) return null;
-
-        var redirect = null;
-        switch (opc) {
-            case 1: redirect = '@Url.Action("Index", "Home")'; break;
-            case 2: redirect = '@Url.Action("usuarios", "administracion")'; break;
-            case 3: redirect = '@Url.Action("nodos", "administracion")'; break;
-            case 4: redirect = '@Url.Action("usuarios_nodos", "administracion")'; break;
-            case 5: redirect = '@Url.Action("Menu", "Home")'; break;
-        }
-        if (redirect != null) {
-            redirigiendo = true;
-            window.location.href= redirect;
-        }
-        return;
-    }
-    
-</script>
 
 
 </html>
