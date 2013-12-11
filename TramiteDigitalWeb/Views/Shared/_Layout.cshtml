@@ -15,12 +15,6 @@
         <link href="@Url.Content("~/Content/Loaders.css")" rel="stylesheet" type="text/css" />
     </head>
     <body>            
-        <div id='refresh_loader' >
-            <div></div>            
-            <img class="float-left" src="@Url.Content("~/Content/images/ajax_loader_gray_512.gif")" />
-            <span class="float-left">Cargando, favor de esperar...</span>
-        </div>
-
         <header>
             <div class="content-wrapper">
                 <img class="float-left" src="@Url.Content("~/Content/images/" + System.Configuration.ConfigurationManager.AppSettings["LogoTitulo_Web"])" style="display: inline-table;height: 150px;max-width: 150px;" />
@@ -71,12 +65,14 @@
 
 <script type="text/javascript">
     var loader = {
-        loaderobj: $("#refresh_loader"),
-        back: $("#refresh_loader > div"),
+        struct: '<div id="refresh_loader"><div id="refresh_loader_back"></div><img class="float-left" src="@Url.Content("~/Content/images/ajax_loader_gray_512.gif")" /><span class="float-left">Cargando, favor de esperar...</span></div>',
+        loaderobj: null,
         init: function () {
             var window_width = $(window).width();
             var window_height = $(window).height();
-            this.back.css({width: window_width}).css({height: window_height });
+            $('body').prepend(this.struct);
+            $('#refresh_loader_back').addClass('refresh_loader_back').css({ width: window_width }).css({ height: window_height });
+            this.loaderobj = $('#refresh_loader');
         },
         show: function () {
             var newtop = $('body').scrollTop() + 50;
@@ -90,8 +86,8 @@
 
     $(function () {
         $(window).scroll(function () {
-            var newtop = $('body').scrollTop() + 50;
-            loader.loaderobj.stop().animate({ 'top': newtop }, 200);
+            var newtop = $('body').scrollTop() + 50;                        
+            loader.loaderobj.stop().animate({ 'top': newtop }, 200);                        
         });
 
         loader.init();
