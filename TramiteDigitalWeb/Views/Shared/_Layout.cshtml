@@ -84,13 +84,15 @@
         }
     };
 
+    loader.init();
+
     $(function () {
         $(window).scroll(function () {
             var newtop = $('body').scrollTop() + 50;                        
             loader.loaderobj.stop().animate({ 'top': newtop }, 200);                        
         });
 
-        loader.init();
+        
         loader.hide();
     });
 
