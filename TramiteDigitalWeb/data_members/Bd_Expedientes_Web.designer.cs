@@ -44,7 +44,7 @@ namespace TramiteDigitalWeb.data_members
     #endregion
 		
 		public Bd_Expedientes_WebDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["Bd_Expedientes_WebConnectionString1"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["Bd_Expedientes_WebConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

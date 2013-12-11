@@ -1,3 +1,6 @@
+.Estructura de tabla
+	[Bd_Expedientes_Web][ca_usuarios] es_administrador bit no null default value false
+
 .Nuevo procedimiento almacenado
 	[Bd_Expedientes_Digitales].pa_ImagenDigitalporId_de_digital
 	[Bd_Expedientes_Web].pa_obtener_nodos_no_enlazados
