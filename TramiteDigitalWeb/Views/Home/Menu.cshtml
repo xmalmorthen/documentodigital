@@ -1,0 +1,188 @@
+﻿<link href="@Url.Content("~/Content/Simbologia.css")" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    .margen-left1
+    {
+        margin-left:5px;
+    }
+    hr
+    {
+        width: 70%;float: left;
+        display: block;
+        margin-bottom: 40px;
+    }
+    .mnu_opc
+    {
+        clear:both;
+        padding-bottom: 8px;
+        margin: 0 0 10px 0;
+        cursor:pointer;
+    }
+    .mnu_opc:hover
+    {
+        background-color: #E0DCDC;
+    }
+    .panel_izquierdo
+    {
+        width:50%;
+        display: inline-table;
+        position: relative;
+        top: 50px;
+        padding-left: 5px;
+    }    
+    .panel_izquierdo > img
+    {
+        display:inline; 
+        height:48px; 
+        width:48px;
+        float:left;
+    }
+    .Etiqueta_opcion
+    {
+        font-size: 1.6em;
+        font-weight: bold;
+        float:left;
+        max-width: 455px;
+    }
+    .Acciones
+    {     
+        float:left; 
+        margin-top: 4px;
+    }
+    .Acciones > img
+    {
+        margin-right: 10px;
+    }
+    .panel_derecho
+    {
+        display: inline-table;
+        width: 45%;
+        border-left: 1px solid #CACACA;
+        padding-left: 9px;
+    }
+</style>
+
+@{
+    ViewBag.Title = "Menú administración";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr/>
+<br />
+<br />
+<div class="mnu_opc" onclick="opc_menu(2);">
+        <div class="panel_izquierdo">        
+                <img src="@Url.Content("~/Content/images/usuario.png")" title="Agregar usuario" />
+                <div class="margen-left1 Etiqueta_opcion">Usuarios [<span style="font-size: .5em;font-weight: normal;position: relative;bottom: 2px;"> Administrador de usuarios</span>]</div>
+                <div class="margen-left1 Acciones">        
+                    <img src="@Url.Content("~/Content/images/detalle.png")" title="Ver detalle de usuario."  />
+                    <img src="@Url.Content("~/Content/images/edit.png")" title="Editar datos de usuario." />
+                    <img src="@Url.Content("~/Content/images/key.png")" title="Cambiar contraseña de usuario." />
+                    <img src="@Url.Content("~/Content/images/node.png")" title="Asociar repositorios de consulta (nodos) al usuario." />
+                    <img src="@Url.Content("~/Content/images/delete.png")" title="Eliminar usuario." />
+                </div>            
+        </div>
+        <div class="panel_derecho">
+            <ol class="round">
+                    <li class="one">
+                        <h3>Agregar nuevos usuarios</h3>
+                        Permite el registro de nuevos usuarios utilitarios del sistema.
+                    </li>
+                    <li class="two">
+                        <h3>Consultar información del usuario</h3>
+                        Muestra la información del usuario registrado.
+                    </li>
+                    <li class="three">
+                        <h3>Editar datos del usuario</h3>
+                        Modificar los datos del ususario registrado.
+                    </li>
+                    <li class="four">
+                        <h3>Cambiar contraseña del usuario</h3>
+                        Permite el cambio de contraseña de usuario para el acceso al sistema.
+                    </li>
+                    <li class="five">
+                        <h3>Asociar repositorios de consulta (nodos) al usuario</h3>
+                        Herramienta para asociar nodos al usuario para permitir la consulta de información.
+                    </li>
+                    <li class="six">
+                        <h3>Eliminar usuario</h3>
+                        Elimina el ususario imposibilitando el acceso al sistema.
+                    </li>
+                </ol>    
+        </div>    
+</div>
+<div class="mnu_opc" onclick="opc_menu(3);">
+        <div class="panel_izquierdo">        
+                <img src="@Url.Content("~/Content/images/node.png")" title="Agregar nodos" />
+                <div class="margen-left1 Etiqueta_opcion">Nodos [<span style="font-size: .5em;font-weight: normal;position: relative;bottom: 2px;"> Administrador de repositorios de información</span>]</div>
+                <div class="margen-left1 Acciones">        
+                    <img src="@Url.Content("~/Content/images/detalle.png")" title="Ver detalle del nodo."  />
+                    <img src="@Url.Content("~/Content/images/edit.png")" title="Editar datos del nodo." />
+                    <img src="@Url.Content("~/Content/images/delete.png")" title="Eliminar nodo." />
+                </div>            
+        </div>
+        <div class="panel_derecho">
+            <ol class="round">
+                    <li class="one">
+                        <h3>Agregar nuevos nodos</h3>
+                        Permite el registro de nuevos nodos (repositorios de fuente de datos de información).
+                    </li>
+                    <li class="two">
+                        <h3>Consultar información del nodo</h3>
+                        Muestra la información del nodo.
+                    </li>
+                    <li class="three">
+                        <h3>Editar datos del nodo</h3>
+                        Modificar los datos del nodo.
+                    </li>
+                    <li class="four">
+                        <h3>Eliminar nodo</h3>
+                        Elimina el nodo.
+                    </li>
+                </ol>    
+        </div>    
+</div>
+<div class="mnu_opc" onclick="opc_menu(4);">
+        <div class="panel_izquierdo">        
+                <img src="@Url.Content("~/Content/images/vincular.png")" title="Vincular nodos a usuarios" />
+                <div class="margen-left1 Etiqueta_opcion">Asigna nodos a un usuario [<span style="font-size: .5em;font-weight: normal;position: relative;bottom: 2px;">Repositorio de fuente de información</span>]</div>
+                <div class="margen-left1 Acciones">        
+                    <img src="@Url.Content("~/Content/images/detalle.png")" title="Ver detalle del nodo."  />
+                    <img src="@Url.Content("~/Content/images/edit.png")" title="Editar datos del nodo." />
+                    <img src="@Url.Content("~/Content/images/delete.png")" title="Eliminar nodo." />
+                </div>            
+        </div>
+        <div class="panel_derecho">
+            <ol class="round">
+                    <li class="one">
+                        <h3>Seleccionar USUARIO</h3>
+                        El combo de USUARIOS muestra todos los usuarios registrados a los cuales les pueden ser vinculados nodos. 
+                    </li>
+                    <li class="two">
+                        <h3>Seleccionar NODO</h3>
+                        Al seleccionar un USUARIO el combo de NODOS filtrará la lista únicamente de los nodos que el usuario no tenga vinculados actualmente.                             
+                    </li>
+            </ol>
+
+            <p>
+            En la tabla de nodos vinculados, se describen las siguientes acciones permitidas.
+            </p>
+            <div class="bloque_simbologia">
+                <div class="item_simbologia">
+                    <div class="inline_simbologia">
+                        <img src="@Url.Content("~/Content/images/detalle.png")" style="" />
+                    </div>
+                    <div class="inline_simbologia detalle_simbologia">
+                        Muestra ventana con información referente al nodo vinculado.
+                    </div>            
+                </div>
+                <div class="item_simbologia">
+                    <div class="inline_simbologia">
+                        <img src="@Url.Content("~/Content/images/delete.png")" style="" />
+                    </div>
+                    <div class="inline_simbologia detalle_simbologia">
+                        Desvincular el nodo del usuario.
+                    </div>            
+                </div>
+            </div> 
+        </div>    
+</div>

@@ -1,6 +1,7 @@
 ﻿<link href="@Url.Content("~/Content/HomeIndex.css")" rel="stylesheet" type="text/css" />
 <link href="@Url.Content("~/Content/TableStyle.css")" rel="stylesheet" type="text/css" />
 <link href="@Url.Content("~/Content/usuarios_nodos.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/Simbologia.css")" rel="stylesheet" type="text/css" />
 <script src="@Url.Content("~/Scripts/jquery.tablesorter.pager.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.tablesorter.new.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.tablesorter.filter.js")" type="text/javascript"></script>
@@ -23,16 +24,67 @@
 @model TramiteDigitalWeb.data_members.re_nodos_usuarios
 
 @{
-    ViewBag.Title = "Asignar nodos";
+    ViewBag.Title = "Vincular nodos";
         
     List<TramiteDigitalWeb.data_members.ca_usuarios> lista_usuarios = ViewBag.Usuarios;
     List<TramiteDigitalWeb.data_members.pa_obtener_nodos_no_enlazadosResult> lista_nodos = ViewBag.Nodos;    
 }
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+            </hgroup>
+            <p>
+                Permite vincular repositorios de fuente de información a un usuario.
+            </p>
+            
+            <ol class="round">
+                @if (lista_usuarios != null)
+                {
+                    <li class="one">
+                        <h3>Seleccionar USUARIO</h3>
+                        El combo de USUARIOS muestra todos los usuarios registrados a los cuales les pueden ser vinculados nodos. 
+                    </li>
+                    <li class="two">
+                        <h3>Seleccionar NODO</h3>
+                        Al seleccionar un USUARIO el combo de NODOS filtrará la lista únicamente de los nodos que el usuario no tenga vinculados actualmente.                             
+                    </li>
+                }
+                else { 
+                    <li class="one">
+                        <h3>Seleccionar NODO</h3>
+                        El combo de NODOS filtrará la lista únicamente de los nodos que el usuario no tenga vinculados actualmente.                             
+                    </li>                    
+                }                
+            </ol>
+
+            <p>
+            En la tabla de nodos vinculados, se describen las siguientes acciones permitidas.
+            </p>
+            <div class="bloque_simbologia">
+                <div class="item_simbologia">
+                    <div class="inline_simbologia">
+                        <img src="@Url.Content("~/Content/images/detalle.png")" style="" />
+                    </div>
+                    <div class="inline_simbologia detalle_simbologia">
+                        Muestra ventana con información referente al nodo vinculado.
+                    </div>            
+                </div>
+                <div class="item_simbologia">
+                    <div class="inline_simbologia">
+                        <img src="@Url.Content("~/Content/images/delete.png")" style="" />
+                    </div>
+                    <div class="inline_simbologia detalle_simbologia">
+                        Desvincular el nodo del usuario.
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </section>
+}
 
 <div id="notify_area"></div>
-
-<h2>@ViewBag.Title</h2>
-<hr style="width: 70%;float: left;display: block;"/>
 
 @if (ViewBag.ReturnUrl != null)
 {
@@ -194,9 +246,10 @@
     };  //Lista_de_Nodos_No_Enlazados_Ajax
 
     function Lista_de_Nodos_Enlazados_Ajax(usuarioseleccionado) {
+        var tablearea = $("#table tbody");
+        tablearea.html('');
         if (usuarioseleccionado > 0) {
-            //Nodos enlazados
-            var tablearea = $("#table tbody");
+            //Nodos enlazados            
             $.ajax({
                 url: '@Url.Action("Lista_de_Nodos_Enlazados_Ajax")',
                 type: 'GET',
@@ -205,7 +258,7 @@
                     loader.show();
                 },
                 success: function (result) {
-                    tablearea.html('');
+                    
                     if (result.length > 0) {
 
                         $.each(result, function (index, item) {
@@ -231,6 +284,8 @@
                     alert(errorThrown);
                 }
             });
+        } else {
+            tablearea.append('<tr><td colspan=6 style="text-align: center;font-size: 32px;font-weight: bold;">[<span style="text-align: center;font-size: 20px;font-weight: bold;color:lightcoral;">Aún no se selecciona usuario...</span>]</td></tr>');
         }
     };  //Lista_de_Nodos_Enlazados_Ajax
 

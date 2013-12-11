@@ -121,5 +121,13 @@ namespace TramiteDigitalWeb.Controllers
 
             return View();
         }
+
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult Menu()
+        {
+            return View();
+        }
     }
 }

@@ -38,7 +38,7 @@
                             <li onclick="opc_menu(1);">@Html.ActionLink("Buscar", "Index", "Home")</li>
                             @if (Convert.ToBoolean(User.Identity.Name.Split('~')[2]))
                             {
-                                <li onclick="opc_menu(5);">@Html.ActionLink("Administración", "usuarios", "administracion")
+                                <li onclick="opc_menu(5);">@Html.ActionLink("Administración", "Menu", "Home")
                                     <ul>
                                         <li onclick="opc_menu(2);">@Html.ActionLink("Usuarios", "usuarios", "administracion")</li>
                                         <li onclick="opc_menu(3);">@Html.ActionLink("Nodos", "nodos", "administracion")</li>
@@ -89,16 +89,24 @@
         });
     });
 
+
+    var redirigiendo = false;
     function opc_menu(opc) {
+        if (redirigiendo) return null;
+
         var redirect = null;
         switch (opc) {
             case 1: redirect = '@Url.Action("Index", "Home")'; break;
             case 2: redirect = '@Url.Action("usuarios", "administracion")'; break;
             case 3: redirect = '@Url.Action("nodos", "administracion")'; break;
             case 4: redirect = '@Url.Action("usuarios_nodos", "administracion")'; break;
-            case 5: redirect = '@Url.Action("menu", "home")'; break;
+            case 5: redirect = '@Url.Action("Menu", "Home")'; break;
         }
-        if (redirect != null) window.location.href = redirect;
+        if (redirect != null) {
+            redirigiendo = true;
+            window.location.href= redirect;
+        }
+        return;
     }
     
 </script>

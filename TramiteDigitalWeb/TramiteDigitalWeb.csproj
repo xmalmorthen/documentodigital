@@ -210,6 +210,8 @@
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\user_base.png" />
+    <Content Include="Content\images\vincular.png" />
     <Content Include="Content\Simbologia.css" />
     <Content Include="Content\images\logo.jpg" />
     <Content Include="Content\usuarios_nodos.css" />
@@ -403,6 +405,7 @@
     <Content Include="Views\Administracion\Edita_Nodo.cshtml" />
     <Content Include="Views\Shared\_Partial_Blank.cshtml" />
     <Content Include="Views\Administracion\Detalle_Nodo_Partial.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
