@@ -5,8 +5,26 @@
     top: 50px; 
     z-index:9999;
 }
+#refresh_loader > div 
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    filter: alpha(opacity=30);                                          /* internet explorer */
+	-khtml-opacity: 0.3;                                                /* khtml, version anterior de safari */
+	-moz-opacity: 0.3;                                                  /* firefox, mozilla, netscape */
+	opacity: 0.3;                                                       /* safari, chrome, opera */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";  /*internet explorer 8 - gracias Andres */     
+}
 #refresh_loader img
 {
     width: 350px;
     height: 350px;    
+}
+#refresh_loader span
+{
+    clear: both;
+    font-size: 1.4em;
+    font-weight: bold;
 }

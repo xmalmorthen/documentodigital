@@ -14,9 +14,11 @@
         
         <link href="@Url.Content("~/Content/Loaders.css")" rel="stylesheet" type="text/css" />
     </head>
-    <body>    
+    <body>            
         <div id='refresh_loader' >
+            <div></div>            
             <img class="float-left" src="@Url.Content("~/Content/images/ajax_loader_gray_512.gif")" />
+            <span class="float-left">Cargando, favor de esperar...</span>
         </div>
 
         <header>
@@ -70,22 +72,29 @@
 <script type="text/javascript">
     var loader = {
         loaderobj: $("#refresh_loader"),
-        show: function() {
+        back: $("#refresh_loader > div"),
+        init: function () {
+            var window_width = $(window).width();
+            var window_height = $(window).height();
+            this.back.css({width: window_width}).css({height: window_height });
+        },
+        show: function () {
             var newtop = $('body').scrollTop() + 50;
             this.loaderobj.css({ top: newtop });
             this.loaderobj.show();
         },
-        hide: function() {
+        hide: function () {
             this.loaderobj.hide();
         }
     };
 
-    $(window).scroll(function () {
-        var newtop = $('body').scrollTop() + 50;
-        loader.loaderobj.stop().animate({ 'top': newtop }, 200);
-    });
-
     $(function () {
+        $(window).scroll(function () {
+            var newtop = $('body').scrollTop() + 50;
+            loader.loaderobj.stop().animate({ 'top': newtop }, 200);
+        });
+
+        loader.init();
         loader.hide();
     });
 
