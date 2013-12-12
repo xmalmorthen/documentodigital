@@ -106,6 +106,14 @@ namespace TramiteDigitalWeb.Controllers
             Response.End();
         }
 
+        [Authorize]
+        [HttpGet]
+        public ActionResult OpenImageAjax(int id_de_digital, int id_nodo)
+        {
+            pa_ImagenDigitalporId_de_digitalResult imagendigital = ObtencionimagendigitalModels.imagendigital(int.Parse(User.Identity.Name.Split('~')[1]), id_nodo, id_de_digital);
+            return Json(Convert.ToBase64String(imagendigital.imagen), JsonRequestBehavior.AllowGet);
+        }
+
 
         [Authorize]
         [HttpGet]

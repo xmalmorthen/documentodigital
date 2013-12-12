@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 using TramiteDigitalWeb.Models.classes;
 using System.Security.Principal;
 using System.Threading;
+using TramiteDigitalWeb.data_members;
 
 namespace TramiteDigitalWeb.Models
 {
@@ -56,12 +57,16 @@ namespace TramiteDigitalWeb.Models
 
     public class CatalogsModel
     {
-        private data_members.Bd_Expedientes_WebDataContext bd = new data_members.Bd_Expedientes_WebDataContext();
+        
 
         public IEnumerable<data_members.pa_obtener_nodosResult> nodos(int id_usuario) {
             try
             {
-                return bd.pa_obtener_nodos(id_usuario).ToList();
+                data_members.Bd_Expedientes_WebDataContext bd = new data_members.Bd_Expedientes_WebDataContext();
+                List<pa_obtener_nodosResult> nodos = new List<pa_obtener_nodosResult>();
+                nodos.AddRange(bd.pa_obtener_nodos(id_usuario).ToList());
+                bd.Dispose();
+                return nodos;
             }
             catch (Exception)
             {                
@@ -73,7 +78,22 @@ namespace TramiteDigitalWeb.Models
         {
             try
             {
-                return bd.pa_obtener_nodo(id_usuario, id_nodo).SingleOrDefault();
+                data_members.Bd_Expedientes_WebDataContext bd = new data_members.Bd_Expedientes_WebDataContext();
+                pa_obtener_nodoResult nodo = new pa_obtener_nodoResult();
+                
+                pa_obtener_nodoResult tmp = bd.pa_obtener_nodo(id_usuario, id_nodo).SingleOrDefault();
+
+                nodo.activo = tmp.activo;
+                nodo.contrasenia = tmp.contrasenia;
+                nodo.id = tmp.id;
+                nodo.nodo = tmp.nodo;
+                nodo.url_servicio_rest = tmp.url_servicio_rest;
+                nodo.usuario = tmp.usuario;
+
+                bd.Dispose();
+                tmp = null;
+
+                return nodo;
             }
             catch (Exception)
             {

@@ -116,36 +116,38 @@
 <div style="margin-bottom: 50px;">
     <h2>Registros Digitales</h2>
 
-    <div style="margin-top: 50px;">
+    <div id="master" style="width: 500px;position: fixed;bottom: 20px;right: 15px;"></div>
+
+    <div style="margin-top: 50px;text-align: center;">
         @if (registrosdigital.Count() > 0)
         {
             string origen = null;
             foreach (TramiteDigitalWeb.Models.classes.pa_RegistrosDigitalesRegistradosporId_ma_digitalResult item in registrosdigital)
             {
                 if (origen != item.Origen) { 
-                    <div style="margin: 80px 0 10px 0;font-size: 24px;font-weight: bold;color: #5C5B5B;border-bottom: 1px solid #B6B6B6;width: 80%;">
+                    <div style="margin: 80px 0 10px 0;font-size: 24px;font-weight: bold;color: #5C5B5B;border-bottom: 1px solid #B6B6B6;width: 80%;text-align: left;">
                         @item.Origen
                     </div>                
                 }
                 
-                <div style="border: 1px solid #000;background-color: #DBDBDB;width: auto;height: auto;display: inline-block;padding: 5px;max-width: 502px;margin:5px">
-                    <a class="fancyframe" href="@Url.Action("OpenImage", "Home",new { id_de_digital = @item.id, id_nodo = ViewBag.IdNodo })" title="@item.clasificaciondocumento|@item.Documento|@item.Origen|@item.fecha_hora_creacion|@item.valor_trazable">
-                        <img style="border: 1px solid #000;" src="data:image/jpg;base64,@(Convert.ToBase64String(item.thumbnail))" alt="@item.Documento" title="@item.Documento" width="450px" height="450px" />
-                    </a>
-                    <div>                    
-                        <div>
-                            <span style="font-size: 16px;font-weight: bold;"> @item.Documento </span>                    
-                            <span style="font-size: 16px;font-weight: bold;float:right"> [ <span style="font-size: 12px;font-weight: normal;color: #5A5A5A;"> @item.clasificaciondocumento </span> ] </span>
-                        </div>                    
-                        <div>
-                            <span style="font-size: 16px;font-weight: bold;"> [ <span style="font-size: 12px;font-weight: normal;color: #5A5A5A;"> @item.Origen </span> ] </span>
-                            <span style="font-size: 16px;font-weight: bold;"> [ <span style="font-size: 12px;font-weight: normal;color: #5A5A5A;"> @item.valor_trazable </span> ] </span>
+                    <div style="border: 1px solid #000;background-color: #DBDBDB;width: auto;height: auto;display: inline-block;padding: 5px;margin:5px;text-align: left;">
+                        <a class="fancyframe" href="@Url.Action("OpenImage", "Home",new { id_de_digital = @item.id, id_nodo = ViewBag.IdNodo })" title="@item.clasificaciondocumento|@item.Documento|@item.Origen|@item.fecha_hora_creacion|@item.valor_trazable">
+                            <img style="border: 1px solid #000;" src="data:image/jpg;base64,@(Convert.ToBase64String(item.thumbnail))" alt="@item.Documento" title="@item.Documento" width="483px" height="483px" />
+                        </a>
+                        <div>                    
+                            <div>
+                                <span style="font-size: 16px;font-weight: bold;"> @item.Documento </span>                    
+                                <span style="font-size: 16px;font-weight: bold;float:right"> [ <span style="font-size: 12px;font-weight: normal;color: #5A5A5A;"> @item.clasificaciondocumento </span> ] </span>
+                            </div>                    
+                            <div>
+                                <span style="font-size: 16px;font-weight: bold;"> [ <span style="font-size: 12px;font-weight: normal;color: #5A5A5A;"> @item.Origen </span> ] </span>
+                                <span style="font-size: 16px;font-weight: bold;"> [ <span style="font-size: 12px;font-weight: normal;color: #5A5A5A;"> @item.valor_trazable </span> ] </span>
+                            </div>
+                            <div>
+                                <span style="float:right;font-size: 12px;font-weight: bold;color:red;"> @item.fecha_hora_creacion </span>
+                            </div>
                         </div>
-                        <div>
-                            <span style="float:right;font-size: 12px;font-weight: bold;color:red;"> @item.fecha_hora_creacion </span>
-                        </div>
-                    </div>
-                </div>  
+                    </div>  
                 origen = item.Origen;
             }
         }
@@ -157,6 +159,19 @@
 
 <script type="text/javascript">
     $(function () {
+        $("#master").slider({
+            value: 483,
+            max: parseInt($('.main-content').css('width')),
+            min: 483,
+            orientation: "horizontal",
+            range: "min",
+            animate: true,
+            slide: function (event, ui) {
+                $(".fancyframe img").attr('width', ui.value);
+                $(".fancyframe img").attr('height', ui.value);
+            }
+        });
+
         $("#table_ct").tablesorter()
         .tablesorterPager({
             container: $("#pager_ct"),
@@ -190,10 +205,52 @@
                 this.title = '<span><span style="font-size: 22px;font-weight: bold;">' + titulo[1] +
                              ' [ <span style="font-size: 14px;font-weight: normal;color: #888;">' + titulo[0] +
                              '</span> ] [ <span style="font-size: 14px;font-weight: normal;color: #888;">' + titulo[2] +
-                             '</span> ] [ <span style="font-size: 14px;font-weight: normal;color: red;">' + titulo[4] + '</span> ]</span>' +                             
+                             '</span> ] [ <span style="font-size: 14px;font-weight: normal;color: red;">' + titulo[4] + '</span> ]</span>' +
                              '<span style="float:right;font-size: 14px;font-weight: bold;color:red;">' + titulo[3] + '</span> ';
             }
         });
 
+
+        CargaImagenes();
+
     });
+
+    function CargaImagenes() {
+        var hv = $('.fancyframe');
+        var imgs = $('.fancyframe > img');
+
+        $.each(hv, function (index, item) {
+            var href = item.href.split("?");
+            //imgs[index].src = href;
+            href = href[1].split("&");
+            id_de_digital = href[0].split("=");
+            id_de_digital = id_de_digital[1];
+            id_nodo = href[1].split("=");
+            id_nodo = id_nodo[1];
+
+            $.ajax({
+                url: '@Url.Action("OpenImageAjax")',
+                type: 'GET',
+                data: { id_de_digital: id_de_digital,
+                    id_nodo: id_nodo
+                },
+                beforeSend: function () {
+                    //loader.show();
+                },
+                success: function (result) {
+                    imgs[index].src = "data:image/jpg;base64," + result;
+                },
+                complete: function () {
+                    //loader.hide();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            }); //end ajax
+
+            
+
+        });     //end each
+    } //end function
+
 </script>
