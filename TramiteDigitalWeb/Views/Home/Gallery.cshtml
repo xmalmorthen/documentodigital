@@ -129,7 +129,7 @@
                 }
                 
                 <div style="border: 1px solid #000;background-color: #DBDBDB;width: auto;height: auto;display: inline-block;padding: 5px;max-width: 502px;margin:5px">
-                    <a class="fancyframe" href="@Href("/Home/OpenImage",new { id_de_digital = @item.id, id_nodo = ViewBag.IdNodo })" title="@item.clasificaciondocumento|@item.Documento|@item.Origen|@item.fecha_hora_creacion|@item.valor_trazable">
+                    <a class="fancyframe" href="@Url.Action("OpenImage", "Home",new { id_de_digital = @item.id, id_nodo = ViewBag.IdNodo })" title="@item.clasificaciondocumento|@item.Documento|@item.Origen|@item.fecha_hora_creacion|@item.valor_trazable">
                         <img style="border: 1px solid #000;" src="data:image/jpg;base64,@(Convert.ToBase64String(item.thumbnail))" alt="@item.Documento" title="@item.Documento" width="450px" height="450px" />
                     </a>
                     <div>                    
