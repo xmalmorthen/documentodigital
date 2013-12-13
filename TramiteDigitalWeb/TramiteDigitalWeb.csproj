@@ -211,6 +211,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\ajax_loader_gray_512.gif" />
+    <Content Include="Content\images\ajax_loader_red_48.gif" />
+    <Content Include="Content\images\attention.png" />
     <Content Include="Content\images\user_base.png" />
     <Content Include="Content\images\vincular.png" />
     <Content Include="Content\Simbologia.css" />
