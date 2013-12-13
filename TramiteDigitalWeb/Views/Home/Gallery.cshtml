@@ -26,8 +26,8 @@
 
 
 @{
-    int tamanio_imagen = 483;
-    int tamanio_loader_img = 46;
+    int tamanio_imagen = int.Parse(System.Configuration.ConfigurationManager.AppSettings["tamanio_imagen"]);
+    int tamanio_loader_img = int.Parse(System.Configuration.ConfigurationManager.AppSettings["tamanio_loader_img"]);
     
     ViewBag.Title = "Detalles del trámite";
     List<TramiteDigitalWeb.Models.classes.pa_CampostrazablesRegistradosporId_ma_digitalResult> campostrazables = ViewBag.CamposTrazables;
@@ -121,7 +121,7 @@
     </section>
 }
 
-<div id="master"><span style="float:right;margin: 0 10px 0 0;font-weight: bold;color: #383834;line-height: 19px;">Deslizár para amuentar tamaño de imagenes...</span></div>
+<div id="master" style="z-index:999;"><span style="float:right;margin: 0 10px 0 0;font-weight: bold;color: #383834;line-height: 19px;">Deslizár para amuentar tamaño de imagenes...</span></div>
 
 <a href="javascript:window.history.back()" style="float: right ;text-decoration: none;margin-top: 5px;background-color: lightcoral;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 6px;margin-right: 8px;width: auto;" >Regresar a lista</a>
 
@@ -247,7 +247,7 @@
 
             var parent = $(this).parent();
             var margen = ((imgs[index].height / 2) - (@tamanio_loader_img / 2));
-            parent.prepend('<img name="loading_image_ajax_' + index + '" style="display_none;float: left;position: absolute;margin-top:' + margen + 'px;margin-left:' + margen + 'px;" src="@Url.Content("~/Content/images/ajax_loader_red_48.gif")" width="' + @tamanio_loader_img + '" height="' + @tamanio_loader_img + 'px" />');
+            parent.prepend('<img name="loading_image_ajax_' + index + '" title="Obteniendo imagen..." style="display_none;float: left;position: absolute;margin-top:' + margen + 'px;margin-left:' + margen + 'px;" src="@Url.Content("~/Content/images/ajax_loader_red_48.gif")" width="' + @tamanio_loader_img + '" height="' + @tamanio_loader_img + 'px" />');
 
             $.ajax({
                 url: '@Url.Action("OpenImageAjax")',
