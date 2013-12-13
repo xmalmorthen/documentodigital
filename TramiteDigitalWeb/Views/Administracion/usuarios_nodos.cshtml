@@ -102,16 +102,16 @@
                 {
                     if (lista_usuarios.Count() > 0)
                     {
-                        <li>
+                        <li style="width:40%;">
                             @Html.LabelFor(m => m.id_usuario)
-                            @Html.DropDownListFor(m => m.id_usuario, new SelectList(ViewBag.Usuarios, "id", "usuario"), "-- Seleccione usuario --", new { id = "cmb_usuarios" })
+                            @Html.DropDownListFor(m => m.id_usuario, new SelectList(ViewBag.Usuarios, "id", "usuario"), "-- Seleccione usuario --", new { id = "cmb_usuarios", style="width:100%;" })
                             @Html.ValidationMessageFor(m => m.id_usuario)
                         </li>
                     }
                 }
-                <li>                    
+                <li style="width:40%;">                    
                     @Html.LabelFor(m => m.id_nodo)                    
-                    @Html.DropDownListFor(m => m.id_nodo, ViewBag.Nodos != null ? new SelectList(ViewBag.Nodos, "id", "nodo") : Enumerable.Empty<SelectListItem>(), ViewBag.Nodos != null ? null : "-- Seleccione nodo --", new { id = "cmb_nodos", disabled = "disabled" })
+                    @Html.DropDownListFor(m => m.id_nodo, ViewBag.Nodos != null ? new SelectList(ViewBag.Nodos, "id", "nodo") : Enumerable.Empty<SelectListItem>(), ViewBag.Nodos != null ? null : "-- Seleccione nodo --", new { id = "cmb_nodos", disabled = "disabled", width = "200px", style="width:100%;" })
                     @Html.ValidationMessageFor(m => m.id_nodo)               
                 </li>
                 <li id="btn_asociar" style="display:none;">
@@ -213,6 +213,7 @@
                     url: '@Url.Action("Lista_de_Nodos_No_Enlazados_Ajax")',
                     type: 'GET',
                     data: { id_usuario: usuarioseleccionado },
+                    cache: false,
                     beforeSend: function () {
                         $('#cmb_usuarios').attr('disabled', true).trigger("liszt:updated");
                         loader.show();
@@ -228,8 +229,11 @@
                             });
                             cmb_nodos.attr('disabled', false).trigger("liszt:updated");
                         } else {
+                            cmb_nodos.empty();
                             cmb_nodos.append($('<option/>', { value: 0, text: "-- No se encontraron nodos para enlazar --" }));
                             cmb_nodos.attr('disabled', true).trigger("liszt:updated");
+
+                            $('#btn_asociar').fadeOut('fast');
                         }
                     },
                     complete: function () {
