@@ -12,6 +12,17 @@ namespace TramiteDigitalWeb.Controllers
     {        
         CatalogsModel catalogos = new CatalogsModel();
 
+        private Boolean ValidaAcceso()
+        {
+            string[] response = Acceso.Valida(User.Identity.Name, true);
+            if (Boolean.Parse(response[0]) == false)
+            {
+                TempData["NoAdminPermissions"] = response[1];
+                return false;
+            }
+            return true;
+        }
+
         private void InicializaVars(int? nodoseleccionado = null){
             string[] UserParts = User.Identity.Name.Split('~');
             List<data_members.pa_obtener_nodosResult> nodos = new List<data_members.pa_obtener_nodosResult>();            
@@ -38,6 +49,8 @@ namespace TramiteDigitalWeb.Controllers
         [HttpGet]
         public ActionResult ObtenExpedientes(int id_nodo)
         {
+            if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account");
+
             string[] UserParts = User.Identity.Name.Split('~');
             List<vw_ListaExpedientes> lista_expedientes = catalogos.obtenerExpedientes(id_nodo, catalogos.nodos(int.Parse(UserParts[1])).ToList());
             return Json(lista_expedientes, JsonRequestBehavior.AllowGet);
@@ -47,6 +60,8 @@ namespace TramiteDigitalWeb.Controllers
         [Authorize]
         public ActionResult Index()
         {
+            if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account");
+
             InicializaVars();
             return View();
         }
@@ -55,6 +70,8 @@ namespace TramiteDigitalWeb.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index(Models.ConsultasViewModels Form) {
+            if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account");
+
             InicializaVars(Form.NodoSeleccionado);
             if (ModelState.IsValid)
             {
@@ -83,6 +100,8 @@ namespace TramiteDigitalWeb.Controllers
         [Authorize]
         [HttpGet]
         public ActionResult Details(int id_ma_digital, int id_nodo) {
+            if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account");
+
             ViewBag.CamposTrazables = ObtencionCamposTrazablesModels.CamposTrazables(int.Parse(User.Identity.Name.Split('~')[1]), id_nodo, id_ma_digital);
             ViewBag.CamposTrazablesErrors = ObtencionCamposTrazablesModels.ResponseErrors.Count() > 0 ? ObtencionCamposTrazablesModels.ResponseErrors : null;
 
@@ -119,6 +138,8 @@ namespace TramiteDigitalWeb.Controllers
         [HttpGet]
         public ActionResult Gallery(int id_ma_digital, int id_nodo)
         {
+            if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account");
+
             ViewBag.CamposTrazables = ObtencionCamposTrazablesModels.CamposTrazables(int.Parse(User.Identity.Name.Split('~')[1]), id_nodo, id_ma_digital);
             ViewBag.CamposTrazablesErrors = ObtencionCamposTrazablesModels.ResponseErrors.Count() > 0 ? ObtencionCamposTrazablesModels.ResponseErrors : null;
 
@@ -135,6 +156,8 @@ namespace TramiteDigitalWeb.Controllers
         [HttpGet]
         public ActionResult Menu()
         {
+            if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account");
+
             return View();
         }
     }

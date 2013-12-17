@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Bd_Expedientes_Web" Class="Bd_Expedientes_WebDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=Bd_Expedientes_Web;Persist Security Info=True;User ID=digitaldocs" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Bd_Expedientes_WebConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Expedientes_Web;Persist Security Info=True;User ID=digitaldocs" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Bd_Expedientes_WebConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ca_nodos" Member="ca_nodos">
     <Type Name="ca_nodos">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -35,8 +35,9 @@
       <Column Name="telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="cargo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="f_registro" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsReadOnly="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="f_registro" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="es_administrador" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="tocken" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
       <Association Name="ca_usuarios_re_nodos_usuarios" Member="re_nodos_usuarios" ThisKey="id" OtherKey="id_usuario" Type="re_nodos_usuarios" />
     </Type>
   </Table>

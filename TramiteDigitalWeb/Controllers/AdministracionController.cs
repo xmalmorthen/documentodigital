@@ -12,9 +12,11 @@ namespace TramiteDigitalWeb.Controllers
     public class AdministracionController : Controller
     {
         private Boolean ValidaAcceso() {
-            if (!AdministracionModel.ValidaPermisodeUsuario(int.Parse(User.Identity.Name.Split('~')[1])))
+
+            string[] response = Acceso.Valida(User.Identity.Name);
+            if ( Boolean.Parse (response[0]) == false)
             {
-                TempData["NoAdminPermissions"] = "Permisos insuficientes, favor de iniciar sesión con un usuario válido";
+                TempData["NoAdminPermissions"] = response[1];
                 return false;
             }
             return true;        
@@ -30,7 +32,7 @@ namespace TramiteDigitalWeb.Controllers
         [HttpGet]
         public ActionResult Usuarios()
         {
-            if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account"); 
+            if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account");
 
             InicializaVars();
             return View(AdministracionModel.ListadeUsuarios());
@@ -249,7 +251,6 @@ namespace TramiteDigitalWeb.Controllers
             else
                 return View("Detalle_Nodo_Partial",AdministracionModel.Get_Nodo(id_nodo));
         }
-
 
         [Authorize]
         [HttpGet]

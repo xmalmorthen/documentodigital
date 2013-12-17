@@ -14,17 +14,7 @@ namespace TramiteDigitalWeb.Models
 {
     public static class AdministracionModel {         
 #region Usuarios
-
-        public static Boolean ValidaPermisodeUsuario(int id_usuario){            
-            Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
-            ca_usuarios usuario = bd.ca_usuarios.SingleOrDefault(query => query.id == id_usuario && query.es_administrador == true);
-            bd.Dispose();
-            if (usuario != null)
-                return true;
-            else
-                return false;
-        }
-
+        
         public static List<ca_usuarios> ListadeUsuarios() {
             Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
             List<ca_usuarios> usuarios = bd.GetTable<ca_usuarios>().ToList();

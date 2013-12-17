@@ -74,7 +74,7 @@ namespace TramiteDigitalWeb.Controllers
                         throw new Exception("No tiene permisos suficientes.");
                     }
 
-                    string username = datosdeusuario.GetFullName.Trim() + "~" + datosdeusuario.Id + "~" + datosdeusuario.EsAdministrador;
+                    string username = datosdeusuario.GetFullName.Trim() + "~" + datosdeusuario.Id + "~" + datosdeusuario.EsAdministrador + "~" + datosdeusuario.tocken;
                     FormsAuthentication.SetAuthCookie(username, model.RememberMe);
                     return RedirectToLocal(returnUrl);
                 }
@@ -99,6 +99,14 @@ namespace TramiteDigitalWeb.Controllers
         public ActionResult LogOff()
         {            
             //WebSecurity.Logout();
+
+            string[] response = Acceso.Valida(User.Identity.Name, true);
+            if (Boolean.Parse(response[0]) == true)
+            {
+                UsuarioLogeado user_ref = new UsuarioLogeado();
+                user_ref.EliminaTocken(int.Parse(User.Identity.Name.Split('~')[1]));    
+            }
+                        
             FormsAuthentication.SignOut();
 
             return RedirectToAction("Index", "Home");

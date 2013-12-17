@@ -34,6 +34,9 @@ namespace TramiteDigitalWeb.Models
 
         private Boolean _esadministrador;
         public Boolean EsAdministrador { get { return _esadministrador; } set { _esadministrador = value; } }
+
+        private System.Nullable<System.Guid> _tocken;
+        public System.Nullable<System.Guid> tocken {get{return this._tocken;} set{this._tocken = value;} }
     }
 
     public class UsuarioLogeado
@@ -50,12 +53,32 @@ namespace TramiteDigitalWeb.Models
                 {
                     return false;
                 }
-                return true;
+                
+                //asignar tocken
+                usuario.tocken = Guid.NewGuid();
+                bd.SubmitChanges();
 
+                return true;
             }
             catch (Exception)
             {
                 return false;
+            }
+        }
+
+        public void EliminaTocken(int id_usuario) {
+            try
+            {
+                usuario = bd.ca_usuarios.SingleOrDefault(c => c.id == id_usuario);
+                if (usuario != null)
+                {
+                    usuario.tocken = null;
+                    bd.SubmitChanges();
+                }
+                usuario = null;
+            }
+            catch (Exception)
+            {             
             }
         }
 
@@ -75,9 +98,40 @@ namespace TramiteDigitalWeb.Models
             datos.Cargo = usuario.cargo;
             datos.Activo = usuario.activo;
             datos.EsAdministrador = usuario.es_administrador;
+            datos.tocken = usuario.tocken;
             return datos;
         } 
-    
-        
+            
     }
+
+    public static class Acceso {
+
+        public static string[] Valida(string Data, Boolean TockenOnly = false)
+        {
+            string[] response = null;
+
+            Bd_Expedientes_WebDataContext bd = new Bd_Expedientes_WebDataContext();
+            int id_usuario = int.Parse(Data.Split('~')[1]);
+            ca_usuarios usuario = bd.ca_usuarios.SingleOrDefault(query => query.id == id_usuario);
+
+            if (!TockenOnly)
+            {
+                if (usuario.es_administrador != true)
+                {
+                    response = new string[] { "false", "Permisos insuficientes, favor de iniciar sesión con un usuario válido" };
+                }
+            }
+            if (usuario.tocken.ToString() != Data.Split('~')[3]) {
+                response = new string[] { "false", "Su vigencia ha expirado debido a que se ha iniciado sesión en otra ubicación con el mismo usuario" };
+            }
+            if (response == null) {
+                response = new string[] { "true" };
+            }
+            usuario = null;
+            bd.Dispose();
+
+            return response;
+        }    
+    }
+    
 }
