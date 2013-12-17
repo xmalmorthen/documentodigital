@@ -142,7 +142,8 @@
                 
                     <div style="border: 1px solid #000;background-color: #DBDBDB;width: auto;height: auto;display: inline-block;padding: 5px;margin:5px;text-align: left;">
                         <a class="fancyframe" href="@Url.Action("OpenImage", "Home",new { id_de_digital = @item.id, id_nodo = ViewBag.IdNodo })" title="@item.clasificaciondocumento|@item.Documento|@item.Origen|@item.fecha_hora_creacion|@item.valor_trazable">
-                            <img style="border: 1px solid #000;" src="data:image/jpg;base64,@(Convert.ToBase64String(item.thumbnail))" alt="@item.Documento" title="@item.Documento" width="@tamanio_imagen px" height="@tamanio_imagen px" />
+                            @{string title = @item.Documento + (!string.IsNullOrEmpty(item.valor_trazable) ? " - " + item.valor_trazable : "");}
+                            <img style="border: 1px solid #000;" src="data:image/jpg;base64,@(Convert.ToBase64String(item.thumbnail))" alt="@item.Documento" title="@title" width="@tamanio_imagen px" height="@tamanio_imagen px" />
                         </a>
                         <div>                    
                             <div>
@@ -225,6 +226,9 @@
                              '</span> ] [ <span style="font-size: 14px;font-weight: normal;color: #888;">' + titulo[2] +
                              '</span> ] [ <span style="font-size: 14px;font-weight: normal;color: red;">' + titulo[4] + '</span> ]</span>' +
                              '<span style="float:right;font-size: 14px;font-weight: bold;color:red;">' + titulo[3] + '</span> ';
+
+                var url= $(this.element)
+                console.log(url);
             }
         });
 
@@ -260,6 +264,7 @@
                 },
                 success: function (result) {
                     imgs[index].src = "data:image/jpg;base64," + result;
+                    hv[index].href = "data:image/jpg;base64," + result;
                 },
                 complete: function () {
                     $("img[name='loading_image_ajax_" + index + "']").fadeOut('slow');
