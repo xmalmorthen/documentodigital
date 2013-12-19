@@ -180,6 +180,21 @@
             </div>
         }
 </div>
+@if (ViewBag.Response != null)
+{
+    if (data.Count() > 0) {
+        <hr style="width: 50%;float: right;display: block;margin-top: 20px;"/>
+        @Html.ActionLink(" ",
+                 "Busqueda",
+                 "Impresion",
+                 new { nodo = Model.NodoSeleccionado,
+                       expediente = Model.ExpedienteSeleccionado,                     
+                       valor_trazable = Model.Valor_Trazable},
+                 new { target = "_blank",
+                       title = "Imprimir búsqueda", 
+                       style = "clear:both;float:right; background: url('" + Url.Content("~/Content/images/print.png") + "') no-repeat center right; display:inline-block; height:48px; width:48px;position: relative;" })
+    }
+}
 
 <script type="text/javascript">
     $(function () {

@@ -14,13 +14,17 @@ namespace TramiteDigitalWeb.Controllers
 
         private Boolean ValidaAcceso()
         {
-            string[] response = Acceso.Valida(User.Identity.Name, true);
-            if (Boolean.Parse(response[0]) == false)
+            if (!string.IsNullOrEmpty(User.Identity.Name))
             {
-                TempData["NoAdminPermissions"] = response[1];
-                return false;
+                string[] response = Acceso.Valida(User.Identity.Name, true);
+                if (Boolean.Parse(response[0]) == false)
+                {
+                    TempData["NoAdminPermissions"] = response[1];
+                    return false;
+                }
+                return true;
             }
-            return true;
+            return false;
         }
 
         private void InicializaVars(int? nodoseleccionado = null){
@@ -55,7 +59,6 @@ namespace TramiteDigitalWeb.Controllers
             List<vw_ListaExpedientes> lista_expedientes = catalogos.obtenerExpedientes(id_nodo, catalogos.nodos(int.Parse(UserParts[1])).ToList());
             return Json(lista_expedientes, JsonRequestBehavior.AllowGet);
         }
-
 
         [Authorize]
         public ActionResult Index()
@@ -133,7 +136,6 @@ namespace TramiteDigitalWeb.Controllers
             return Json(Convert.ToBase64String(imagendigital.imagen), JsonRequestBehavior.AllowGet);
         }
 
-
         [Authorize]
         [HttpGet]
         public ActionResult Gallery(int id_ma_digital, int id_nodo)
@@ -150,7 +152,6 @@ namespace TramiteDigitalWeb.Controllers
 
             return View();
         }
-
 
         [Authorize]
         [HttpGet]

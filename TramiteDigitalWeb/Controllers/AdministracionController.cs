@@ -12,14 +12,17 @@ namespace TramiteDigitalWeb.Controllers
     public class AdministracionController : Controller
     {
         private Boolean ValidaAcceso() {
-
-            string[] response = Acceso.Valida(User.Identity.Name);
-            if ( Boolean.Parse (response[0]) == false)
+            if (!string.IsNullOrEmpty(User.Identity.Name))
             {
-                TempData["NoAdminPermissions"] = response[1];
-                return false;
+                string[] response = Acceso.Valida(User.Identity.Name);
+                if (Boolean.Parse(response[0]) == false)
+                {
+                    TempData["NoAdminPermissions"] = response[1];
+                    return false;
+                }
+                return true;
             }
-            return true;        
+            return false;
         }
 
         private void InicializaVars(string returnUrl = null){

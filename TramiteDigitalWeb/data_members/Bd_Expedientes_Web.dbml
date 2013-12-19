@@ -73,4 +73,14 @@
       <Column Name="fecha_registro" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.pa_Fecha" Method="pa_Fecha">
+    <ElementType Name="pa_FechaResult">
+      <Column Name="Fecha" Type="System.String" DbType="NVarChar(44)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_Hora" Method="pa_Hora">
+    <ElementType Name="pa_HoraResult">
+      <Column Name="Hora" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

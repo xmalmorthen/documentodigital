@@ -117,6 +117,20 @@ namespace TramiteDigitalWeb.data_members
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_usuario);
 			return ((ISingleResult<pa_obtener_nodos_no_enlazadosResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_Fecha")]
+		public ISingleResult<pa_FechaResult> pa_Fecha()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<pa_FechaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.pa_Hora")]
+		public ISingleResult<pa_HoraResult> pa_Hora()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<pa_HoraResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ca_nodos")]
@@ -1325,6 +1339,58 @@ namespace TramiteDigitalWeb.data_members
 				if ((this._fecha_registro != value))
 				{
 					this._fecha_registro = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_FechaResult
+	{
+		
+		private string _Fecha;
+		
+		public pa_FechaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="NVarChar(44)")]
+		public string Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+	}
+	
+	public partial class pa_HoraResult
+	{
+		
+		private string _Hora;
+		
+		public pa_HoraResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hora", DbType="VarChar(8)")]
+		public string Hora
+		{
+			get
+			{
+				return this._Hora;
+			}
+			set
+			{
+				if ((this._Hora != value))
+				{
+					this._Hora = value;
 				}
 			}
 		}
