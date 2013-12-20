@@ -17,7 +17,7 @@ namespace apiRest.ModelsApiWeb
                 List<pa_ConsultaTramitesporValorTrazableResult> response = bd.pa_ConsultaTramitesporValorTrazable(valor_trazable).ToList();
 
                 //datos aleatorios de prueba                
-                string[] expedientes = new string[] { "Expediente 1", "Expediente 2", "Expediente 3" };
+                /*string[] expedientes = new string[] { "Expediente 1", "Expediente 2", "Expediente 3" };
 
                 Random bucle = new Random();
                 for (int i = 0; i <= bucle.Next(10000); i++)
@@ -26,7 +26,7 @@ namespace apiRest.ModelsApiWeb
                     Random gen = new Random();
                     int range = (DateTime.Today - start).Days;
                     response.Add(new pa_ConsultaTramitesporValorTrazableResult() { expediente = expedientes[ new Random().Next(0,3) ], id_estatus = i, id_ma_digital = i, nota = "prueba " + i.ToString(), id_tramite = i, tramite = "prueba " + i.ToString(), fecha_hora_creacion = start.AddDays(gen.Next(range)) });
-                }
+                }*/
                 //*******************************
 
                 return response;
@@ -44,14 +44,14 @@ namespace apiRest.ModelsApiWeb
                 List<pa_ConsultaTramitesporExpedienteyValorTrazableResult> response = bd.pa_ConsultaTramitesporExpedienteyValorTrazable(id_Expediente,valor_trazable).ToList();
                 
                 //datos aleatorios de prueba
-                Random bucle = new Random();
+                /*Random bucle = new Random();
                 for (int i = 0; i <= bucle.Next(10000); i++)
                 {
                     DateTime start = new DateTime(1995, 1, 1);
                     Random gen = new Random();
                     int range = (DateTime.Today - start).Days;
                     response.Add(new pa_ConsultaTramitesporExpedienteyValorTrazableResult() { expediente = "Expediente Prueba", id_estatus = i, id_ma_digital = i, nota = "prueba " + i.ToString(), id_tramite = i, tramite = "prueba " + i.ToString(), fecha_hora_creacion = start.AddDays(gen.Next(range)) });
-                }
+                }*/
                 //*******************************
 
                 return response;
@@ -69,7 +69,7 @@ namespace apiRest.ModelsApiWeb
                 List<pa_CampostrazablesRegistradosporId_ma_digitalResult> response = bd.pa_CampostrazablesRegistradosporId_ma_digital(id_ma_digital).ToList();
 
                 //datos aleatorios de prueba
-                Random bucle = new Random();
+                /*Random bucle = new Random();
                 for (int i = 0; i <= bucle.Next(15); i++)
                 {
                     DateTime start = new DateTime(1995, 1, 1);
@@ -85,7 +85,7 @@ namespace apiRest.ModelsApiWeb
                                                                                             Tamanio_Caracteres = new Random().Next(1, 50),
                                                                                             valor_trazable = "Valor trazable " + i
                                                                                            });
-                }
+                }*/
                 //*******************************
 
                 return response;
@@ -103,7 +103,7 @@ namespace apiRest.ModelsApiWeb
                 List<pa_RegistrosDigitalesRegistradosporId_ma_digitalResult> response = bd.pa_RegistrosDigitalesRegistradosporId_ma_digital(id_ma_digital).ToList();
 
                 //datos aleatorios de prueba
-                Random bucle = new Random();
+                /*Random bucle = new Random();
                 Image img = Image.FromFile(@"C:\Users\Public\Pictures\Sample Pictures\Koala.jpg");
                 string[] clasificaciondocumento = new string[] { "Identificacion oficial", "CURP", "Clasificacion 1", "Clasificacion 2" };
                 string[] origen = new string[] { "Interno", "Externo", "CUsuario", "Proveedor" };
@@ -126,7 +126,7 @@ namespace apiRest.ModelsApiWeb
                         thumbnail = classes.procesa_imagen.toByteArray(img),
                         valor_trazable = "Valor Trazable " + i
                     });
-                }
+                }*/
                 //*******************************
 
                 return response;
@@ -144,7 +144,7 @@ namespace apiRest.ModelsApiWeb
                 pa_ImagenDigitalporId_de_digitalResult response = bd.pa_ImagenDigitalporId_de_digital(id_de_digital).SingleOrDefault();               
 
                 //datos aleatorios de prueba
-                if (response == null)
+                /*if (response == null)
                 {
                     response = new pa_ImagenDigitalporId_de_digitalResult();
                     Random bucle = new Random();
@@ -164,7 +164,7 @@ namespace apiRest.ModelsApiWeb
                     response.Origen = origen[rnd];
                     response.imagen = classes.procesa_imagen.toByteArray(img);
                     response.valor_trazable = "Valor Trazable " + new Random().Next(1, 100);
-                }
+                }*/
                 //*******************************
 
                 return response;

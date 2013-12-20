@@ -5,10 +5,10 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="nodo" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="url_servicio_rest" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
-      <Column Name="usuario" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="contrasenia" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="usuario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="contrasenia" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_registro" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_registro" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Association Name="ca_nodos_re_nodos_usuarios" Member="re_nodos_usuarios" ThisKey="id" OtherKey="id_nodo" Type="re_nodos_usuarios" />
     </Type>
   </Table>
@@ -18,7 +18,7 @@
       <Column Name="id_nodo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="f_registro" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="f_registro" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Association Name="ca_nodos_re_nodos_usuarios" Member="ca_nodos" ThisKey="id_nodo" OtherKey="id" Type="ca_nodos" IsForeignKey="true" />
       <Association Name="ca_usuarios_re_nodos_usuarios" Member="ca_usuarios" ThisKey="id_usuario" OtherKey="id" Type="ca_usuarios" IsForeignKey="true" />
     </Type>
@@ -35,7 +35,7 @@
       <Column Name="telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="cargo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="f_registro" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="f_registro" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="es_administrador" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="tocken" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
       <Association Name="ca_usuarios_re_nodos_usuarios" Member="re_nodos_usuarios" ThisKey="id" OtherKey="id_usuario" Type="re_nodos_usuarios" />

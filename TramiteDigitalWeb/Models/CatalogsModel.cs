@@ -57,8 +57,6 @@ namespace TramiteDigitalWeb.Models
 
     public class CatalogsModel
     {
-        
-
         public IEnumerable<data_members.pa_obtener_nodosResult> nodos(int id_usuario) {
             try
             {

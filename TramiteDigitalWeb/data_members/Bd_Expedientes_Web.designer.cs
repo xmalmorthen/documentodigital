@@ -151,7 +151,7 @@ namespace TramiteDigitalWeb.data_members
 		
 		private bool _activo;
 		
-        private System.DateTime _fecha_registro = default(System.DateTime);
+		private System.DateTime _fecha_registro;
 		
 		private EntitySet<re_nodos_usuarios> _re_nodos_usuarios;
 		
@@ -245,7 +245,7 @@ namespace TramiteDigitalWeb.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="VarChar(100)")]
         [Display(Name = "Nombre de usuario para ejecutar servicio web")]
 		public string usuario
 		{
@@ -266,7 +266,7 @@ namespace TramiteDigitalWeb.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contrasenia", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contrasenia", DbType="VarChar(100)")]
         [Display(Name = "Contraseña para ejecutar servicio web")]
         [DataType(DataType.Password)]
 		public string contrasenia
@@ -309,7 +309,7 @@ namespace TramiteDigitalWeb.data_members
 			}
 		}
 		
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_fecha_registro", DbType = "DateTime NOT NULL", IsDbGenerated = true, UpdateCheck = UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_registro", DbType="DateTime NOT NULL", IsDbGenerated=true)]
         [Display(Name = "Fecha/Hora de registro")]
 		public System.DateTime fecha_registro
 		{
@@ -390,7 +390,7 @@ namespace TramiteDigitalWeb.data_members
 		
 		private bool _activo;
 		
-        private System.DateTime _f_registro = default(System.DateTime);
+		private System.DateTime _f_registro;
 		
 		private EntityRef<ca_nodos> _ca_nodos;
 		
@@ -509,7 +509,7 @@ namespace TramiteDigitalWeb.data_members
 			}
 		}
 		
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_f_registro", DbType = "DateTime NOT NULL", IsDbGenerated = true, UpdateCheck = UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_registro", DbType="DateTime NOT NULL", IsDbGenerated=true)]
 		public System.DateTime f_registro
 		{
 			get
@@ -646,7 +646,7 @@ namespace TramiteDigitalWeb.data_members
 		
 		private bool _activo;
 		
-        private System.DateTime _f_registro = default(System.DateTime);
+		private System.DateTime _f_registro;
 		
 		private bool _es_administrador;
 		
@@ -924,7 +924,7 @@ namespace TramiteDigitalWeb.data_members
 			}
 		}
 		
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_f_registro", DbType = "DateTime NOT NULL", IsDbGenerated = true, UpdateCheck = UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_f_registro", DbType="DateTime NOT NULL", IsDbGenerated=true)]
         [Display(Name = "Fecha/Hora de registro")]
 		public System.DateTime f_registro
 		{

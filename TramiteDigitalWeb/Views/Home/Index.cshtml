@@ -4,6 +4,22 @@
 <script src="@Url.Content("~/Scripts/jquery.tablesorter.new.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.tablesorter.filter.js")" type="text/javascript"></script>
 
+<style type="text/css">
+    .botonera
+    {
+        clear:both;    
+    }
+    .botonera a
+    {
+        float:right; 
+        display:inline-block; 
+        height:48px; 
+        width:48px;
+        position: relative;
+        margin: 0 5px;
+    }
+</style>
+
 @model TramiteDigitalWeb.Models.ConsultasViewModels
 @{
     ViewBag.Title = "Consulta de Trámites";
@@ -184,15 +200,74 @@
 {
     if (data.Count() > 0) {
         <hr style="width: 50%;float: right;display: block;margin-top: 20px;"/>
-        @Html.ActionLink(" ",
-                 "Busqueda",
-                 "Impresion",
-                 new { nodo = Model.NodoSeleccionado,
-                       expediente = Model.ExpedienteSeleccionado,                     
-                       valor_trazable = Model.Valor_Trazable},
-                 new { target = "_blank",
-                       title = "Imprimir búsqueda", 
-                       style = "clear:both;float:right; background: url('" + Url.Content("~/Content/images/print.png") + "') no-repeat center right; display:inline-block; height:48px; width:48px;position: relative;" })
+        <div class="botonera">
+            <!--@Html.ActionLink(" ",
+                     "Busqueda",
+                     "Impresion",
+                     new
+                     {
+                         nodo = Model.NodoSeleccionado,
+                         expediente = Model.ExpedienteSeleccionado,
+                         valor_trazable = Model.Valor_Trazable,
+                         formato = "Image",
+                         returnUrl = Request.Url.PathAndQuery
+                     },
+                     new
+                     {
+                         target = "_blank",
+                         title = "Exportar a Imagen",
+                         style = "background: url('" + Url.Content("~/Content/images/image.png") + "') no-repeat center right;"
+                     })-->
+
+            @Html.ActionLink(" ",
+                     "Busqueda",
+                     "Impresion",
+                     new
+                     {
+                         nodo = Model.NodoSeleccionado,
+                         expediente = Model.ExpedienteSeleccionado,
+                         valor_trazable = Model.Valor_Trazable,
+                         formato = "Excel",
+                         returnUrl = Request.Url.PathAndQuery
+                     },
+                     new
+                     {
+                         target = "_blank",
+                         title = "Exportar a Excel",
+                         style = "background: url('" + Url.Content("~/Content/images/excel.png") + "') no-repeat center right;"
+                     })
+
+            @Html.ActionLink(" ",
+                     "Busqueda",
+                     "Impresion",
+                     new
+                     {
+                         nodo = Model.NodoSeleccionado,
+                         expediente = Model.ExpedienteSeleccionado,
+                         valor_trazable = Model.Valor_Trazable,
+                         formato = "Word",
+                         returnUrl = Request.Url.PathAndQuery
+                     },
+                     new
+                     {
+                         target = "_blank",
+                         title = "Exportar a Word",
+                         style = "background: url('" + Url.Content("~/Content/images/word.png") + "') no-repeat center right;"
+                     })
+
+            @Html.ActionLink(" ",
+                     "Busqueda",
+                     "Impresion",
+                     new { nodo = Model.NodoSeleccionado,
+                           expediente = Model.ExpedienteSeleccionado,                     
+                           valor_trazable = Model.Valor_Trazable,
+                           formato = "PDF",
+                           returnUrl = Request.Url.PathAndQuery
+                     },
+                     new { target = "_blank",
+                           title = "Imprimir búsqueda", 
+                           style = "background: url('" + Url.Content("~/Content/images/print.png") + "') no-repeat center right;" })
+        </div>
     }
 }
 
