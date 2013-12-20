@@ -235,6 +235,7 @@
     <Content Include="App_Data\ReportsStructure_log.ldf">
       <DependentUpon>ReportsStructure.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\ImpresionBotonera.css" />
     <Content Include="Content\images\ajax_loader_gray_512.gif" />
     <Content Include="Content\images\ajax_loader_red_48.gif" />
     <Content Include="Content\images\attention.png" />
@@ -472,6 +473,9 @@
     <Content Include="Reportes\Busqueda.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reportes\Tramite.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

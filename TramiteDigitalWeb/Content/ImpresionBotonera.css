@@ -1,0 +1,13 @@
+﻿.botonera
+{
+    clear:both;    
+}
+.botonera a
+{
+    float:right; 
+    display:inline-block; 
+    height:48px; 
+    width:48px;
+    position: relative;
+    margin: 0 5px;
+}

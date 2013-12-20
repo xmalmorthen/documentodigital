@@ -309,7 +309,7 @@ namespace TramiteDigitalWeb.Models.classes
             }
         }
     }
-
+   
     public partial class pa_ImagenDigitalporId_de_digitalResult
     {
 

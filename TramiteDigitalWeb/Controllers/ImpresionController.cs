@@ -133,7 +133,7 @@ namespace TramiteDigitalWeb.Controllers
             if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account");
 
             LocalReport lr = new LocalReport();
-            string path = Path.Combine(Server.MapPath("~/Reportes"), "Busqueda.rdlc");
+            string path = Path.Combine(Server.MapPath("~/Reportes"), "Tramite.rdlc");
             if (System.IO.File.Exists(path))
             {
                 lr.ReportPath = path;
