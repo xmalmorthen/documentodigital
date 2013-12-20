@@ -207,6 +207,7 @@
     <Compile Include="Models\ConsultaModels.cs" />
     <Compile Include="Models\ConsultasViewModels.cs" />
     <Compile Include="Models\AdministracionModel.cs" />
+    <Compile Include="Models\ObtencionGaleriaDigitalModels.cs" />
     <Compile Include="Models\Miselaneo.cs" />
     <Compile Include="Models\ObtencionImagenDigitalModels.cs" />
     <Compile Include="Models\ObtencionComposTrazables.cs">
@@ -475,6 +476,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\Galeria.rdlc" />
     <EmbeddedResource Include="Reportes\Tramite.rdlc" />
   </ItemGroup>
   <PropertyGroup>

@@ -10,10 +10,10 @@ using System.Threading;
 
 namespace TramiteDigitalWeb.Models
 {
-    public delegate void FncObtencionCallbackimagendigitalOk(pa_ImagenDigitalporId_de_digitalResult result);
-    public delegate void FncObtencionCallbackimagendigitalError(ErrorConsulta result);
+    public delegate void FncObtencionCallbackgaleriadigitalOk(pa_ImagenDigitalporId_de_digitalResult result);
+    public delegate void FncObtencionCallbackgaleriadigitalError(ErrorConsulta result);
 
-    public class rest_obtencion_imagendigital
+    public class rest_obtencion_galeriadigital
     {
         protected string _usuario;
         protected string _contrasenia;
@@ -21,10 +21,10 @@ namespace TramiteDigitalWeb.Models
         protected int? _id_de_digital = null;
         protected int? _id_nodo = null;
         protected string _nodo;
-        protected FncObtencionCallbackimagendigitalOk _callbackok = null;
-        protected FncObtencionCallbackimagendigitalError _error = null;
+        protected FncObtencionCallbackgaleriadigitalOk _callbackok = null;
+        protected FncObtencionCallbackgaleriadigitalError _error = null;
 
-        public rest_obtencion_imagendigital(string usuario, string contrasenia, string url_servicio_rest, int id_nodo, string nodo, int? id_de_digital, FncObtencionCallbackimagendigitalOk callback, FncObtencionCallbackimagendigitalError error)
+        public rest_obtencion_galeriadigital(string usuario, string contrasenia, string url_servicio_rest, int id_nodo, string nodo, int? id_de_digital, FncObtencionCallbackgaleriadigitalOk callback, FncObtencionCallbackgaleriadigitalError error)
         {
             this._usuario = usuario;
             this._contrasenia = contrasenia;
@@ -69,50 +69,57 @@ namespace TramiteDigitalWeb.Models
         }
     }
 
-    public static class ObtencionimagendigitalModels
+    public static class ObtencionGaleriadigitalModels
     {
         private static CatalogsModel catalogos = new CatalogsModel();
 
-        public static pa_ImagenDigitalporId_de_digitalResult imagendigital(int id_usuario, int id_nodo, int id_de_digital)
+        public static List<pa_ImagenDigitalporId_de_digitalResult> imagendigital(int id_usuario, Dictionary<int,int> Refs)
         {
-            response = null;
-            responseerrors.Clear();
+            response_gallery = null;
+            responseerrors_gallery.Clear();
 
-            data_members.pa_obtener_nodoResult nodo = catalogos.nodo(id_usuario, id_nodo);
+            foreach (KeyValuePair<int, int> item in Refs)
+            {
+                data_members.pa_obtener_nodoResult nodo = catalogos.nodo(id_usuario, item.Value);
+                rest_obtencion_galeriadigital rest_cnfg = new rest_obtencion_galeriadigital(nodo.usuario,
+                                                              nodo.contrasenia,
+                                                              nodo.url_servicio_rest,
+                                                              nodo.id,
+                                                              nodo.nodo,
+                                                              item.Key,
+                                                              new FncObtencionCallbackgaleriadigitalOk(ResultCallback),
+                                                              new FncObtencionCallbackgaleriadigitalError(ErrorResult));
+                Thread th = new Thread(new ThreadStart(rest_cnfg.EjecutaRest_Consulta));
+                th.Start();
+                th.Join(); 
+            }
 
-            rest_obtencion_imagendigital rest_cnfg = new rest_obtencion_imagendigital(nodo.usuario, 
-                                                          nodo.contrasenia, 
-                                                          nodo.url_servicio_rest,                                                          
-                                                          nodo.id,
-                                                          nodo.nodo,
-                                                          id_de_digital,
-                                                          new FncObtencionCallbackimagendigitalOk(ResultCallback), 
-                                                          new FncObtencionCallbackimagendigitalError(ErrorResult));
-            Thread th = new Thread(new ThreadStart(rest_cnfg.EjecutaRest_Consulta));
-            th.Start();
-            th.Join();
-
-            return response;
+            return response_gallery;
         }
 
-        private static pa_ImagenDigitalporId_de_digitalResult response = new pa_ImagenDigitalporId_de_digitalResult();
+        private static List<pa_ImagenDigitalporId_de_digitalResult> response_gallery = new List<pa_ImagenDigitalporId_de_digitalResult>();
         private static void ResultCallback(pa_ImagenDigitalporId_de_digitalResult result)
         {
-            response = result;
+            if (response_gallery == null) {
+                response_gallery = new List<pa_ImagenDigitalporId_de_digitalResult>();
+            }
+
+            response_gallery.Add(result);
         }
 
-        private static List<ErrorConsulta> responseerrors = new List<ErrorConsulta>();
+        private static List<ErrorConsulta> responseerrors_gallery = new List<ErrorConsulta>();
         public static List<ErrorConsulta> ResponseErrors
         {
             get
             {
-                return responseerrors;
+                return responseerrors_gallery;
             }
         }
         private static void ErrorResult(ErrorConsulta result)
         {
-            responseerrors.Add(result);
+            responseerrors_gallery.Add(result);
         }
     }
+
 
 }
