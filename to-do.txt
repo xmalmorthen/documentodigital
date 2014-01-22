@@ -1,18 +1,4 @@
-[valorar]
-	.Para permitir el acceso a usuarios desde sitio web...
-	.Agregar en ca_roles el rol de 
-		[ id 7 => "Consulta Web" ]
-	.Agregar en ca_modulos los modulos
-		[id 17 => "Consulta local"]
-		[id 18 => "Consulta global"]
-	.Agregar en re_roles_modulos
-		[ir_rol 1, id_modulo 17]
-		[id_rol 1, 18_modulo 18]
-		[ir_rol 7, id_modulo 17]
-		[id_rol 7, 18_modulo 18]
-
 /*******************************************************************/
-
 	. parametrizar web
 	. parametrizar escritorio
 

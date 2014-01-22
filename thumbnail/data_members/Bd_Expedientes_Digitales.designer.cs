@@ -72,9 +72,6 @@ namespace scanndoc.data_members
     partial void Insertca_tiposbloqueos(ca_tiposbloqueos instance);
     partial void Updateca_tiposbloqueos(ca_tiposbloqueos instance);
     partial void Deleteca_tiposbloqueos(ca_tiposbloqueos instance);
-    partial void Insertca_tramites(ca_tramites instance);
-    partial void Updateca_tramites(ca_tramites instance);
-    partial void Deleteca_tramites(ca_tramites instance);
     partial void Insertde_acciones_modulo(de_acciones_modulo instance);
     partial void Updatede_acciones_modulo(de_acciones_modulo instance);
     partial void Deletede_acciones_modulo(de_acciones_modulo instance);
@@ -120,6 +117,9 @@ namespace scanndoc.data_members
     partial void Inserttbl_errorlogs(tbl_errorlogs instance);
     partial void Updatetbl_errorlogs(tbl_errorlogs instance);
     partial void Deletetbl_errorlogs(tbl_errorlogs instance);
+    partial void Insertca_tramites(ca_tramites instance);
+    partial void Updateca_tramites(ca_tramites instance);
+    partial void Deleteca_tramites(ca_tramites instance);
     #endregion
 		
 		public Bd_Expedientes_DigitalesDataContext() : 
@@ -264,14 +264,6 @@ namespace scanndoc.data_members
 			}
 		}
 		
-		public System.Data.Linq.Table<ca_tramites> ca_tramites
-		{
-			get
-			{
-				return this.GetTable<ca_tramites>();
-			}
-		}
-		
 		public System.Data.Linq.Table<de_acciones_modulo> de_acciones_modulo
 		{
 			get
@@ -397,6 +389,14 @@ namespace scanndoc.data_members
 			get
 			{
 				return this.GetTable<tbl_errorlogs>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ca_tramites> ca_tramites
+		{
+			get
+			{
+				return this.GetTable<ca_tramites>();
 			}
 		}
 		
@@ -1665,8 +1665,6 @@ namespace scanndoc.data_members
 		
 		private string _Descripcion;
 		
-		private EntitySet<ca_tramites> _ca_tramites;
-		
 		private EntitySet<re_clasificaciondocumentos_documentos> _re_clasificaciondocumentos_documentos;
 		
 		private EntitySet<re_expedientes_campostrazables> _re_expedientes_campostrazables;
@@ -1676,6 +1674,8 @@ namespace scanndoc.data_members
 		private EntitySet<de_digital> _de_digital;
 		
 		private EntitySet<ma_digital> _ma_digital;
+		
+		private EntitySet<ca_tramites> _ca_tramites;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1689,12 +1689,12 @@ namespace scanndoc.data_members
 		
 		public ca_estatus()
 		{
-			this._ca_tramites = new EntitySet<ca_tramites>(new Action<ca_tramites>(this.attach_ca_tramites), new Action<ca_tramites>(this.detach_ca_tramites));
 			this._re_clasificaciondocumentos_documentos = new EntitySet<re_clasificaciondocumentos_documentos>(new Action<re_clasificaciondocumentos_documentos>(this.attach_re_clasificaciondocumentos_documentos), new Action<re_clasificaciondocumentos_documentos>(this.detach_re_clasificaciondocumentos_documentos));
 			this._re_expedientes_campostrazables = new EntitySet<re_expedientes_campostrazables>(new Action<re_expedientes_campostrazables>(this.attach_re_expedientes_campostrazables), new Action<re_expedientes_campostrazables>(this.detach_re_expedientes_campostrazables));
 			this._de_digital_campostrazables = new EntitySet<de_digital_campostrazables>(new Action<de_digital_campostrazables>(this.attach_de_digital_campostrazables), new Action<de_digital_campostrazables>(this.detach_de_digital_campostrazables));
 			this._de_digital = new EntitySet<de_digital>(new Action<de_digital>(this.attach_de_digital), new Action<de_digital>(this.detach_de_digital));
 			this._ma_digital = new EntitySet<ma_digital>(new Action<ma_digital>(this.attach_ma_digital), new Action<ma_digital>(this.detach_ma_digital));
+			this._ca_tramites = new EntitySet<ca_tramites>(new Action<ca_tramites>(this.attach_ca_tramites), new Action<ca_tramites>(this.detach_ca_tramites));
 			OnCreated();
 		}
 		
@@ -1735,19 +1735,6 @@ namespace scanndoc.data_members
 					this.SendPropertyChanged("Descripcion");
 					this.OnDescripcionChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_estatus_ca_tramites", Storage="_ca_tramites", ThisKey="id", OtherKey="id_estatus")]
-		public EntitySet<ca_tramites> ca_tramites
-		{
-			get
-			{
-				return this._ca_tramites;
-			}
-			set
-			{
-				this._ca_tramites.Assign(value);
 			}
 		}
 		
@@ -1816,6 +1803,19 @@ namespace scanndoc.data_members
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_estatus_ca_tramites", Storage="_ca_tramites", ThisKey="id", OtherKey="id_estatus")]
+		public EntitySet<ca_tramites> ca_tramites
+		{
+			get
+			{
+				return this._ca_tramites;
+			}
+			set
+			{
+				this._ca_tramites.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1834,18 +1834,6 @@ namespace scanndoc.data_members
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_ca_tramites(ca_tramites entity)
-		{
-			this.SendPropertyChanging();
-			entity.ca_estatus = this;
-		}
-		
-		private void detach_ca_tramites(ca_tramites entity)
-		{
-			this.SendPropertyChanging();
-			entity.ca_estatus = null;
 		}
 		
 		private void attach_re_clasificaciondocumentos_documentos(re_clasificaciondocumentos_documentos entity)
@@ -1903,6 +1891,18 @@ namespace scanndoc.data_members
 		}
 		
 		private void detach_ma_digital(ma_digital entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_estatus = null;
+		}
+		
+		private void attach_ca_tramites(ca_tramites entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_estatus = this;
+		}
+		
+		private void detach_ca_tramites(ca_tramites entity)
 		{
 			this.SendPropertyChanging();
 			entity.ca_estatus = null;
@@ -2832,374 +2832,6 @@ namespace scanndoc.data_members
 		{
 			this.SendPropertyChanging();
 			entity.ca_tiposbloqueos = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ca_tramites")]
-	public partial class ca_tramites : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private string _Nombre;
-		
-		private string _Descripcion;
-		
-		private string _Descripcion_Breve;
-		
-		private string _Alcance_Inicial;
-		
-		private string _Alcance_Final;
-		
-		private int _id_ClasificacionTramite;
-		
-		private int _id_estatus;
-		
-		private EntitySet<re_expedientes_tramites> _re_expedientes_tramites;
-		
-		private EntitySet<re_tramites_clasificaciondocumentos> _re_tramites_clasificaciondocumentos;
-		
-		private EntityRef<ca_clasificaciontramites> _ca_clasificaciontramites;
-		
-		private EntityRef<ca_estatus> _ca_estatus;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnNombreChanging(string value);
-    partial void OnNombreChanged();
-    partial void OnDescripcionChanging(string value);
-    partial void OnDescripcionChanged();
-    partial void OnDescripcion_BreveChanging(string value);
-    partial void OnDescripcion_BreveChanged();
-    partial void OnAlcance_InicialChanging(string value);
-    partial void OnAlcance_InicialChanged();
-    partial void OnAlcance_FinalChanging(string value);
-    partial void OnAlcance_FinalChanged();
-    partial void Onid_ClasificacionTramiteChanging(int value);
-    partial void Onid_ClasificacionTramiteChanged();
-    partial void Onid_estatusChanging(int value);
-    partial void Onid_estatusChanged();
-    #endregion
-		
-		public ca_tramites()
-		{
-			this._re_expedientes_tramites = new EntitySet<re_expedientes_tramites>(new Action<re_expedientes_tramites>(this.attach_re_expedientes_tramites), new Action<re_expedientes_tramites>(this.detach_re_expedientes_tramites));
-			this._re_tramites_clasificaciondocumentos = new EntitySet<re_tramites_clasificaciondocumentos>(new Action<re_tramites_clasificaciondocumentos>(this.attach_re_tramites_clasificaciondocumentos), new Action<re_tramites_clasificaciondocumentos>(this.detach_re_tramites_clasificaciondocumentos));
-			this._ca_clasificaciontramites = default(EntityRef<ca_clasificaciontramites>);
-			this._ca_estatus = default(EntityRef<ca_estatus>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Nombre
-		{
-			get
-			{
-				return this._Nombre;
-			}
-			set
-			{
-				if ((this._Nombre != value))
-				{
-					this.OnNombreChanging(value);
-					this.SendPropertyChanging();
-					this._Nombre = value;
-					this.SendPropertyChanged("Nombre");
-					this.OnNombreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(MAX)")]
-		public string Descripcion
-		{
-			get
-			{
-				return this._Descripcion;
-			}
-			set
-			{
-				if ((this._Descripcion != value))
-				{
-					this.OnDescripcionChanging(value);
-					this.SendPropertyChanging();
-					this._Descripcion = value;
-					this.SendPropertyChanged("Descripcion");
-					this.OnDescripcionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_Breve", DbType="VarChar(100)")]
-		public string Descripcion_Breve
-		{
-			get
-			{
-				return this._Descripcion_Breve;
-			}
-			set
-			{
-				if ((this._Descripcion_Breve != value))
-				{
-					this.OnDescripcion_BreveChanging(value);
-					this.SendPropertyChanging();
-					this._Descripcion_Breve = value;
-					this.SendPropertyChanged("Descripcion_Breve");
-					this.OnDescripcion_BreveChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Alcance_Inicial", DbType="VarChar(100)")]
-		public string Alcance_Inicial
-		{
-			get
-			{
-				return this._Alcance_Inicial;
-			}
-			set
-			{
-				if ((this._Alcance_Inicial != value))
-				{
-					this.OnAlcance_InicialChanging(value);
-					this.SendPropertyChanging();
-					this._Alcance_Inicial = value;
-					this.SendPropertyChanged("Alcance_Inicial");
-					this.OnAlcance_InicialChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Alcance_Final", DbType="VarChar(100)")]
-		public string Alcance_Final
-		{
-			get
-			{
-				return this._Alcance_Final;
-			}
-			set
-			{
-				if ((this._Alcance_Final != value))
-				{
-					this.OnAlcance_FinalChanging(value);
-					this.SendPropertyChanging();
-					this._Alcance_Final = value;
-					this.SendPropertyChanged("Alcance_Final");
-					this.OnAlcance_FinalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_ClasificacionTramite", DbType="Int NOT NULL")]
-		public int id_ClasificacionTramite
-		{
-			get
-			{
-				return this._id_ClasificacionTramite;
-			}
-			set
-			{
-				if ((this._id_ClasificacionTramite != value))
-				{
-					if (this._ca_clasificaciontramites.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_ClasificacionTramiteChanging(value);
-					this.SendPropertyChanging();
-					this._id_ClasificacionTramite = value;
-					this.SendPropertyChanged("id_ClasificacionTramite");
-					this.Onid_ClasificacionTramiteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus", DbType="Int NOT NULL")]
-		public int id_estatus
-		{
-			get
-			{
-				return this._id_estatus;
-			}
-			set
-			{
-				if ((this._id_estatus != value))
-				{
-					if (this._ca_estatus.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_estatusChanging(value);
-					this.SendPropertyChanging();
-					this._id_estatus = value;
-					this.SendPropertyChanged("id_estatus");
-					this.Onid_estatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tramites_re_expedientes_tramites", Storage="_re_expedientes_tramites", ThisKey="id", OtherKey="id_tramite")]
-		public EntitySet<re_expedientes_tramites> re_expedientes_tramites
-		{
-			get
-			{
-				return this._re_expedientes_tramites;
-			}
-			set
-			{
-				this._re_expedientes_tramites.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tramites_re_tramites_clasificaciondocumentos", Storage="_re_tramites_clasificaciondocumentos", ThisKey="id", OtherKey="id_tramie")]
-		public EntitySet<re_tramites_clasificaciondocumentos> re_tramites_clasificaciondocumentos
-		{
-			get
-			{
-				return this._re_tramites_clasificaciondocumentos;
-			}
-			set
-			{
-				this._re_tramites_clasificaciondocumentos.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_clasificaciontramites_ca_tramites", Storage="_ca_clasificaciontramites", ThisKey="id_ClasificacionTramite", OtherKey="id", IsForeignKey=true)]
-		public ca_clasificaciontramites ca_clasificaciontramites
-		{
-			get
-			{
-				return this._ca_clasificaciontramites.Entity;
-			}
-			set
-			{
-				ca_clasificaciontramites previousValue = this._ca_clasificaciontramites.Entity;
-				if (((previousValue != value) 
-							|| (this._ca_clasificaciontramites.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ca_clasificaciontramites.Entity = null;
-						previousValue.ca_tramites.Remove(this);
-					}
-					this._ca_clasificaciontramites.Entity = value;
-					if ((value != null))
-					{
-						value.ca_tramites.Add(this);
-						this._id_ClasificacionTramite = value.id;
-					}
-					else
-					{
-						this._id_ClasificacionTramite = default(int);
-					}
-					this.SendPropertyChanged("ca_clasificaciontramites");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_estatus_ca_tramites", Storage="_ca_estatus", ThisKey="id_estatus", OtherKey="id", IsForeignKey=true)]
-		public ca_estatus ca_estatus
-		{
-			get
-			{
-				return this._ca_estatus.Entity;
-			}
-			set
-			{
-				ca_estatus previousValue = this._ca_estatus.Entity;
-				if (((previousValue != value) 
-							|| (this._ca_estatus.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ca_estatus.Entity = null;
-						previousValue.ca_tramites.Remove(this);
-					}
-					this._ca_estatus.Entity = value;
-					if ((value != null))
-					{
-						value.ca_tramites.Add(this);
-						this._id_estatus = value.id;
-					}
-					else
-					{
-						this._id_estatus = default(int);
-					}
-					this.SendPropertyChanged("ca_estatus");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_re_expedientes_tramites(re_expedientes_tramites entity)
-		{
-			this.SendPropertyChanging();
-			entity.ca_tramites = this;
-		}
-		
-		private void detach_re_expedientes_tramites(re_expedientes_tramites entity)
-		{
-			this.SendPropertyChanging();
-			entity.ca_tramites = null;
-		}
-		
-		private void attach_re_tramites_clasificaciondocumentos(re_tramites_clasificaciondocumentos entity)
-		{
-			this.SendPropertyChanging();
-			entity.ca_tramites = this;
-		}
-		
-		private void detach_re_tramites_clasificaciondocumentos(re_tramites_clasificaciondocumentos entity)
-		{
-			this.SendPropertyChanging();
-			entity.ca_tramites = null;
 		}
 	}
 	
@@ -7346,6 +6978,374 @@ namespace scanndoc.data_members
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ca_tramites")]
+	public partial class ca_tramites : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _Nombre;
+		
+		private string _Descripcion;
+		
+		private string _Descripcion_Breve;
+		
+		private string _Alcance_Inicial;
+		
+		private string _Alcance_Final;
+		
+		private int _id_ClasificacionTramite;
+		
+		private int _id_estatus;
+		
+		private EntitySet<re_expedientes_tramites> _re_expedientes_tramites;
+		
+		private EntitySet<re_tramites_clasificaciondocumentos> _re_tramites_clasificaciondocumentos;
+		
+		private EntityRef<ca_clasificaciontramites> _ca_clasificaciontramites;
+		
+		private EntityRef<ca_estatus> _ca_estatus;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnNombreChanging(string value);
+    partial void OnNombreChanged();
+    partial void OnDescripcionChanging(string value);
+    partial void OnDescripcionChanged();
+    partial void OnDescripcion_BreveChanging(string value);
+    partial void OnDescripcion_BreveChanged();
+    partial void OnAlcance_InicialChanging(string value);
+    partial void OnAlcance_InicialChanged();
+    partial void OnAlcance_FinalChanging(string value);
+    partial void OnAlcance_FinalChanged();
+    partial void Onid_ClasificacionTramiteChanging(int value);
+    partial void Onid_ClasificacionTramiteChanged();
+    partial void Onid_estatusChanging(int value);
+    partial void Onid_estatusChanged();
+    #endregion
+		
+		public ca_tramites()
+		{
+			this._re_expedientes_tramites = new EntitySet<re_expedientes_tramites>(new Action<re_expedientes_tramites>(this.attach_re_expedientes_tramites), new Action<re_expedientes_tramites>(this.detach_re_expedientes_tramites));
+			this._re_tramites_clasificaciondocumentos = new EntitySet<re_tramites_clasificaciondocumentos>(new Action<re_tramites_clasificaciondocumentos>(this.attach_re_tramites_clasificaciondocumentos), new Action<re_tramites_clasificaciondocumentos>(this.detach_re_tramites_clasificaciondocumentos));
+			this._ca_clasificaciontramites = default(EntityRef<ca_clasificaciontramites>);
+			this._ca_estatus = default(EntityRef<ca_estatus>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this.OnNombreChanging(value);
+					this.SendPropertyChanging();
+					this._Nombre = value;
+					this.SendPropertyChanged("Nombre");
+					this.OnNombreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(MAX)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this.OnDescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._Descripcion = value;
+					this.SendPropertyChanged("Descripcion");
+					this.OnDescripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion_Breve", DbType="VarChar(200)")]
+		public string Descripcion_Breve
+		{
+			get
+			{
+				return this._Descripcion_Breve;
+			}
+			set
+			{
+				if ((this._Descripcion_Breve != value))
+				{
+					this.OnDescripcion_BreveChanging(value);
+					this.SendPropertyChanging();
+					this._Descripcion_Breve = value;
+					this.SendPropertyChanged("Descripcion_Breve");
+					this.OnDescripcion_BreveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Alcance_Inicial", DbType="VarChar(MAX)")]
+		public string Alcance_Inicial
+		{
+			get
+			{
+				return this._Alcance_Inicial;
+			}
+			set
+			{
+				if ((this._Alcance_Inicial != value))
+				{
+					this.OnAlcance_InicialChanging(value);
+					this.SendPropertyChanging();
+					this._Alcance_Inicial = value;
+					this.SendPropertyChanged("Alcance_Inicial");
+					this.OnAlcance_InicialChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Alcance_Final", DbType="VarChar(MAX)")]
+		public string Alcance_Final
+		{
+			get
+			{
+				return this._Alcance_Final;
+			}
+			set
+			{
+				if ((this._Alcance_Final != value))
+				{
+					this.OnAlcance_FinalChanging(value);
+					this.SendPropertyChanging();
+					this._Alcance_Final = value;
+					this.SendPropertyChanged("Alcance_Final");
+					this.OnAlcance_FinalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_ClasificacionTramite", DbType="Int NOT NULL")]
+		public int id_ClasificacionTramite
+		{
+			get
+			{
+				return this._id_ClasificacionTramite;
+			}
+			set
+			{
+				if ((this._id_ClasificacionTramite != value))
+				{
+					if (this._ca_clasificaciontramites.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_ClasificacionTramiteChanging(value);
+					this.SendPropertyChanging();
+					this._id_ClasificacionTramite = value;
+					this.SendPropertyChanged("id_ClasificacionTramite");
+					this.Onid_ClasificacionTramiteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_estatus", DbType="Int NOT NULL")]
+		public int id_estatus
+		{
+			get
+			{
+				return this._id_estatus;
+			}
+			set
+			{
+				if ((this._id_estatus != value))
+				{
+					if (this._ca_estatus.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_estatusChanging(value);
+					this.SendPropertyChanging();
+					this._id_estatus = value;
+					this.SendPropertyChanged("id_estatus");
+					this.Onid_estatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tramites_re_expedientes_tramites", Storage="_re_expedientes_tramites", ThisKey="id", OtherKey="id_tramite")]
+		public EntitySet<re_expedientes_tramites> re_expedientes_tramites
+		{
+			get
+			{
+				return this._re_expedientes_tramites;
+			}
+			set
+			{
+				this._re_expedientes_tramites.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_tramites_re_tramites_clasificaciondocumentos", Storage="_re_tramites_clasificaciondocumentos", ThisKey="id", OtherKey="id_tramie")]
+		public EntitySet<re_tramites_clasificaciondocumentos> re_tramites_clasificaciondocumentos
+		{
+			get
+			{
+				return this._re_tramites_clasificaciondocumentos;
+			}
+			set
+			{
+				this._re_tramites_clasificaciondocumentos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_clasificaciontramites_ca_tramites", Storage="_ca_clasificaciontramites", ThisKey="id_ClasificacionTramite", OtherKey="id", IsForeignKey=true)]
+		public ca_clasificaciontramites ca_clasificaciontramites
+		{
+			get
+			{
+				return this._ca_clasificaciontramites.Entity;
+			}
+			set
+			{
+				ca_clasificaciontramites previousValue = this._ca_clasificaciontramites.Entity;
+				if (((previousValue != value) 
+							|| (this._ca_clasificaciontramites.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ca_clasificaciontramites.Entity = null;
+						previousValue.ca_tramites.Remove(this);
+					}
+					this._ca_clasificaciontramites.Entity = value;
+					if ((value != null))
+					{
+						value.ca_tramites.Add(this);
+						this._id_ClasificacionTramite = value.id;
+					}
+					else
+					{
+						this._id_ClasificacionTramite = default(int);
+					}
+					this.SendPropertyChanged("ca_clasificaciontramites");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ca_estatus_ca_tramites", Storage="_ca_estatus", ThisKey="id_estatus", OtherKey="id", IsForeignKey=true)]
+		public ca_estatus ca_estatus
+		{
+			get
+			{
+				return this._ca_estatus.Entity;
+			}
+			set
+			{
+				ca_estatus previousValue = this._ca_estatus.Entity;
+				if (((previousValue != value) 
+							|| (this._ca_estatus.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ca_estatus.Entity = null;
+						previousValue.ca_tramites.Remove(this);
+					}
+					this._ca_estatus.Entity = value;
+					if ((value != null))
+					{
+						value.ca_tramites.Add(this);
+						this._id_estatus = value.id;
+					}
+					else
+					{
+						this._id_estatus = default(int);
+					}
+					this.SendPropertyChanged("ca_estatus");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_re_expedientes_tramites(re_expedientes_tramites entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_tramites = this;
+		}
+		
+		private void detach_re_expedientes_tramites(re_expedientes_tramites entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_tramites = null;
+		}
+		
+		private void attach_re_tramites_clasificaciondocumentos(re_tramites_clasificaciondocumentos entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_tramites = this;
+		}
+		
+		private void detach_re_tramites_clasificaciondocumentos(re_tramites_clasificaciondocumentos entity)
+		{
+			this.SendPropertyChanging();
+			entity.ca_tramites = null;
 		}
 	}
 	
