@@ -363,16 +363,24 @@ namespace scanndoc.forms
         {
             try
             {
-                if ((bindingsource.Current as data_members.ca_tramites).ca_estatus.Descripcion.ToString().ToUpper() == "ACTIVO")
+                if (bindingsource.Count > 0)
                 {
-                    checkEdit1.Checked = true;
+                    if ((bindingsource.Current as data_members.ca_tramites).ca_estatus != null)
+                    {
+                        if ((bindingsource.Current as data_members.ca_tramites).ca_estatus.Descripcion.ToString().ToUpper() == "ACTIVO")
+                        {
+                            checkEdit1.Checked = true;
+                        }
+                        else
+                        {
+                            checkEdit1.Checked = false;
+                        }
+                    }
+                    if (bindingsource.Current != null)
+                    {
+                        lookUpEdit_ClasificacionDocumento.EditValue = (bindingsource.Current as data_members.ca_tramites).id_ClasificacionTramite;
+                    }
                 }
-                else
-                {
-                    checkEdit1.Checked = false;
-                }
-
-                lookUpEdit_ClasificacionDocumento.EditValue = (bindingsource.Current as data_members.ca_tramites).id_ClasificacionTramite;
             }
             catch (Exception err)
             {
