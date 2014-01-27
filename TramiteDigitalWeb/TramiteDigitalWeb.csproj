@@ -236,6 +236,9 @@
     <Content Include="App_Data\ReportsStructure_log.ldf">
       <DependentUpon>ReportsStructure.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\images\excel.png" />
+    <Content Include="Content\images\image.png" />
+    <Content Include="Content\images\word.png" />
     <Content Include="Content\ImpresionBotonera.css" />
     <Content Include="Content\images\ajax_loader_gray_512.gif" />
     <Content Include="Content\images\ajax_loader_red_48.gif" />
@@ -476,8 +479,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Reportes\Galeria.rdlc" />
-    <EmbeddedResource Include="Reportes\Tramite.rdlc" />
+    <Content Include="Reportes\Galeria.rdlc" />
+    <Content Include="Reportes\Tramite.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
