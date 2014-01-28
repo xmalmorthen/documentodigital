@@ -1,6 +1,6 @@
 ﻿namespace scanndoc.forms
 {
-    partial class re_tramites_clasificaciondocumentos
+    partial class re_expedientes_tramites
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label4;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(re_tramites_clasificaciondocumentos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(re_expedientes_tramites));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -56,14 +56,15 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.idclasificaciondocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idtramiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionBreveDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lookUpEdit = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.bindingsource_ca_clasificaciondocumentos = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingsource_ca_tramites = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colNombre = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescripcion_Breve = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -71,8 +72,8 @@
             this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.bindingNavigator_ca_tramites = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingsource_ca_tramites = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigator_ca_expedientes = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingsource_ca_expedientes = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
@@ -84,15 +85,7 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.datagridview = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionBreveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alcanceInicialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alcanceFinalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idClasificacionTramiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.caclasificaciontramitesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.caestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_refrescar = new System.Windows.Forms.Button();
             this.pbfind = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
@@ -121,13 +114,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_clasificaciondocumentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_tramites)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_ca_tramites)).BeginInit();
-            this.bindingNavigator_ca_tramites.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_tramites)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_ca_expedientes)).BeginInit();
+            this.bindingNavigator_ca_expedientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_expedientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).BeginInit();
@@ -143,9 +136,9 @@
             descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descripcionLabel.Location = new System.Drawing.Point(9, 24);
             descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(226, 18);
+            descripcionLabel.Size = new System.Drawing.Size(74, 18);
             descripcionLabel.TabIndex = 10;
-            descripcionLabel.Text = "Clasificación de documentos";
+            descripcionLabel.Text = "Trámites";
             // 
             // label1
             // 
@@ -163,9 +156,9 @@
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label4.Location = new System.Drawing.Point(11, 103);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(327, 18);
+            label4.Size = new System.Drawing.Size(157, 18);
             label4.TabIndex = 21;
-            label4.Text = "Clasificaciones de documentos asociados";
+            label4.Text = "Trámites asociados";
             // 
             // splitContainer
             // 
@@ -198,7 +191,7 @@
             this.splitContainer.Panel2.AutoScroll = true;
             this.splitContainer.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.splitContainer.Panel2.Controls.Add(this.tlp_proc);
-            this.splitContainer.Panel2.Controls.Add(this.bindingNavigator_ca_tramites);
+            this.splitContainer.Panel2.Controls.Add(this.bindingNavigator_ca_expedientes);
             this.splitContainer.Panel2.Controls.Add(this.datagridview);
             this.splitContainer.Panel2.Controls.Add(this.btn_refrescar);
             this.splitContainer.Panel2.Controls.Add(this.pbfind);
@@ -283,7 +276,7 @@
             // 
             // bindingsource
             // 
-            this.bindingsource.DataSource = typeof(scanndoc.data_members.pa_ClasificacionDocumentosporTramiteResult);
+            this.bindingsource.DataSource = typeof(scanndoc.data_members.pa_TramitesporExpedienteResult);
             // 
             // toolStripLabel1
             // 
@@ -372,9 +365,9 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idclasificaciondocumentoDataGridViewTextBoxColumn,
-            this.id,
-            this.descripcionDataGridViewTextBoxColumn1});
+            this.idtramiteDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.descripcionBreveDataGridViewTextBoxColumn1});
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView2.DataSource = this.bindingsource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -403,26 +396,26 @@
             this.dataGridView2.Size = new System.Drawing.Size(952, 257);
             this.dataGridView2.TabIndex = 33;
             // 
-            // idclasificaciondocumentoDataGridViewTextBoxColumn
+            // idtramiteDataGridViewTextBoxColumn
             // 
-            this.idclasificaciondocumentoDataGridViewTextBoxColumn.DataPropertyName = "id_clasificaciondocumento";
-            this.idclasificaciondocumentoDataGridViewTextBoxColumn.HeaderText = "id_clasificaciondocumento";
-            this.idclasificaciondocumentoDataGridViewTextBoxColumn.Name = "idclasificaciondocumentoDataGridViewTextBoxColumn";
-            this.idclasificaciondocumentoDataGridViewTextBoxColumn.Visible = false;
+            this.idtramiteDataGridViewTextBoxColumn.DataPropertyName = "id_tramite";
+            this.idtramiteDataGridViewTextBoxColumn.HeaderText = "id_tramite";
+            this.idtramiteDataGridViewTextBoxColumn.Name = "idtramiteDataGridViewTextBoxColumn";
+            this.idtramiteDataGridViewTextBoxColumn.Visible = false;
             // 
-            // id
+            // nombreDataGridViewTextBoxColumn
             // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Visible = false;
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Trámite";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             // 
-            // descripcionDataGridViewTextBoxColumn1
+            // descripcionBreveDataGridViewTextBoxColumn1
             // 
-            this.descripcionDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionDataGridViewTextBoxColumn1.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn1.HeaderText = "Clasificación de documentos";
-            this.descripcionDataGridViewTextBoxColumn1.Name = "descripcionDataGridViewTextBoxColumn1";
+            this.descripcionBreveDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripcionBreveDataGridViewTextBoxColumn1.DataPropertyName = "Descripcion_Breve";
+            this.descripcionBreveDataGridViewTextBoxColumn1.HeaderText = "Descripcion breve";
+            this.descripcionBreveDataGridViewTextBoxColumn1.Name = "descripcionBreveDataGridViewTextBoxColumn1";
             // 
             // lookUpEdit
             // 
@@ -438,8 +431,8 @@
             this.lookUpEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.lookUpEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit.Properties.DataSource = this.bindingsource_ca_clasificaciondocumentos;
-            this.lookUpEdit.Properties.DisplayMember = "Descripcion";
+            this.lookUpEdit.Properties.DataSource = this.bindingsource_ca_tramites;
+            this.lookUpEdit.Properties.DisplayMember = "Nombre";
             this.lookUpEdit.Properties.ImmediatePopup = true;
             this.lookUpEdit.Properties.LookAndFeel.SkinName = "VS2010";
             this.lookUpEdit.Properties.NullText = "";
@@ -454,9 +447,10 @@
             conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.dxValidationProvider.SetValidationRule(this.lookUpEdit, conditionValidationRule1);
             // 
-            // bindingsource_ca_clasificaciondocumentos
+            // bindingsource_ca_tramites
             // 
-            this.bindingsource_ca_clasificaciondocumentos.DataSource = typeof(scanndoc.data_members.pa_ClasificacionDocumentosNoEnlazadosporTramiteResult);
+            this.bindingsource_ca_tramites.AllowNew = false;
+            this.bindingsource_ca_tramites.DataSource = typeof(scanndoc.data_members.pa_TramitesNoEnlazadosporExpedienteResult);
             // 
             // gridView1
             // 
@@ -465,8 +459,9 @@
             this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colid,
-            this.colDescripcion});
+            this.colNombre,
+            this.colDescripcion_Breve,
+            this.colid});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GroupFormat = "[#image]{1} {2}";
             this.gridView1.Name = "gridView1";
@@ -474,18 +469,26 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // colNombre
+            // 
+            this.colNombre.Caption = "Trámite";
+            this.colNombre.FieldName = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.Visible = true;
+            this.colNombre.VisibleIndex = 0;
+            // 
+            // colDescripcion_Breve
+            // 
+            this.colDescripcion_Breve.Caption = "Descripcion breve";
+            this.colDescripcion_Breve.FieldName = "Descripcion_Breve";
+            this.colDescripcion_Breve.Name = "colDescripcion_Breve";
+            this.colDescripcion_Breve.Visible = true;
+            this.colDescripcion_Breve.VisibleIndex = 1;
+            // 
             // colid
             // 
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
-            // 
-            // colDescripcion
-            // 
-            this.colDescripcion.Caption = "Clasificación de documentos";
-            this.colDescripcion.FieldName = "Descripcion";
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.Visible = true;
-            this.colDescripcion.VisibleIndex = 0;
             // 
             // btn_Agregar
             // 
@@ -590,14 +593,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Favor de esperar";
             // 
-            // bindingNavigator_ca_tramites
+            // bindingNavigator_ca_expedientes
             // 
-            this.bindingNavigator_ca_tramites.AddNewItem = null;
-            this.bindingNavigator_ca_tramites.BindingSource = this.bindingsource_ca_tramites;
-            this.bindingNavigator_ca_tramites.CountItem = this.toolStripLabel2;
-            this.bindingNavigator_ca_tramites.DeleteItem = null;
-            this.bindingNavigator_ca_tramites.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bindingNavigator_ca_tramites.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigator_ca_expedientes.AddNewItem = null;
+            this.bindingNavigator_ca_expedientes.BindingSource = this.bindingsource_ca_expedientes;
+            this.bindingNavigator_ca_expedientes.CountItem = this.toolStripLabel2;
+            this.bindingNavigator_ca_expedientes.DeleteItem = null;
+            this.bindingNavigator_ca_expedientes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingNavigator_ca_expedientes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton5,
             this.toolStripButton6,
             this.toolStripSeparator4,
@@ -607,22 +610,21 @@
             this.toolStripButton7,
             this.toolStripButton8,
             this.toolStripSeparator6});
-            this.bindingNavigator_ca_tramites.Location = new System.Drawing.Point(0, 288);
-            this.bindingNavigator_ca_tramites.MoveFirstItem = this.toolStripButton5;
-            this.bindingNavigator_ca_tramites.MoveLastItem = this.toolStripButton8;
-            this.bindingNavigator_ca_tramites.MoveNextItem = this.toolStripButton7;
-            this.bindingNavigator_ca_tramites.MovePreviousItem = this.toolStripButton6;
-            this.bindingNavigator_ca_tramites.Name = "bindingNavigator_ca_tramites";
-            this.bindingNavigator_ca_tramites.PositionItem = this.toolStripTextBox2;
-            this.bindingNavigator_ca_tramites.Size = new System.Drawing.Size(1006, 25);
-            this.bindingNavigator_ca_tramites.TabIndex = 35;
-            this.bindingNavigator_ca_tramites.Text = "bindingNavigator1";
+            this.bindingNavigator_ca_expedientes.Location = new System.Drawing.Point(0, 288);
+            this.bindingNavigator_ca_expedientes.MoveFirstItem = this.toolStripButton5;
+            this.bindingNavigator_ca_expedientes.MoveLastItem = this.toolStripButton8;
+            this.bindingNavigator_ca_expedientes.MoveNextItem = this.toolStripButton7;
+            this.bindingNavigator_ca_expedientes.MovePreviousItem = this.toolStripButton6;
+            this.bindingNavigator_ca_expedientes.Name = "bindingNavigator_ca_expedientes";
+            this.bindingNavigator_ca_expedientes.PositionItem = this.toolStripTextBox2;
+            this.bindingNavigator_ca_expedientes.Size = new System.Drawing.Size(1006, 25);
+            this.bindingNavigator_ca_expedientes.TabIndex = 35;
+            this.bindingNavigator_ca_expedientes.Text = "bindingNavigator1";
             // 
-            // bindingsource_ca_tramites
+            // bindingsource_ca_expedientes
             // 
-            this.bindingsource_ca_tramites.AllowNew = false;
-            this.bindingsource_ca_tramites.DataSource = typeof(scanndoc.data_members.ca_tramites);
-            this.bindingsource_ca_tramites.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
+            this.bindingsource_ca_expedientes.DataSource = typeof(scanndoc.data_members.ca_expedientes);
+            this.bindingsource_ca_expedientes.CurrentChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
             // 
             // toolStripLabel2
             // 
@@ -712,17 +714,9 @@
             this.datagridview.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.datagridview.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.nombreDataGridViewTextBoxColumn1,
-            this.descripcionDataGridViewTextBoxColumn,
-            this.descripcionBreveDataGridViewTextBoxColumn,
-            this.alcanceInicialDataGridViewTextBoxColumn,
-            this.alcanceFinalDataGridViewTextBoxColumn,
-            this.idClasificacionTramiteDataGridViewTextBoxColumn,
-            this.idestatusDataGridViewTextBoxColumn,
-            this.caclasificaciontramitesDataGridViewTextBoxColumn,
-            this.caestatusDataGridViewTextBoxColumn});
+            this.descripcionDataGridViewTextBoxColumn});
             this.datagridview.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.datagridview.DataSource = this.bindingsource_ca_tramites;
+            this.datagridview.DataSource = this.bindingsource_ca_expedientes;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -759,77 +753,13 @@
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Visible = false;
             // 
-            // nombreDataGridViewTextBoxColumn1
-            // 
-            this.nombreDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
-            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
             // descripcionDataGridViewTextBoxColumn
             // 
+            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // descripcionBreveDataGridViewTextBoxColumn
-            // 
-            this.descripcionBreveDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripcionBreveDataGridViewTextBoxColumn.DataPropertyName = "Descripcion_Breve";
-            this.descripcionBreveDataGridViewTextBoxColumn.HeaderText = "Descripcion_Breve";
-            this.descripcionBreveDataGridViewTextBoxColumn.Name = "descripcionBreveDataGridViewTextBoxColumn";
-            this.descripcionBreveDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // alcanceInicialDataGridViewTextBoxColumn
-            // 
-            this.alcanceInicialDataGridViewTextBoxColumn.DataPropertyName = "Alcance_Inicial";
-            this.alcanceInicialDataGridViewTextBoxColumn.HeaderText = "Alcance_Inicial";
-            this.alcanceInicialDataGridViewTextBoxColumn.Name = "alcanceInicialDataGridViewTextBoxColumn";
-            this.alcanceInicialDataGridViewTextBoxColumn.ReadOnly = true;
-            this.alcanceInicialDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // alcanceFinalDataGridViewTextBoxColumn
-            // 
-            this.alcanceFinalDataGridViewTextBoxColumn.DataPropertyName = "Alcance_Final";
-            this.alcanceFinalDataGridViewTextBoxColumn.HeaderText = "Alcance_Final";
-            this.alcanceFinalDataGridViewTextBoxColumn.Name = "alcanceFinalDataGridViewTextBoxColumn";
-            this.alcanceFinalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.alcanceFinalDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idClasificacionTramiteDataGridViewTextBoxColumn
-            // 
-            this.idClasificacionTramiteDataGridViewTextBoxColumn.DataPropertyName = "id_ClasificacionTramite";
-            this.idClasificacionTramiteDataGridViewTextBoxColumn.HeaderText = "id_ClasificacionTramite";
-            this.idClasificacionTramiteDataGridViewTextBoxColumn.Name = "idClasificacionTramiteDataGridViewTextBoxColumn";
-            this.idClasificacionTramiteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idClasificacionTramiteDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idestatusDataGridViewTextBoxColumn
-            // 
-            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
-            this.idestatusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idestatusDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // caclasificaciontramitesDataGridViewTextBoxColumn
-            // 
-            this.caclasificaciontramitesDataGridViewTextBoxColumn.DataPropertyName = "ca_clasificaciontramites";
-            this.caclasificaciontramitesDataGridViewTextBoxColumn.HeaderText = "ca_clasificaciontramites";
-            this.caclasificaciontramitesDataGridViewTextBoxColumn.Name = "caclasificaciontramitesDataGridViewTextBoxColumn";
-            this.caclasificaciontramitesDataGridViewTextBoxColumn.ReadOnly = true;
-            this.caclasificaciontramitesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // caestatusDataGridViewTextBoxColumn
-            // 
-            this.caestatusDataGridViewTextBoxColumn.DataPropertyName = "ca_estatus";
-            this.caestatusDataGridViewTextBoxColumn.HeaderText = "ca_estatus";
-            this.caestatusDataGridViewTextBoxColumn.Name = "caestatusDataGridViewTextBoxColumn";
-            this.caestatusDataGridViewTextBoxColumn.ReadOnly = true;
-            this.caestatusDataGridViewTextBoxColumn.Visible = false;
             // 
             // btn_refrescar
             // 
@@ -981,7 +911,7 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "No se encontraron registros";
             // 
-            // re_tramites_clasificaciondocumentos
+            // re_expedientes_tramites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -989,11 +919,11 @@
             this.Controls.Add(this.tlp_noregistros);
             this.Controls.Add(this.splitContainer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1024, 768);
-            this.Name = "re_tramites_clasificaciondocumentos";
+            this.MinimumSize = new System.Drawing.Size(1024, 736);
+            this.Name = "re_expedientes_tramites";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Asignar clasificación de documentos a un trámite";
-            this.Load += new System.EventHandler(this.re_expedientes_campostrazables_Load);
+            this.Text = "Asignar trámites a un expediente";
+            this.Load += new System.EventHandler(this.re_expedientes_tramites_Load);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel1.PerformLayout();
             this.splitContainer.Panel2.ResumeLayout(false);
@@ -1007,15 +937,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_clasificaciondocumentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_tramites)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.tlp_proc.ResumeLayout(false);
             this.tlp_proc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_ca_tramites)).EndInit();
-            this.bindingNavigator_ca_tramites.ResumeLayout(false);
-            this.bindingNavigator_ca_tramites.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_tramites)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator_ca_expedientes)).EndInit();
+            this.bindingNavigator_ca_expedientes.ResumeLayout(false);
+            this.bindingNavigator_ca_expedientes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource_ca_expedientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbfind)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_buscar.Properties)).EndInit();
@@ -1060,7 +990,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingNavigator bindingNavigator;
-        private System.Windows.Forms.BindingSource bindingsource_ca_clasificaciondocumentos;
+        private System.Windows.Forms.BindingSource bindingsource_ca_expedientes;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
@@ -1074,7 +1004,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private DevExpress.XtraEditors.TextEdit txt_buscarcampotrazable;
         private System.Windows.Forms.DataGridView datagridview;
-        private System.Windows.Forms.BindingNavigator bindingNavigator_ca_tramites;
+        private System.Windows.Forms.BindingNavigator bindingNavigator_ca_expedientes;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
@@ -1084,23 +1014,16 @@
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionBreveDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alcanceInicialDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alcanceFinalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idClasificacionTramiteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idestatusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn caclasificaciontramitesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn caestatusDataGridViewTextBoxColumn;
-        private DevExpress.XtraGrid.Columns.GridColumn colid;
-        private DevExpress.XtraGrid.Columns.GridColumn colDescripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idclasificaciondocumentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn1;
         private System.Windows.Forms.TableLayoutPanel tlp_noregistros;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idtramiteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionBreveDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private DevExpress.XtraGrid.Columns.GridColumn colNombre;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescripcion_Breve;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
     }
 }

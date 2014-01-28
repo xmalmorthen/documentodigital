@@ -171,7 +171,7 @@ namespace scanndoc.forms
             Form_Mode = form_mode.agregar;
 
             //limpiar_controles();
-            textEdit.Focus();
+            lookUpEdit_cargopuesto.Focus();
         }
 
         //boton editar
@@ -397,7 +397,7 @@ namespace scanndoc.forms
             {
                 errorlogs.seterror(e);                
             }
-            return true;
+            return false;
         }
 
         //editar

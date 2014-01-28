@@ -232,6 +232,12 @@
     <Compile Include="forms\frm_tramiteplanbloqueo.Designer.cs">
       <DependentUpon>frm_tramiteplanbloqueo.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\re_expedientes_tramites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\re_expedientes_tramites.Designer.cs">
+      <DependentUpon>re_expedientes_tramites.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\re_tramites_clasificaciondocumentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -363,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_tramiteplanbloqueo.resx">
       <DependentUpon>frm_tramiteplanbloqueo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\re_expedientes_tramites.resx">
+      <DependentUpon>re_expedientes_tramites.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\re_tramites_clasificaciondocumentos.resx">
       <DependentUpon>re_tramites_clasificaciondocumentos.cs</DependentUpon>

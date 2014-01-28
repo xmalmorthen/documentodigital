@@ -2019,7 +2019,7 @@ namespace scanndoc.forms
             }
             catch (Exception err)
             {
-                scanndoc.classes.errorlogs.seterror(err);
+                //scanndoc.classes.errorlogs.seterror(err);
             }
             frmListaDocumentosOrden.Visible = true;
         }

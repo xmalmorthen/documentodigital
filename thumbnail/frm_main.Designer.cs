@@ -39,6 +39,7 @@
             this.tramitesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.clasificaciónDeDocumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.típoDeFormatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clasificarDocumentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
@@ -65,7 +66,8 @@
             this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.típoDeFormatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarTrámiteAExpedienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.mnustrip_menuprincipal.SuspendLayout();
             this.tlp_proc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -98,6 +100,8 @@
             this.toolStripMenuItem1,
             this.clasificaciñonDeTramitesToolStripMenuItem,
             this.tramitesToolStripMenuItem,
+            this.toolStripMenuItem7,
+            this.asignarTrámiteAExpedienteToolStripMenuItem,
             this.toolStripMenuItem2,
             this.clasificaciónDeDocumentosToolStripMenuItem,
             this.típoDeFormatosToolStripMenuItem,
@@ -170,6 +174,14 @@
             this.clasificaciónDeDocumentosToolStripMenuItem.Tag = "1,6";
             this.clasificaciónDeDocumentosToolStripMenuItem.Text = "Clasificación de documentos";
             this.clasificaciónDeDocumentosToolStripMenuItem.Click += new System.EventHandler(this.clasificaciónDeDocumentosToolStripMenuItem_Click);
+            // 
+            // típoDeFormatosToolStripMenuItem
+            // 
+            this.típoDeFormatosToolStripMenuItem.Name = "típoDeFormatosToolStripMenuItem";
+            this.típoDeFormatosToolStripMenuItem.Size = new System.Drawing.Size(404, 24);
+            this.típoDeFormatosToolStripMenuItem.Tag = "1,10";
+            this.típoDeFormatosToolStripMenuItem.Text = "Típo de formatos para documentos";
+            this.típoDeFormatosToolStripMenuItem.Click += new System.EventHandler(this.típoDeFormatosToolStripMenuItem_Click);
             // 
             // documentosToolStripMenuItem
             // 
@@ -404,13 +416,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Favor de esperar";
             // 
-            // típoDeFormatosToolStripMenuItem
+            // asignarTrámiteAExpedienteToolStripMenuItem
             // 
-            this.típoDeFormatosToolStripMenuItem.Name = "típoDeFormatosToolStripMenuItem";
-            this.típoDeFormatosToolStripMenuItem.Size = new System.Drawing.Size(404, 24);
-            this.típoDeFormatosToolStripMenuItem.Tag = "1,10";
-            this.típoDeFormatosToolStripMenuItem.Text = "Típo de formatos para documentos";
-            this.típoDeFormatosToolStripMenuItem.Click += new System.EventHandler(this.típoDeFormatosToolStripMenuItem_Click);
+            this.asignarTrámiteAExpedienteToolStripMenuItem.Name = "asignarTrámiteAExpedienteToolStripMenuItem";
+            this.asignarTrámiteAExpedienteToolStripMenuItem.Size = new System.Drawing.Size(404, 24);
+            this.asignarTrámiteAExpedienteToolStripMenuItem.Tag = "1,11";
+            this.asignarTrámiteAExpedienteToolStripMenuItem.Text = "Asignar trámites a expedientes";
+            this.asignarTrámiteAExpedienteToolStripMenuItem.Click += new System.EventHandler(this.asignarTrámiteAExpedienteToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(401, 6);
             // 
             // frm_main
             // 
@@ -478,5 +495,7 @@
         private System.Windows.Forms.ToolStripMenuItem cargoPuestoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem típoDeFormatosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem asignarTrámiteAExpedienteToolStripMenuItem;
     }
 }
