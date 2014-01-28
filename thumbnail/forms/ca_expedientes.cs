@@ -91,6 +91,8 @@ namespace scanndoc.forms
         private void actualiza_lista() {
             try
             {
+                scanndoc.models.RefreshDataBase.UpdateContent();
+
                 lista = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_expedientes>().ToList();
                 bindingsource.DataSource = lista;
 
@@ -146,6 +148,8 @@ namespace scanndoc.forms
             catalogo = null;
             bindingsource.CancelEdit();
             Form_Mode = form_mode.normal;
+
+            actualiza_lista();
         }
 
         //boton de limpiar

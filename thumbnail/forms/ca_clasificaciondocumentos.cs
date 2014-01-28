@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using scanndoc.data_members;
 using scanndoc.classes;
+using System.Data.Linq;
 
 namespace scanndoc.forms
 {
@@ -110,6 +111,8 @@ namespace scanndoc.forms
         private void actualiza_lista() {
             try
             {
+                scanndoc.models.RefreshDataBase.UpdateContent();
+
                 lista = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_clasificaciondocumentos>().ToList();
                 bindingsource.DataSource = lista;
                 tlp_noregistros.Visible = (bindingsource.Count == 0);
@@ -170,6 +173,8 @@ namespace scanndoc.forms
                 catalogo = null;
                 bindingsource.CancelEdit();
                 Form_Mode = form_mode.normal;
+
+                actualiza_lista();
             }
         }
 

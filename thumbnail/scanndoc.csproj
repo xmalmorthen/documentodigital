@@ -302,6 +302,7 @@
     <Compile Include="forms\frm_scann.Designer.cs">
       <DependentUpon>frm_scann.cs</DependentUpon>
     </Compile>
+    <Compile Include="models\RefreshDataBase.cs" />
     <Compile Include="models\Usuario_Logueado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

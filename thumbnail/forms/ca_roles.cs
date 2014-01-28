@@ -92,6 +92,8 @@ namespace scanndoc.forms
         private void actualiza_lista() {
             try
             {
+                scanndoc.models.RefreshDataBase.UpdateContent();
+
                 lista = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_roles>().ToList();
                 bindingsource.DataSource = lista;
                 tlp_noregistros.Visible = (bindingsource.Count == 0);
@@ -160,6 +162,8 @@ namespace scanndoc.forms
             bindingsource.CancelEdit();
             Form_Mode = form_mode.normal;
             bindingsource_CurrentItemChanged(null, null);
+
+            actualiza_lista();
         }
 
         //boton de limpiar

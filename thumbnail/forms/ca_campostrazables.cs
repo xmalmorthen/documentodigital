@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using scanndoc.data_members;
 using scanndoc.classes;
+using System.Data.Linq;
 
 namespace scanndoc.forms
 {
@@ -93,6 +94,8 @@ namespace scanndoc.forms
         private void actualiza_lista() {
             try
             {
+                scanndoc.models.RefreshDataBase.UpdateContent();
+
                 lista = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_campostrazables>().ToList();
                 bindingsource.DataSource = lista;
 
@@ -147,9 +150,11 @@ namespace scanndoc.forms
         //boton cancelar
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            catalogo = null;
             bindingsource.CancelEdit();
+            catalogo = null;            
             Form_Mode = form_mode.normal;
+            
+            actualiza_lista();
         }
 
         //boton de limpiar
