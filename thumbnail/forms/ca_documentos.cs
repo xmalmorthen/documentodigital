@@ -75,6 +75,7 @@ namespace scanndoc.forms
             spinEdit3.Enabled = false;
             spinEdit4.Enabled = false;
             textEdit1.Enabled = false;
+            textEdit2.Enabled = false;
             descripcionMemoEdit.Enabled = (Form_Mode == form_mode.agregar || Form_Mode == form_mode.editar) ? true : false;
 
             //limpiar controles
@@ -473,6 +474,7 @@ namespace scanndoc.forms
             {
                 spinEdit4.Enabled = checkEdit2.Checked;
                 textEdit1.Enabled = checkEdit2.Checked;
+                textEdit2.Enabled = checkEdit2.Checked;
             }
         }
     }

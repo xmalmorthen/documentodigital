@@ -42,7 +42,7 @@ namespace scanndoc.forms
             this.populate_lookUpEdit_ClasificacionDocumento(); //popular combo
             
             this.lookUpEdit_ClasificacionDocumento.EditValue = null; //establecer el tramite a seleccionar
-            actualizainfomascara("", 0, "");
+            actualizainfomascara("",null, 0, "");
         }
 
         //validador de formulario
@@ -90,7 +90,7 @@ namespace scanndoc.forms
         }
 
         //acualizar datos para la introducción de mascaras
-        private void actualizainfomascara(string mascara, int numcaracteres, string clasificaciondocumento)
+        private void actualizainfomascara(string mascara, string? mask, int numcaracteres, string clasificaciondocumento)
         {
             lblmascampotrazable.Text = mascara;
 
@@ -109,7 +109,7 @@ namespace scanndoc.forms
                 }
             }
 
-            txtvalortrazable.Properties.Mask.EditMask = mascara;
+            txtvalortrazable.Properties.Mask.EditMask = mask.ToString();
             txtvalortrazable.Properties.MaxLength = numcaracteres;
         }
 
@@ -125,6 +125,7 @@ namespace scanndoc.forms
              */ 
             DevExpress.XtraGrid.Views.Grid.GridView view = lookUpEdit_ClasificacionDocumento.Properties.View as DevExpress.XtraGrid.Views.Grid.GridView;
             object _Mascara_Trazable = view.GetRowCellValue(view.FocusedRowHandle, "Mascara_Trazable");
+            object _Mask = view.GetRowCellValue(view.FocusedRowHandle, "Mask");
             object _Tamanio_Caracteres_Trazables = view.GetRowCellValue(view.FocusedRowHandle, "Tamanio_Caracteres_Trazables");
             object _Trazabilidad = view.GetRowCellValue(view.FocusedRowHandle, "Trazabilidad");
             object _id_documento = view.GetRowCellValue(view.FocusedRowHandle, "id_documento");
@@ -151,9 +152,10 @@ namespace scanndoc.forms
             if (trazabilidad)
             {
                 string Mascara_Trazable = (string)_Mascara_Trazable;
+                string Mask = (string)_Mask;
                 int Tamanio_Caracteres_Trazables = int.Parse(string.Format("{0}", _Tamanio_Caracteres_Trazables));
 
-                actualizainfomascara(Mascara_Trazable, Tamanio_Caracteres_Trazables, clasificaciondocumento);
+                actualizainfomascara(Mascara_Trazable, Mask, Tamanio_Caracteres_Trazables, clasificaciondocumento);
                 
                 txtvalortrazable.Focus();
             }
