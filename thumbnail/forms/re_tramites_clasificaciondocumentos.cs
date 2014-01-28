@@ -63,7 +63,7 @@ namespace scanndoc.forms
             {
                 lista_tramites = Program.Bd_Expedientes_Digitales.GetTable<data_members.ca_tramites>().ToList();
                 bindingsource_ca_tramites.DataSource = lista_tramites;
-                tlp_noregistros.Visible = (bindingsource.Count == 0);
+                tlp_noregistros.Visible = (bindingsource_ca_tramites.Count == 0);
             }
             catch (Exception e)
             {
