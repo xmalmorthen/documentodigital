@@ -1,5 +1,7 @@
 /*******************************************************************/
 	. parametrizar web
 	. parametrizar escritorio
+	. Modificar tamaño de texto de marca de agua en digitalización
+	. Modificar tamaño de imagen de marca de agua en digitalización
 
 
