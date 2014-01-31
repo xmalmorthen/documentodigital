@@ -158,7 +158,7 @@ namespace scanndoc.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=xmalmorthen.gotdns.org;Initial Catalog=Bd_Expedientes_Digitales;Persi" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Expedientes_Digitales;Persi" +
             "st Security Info=True;User ID=digitaldocs;Password=..121212qw")]
         public string Bd_Expedientes_DigitalesConnectionString {
             get {
@@ -168,7 +168,7 @@ namespace scanndoc.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=xmalmorthen.gotdns.org;Initial Catalog=Bd_Expedientes_Digitales;Persi" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=xmalmorthen.dyndns.org;Initial Catalog=Bd_Expedientes_Digitales;Persi" +
             "st Security Info=True;User ID=..Bd_Expedientes_Digitales_#user#..;Password=#pass" +
             "#")]
         public string Bd_Expedientes_DigitalesConnectionStringTemplate {
