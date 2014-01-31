@@ -35,19 +35,19 @@
     <Setting Name="CampoPlanBloqueo_RowColorGrid" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">LightGray</Value>
     </Setting>
-    <Setting Name="marca_de_gua" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Documento digital trámites transportes</Value>
-    </Setting>
     <Setting Name="Bd_Expedientes_DigitalesConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=.;Initial Catalog=Bd_Expedientes_Digitales;Persist Security Info=True;User ID=digitaldocs;Password=..121212qw&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=xmalmorthen.gotdns.org;Initial Catalog=Bd_Expedientes_Digitales;Persist Security Info=True;User ID=digitaldocs;Password=..121212qw&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=.;Initial Catalog=Bd_Expedientes_Digitales;Persist Security Info=True;User ID=digitaldocs;Password=..121212qw</Value>
+      <Value Profile="(Default)">Data Source=xmalmorthen.gotdns.org;Initial Catalog=Bd_Expedientes_Digitales;Persist Security Info=True;User ID=digitaldocs;Password=..121212qw</Value>
     </Setting>
     <Setting Name="Bd_Expedientes_DigitalesConnectionStringTemplate" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=.;Initial Catalog=Bd_Expedientes_Digitales;Persist Security Info=True;User ID=..Bd_Expedientes_Digitales_#user#..;Password=#pass#</Value>
+      <Value Profile="(Default)">Data Source=xmalmorthen.gotdns.org;Initial Catalog=Bd_Expedientes_Digitales;Persist Security Info=True;User ID=..Bd_Expedientes_Digitales_#user#..;Password=#pass#</Value>
+    </Setting>
+    <Setting Name="marca_de_gua" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Marca de agua</Value>
     </Setting>
   </Settings>
 </SettingsFile>

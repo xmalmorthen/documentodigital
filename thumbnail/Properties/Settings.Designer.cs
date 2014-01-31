@@ -12,7 +12,7 @@ namespace scanndoc.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "10.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -155,23 +155,11 @@ namespace scanndoc.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Documento digital trámites transportes")]
-        public string marca_de_gua {
-            get {
-                return ((string)(this["marca_de_gua"]));
-            }
-            set {
-                this["marca_de_gua"] = value;
-            }
-        }
-        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Bd_Expedientes_Digitales;Persist Security Info=True" +
-            ";User ID=digitaldocs;Password=..121212qw")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=xmalmorthen.gotdns.org;Initial Catalog=Bd_Expedientes_Digitales;Persi" +
+            "st Security Info=True;User ID=digitaldocs;Password=..121212qw")]
         public string Bd_Expedientes_DigitalesConnectionString {
             get {
                 return ((string)(this["Bd_Expedientes_DigitalesConnectionString"]));
@@ -180,14 +168,27 @@ namespace scanndoc.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=Bd_Expedientes_Digitales;Persist Security Info=True" +
-            ";User ID=..Bd_Expedientes_Digitales_#user#..;Password=#pass#")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=xmalmorthen.gotdns.org;Initial Catalog=Bd_Expedientes_Digitales;Persi" +
+            "st Security Info=True;User ID=..Bd_Expedientes_Digitales_#user#..;Password=#pass" +
+            "#")]
         public string Bd_Expedientes_DigitalesConnectionStringTemplate {
             get {
                 return ((string)(this["Bd_Expedientes_DigitalesConnectionStringTemplate"]));
             }
             set {
                 this["Bd_Expedientes_DigitalesConnectionStringTemplate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Marca de agua")]
+        public string marca_de_gua {
+            get {
+                return ((string)(this["marca_de_gua"]));
+            }
+            set {
+                this["marca_de_gua"] = value;
             }
         }
     }
