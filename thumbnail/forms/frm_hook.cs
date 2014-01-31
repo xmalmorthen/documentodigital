@@ -90,7 +90,7 @@ namespace scanndoc.forms
         }
 
         //acualizar datos para la introducción de mascaras
-        private void actualizainfomascara(string mascara, string? mask, int numcaracteres, string clasificaciondocumento)
+        private void actualizainfomascara(string mascara, string mask, int numcaracteres, string clasificaciondocumento)
         {
             lblmascampotrazable.Text = mascara;
 
@@ -109,8 +109,15 @@ namespace scanndoc.forms
                 }
             }
 
-            txtvalortrazable.Properties.Mask.EditMask = mask.ToString();
-            txtvalortrazable.Properties.MaxLength = numcaracteres;
+            if (mask != null)
+            {
+                txtvalortrazable.Properties.Mask.EditMask = mask.ToString();
+            }
+            else {
+                txtvalortrazable.Properties.Mask.EditMask = string.Empty;
+            }
+
+            txtvalortrazable.Properties.MaxLength = numcaracteres;            
         }
 
         //al seleccionar item del combo

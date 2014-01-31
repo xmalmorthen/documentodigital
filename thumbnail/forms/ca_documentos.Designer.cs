@@ -36,6 +36,11 @@
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label11;
+            System.Windows.Forms.Label label8;
+            System.Windows.Forms.Label label12;
+            System.Windows.Forms.Label label10;
+            System.Windows.Forms.Label label9;
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -43,12 +48,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Label label8;
-            System.Windows.Forms.Label label12;
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            System.Windows.Forms.Label label10;
-            System.Windows.Forms.Label label9;
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.spinEdit4 = new DevExpress.XtraEditors.SpinEdit();
+            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkEdit3 = new DevExpress.XtraEditors.CheckEdit();
+            this.spinEdit3 = new DevExpress.XtraEditors.SpinEdit();
             this.descripcionMemoEdit = new DevExpress.XtraEditors.MemoEdit();
             this.spinEdit2 = new DevExpress.XtraEditors.SpinEdit();
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
@@ -63,12 +72,15 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.bindingSource_ca_formatos = new System.Windows.Forms.BindingSource(this.components);
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.bindingSource_estados = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tlp_proc = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,6 +95,19 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.datagridview = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idFormatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noHojasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noCarasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resguardoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tiempoResguardoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trazabilidadDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mascaraTrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.politicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.caformatosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_refrescar = new System.Windows.Forms.Button();
             this.pbfind = new System.Windows.Forms.PictureBox();
             this.txt_buscar = new DevExpress.XtraEditors.TextEdit();
@@ -99,31 +124,6 @@
             this.tlp_noregistros = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkEdit3 = new DevExpress.XtraEditors.CheckEdit();
-            this.spinEdit3 = new DevExpress.XtraEditors.SpinEdit();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.spinEdit4 = new DevExpress.XtraEditors.SpinEdit();
-            this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
-            this.bindingsource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource_ca_formatos = new System.Windows.Forms.BindingSource(this.components);
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idFormatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noHojasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noCarasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resguardoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tiempoResguardoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trazabilidadDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mascaraTrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.politicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.caformatosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             descripcionLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -138,11 +138,21 @@
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.descripcionMemoEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_ca_formatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_estados)).BeginInit();
@@ -159,16 +169,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider_mascara)).BeginInit();
             this.tlp_noregistros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit3.Properties)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_ca_formatos)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
@@ -246,6 +246,46 @@
             label11.TabIndex = 38;
             label11.Text = "Politica";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label8.Location = new System.Drawing.Point(8, 21);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(168, 18);
+            label8.TabIndex = 41;
+            label8.Text = "Tiempo de resguardo";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label12.Location = new System.Drawing.Point(421, 21);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(273, 18);
+            label12.TabIndex = 50;
+            label12.Text = "Patrón de la máscara para el editor";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label10.Location = new System.Drawing.Point(3, 21);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(177, 18);
+            label10.TabIndex = 46;
+            label10.Text = "Tamaño de caracteres";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label9.Location = new System.Drawing.Point(183, 21);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(73, 18);
+            label9.TabIndex = 44;
+            label9.Text = "Máscara";
+            // 
             // splitContainer
             // 
             this.splitContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -297,6 +337,159 @@
             this.splitContainer.Size = new System.Drawing.Size(1008, 730);
             this.splitContainer.SplitterDistance = 309;
             this.splitContainer.TabIndex = 16;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(label12);
+            this.groupBox2.Controls.Add(this.textEdit2);
+            this.groupBox2.Controls.Add(this.textEdit1);
+            this.groupBox2.Controls.Add(this.spinEdit4);
+            this.groupBox2.Controls.Add(label10);
+            this.groupBox2.Controls.Add(this.checkEdit2);
+            this.groupBox2.Controls.Add(label9);
+            this.groupBox2.Location = new System.Drawing.Point(216, 122);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(775, 81);
+            this.groupBox2.TabIndex = 45;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "                                                                 ";
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEdit2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Mask", true));
+            this.textEdit2.Location = new System.Drawing.Point(424, 42);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.textEdit2.Properties.Appearance.Options.UseFont = true;
+            this.textEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.textEdit2.Size = new System.Drawing.Size(345, 24);
+            this.textEdit2.TabIndex = 49;
+            // 
+            // bindingsource
+            // 
+            this.bindingsource.DataSource = typeof(scanndoc.data_members.ca_documentos);
+            this.bindingsource.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Mascara_Trazable", true));
+            this.textEdit1.Enabled = false;
+            this.textEdit1.Location = new System.Drawing.Point(186, 42);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
+            this.textEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.textEdit1.Size = new System.Drawing.Size(232, 24);
+            this.textEdit1.TabIndex = 48;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Falta indicar el valor";
+            this.dxValidationProvider_mascara.SetValidationRule(this.textEdit1, conditionValidationRule1);
+            // 
+            // spinEdit4
+            // 
+            this.spinEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingsource, "Tamanio_Caracteres_Trazables", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
+            this.spinEdit4.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinEdit4.Enabled = false;
+            this.spinEdit4.Location = new System.Drawing.Point(6, 42);
+            this.spinEdit4.Name = "spinEdit4";
+            this.spinEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.spinEdit4.Properties.Appearance.Options.UseFont = true;
+            this.spinEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.spinEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.spinEdit4.Properties.MaxLength = 4;
+            this.spinEdit4.Properties.MaxValue = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.spinEdit4.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinEdit4.Properties.NullText = "1";
+            this.spinEdit4.Size = new System.Drawing.Size(174, 24);
+            this.spinEdit4.TabIndex = 47;
+            // 
+            // checkEdit2
+            // 
+            this.checkEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingsource, "Trazabilidad", true));
+            this.checkEdit2.Location = new System.Drawing.Point(9, -5);
+            this.checkEdit2.Name = "checkEdit2";
+            this.checkEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.checkEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.checkEdit2.Properties.Appearance.Options.UseFont = true;
+            this.checkEdit2.Properties.Appearance.Options.UseForeColor = true;
+            this.checkEdit2.Properties.Caption = "Requiere trazabilidad";
+            this.checkEdit2.Size = new System.Drawing.Size(190, 23);
+            this.checkEdit2.TabIndex = 45;
+            this.checkEdit2.CheckedChanged += new System.EventHandler(this.checkEdit2_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkEdit3);
+            this.groupBox1.Controls.Add(this.spinEdit3);
+            this.groupBox1.Controls.Add(label8);
+            this.groupBox1.Location = new System.Drawing.Point(12, 122);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(198, 81);
+            this.groupBox1.TabIndex = 44;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "                                    ";
+            // 
+            // checkEdit3
+            // 
+            this.checkEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingsource, "Resguardo", true));
+            this.checkEdit3.Location = new System.Drawing.Point(9, -5);
+            this.checkEdit3.Name = "checkEdit3";
+            this.checkEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.checkEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
+            this.checkEdit3.Properties.Appearance.Options.UseFont = true;
+            this.checkEdit3.Properties.Appearance.Options.UseForeColor = true;
+            this.checkEdit3.Properties.Caption = "Resguardo";
+            this.checkEdit3.Size = new System.Drawing.Size(107, 23);
+            this.checkEdit3.TabIndex = 43;
+            this.checkEdit3.CheckedChanged += new System.EventHandler(this.checkEdit3_CheckedChanged);
+            // 
+            // spinEdit3
+            // 
+            this.spinEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingsource, "Tiempo_Resguardo", true));
+            this.spinEdit3.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinEdit3.Enabled = false;
+            this.spinEdit3.Location = new System.Drawing.Point(11, 42);
+            this.spinEdit3.Name = "spinEdit3";
+            this.spinEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.spinEdit3.Properties.Appearance.Options.UseFont = true;
+            this.spinEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.spinEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.spinEdit3.Properties.MaxLength = 4;
+            this.spinEdit3.Properties.MaxValue = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.spinEdit3.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.spinEdit3.Properties.NullText = "1";
+            this.spinEdit3.Size = new System.Drawing.Size(176, 24);
+            this.spinEdit3.TabIndex = 42;
             // 
             // descripcionMemoEdit
             // 
@@ -572,6 +765,10 @@
             conditionValidationRule3.ErrorText = "Falta indicar el valor";
             this.dxValidationProvider.SetValidationRule(this.lookUpEdit1, conditionValidationRule3);
             // 
+            // bindingSource_ca_formatos
+            // 
+            this.bindingSource_ca_formatos.DataSource = typeof(scanndoc.data_members.ca_formatos);
+            // 
             // gridLookUpEdit1View
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -631,6 +828,20 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "id";
+            this.gridColumn1.FieldName = "id";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Estado";
+            this.gridColumn2.FieldName = "descripcion";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
             // 
             // tlp_proc
             // 
@@ -833,6 +1044,110 @@
             this.datagridview.Size = new System.Drawing.Size(979, 351);
             this.datagridview.TabIndex = 20;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Documento";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idFormatoDataGridViewTextBoxColumn
+            // 
+            this.idFormatoDataGridViewTextBoxColumn.DataPropertyName = "id_Formato";
+            this.idFormatoDataGridViewTextBoxColumn.HeaderText = "id_Formato";
+            this.idFormatoDataGridViewTextBoxColumn.Name = "idFormatoDataGridViewTextBoxColumn";
+            this.idFormatoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idFormatoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // noHojasDataGridViewTextBoxColumn
+            // 
+            this.noHojasDataGridViewTextBoxColumn.DataPropertyName = "No_Hojas";
+            this.noHojasDataGridViewTextBoxColumn.HeaderText = "No_Hojas";
+            this.noHojasDataGridViewTextBoxColumn.Name = "noHojasDataGridViewTextBoxColumn";
+            this.noHojasDataGridViewTextBoxColumn.ReadOnly = true;
+            this.noHojasDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // noCarasDataGridViewTextBoxColumn
+            // 
+            this.noCarasDataGridViewTextBoxColumn.DataPropertyName = "No_Caras";
+            this.noCarasDataGridViewTextBoxColumn.HeaderText = "No_Caras";
+            this.noCarasDataGridViewTextBoxColumn.Name = "noCarasDataGridViewTextBoxColumn";
+            this.noCarasDataGridViewTextBoxColumn.ReadOnly = true;
+            this.noCarasDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.estadoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // resguardoDataGridViewCheckBoxColumn
+            // 
+            this.resguardoDataGridViewCheckBoxColumn.DataPropertyName = "Resguardo";
+            this.resguardoDataGridViewCheckBoxColumn.HeaderText = "Resguardo";
+            this.resguardoDataGridViewCheckBoxColumn.Name = "resguardoDataGridViewCheckBoxColumn";
+            this.resguardoDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.resguardoDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // tiempoResguardoDataGridViewTextBoxColumn
+            // 
+            this.tiempoResguardoDataGridViewTextBoxColumn.DataPropertyName = "Tiempo_Resguardo";
+            this.tiempoResguardoDataGridViewTextBoxColumn.HeaderText = "Tiempo_Resguardo";
+            this.tiempoResguardoDataGridViewTextBoxColumn.Name = "tiempoResguardoDataGridViewTextBoxColumn";
+            this.tiempoResguardoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tiempoResguardoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // trazabilidadDataGridViewCheckBoxColumn
+            // 
+            this.trazabilidadDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.trazabilidadDataGridViewCheckBoxColumn.DataPropertyName = "Trazabilidad";
+            this.trazabilidadDataGridViewCheckBoxColumn.HeaderText = "Requiere trazabilidad";
+            this.trazabilidadDataGridViewCheckBoxColumn.Name = "trazabilidadDataGridViewCheckBoxColumn";
+            this.trazabilidadDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // tamanioCaracteresTrazablesDataGridViewTextBoxColumn
+            // 
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres_Trazables";
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.HeaderText = "Tamaño de caracteres trazables";
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.Name = "tamanioCaracteresTrazablesDataGridViewTextBoxColumn";
+            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mascaraTrazableDataGridViewTextBoxColumn
+            // 
+            this.mascaraTrazableDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mascaraTrazableDataGridViewTextBoxColumn.DataPropertyName = "Mascara_Trazable";
+            this.mascaraTrazableDataGridViewTextBoxColumn.HeaderText = "Máscara trazable";
+            this.mascaraTrazableDataGridViewTextBoxColumn.Name = "mascaraTrazableDataGridViewTextBoxColumn";
+            this.mascaraTrazableDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // politicaDataGridViewTextBoxColumn
+            // 
+            this.politicaDataGridViewTextBoxColumn.DataPropertyName = "Politica";
+            this.politicaDataGridViewTextBoxColumn.HeaderText = "Politica";
+            this.politicaDataGridViewTextBoxColumn.Name = "politicaDataGridViewTextBoxColumn";
+            this.politicaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.politicaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // caformatosDataGridViewTextBoxColumn
+            // 
+            this.caformatosDataGridViewTextBoxColumn.DataPropertyName = "ca_formatos";
+            this.caformatosDataGridViewTextBoxColumn.HeaderText = "ca_formatos";
+            this.caformatosDataGridViewTextBoxColumn.Name = "caformatosDataGridViewTextBoxColumn";
+            this.caformatosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.caformatosDataGridViewTextBoxColumn.Visible = false;
+            // 
             // btn_refrescar
             // 
             this.btn_refrescar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -987,319 +1302,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "No se encontraron registros";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.checkEdit3);
-            this.groupBox1.Controls.Add(this.spinEdit3);
-            this.groupBox1.Controls.Add(label8);
-            this.groupBox1.Location = new System.Drawing.Point(12, 122);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(198, 81);
-            this.groupBox1.TabIndex = 44;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "                                    ";
-            // 
-            // checkEdit3
-            // 
-            this.checkEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingsource, "Resguardo", true));
-            this.checkEdit3.Location = new System.Drawing.Point(9, -5);
-            this.checkEdit3.Name = "checkEdit3";
-            this.checkEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.checkEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.checkEdit3.Properties.Appearance.Options.UseFont = true;
-            this.checkEdit3.Properties.Appearance.Options.UseForeColor = true;
-            this.checkEdit3.Properties.Caption = "Resguardo";
-            this.checkEdit3.Size = new System.Drawing.Size(107, 23);
-            this.checkEdit3.TabIndex = 43;
-            // 
-            // spinEdit3
-            // 
-            this.spinEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingsource, "Tiempo_Resguardo", true));
-            this.spinEdit3.EditValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.spinEdit3.Enabled = false;
-            this.spinEdit3.Location = new System.Drawing.Point(11, 42);
-            this.spinEdit3.Name = "spinEdit3";
-            this.spinEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.spinEdit3.Properties.Appearance.Options.UseFont = true;
-            this.spinEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.spinEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.spinEdit3.Properties.MaxLength = 4;
-            this.spinEdit3.Properties.MaxValue = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.spinEdit3.Properties.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.spinEdit3.Properties.NullText = "1";
-            this.spinEdit3.Size = new System.Drawing.Size(176, 24);
-            this.spinEdit3.TabIndex = 42;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label8.Location = new System.Drawing.Point(8, 21);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(168, 18);
-            label8.TabIndex = 41;
-            label8.Text = "Tiempo de resguardo";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(label12);
-            this.groupBox2.Controls.Add(this.textEdit2);
-            this.groupBox2.Controls.Add(this.textEdit1);
-            this.groupBox2.Controls.Add(this.spinEdit4);
-            this.groupBox2.Controls.Add(label10);
-            this.groupBox2.Controls.Add(this.checkEdit2);
-            this.groupBox2.Controls.Add(label9);
-            this.groupBox2.Location = new System.Drawing.Point(216, 122);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(775, 81);
-            this.groupBox2.TabIndex = 45;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "                                                                 ";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label12.Location = new System.Drawing.Point(421, 21);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(273, 18);
-            label12.TabIndex = 50;
-            label12.Text = "Patrón de la máscara para el editor";
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Mask", true));
-            this.textEdit2.Location = new System.Drawing.Point(424, 42);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit2.Size = new System.Drawing.Size(345, 24);
-            this.textEdit2.TabIndex = 49;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingsource, "Mascara_Trazable", true));
-            this.textEdit1.Enabled = false;
-            this.textEdit1.Location = new System.Drawing.Point(186, 42);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit1.Size = new System.Drawing.Size(232, 24);
-            this.textEdit1.TabIndex = 48;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Falta indicar el valor";
-            this.dxValidationProvider_mascara.SetValidationRule(this.textEdit1, conditionValidationRule1);
-            // 
-            // spinEdit4
-            // 
-            this.spinEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingsource, "Tamanio_Caracteres_Trazables", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
-            this.spinEdit4.EditValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.spinEdit4.Enabled = false;
-            this.spinEdit4.Location = new System.Drawing.Point(6, 42);
-            this.spinEdit4.Name = "spinEdit4";
-            this.spinEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.spinEdit4.Properties.Appearance.Options.UseFont = true;
-            this.spinEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.spinEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.spinEdit4.Properties.MaxLength = 4;
-            this.spinEdit4.Properties.MaxValue = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.spinEdit4.Properties.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.spinEdit4.Properties.NullText = "1";
-            this.spinEdit4.Size = new System.Drawing.Size(174, 24);
-            this.spinEdit4.TabIndex = 47;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label10.Location = new System.Drawing.Point(3, 21);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(177, 18);
-            label10.TabIndex = 46;
-            label10.Text = "Tamaño de caracteres";
-            // 
-            // checkEdit2
-            // 
-            this.checkEdit2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingsource, "Trazabilidad", true));
-            this.checkEdit2.Location = new System.Drawing.Point(9, -5);
-            this.checkEdit2.Name = "checkEdit2";
-            this.checkEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.checkEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
-            this.checkEdit2.Properties.Appearance.Options.UseFont = true;
-            this.checkEdit2.Properties.Appearance.Options.UseForeColor = true;
-            this.checkEdit2.Properties.Caption = "Requiere trazabilidad";
-            this.checkEdit2.Size = new System.Drawing.Size(190, 23);
-            this.checkEdit2.TabIndex = 45;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label9.Location = new System.Drawing.Point(183, 21);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(73, 18);
-            label9.TabIndex = 44;
-            label9.Text = "Máscara";
-            // 
-            // bindingsource
-            // 
-            this.bindingsource.DataSource = typeof(scanndoc.data_members.ca_documentos);
-            this.bindingsource.CurrentItemChanged += new System.EventHandler(this.bindingsource_CurrentItemChanged);
-            // 
-            // bindingSource_ca_formatos
-            // 
-            this.bindingSource_ca_formatos.DataSource = typeof(scanndoc.data_members.ca_formatos);
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "id";
-            this.gridColumn1.FieldName = "id";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Estado";
-            this.gridColumn2.FieldName = "descripcion";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Documento";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idFormatoDataGridViewTextBoxColumn
-            // 
-            this.idFormatoDataGridViewTextBoxColumn.DataPropertyName = "id_Formato";
-            this.idFormatoDataGridViewTextBoxColumn.HeaderText = "id_Formato";
-            this.idFormatoDataGridViewTextBoxColumn.Name = "idFormatoDataGridViewTextBoxColumn";
-            this.idFormatoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idFormatoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // noHojasDataGridViewTextBoxColumn
-            // 
-            this.noHojasDataGridViewTextBoxColumn.DataPropertyName = "No_Hojas";
-            this.noHojasDataGridViewTextBoxColumn.HeaderText = "No_Hojas";
-            this.noHojasDataGridViewTextBoxColumn.Name = "noHojasDataGridViewTextBoxColumn";
-            this.noHojasDataGridViewTextBoxColumn.ReadOnly = true;
-            this.noHojasDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // noCarasDataGridViewTextBoxColumn
-            // 
-            this.noCarasDataGridViewTextBoxColumn.DataPropertyName = "No_Caras";
-            this.noCarasDataGridViewTextBoxColumn.HeaderText = "No_Caras";
-            this.noCarasDataGridViewTextBoxColumn.Name = "noCarasDataGridViewTextBoxColumn";
-            this.noCarasDataGridViewTextBoxColumn.ReadOnly = true;
-            this.noCarasDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.estadoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // resguardoDataGridViewCheckBoxColumn
-            // 
-            this.resguardoDataGridViewCheckBoxColumn.DataPropertyName = "Resguardo";
-            this.resguardoDataGridViewCheckBoxColumn.HeaderText = "Resguardo";
-            this.resguardoDataGridViewCheckBoxColumn.Name = "resguardoDataGridViewCheckBoxColumn";
-            this.resguardoDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.resguardoDataGridViewCheckBoxColumn.Visible = false;
-            // 
-            // tiempoResguardoDataGridViewTextBoxColumn
-            // 
-            this.tiempoResguardoDataGridViewTextBoxColumn.DataPropertyName = "Tiempo_Resguardo";
-            this.tiempoResguardoDataGridViewTextBoxColumn.HeaderText = "Tiempo_Resguardo";
-            this.tiempoResguardoDataGridViewTextBoxColumn.Name = "tiempoResguardoDataGridViewTextBoxColumn";
-            this.tiempoResguardoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tiempoResguardoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // trazabilidadDataGridViewCheckBoxColumn
-            // 
-            this.trazabilidadDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.trazabilidadDataGridViewCheckBoxColumn.DataPropertyName = "Trazabilidad";
-            this.trazabilidadDataGridViewCheckBoxColumn.HeaderText = "Requiere trazabilidad";
-            this.trazabilidadDataGridViewCheckBoxColumn.Name = "trazabilidadDataGridViewCheckBoxColumn";
-            this.trazabilidadDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // tamanioCaracteresTrazablesDataGridViewTextBoxColumn
-            // 
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres_Trazables";
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.HeaderText = "Tamaño de caracteres trazables";
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.Name = "tamanioCaracteresTrazablesDataGridViewTextBoxColumn";
-            this.tamanioCaracteresTrazablesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mascaraTrazableDataGridViewTextBoxColumn
-            // 
-            this.mascaraTrazableDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mascaraTrazableDataGridViewTextBoxColumn.DataPropertyName = "Mascara_Trazable";
-            this.mascaraTrazableDataGridViewTextBoxColumn.HeaderText = "Máscara trazable";
-            this.mascaraTrazableDataGridViewTextBoxColumn.Name = "mascaraTrazableDataGridViewTextBoxColumn";
-            this.mascaraTrazableDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // politicaDataGridViewTextBoxColumn
-            // 
-            this.politicaDataGridViewTextBoxColumn.DataPropertyName = "Politica";
-            this.politicaDataGridViewTextBoxColumn.HeaderText = "Politica";
-            this.politicaDataGridViewTextBoxColumn.Name = "politicaDataGridViewTextBoxColumn";
-            this.politicaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.politicaDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // caformatosDataGridViewTextBoxColumn
-            // 
-            this.caformatosDataGridViewTextBoxColumn.DataPropertyName = "ca_formatos";
-            this.caformatosDataGridViewTextBoxColumn.HeaderText = "ca_formatos";
-            this.caformatosDataGridViewTextBoxColumn.Name = "caformatosDataGridViewTextBoxColumn";
-            this.caformatosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.caformatosDataGridViewTextBoxColumn.Visible = false;
-            // 
             // ca_documentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1318,11 +1320,23 @@
             this.splitContainer.Panel2.ResumeLayout(false);
             this.splitContainer.Panel2.PerformLayout();
             this.splitContainer.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.descripcionMemoEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.descripcionTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_ca_formatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource_estados)).EndInit();
@@ -1342,18 +1356,6 @@
             this.tlp_noregistros.ResumeLayout(false);
             this.tlp_noregistros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit3.Properties)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingsource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource_ca_formatos)).EndInit();
             this.ResumeLayout(false);
 
         }
