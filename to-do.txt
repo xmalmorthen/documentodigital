@@ -7,6 +7,7 @@
 
 
 Sistema escritorio
+	Slide para agrandar los thumbnails
 	Identificar los documentos faltantes de la lista de documentos
 	Poder imprimir la lista de documentos
 	Imagen y texto de fondo de ventana
@@ -15,6 +16,8 @@ Sistema escritorio
 
 Sistema web
 	Resolver error en la opcion nodos
+	Busqueda por campos trazables del tramite
+	Busqueda por campos trazables de documentos
 	En la ventana de detalles de tramite mostrar mas informacion del tramite seleccionado
 	Checks en documentos que se exportarán a reporte
 	Mandar la opción de galeria dentro de la ventana de detalle para que se filtre con los checks
