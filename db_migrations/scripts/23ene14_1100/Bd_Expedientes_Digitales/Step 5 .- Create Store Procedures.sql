@@ -43,7 +43,7 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 
-	SELECT GETDATE() AS FechaHora
+	SELECT CONVERT(VARCHAR(30),GETDATE()) AS FechaHora
 END
 ' 
 END
@@ -310,7 +310,7 @@ BEGIN
 	SET NOCOUNT ON;
 	SELECT        TOP (100) PERCENT dbo.re_expedientes_campostrazables.id AS id_re_expedientes_campostrazables, dbo.re_expedientes_campostrazables.id_campotrazable, 
                          dbo.ca_campostrazables.Nombre, dbo.ca_campostrazables.Tamanio_Caracteres, dbo.re_expedientes_campostrazables.id_estatus, 
-                         dbo.ca_campostrazables.Mascara, dbo.re_expedientes_campostrazables.es_principal
+                         dbo.ca_campostrazables.Mascara, dbo.ca_campostrazables.Mask, dbo.re_expedientes_campostrazables.es_principal
 	FROM            dbo.re_expedientes_campostrazables INNER JOIN
 							 dbo.ca_campostrazables ON dbo.re_expedientes_campostrazables.id_campotrazable = dbo.ca_campostrazables.id
 	WHERE        (dbo.re_expedientes_campostrazables.id_expediente = @id_expediente) AND (dbo.re_expedientes_campostrazables.id_estatus = 1)
