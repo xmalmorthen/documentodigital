@@ -5,3 +5,18 @@
 	. Modificar tamaño de imagen de marca de agua en digitalización
 
 
+
+Sistema escritorio
+	Identificar los documentos faltantes de la lista de documentos
+	Poder imprimir la lista de documentos
+	Imagen y texto de fondo de ventana
+	Valorar campos trazables de expediente que sean opcionales
+	
+
+Sistema web
+	Resolver error en la opcion nodos
+	En la ventana de detalles de tramite mostrar mas informacion del tramite seleccionado
+	Checks en documentos que se exportarán a reporte
+	Mandar la opción de galeria dentro de la ventana de detalle para que se filtre con los checks
+	
+	
