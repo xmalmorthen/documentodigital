@@ -104,10 +104,10 @@
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="ca_estatus_ca_tramites" Member="ca_tramites" ThisKey="id" OtherKey="id_estatus" Type="ca_tramites" />
       <Association Name="ca_estatus_de_digital" Member="de_digital" ThisKey="id" OtherKey="id_estatus" Type="de_digital" />
-      <Association Name="ca_estatus_de_digital_campostrazables" Member="de_digital_campostrazables" ThisKey="id" OtherKey="id_estatus" Type="de_digital_campostrazables" />
       <Association Name="ca_estatus_re_clasificaciondocumentos_documentos" Member="re_clasificaciondocumentos_documentos" ThisKey="id" OtherKey="id_estatus" Type="re_clasificaciondocumentos_documentos" />
       <Association Name="ca_estatus_re_expedientes_campostrazables" Member="re_expedientes_campostrazables" ThisKey="id" OtherKey="id_estatus" Type="re_expedientes_campostrazables" />
       <Association Name="ca_estatus_ma_digital" Member="ma_digital" ThisKey="id" OtherKey="id_estatus" Type="ma_digital" />
+      <Association Name="ca_estatus_de_digital_campostrazables" Member="de_digital_campostrazables" ThisKey="id" OtherKey="id_estatus" Type="de_digital_campostrazables" />
     </Type>
   </Table>
   <Table Name="dbo.ca_expedientes" Member="ca_expedientes">
@@ -216,19 +216,6 @@
       <Association Name="ca_estatus_de_digital" Member="ca_estatus" ThisKey="id_estatus" OtherKey="id" Type="ca_estatus" IsForeignKey="true" />
       <Association Name="re_clasificaciondocumentos_documentos_de_digital" Member="re_clasificaciondocumentos_documentos" ThisKey="id_re_clasificaciondocumento_documento" OtherKey="id" Type="re_clasificaciondocumentos_documentos" IsForeignKey="true" />
       <Association Name="ma_digital_de_digital" Member="ma_digital" ThisKey="id_ma_digital" OtherKey="id" Type="ma_digital" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.de_digital_campostrazables" Member="de_digital_campostrazables">
-    <Type Name="de_digital_campostrazables">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_re_expediente_campotrazable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="valor_trazable" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_hora_creacion" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="ca_estatus_de_digital_campostrazables" Member="ca_estatus" ThisKey="id_estatus" OtherKey="id" Type="ca_estatus" IsForeignKey="true" />
-      <Association Name="re_expedientes_campostrazables_de_digital_campostrazables" Member="re_expedientes_campostrazables" ThisKey="id_re_expediente_campotrazable" OtherKey="id" Type="re_expedientes_campostrazables" IsForeignKey="true" />
-      <Association Name="ma_digital_de_digital_campostrazables" Member="ma_digital" ThisKey="id_ma_digital" OtherKey="id" Type="ma_digital" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.hco_cambios" Member="hco_cambios">
@@ -344,18 +331,19 @@
       <Association Name="re_expedientes_tramites_ma_digital" Member="re_expedientes_tramites" ThisKey="id_re_expediente_tramite" OtherKey="id" Type="re_expedientes_tramites" IsForeignKey="true" />
     </Type>
   </Table>
-  <Function Name="dbo.pa_CampostrazablesActivosporExpediente" Method="pa_CampostrazablesActivosporExpediente">
-    <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
-    <ElementType Name="pa_CampostrazablesActivosporExpedienteResult">
-      <Column Name="id_re_expedientes_campostrazables" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_campotrazable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="Tamanio_Caracteres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Mascara" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="es_principal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
+  <Table Name="dbo.de_digital_campostrazables" Member="de_digital_campostrazables">
+    <Type Name="de_digital_campostrazables">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_re_expediente_campotrazable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="valor_trazable" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="fecha_hora_creacion" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ca_estatus_de_digital_campostrazables" Member="ca_estatus" ThisKey="id_estatus" OtherKey="id" Type="ca_estatus" IsForeignKey="true" />
+      <Association Name="ma_digital_de_digital_campostrazables" Member="ma_digital" ThisKey="id_ma_digital" OtherKey="id" Type="ma_digital" IsForeignKey="true" />
+      <Association Name="re_expedientes_campostrazables_de_digital_campostrazables" Member="re_expedientes_campostrazables" ThisKey="id_re_expediente_campotrazable" OtherKey="id" Type="re_expedientes_campostrazables" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.pa_TramitesporExpediente" Method="pa_TramitesporExpediente">
     <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
     <ElementType Name="pa_TramitesporExpedienteResult">
@@ -540,11 +528,6 @@
       <Column Name="Fecha" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_obtener_fechahora" Method="pa_obtener_fechahora">
-    <ElementType Name="pa_obtener_fechahoraResult">
-      <Column Name="FechaHora" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.pa_obtener_hora" Method="pa_obtener_hora">
     <ElementType Name="pa_obtener_horaResult">
       <Column Name="Hora" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
@@ -667,6 +650,24 @@
       <Column Name="Tamanio_Caracteres_Trazables" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
       <Column Name="Mascara_Trazable" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="Mask" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_obtener_fechahora" Method="pa_obtener_fechahora">
+    <ElementType Name="pa_obtener_fechahoraResult">
+      <Column Name="FechaHora" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.pa_CampostrazablesActivosporExpediente" Method="pa_CampostrazablesActivosporExpediente">
+    <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pa_CampostrazablesActivosporExpedienteResult">
+      <Column Name="id_re_expedientes_campostrazables" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_campotrazable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Tamanio_Caracteres" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mascara" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Mask" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="es_principal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>
