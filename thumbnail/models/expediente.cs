@@ -14,8 +14,8 @@ namespace scanndoc.models
         private string _nota;
         public string nota { get { return _nota; } set { _nota = value; } }
 
-        private DateTime _fecha_hora_bloqueo;
-        public DateTime fecha_hora_bloqueo { get { return _fecha_hora_bloqueo; } set { _fecha_hora_bloqueo = value; } }
+        private DateTime? _fecha_hora_bloqueo;
+        public DateTime? fecha_hora_bloqueo { get { return _fecha_hora_bloqueo; } set { _fecha_hora_bloqueo = value; } }
 
         private int _id_estatus;
         public int id_estatus { get { return _id_estatus; } set { _id_estatus = value; } }
