@@ -85,15 +85,6 @@ namespace scanndoc.forms
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.dataGridView_CamposTrazables = new System.Windows.Forms.DataGridView();
-            this.idcampotrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tamanioCaracteresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mascaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.esprincipalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.id_re_expedientes_campostrazables = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_valor_trazable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BindingSource_CamposTrazables = new System.Windows.Forms.BindingSource(this.components);
             this.tbctrl = new System.Windows.Forms.TabControl();
             this.tabpgeUsuario = new System.Windows.Forms.TabPage();
             this.tab0_tbllytpnldocumentos = new System.Windows.Forms.TableLayoutPanel();
@@ -133,7 +124,6 @@ namespace scanndoc.forms
             this.label3 = new System.Windows.Forms.Label();
             this.KDImage = new AxKDImageEditor.AxKDImage();
             this.lookUpEdit_Tramites = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.BindingSource_ListaTramites = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid_expediente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcion_Expediente = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -148,6 +138,17 @@ namespace scanndoc.forms
             this.colid_estatus_tramite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescripcion_estatus_tramite = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_re_expedientes_tramites = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.BindingSource_ListaTramites = new System.Windows.Forms.BindingSource(this.components);
+            this.BindingSource_CamposTrazables = new System.Windows.Forms.BindingSource(this.components);
+            this.idcampotrazableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tamanioCaracteresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idestatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mascaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.esprincipalDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.id_re_expedientes_campostrazables = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_valor_trazable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mask = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cntmnuListViewEnlace.SuspendLayout();
             this.cntmnuListViewScann.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab0_pblbldocumentosenlazados)).BeginInit();
@@ -159,7 +160,6 @@ namespace scanndoc.forms
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosescaneados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosenlazados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposTrazables)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_CamposTrazables)).BeginInit();
             this.tbctrl.SuspendLayout();
             this.tabpgeUsuario.SuspendLayout();
             this.tab0_tbllytpnldocumentos.SuspendLayout();
@@ -181,8 +181,9 @@ namespace scanndoc.forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KDImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Tramites.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_ListaTramites)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_ListaTramites)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_CamposTrazables)).BeginInit();
             this.SuspendLayout();
             // 
             // cntmnuListViewEnlace
@@ -787,7 +788,8 @@ namespace scanndoc.forms
             this.mascaraDataGridViewTextBoxColumn,
             this.esprincipalDataGridViewCheckBoxColumn,
             this.id_re_expedientes_campostrazables,
-            this.col_valor_trazable});
+            this.col_valor_trazable,
+            this.Mask});
             this.dataGridView_CamposTrazables.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView_CamposTrazables.DataSource = this.BindingSource_CamposTrazables;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -819,70 +821,6 @@ namespace scanndoc.forms
             this.dataGridView_CamposTrazables.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CamposTrazables_CellEndEdit);
             this.dataGridView_CamposTrazables.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridView_CamposTrazables_CellValidating);
             this.dataGridView_CamposTrazables.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CamposTrazables_RowEnter);
-            // 
-            // idcampotrazableDataGridViewTextBoxColumn
-            // 
-            this.idcampotrazableDataGridViewTextBoxColumn.DataPropertyName = "id_campotrazable";
-            this.idcampotrazableDataGridViewTextBoxColumn.HeaderText = "id_campotrazable";
-            this.idcampotrazableDataGridViewTextBoxColumn.Name = "idcampotrazableDataGridViewTextBoxColumn";
-            this.idcampotrazableDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Campo";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tamanioCaracteresDataGridViewTextBoxColumn
-            // 
-            this.tamanioCaracteresDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tamanioCaracteresDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.tamanioCaracteresDataGridViewTextBoxColumn.HeaderText = "Tamaño de caracteres";
-            this.tamanioCaracteresDataGridViewTextBoxColumn.Name = "tamanioCaracteresDataGridViewTextBoxColumn";
-            this.tamanioCaracteresDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idestatusDataGridViewTextBoxColumn
-            // 
-            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
-            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
-            this.idestatusDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // mascaraDataGridViewTextBoxColumn
-            // 
-            this.mascaraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mascaraDataGridViewTextBoxColumn.DataPropertyName = "Mascara";
-            this.mascaraDataGridViewTextBoxColumn.HeaderText = "Mascara";
-            this.mascaraDataGridViewTextBoxColumn.Name = "mascaraDataGridViewTextBoxColumn";
-            this.mascaraDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // esprincipalDataGridViewCheckBoxColumn
-            // 
-            this.esprincipalDataGridViewCheckBoxColumn.DataPropertyName = "es_principal";
-            this.esprincipalDataGridViewCheckBoxColumn.HeaderText = "Es principal";
-            this.esprincipalDataGridViewCheckBoxColumn.Name = "esprincipalDataGridViewCheckBoxColumn";
-            this.esprincipalDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // id_re_expedientes_campostrazables
-            // 
-            this.id_re_expedientes_campostrazables.DataPropertyName = "id_re_expedientes_campostrazables";
-            this.id_re_expedientes_campostrazables.HeaderText = "id_re_expedientes_campostrazables";
-            this.id_re_expedientes_campostrazables.Name = "id_re_expedientes_campostrazables";
-            this.id_re_expedientes_campostrazables.ReadOnly = true;
-            this.id_re_expedientes_campostrazables.Visible = false;
-            // 
-            // col_valor_trazable
-            // 
-            this.col_valor_trazable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_valor_trazable.HeaderText = "Valor Trazable";
-            this.col_valor_trazable.Name = "col_valor_trazable";
-            this.col_valor_trazable.ToolTipText = "Introdúzca el valor de la trazabilidad";
-            // 
-            // BindingSource_CamposTrazables
-            // 
-            this.BindingSource_CamposTrazables.DataSource = typeof(scanndoc.data_members.pa_CampostrazablesActivosporExpedienteResult);
             // 
             // tbctrl
             // 
@@ -1451,11 +1389,6 @@ namespace scanndoc.forms
             this.lookUpEdit_Tramites.EditValueChanged += new System.EventHandler(this.lookUpEdit_Tramites_EditValueChanged);
             this.lookUpEdit_Tramites.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.lookUpEdit_Tramites_EditValueChanging);
             // 
-            // BindingSource_ListaTramites
-            // 
-            this.BindingSource_ListaTramites.DataSource = typeof(scanndoc.data_members.vw_ListaTramitesActivos);
-            this.BindingSource_ListaTramites.CurrentItemChanged += new System.EventHandler(this.BindingSource_ListaTramites_CurrentItemChanged);
-            // 
             // gridView1
             // 
             this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -1556,6 +1489,83 @@ namespace scanndoc.forms
             this.colid_re_expedientes_tramites.FieldName = "id_re_expedientes_tramites";
             this.colid_re_expedientes_tramites.Name = "colid_re_expedientes_tramites";
             // 
+            // BindingSource_ListaTramites
+            // 
+            this.BindingSource_ListaTramites.DataSource = typeof(scanndoc.data_members.vw_ListaTramitesActivos);
+            this.BindingSource_ListaTramites.CurrentItemChanged += new System.EventHandler(this.BindingSource_ListaTramites_CurrentItemChanged);
+            // 
+            // BindingSource_CamposTrazables
+            // 
+            this.BindingSource_CamposTrazables.DataSource = typeof(scanndoc.data_members.pa_CampostrazablesActivosporExpedienteResult);
+            // 
+            // idcampotrazableDataGridViewTextBoxColumn
+            // 
+            this.idcampotrazableDataGridViewTextBoxColumn.DataPropertyName = "id_campotrazable";
+            this.idcampotrazableDataGridViewTextBoxColumn.HeaderText = "id_campotrazable";
+            this.idcampotrazableDataGridViewTextBoxColumn.Name = "idcampotrazableDataGridViewTextBoxColumn";
+            this.idcampotrazableDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Campo";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tamanioCaracteresDataGridViewTextBoxColumn
+            // 
+            this.tamanioCaracteresDataGridViewTextBoxColumn.DataPropertyName = "Tamanio_Caracteres";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.tamanioCaracteresDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tamanioCaracteresDataGridViewTextBoxColumn.HeaderText = "Tamaño de caracteres";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.Name = "tamanioCaracteresDataGridViewTextBoxColumn";
+            this.tamanioCaracteresDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idestatusDataGridViewTextBoxColumn
+            // 
+            this.idestatusDataGridViewTextBoxColumn.DataPropertyName = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.HeaderText = "id_estatus";
+            this.idestatusDataGridViewTextBoxColumn.Name = "idestatusDataGridViewTextBoxColumn";
+            this.idestatusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // mascaraDataGridViewTextBoxColumn
+            // 
+            this.mascaraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mascaraDataGridViewTextBoxColumn.DataPropertyName = "Mascara";
+            this.mascaraDataGridViewTextBoxColumn.HeaderText = "Mascara";
+            this.mascaraDataGridViewTextBoxColumn.Name = "mascaraDataGridViewTextBoxColumn";
+            this.mascaraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // esprincipalDataGridViewCheckBoxColumn
+            // 
+            this.esprincipalDataGridViewCheckBoxColumn.DataPropertyName = "es_principal";
+            this.esprincipalDataGridViewCheckBoxColumn.HeaderText = "Es principal";
+            this.esprincipalDataGridViewCheckBoxColumn.Name = "esprincipalDataGridViewCheckBoxColumn";
+            this.esprincipalDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // id_re_expedientes_campostrazables
+            // 
+            this.id_re_expedientes_campostrazables.DataPropertyName = "id_re_expedientes_campostrazables";
+            this.id_re_expedientes_campostrazables.HeaderText = "id_re_expedientes_campostrazables";
+            this.id_re_expedientes_campostrazables.Name = "id_re_expedientes_campostrazables";
+            this.id_re_expedientes_campostrazables.ReadOnly = true;
+            this.id_re_expedientes_campostrazables.Visible = false;
+            // 
+            // col_valor_trazable
+            // 
+            this.col_valor_trazable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_valor_trazable.HeaderText = "Valor Trazable";
+            this.col_valor_trazable.Name = "col_valor_trazable";
+            this.col_valor_trazable.ToolTipText = "Introdúzca el valor de la trazabilidad";
+            // 
+            // Mask
+            // 
+            this.Mask.DataPropertyName = "Mask";
+            this.Mask.HeaderText = "Mask";
+            this.Mask.Name = "Mask";
+            this.Mask.ReadOnly = true;
+            this.Mask.Visible = false;
+            // 
             // frm_scann
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1603,7 +1613,6 @@ namespace scanndoc.forms
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosescaneados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab3_pblbldocumentosenlazados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_CamposTrazables)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_CamposTrazables)).EndInit();
             this.tbctrl.ResumeLayout(false);
             this.tabpgeUsuario.ResumeLayout(false);
             this.tab0_tbllytpnldocumentos.ResumeLayout(false);
@@ -1634,8 +1643,9 @@ namespace scanndoc.forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KDImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit_Tramites.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_ListaTramites)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_ListaTramites)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSource_CamposTrazables)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1749,6 +1759,7 @@ namespace scanndoc.forms
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.Button btn_bloquear;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idcampotrazableDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tamanioCaracteresDataGridViewTextBoxColumn;
@@ -1757,7 +1768,7 @@ namespace scanndoc.forms
         private System.Windows.Forms.DataGridViewCheckBoxColumn esprincipalDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_re_expedientes_campostrazables;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_valor_trazable;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mask;
 
 
 

@@ -111,9 +111,11 @@ namespace scanndoc.forms
 
             if (mask != null)
             {
+                txtvalortrazable.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
                 txtvalortrazable.Properties.Mask.EditMask = mask.ToString();
             }
             else {
+                txtvalortrazable.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
                 txtvalortrazable.Properties.Mask.EditMask = string.Empty;
             }
 
@@ -171,7 +173,7 @@ namespace scanndoc.forms
 
         private void txtvalortrazable_Click(object sender, EventArgs e)
         {
-            txtvalortrazable.SelectAll();
+            //txtvalortrazable.SelectAll();
         }
 
         private void frmhook_FormClosing(object sender, FormClosingEventArgs e)
@@ -207,6 +209,7 @@ namespace scanndoc.forms
         private void frm_hook_Load(object sender, EventArgs e)
         {            
             this.Paint += frm_hook_Paint;
+            txtvalortrazable.Enabled = false;
         }
 
         private void frm_hook_Paint(object sender, PaintEventArgs e)

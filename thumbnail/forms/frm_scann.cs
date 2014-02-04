@@ -448,6 +448,7 @@ namespace scanndoc.forms
                         if (de_digital_campostrazables.valor_trazable != item.valor_trazable)
                         {
                             de_digital_campostrazables.valor_trazable = item.valor_trazable;
+                            //de_digital_campostrazables.fecha_hora_creacion = Program.Bd_Expedientes_Digitales.ExecuteQuery<DateTime>("SELECT GETDATE()").First(); //MARCA ERROR NO SE PUEDE ACTUALIZAR EL DATO AUTOGENERADO
                             Program.Bd_Expedientes_Digitales.SubmitChanges();
                         }
                     }                
@@ -497,17 +498,21 @@ namespace scanndoc.forms
                 }                
 
                 trazabilidad_tramite source_trazabilidad = new trazabilidad_tramite();
-                source_trazabilidad.id_re_expediente_campotrazable = int.Parse(row.Cells["id_re_expedientes_campostrazables"].Value.ToString());
+                source_trazabilidad.id_re_expediente_campotrazable = int.Parse(row.Cells["id_re_expedientes_campostrazables"].Value.ToString());                
                 try
                 {
                     source_trazabilidad.valor_trazable = row.Cells["col_valor_trazable"].Value.ToString();
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Se encontraron campos trazables sin valor, imposible procesar, favor de revisar", "Error en valores trazables", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    result = false;
+                    /*
+                     * comentando las siguientes dos lineas para que los campos trazables
+                     * puedan ser opcionales
+                     */ 
+                    //MessageBox.Show("Se encontraron campos trazables sin valor, imposible procesar, favor de revisar", "Error en valores trazables", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //result = false;
                     source_trazabilidad.valor_trazable = null;
-                    break;                    
+                    //break;                    
                 }                
                 sources_trazabilidad.Add(source_trazabilidad);                
                 source_trazabilidad = null;
@@ -1513,11 +1518,13 @@ namespace scanndoc.forms
 
         private void dataGridView_CamposTrazables_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            if (e.ColumnIndex == 6) { //si la columna es igual a la de valor trazable
+            if (e.ColumnIndex == 7) { //si la columna es igual a la de valor trazable
                 string mascara = dataGridView_CamposTrazables.Rows[e.RowIndex].Cells["mascaraDataGridViewTextBoxColumn"].Value.ToString();
-                int tamaniocaracteres = int.Parse(dataGridView_CamposTrazables.Rows[e.RowIndex].Cells["tamanioCaracteresDataGridViewTextBoxColumn"].Value.ToString()); 
+                string mask = Convert.ToString(dataGridView_CamposTrazables.Rows[e.RowIndex].Cells["Mask"].Value);
 
-                if (!string.IsNullOrEmpty(mascara))
+                int tamaniocaracteres = int.Parse(dataGridView_CamposTrazables.Rows[e.RowIndex].Cells["tamanioCaracteresDataGridViewTextBoxColumn"].Value.ToString());
+
+                if (!string.IsNullOrEmpty(mask))
                 {
                     int tamanioreal = e.FormattedValue.ToString().Length;
 
