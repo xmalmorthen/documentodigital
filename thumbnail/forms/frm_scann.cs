@@ -2033,6 +2033,63 @@ namespace scanndoc.forms
             }
             frmListaDocumentosOrden.Visible = true;
         }
+
+        private void zoomSlider_EditValueChanged(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            tlp_proc.Visible = true;
+
+            Application.DoEvents();
+
+            int numitems = (lstvwdocumentosescaneados.Items.Count)  + (lstvwdocumentosenlazados.Items.Count);
+
+            List<Image> collection = new List<Image>(numitems);
+            for (int i = 0; i <= numitems-1; i++)
+            {
+                collection.Add(null);
+            }
+
+            foreach (ListViewItem item in lstvwdocumentosescaneados.Items)
+            {
+                try
+                {
+                    string pathfile = ((tagstruct)item.Tag).path_image.ToString();
+                    Image img = Image.FromFile(pathfile);
+                    collection[item.ImageIndex] = classes.thumbnail.getThumbnaiImage(zoomSlider.Value, img);
+                    img.Dispose();
+                }
+                catch (Exception)
+                {                    
+                }
+                
+            }
+
+            foreach (ListViewItem item in lstvwdocumentosenlazados.Items)
+            {
+                try
+                {
+                    string pathfile = ((tagstruct)item.Tag).path_image.ToString();
+                    Image img = Image.FromFile(pathfile);
+                    collection[item.ImageIndex] = classes.thumbnail.getThumbnaiImage(zoomSlider.Value, img);
+                    img.Dispose();
+                }
+                catch (Exception)
+                {
+                }                
+            }
+
+            this.thumbnainlist.ImageSize = new Size(zoomSlider.Value, zoomSlider.Value);
+                       
+            this.thumbnainlist.Images.AddRange(collection.ToArray());
+            
+            this.lstvwdocumentosescaneados.Refresh();
+            this.lstvwdocumentosenlazados.Refresh();
+
+            Application.DoEvents();
+
+            tlp_proc.Visible = false;
+            this.Cursor = Cursors.Default;
+        }
         
     }
 }
