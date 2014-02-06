@@ -7,15 +7,31 @@ using System.Drawing;
 
 namespace apiRest.ModelsApiWeb
 {
+    /*
+    * Tabla de tipos de busqueda
+    * 
+    * Por campo trazable principal                                                                                 = 1
+    * Por campos trazables del expediente                                                                          = 2
+    * Por campos trazables de los documentos                                                                       = 3
+    * Por campo trazable principal + Por campos trazables del expediente                                           = 4
+    * Por campo trazable principal + Por campos trazables de los documentos                                        = 5
+    * Por campos trazables del expediente + Por campos trazables de los documentos                                 = 6
+    * Por campo trazable principal + Por campos trazables del expediente + Por campos trazables de los documentos  = 7         
+    */
+
+
     public class ConsultasApiWeb
     {
         private Bd_Expedientes_DigitalesDataContext bd = new Bd_Expedientes_DigitalesDataContext();
 
-        public IEnumerable<pa_ConsultaTramitesporValorTrazableResult> ConsultaTramitesporValorTrazable(string valor_trazable) {
+        //obtiene los tramites desde el valor trazable principal
+        public IEnumerable<pa_ConsultaTramitesporValorTrazableResult> ConsultaTramitesporValorTrazable(int tipo_busqueda, string valor_trazable)
+        {
             try
             {
+                
                 List<pa_ConsultaTramitesporValorTrazableResult> response = bd.pa_ConsultaTramitesporValorTrazable(valor_trazable).ToList();
-
+                
                 //datos aleatorios de prueba                
                 /*string[] expedientes = new string[] { "Expediente 1", "Expediente 2", "Expediente 3" };
 
@@ -37,7 +53,63 @@ namespace apiRest.ModelsApiWeb
             }        
         }
 
-        public IEnumerable<pa_ConsultaTramitesporExpedienteyValorTrazableResult> ConsultaTramitesporExpedienteyValorTrazable(int id_Expediente,string valor_trazable)
+        //obtiene los tramites desde cualquier valor trazable del expediente, sin incluir el principal
+        public IEnumerable<pa_ConsultaTramitesporValorTrazableExpedienteResult> ConsultaTramitesporValorTrazableExpediente(int tipo_busqueda, string valor_trazable)
+        {
+            try
+            {
+                List<pa_ConsultaTramitesporValorTrazableExpedienteResult> response = bd.pa_ConsultaTramitesporValorTrazableExpediente(valor_trazable).ToList();
+
+                //datos aleatorios de prueba                
+                /*string[] expedientes = new string[] { "Expediente 1", "Expediente 2", "Expediente 3" };
+
+                Random bucle = new Random();
+                for (int i = 0; i <= bucle.Next(10000); i++)
+                {
+                    DateTime start = new DateTime(1995, 1, 1);
+                    Random gen = new Random();
+                    int range = (DateTime.Today - start).Days;
+                    response.Add(new pa_ConsultaTramitesporValorTrazableResult() { expediente = expedientes[ new Random().Next(0,3) ], id_estatus = i, id_ma_digital = i, nota = "prueba " + i.ToString(), id_tramite = i, tramite = "prueba " + i.ToString(), fecha_hora_creacion = start.AddDays(gen.Next(range)) });
+                }*/
+                //*******************************
+
+                return response;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        //obtiene los tramites desde cualquier valor trazable del documento
+        public IEnumerable<pa_ConsultaTramitesporValorTrazableDocumentoResult> ConsultaTramitesporValorTrazableDocumento(int tipo_busqueda, string valor_trazable)
+        {
+            try
+            {
+                List<pa_ConsultaTramitesporValorTrazableDocumentoResult> response = bd.pa_ConsultaTramitesporValorTrazableDocumento(valor_trazable).ToList();
+
+                //datos aleatorios de prueba                
+                /*string[] expedientes = new string[] { "Expediente 1", "Expediente 2", "Expediente 3" };
+
+                Random bucle = new Random();
+                for (int i = 0; i <= bucle.Next(10000); i++)
+                {
+                    DateTime start = new DateTime(1995, 1, 1);
+                    Random gen = new Random();
+                    int range = (DateTime.Today - start).Days;
+                    response.Add(new pa_ConsultaTramitesporValorTrazableResult() { expediente = expedientes[ new Random().Next(0,3) ], id_estatus = i, id_ma_digital = i, nota = "prueba " + i.ToString(), id_tramite = i, tramite = "prueba " + i.ToString(), fecha_hora_creacion = start.AddDays(gen.Next(range)) });
+                }*/
+                //*******************************
+
+                return response;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public IEnumerable<pa_ConsultaTramitesporExpedienteyValorTrazableResult> ConsultaTramitesporExpedienteyValorTrazable(int id_Expediente, int tipo_busqueda, string valor_trazable)
         {
             try
             {

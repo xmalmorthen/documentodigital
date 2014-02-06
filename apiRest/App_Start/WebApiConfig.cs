@@ -23,15 +23,15 @@ namespace apiRest
              */
             config.Routes.MapHttpRoute(
                 name: "Bucar en cualquier Expediente",
-                routeTemplate: "consulta/{controller}/{campo_trazable}",
-                defaults: null
-                //constraints: new { campo_trazable = @"^[a-z]+$" }
+                routeTemplate: "consulta/{controller}/{tipo_busqueda}/{campo_trazable}",
+                defaults: null,
+                constraints: new { tipo_busqueda = @"^[0-9]+$"  }
             );
             config.Routes.MapHttpRoute(
                 name: "Bucar en expediente especifico",
-                routeTemplate: "consulta/{controller}/{id_expediente}/{campo_trazable}",
-                defaults: null
-                //constraints: new { campo_trazable = @"^[a-z]+$" }
+                routeTemplate: "consulta/{controller}/{id_expediente}/{tipo_busqueda}/{campo_trazable}",
+                defaults: null,
+                constraints: new { id_expediente= @"^[0-9]+$", tipo_busqueda = @"^[0-9]+$" }
             );
 
             /*
