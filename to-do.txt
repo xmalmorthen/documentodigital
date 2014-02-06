@@ -1,21 +1,17 @@
 /*******************************************************************/
 	. parametrizar web
 	. parametrizar escritorio
-	. Modificar tamaño de texto de marca de agua en digitalización
-	. Modificar tamaño de imagen de marca de agua en digitalización
 
 
 
 Sistema escritorio
-	Slide para agrandar los thumbnails
+*	Slide para agrandar los thumbnails (no aplica)
 	Identificar los documentos faltantes de la lista de documentos
 	Poder imprimir la lista de documentos
 	Imagen y texto de fondo de ventana
-	Valorar campos trazables de expediente que sean opcionales
 	
 
 Sistema web
-	Resolver error en la opcion nodos
 	Busqueda por campos trazables del tramite
 	Busqueda por campos trazables de documentos
 	En la ventana de detalles de tramite mostrar mas informacion del tramite seleccionado
