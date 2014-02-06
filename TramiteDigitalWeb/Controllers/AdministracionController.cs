@@ -364,7 +364,7 @@ namespace TramiteDigitalWeb.Controllers
                     new ca_usuarios()
                     {
                         id = item.id,
-                        usuario = item.usuario + "   | " + item.apellido1.Trim() + " " + item.apellido2.Trim() + " " + item.nombres.Trim()
+                        usuario = item.usuario + "   | " + item.apellido1.ToString().Trim() + " " + ( !string.IsNullOrEmpty (item.apellido2) ? item.apellido2.ToString().Trim() : "" ) + " " + item.nombres.ToString().Trim()
                     }
                 );                
             }

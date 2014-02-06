@@ -66,7 +66,7 @@ namespace TramiteDigitalWeb.Controllers
             if (!ValidaAcceso()) return RedirectToAction("KillSession", "Account");
 
             InicializaVars();
-            return View();
+            return View(new ConsultasViewModels() {  Valor_Trazable_Principal = true });
         }
 
         [Authorize]
@@ -78,23 +78,32 @@ namespace TramiteDigitalWeb.Controllers
             InicializaVars(Form.NodoSeleccionado);
             if (ModelState.IsValid)
             {
-                if (Form.NodoSeleccionado == 1000)
-                {                    
-                    ViewBag.Response = ConsultaModels.ConsultaTodosNodos(int.Parse(User.Identity.Name.Split('~')[1]), Form.Valor_Trazable);
+                if (!Form.Valor_Trazable_Principal && !Form.Valor_Trazable_Expediente && !Form.Valor_Trazable_Documento)
+                {
+                    ViewData.ModelState.AddModelError("nochecksselects", "Debe seleccionar al menos un tipo de búsqueda.");
                 }
                 else
                 {
-                    if (Form.ExpedienteSeleccionado == 1000)
+                    bool[] opcionesdebusqueda = new bool[3] { Form.Valor_Trazable_Principal, Form.Valor_Trazable_Expediente, Form.Valor_Trazable_Documento };
+                    
+                    if (Form.NodoSeleccionado == 1000)
                     {
-                        ViewBag.Response = ConsultaModels.ConsultaTodosExpedientes(int.Parse(User.Identity.Name.Split('~')[1]),Form.NodoSeleccionado,Form.Valor_Trazable);
+                        ViewBag.Response = ConsultaModels.ConsultaTodosNodos(int.Parse(User.Identity.Name.Split('~')[1]), Form.Valor_Trazable, opcionesdebusqueda);
                     }
                     else
                     {
-                        ViewBag.Response = ConsultaModels.ConsultaExpediente(int.Parse(User.Identity.Name.Split('~')[1]),Form.NodoSeleccionado,Form.ExpedienteSeleccionado, Form.Valor_Trazable);
+                        if (Form.ExpedienteSeleccionado == 1000)
+                        {
+                            ViewBag.Response = ConsultaModels.ConsultaTodosExpedientes(int.Parse(User.Identity.Name.Split('~')[1]), Form.NodoSeleccionado, Form.Valor_Trazable, opcionesdebusqueda);
+                        }
+                        else
+                        {
+                            ViewBag.Response = ConsultaModels.ConsultaExpediente(int.Parse(User.Identity.Name.Split('~')[1]), Form.NodoSeleccionado, Form.ExpedienteSeleccionado, Form.Valor_Trazable, opcionesdebusqueda);
+                        }
                     }
-                }
 
-                ViewBag.ResponseErrors = ConsultaModels.ResponseErrors.Count() > 0 ? ConsultaModels.ResponseErrors : null;
+                    ViewBag.ResponseErrors = ConsultaModels.ResponseErrors.Count() > 0 ? ConsultaModels.ResponseErrors : null;
+                }
             }
             
             return View(Form);

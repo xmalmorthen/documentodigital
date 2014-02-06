@@ -82,7 +82,7 @@ namespace TramiteDigitalWeb.Models
     {
         private static CatalogsModel catalogos = new CatalogsModel();
 
-        public static List<ConsultaStructure> ConsultaTodosNodos(int id_usuario, string valor_trazable)
+        public static List<ConsultaStructure> ConsultaTodosNodos(int id_usuario, string valor_trazable, bool[] opcionesdebusqueda = null)
         {
             response.Clear();
             responseerrors.Clear();
@@ -99,7 +99,7 @@ namespace TramiteDigitalWeb.Models
             return response;
         }
 
-        internal static dynamic ConsultaTodosExpedientes(int id_usuario, int id_nodo, string valor_trazable)
+        internal static dynamic ConsultaTodosExpedientes(int id_usuario, int id_nodo, string valor_trazable, bool[] opcionesdebusqueda = null)
         {
             response.Clear();
             responseerrors.Clear();
@@ -114,7 +114,7 @@ namespace TramiteDigitalWeb.Models
             return response;
         }
 
-        internal static dynamic ConsultaExpediente(int id_usuario, int id_nodo, int expediente, string valor_trazable)
+        internal static dynamic ConsultaExpediente(int id_usuario, int id_nodo, int expediente, string valor_trazable, bool[] opcionesdebusqueda = null)
         {
             response.Clear();
             responseerrors.Clear();
@@ -143,6 +143,7 @@ namespace TramiteDigitalWeb.Models
                 return responseerrors;
             }
         }
+
         private static void ErrorResult(ErrorConsulta result)
         {
             responseerrors.Add(result);

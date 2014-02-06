@@ -63,9 +63,27 @@
                     @Html.DropDownListFor(m => m.ExpedienteSeleccionado, ViewBag.Expedientes != null ? new SelectList(ViewBag.Expedientes, "id", "descripcion") : Enumerable.Empty<SelectListItem>(), ViewBag.Expedientes != null ? null : "-- Seleccione expediente --", new { id = "expedientes" })
                     @Html.ValidationMessageFor(m => m.ExpedienteSeleccionado)
                 </li>
+            </ol>
+            <ol>
                 <li>
+                    @Html.Label("Típo de búsqueda")
+                    <div style="text-align:left; padding-left:10px;">
+                        @Html.CheckBoxFor(m => m.Valor_Trazable_Principal)
+                        @Html.LabelFor(m => m.Valor_Trazable_Principal, new { @class = "checkbox"})
+
+                        @Html.CheckBoxFor(m => m.Valor_Trazable_Expediente)
+                        @Html.LabelFor(m => m.Valor_Trazable_Expediente, new { @class = "checkbox"})
+
+                        @Html.CheckBoxFor(m => m.Valor_Trazable_Documento)
+                        @Html.LabelFor(m => m.Valor_Trazable_Documento, new { @class = "checkbox"})                        
+                    </div>
+                    @Html.ValidationMessage("nochecksselects")
+                </li>
+            </ol>
+            <ol>
+                <li style="width:90%;">
                     @Html.LabelFor(m => m.Valor_Trazable)
-                    @Html.TextBoxFor(m => m.Valor_Trazable, new { @placeholder = "Indicar valor trazable" })
+                    @Html.TextBoxFor(m => m.Valor_Trazable, new { @placeholder = "Indicar valor trazable", style = "width:99%;" })
                     @Html.ValidationMessageFor(m => m.Valor_Trazable)
                 </li>
             </ol>
