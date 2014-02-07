@@ -12,8 +12,8 @@ Sistema escritorio
 	
 
 Sistema web
-	Busqueda por campos trazables del tramite
-	Busqueda por campos trazables de documentos
+*	Busqueda por campos trazables del tramite
+*	Busqueda por campos trazables de documentos
 	En la ventana de detalles de tramite mostrar mas informacion del tramite seleccionado
 	Checks en documentos que se exportarán a reporte
 	Mandar la opción de galeria dentro de la ventana de detalle para que se filtre con los checks
