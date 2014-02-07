@@ -29,7 +29,7 @@ namespace apiRest
             );
             config.Routes.MapHttpRoute(
                 name: "Bucar en expediente especifico",
-                routeTemplate: "consulta/{controller}/{id_expediente}/{tipo_busqueda}/{campo_trazable}",
+                routeTemplate: "consulta/{controller}/{tipo_busqueda}/{id_expediente}/{campo_trazable}",
                 defaults: null,
                 constraints: new { id_expediente= @"^[0-9]+$", tipo_busqueda = @"^[0-9]+$" }
             );

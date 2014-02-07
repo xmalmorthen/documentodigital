@@ -27,7 +27,7 @@ namespace apiRest.Controllers
 
         // POST consulta/Expediente/tipo_busqueda/base64
         // Obtiene expediente a partir de campo trazable, busca dentro de todos los expedientes
-        public IEnumerable<pa_ConsultaTramitesporValorTrazableResult> Post(int tipo_busqueda, string campo_trazable)
+        public IEnumerable<pa_ConsultaTramitesResult> Post(int tipo_busqueda, string campo_trazable)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace apiRest.Controllers
                     byte[] data = System.Convert.FromBase64String(campo_trazable);
                     string base64decode = System.Text.ASCIIEncoding.ASCII.GetString(data);
 
-                    return consulta.ConsultaTramitesporValorTrazable(tipo_busqueda,base64decode);
+                    return consulta.ConsultaTramites(tipo_busqueda, base64decode);
                 }
                 return null;
             }
@@ -48,7 +48,7 @@ namespace apiRest.Controllers
 
         // POST consulta/Expediente/1/tipo_busqueda/base64
         // Obtiene expediente a partir de campo trazable y el id del expediente, busca dentro del expediente especificado
-        public IEnumerable<pa_ConsultaTramitesporExpedienteyValorTrazableResult> Post(int id_expediente,int tipo_busqueda, string campo_trazable)
+        public IEnumerable<pa_ConsultaTramitesResult> Post(int tipo_busqueda, int id_expediente, string campo_trazable)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace apiRest.Controllers
                     byte[] data = System.Convert.FromBase64String(campo_trazable);
                     string base64decode = System.Text.ASCIIEncoding.ASCII.GetString(data);
 
-                    return consulta.ConsultaTramitesporExpedienteyValorTrazable(id_expediente, tipo_busqueda, base64decode);
+                    return consulta.ConsultaTramites(tipo_busqueda, base64decode, id_expediente);
                 }
                 return null;
             }
