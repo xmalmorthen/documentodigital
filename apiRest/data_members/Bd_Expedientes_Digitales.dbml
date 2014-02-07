@@ -46,63 +46,15 @@
       <Column Name="imagen" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.pa_ConsultaTramitesporExpedienteyValorTrazable" Method="pa_ConsultaTramitesporExpedienteyValorTrazable">
+  <Function Name="dbo.pa_ConsultaTramites" Method="pa_ConsultaTramites">
+    <Parameter Name="tipo_busqueda" Type="System.Int32" DbType="Int" />
+    <Parameter Name="valor_trazable" Type="System.String" DbType="VarChar(200)" />
     <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
-    <Parameter Name="valor_trazable" Type="System.String" DbType="VarChar(200)" />
-    <ElementType Name="pa_ConsultaTramitesporExpedienteyValorTrazableResult">
-      <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="tramite" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="expediente" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.pa_ConsultaTramitesporExpedienteyValorTrazableExpediente" Method="pa_ConsultaTramitesporExpedienteyValorTrazableExpediente">
-    <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
-    <Parameter Name="valor_trazable" Type="System.String" DbType="VarChar(200)" />
-    <ElementType Name="pa_ConsultaTramitesporExpedienteyValorTrazableExpedienteResult">
-      <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="tramite" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="expediente" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.pa_ConsultaTramitesporValorTrazable" Method="pa_ConsultaTramitesporValorTrazable">
-    <Parameter Name="valor_trazable" Type="System.String" DbType="VarChar(200)" />
-    <ElementType Name="pa_ConsultaTramitesporValorTrazableResult">
-      <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="tramite" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="expediente" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.pa_ConsultaTramitesporValorTrazableDocumento" Method="pa_ConsultaTramitesporValorTrazableDocumento">
-    <Parameter Name="valor_trazable" Type="System.String" DbType="VarChar(200)" />
-    <ElementType Name="pa_ConsultaTramitesporValorTrazableDocumentoResult">
+    <ElementType Name="pa_ConsultaTramitesResult">
       <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="tramite" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="expediente" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.pa_ConsultaTramitesporValorTrazableExpediente" Method="pa_ConsultaTramitesporValorTrazableExpediente">
-    <Parameter Name="valor_trazable" Type="System.String" DbType="VarChar(200)" />
-    <ElementType Name="pa_ConsultaTramitesporValorTrazableExpedienteResult">
-      <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="nota" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="tramite" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
       <Column Name="expediente" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
       <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
