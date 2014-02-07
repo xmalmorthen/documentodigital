@@ -47,20 +47,20 @@ namespace TramiteDigitalWeb.Controllers
                 throw new Exception("No se encontró el formato de reporte...");
             }
 
-            List<ConsultaStructure> response;            
+            List<ConsultaStructure> response = null;            
             if (nodo == 1000)
             {
-                response = ConsultaModels.ConsultaTodosNodos(int.Parse(User.Identity.Name.Split('~')[1]), valor_trazable);
+                //response = ConsultaModels.ConsultaTodosNodos(int.Parse(User.Identity.Name.Split('~')[1]), valor_trazable);
             }
             else
             {
                 if (expediente == 1000)
                 {
-                    response = ConsultaModels.ConsultaTodosExpedientes(int.Parse(User.Identity.Name.Split('~')[1]), nodo, valor_trazable);
+                    //response = ConsultaModels.ConsultaTodosExpedientes(int.Parse(User.Identity.Name.Split('~')[1]), nodo, valor_trazable);
                 }
                 else
                 {
-                    response = ConsultaModels.ConsultaExpediente(int.Parse(User.Identity.Name.Split('~')[1]), nodo, expediente, valor_trazable);
+                    //response = ConsultaModels.ConsultaExpediente(int.Parse(User.Identity.Name.Split('~')[1]), nodo, expediente, valor_trazable);
                 }
             }
 
