@@ -106,8 +106,8 @@
       <Association Name="ca_estatus_de_digital" Member="de_digital" ThisKey="id" OtherKey="id_estatus" Type="de_digital" />
       <Association Name="ca_estatus_re_clasificaciondocumentos_documentos" Member="re_clasificaciondocumentos_documentos" ThisKey="id" OtherKey="id_estatus" Type="re_clasificaciondocumentos_documentos" />
       <Association Name="ca_estatus_re_expedientes_campostrazables" Member="re_expedientes_campostrazables" ThisKey="id" OtherKey="id_estatus" Type="re_expedientes_campostrazables" />
-      <Association Name="ca_estatus_ma_digital" Member="ma_digital" ThisKey="id" OtherKey="id_estatus" Type="ma_digital" />
       <Association Name="ca_estatus_de_digital_campostrazables" Member="de_digital_campostrazables" ThisKey="id" OtherKey="id_estatus" Type="de_digital_campostrazables" />
+      <Association Name="ca_estatus_ma_digital" Member="ma_digital" ThisKey="id" OtherKey="id_estatus" Type="ma_digital" />
     </Type>
   </Table>
   <Table Name="dbo.ca_expedientes" Member="ca_expedientes">
@@ -317,20 +317,6 @@
       <Column Name="Valor" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.ma_digital" Member="ma_digital">
-    <Type Name="ma_digital">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="id_re_expediente_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_hora_creacion" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="fecha_hora_bloqueo" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
-      <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ma_digital_de_digital" Member="de_digital" ThisKey="id" OtherKey="id_ma_digital" Type="de_digital" />
-      <Association Name="ma_digital_de_digital_campostrazables" Member="de_digital_campostrazables" ThisKey="id" OtherKey="id_ma_digital" Type="de_digital_campostrazables" />
-      <Association Name="ca_estatus_ma_digital" Member="ca_estatus" ThisKey="id_estatus" OtherKey="id" Type="ca_estatus" IsForeignKey="true" />
-      <Association Name="re_expedientes_tramites_ma_digital" Member="re_expedientes_tramites" ThisKey="id_re_expediente_tramite" OtherKey="id" Type="re_expedientes_tramites" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.de_digital_campostrazables" Member="de_digital_campostrazables">
     <Type Name="de_digital_campostrazables">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -340,8 +326,22 @@
       <Column Name="fecha_hora_creacion" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="ca_estatus_de_digital_campostrazables" Member="ca_estatus" ThisKey="id_estatus" OtherKey="id" Type="ca_estatus" IsForeignKey="true" />
-      <Association Name="ma_digital_de_digital_campostrazables" Member="ma_digital" ThisKey="id_ma_digital" OtherKey="id" Type="ma_digital" IsForeignKey="true" />
       <Association Name="re_expedientes_campostrazables_de_digital_campostrazables" Member="re_expedientes_campostrazables" ThisKey="id_re_expediente_campotrazable" OtherKey="id" Type="re_expedientes_campostrazables" IsForeignKey="true" />
+      <Association Name="ma_digital_de_digital_campostrazables" Member="ma_digital" ThisKey="id_ma_digital" OtherKey="id" Type="ma_digital" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ma_digital" Member="ma_digital">
+    <Type Name="ma_digital">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_re_expediente_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_hora_creacion" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nota" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fecha_hora_bloqueo" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="id_estatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ma_digital_de_digital" Member="de_digital" ThisKey="id" OtherKey="id_ma_digital" Type="de_digital" />
+      <Association Name="ma_digital_de_digital_campostrazables" Member="de_digital_campostrazables" ThisKey="id" OtherKey="id_ma_digital" Type="de_digital_campostrazables" />
+      <Association Name="ca_estatus_ma_digital" Member="ca_estatus" ThisKey="id_estatus" OtherKey="id" Type="ca_estatus" IsForeignKey="true" />
+      <Association Name="re_expedientes_tramites_ma_digital" Member="re_expedientes_tramites" ThisKey="id_re_expediente_tramite" OtherKey="id" Type="re_expedientes_tramites" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.pa_TramitesporExpediente" Method="pa_TramitesporExpediente">
@@ -401,31 +401,6 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_clasificaciondocumento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.pa_ConsultaTramitesporExpedienteyValorTrazable" Method="pa_ConsultaTramitesporExpedienteyValorTrazable">
-    <Parameter Name="id_expediente" Type="System.Int32" DbType="Int" />
-    <Parameter Name="valor_trazable" Type="System.String" DbType="VarChar(200)" />
-    <ElementType Name="pa_ConsultaTramitesporExpedienteyValorTrazableResult">
-      <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="tramite" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="expediente" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.pa_ConsultaTramitesporValorTrazable" Method="pa_ConsultaTramitesporValorTrazable">
-    <Parameter Name="valor_trazable" Type="System.String" DbType="VarChar(200)" />
-    <ElementType Name="pa_ConsultaTramitesporValorTrazableResult">
-      <Column Name="id_ma_digital" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_estatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="fecha_hora_creacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="nota" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="tramite" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="expediente" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="id_tramite" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
   <Function Name="dbo.pa_CreateLoginandUser" Method="pa_CreateLoginandUser">
