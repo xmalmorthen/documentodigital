@@ -1,3 +1,0 @@
-Se agrego al catalogo de modulos el modulo de formatos
-A la relacion de roles con modulos se agrego el modulo de formatos
-A todas las tablas se le agregaron indices

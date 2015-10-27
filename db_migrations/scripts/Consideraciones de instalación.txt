@@ -1,0 +1,12 @@
+[Reseta de Instalación de base de datos]
+	.Primero ejecutar scripts que empiecen con "Step [n]"
+	.Después ejecutar scripts que empiecen con "Migration [n]"
+
+[Catálogos prerellenados]
+	.ca_acciones					
+	.ca_estatus						[ids salteados]
+	.ca_modulos
+	.ca_origenes
+	.ca_tablas						[ids salteados]
+	.ca_tiposbloqueos				[ids salteados]
+	.tbl_configuraciones

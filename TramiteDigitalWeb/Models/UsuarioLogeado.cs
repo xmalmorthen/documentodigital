@@ -45,7 +45,7 @@ namespace TramiteDigitalWeb.Models
         private ca_usuarios usuario = null;
 
         public Boolean Valida(string Usuario, string Contrasenia)
-        {
+        {            
             try
             {
                 usuario = bd.ca_usuarios.SingleOrDefault(c => c.usuario.ToString().ToLower() == Usuario.ToString().ToLower());
