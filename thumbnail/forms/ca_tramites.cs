@@ -381,9 +381,12 @@ namespace scanndoc.forms
                             checkEdit1.Checked = false;
                         }
                     }
-                    if (bindingsource.Current != null)
+                    if (Form_Mode == form_mode.normal)
                     {
-                        lookUpEdit_ClasificacionDocumento.EditValue = (bindingsource.Current as data_members.ca_tramites).id_ClasificacionTramite;
+                        if (bindingsource.Current != null)
+                        {
+                            lookUpEdit_ClasificacionDocumento.EditValue = (bindingsource.Current as data_members.ca_tramites).id_ClasificacionTramite;
+                        }
                     }
                 }
             }

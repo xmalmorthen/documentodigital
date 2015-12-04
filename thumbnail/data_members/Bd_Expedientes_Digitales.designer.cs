@@ -7336,7 +7336,7 @@ namespace scanndoc.data_members
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_hora_bloqueo", DbType="DateTime", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_hora_bloqueo", DbType="DateTime")]
 		public System.Nullable<System.DateTime> fecha_hora_bloqueo
 		{
 			get

@@ -305,12 +305,18 @@ namespace scanndoc.forms
 
         private Boolean valida_existe_campoprincipal()
         {
-            foreach (DataGridViewRow row in dataGridViewCamposTrazables.Rows)
+            if (dataGridViewCamposTrazables.Rows.Count > 0)
             {
-                if ((Boolean)row.Cells["esprincipalDataGridViewCheckBoxColumn"].Value == true)
-                    return true;
+
+                foreach (DataGridViewRow row in dataGridViewCamposTrazables.Rows)
+                {
+                    if ((Boolean)row.Cells["esprincipalDataGridViewCheckBoxColumn"].Value == true)
+                        return true;
+                }
+                return false;
+            } else {
+                return true;
             }
-            return false;
         }
 
         //buscar en grid de campos trazables

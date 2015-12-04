@@ -236,9 +236,19 @@ namespace scanndoc.forms
             Application.DoEvents();
 
             frm_deshacer_tramite_view_openimage testDialog;
+            tagstruct edittag;
+            try
+            {
+                edittag = ((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag);
+            }
+            catch (Exception)
+            {
+                tlp_proc.Visible = false;
+                this.Cursor = Cursors.Default;
+                MessageBox.Show("Debe seleccionar una imagen", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);                
+                return;
+            }
             
-            tagstruct edittag = ((tagstruct)lstvwdocumentosenlazados.SelectedItems[0].Tag);
-
             if (edittag.path_image != null)
             {
                 testDialog = new frm_deshacer_tramite_view_openimage(edittag.path_image);
@@ -335,8 +345,11 @@ namespace scanndoc.forms
                     this.lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Tag = tagedit;
 
                     ListViewGroup _grupo = new ListViewGroup();
-                    _grupo.Name = source.clasificaciondocumento; //obtener el nombre del grupo a partir de su clasificacion de documento
-                    _grupo.Header = source.clasificaciondocumento + " [ " + source.documento + " ] " + (!string.IsNullOrEmpty(source.valor_trazable) ? "[ " + source.valor_trazable + " ]" : ""); //concatenar la clasificacion de documentos con el nombre del documento
+
+                    string groupName = string.Format("{0}_{1}", source.clasificaciondocumento, source.documento); //concatenar la clasificacion de documentos con el nombre del documento)
+
+                    _grupo.Name = groupName; //obtener el nombre del grupo a partir de su clasificacion de documento
+                    _grupo.Header = source.clasificaciondocumento + " [ " + source.documento + " ] " + (!string.IsNullOrEmpty(source.valor_trazable) ? "[ " + source.valor_trazable + " ]" : "");
                     _grupo.HeaderAlignment = HorizontalAlignment.Left;
 
                     Boolean existe = lstvwdocumentosenlazados.Groups.Contains(_grupo);

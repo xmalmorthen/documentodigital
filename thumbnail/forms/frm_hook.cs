@@ -77,7 +77,7 @@ namespace scanndoc.forms
                 ListaDocumentos = Program.Bd_Expedientes_Digitales.pa_ObtenerDocumentosporTramiteyOrigen(Tramite, Origen).ToList(); //obtener la lista de documentos por tramite y origen
                 foreach (digital item in sources)
                 {
-                    ListaDocumentos.RemoveAll(query => query.id_re_clasificaciondocumentos_documentos != item.id_re_clasificaciondocumento_documento && query.Descripcion_clasificaciondocumento == item.clasificaciondocumento);
+                    ListaDocumentos.RemoveAll(query => query.id_re_clasificaciondocumentos_documentos == item.id_re_clasificaciondocumento_documento && query.Descripcion_clasificaciondocumento == item.clasificaciondocumento);
                 }
 
                 this.bindingsource.DataSource = ListaDocumentos;

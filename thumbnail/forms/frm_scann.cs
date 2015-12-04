@@ -611,9 +611,11 @@ namespace scanndoc.forms
                     this.lookUpEdit_Tramites.EditValue = int.Parse(Configs.Valor); //establecer el tramite a seleccionar
 
                     BindingSource_ListaTramites.MoveFirst();
-                    while ((BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).id_tramite != int.Parse(Configs.Valor))
+                    int idx = 0;
+                    while ((BindingSource_ListaTramites.Current as data_members.vw_ListaTramitesActivos).id_tramite != int.Parse(Configs.Valor) && idx < BindingSource_ListaTramites.Count)
                     {
                         BindingSource_ListaTramites.MoveNext();
+                        idx++;
                     }
                 }
             }
@@ -1033,8 +1035,11 @@ namespace scanndoc.forms
         private void addlistviewgroup()
         {
             ListViewGroup grupo = new ListViewGroup();
-            grupo.Name = source_digital.clasificaciondocumento; //obtener el nombre del grupo a partir de su clasificacion de documento
-            grupo.Header = source_digital.clasificaciondocumento + " [ " + source_digital.documento + " ] " + (!string.IsNullOrEmpty(source_digital.valor_trazable) ? "[ " + source_digital.valor_trazable + " ]" : ""); //concatenar la clasificacion de documentos con el nombre del documento)
+
+            string groupName = string.Format("{0}_{1}", source_digital.clasificaciondocumento, source_digital.documento); //concatenar la clasificacion de documentos con el nombre del documento)
+
+            grupo.Name = groupName; //obtener el nombre del grupo a partir de su clasificacion de documento
+            grupo.Header = source_digital.clasificaciondocumento + " [ " + source_digital.documento + " ] " + (!string.IsNullOrEmpty(source_digital.valor_trazable) ? "[ " + source_digital.valor_trazable + " ]" : "");
             grupo.HeaderAlignment = HorizontalAlignment.Left;
 
             Boolean existe = false;
@@ -1237,10 +1242,12 @@ namespace scanndoc.forms
 
                 lstvwdocumentosenlazados.Items.Add((ListViewItem)item.Clone());
 
+                string groupName = string.Format("{0}_{1}", source.clasificaciondocumento, source.documento);
+
                 int idxgroup = 0;
                 foreach (ListViewGroup grupo in lstvwdocumentosenlazados.Groups)
                 {
-                    if (grupo.Name == source.clasificaciondocumento)
+                    if (grupo.Name == groupName)
                     {
                         break;
                     }
@@ -1728,8 +1735,11 @@ namespace scanndoc.forms
                     this.lstvwdocumentosenlazados.Items[lstvwdocumentosenlazados.Items.Count - 1].Tag = tagedit;
 
                     ListViewGroup _grupo = new ListViewGroup();
-                    _grupo.Name = source.clasificaciondocumento; //obtener el nombre del grupo a partir de su clasificacion de documento
-                    _grupo.Header = source.clasificaciondocumento + " [ " + source.documento + " ][ " + source.valor_trazable + " ]"; //concatenar la clasificacion de documentos con el nombre del documento
+
+                    string groupName = string.Format("{0}_{1}", source.clasificaciondocumento, source.documento); //concatenar la clasificacion de documentos con el nombre del documento)
+
+                    _grupo.Name = groupName; //obtener el nombre del grupo a partir de su clasificacion de documento
+                    _grupo.Header = source.clasificaciondocumento + " [ " + source.documento + " ] " + (!string.IsNullOrEmpty(source.valor_trazable) ? "[ " + source.valor_trazable + " ]" : "");
                     _grupo.HeaderAlignment = HorizontalAlignment.Left;
 
                     Boolean existe = lstvwdocumentosenlazados.Groups.Contains(_grupo);
